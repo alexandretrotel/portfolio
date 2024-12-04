@@ -3,12 +3,10 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 
 const components: { title: string; href: string }[] = [
   {
@@ -44,12 +42,7 @@ export default async function Header() {
               {components.map((component) => (
                 <NavigationMenuItem key={component.title}>
                   <Link href={component.href} legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={cn(
-                        navigationMenuTriggerStyle(),
-                        "bg-transparent"
-                      )}
-                    >
+                    <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 bg-transparent">
                       {component.title}
                     </NavigationMenuLink>
                   </Link>
