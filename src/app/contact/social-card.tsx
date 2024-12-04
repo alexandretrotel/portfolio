@@ -28,13 +28,7 @@ export default async function SocialCard({
   icon,
 }: SocialCardProps) {
   return (
-    <Card
-      className={cn(
-        "hover:border-primary hover:shadow",
-        color,
-        color && "border-transparent"
-      )}
-    >
+    <Card className={cn(color, color && "border-transparent")}>
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle>{title}</CardTitle>
