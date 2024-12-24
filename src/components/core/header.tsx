@@ -13,6 +13,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ComponentProps {
   title: string;
@@ -101,28 +102,36 @@ export default function Header() {
         </div>
       </div>
 
-      {isMenuOpen && (
-        <div className="md:hidden">
-          <nav className="flex flex-col items-center gap-2 py-4">
-            {components.map((component) => {
-              if (component.disabled) {
-                return null;
-              }
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden absolute top-14 left-0 right-0 bg-background backdrop-blur border-b border-border/40 dark:border-border"
+          >
+            <nav className="flex flex-col items-start py-4 px-4 max-w-5xl mx-auto">
+              {components.map((component) => {
+                if (component.disabled) {
+                  return null;
+                }
 
-              return (
-                <Link
-                  key={component.title}
-                  href={component.href}
-                  className="w-full text-center py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {component.title}
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
-      )}
+                return (
+                  <Link
+                    key={component.title}
+                    href={component.href}
+                    className="w-full text-left py-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground rounded-md px-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {component.title}
+                  </Link>
+                );
+              })}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
