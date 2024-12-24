@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { FEEDBACK_DURATION } from "@/hooks/games/quatio/useQuatio";
+import { FEEDBACK_DURATION } from "@/hooks/games/quatio/use-quatio";
 import { ProgressAnswer } from "@/components/ui/progress-answer";
 
 interface QuatioCardProps {
