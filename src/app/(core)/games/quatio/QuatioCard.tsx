@@ -6,8 +6,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Difficulty } from "@/types/quatio";
-import { Progress } from "@/components/ui/progress";
-import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -19,6 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { FEEDBACK_DURATION } from "@/hooks/games/quatio/useQuatio";
+import { ProgressAnswer } from "@/components/ui/progress-answer";
 
 interface QuatioCardProps {
   difficulty: Difficulty;
@@ -128,13 +127,11 @@ export default function QuatioCard({
               {feedback}
             </div>
 
-            <Progress
+            <ProgressAnswer
               value={progress}
               max={FEEDBACK_DURATION}
-              className={cn(
-                "w-full",
-                isCorrect ? "bg-green-200" : "bg-red-200"
-              )}
+              isCorrect={isCorrect}
+              className={"w-full"}
             />
           </div>
         )}

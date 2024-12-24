@@ -6,9 +6,6 @@ export const FEEDBACK_DURATION = 2000;
 const PROGRESS_SPEED = 10;
 
 export default function useQuatio() {
-  const initialHighestScore = localStorage.getItem("quatioHighestScore");
-  const initialHighestStreak = localStorage.getItem("quatioHighestStreak");
-
   const [difficulty, setDifficulty] = useState<Difficulty>("easy");
   const [unknowns, setUnknowns] = useState(1);
   const [equationData, setEquationData] = useState(generateEquation("easy", 1));
@@ -16,10 +13,11 @@ export default function useQuatio() {
   const [feedback, setFeedback] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
   const [progress, setProgress] = useState(0);
+
   const [currentScore, setCurrentScore] = useState(0);
-  const [highestScore, setHighestScore] = useState(initialHighestScore ?? 0);
+  const [highestScore, setHighestScore] = useState(0);
   const [currentStreak, setCurrentStreak] = useState(0);
-  const [highestStreak, setHighestStreak] = useState(initialHighestStreak ?? 0);
+  const [highestStreak, setHighestStreak] = useState(0);
 
   const newEquation = useCallback(() => {
     setEquationData(generateEquation(difficulty, unknowns));
@@ -66,6 +64,20 @@ export default function useQuatio() {
       newEquation();
     }, FEEDBACK_DURATION);
   }, [equationData, unknowns, userAnswer, newEquation]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const initialHighestScore = localStorage.getItem("quatioHighestScore");
+      const initialHighestStreak = localStorage.getItem("quatioHighestStreak");
+
+      setHighestScore(
+        initialHighestScore ? parseInt(initialHighestScore, 10) : 0
+      );
+      setHighestStreak(
+        initialHighestStreak ? parseInt(initialHighestStreak, 10) : 0
+      );
+    }
+  }, []);
 
   useEffect(() => {
     if (feedback) {
