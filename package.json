@@ -1,4 +1,17 @@
 {
+  "name": "alexandretrotel",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbopack",
+    "lint": "next lint",
+    "prettier": "prettier --write .",
+    "start": "next start",
+    "test": "jest",
+    "test --watch": "jest --watch",
+    "test --ci": "jest --ci"
+  },
+  "version": "0.1.0",
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-alert-dialog": "^1.1.2",
@@ -65,16 +78,5 @@
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5"
-  },
-  "name": "alexandretrotel",
-  "private": true,
-  "scripts": {
-    "build": "next build",
-    "dev": "next dev --turbopack",
-    "lint": "next lint",
-    "prettier": "prettier --write .",
-    "start": "next start",
-    "test": "jest"
-  },
-  "version": "0.1.0"
+  }
 }
