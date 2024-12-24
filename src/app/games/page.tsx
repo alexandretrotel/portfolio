@@ -13,7 +13,7 @@ export default async function Games() {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto max-w-5xl">
       <Card>
         <CardHeader>
-          <CardTitle>Quatio</CardTitle>
+          <CardTitle>Quatio, the math game</CardTitle>
           <CardDescription>
             Quatio is a game where you have to solve equations to get the
             highest score.
