@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -20,9 +19,6 @@ export default async function Games() {
             highest score.
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <p>Game content goes here</p>
-        </CardContent>
         <CardFooter>
           <Button disabled asChild>
             <Link href="/games/quatio">Coming soon...</Link>
