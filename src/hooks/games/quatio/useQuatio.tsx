@@ -1,9 +1,8 @@
 import { Difficulty } from "@/types/quatio";
 import { generateEquation } from "@/utils/quatio/generateEquation";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export const FEEDBACK_DURATION = 2000;
-const PROGRESS_SPEED = 10;
 
 export default function useQuatio() {
   const [difficulty, setDifficulty] = useState<Difficulty>("easy");
@@ -12,12 +11,38 @@ export default function useQuatio() {
   const [userAnswer, setUserAnswer] = useState("");
   const [feedback, setFeedback] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
-  const [progress, setProgress] = useState(0);
 
   const [currentScore, setCurrentScore] = useState(0);
   const [highestScore, setHighestScore] = useState(0);
   const [currentStreak, setCurrentStreak] = useState(0);
   const [highestStreak, setHighestStreak] = useState(0);
+
+  const progressValueRef = useRef(0);
+  const animationFrameRef = useRef<number | null>(null);
+
+  const updateProgress = useCallback(() => {
+    const startTime = performance.now();
+
+    const animate = (time: number) => {
+      const elapsed = time - startTime;
+      const progress = Math.min((elapsed / FEEDBACK_DURATION) * 100, 100);
+
+      progressValueRef.current = progress;
+
+      if (progress < 100) {
+        animationFrameRef.current = requestAnimationFrame(animate);
+      } else {
+        animationFrameRef.current = null;
+      }
+    };
+
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
+
+    progressValueRef.current = 0;
+    animationFrameRef.current = requestAnimationFrame(animate);
+  }, []);
 
   const newEquation = useCallback(() => {
     setEquationData(generateEquation(difficulty, unknowns));
@@ -60,10 +85,11 @@ export default function useQuatio() {
       }
     }
 
+    updateProgress();
     setTimeout(() => {
       newEquation();
     }, FEEDBACK_DURATION);
-  }, [equationData, unknowns, userAnswer, newEquation]);
+  }, [equationData, unknowns, updateProgress, userAnswer, newEquation]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -78,21 +104,6 @@ export default function useQuatio() {
       );
     }
   }, []);
-
-  useEffect(() => {
-    if (feedback) {
-      setProgress(0);
-      const interval = setInterval(() => {
-        setProgress((prev) => {
-          if (prev >= 100) {
-            clearInterval(interval);
-            return 100;
-          }
-          return prev + 100 / (FEEDBACK_DURATION / (PROGRESS_SPEED * 2));
-        });
-      }, PROGRESS_SPEED);
-    }
-  }, [feedback]);
 
   useEffect(() => {
     if (currentScore > parseFloat(highestScore.toString())) {
@@ -130,7 +141,7 @@ export default function useQuatio() {
     isCorrect,
     checkAnswer,
     handleKeyPress,
-    progress,
+    progressValueRef,
     currentScore,
     highestScore,
     currentStreak,

@@ -18,7 +18,7 @@ export default function Quatio() {
     isCorrect,
     checkAnswer,
     handleKeyPress,
-    progress,
+    progressValueRef,
     currentScore,
     highestScore,
     currentStreak,
@@ -68,7 +68,7 @@ export default function Quatio() {
           isCorrect,
           checkAnswer,
           handleKeyPress,
-          progress,
+          progressValueRef,
         }}
       />
       <ScoreCard {...{ stats }} />

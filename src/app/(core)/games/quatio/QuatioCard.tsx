@@ -33,7 +33,7 @@ interface QuatioCardProps {
   isCorrect: boolean;
   checkAnswer: () => void;
   handleKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
-  progress: number;
+  progressValueRef: React.MutableRefObject<number>;
 }
 
 export default function QuatioCard({
@@ -48,7 +48,7 @@ export default function QuatioCard({
   isCorrect,
   checkAnswer,
   handleKeyPress,
-  progress,
+  progressValueRef,
 }: QuatioCardProps) {
   return (
     <Card className="w-full mx-auto grow">
@@ -103,14 +103,14 @@ export default function QuatioCard({
           <div className="flex space-x-2">
             <Input
               id="answer"
-              type="text"
+              type="number"
               value={userAnswer}
               onChange={(e) => setUserAnswer(e.target.value)}
               onKeyDown={handleKeyPress}
               placeholder={
                 unknowns === 1 ? "Enter x" : "Enter x, y (comma separated)"
               }
-              className="flex-grow"
+              className="flex-grow [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             />
             <Button onClick={checkAnswer}>Submit</Button>
           </div>
@@ -128,7 +128,7 @@ export default function QuatioCard({
             </div>
 
             <ProgressAnswer
-              value={progress}
+              value={progressValueRef.current}
               max={FEEDBACK_DURATION}
               isCorrect={isCorrect}
               className={"w-full"}
