@@ -25,25 +25,34 @@ export default function Quatio() {
     highestStreak,
   } = useQuatio();
 
-  const scores = [
-    {
-      label: "Current Score",
-      value: currentScore,
+  const stats = {
+    scores: {
+      title: "Score",
+      values: [
+        {
+          label: "Current Score",
+          value: currentScore,
+        },
+        {
+          label: "Highest Score",
+          value: highestScore,
+        },
+      ],
     },
-    {
-      label: "Highest Score",
-      value: highestScore,
+    streaks: {
+      title: "Streak",
+      values: [
+        {
+          label: "Current Streak",
+          value: currentStreak,
+        },
+        {
+          label: "Highest Streak",
+          value: highestStreak,
+        },
+      ],
     },
-    {
-      label: "Current Streak",
-      value: currentStreak,
-    },
-    {
-      label: "Highest Streak",
-      value: highestStreak,
-    },
-  ];
-
+  };
   return (
     <div className="flex flex-col md:flex-row gap-4">
       <QuatioCard
@@ -62,7 +71,7 @@ export default function Quatio() {
           progress,
         }}
       />
-      <ScoreCard {...{ scores }} />
+      <ScoreCard {...{ stats }} />
     </div>
   );
 }
