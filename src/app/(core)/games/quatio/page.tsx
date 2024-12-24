@@ -19,7 +19,9 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import useQuatio from "@/hooks/games/quatio/useQuatio";
+import useQuatio, { FEEDBACK_DURATION } from "@/hooks/games/quatio/useQuatio";
+import { Progress } from "@/components/ui/progress";
+import { cn } from "@/lib/utils";
 
 export default function Quatio() {
   const {
@@ -34,6 +36,7 @@ export default function Quatio() {
     isCorrect,
     checkAnswer,
     handleKeyPress,
+    progress,
   } = useQuatio();
 
   return (
@@ -107,12 +110,23 @@ export default function Quatio() {
         </CardContent>
         <CardFooter className="flex flex-col items-center space-y-4">
           {feedback && (
-            <div
-              className={`text-center font-semibold ${
-                isCorrect ? "text-green-600" : "text-red-600"
-              }`}
-            >
-              {feedback}
+            <div className="flex flex-col gap-2 w-full">
+              <div
+                className={`text-center font-semibold ${
+                  isCorrect ? "text-green-600" : "text-red-600"
+                }`}
+              >
+                {feedback}
+              </div>
+
+              <Progress
+                value={progress}
+                max={FEEDBACK_DURATION}
+                className={cn(
+                  "w-full",
+                  isCorrect ? "bg-green-200" : "bg-red-200"
+                )}
+              />
             </div>
           )}
         </CardFooter>

@@ -2,6 +2,9 @@ import { Difficulty } from "@/types/quatio";
 import { generateEquation } from "@/utils/quatio/generateEquation";
 import { useCallback, useEffect, useState } from "react";
 
+export const FEEDBACK_DURATION = 2000;
+const PROGRESS_SPEED = 10;
+
 export default function useQuatio() {
   const [difficulty, setDifficulty] = useState<Difficulty>("easy");
   const [unknowns, setUnknowns] = useState(1);
@@ -9,6 +12,7 @@ export default function useQuatio() {
   const [userAnswer, setUserAnswer] = useState("");
   const [feedback, setFeedback] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const newEquation = useCallback(() => {
     setEquationData(generateEquation(difficulty, unknowns));
@@ -41,8 +45,23 @@ export default function useQuatio() {
 
     setTimeout(() => {
       newEquation();
-    }, 2000);
+    }, FEEDBACK_DURATION);
   }, [equationData, unknowns, userAnswer, newEquation]);
+
+  useEffect(() => {
+    if (feedback) {
+      setProgress(0);
+      const interval = setInterval(() => {
+        setProgress((prev) => {
+          if (prev >= 100) {
+            clearInterval(interval);
+            return 100;
+          }
+          return prev + 100 / (FEEDBACK_DURATION / (PROGRESS_SPEED * 2));
+        });
+      }, PROGRESS_SPEED);
+    }
+  }, [feedback]);
 
   useEffect(() => {
     newEquation();
@@ -69,5 +88,6 @@ export default function useQuatio() {
     isCorrect,
     checkAnswer,
     handleKeyPress,
+    progress,
   };
 }
