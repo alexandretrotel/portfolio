@@ -11,5 +11,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  return <Sneeky />;
+  return (
+    <div className="relative w-full h-full">
+      <Sneeky />
+    </div>
+  );
 }

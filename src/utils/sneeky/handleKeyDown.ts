@@ -1,20 +1,20 @@
-import { directionMap, DirectionKey } from "@/types/sneeky";
+import { DirectionKey } from "@/types/sneeky";
 
 export const handleKeyDown = (
   e: KeyboardEvent,
-  direction: number[],
-  setDirection: React.Dispatch<React.SetStateAction<number[]>>
+  currentDirection: DirectionKey,
+  setDirection: React.Dispatch<React.SetStateAction<DirectionKey>>
 ) => {
-  const newDirection = directionMap[e.key as DirectionKey];
+  const key = e.key as DirectionKey;
 
-  if (newDirection) {
-    const oppositeDirection = direction.map((d) => -d);
+  const oppositeDirection = {
+    ArrowUp: "ArrowDown",
+    ArrowDown: "ArrowUp",
+    ArrowLeft: "ArrowRight",
+    ArrowRight: "ArrowLeft",
+  };
 
-    if (
-      newDirection[0] !== oppositeDirection[0] ||
-      newDirection[1] !== oppositeDirection[1]
-    ) {
-      setDirection(newDirection);
-    }
-  }
+  if (oppositeDirection[key] === currentDirection) return;
+
+  setDirection(key as DirectionKey);
 };
