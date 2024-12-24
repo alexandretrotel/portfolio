@@ -19,11 +19,11 @@ export default function Quatio() {
     isCorrect,
     checkAnswer,
     handleKeyPress,
-    progressValueRef,
     currentScore,
     highestScore,
     currentStreak,
     highestStreak,
+    progress,
   } = useQuatio();
 
   const stats = {
@@ -69,7 +69,7 @@ export default function Quatio() {
           isCorrect,
           checkAnswer,
           handleKeyPress,
-          progressValueRef,
+          progress,
         }}
       />
       <ScoreCard {...{ stats }} />

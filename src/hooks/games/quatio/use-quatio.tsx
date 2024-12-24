@@ -2,15 +2,13 @@ import { Difficulty } from "@/types/quatio";
 import { generateEquation } from "@/utils/quatio/generateEquation";
 import { useEffect, useState } from "react";
 import useScore from "./use-score";
-import { useProgress } from "./use-progress";
 import { useUser } from "./use-user";
-
-export const FEEDBACK_DURATION = 2000;
 
 export default function useQuatio() {
   const [difficulty, setDifficulty] = useState<Difficulty>("easy");
   const [unknowns, setUnknowns] = useState(1);
   const [equationData, setEquationData] = useState(generateEquation("easy", 1));
+  const [progress, setProgress] = useState(0);
 
   const {
     currentScore,
@@ -20,7 +18,6 @@ export default function useQuatio() {
     setCurrentScore,
     setCurrentStreak,
   } = useScore();
-  const { updateProgress, progressValueRef } = useProgress();
   const {
     userAnswer,
     setUserAnswer,
@@ -36,7 +33,7 @@ export default function useQuatio() {
     setEquationData,
     setCurrentScore,
     setCurrentStreak,
-    updateProgress,
+    setProgress,
   });
 
   useEffect(() => {
@@ -55,10 +52,10 @@ export default function useQuatio() {
     isCorrect,
     checkAnswer,
     handleKeyPress,
-    progressValueRef,
     currentScore,
     highestScore,
     currentStreak,
     highestStreak,
+    progress,
   };
 }

@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { FEEDBACK_DURATION } from "@/hooks/games/quatio/use-quatio";
 import { ProgressAnswer } from "@/components/ui/progress-answer";
 
 interface QuatioCardProps {
@@ -33,7 +32,7 @@ interface QuatioCardProps {
   isCorrect: boolean;
   checkAnswer: () => void;
   handleKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
-  progressValueRef: React.MutableRefObject<number>;
+  progress: number;
 }
 
 export default function QuatioCard({
@@ -48,7 +47,7 @@ export default function QuatioCard({
   isCorrect,
   checkAnswer,
   handleKeyPress,
-  progressValueRef,
+  progress,
 }: QuatioCardProps) {
   return (
     <Card className="w-full mx-auto grow">
@@ -128,8 +127,8 @@ export default function QuatioCard({
             </div>
 
             <ProgressAnswer
-              value={progressValueRef.current}
-              max={FEEDBACK_DURATION}
+              value={progress}
+              max={100}
               isCorrect={isCorrect}
               className={"w-full"}
             />
