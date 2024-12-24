@@ -3,7 +3,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
-import Header from "@/components/core/header";
 
 const font = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -29,10 +28,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <main className="bg-background max-w-5xl mx-auto py-12 px-4">
-            {children}
-          </main>
+          {children}
         </ThemeProvider>
       </body>
     </html>
