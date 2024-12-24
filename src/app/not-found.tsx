@@ -1,3 +1,6 @@
+"use client";
+import "client-only";
+
 import {
   Card,
   CardHeader,
@@ -5,13 +8,15 @@ import {
   CardDescription,
   CardFooter,
 } from "@/components/ui/card";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function NotFound() {
+  const router = useRouter();
+
   return (
-    <div className="flex flex-col items-center justify-center h-full space-y-4">
-      <Card>
+    <div className="flex flex-col items-center justify-center h-screen space-y-4">
+      <Card className="border-transparent">
         <CardHeader>
           <CardTitle>Not found</CardTitle>
           <CardDescription>
@@ -19,9 +24,7 @@ export default function NotFound() {
           </CardDescription>
         </CardHeader>
         <CardFooter>
-          <Button asChild>
-            <Link href="/">Go back</Link>
-          </Button>
+          <Button onClick={() => router.back()}>Go back</Button>
         </CardFooter>
       </Card>
     </div>
