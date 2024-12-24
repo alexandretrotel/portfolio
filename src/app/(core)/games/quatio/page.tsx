@@ -1,77 +1,14 @@
-"use client";
-import "client-only";
+import { Metadata } from "next";
 
-import useQuatio from "@/hooks/games/quatio/useQuatio";
-import QuatioCard from "./QuatioCard";
-import ScoreCard from "./ScoreCard";
+export const metadata: Metadata = {
+  title: "Quatio",
+  description: "A game to test your algebraic skills.",
+  openGraph: {
+    title: "Quatio",
+    description: "A game to test your algebraic skills.",
+  },
+};
 
-export default function Quatio() {
-  const {
-    difficulty,
-    setDifficulty,
-    unknowns,
-    setUnknowns,
-    equationData,
-    userAnswer,
-    setUserAnswer,
-    feedback,
-    isCorrect,
-    checkAnswer,
-    handleKeyPress,
-    progressValueRef,
-    currentScore,
-    highestScore,
-    currentStreak,
-    highestStreak,
-  } = useQuatio();
-
-  const stats = {
-    scores: {
-      title: "Score",
-      values: [
-        {
-          label: "Current Score",
-          value: currentScore,
-        },
-        {
-          label: "Highest Score",
-          value: highestScore,
-        },
-      ],
-    },
-    streaks: {
-      title: "Streak",
-      values: [
-        {
-          label: "Current Streak",
-          value: currentStreak,
-        },
-        {
-          label: "Highest Streak",
-          value: highestStreak,
-        },
-      ],
-    },
-  };
-  return (
-    <div className="flex flex-col md:flex-row gap-4">
-      <QuatioCard
-        {...{
-          difficulty,
-          setDifficulty,
-          unknowns,
-          setUnknowns,
-          equationData,
-          userAnswer,
-          setUserAnswer,
-          feedback,
-          isCorrect,
-          checkAnswer,
-          handleKeyPress,
-          progressValueRef,
-        }}
-      />
-      <ScoreCard {...{ stats }} />
-    </div>
-  );
+export default async function Quatio() {
+  return <Quatio />;
 }
