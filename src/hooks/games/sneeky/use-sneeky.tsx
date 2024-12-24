@@ -26,6 +26,7 @@ export const useSneeky = () => {
     Math.floor(Math.random() * BOARD_SIZE),
   ]);
   const [score, setScore] = useState(0);
+  const [highestScore, setHighestScore] = useState(0);
   const [speed, setSpeed] = useState(INITIAL_SPEED);
   const [gameOver, setGameOver] = useState(false);
   const [init, setInit] = useState(true);
@@ -151,11 +152,20 @@ export const useSneeky = () => {
   ]);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const highestScore = parseInt(
+      localStorage.getItem("sneekyHighestScore") ?? "0"
+    );
+    setHighestScore(highestScore);
+  }, []);
+
+  useEffect(() => {
     if (gameOver || init) return;
 
     const timer = setInterval(moveSnake, speed);
     return () => clearInterval(timer);
-  }, [snake, direction, speed, gameOver, activeItems, moveSnake]);
+  }, [init, snake, direction, speed, gameOver, activeItems, moveSnake]);
 
   useEffect(() => {
     if (gameOver) {
@@ -246,6 +256,8 @@ export const useSneeky = () => {
   }, [direction]);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const highestScore = parseInt(
       localStorage.getItem("sneekyHighestScore") ?? "0"
     );
@@ -279,5 +291,6 @@ export const useSneeky = () => {
     init,
     setInit,
     duration,
+    highestScore,
   };
 };
