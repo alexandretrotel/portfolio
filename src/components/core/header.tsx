@@ -26,7 +26,6 @@ const components: ComponentProps[] = [
   {
     title: "Projects",
     href: "/projects",
-    disabled: true,
   },
   {
     title: "Games",
