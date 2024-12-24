@@ -2,9 +2,9 @@
 import "client-only";
 
 import React from "react";
-import useQuatio from "@/hooks/games/quatio/useQuatio";
-import QuatioCard from "./QuatioCard";
-import ScoreCard from "./ScoreCard";
+import useQuatio from "@/hooks/games/quatio/use-quatio";
+import QuatioCard from "./quatio-card";
+import ScoreCard from "./score-card";
 
 export default function Quatio() {
   const {
