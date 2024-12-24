@@ -1,4 +1,4 @@
-import SocialCard from "@/app/contact/social-card";
+import SocialCard from "@/app/(core)/contact/social-card";
 import {
   RiGithubFill,
   RiInstagramFill,
