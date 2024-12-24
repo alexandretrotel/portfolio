@@ -1,6 +1,5 @@
 import { generateEquation } from "@/utils/quatio/generateEquation";
 import { useCallback, useState } from "react";
-import { FEEDBACK_DURATION } from "./use-quatio";
 import { Difficulty } from "@/types/quatio";
 
 type SetEquationDataType = React.Dispatch<
@@ -29,8 +28,10 @@ interface UserProps {
   setEquationData: SetEquationDataType;
   setCurrentScore: React.Dispatch<React.SetStateAction<number>>;
   setCurrentStreak: React.Dispatch<React.SetStateAction<number>>;
-  updateProgress: () => void;
+  setProgress: React.Dispatch<React.SetStateAction<number>>;
 }
+
+const FEEDBACK_DURATION = 2000;
 
 export const useUser = ({
   difficulty,
@@ -39,7 +40,7 @@ export const useUser = ({
   setEquationData,
   setCurrentScore,
   setCurrentStreak,
-  updateProgress,
+  setProgress,
 }: UserProps) => {
   const [userAnswer, setUserAnswer] = useState("");
   const [feedback, setFeedback] = useState("");
@@ -86,17 +87,29 @@ export const useUser = ({
       }
     }
 
-    updateProgress();
-    setTimeout(() => {
-      newEquation();
-    }, FEEDBACK_DURATION);
+    const startTime = Date.now();
+
+    const updateProgress = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min((elapsed / FEEDBACK_DURATION) * 250, 100);
+      setProgress(progress);
+
+      if (elapsed < FEEDBACK_DURATION) {
+        requestAnimationFrame(updateProgress);
+      } else {
+        setProgress(0);
+        newEquation();
+      }
+    };
+
+    requestAnimationFrame(updateProgress);
   }, [
     equationData,
     unknowns,
-    updateProgress,
     userAnswer,
     setCurrentScore,
     setCurrentStreak,
+    setProgress,
     newEquation,
   ]);
 

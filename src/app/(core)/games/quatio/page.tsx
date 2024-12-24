@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Quatio from "./quatio";
 
 export const metadata: Metadata = {
   title: "Quatio",
@@ -9,6 +10,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Quatio() {
+export default async function Page() {
   return <Quatio />;
 }
