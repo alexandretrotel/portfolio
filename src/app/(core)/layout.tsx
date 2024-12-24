@@ -8,11 +8,9 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
+    <div className="bg-background min-h-screen">
       <Header />
-      <main className="bg-background max-w-5xl mx-auto py-12 px-4">
-        {children}
-      </main>
-    </>
+      <main className="max-w-5xl mx-auto py-12 px-4">{children}</main>
+    </div>
   );
 }
