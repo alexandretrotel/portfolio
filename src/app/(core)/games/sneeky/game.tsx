@@ -16,6 +16,7 @@ export default function Game() {
     init,
     setInit,
     duration,
+    highestScore,
   } = useSneeky();
 
   if (init || gameOver) {
@@ -24,11 +25,7 @@ export default function Game() {
         <h2 className="text-lg font-semibold">{gameOver && "Game Over!"}</h2>
         <div className="flex flex-col gap-1">
           {!init && <p>Score: {score}</p>}
-          <p>
-            Highest Score:{" "}
-            {(!!localStorage && localStorage.getItem("sneekyHighestScore")) ??
-              0}
-          </p>
+          <p>Highest Score: {highestScore > score ? highestScore : score}</p>
           {!init && (
             <p>
               Duration:{" "}
