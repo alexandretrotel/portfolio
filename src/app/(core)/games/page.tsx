@@ -22,8 +22,8 @@ export default async function Games() {
             </CardDescription>
           </CardHeader>
           <CardFooter>
-            <Button disabled asChild>
-              <Link href="/games/quatio">Coming soon...</Link>
+            <Button asChild>
+              <Link href="/games/quatio">Play</Link>
             </Button>
           </CardFooter>
         </Card>
