@@ -164,8 +164,6 @@ export const useSneeky = () => {
   }, [gameOver]);
 
   useEffect(() => {
-    if (gameOver) return;
-
     const timers = canSpawnItems.map(({ type, delay }) =>
       setTimeout(() => {
         setCanSpawnItems((prev) =>
@@ -179,7 +177,7 @@ export const useSneeky = () => {
     return () => {
       timers.forEach((timer) => clearInterval(timer));
     };
-  }, [gameOver, canSpawnItems]);
+  }, [canSpawnItems]);
 
   useEffect(() => {
     const now = Date.now();
