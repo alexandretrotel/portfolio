@@ -91,7 +91,7 @@ export const useUser = ({
 
     const updateProgress = () => {
       const elapsed = Date.now() - startTime;
-      const progress = Math.min((elapsed / FEEDBACK_DURATION) * 250, 100);
+      const progress = Math.min((elapsed / FEEDBACK_DURATION) * 105, 100);
       setProgress(progress);
 
       if (elapsed < FEEDBACK_DURATION) {

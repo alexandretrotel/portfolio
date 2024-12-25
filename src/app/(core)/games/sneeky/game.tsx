@@ -1,5 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { BOARD_SIZE } from "@/data/games/sneeky/parameters";
+import { Progress } from "@/components/ui/progress";
+import {
+  BOARD_SIZE,
+  DASH_BOOST_DURATION,
+} from "@/data/games/sneeky/parameters";
 import { useSneeky } from "@/hooks/games/sneeky/use-sneeky";
 
 export default function Game() {
@@ -17,6 +21,9 @@ export default function Game() {
     duration,
     highestScore,
     resetGame,
+    dash,
+    dashDuration,
+    dashDelay,
   } = useSneeky();
 
   const handlePlay = () => {
@@ -97,6 +104,27 @@ export default function Game() {
             <p className="text-center text-lg font-semibold">
               Duration: {duration} second{duration > 1 && "s"}
             </p>
+            {dashDelay && (
+              <div>
+                <p className="text-center text-lg font-semibold animate-pulse">
+                  Dash disabled
+                </p>
+              </div>
+            )}
+            {dash && (
+              <div className="flex flex-col gap-2">
+                <p className="text-center text-lg font-semibold">
+                  Dash {dashDuration / 1000}s
+                </p>
+                <Progress
+                  value={
+                    ((DASH_BOOST_DURATION - dashDuration) /
+                      DASH_BOOST_DURATION) *
+                    105
+                  }
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>

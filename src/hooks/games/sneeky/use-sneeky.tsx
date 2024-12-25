@@ -9,8 +9,18 @@ import { directionMap } from "@/types/sneeky";
 import { isOutOfBonds } from "@/utils/sneeky/isOutOfBonds";
 
 export const useSneeky = () => {
-  const { snake, setSnake, speed, setSpeed, direction, setDirection } =
-    useSnake();
+  const {
+    snake,
+    setSnake,
+    speed,
+    setSpeed,
+    direction,
+    setDirection,
+    resetDash,
+    dash,
+    dashDuration,
+    dashDelay,
+  } = useSnake();
   const { score, setScore, highestScore, resetScore } = useScore();
   const { activeItems, resetItems, handleItemCollisions } = useGameItems({
     snake,
@@ -73,7 +83,15 @@ export const useSneeky = () => {
     resetGameState();
     resetScore();
     resetItems();
-  }, [resetGameState, resetItems, resetScore, setDirection, setSnake]);
+    resetDash();
+  }, [
+    resetDash,
+    resetGameState,
+    resetItems,
+    resetScore,
+    setDirection,
+    setSnake,
+  ]);
 
   return {
     snake,
@@ -90,5 +108,8 @@ export const useSneeky = () => {
     setInit,
     duration,
     highestScore,
+    dash,
+    dashDuration,
+    dashDelay,
   };
 };

@@ -7,5 +7,6 @@ export const GOLD_APPLE_SCORE = 5; // 5 points
 export const GOLD_APPLE_SEGMENT = 3; // 3 segments
 export const GOLD_APPLE_PROBABILITY = 0.05; // 5%
 
-export const SPEED_BOOST = 20; // 20%
-export const SPEED_BOOST_DURATION = 5; // 5 seconds
+export const DASH_BOOST = 25; // 25% speed boost
+export const DASH_BOOST_DURATION = 3000; // 3 seconds
+export const DASH_DELAY = 5000; // 5 seconds
