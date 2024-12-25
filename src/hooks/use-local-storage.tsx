@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 /**
  * A hook to use local storage. It returns a tuple with the value and a function to update the value.
@@ -8,13 +8,16 @@ import { useState, useCallback } from "react";
  * @returns A tuple with the value and a function to update the value
  */
 export const useLocalStorage = (key: string, initialValue: number) => {
-  const [value, setValue] = useState(() => {
+  const [value, setValue] = useState<number>(initialValue);
+
+  useEffect(() => {
     if (typeof window !== "undefined") {
       const storedValue = localStorage.getItem(key);
-      return storedValue ? parseInt(storedValue, 10) : initialValue;
+      if (storedValue !== null) {
+        setValue(parseInt(storedValue, 10));
+      }
     }
-    return initialValue;
-  });
+  }, [key]);
 
   const updateValue = useCallback(
     (newValue: number) => {
