@@ -75,12 +75,6 @@ export const useSneeky = () => {
     resetItems();
   }, [resetGameState, resetItems, resetScore, setDirection, setSnake]);
 
-  useEffect(() => {
-    if (gameOver) {
-      resetGame();
-    }
-  }, [gameOver, resetGame]);
-
   return {
     snake,
     score,
