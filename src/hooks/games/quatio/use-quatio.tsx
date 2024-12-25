@@ -1,7 +1,7 @@
 import { Difficulty } from "@/types/quatio";
 import { generateEquation } from "@/utils/quatio/generateEquation";
 import { useEffect, useState } from "react";
-import useScore from "./use-score";
+import { useScore } from "./use-score";
 import { useUser } from "./use-user";
 
 export default function useQuatio() {

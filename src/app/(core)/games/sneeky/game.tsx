@@ -6,10 +6,9 @@ export default function Game() {
   const {
     snake,
     gameOver,
+    setGameOver,
     score,
     isOnSnake,
-    apple,
-    resetGame,
     activeItems,
     startTime,
     endTime,
@@ -39,7 +38,7 @@ export default function Game() {
         </div>
         <Button
           className="mt-4"
-          onClick={() => (gameOver ? resetGame() : setInit(false))}
+          onClick={() => (gameOver ? setGameOver(false) : setInit(false))}
         >
           {gameOver ? "Restart" : "Start"}
         </Button>
@@ -59,7 +58,6 @@ export default function Game() {
             const x = Math.floor(i / BOARD_SIZE);
             const y = i % BOARD_SIZE;
             const isSnake = isOnSnake(snake, [x, y]);
-            const isApple = apple[0] === x && apple[1] === y;
             const item = activeItems.find(
               (item) => item.position[0] === x && item.position[1] === y
             );
@@ -70,24 +68,18 @@ export default function Game() {
                 className={`aspect-square rounded-sm flex items-center justify-center ${
                   isSnake
                     ? "bg-green-500"
-                    : isApple
+                    : item?.type === "apple"
                     ? "bg-red-500"
                     : item?.type === "goldApple"
                     ? "bg-yellow-500"
-                    : item?.type === "bomb"
-                    ? "bg-gray-500"
-                    : item?.type === "cut"
-                    ? "bg-blue-500"
                     : "bg-muted"
                 }`}
               >
                 {isSnake && <span className="text-sm">🐍</span>}
-                {isApple && <span className="text-sm">🍎</span>}
+                {item?.type === "apple" && <span className="text-sm">🍎</span>}
                 {item?.type === "goldApple" && (
                   <span className="text-sm">🌟</span>
                 )}
-                {item?.type === "bomb" && <span className="text-sm">💣</span>}
-                {item?.type === "cut" && <span className="text-sm">🤯</span>}
               </div>
             );
           })}
