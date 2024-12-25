@@ -1,15 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { BOARD_SIZE } from "@/data/games/sneeky/parameters";
+import { Progress } from "@/components/ui/progress";
+import {
+  BOARD_SIZE,
+  DASH_BOOST_DURATION,
+} from "@/data/games/sneeky/parameters";
 import { useSneeky } from "@/hooks/games/sneeky/use-sneeky";
 
 export default function Game() {
   const {
     snake,
     gameOver,
+    setGameOver,
     score,
     isOnSnake,
-    apple,
-    resetGame,
     activeItems,
     startTime,
     endTime,
@@ -17,7 +20,17 @@ export default function Game() {
     setInit,
     duration,
     highestScore,
+    resetGame,
+    dash,
+    dashDuration,
+    dashDelay,
   } = useSneeky();
+
+  const handlePlay = () => {
+    setInit(false);
+    setGameOver(false);
+    resetGame();
+  };
 
   if (init || gameOver) {
     return (
@@ -37,10 +50,7 @@ export default function Game() {
             </p>
           )}
         </div>
-        <Button
-          className="mt-4"
-          onClick={() => (gameOver ? resetGame() : setInit(false))}
-        >
+        <Button className="mt-4" onClick={() => handlePlay()}>
           {gameOver ? "Restart" : "Start"}
         </Button>
       </div>
@@ -59,7 +69,6 @@ export default function Game() {
             const x = Math.floor(i / BOARD_SIZE);
             const y = i % BOARD_SIZE;
             const isSnake = isOnSnake(snake, [x, y]);
-            const isApple = apple[0] === x && apple[1] === y;
             const item = activeItems.find(
               (item) => item.position[0] === x && item.position[1] === y
             );
@@ -70,24 +79,18 @@ export default function Game() {
                 className={`aspect-square rounded-sm flex items-center justify-center ${
                   isSnake
                     ? "bg-green-500"
-                    : isApple
+                    : item?.type === "apple"
                     ? "bg-red-500"
                     : item?.type === "goldApple"
                     ? "bg-yellow-500"
-                    : item?.type === "bomb"
-                    ? "bg-gray-500"
-                    : item?.type === "cut"
-                    ? "bg-blue-500"
                     : "bg-muted"
                 }`}
               >
                 {isSnake && <span className="text-sm">🐍</span>}
-                {isApple && <span className="text-sm">🍎</span>}
+                {item?.type === "apple" && <span className="text-sm">🍎</span>}
                 {item?.type === "goldApple" && (
                   <span className="text-sm">🌟</span>
                 )}
-                {item?.type === "bomb" && <span className="text-sm">💣</span>}
-                {item?.type === "cut" && <span className="text-sm">🤯</span>}
               </div>
             );
           })}
@@ -101,6 +104,27 @@ export default function Game() {
             <p className="text-center text-lg font-semibold">
               Duration: {duration} second{duration > 1 && "s"}
             </p>
+            {dashDelay && (
+              <div>
+                <p className="text-center text-lg font-semibold animate-pulse">
+                  Dash disabled
+                </p>
+              </div>
+            )}
+            {dash && (
+              <div className="flex flex-col gap-2">
+                <p className="text-center text-lg font-semibold">
+                  Dash {dashDuration / 1000}s
+                </p>
+                <Progress
+                  value={
+                    ((DASH_BOOST_DURATION - dashDuration) /
+                      DASH_BOOST_DURATION) *
+                    105
+                  }
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
