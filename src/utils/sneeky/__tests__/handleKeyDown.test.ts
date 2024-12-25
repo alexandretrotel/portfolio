@@ -5,8 +5,9 @@ describe("handleKeyDown", () => {
     const setDirection = jest.fn();
     const direction = "ArrowRight";
     const e = { key: "ArrowUp" } as KeyboardEvent;
+    const snakeLength = 1;
 
-    handleKeyDown(e, direction, setDirection);
+    handleKeyDown(e, direction, setDirection, snakeLength);
 
     expect(setDirection).toHaveBeenCalledWith("ArrowUp");
   });
@@ -15,9 +16,21 @@ describe("handleKeyDown", () => {
     const setDirection = jest.fn();
     const direction = "ArrowDown";
     const e = { key: "ArrowUp" } as KeyboardEvent;
+    const snakeLength = 3;
 
-    handleKeyDown(e, direction, setDirection);
+    handleKeyDown(e, direction, setDirection, snakeLength);
 
     expect(setDirection).not.toHaveBeenCalled();
+  });
+
+  it("should accept opposite directions if the snake length is 1", () => {
+    const setDirection = jest.fn();
+    const direction = "ArrowDown";
+    const e = { key: "ArrowUp" } as KeyboardEvent;
+    const snakeLength = 1;
+
+    handleKeyDown(e, direction, setDirection, snakeLength);
+
+    expect(setDirection).toHaveBeenCalledWith("ArrowUp");
   });
 });
