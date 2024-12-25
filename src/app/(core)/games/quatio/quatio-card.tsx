@@ -128,7 +128,6 @@ export default function QuatioCard({
 
             <ProgressAnswer
               value={progress}
-              max={100}
               isCorrect={isCorrect}
               className={"w-full"}
             />

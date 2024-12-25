@@ -9,8 +9,8 @@ import {
 } from "@/components/ui/popover";
 import { InfoIcon } from "lucide-react";
 import {
-  SPEED_BOOST,
-  SPEED_BOOST_DURATION,
+  DASH_BOOST,
+  DASH_BOOST_DURATION,
 } from "@/data/games/sneeky/parameters";
 import Game from "./game";
 
@@ -38,14 +38,14 @@ export default function Sneeky() {
                 </li>
                 <li>
                   <span className="font-semibold">Avoid:</span> Stay away from
-                  bombs and your own tail.
+                  your own tail and the walls.
                 </li>
                 <li>
                   <span className="font-semibold">Dash:</span> Press{" "}
                   <kbd>space</kbd> to dash, increasing your speed by{" "}
-                  <span className="font-bold">{SPEED_BOOST}%</span> for{" "}
+                  <span className="font-bold">{DASH_BOOST}%</span> for{" "}
                   <span className="font-bold">
-                    {SPEED_BOOST_DURATION / 1000}
+                    {DASH_BOOST_DURATION / 1000}
                   </span>{" "}
                   seconds.
                 </li>
