@@ -16,7 +16,14 @@ export default function Game() {
     setInit,
     duration,
     highestScore,
+    resetGame,
   } = useSneeky();
+
+  const handlePlay = () => {
+    setInit(false);
+    setGameOver(false);
+    resetGame();
+  };
 
   if (init || gameOver) {
     return (
@@ -36,10 +43,7 @@ export default function Game() {
             </p>
           )}
         </div>
-        <Button
-          className="mt-4"
-          onClick={() => (gameOver ? setGameOver(false) : setInit(false))}
-        >
+        <Button className="mt-4" onClick={() => handlePlay()}>
           {gameOver ? "Restart" : "Start"}
         </Button>
       </div>
