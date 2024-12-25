@@ -38,7 +38,7 @@ export default function Sneeky() {
                 </li>
                 <li>
                   <span className="font-semibold">Avoid:</span> Stay away from
-                  bombs and your own tail.
+                  your own tail and the walls.
                 </li>
                 <li>
                   <span className="font-semibold">Dash:</span> Press{" "}
