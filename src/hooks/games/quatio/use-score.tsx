@@ -1,28 +1,7 @@
-import { useState, useCallback, useEffect } from "react";
+import { useLocalStorage } from "@/hooks/use-local-storage";
+import { useState, useEffect } from "react";
 
-const useLocalStorage = (key: string, initialValue: number) => {
-  const [value, setValue] = useState(() => {
-    if (typeof window !== "undefined") {
-      const storedValue = localStorage.getItem(key);
-      return storedValue ? parseInt(storedValue, 10) : initialValue;
-    }
-    return initialValue;
-  });
-
-  const updateValue = useCallback(
-    (newValue: number) => {
-      setValue(newValue);
-      if (typeof window !== "undefined") {
-        localStorage.setItem(key, newValue.toString());
-      }
-    },
-    [key]
-  );
-
-  return [value, updateValue] as const;
-};
-
-export default function useScore() {
+export function useScore() {
   const [currentScore, setCurrentScore] = useState(0);
   const [currentStreak, setCurrentStreak] = useState(0);
 

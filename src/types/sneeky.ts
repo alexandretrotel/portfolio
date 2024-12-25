@@ -7,4 +7,4 @@ export const directionMap: Record<DirectionKey, number[]> = {
   ArrowRight: [1, 0],
 };
 
-export type Item = "goldApple" | "bomb" | "cut";
+export type Item = "apple" | "goldApple";
