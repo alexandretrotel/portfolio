@@ -1,1 +1,1 @@
-export type Difficulty = "easy" | "medium" | "hard";
+export type QuatioDifficulty = "easy" | "medium" | "hard";
