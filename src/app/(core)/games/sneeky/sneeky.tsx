@@ -55,7 +55,7 @@ export default function Sneeky() {
         </Popover>
       </div>
       <CardHeader>
-        <CardTitle className="text-lg md:text-2xl font-semibold text-center">
+        <CardTitle className="text-lg font-semibold text-center">
           Sneeky
         </CardTitle>
       </CardHeader>
