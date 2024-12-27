@@ -56,7 +56,9 @@ export default function MemourizeCard({
     <Card className="w-full mx-auto grow">
       <CardHeader>
         <CardTitle>
-          <h1 className="text-2xl font-semibold text-center">Memourize</h1>
+          <h1 className="text-lg md:text-2xl font-semibold text-center">
+            Memourize
+          </h1>
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">

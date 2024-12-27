@@ -32,7 +32,7 @@ export default function ScoreCard({ stats }: ScoreCardProps) {
   return (
     <Card className="md:max-w-sm w-full mx-auto grow h-fit">
       <CardHeader>
-        <CardTitle className="text-2xl font-semibold text-center">
+        <CardTitle className="text-lg md:text-2xl font-semibold text-center">
           Statistics
         </CardTitle>
       </CardHeader>
