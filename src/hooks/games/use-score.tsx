@@ -1,23 +1,31 @@
 import { useLocalStorage } from "@/hooks/use-local-storage";
 import { useState, useEffect } from "react";
 
-export function useScore() {
+interface UseScoreProps {
+  highestScoreLabel: string;
+  highestStreakLabel: string;
+}
+
+export function useScore({
+  highestScoreLabel,
+  highestStreakLabel,
+}: UseScoreProps) {
   const [currentScore, setCurrentScore] = useState(0);
   const [currentStreak, setCurrentStreak] = useState(0);
 
   const [storedHighestScore, setStoredHighestScore] = useLocalStorage(
-    "quatioHighestScore",
+    highestScoreLabel,
     0
   );
   const [storedHighestStreak, setStoredHighestStreak] = useLocalStorage(
-    "quatioHighestStreak",
+    highestStreakLabel,
     0
   );
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const initialHighestScore = localStorage.getItem("quatioHighestScore");
-      const initialHighestStreak = localStorage.getItem("quatioHighestStreak");
+      const initialHighestScore = localStorage.getItem(highestScoreLabel);
+      const initialHighestStreak = localStorage.getItem(highestStreakLabel);
 
       setStoredHighestScore(
         initialHighestScore ? parseInt(initialHighestScore, 10) : 0
@@ -26,7 +34,12 @@ export function useScore() {
         initialHighestStreak ? parseInt(initialHighestStreak, 10) : 0
       );
     }
-  }, [setStoredHighestScore, setStoredHighestStreak]);
+  }, [
+    highestScoreLabel,
+    highestStreakLabel,
+    setStoredHighestScore,
+    setStoredHighestStreak,
+  ]);
 
   useEffect(() => {
     if (currentScore > parseFloat(storedHighestScore.toString())) {
