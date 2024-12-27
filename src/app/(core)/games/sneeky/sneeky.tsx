@@ -24,7 +24,7 @@ export default function Sneeky() {
           </PopoverTrigger>
           <PopoverContent className="md:w-96">
             <div className="py-2 px-4">
-              <h2 className="text-xl font-bold text-center text-foreground mb-4">
+              <h2 className="text-xl font-semibold text-center text-foreground mb-4">
                 How to Play
               </h2>
               <ul className="list-disc list-inside space-y-2 text-muted-foreground">
@@ -43,8 +43,8 @@ export default function Sneeky() {
                 <li>
                   <span className="font-semibold">Dash:</span> Press{" "}
                   <kbd>space</kbd> to dash, increasing your speed by{" "}
-                  <span className="font-bold">{DASH_BOOST}%</span> for{" "}
-                  <span className="font-bold">
+                  <span className="font-semibold">{DASH_BOOST}%</span> for{" "}
+                  <span className="font-semibold">
                     {DASH_BOOST_DURATION / 1000}
                   </span>{" "}
                   seconds.
@@ -55,7 +55,9 @@ export default function Sneeky() {
         </Popover>
       </div>
       <CardHeader>
-        <CardTitle className="text-2xl font-bold text-center">Sneeky</CardTitle>
+        <CardTitle className="text-2xl font-semibold text-center">
+          Sneeky
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <Game />
