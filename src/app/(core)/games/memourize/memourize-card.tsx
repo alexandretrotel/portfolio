@@ -99,6 +99,7 @@ export default function MemourizeCard({
               onChange={(e) => setUserAnswer(e.target.value)}
               onKeyDown={handleKeyPress}
               placeholder={"Enter the answer"}
+              disabled={!hidden}
               className="flex-grow [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             />
             <Button onClick={checkAnswer} disabled={!hidden}>
