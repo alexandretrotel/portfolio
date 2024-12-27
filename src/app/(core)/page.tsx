@@ -1,13 +1,9 @@
-import Link from "next/link";
+import About from "./about";
 
 export default function Home() {
   return (
-    <p className="text-muted-foreground text-sm">
-      This page isn&apos;t ready yet but you can check out the{" "}
-      <Link href="/contact" className="text-primary hover:underline">
-        contact
-      </Link>{" "}
-      page.
-    </p>
+    <div className="flex flex-col gap-4">
+      <About />
+    </div>
   );
 }
