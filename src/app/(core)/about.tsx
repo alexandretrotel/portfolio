@@ -4,7 +4,7 @@ export default function About() {
       <h1 className="text-lg font-semibold">About</h1>
       <p className="text-sm text-muted-foreground">
         I am passionate about exploring and experimenting with{" "}
-        <strong>new technologies</strong> and <strong>entrepreneurship</strong>,
+        <strong>entrepreneurship</strong> and <strong>new technologies</strong>,
         especially those that can be used to create innovative solutions for{" "}
         <strong>real-world problems</strong>. I love working on projects that
         challenge me to <strong>learn and grow</strong>.
