@@ -1,6 +1,9 @@
-import { Difficulty } from "@/types/quatio";
+import { QuatioDifficulty } from "@/types/quatio";
 
-export const generateEquation = (difficulty: Difficulty, unknowns: number) => {
+export const generateEquation = (
+  difficulty: QuatioDifficulty,
+  unknowns: number
+) => {
   const maxRange =
     difficulty === "easy" ? 10 : difficulty === "medium" ? 20 : 50;
 

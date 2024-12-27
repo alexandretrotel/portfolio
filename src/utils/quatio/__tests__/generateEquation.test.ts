@@ -1,9 +1,9 @@
 import { generateEquation } from "../generateEquation";
-import { Difficulty } from "@/types/quatio";
+import { QuatioDifficulty } from "@/types/quatio";
 
 describe("generateEquation", () => {
   it('should generate a correct equation and solution for difficulty "easy" with 1 unknown', () => {
-    const difficulty: Difficulty = "easy";
+    const difficulty: QuatioDifficulty = "easy";
     const unknowns = 1;
     const result = generateEquation(difficulty, unknowns);
 
@@ -14,7 +14,7 @@ describe("generateEquation", () => {
   });
 
   it('should generate a correct equation and solution for difficulty "medium" with 1 unknown', () => {
-    const difficulty: Difficulty = "medium";
+    const difficulty: QuatioDifficulty = "medium";
     const unknowns = 1;
     const result = generateEquation(difficulty, unknowns);
 
@@ -25,7 +25,7 @@ describe("generateEquation", () => {
   });
 
   it('should generate a correct equation and solution for difficulty "hard" with 1 unknown', () => {
-    const difficulty: Difficulty = "hard";
+    const difficulty: QuatioDifficulty = "hard";
     const unknowns = 1;
     const result = generateEquation(difficulty, unknowns);
 
@@ -36,7 +36,7 @@ describe("generateEquation", () => {
   });
 
   it('should generate a correct equation and solution for difficulty "easy" with 2 unknowns', () => {
-    const difficulty: Difficulty = "easy";
+    const difficulty: QuatioDifficulty = "easy";
     const unknowns = 2;
     const result = generateEquation(difficulty, unknowns);
 
@@ -48,7 +48,7 @@ describe("generateEquation", () => {
   });
 
   it('should generate a correct equation and solution for difficulty "medium" with 2 unknowns', () => {
-    const difficulty: Difficulty = "medium";
+    const difficulty: QuatioDifficulty = "medium";
     const unknowns = 2;
     const result = generateEquation(difficulty, unknowns);
 
@@ -60,7 +60,7 @@ describe("generateEquation", () => {
   });
 
   it('should generate a correct equation and solution for difficulty "hard" with 2 unknowns', () => {
-    const difficulty: Difficulty = "hard";
+    const difficulty: QuatioDifficulty = "hard";
     const unknowns = 2;
     const result = generateEquation(difficulty, unknowns);
 
@@ -72,7 +72,7 @@ describe("generateEquation", () => {
   });
 
   it("should return an integer for the solution", () => {
-    const difficulty: Difficulty = "easy";
+    const difficulty: QuatioDifficulty = "easy";
     const unknowns = 1;
     const result = generateEquation(difficulty, unknowns);
 
@@ -82,7 +82,7 @@ describe("generateEquation", () => {
   });
 
   it("should return an object with integer values for the solution", () => {
-    const difficulty: Difficulty = "easy";
+    const difficulty: QuatioDifficulty = "easy";
     const unknowns = 2;
     const result = generateEquation(difficulty, unknowns);
 

@@ -1,7 +1,7 @@
 import { BOARD_SIZE } from "@/data/games/sneeky/parameters";
 import { isOnSnake } from "@/utils/sneeky/isOnSnake";
 import { useCallback, useEffect } from "react";
-import { useScore } from "../sneeky/use-score";
+import { useSneekyScore } from "./use-sneeky-score";
 import { useSnake } from "./use-snake";
 import { useGameItems } from "./use-game-items";
 import { useGameState } from "./use-game-state";
@@ -21,7 +21,7 @@ export const useSneeky = () => {
     dashDuration,
     dashDelay,
   } = useSnake();
-  const { score, setScore, highestScore, resetScore } = useScore();
+  const { score, setScore, highestScore, resetScore } = useSneekyScore();
   const { activeItems, resetItems, handleItemCollisions } = useGameItems({
     snake,
     setSnake,

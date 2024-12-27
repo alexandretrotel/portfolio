@@ -1,30 +1,41 @@
 "use client";
 import "client-only";
 
-import React from "react";
-import useQuatio from "@/hooks/games/quatio/use-quatio";
-import QuatioCard from "./quatio-card";
 import ScoreCard from "../score-card";
+import MemourizeCard from "./memourize-card";
+import { useScore } from "@/hooks/games/use-score";
+import { useMemourize } from "@/hooks/games/memourize/use-memourize";
 
-export default function Quatio() {
+export default function Memourize() {
+  const {
+    currentScore,
+    setCurrentScore,
+    highestScore,
+    currentStreak,
+    setCurrentStreak,
+    highestStreak,
+  } = useScore({
+    highestScoreLabel: "memourizeHighestScore",
+    highestStreakLabel: "memourizeHighestStreak",
+  });
   const {
     difficulty,
     setDifficulty,
-    unknowns,
-    setUnknowns,
-    equationData,
+    memourizeData,
     userAnswer,
     setUserAnswer,
     feedback,
     isCorrect,
+    progress,
+    setProgress,
     checkAnswer,
     handleKeyPress,
-    currentScore,
-    highestScore,
-    currentStreak,
-    highestStreak,
-    progress,
-  } = useQuatio();
+    hidden,
+    timeLeft,
+  } = useMemourize({
+    setCurrentScore,
+    setCurrentStreak,
+  });
 
   const stats = {
     scores: {
@@ -57,20 +68,21 @@ export default function Quatio() {
 
   return (
     <div className="flex flex-col md:flex-row gap-4">
-      <QuatioCard
+      <MemourizeCard
         {...{
           difficulty,
           setDifficulty,
-          unknowns,
-          setUnknowns,
-          equationData,
+          memourizeData,
           userAnswer,
           setUserAnswer,
           feedback,
           isCorrect,
+          progress,
+          setProgress,
           checkAnswer,
           handleKeyPress,
-          progress,
+          hidden,
+          timeLeft,
         }}
       />
       <ScoreCard {...{ stats }} />
