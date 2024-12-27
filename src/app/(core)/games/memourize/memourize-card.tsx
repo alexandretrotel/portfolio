@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -5,8 +6,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { QuatioDifficulty } from "@/types/quatio";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { ProgressAnswer } from "@/components/ui/progress-answer";
 import {
   Select,
   SelectContent,
@@ -14,52 +16,55 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { ProgressAnswer } from "@/components/ui/progress-answer";
+import { MemourizeData, MemourizeDifficulty } from "@/types/memourize";
+import { formatSequence } from "@/utils/memourize/formatSequence";
 
-interface QuatioCardProps {
-  difficulty: QuatioDifficulty;
-  setDifficulty: (value: QuatioDifficulty) => void;
-  unknowns: number;
-  setUnknowns: (value: number) => void;
-  equationData: {
-    equation: string;
-  };
+interface MemourizeCardProps {
+  difficulty: MemourizeDifficulty;
+  setDifficulty: (value: MemourizeDifficulty) => void;
+  memourizeData: MemourizeData;
   userAnswer: string;
-  setUserAnswer: (value: string) => void;
+  setUserAnswer: React.Dispatch<React.SetStateAction<string>>;
+  handleKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  checkAnswer: () => void;
   feedback: string;
   isCorrect: boolean;
-  checkAnswer: () => void;
-  handleKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   progress: number;
+  hidden: boolean;
+  timeLeft: number;
 }
 
-export default function QuatioCard({
+export default function MemourizeCard({
   difficulty,
   setDifficulty,
-  unknowns,
-  setUnknowns,
-  equationData,
+  memourizeData,
   userAnswer,
   setUserAnswer,
+  handleKeyPress,
+  checkAnswer,
   feedback,
   isCorrect,
-  checkAnswer,
-  handleKeyPress,
   progress,
-}: QuatioCardProps) {
+  hidden,
+  timeLeft,
+}: MemourizeCardProps) {
+  const sequence = hidden
+    ? Array.from({ length: memourizeData.length }, () => "*").join("")
+    : memourizeData;
+
   return (
     <Card className="w-full mx-auto grow">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold text-center">Quatio</CardTitle>
+        <CardTitle>
+          <h1 className="text-2xl font-bold text-center">Memourize</h1>
+        </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="difficulty">QuatioDifficulty</Label>
+          <Label htmlFor="difficulty">Difficulty</Label>
           <Select
             value={difficulty}
-            onValueChange={(value: QuatioDifficulty) => setDifficulty(value)}
+            onValueChange={(value: MemourizeDifficulty) => setDifficulty(value)}
           >
             <SelectTrigger id="difficulty">
               <SelectValue placeholder="Select difficulty" />
@@ -71,32 +76,19 @@ export default function QuatioCard({
             </SelectContent>
           </Select>
         </div>
+
         <div className="space-y-2">
-          <Label htmlFor="unknowns">Unknowns</Label>
-          <Select
-            value={unknowns.toString()}
-            onValueChange={(value) => setUnknowns(parseInt(value, 10))}
+          <Label htmlFor="equation">
+            Sequence to memorize {timeLeft > 0 && `(${timeLeft / 1000}s)`}
+          </Label>
+          <div
+            id="equation"
+            className="text-lg font-medium text-center p-2 bg-muted rounded-md"
           >
-            <SelectTrigger id="unknowns">
-              <SelectValue placeholder="Select number of unknowns" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="1">1 Unknown</SelectItem>
-              <SelectItem value="2">2 Unknowns</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-        {equationData?.equation && (
-          <div className="space-y-2">
-            <Label htmlFor="equation">Equation:</Label>
-            <div
-              id="equation"
-              className="text-lg font-medium text-center p-2 bg-muted rounded-md"
-            >
-              {equationData.equation}
-            </div>
+            {formatSequence(sequence)}
           </div>
-        )}
+        </div>
+
         <div className="space-y-2">
           <Label htmlFor="answer">Your Answer</Label>
           <div className="flex space-x-2">
@@ -106,12 +98,12 @@ export default function QuatioCard({
               value={userAnswer}
               onChange={(e) => setUserAnswer(e.target.value)}
               onKeyDown={handleKeyPress}
-              placeholder={
-                unknowns === 1 ? "Enter x" : "Enter x, y (comma separated)"
-              }
+              placeholder={"Enter the answer"}
               className="flex-grow [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             />
-            <Button onClick={checkAnswer}>Submit</Button>
+            <Button onClick={checkAnswer} disabled={!hidden}>
+              Submit
+            </Button>
           </div>
         </div>
       </CardContent>

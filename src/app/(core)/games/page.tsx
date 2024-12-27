@@ -23,6 +23,12 @@ const games = [
     href: "/games/sneeky",
     image: "/games/sneeky.png",
   },
+  {
+    name: "Memourize",
+    description: "Memourize is a game to test your memory.",
+    href: "/games/memourize",
+    image: "/games/memourize.png",
+  },
 ];
 
 export default async function Games() {

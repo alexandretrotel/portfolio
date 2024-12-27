@@ -1,6 +1,7 @@
 import { generateEquation } from "@/utils/quatio/generateEquation";
 import { useCallback, useState } from "react";
-import { Difficulty } from "@/types/quatio";
+import { QuatioDifficulty } from "@/types/quatio";
+import { FEEDBACK_DURATION } from "@/data/games/parameters";
 
 type SetEquationDataType = React.Dispatch<
   React.SetStateAction<
@@ -19,7 +20,7 @@ type SetEquationDataType = React.Dispatch<
 >;
 
 interface UserProps {
-  difficulty: Difficulty;
+  difficulty: QuatioDifficulty;
   unknowns: number;
   equationData: {
     equation: string;
@@ -30,8 +31,6 @@ interface UserProps {
   setCurrentStreak: React.Dispatch<React.SetStateAction<number>>;
   setProgress: React.Dispatch<React.SetStateAction<number>>;
 }
-
-const FEEDBACK_DURATION = 2000;
 
 export const useUser = ({
   difficulty,
@@ -74,6 +73,7 @@ export const useUser = ({
       const correct =
         x === parseFloat(solutionObj.x) && y === parseFloat(solutionObj.y);
       setIsCorrect(correct);
+
       if (correct) {
         setFeedback("Correct!");
         setCurrentScore((prev) => (correct ? prev + 20 : prev));

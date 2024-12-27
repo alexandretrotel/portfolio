@@ -1,7 +1,7 @@
 import { useLocalStorage } from "@/hooks/use-local-storage";
 import { useCallback, useEffect, useState } from "react";
 
-export const useScore = () => {
+export const useSneekyScore = () => {
   const [score, setScore] = useState(0);
 
   const [highestScore, setHighestScore] = useLocalStorage(
