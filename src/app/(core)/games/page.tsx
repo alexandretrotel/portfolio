@@ -34,7 +34,13 @@ const games = [
 export default async function Games() {
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-lg font-semibold">Games</h1>
+      <div className="flex flex-col max-w-sm">
+        <h1 className="text-lg font-semibold">Games</h1>
+        <p className="text-muted-foreground text-sm">
+          Play my games to have fun and keep your brain sharp.
+        </p>
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto max-w-5xl">
         {games.map((game) => (
           <Card key={game.name} className="flex flex-col justify-between">
