@@ -60,7 +60,7 @@ const socials = [
 
 export default async function Contact() {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-4">
       <div className="flex flex-col max-w-sm">
         <h1 className="text-lg md:text-2xl font-semibold">Alexandre Trotel</h1>
         <p className="text-muted-foreground text-sm">
