@@ -59,8 +59,8 @@ export default function Header() {
               height={32}
               className="rounded-md hover:opacity-80"
             />
+            <h1 className="font-semibold block md:hidden">Alexandre Trotel</h1>
           </Link>
-          <h1 className="font-semibold block md:hidden">Alexandre Trotel</h1>
         </div>
 
         <div className="hidden md:flex items-center gap-6">
