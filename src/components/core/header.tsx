@@ -50,18 +50,16 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:border-border">
       <div className="flex h-14 items-center justify-between px-4 max-w-5xl mx-auto">
-        <div className="flex items-center gap-4">
-          <Link href="/" passHref>
-            <Image
-              src="/letter.png"
-              alt="Logo"
-              width={32}
-              height={32}
-              className="rounded-md hover:opacity-80"
-            />
-            <h1 className="font-semibold block md:hidden">Alexandre Trotel</h1>
-          </Link>
-        </div>
+        <Link href="/" className="flex items-center gap-4" passHref>
+          <Image
+            src="/letter.png"
+            alt="Logo"
+            width={32}
+            height={32}
+            className="rounded-md hover:opacity-80"
+          />
+          <h1 className="font-semibold block md:hidden">Alexandre Trotel</h1>
+        </Link>
 
         <div className="hidden md:flex items-center gap-6">
           <NavigationMenu>
