@@ -52,7 +52,9 @@ export default function QuatioCard({
   return (
     <Card className="w-full mx-auto grow">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold text-center">Quatio</CardTitle>
+        <CardTitle className="text-lg font-semibold text-center">
+          Quatio
+        </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
