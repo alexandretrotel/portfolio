@@ -1,13 +1,11 @@
-import Link from "next/link";
+import About from "./about";
+import Education from "./education";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <p className="text-muted-foreground text-sm">
-      This page isn&apos;t ready yet but you can check out the{" "}
-      <Link href="/contact" className="text-primary hover:underline">
-        contact
-      </Link>{" "}
-      page.
-    </p>
+    <div className="flex flex-col gap-12">
+      <About />
+      <Education />
+    </div>
   );
 }
