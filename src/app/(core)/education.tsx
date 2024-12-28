@@ -96,13 +96,15 @@ const EducationItem = ({
             )}
             <CardTitle>{title}</CardTitle>
           </div>
-          <Link
-            href={url}
-            target="_blank"
-            className="hover:translate-x-1 hover:-translate-y-1 hover:scale-110 duration-200"
-          >
-            <ArrowUpRight size={16} />
-          </Link>
+          {url && (
+            <Link
+              href={url}
+              target="_blank"
+              className="hover:translate-x-1 hover:-translate-y-1 hover:scale-110 duration-200"
+            >
+              <ArrowUpRight size={16} />
+            </Link>
+          )}
         </div>
       </CardHeader>
       <CardContent>
