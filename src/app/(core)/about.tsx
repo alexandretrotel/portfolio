@@ -1,6 +1,18 @@
+"use client";
+import "client-only";
+
+import { motion } from "motion/react";
+
 export default function About() {
   return (
-    <div className="flex flex-col max-w-lg mx-auto">
+    <motion.div
+      className="flex flex-col max-w-lg mx-auto"
+      layoutId="about"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <h1 className="text-lg font-semibold">About</h1>
       <p className="text-sm text-muted-foreground">
         I am passionate about exploring and experimenting with{" "}
@@ -9,6 +21,6 @@ export default function About() {
         <strong>real-world problems</strong>. I love working on projects that
         challenge me to <strong>learn and grow</strong>.
       </p>
-    </div>
+    </motion.div>
   );
 }
