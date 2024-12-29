@@ -1,9 +1,9 @@
-import { Experience } from "@/types/experiences";
+import { Experiences } from "@/types/experiences";
 
 const imageBasePath = "/experiences";
 const readMoreBaseURL = "/experiences";
 
-export const experiences: Experience = [
+export const experiences: Experiences = [
   {
     company: "Mindify",
     url: "https://www.mindify.fr",

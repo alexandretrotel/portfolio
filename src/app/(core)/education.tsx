@@ -14,7 +14,11 @@ import {
 } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
 
-export default function Education() {
+interface EducationProps {
+  delay: number;
+}
+
+export default function Education({ delay }: EducationProps) {
   return (
     <motion.div
       className="w-full"
@@ -22,22 +26,23 @@ export default function Education() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, delay: 0.5 }}
+      transition={{ duration: 0.5, delay }}
     >
-      <Collapsible className="flex flex-col gap-4">
+      <Collapsible className="flex flex-col gap-4" defaultOpen={true}>
         <div className="flex items-center justify-between">
           <h1 className="text-lg font-semibold text-left">Education</h1>
-          <CollapsibleTrigger asChild>
-            <Button variant="ghost" size="sm">
-              <ChevronsUpDown className="h-4 w-4" />
-              <span className="sr-only">Toggle</span>
-            </Button>
-          </CollapsibleTrigger>
+          {education?.length > 1 && (
+            <CollapsibleTrigger asChild>
+              <Button variant="ghost" size="sm">
+                <ChevronsUpDown className="h-4 w-4" />
+                <span className="sr-only">Toggle</span>
+              </Button>
+            </CollapsibleTrigger>
+          )}
         </div>
 
-        {!education?.[0]?.disabled && (
-          <EducationItem {...education[0]} key={0} />
-        )}
+        {!education?.[0]?.disabled && <EducationItem {...education[0]} />}
+
         <CollapsibleContent>
           <div className="flex flex-col gap-4">
             {education?.slice(1)?.map((item, index) => {

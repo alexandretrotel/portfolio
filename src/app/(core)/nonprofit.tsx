@@ -22,7 +22,11 @@ import {
 } from "@/components/ui/collapsible";
 import { features } from "@/data/features";
 
-export default function Nonprofit() {
+interface NonprofitProps {
+  delay: number;
+}
+
+export default function Nonprofit({ delay }: NonprofitProps) {
   return (
     <motion.div
       className="w-full"
@@ -30,20 +34,23 @@ export default function Nonprofit() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, delay: 0.25 }}
+      transition={{ duration: 0.5, delay }}
     >
-      <Collapsible className="flex flex-col gap-4">
+      <Collapsible className="flex flex-col gap-4" defaultOpen={true}>
         <div className="flex items-center justify-between">
           <h1 className="text-lg font-semibold text-left">Nonprofit Roles</h1>
-          <CollapsibleTrigger asChild>
-            <Button variant="ghost" size="sm">
-              <ChevronsUpDown className="h-4 w-4" />
-              <span className="sr-only">Toggle</span>
-            </Button>
-          </CollapsibleTrigger>
+          {roles?.length > 1 && (
+            <CollapsibleTrigger asChild>
+              <Button variant="ghost" size="sm">
+                <ChevronsUpDown className="h-4 w-4" />
+                <span className="sr-only">Toggle</span>
+              </Button>
+            </CollapsibleTrigger>
+          )}
         </div>
 
-        {!roles?.[0]?.disabled && <NonprofitItem {...roles[0]} key={0} />}
+        {!roles?.[0]?.disabled && <NonprofitItem {...roles[0]} />}
+
         <CollapsibleContent>
           <div className="flex flex-col gap-4">
             {roles?.slice(1)?.map((item, index) => {

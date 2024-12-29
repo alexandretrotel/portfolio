@@ -22,7 +22,11 @@ import {
 } from "@/components/ui/collapsible";
 import { features } from "@/data/features";
 
-export default function Experiences() {
+interface ExperiencesProps {
+  delay: number;
+}
+
+export default function Experiences({ delay }: ExperiencesProps) {
   return (
     <motion.div
       className="w-full"
@@ -30,22 +34,22 @@ export default function Experiences() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, delay: 0.25 }}
+      transition={{ duration: 0.5, delay }}
     >
-      <Collapsible className="flex flex-col gap-4">
+      <Collapsible className="flex flex-col gap-4" defaultOpen={true}>
         <div className="flex items-center justify-between">
           <h1 className="text-lg font-semibold text-left">Work Experience</h1>
-          <CollapsibleTrigger asChild>
-            <Button variant="ghost" size="sm">
-              <ChevronsUpDown className="h-4 w-4" />
-              <span className="sr-only">Toggle</span>
-            </Button>
-          </CollapsibleTrigger>
+          {experiences?.length > 1 && (
+            <CollapsibleTrigger asChild>
+              <Button variant="ghost" size="sm">
+                <ChevronsUpDown className="h-4 w-4" />
+                <span className="sr-only">Toggle</span>
+              </Button>
+            </CollapsibleTrigger>
+          )}
         </div>
 
-        {!experiences?.[0]?.disabled && (
-          <ExperiencesItem {...experiences[0]} key={0} />
-        )}
+        {!experiences?.[0]?.disabled && <ExperiencesItem {...experiences[0]} />}
         <CollapsibleContent>
           <div className="flex flex-col gap-4">
             {experiences?.slice(1)?.map((item, index) => {
