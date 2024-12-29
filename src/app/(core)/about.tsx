@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 export default function About() {
   return (
     <motion.div
-      className="flex flex-col max-w-lg mx-auto"
+      className="flex flex-col mx-auto"
       layoutId="about"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
