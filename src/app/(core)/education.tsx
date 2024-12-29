@@ -31,16 +31,16 @@ export default function Education() {
 }
 
 interface EducationItemProps {
-  title: string;
-  subtitle: string;
+  school: string;
+  topic: string;
   date: string;
   url?: string;
   image?: string;
 }
 
 const EducationItem = ({
-  title,
-  subtitle,
+  school,
+  topic,
   date,
   url,
   image,
@@ -59,11 +59,11 @@ const EducationItem = ({
                 src={image}
                 width={24}
                 height={24}
-                alt={title}
+                alt={school}
                 className="rounded-md"
               />
             )}
-            <CardTitle>{title}</CardTitle>
+            <CardTitle>{school}</CardTitle>
           </div>
           {url && (
             <Link
@@ -77,7 +77,7 @@ const EducationItem = ({
         </div>
       </CardHeader>
       <CardContent>
-        <p className="text-sm text-muted-foreground">{subtitle}</p>
+        <p className="text-sm text-muted-foreground">{topic}</p>
         <p className="text-xs text-muted-foreground">{date}</p>
       </CardContent>
     </Card>

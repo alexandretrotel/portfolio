@@ -1,30 +1,32 @@
-import { Education } from "@/types/about";
+import { Education } from "@/types/education";
+
+const imageBasePath = "/education";
 
 export const education: Education = [
   {
-    title: "Georgia Institute of Technology",
-    subtitle: "Electrical and Computer Engineering",
+    school: "Georgia Institute of Technology",
+    topic: "Electrical and Computer Engineering",
     date: "2025 - Present",
     url: "https://www.gatech.edu/",
-    image: "/education/georgia-tech.jpeg",
+    image: `${imageBasePath}/georgia-tech.jpeg`,
   },
   {
-    title: "ENSEEIHT",
-    subtitle: "Computer Science (IBDIoT)",
+    school: "ENSEEIHT",
+    topic: "Computer Science (IBDIoT)",
     date: "2022 - 2025",
     url: "https://www.enseeiht.fr/",
-    image: "/education/enseeiht.jpeg",
+    image: `${imageBasePath}/enseeiht.jpeg`,
   },
   {
-    title: "Lycée Chateaubriand",
-    subtitle: "PCSI - PSI*",
+    school: "Lycée Chateaubriand",
+    topic: "PCSI - PSI*",
     date: "2020 - 2022",
     url: "https://www.lycee-chateaubriand.fr/",
-    image: "/education/chateaubriand.jpeg",
+    image: `${imageBasePath}/chateaubriand.jpeg`,
   },
   {
-    title: "Lycée Saint-Joseph",
-    subtitle: "Scientific Baccalaureate",
+    school: "Lycée Saint-Joseph",
+    topic: "Scientific Baccalaureate",
     date: "2016 - 2020",
     url: "https://www.lycee-saintjoseph-lamballe.net/",
     image: "",

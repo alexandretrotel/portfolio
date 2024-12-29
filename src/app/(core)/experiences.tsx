@@ -1,21 +1,14 @@
 "use client";
 import "client-only";
 
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { experiences } from "@/data/experiences";
-
-const readMoreBaseURL = "/experiences";
+import { Position } from "@/types/experiences";
 
 export default function Experiences() {
   return (
@@ -40,21 +33,17 @@ export default function Experiences() {
 }
 
 interface WorkExperienceItemProps {
-  title: string;
-  subtitle: string;
-  date: string;
+  company: string;
+  positions: Position[];
   url?: string;
   image?: string;
-  readMore?: string;
 }
 
 const ExperiencesItem = ({
-  title,
-  subtitle,
-  date,
+  company,
+  positions,
   url,
   image,
-  readMore,
 }: WorkExperienceItemProps) => (
   <motion.div
     initial={{ opacity: 0 }}
@@ -70,11 +59,11 @@ const ExperiencesItem = ({
                 src={image}
                 width={24}
                 height={24}
-                alt={title}
+                alt={company}
                 className="rounded-md"
               />
             )}
-            <CardTitle>{title}</CardTitle>
+            <CardTitle>{company}</CardTitle>
           </div>
           {url && (
             <Link
@@ -88,18 +77,24 @@ const ExperiencesItem = ({
         </div>
       </CardHeader>
       <CardContent className="pb-4">
-        <p className="text-sm text-muted-foreground">{subtitle}</p>
-        <p className="text-xs text-muted-foreground">{date}</p>
+        <div className="flex flex-col gap-4">
+          {positions.map((pos, idx) => (
+            <div key={idx} className="mb-2 flex flex-col gap-2">
+              <div>
+                <p className="text-sm font-medium">{pos.title}</p>
+                <p className="text-xs text-muted-foreground">{pos.date}</p>
+              </div>
+              {pos.readMore && (
+                <Button size="sm" className="w-fit" asChild>
+                  <Link href={pos.readMore} passHref>
+                    Read More
+                  </Link>
+                </Button>
+              )}
+            </div>
+          ))}
+        </div>
       </CardContent>
-      {readMore && (
-        <CardFooter>
-          <Button size="sm" asChild>
-            <Link href={`${readMoreBaseURL}${readMore}`} passHref>
-              Read More
-            </Link>
-          </Button>
-        </CardFooter>
-      )}
     </Card>
   </motion.div>
 );
