@@ -25,7 +25,7 @@ import { features } from "@/data/features";
 export default function Nonprofit() {
   return (
     <motion.div
-      className="mx-auto w-full"
+      className="w-full"
       layoutId="about"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
