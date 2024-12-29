@@ -13,7 +13,7 @@
     "test:ci": "jest --ci",
     "clean": "rm -rf .next node_modules"
   },
-  "version": "0.1.0",
+  "version": "0.3.0",
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-alert-dialog": "^1.1.2",
