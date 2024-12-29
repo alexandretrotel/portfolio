@@ -17,7 +17,7 @@ const education = [
   },
   {
     title: "ENSEEIHT",
-    subtitle: "Computer Science (IBDIOT)",
+    subtitle: "Computer Science (IBDIoT)",
     date: "2022 - 2025",
     url: "https://www.enseeiht.fr/",
     image: "/education/enseeiht.jpeg",
