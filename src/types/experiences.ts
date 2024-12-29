@@ -2,7 +2,6 @@ export type Position = {
   title: string;
   date: string;
   disabled?: boolean;
-  readMore?: string;
 };
 
 export type Experience = {
@@ -11,4 +10,5 @@ export type Experience = {
   image?: string;
   positions: Position[];
   disabled?: boolean;
+  readMore?: string;
 }[];

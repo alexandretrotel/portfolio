@@ -12,9 +12,9 @@ export const experiences: Experience = [
       {
         title: "Co-Founder & CTO",
         date: "Aug. 2024 - Present",
-        readMore: `${readMoreBaseURL}/mindify`,
       },
     ],
+    readMore: `${readMoreBaseURL}/mindify`,
   },
   {
     company: "N7 Consulting",
@@ -24,19 +24,17 @@ export const experiences: Experience = [
       {
         title: "Consultant",
         date: "Jul. 2024 - Present",
-        readMore: `${readMoreBaseURL}/n7consulting`,
       },
       {
         title: "Strategic Orientation Committee Member",
         date: "Apr. 2024 - Present",
-        readMore: `${readMoreBaseURL}/n7consulting`,
       },
       {
         title: "Vice-President & Board Member",
         date: "Mar. 2023 - Mar. 2024",
-        readMore: `${readMoreBaseURL}/n7consulting`,
       },
     ],
+    readMore: `${readMoreBaseURL}/n7consulting`,
   },
   {
     company: "SiBorg",
@@ -46,9 +44,9 @@ export const experiences: Experience = [
       {
         title: "Full Stack Developer Intern",
         date: "Jun. 2024 - Sep. 2024",
-        readMore: `${readMoreBaseURL}/siborg`,
       },
     ],
+    readMore: `${readMoreBaseURL}/siborg`,
   },
   {
     company: "TrotelCoin",
@@ -58,8 +56,8 @@ export const experiences: Experience = [
       {
         title: "Founder",
         date: "Jul. 2023 - Jul. 2024",
-        readMore: `${readMoreBaseURL}/trotelcoin`,
       },
     ],
+    readMore: `${readMoreBaseURL}/trotelcoin`,
   },
 ];
