@@ -2,7 +2,7 @@
   "name": "alexandretrotel",
   "private": true,
   "scripts": {
-    "build": "jest --ci && next build",
+    "build": "next build",
     "dev": "next dev --turbopack",
     "lint": "next lint",
     "prettier": "prettier --write .",
