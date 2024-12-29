@@ -1,9 +1,9 @@
-import { Role } from "@/types/nonprofit";
+import { Roles } from "@/types/nonprofit";
 
 const imageBasePath = "/nonprofit";
 const readMoreBaseURL = "/nonprofit";
 
-export const roles: Role = [
+export const roles: Roles = [
   {
     association: "N7 Consulting",
     url: "https://www.n7consulting.fr",

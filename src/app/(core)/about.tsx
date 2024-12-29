@@ -3,7 +3,11 @@ import "client-only";
 
 import { motion } from "motion/react";
 
-export default function About() {
+interface AboutProps {
+  delay: number;
+}
+
+export default function About({ delay }: AboutProps) {
   return (
     <motion.div
       className="flex flex-col"
@@ -11,7 +15,7 @@ export default function About() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, delay }}
     >
       <h1 className="text-lg font-semibold">About</h1>
       <p className="text-sm text-muted-foreground">
