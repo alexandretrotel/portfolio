@@ -1,20 +1,28 @@
 "use client";
 import "client-only";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 import { ArrowUpRight, ChevronsUpDown } from "lucide-react";
 import { motion } from "motion/react";
-import Image from "next/image";
 import Link from "next/link";
-import { education } from "@/data/education";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { experiences } from "@/data/experiences";
+import { Position } from "@/types/experiences";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { Button } from "@/components/ui/button";
+import { features } from "@/data/features";
 
-export default function Education() {
+export default function Experiences() {
   return (
     <motion.div
       className="mx-auto w-full"
@@ -22,11 +30,11 @@ export default function Education() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, delay: 0.5 }}
+      transition={{ duration: 0.5, delay: 0.25 }}
     >
       <Collapsible className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
-          <h1 className="text-lg font-semibold text-left">Education</h1>
+          <h1 className="text-lg font-semibold text-left">Work Experience</h1>
           <CollapsibleTrigger asChild>
             <Button variant="ghost" size="sm">
               <ChevronsUpDown className="h-4 w-4" />
@@ -35,15 +43,15 @@ export default function Education() {
           </CollapsibleTrigger>
         </div>
 
-        {!education?.[0]?.disabled && (
-          <EducationItem {...education[0]} key={0} />
+        {!experiences?.[0]?.disabled && (
+          <ExperiencesItem {...experiences[0]} key={0} />
         )}
         <CollapsibleContent>
           <div className="flex flex-col gap-4">
-            {education?.slice(1)?.map((item, index) => {
+            {experiences?.slice(1)?.map((item, index) => {
               if (item?.disabled) return null;
 
-              return <EducationItem key={index} {...item} />;
+              return <ExperiencesItem key={index} {...item} />;
             })}
           </div>
         </CollapsibleContent>
@@ -52,21 +60,21 @@ export default function Education() {
   );
 }
 
-interface EducationItemProps {
-  school: string;
-  topic: string;
-  date: string;
+interface WorkExperienceItemProps {
+  company: string;
+  positions: Position[];
   url?: string;
   image?: string;
+  readMore?: string;
 }
 
-const EducationItem = ({
-  school,
-  topic,
-  date,
+const ExperiencesItem = ({
+  company,
+  positions,
   url,
   image,
-}: EducationItemProps) => (
+  readMore,
+}: WorkExperienceItemProps) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -81,11 +89,11 @@ const EducationItem = ({
                 src={image}
                 width={24}
                 height={24}
-                alt={school}
+                alt={company}
                 className="rounded-md"
               />
             )}
-            <CardTitle>{school}</CardTitle>
+            <CardTitle>{company}</CardTitle>
           </div>
           {url && (
             <Link
@@ -98,10 +106,29 @@ const EducationItem = ({
           )}
         </div>
       </CardHeader>
-      <CardContent>
-        <p className="text-sm text-muted-foreground">{topic}</p>
-        <p className="text-xs text-muted-foreground">{date}</p>
+      <CardContent className="pb-4">
+        <div className="flex flex-col gap-4">
+          {positions.map((pos, idx) => (
+            <div key={idx} className="mb-2 flex flex-col gap-2">
+              <div>
+                <p className="text-sm font-medium">{pos.title}</p>
+                <p className="text-xs text-muted-foreground">{pos.date}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </CardContent>
+      {features.canSeeExperienceReadMore && (
+        <CardFooter>
+          {readMore && (
+            <Button size="sm" className="w-fit" asChild>
+              <Link href={readMore} passHref>
+                Read More
+              </Link>
+            </Button>
+          )}
+        </CardFooter>
+      )}
     </Card>
   </motion.div>
 );
