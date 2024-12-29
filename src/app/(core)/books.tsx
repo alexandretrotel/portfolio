@@ -1,12 +1,7 @@
 "use client";
 import "client-only";
 
-import {
-  Collapsible,
-  CollapsibleTrigger,
-  CollapsibleContent,
-} from "@radix-ui/react-collapsible";
-import { ArrowUpRight, ChevronsUpDown } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,10 +11,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { books } from "@/data/books";
+import { books, INITIAL_NUMBER_OF_BOOKS } from "@/data/books";
 import Link from "next/link";
-import { Tags } from "@/types/books";
+import { Tag, Tags } from "@/types/books";
 import { Badge } from "@/components/ui/badge";
+import { useMemo, useState } from "react";
 
 interface BooksProps {
   delay: number;
@@ -29,40 +25,87 @@ export default function Books({ delay }: BooksProps) {
   return (
     <motion.div
       className="w-full"
-      layoutId="about"
+      layoutId="books"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5, delay }}
     >
-      <Collapsible className="flex flex-col gap-4" defaultOpen={false}>
-        <div className="flex items-center justify-between">
-          <h1 className="text-lg font-semibold text-left">
-            Books I&apos;ve Read
-          </h1>
-          {books?.length > 2 && (
-            <CollapsibleTrigger asChild>
-              <Button variant="ghost" size="sm">
-                <ChevronsUpDown className="h-4 w-4" />
-                <span className="sr-only">Toggle</span>
-              </Button>
-            </CollapsibleTrigger>
-          )}
-        </div>
-
-        {!books?.[0]?.disabled && <BookItem {...books[0]} />}
-
-        <CollapsibleContent>
-          <div className="flex flex-col gap-4">
-            {books?.slice(1)?.map((item, index) => {
-              if (item?.disabled) return null;
-
-              return <BookItem key={index} {...item} />;
-            })}
-          </div>
-        </CollapsibleContent>
-      </Collapsible>
+      <StaticBooksContent />
     </motion.div>
+  );
+}
+
+function StaticBooksContent() {
+  const [selectedTag, setSelectedTag] = useState<Tag | null>(null);
+  const [showMore, setShowMore] = useState(false);
+
+  const filteredBooks = useMemo(() => {
+    return books?.filter((item) => {
+      if (selectedTag === null) return true;
+      return item?.tags?.includes(selectedTag);
+    });
+  }, [selectedTag]);
+
+  const visibleBooks = showMore
+    ? filteredBooks
+    : filteredBooks?.slice(0, INITIAL_NUMBER_OF_BOOKS);
+
+  return (
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center justify-between">
+        <h1 className="text-lg font-semibold text-left">
+          Books I&apos;ve Read
+        </h1>
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        <Badge
+          className="cursor-pointer"
+          variant={selectedTag === null ? "default" : "outline"}
+          onClick={() => setSelectedTag(null)}
+        >
+          All
+        </Badge>
+
+        {books
+          ?.reduce<Tags>((acc, item) => {
+            if (item?.tags) {
+              item.tags.forEach((tag) => {
+                if (!acc.includes(tag)) acc.push(tag);
+              });
+            }
+            return acc;
+          }, [])
+          .map((tag) => {
+            return (
+              <Badge
+                key={tag}
+                className="cursor-pointer"
+                variant={selectedTag === tag ? "default" : "outline"}
+                onClick={() => setSelectedTag(tag)}
+              >
+                {tag}
+              </Badge>
+            );
+          })}
+      </div>
+
+      <div className="flex flex-col gap-4">
+        {visibleBooks?.map((item, index) => {
+          if (item?.disabled) return null;
+          return <BookItem key={index} {...item} />;
+        })}
+      </div>
+
+      {filteredBooks.length > INITIAL_NUMBER_OF_BOOKS && (
+        <div className="flex justify-center mt-4">
+          <Button variant="ghost" onClick={() => setShowMore(!showMore)}>
+            {showMore ? "See Less" : "See More"}
+          </Button>
+        </div>
+      )}
+    </div>
   );
 }
 

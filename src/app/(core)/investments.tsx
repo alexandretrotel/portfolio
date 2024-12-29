@@ -28,7 +28,7 @@ export default function Investments({ delay }: InvestmentsProps) {
   return (
     <motion.div
       className="w-full"
-      layoutId="about"
+      layoutId="investments"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

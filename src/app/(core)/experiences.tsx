@@ -30,7 +30,7 @@ export default function Experiences({ delay }: ExperiencesProps) {
   return (
     <motion.div
       className="w-full"
-      layoutId="about"
+      layoutId="experiences"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
