@@ -17,24 +17,15 @@ export const experiences: Experience = [
     readMore: `${readMoreBaseURL}/mindify`,
   },
   {
-    company: "N7 Consulting",
-    url: "https://www.n7consulting.fr",
-    image: `${imageBasePath}/n7consulting.jpeg`,
+    company: "Aurora",
+    image: `${imageBasePath}/aurora.jpeg`,
     positions: [
       {
-        title: "Consultant",
-        date: "Jul. 2024 - Present",
-      },
-      {
-        title: "Strategic Orientation Committee Member",
+        title: "Co-Founder & Consultant",
         date: "Apr. 2024 - Present",
       },
-      {
-        title: "Vice-President & Board Member",
-        date: "Mar. 2023 - Mar. 2024",
-      },
     ],
-    readMore: `${readMoreBaseURL}/n7consulting`,
+    readMore: `${readMoreBaseURL}/aurora`,
   },
   {
     company: "SiBorg",

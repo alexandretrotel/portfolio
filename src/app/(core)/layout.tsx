@@ -10,7 +10,7 @@ export default function Layout({
   return (
     <div className="bg-background min-h-screen">
       <Header />
-      <main className="max-w-5xl mx-auto py-12 px-4">{children}</main>
+      <main className="max-w-xl mx-auto py-12 px-4">{children}</main>
     </div>
   );
 }
