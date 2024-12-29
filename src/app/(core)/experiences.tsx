@@ -20,6 +20,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { features } from "@/data/features";
 
 export default function Experiences() {
   return (
@@ -32,13 +33,16 @@ export default function Experiences() {
       transition={{ duration: 0.5, delay: 0.25 }}
     >
       <Collapsible className="flex flex-col gap-4">
-        <CollapsibleTrigger className="flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <h1 className="text-lg font-semibold text-left">Work Experience</h1>
-          <Button variant="ghost" size="sm">
-            <ChevronsUpDown className="h-4 w-4" />
-            <span className="sr-only">Toggle</span>
-          </Button>
-        </CollapsibleTrigger>
+          <CollapsibleTrigger asChild>
+            <Button variant="ghost" size="sm">
+              <ChevronsUpDown className="h-4 w-4" />
+              <span className="sr-only">Toggle</span>
+            </Button>
+          </CollapsibleTrigger>
+        </div>
+
         {!experiences?.[0]?.disabled && (
           <ExperiencesItem {...experiences[0]} key={0} />
         )}
@@ -114,15 +118,17 @@ const ExperiencesItem = ({
           ))}
         </div>
       </CardContent>
-      <CardFooter>
-        {readMore && (
-          <Button size="sm" className="w-fit" asChild>
-            <Link href={readMore} passHref>
-              Read More
-            </Link>
-          </Button>
-        )}
-      </CardFooter>
+      {features.canSeeExperienceReadMore && (
+        <CardFooter>
+          {readMore && (
+            <Button size="sm" className="w-fit" asChild>
+              <Link href={readMore} passHref>
+                Read More
+              </Link>
+            </Button>
+          )}
+        </CardFooter>
+      )}
     </Card>
   </motion.div>
 );

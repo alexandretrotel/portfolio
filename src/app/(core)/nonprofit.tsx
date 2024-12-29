@@ -20,6 +20,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { features } from "@/data/features";
 
 export default function Nonprofit() {
   return (
@@ -32,13 +33,16 @@ export default function Nonprofit() {
       transition={{ duration: 0.5, delay: 0.25 }}
     >
       <Collapsible className="flex flex-col gap-4">
-        <CollapsibleTrigger className="flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <h1 className="text-lg font-semibold text-left">Nonprofit Roles</h1>
-          <Button variant="ghost" size="sm">
-            <ChevronsUpDown className="h-4 w-4" />
-            <span className="sr-only">Toggle</span>
-          </Button>
-        </CollapsibleTrigger>
+          <CollapsibleTrigger asChild>
+            <Button variant="ghost" size="sm">
+              <ChevronsUpDown className="h-4 w-4" />
+              <span className="sr-only">Toggle</span>
+            </Button>
+          </CollapsibleTrigger>
+        </div>
+
         {!roles?.[0]?.disabled && <NonprofitItem {...roles[0]} key={0} />}
         <CollapsibleContent>
           <div className="flex flex-col gap-4">
@@ -112,15 +116,17 @@ const NonprofitItem = ({
           ))}
         </div>
       </CardContent>
-      <CardFooter>
-        {readMore && (
-          <Button size="sm" className="w-fit" asChild>
-            <Link href={readMore} passHref>
-              Read More
-            </Link>
-          </Button>
-        )}
-      </CardFooter>
+      {features.canSeeNonprofitReadMore && (
+        <CardFooter>
+          {readMore && (
+            <Button size="sm" className="w-fit" asChild>
+              <Link href={readMore} passHref>
+                Read More
+              </Link>
+            </Button>
+          )}
+        </CardFooter>
+      )}
     </Card>
   </motion.div>
 );
