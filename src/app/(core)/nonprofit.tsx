@@ -13,7 +13,7 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { experiences } from "@/data/experiences";
+import { roles } from "@/data/nonprofit";
 import { Position } from "@/types/experiences";
 import {
   Collapsible,
@@ -21,7 +21,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 
-export default function Experiences() {
+export default function Nonprofit() {
   return (
     <motion.div
       className="mx-auto w-full"
@@ -33,21 +33,19 @@ export default function Experiences() {
     >
       <Collapsible className="flex flex-col gap-4">
         <CollapsibleTrigger className="flex items-center justify-between">
-          <h1 className="text-lg font-semibold text-left">Work Experience</h1>
+          <h1 className="text-lg font-semibold text-left">Nonprofit Roles</h1>
           <Button variant="ghost" size="sm">
             <ChevronsUpDown className="h-4 w-4" />
             <span className="sr-only">Toggle</span>
           </Button>
         </CollapsibleTrigger>
-        {!experiences?.[0]?.disabled && (
-          <ExperiencesItem {...experiences[0]} key={0} />
-        )}
+        {!roles?.[0]?.disabled && <NonprofitItem {...roles[0]} key={0} />}
         <CollapsibleContent>
           <div className="flex flex-col gap-4">
-            {experiences?.slice(1)?.map((item, index) => {
+            {roles?.slice(1)?.map((item, index) => {
               if (item?.disabled) return null;
 
-              return <ExperiencesItem key={index} {...item} />;
+              return <NonprofitItem key={index} {...item} />;
             })}
           </div>
         </CollapsibleContent>
@@ -56,21 +54,21 @@ export default function Experiences() {
   );
 }
 
-interface WorkExperienceItemProps {
-  company: string;
+interface NonprofitItemProps {
+  association: string;
   positions: Position[];
   url?: string;
   image?: string;
   readMore?: string;
 }
 
-const ExperiencesItem = ({
-  company,
+const NonprofitItem = ({
+  association,
   positions,
   url,
   image,
   readMore,
-}: WorkExperienceItemProps) => (
+}: NonprofitItemProps) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -85,11 +83,11 @@ const ExperiencesItem = ({
                 src={image}
                 width={24}
                 height={24}
-                alt={company}
+                alt={association}
                 className="rounded-md"
               />
             )}
-            <CardTitle>{company}</CardTitle>
+            <CardTitle>{association}</CardTitle>
           </div>
           {url && (
             <Link

@@ -2,30 +2,49 @@
 import "client-only";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronsUpDown } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { education } from "@/data/education";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { Button } from "@/components/ui/button";
 
 export default function Education() {
   return (
     <motion.div
-      className="flex flex-col max-w-lg mx-auto gap-4 w-full"
+      className="mx-auto w-full"
       layoutId="about"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5, delay: 0.5 }}
     >
-      <h1 className="text-lg font-semibold">Education</h1>
-      <div className="flex flex-col gap-4">
-        {education.map((item, index) => {
-          if (item?.disabled) return null;
+      <Collapsible className="flex flex-col gap-4">
+        <CollapsibleTrigger className="flex items-center justify-between">
+          <h1 className="text-lg font-semibold text-left">Education</h1>
+          <Button variant="ghost" size="sm">
+            <ChevronsUpDown className="h-4 w-4" />
+            <span className="sr-only">Toggle</span>
+          </Button>
+        </CollapsibleTrigger>
+        {!education?.[0]?.disabled && (
+          <EducationItem {...education[0]} key={0} />
+        )}
+        <CollapsibleContent>
+          <div className="flex flex-col gap-4">
+            {education?.slice(1)?.map((item, index) => {
+              if (item?.disabled) return null;
 
-          return <EducationItem key={index} {...item} />;
-        })}
-      </div>
+              return <EducationItem key={index} {...item} />;
+            })}
+          </div>
+        </CollapsibleContent>
+      </Collapsible>
     </motion.div>
   );
 }
