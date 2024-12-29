@@ -52,7 +52,7 @@ export default function Header() {
       <div className="flex h-14 items-center justify-between px-4 max-w-5xl mx-auto">
         <Link href="/" className="flex items-center gap-4" passHref>
           <Image
-            src="/letter.png"
+            src="/logo.png"
             alt="Logo"
             width={32}
             height={32}

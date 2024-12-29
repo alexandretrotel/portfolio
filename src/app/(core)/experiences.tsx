@@ -1,14 +1,23 @@
 "use client";
 import "client-only";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
-import Image from "next/image";
 import Link from "next/link";
-import { education } from "@/data/education";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { experiences } from "@/data/experiences";
 
-export default function Education() {
+const readMoreBaseURL = "/experiences";
+
+export default function Experiences() {
   return (
     <motion.div
       className="flex flex-col max-w-lg mx-auto gap-4 w-full"
@@ -16,35 +25,37 @@ export default function Education() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, delay: 0.5 }}
+      transition={{ duration: 0.5, delay: 0.25 }}
     >
-      <h1 className="text-lg font-semibold">Education</h1>
+      <h1 className="text-lg font-semibold">Work Experience</h1>
       <div className="flex flex-col gap-4">
-        {education.map((item, index) => {
+        {experiences.map((item, index) => {
           if (item?.disabled) return null;
 
-          return <EducationItem key={index} {...item} />;
+          return <ExperiencesItem key={index} {...item} />;
         })}
       </div>
     </motion.div>
   );
 }
 
-interface EducationItemProps {
+interface WorkExperienceItemProps {
   title: string;
   subtitle: string;
   date: string;
   url?: string;
   image?: string;
+  readMore?: string;
 }
 
-const EducationItem = ({
+const ExperiencesItem = ({
   title,
   subtitle,
   date,
   url,
   image,
-}: EducationItemProps) => (
+  readMore,
+}: WorkExperienceItemProps) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -76,10 +87,19 @@ const EducationItem = ({
           )}
         </div>
       </CardHeader>
-      <CardContent>
+      <CardContent className="pb-4">
         <p className="text-sm text-muted-foreground">{subtitle}</p>
         <p className="text-xs text-muted-foreground">{date}</p>
       </CardContent>
+      {readMore && (
+        <CardFooter>
+          <Button size="sm" asChild>
+            <Link href={`${readMoreBaseURL}${readMore}`} passHref>
+              Read More
+            </Link>
+          </Button>
+        </CardFooter>
+      )}
     </Card>
   </motion.div>
 );
