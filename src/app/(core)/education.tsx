@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 export default function Education() {
   return (
     <motion.div
-      className="mx-auto w-full"
+      className="w-full"
       layoutId="about"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
