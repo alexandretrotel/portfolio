@@ -1,5 +1,7 @@
 import { Books } from "@/types/books";
 
+export const INITIAL_NUMBER_OF_BOOKS = 1;
+
 export const books: Books = [
   {
     title: "De l'assurance maladie au partenaire bien être",

@@ -30,7 +30,7 @@ export default function Nonprofit({ delay }: NonprofitProps) {
   return (
     <motion.div
       className="w-full"
-      layoutId="about"
+      layoutId="nonprofit"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
