@@ -1,7 +1,13 @@
 "use client";
 import "client-only";
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -37,6 +43,7 @@ interface WorkExperienceItemProps {
   positions: Position[];
   url?: string;
   image?: string;
+  readMore?: string;
 }
 
 const ExperiencesItem = ({
@@ -44,6 +51,7 @@ const ExperiencesItem = ({
   positions,
   url,
   image,
+  readMore,
 }: WorkExperienceItemProps) => (
   <motion.div
     initial={{ opacity: 0 }}
@@ -84,17 +92,19 @@ const ExperiencesItem = ({
                 <p className="text-sm font-medium">{pos.title}</p>
                 <p className="text-xs text-muted-foreground">{pos.date}</p>
               </div>
-              {pos.readMore && (
-                <Button size="sm" className="w-fit" asChild>
-                  <Link href={pos.readMore} passHref>
-                    Read More
-                  </Link>
-                </Button>
-              )}
             </div>
           ))}
         </div>
       </CardContent>
+      <CardFooter>
+        {readMore && (
+          <Button size="sm" className="w-fit" asChild>
+            <Link href={readMore} passHref>
+              Read More
+            </Link>
+          </Button>
+        )}
+      </CardFooter>
     </Card>
   </motion.div>
 );
