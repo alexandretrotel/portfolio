@@ -5,7 +5,7 @@ import Nonprofit from "./nonprofit";
 
 export default async function Home() {
   return (
-    <div className="flex flex-col gap-12 w-full">
+    <div className="flex flex-col gap-12 w-full max-w-xl">
       <About />
       <Experiences />
       <Nonprofit />
