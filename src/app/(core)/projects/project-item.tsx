@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { features } from "@/data/features";
+import { cn } from "@/lib/utils";
 import { Project } from "@/types/projects";
 import { Info } from "lucide-react";
 import Image from "next/image";
@@ -74,7 +75,15 @@ export function ProjectItem({
               </div>
               <div className="flex items-center gap-2">
                 {featured && <Badge className="text-xs">Featured</Badge>}
-                <Badge variant="outline">{status}</Badge>
+                <Badge
+                  variant="outline"
+                  className={cn(
+                    status === "Completed" ? "bg-green-400" : "bg-yellow-400",
+                    "border-transparent"
+                  )}
+                >
+                  {status}
+                </Badge>
               </div>
             </div>
             <CardDescription className="text-sm">
