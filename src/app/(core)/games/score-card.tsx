@@ -30,9 +30,9 @@ const StatSection = ({
 
 export default function ScoreCard({ stats }: ScoreCardProps) {
   return (
-    <Card className="md:max-w-sm w-full mx-auto grow h-fit">
+    <Card className="mx-auto h-fit w-full grow md:max-w-sm">
       <CardHeader>
-        <CardTitle className="text-lg font-semibold text-center">
+        <CardTitle className="text-center text-lg font-semibold">
           Statistics
         </CardTitle>
       </CardHeader>

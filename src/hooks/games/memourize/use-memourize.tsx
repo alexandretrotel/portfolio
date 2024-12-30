@@ -15,7 +15,7 @@ export const useMemourize = ({
 }: UseMemourizeProps) => {
   const [difficulty, setDifficulty] = useState<MemourizeDifficulty>("easy");
   const [memourizeData, setMemourizeData] = useState<MemourizeData>(
-    generateMemourizeData(difficulty)
+    generateMemourizeData(difficulty),
   );
   const [userAnswer, setUserAnswer] = useState("");
   const [feedback, setFeedback] = useState("");
@@ -23,7 +23,7 @@ export const useMemourize = ({
   const [progress, setProgress] = useState(0);
   const [hidden, setHidden] = useState(false);
   const [timeLeft, setTimeLeft] = useState(
-    getTimeLeftFromDifficulty(difficulty)
+    getTimeLeftFromDifficulty(difficulty),
   );
 
   useEffect(() => {
@@ -115,7 +115,7 @@ export const useMemourize = ({
         checkAnswer();
       }
     },
-    [checkAnswer]
+    [checkAnswer],
   );
 
   return {

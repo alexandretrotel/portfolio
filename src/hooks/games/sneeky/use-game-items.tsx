@@ -30,7 +30,7 @@ export const useGameItems = ({
 
   const activeItemPositions = useMemo(
     () => activeItems.map((item) => item.position),
-    [activeItems]
+    [activeItems],
   );
 
   const handleSpawnItems = useCallback(() => {
@@ -44,7 +44,7 @@ export const useGameItems = ({
           type: "apple",
           position: spawnItem(
             snake,
-            newItems.map((item) => item.position)
+            newItems.map((item) => item.position),
           ),
           expiration: Infinity,
         });
@@ -58,7 +58,7 @@ export const useGameItems = ({
           type: "goldApple",
           position: spawnItem(
             snake,
-            newItems.map((item) => item.position)
+            newItems.map((item) => item.position),
           ),
           expiration: Infinity,
         });
@@ -97,7 +97,7 @@ export const useGameItems = ({
 
       setActiveItems((prev) => prev.filter((i) => i !== item));
     },
-    [setScore, setSnake]
+    [setScore, setSnake],
   );
 
   const handleItemCollisions = useCallback(
@@ -117,7 +117,7 @@ export const useGameItems = ({
         }
       });
     },
-    [activeItems, handleItemEffect, speed]
+    [activeItems, handleItemEffect, speed],
   );
 
   return {

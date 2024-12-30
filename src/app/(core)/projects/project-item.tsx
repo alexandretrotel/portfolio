@@ -36,17 +36,17 @@ export function ProjectItem({
 }: ProjectItemProps) {
   return (
     <Card className="overflow-hidden">
-      <div className="flex flex-col justify-between w-full h-full">
-        <div className="flex flex-col gap-2 w-full">
+      <div className="flex h-full w-full flex-col justify-between">
+        <div className="flex w-full flex-col gap-2">
           {showPreview && preview && (
-            <div className="relative w-full h-48 border-b">
+            <div className="relative h-48 w-full border-b">
               {preview?.type === "image" ? (
                 <Image
                   src={preview?.asset}
                   alt={title}
                   layout="fill"
                   objectFit="cover"
-                  className="w-full h-full"
+                  className="h-full w-full"
                 />
               ) : (
                 <video
@@ -55,13 +55,13 @@ export function ProjectItem({
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="h-full w-full object-cover"
                 />
               )}
             </div>
           )}
           <CardHeader>
-            <div className="flex items-center gap-4 justify-between w-full">
+            <div className="flex w-full items-center justify-between gap-4">
               <div className="flex items-center gap-2">
                 {icon && (
                   <Image
@@ -77,7 +77,7 @@ export function ProjectItem({
                   <Link
                     href={links?.[0].url}
                     target="_blank"
-                    className="hover:translate-x-0.5 hover:-translate-y-0.5 hover:scale-110 duration-200"
+                    className="duration-200 hover:-translate-y-0.5 hover:translate-x-0.5 hover:scale-110"
                   >
                     <ArrowUpRight size={16} />
                   </Link>
@@ -91,7 +91,7 @@ export function ProjectItem({
                     status === "Completed"
                       ? "bg-green-500 hover:bg-green-500/80"
                       : "bg-yellow-500 hover:bg-yellow-500/80",
-                    "border-transparent text-white"
+                    "border-transparent text-white",
                   )}
                 >
                   {status}
@@ -111,7 +111,7 @@ export function ProjectItem({
           </CardContent>
         </div>
         <CardFooter className="w-full px-0">
-          <div className="flex flex-col gap-2 w-full">
+          <div className="flex w-full flex-col gap-2">
             <div className="px-6">
               {features.canSeeProjectsReadMore && url && (
                 <Button asChild size="sm" className="w-fit">
@@ -131,7 +131,7 @@ export function ProjectItem({
                 ?.map((tag) => (
                   <Badge
                     key={tag}
-                    className="bg-foreground hover:bg-foreground/80 text-background"
+                    className="bg-foreground text-background hover:bg-foreground/80"
                   >
                     {tag}
                   </Badge>

@@ -38,7 +38,7 @@ function StaticBooksContent() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-bold text-left">
+        <h1 className="text-left text-lg font-bold">
           Read the books that shaped my thinking
         </h1>
       </div>
@@ -83,7 +83,7 @@ function StaticBooksContent() {
       </div>
 
       {filteredBooks.length > INITIAL_NUMBER_OF_BOOKS && (
-        <div className="flex justify-center mt-4">
+        <div className="mt-4 flex justify-center">
           <Button variant="ghost" onClick={() => setShowMore(!showMore)}>
             {showMore ? "See Less" : "See More"}
           </Button>
@@ -111,7 +111,7 @@ function BookItem({ title, description, url, tags }: BookItemProps) {
             <Link
               href={url}
               target="_blank"
-              className="hover:translate-x-0.5 hover:-translate-y-0.5 hover:scale-110 duration-200"
+              className="duration-200 hover:-translate-y-0.5 hover:translate-x-0.5 hover:scale-110"
             >
               <ArrowUpRight size={16} />
             </Link>
@@ -119,7 +119,7 @@ function BookItem({ title, description, url, tags }: BookItemProps) {
         </div>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardFooter className="flex flex-wrap gap-2 items-center">
+      <CardFooter className="flex flex-wrap items-center gap-2">
         {tags?.map((tag) => {
           return <Badge key={tag}>{tag}</Badge>;
         })}

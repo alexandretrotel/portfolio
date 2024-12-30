@@ -7,7 +7,7 @@ import Skills from "./skills";
 
 export default async function Home() {
   return (
-    <div className="flex flex-col gap-16 w-full max-w-xl mx-auto">
+    <div className="mx-auto flex w-full max-w-xl flex-col gap-16">
       <Introduction />
       <Experiences />
       <Nonprofit />

@@ -7,7 +7,7 @@ import { Position } from "@/types/experiences";
 export default async function Nonprofit() {
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-lg font-bold text-left">Nonprofit experience</h1>
+      <h1 className="text-left text-lg font-bold">Nonprofit experience</h1>
 
       <div className="flex flex-col gap-6">
         {!roles?.[0]?.disabled && <NonprofitItem {...roles[0]} />}
@@ -52,7 +52,7 @@ const NonprofitItem = async ({
           <Link
             href={url}
             target="_blank"
-            className="hover:translate-x-0.5 hover:-translate-y-0.5 hover:scale-110 duration-200"
+            className="duration-200 hover:-translate-y-0.5 hover:translate-x-0.5 hover:scale-110"
           >
             <ArrowUpRight size={16} />
           </Link>
