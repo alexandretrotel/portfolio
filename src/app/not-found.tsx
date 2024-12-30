@@ -16,7 +16,7 @@ export default function NotFound() {
 
   return (
     <div className="flex h-screen flex-col items-center justify-center space-y-4">
-      <Card className="border-transparent">
+      <Card className="border-transparent bg-background shadow-none">
         <CardHeader>
           <CardTitle>Not found</CardTitle>
           <CardDescription>
