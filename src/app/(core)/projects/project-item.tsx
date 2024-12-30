@@ -81,7 +81,7 @@ export function ProjectItem({
                     status === "Completed"
                       ? "bg-green-400 hover:bg-green-400/80"
                       : "bg-yellow-400 hover:bg-yellow-400/80",
-                    "border-transparent"
+                    "border-transparent text-background"
                   )}
                 >
                   {status}
