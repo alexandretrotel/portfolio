@@ -103,7 +103,13 @@ export function ProjectItem({
                 month: "short",
                 year: "numeric",
               })}{" "}
-              - {dateCompleted ? dateCompleted.toDateString() : "Present"}
+              -{" "}
+              {dateCompleted
+                ? dateCompleted.toDateString("en-US", {
+                    month: "short",
+                    year: "numeric",
+                  })
+                : "Present"}
             </CardDescription>
           </CardHeader>
           <CardContent>
