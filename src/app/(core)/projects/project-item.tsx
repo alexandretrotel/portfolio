@@ -105,7 +105,7 @@ export function ProjectItem({
               })}{" "}
               -{" "}
               {dateCompleted
-                ? dateCompleted.toDateString("en-US", {
+                ? dateCompleted.toLocaleDateString("en-US", {
                     month: "short",
                     year: "numeric",
                   })
