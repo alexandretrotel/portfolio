@@ -4,6 +4,7 @@ import "client-only";
 import { projects } from "@/data/projects";
 import { motion } from "motion/react";
 import { ProjectItem } from "./projects/project-item";
+import { useMemo } from "react";
 
 const PROJECTS_LIMIT = 3;
 
@@ -12,10 +13,25 @@ interface ProjectsProps {
 }
 
 export default function Projects({ delay }: ProjectsProps) {
-  const orderedProjects = projects
-    ?.sort((a, b) => (b.featured ? 1 : -1))
-    ?.sort((a, b) => (a.date > b.date ? -1 : 1))
-    ?.slice(0, PROJECTS_LIMIT);
+  const featuredProjects = useMemo(
+    () =>
+      projects
+        ?.filter((project) => project.featured)
+        ?.sort((a, b) => b.date.getTime() - a.date.getTime()),
+    []
+  );
+  const otherProjects = useMemo(
+    () =>
+      projects
+        ?.filter((project) => !project.featured)
+        ?.sort((a, b) => b.date.getTime() - a.date.getTime()),
+    []
+  );
+
+  const orderedProjects = useMemo(
+    () => [...featuredProjects, ...otherProjects]?.slice(0, PROJECTS_LIMIT),
+    [featuredProjects, otherProjects]
+  );
 
   return (
     <motion.div

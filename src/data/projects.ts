@@ -2,6 +2,7 @@ import { Projects } from "@/types/projects";
 
 const basePath = "/projects";
 const imageBasePath = "/projects";
+const iconBasePath = "/projects/icons";
 
 export const projects: Projects = [
   {
@@ -25,6 +26,7 @@ export const projects: Projects = [
     languages: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
     status: "In Progress",
     featured: true,
+    icon: `${iconBasePath}/logo.png`,
   },
   {
     title: "TrotelCoin",
@@ -71,6 +73,7 @@ export const projects: Projects = [
     status: "Completed",
     dateCompleted: new Date("2024-07-05"),
     featured: true,
+    icon: `${iconBasePath}/trotelcoin.jpeg`,
   },
   {
     title: "Mindify",
@@ -99,6 +102,7 @@ export const projects: Projects = [
     languages: ["TypeScript", "React Native", "Tailwind CSS", "Expo", "NestJS"],
     status: "In Progress",
     featured: true,
+    icon: `${iconBasePath}/mindify.jpeg`,
   },
   {
     title: "AgroParisTech Service Études",
@@ -164,5 +168,29 @@ export const projects: Projects = [
     tags: ["Frontend", "Design", "Business"],
     languages: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
     status: "In Progress",
+    icon: `${iconBasePath}/aurora.jpeg`,
+  },
+  {
+    title: "SiBorg Ads Telegram Bot",
+    description:
+      "A Telegram bot to help users create SiBorg Ads for their Telegram channels.",
+    date: new Date("2024-09-25"),
+    url: `${basePath}/siborg-ads-telegram-bot`,
+    links: [
+      {
+        title: "Telegram",
+        url: "https://t.me/SiBorgAdsBot",
+      },
+      {
+        title: "GitHub",
+        url: "https://github.com/siborg-ads",
+      },
+    ],
+    image: `${imageBasePath}/siborg.jpeg`,
+    tags: ["API", "Backend"],
+    languages: ["TypeScript", "grammY"],
+    status: "Completed",
+    dateCompleted: new Date("2024-10-12"),
+    icon: `${iconBasePath}/siborg.jpeg`,
   },
 ];

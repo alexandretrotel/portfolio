@@ -11,6 +11,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { features } from "@/data/features";
 import { Project } from "@/types/projects";
+import { Info } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,7 +28,9 @@ export function ProjectItem({
   image,
   tags,
   status,
+  featured,
   showImage,
+  icon,
 }: ProjectItemProps) {
   return (
     <Card>
@@ -46,8 +49,22 @@ export function ProjectItem({
           )}
           <CardHeader>
             <div className="flex items-center gap-4 justify-between w-full">
-              <CardTitle>{title}</CardTitle>
-              <Badge variant="outline">{status}</Badge>
+              <div className="flex items-center gap-2">
+                {icon && (
+                  <Image
+                    src={icon}
+                    alt={title}
+                    width={24}
+                    height={24}
+                    className="rounded-md"
+                  />
+                )}
+                <CardTitle>{title}</CardTitle>
+              </div>
+              <div className="flex items-center gap-2">
+                {featured && <Badge className="text-xs">Featured</Badge>}
+                <Badge variant="outline">{status}</Badge>
+              </div>
             </div>
             <CardDescription className="text-sm">
               {date.toLocaleDateString("en-US", {
@@ -65,7 +82,10 @@ export function ProjectItem({
           <div className="flex flex-col gap-2 w-full">
             {features.canSeeProjectsReadMore && url && (
               <Button asChild size="sm" className="w-fit">
-                <Link href={url}>Learn more</Link>
+                <Link href={url}>
+                  <Info size={16} />
+                  Learn more
+                </Link>
               </Button>
             )}
 
