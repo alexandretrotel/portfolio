@@ -61,7 +61,7 @@ const socials = [
 export default async function Contact() {
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex max-w-sm flex-col">
+      <div className="flex flex-col">
         <h1 className="text-lg font-bold">Contact me</h1>
         <p className="text-sm text-muted-foreground">
           I always asked myself how to send all my social media links at once,
