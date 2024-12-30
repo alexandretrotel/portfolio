@@ -4,28 +4,12 @@ import "client-only";
 import { Badge } from "@/components/ui/badge";
 import { skills } from "@/data/skills";
 import { ArrowUpRight } from "lucide-react";
-import { motion } from "motion/react";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Category, Skills } from "@/types/skills";
 
-interface SkillsProps {
-  delay: number;
-}
-
-export default function SkillsSection({ delay }: SkillsProps) {
-  return (
-    <motion.div
-      className="flex flex-col"
-      layoutId="skills"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, delay }}
-    >
-      <StaticSkillsContent />
-    </motion.div>
-  );
+export default function SkillsSection() {
+  return <StaticSkillsContent />;
 }
 
 function StaticSkillsContent() {

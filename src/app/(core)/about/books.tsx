@@ -2,7 +2,6 @@
 import "client-only";
 
 import { ArrowUpRight } from "lucide-react";
-import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -17,23 +16,8 @@ import { Tag, Tags } from "@/types/about/books";
 import { Badge } from "@/components/ui/badge";
 import { useMemo, useState } from "react";
 
-interface BooksProps {
-  delay: number;
-}
-
-export default function Books({ delay }: BooksProps) {
-  return (
-    <motion.div
-      className="w-full"
-      layoutId="books"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, delay }}
-    >
-      <StaticBooksContent />
-    </motion.div>
-  );
+export default function Books() {
+  return <StaticBooksContent />;
 }
 
 function StaticBooksContent() {

@@ -27,7 +27,7 @@ const components: ComponentProps[] = [
     href: "/",
   },
   {
-    title: "About",
+    title: "About Me",
     href: "/about",
   },
   {
