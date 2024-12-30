@@ -1,19 +1,4 @@
 {
-  "name": "alexandretrotel",
-  "private": true,
-  "scripts": {
-    "build": "next build",
-    "dev": "next dev --turbopack",
-    "lint": "next lint",
-    "prettier": "prettier --write .",
-    "format": "prettier --write .",
-    "start": "next start",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:ci": "jest --ci",
-    "clean": "rm -rf .next node_modules"
-  },
-  "version": "0.3.0",
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-alert-dialog": "^1.1.2",
@@ -46,7 +31,6 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
-    "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.5.1",
     "input-otp": "^1.4.1",
     "lucide-react": "^0.465.0",
@@ -55,7 +39,6 @@
     "next-themes": "^0.4.3",
     "react": "^19.0.0",
     "react-day-picker": "^8.10.1",
-    "react-dom": "^19.0.0",
     "react-hook-form": "^7.53.2",
     "react-resizable-panels": "^2.1.7",
     "recharts": "^2.14.1",
@@ -81,5 +64,20 @@
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5"
-  }
+  },
+  "name": "alexandretrotel",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "clean": "rm -rf .next node_modules",
+    "dev": "next dev --turbopack",
+    "format": "prettier --write .",
+    "lint": "next lint",
+    "prettier": "prettier --write .",
+    "start": "next start",
+    "test": "jest",
+    "test:ci": "jest --ci",
+    "test:watch": "jest --watch"
+  },
+  "version": "0.3.0"
 }

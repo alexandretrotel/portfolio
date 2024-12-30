@@ -130,6 +130,10 @@ export const projects: Projects = [
     tags: ["Frontend", "Design", "Business"],
     status: "Completed",
     dateCompleted: new Date("2024-06-14"),
+    preview: {
+      asset: `${videoBasePath}/agroparistech-service-etudes.mp4`,
+      type: "video",
+    },
   },
   {
     title: "Progressly",
@@ -158,6 +162,10 @@ export const projects: Projects = [
     tags: ["CLI", "Tooling"],
     languages: ["Rust", "Cargo"],
     status: "In Progress",
+    preview: {
+      asset: `${videoBasePath}/cnp.mp4`,
+      type: "video",
+    },
   },
   {
     title: "Aurora",
@@ -179,6 +187,10 @@ export const projects: Projects = [
     languages: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
     status: "In Progress",
     icon: `${iconBasePath}/aurora.jpeg`,
+    preview: {
+      asset: `${videoBasePath}/aurora.mp4`,
+      type: "video",
+    },
   },
   {
     title: "SiBorg Ads Telegram Bot",
@@ -201,5 +213,9 @@ export const projects: Projects = [
     status: "Completed",
     dateCompleted: new Date("2024-10-12"),
     icon: `${iconBasePath}/siborg.jpeg`,
+    preview: {
+      asset: `${videoBasePath}/siborg-ads-telegram-bot.mp4`,
+      type: "video",
+    },
   },
 ];
