@@ -62,7 +62,7 @@ export default async function Contact() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col max-w-sm">
-        <h1 className="text-lg font-semibold">Contact me</h1>
+        <h1 className="text-lg font-bold">Contact me</h1>
         <p className="text-muted-foreground text-sm">
           I always asked myself how to send all my social media links at once,
           so I decided to make my own page.

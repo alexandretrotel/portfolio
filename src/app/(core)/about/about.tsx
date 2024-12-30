@@ -1,7 +1,7 @@
 export default async function About() {
   return (
     <div>
-      <h1 className="text-lg font-semibold">About Me</h1>
+      <h1 className="text-lg font-bold">Learn + about me</h1>
       <p className="text-sm text-muted-foreground">
         You can get to know me <strong>more personally</strong> on this page.
         I&apos;ll showcase <strong>my investments</strong>,{" "}

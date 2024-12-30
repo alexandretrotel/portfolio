@@ -22,7 +22,7 @@ export default async function Experiences() {
   return (
     <Collapsible className="flex flex-col gap-4" defaultOpen={true}>
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-semibold text-left">Work Experience</h1>
+        <h1 className="text-lg font-bold text-left">Work experience</h1>
         {experiences?.length > 1 && (
           <CollapsibleTrigger asChild>
             <Button variant="ghost" size="sm">

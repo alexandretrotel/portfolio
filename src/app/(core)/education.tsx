@@ -14,7 +14,7 @@ export default async function Education() {
   return (
     <Collapsible className="flex flex-col gap-4" defaultOpen={true}>
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-semibold text-left">Education</h1>
+        <h1 className="text-lg font-bold text-left">Education</h1>
         {education?.length > 1 && (
           <CollapsibleTrigger asChild>
             <Button variant="ghost" size="sm">

@@ -20,7 +20,9 @@ export default async function Investments() {
   return (
     <Collapsible className="flex flex-col gap-4" defaultOpen={false}>
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-semibold text-left">My Investments</h1>
+        <h1 className="text-lg font-bold text-left">
+          Check out my investments
+        </h1>
         {investments?.length > 2 && (
           <CollapsibleTrigger asChild>
             <Button variant="ghost" size="sm">
