@@ -23,7 +23,7 @@ export const rules: Rules = [
     id: 4,
     title: "Work-life balance",
     description:
-      "I maximize my productivity by working in short bursts and taking breaks to recharge. I work better when I am well-rested. I try to prioritize my sleep and exercise.",
+      "I believe we should maximize our productivity by working in short bursts and taking breaks to recharge. I work better when I am well-rested. I try to prioritize my sleep and exercise.",
   },
   {
     id: 5,
@@ -35,6 +35,12 @@ export const rules: Rules = [
     id: 6,
     title: "No distractions",
     description:
-      "I believe that we should eliminate all distractions and focus on the task at hand. One task can be done in a fraction of the time if we focus on it.",
+      "I believe that we should eliminate all distractions and focus on the task at hand. One task can be done in a fraction of the time if we focus on it. So, no notifications, no social media for me.",
+  },
+  {
+    id: 7,
+    title: "Impact",
+    description:
+      "I believe that we should always be looking for ways to make a positive impact on the world. It's why you'll see me sharing my knowledge and building projects that I believe will make the world a better place.",
   },
 ];
