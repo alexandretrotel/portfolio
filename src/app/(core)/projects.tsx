@@ -33,7 +33,7 @@ export default async function Projects() {
       </p>
       <div className="grid grid-cols-1 gap-4 mt-4">
         {orderedProjects?.map((project) => (
-          <ProjectItem key={project.url} {...project} />
+          <ProjectItem key={project.url} showPreview {...project} />
         ))}
       </div>
     </div>
