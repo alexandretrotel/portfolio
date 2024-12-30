@@ -27,7 +27,7 @@ function StaticSkillsContent() {
 
   return (
     <div>
-      <h1 className="text-lg font-semibold">Skills</h1>
+      <h1 className="text-lg font-bold">Skills</h1>
       <div className="flex flex-col gap-4">
         <p className="text-sm text-muted-foreground">
           I&apos;ve worked with a variety of technologies and tools. Here are

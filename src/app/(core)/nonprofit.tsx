@@ -22,7 +22,7 @@ export default async function Nonprofit() {
   return (
     <Collapsible className="flex flex-col gap-4" defaultOpen={true}>
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-semibold text-left">Nonprofit Roles</h1>
+        <h1 className="text-lg font-bold text-left">Nonprofit experience</h1>
         {roles?.length > 1 && (
           <CollapsibleTrigger asChild>
             <Button variant="ghost" size="sm">

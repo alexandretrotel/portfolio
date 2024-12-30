@@ -38,8 +38,8 @@ function StaticBooksContent() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-semibold text-left">
-          Books I&apos;ve Read
+        <h1 className="text-lg font-bold text-left">
+          Read the books that shaped my thinking
         </h1>
       </div>
 
