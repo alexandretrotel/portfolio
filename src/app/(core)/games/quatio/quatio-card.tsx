@@ -58,7 +58,7 @@ export default function QuatioCard({
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="difficulty">QuatioDifficulty</Label>
+          <Label htmlFor="difficulty">Difficulty</Label>
           <Select
             value={difficulty}
             onValueChange={(value: QuatioDifficulty) => setDifficulty(value)}
