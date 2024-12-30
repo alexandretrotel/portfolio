@@ -113,4 +113,12 @@ export const books: Books = [
     tags: ["Personal development"],
     url: "https://www.amazon.fr/Emile-ou-l%C3%A9ducation-Jean-Jacques-Rousseau/dp/2081206927/ref=sr_1_1?crid=4LKXIXIRE35F&dib=eyJ2IjoiMSJ9.hFuQnoeOmaxwZb0GPSfefTkckTIWZq4TxNEuUYNHT_xBxlh-Q6xagJf_HU9aBLoJlpf2ypBbI8IjKHHUGoo_AMNa8K6lg5eg6tvnSWvCyi9BTtj6WRwe0dGz8_jiATICfSKmvPjNyOd5_rKBkTm7XGPJ4chRjD5rG0qxnNt4qH0TrPVG7r2YcrBCOkzYz7p50btWzGcbkfDLK3EoRrHuqZoZf4QJHMbQ8A6ZF9Qj72CIn76hXCfVAIACmnvlRz1dy7t__CPSPbIldfiRJqZ53GWtxFVUFRSRU4kIHX8CUqQ.jzSnMJAaykdDIWkK9wM9-uelhvh90r7BtnlIVikwrqQ&dib_tag=se&keywords=emile+ou+de+l+%C3%A9ducation&nsdOptOutParam=true&qid=1735592264&sprefix=emile+ou+de+l%27%2Caps%2C121&sr=8-1",
   },
+  {
+    title: "L'étranger",
+    author: "Albert Camus",
+    description:
+      "The story of a man who is indifferent to the world around him and the events that lead to his ultimate demise.",
+    tags: ["Philosophy"],
+    url: "https://www.amazon.fr/L%C3%A9tranger-Albert-Camus/dp/2070360024/ref=sr_1_1?crid=3R1Z5Y5Z5Z5Z&keywords=l%27%C3%A9tranger+albert+camus&qid=1735592264&sprefix=l%27%C3%A9tranger%2Caps%2C121&sr=8-1",
+  },
 ];
