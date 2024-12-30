@@ -1,5 +1,5 @@
 import { FEEDBACK_DURATION } from "@/data/games/parameters";
-import { MemourizeData, MemourizeDifficulty } from "@/types/memourize";
+import { MemourizeData, MemourizeDifficulty } from "@/types/games/memourize";
 import { generateMemourizeData } from "@/utils/memourize/generateMemourizeData";
 import { useCallback, useEffect, useState } from "react";
 import { getTimeLeftFromDifficulty } from "@/utils/memourize/getTimeLeftFromDifficulty";

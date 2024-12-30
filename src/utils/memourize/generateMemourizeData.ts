@@ -1,5 +1,5 @@
 import { MEMOURIZE_DIFFICULTY_LENGTH } from "@/data/games/memourize/parameters";
-import { MemourizeDifficulty } from "@/types/memourize";
+import { MemourizeDifficulty } from "@/types/games/memourize";
 
 export const generateMemourizeData = (difficulty: MemourizeDifficulty) => {
   switch (difficulty) {

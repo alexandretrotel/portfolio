@@ -5,7 +5,7 @@ import {
   DASH_DELAY,
   INITIAL_SPEED,
 } from "@/data/games/sneeky/parameters";
-import { DirectionKey } from "@/types/sneeky";
+import { DirectionKey } from "@/types/games/sneeky";
 import { handleKeyDown } from "@/utils/sneeky/handleKeyDown";
 import { useCallback, useEffect, useState } from "react";
 

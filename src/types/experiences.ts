@@ -11,4 +11,6 @@ export type Experience = {
   positions: Position[];
   disabled?: boolean;
   readMore?: string;
-}[];
+};
+
+export type Experiences = Experience[];

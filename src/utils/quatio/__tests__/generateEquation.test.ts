@@ -1,5 +1,5 @@
 import { generateEquation } from "../generateEquation";
-import { QuatioDifficulty } from "@/types/quatio";
+import { QuatioDifficulty } from "@/types/games/quatio";
 
 describe("generateEquation", () => {
   it('should generate a correct equation and solution for difficulty "easy" with 1 unknown', () => {
