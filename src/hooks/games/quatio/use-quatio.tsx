@@ -1,4 +1,4 @@
-import { QuatioDifficulty } from "@/types/quatio";
+import { QuatioDifficulty } from "@/types/games/quatio";
 import { generateEquation } from "@/utils/quatio/generateEquation";
 import { useEffect, useState } from "react";
 import { useScore } from "../use-score";

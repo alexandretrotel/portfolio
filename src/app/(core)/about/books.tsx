@@ -11,9 +11,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { books, INITIAL_NUMBER_OF_BOOKS } from "@/data/books";
+import { books, INITIAL_NUMBER_OF_BOOKS } from "@/data/about/books";
 import Link from "next/link";
-import { Tag, Tags } from "@/types/books";
+import { Tag, Tags } from "@/types/about/books";
 import { Badge } from "@/components/ui/badge";
 import { useMemo, useState } from "react";
 

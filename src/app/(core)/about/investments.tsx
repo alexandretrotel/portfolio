@@ -18,7 +18,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
-import { investments } from "@/data/investments";
+import { investments } from "@/data/about/investments";
 
 interface InvestmentsProps {
   delay: number;

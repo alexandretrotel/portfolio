@@ -1,4 +1,4 @@
-import { Investments } from "@/types/investments";
+import { Investments } from "@/types/about/investments";
 
 const imageBasePath = "/investments";
 

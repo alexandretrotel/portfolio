@@ -1,4 +1,4 @@
-import { Books } from "@/types/books";
+import { Books } from "@/types/about/books";
 
 export const INITIAL_NUMBER_OF_BOOKS = 1;
 
