@@ -1,27 +1,16 @@
 import { projects } from "@/data/projects";
 import { ProjectItem } from "./project-item";
-import { useMemo } from "react";
 
 export default async function Projects() {
-  const featuredProjects = useMemo(
-    () =>
-      projects
-        ?.filter((project) => project.featured)
-        ?.sort((a, b) => b.date.getTime() - a.date.getTime()),
-    []
-  );
-  const otherProjects = useMemo(
-    () =>
-      projects
-        ?.filter((project) => !project.featured)
-        ?.sort((a, b) => b.date.getTime() - a.date.getTime()),
-    []
-  );
+  const featuredProjects = projects
+    ?.filter((project) => project.featured)
+    ?.sort((a, b) => b.date.getTime() - a.date.getTime());
 
-  const orderedProjects = useMemo(
-    () => [...featuredProjects, ...otherProjects],
-    [featuredProjects, otherProjects]
-  );
+  const otherProjects = projects
+    ?.filter((project) => !project.featured)
+    ?.sort((a, b) => b.date.getTime() - a.date.getTime());
+
+  const orderedProjects = [...featuredProjects, ...otherProjects];
 
   return (
     <div className="flex flex-col gap-4">

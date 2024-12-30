@@ -1,28 +1,20 @@
 import { projects } from "@/data/projects";
 import { ProjectItem } from "./projects/project-item";
-import { useMemo } from "react";
 
 const PROJECTS_LIMIT = 3;
 
 export default async function Projects() {
-  const featuredProjects = useMemo(
-    () =>
-      projects
-        ?.filter((project) => project.featured)
-        ?.sort((a, b) => b.date.getTime() - a.date.getTime()),
-    []
-  );
-  const otherProjects = useMemo(
-    () =>
-      projects
-        ?.filter((project) => !project.featured)
-        ?.sort((a, b) => b.date.getTime() - a.date.getTime()),
-    []
-  );
+  const featuredProjects = projects
+    ?.filter((project) => project.featured)
+    ?.sort((a, b) => b.date.getTime() - a.date.getTime());
 
-  const orderedProjects = useMemo(
-    () => [...featuredProjects, ...otherProjects]?.slice(0, PROJECTS_LIMIT),
-    [featuredProjects, otherProjects]
+  const otherProjects = projects
+    ?.filter((project) => !project.featured)
+    ?.sort((a, b) => b.date.getTime() - a.date.getTime());
+
+  const orderedProjects = [...featuredProjects, ...otherProjects]?.slice(
+    0,
+    PROJECTS_LIMIT
   );
 
   return (

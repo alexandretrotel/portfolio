@@ -1,7 +1,7 @@
 import { Projects } from "@/types/projects";
 
 const basePath = "/projects";
-const imageBasePath = "/projects/images";
+// const imageBasePath = "/projects/images";
 const iconBasePath = "/projects/icons";
 const videoBasePath = "/projects/videos";
 
