@@ -114,11 +114,13 @@ export function ProjectItem({
             <Separator className="my-2 w-full" />
 
             <div className="flex flex-wrap gap-2">
-              {tags?.map((tag) => (
-                <Badge key={tag} variant="secondary">
-                  {tag}
-                </Badge>
-              ))}
+              {tags
+                ?.sort((a, b) => a.localeCompare(b))
+                ?.map((tag) => (
+                  <Badge key={tag} variant="secondary">
+                    {tag}
+                  </Badge>
+                ))}
             </div>
           </div>
         </CardFooter>
