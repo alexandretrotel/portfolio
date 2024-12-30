@@ -95,6 +95,18 @@ export const skills: SkillsGroups = [
         skill: "Project Management",
         url: "https://en.wikipedia.org/wiki/Project_management",
       },
+      {
+        skill: "SWOT Analysis",
+        url: "https://en.wikipedia.org/wiki/SWOT_analysis",
+      },
+      {
+        skill: "PESTLE Analysis",
+        url: "https://en.wikipedia.org/wiki/PEST_analysis",
+      },
+      {
+        skill: "Growth Hacking",
+        url: "https://en.wikipedia.org/wiki/Growth_hacking",
+      },
     ],
   },
   {

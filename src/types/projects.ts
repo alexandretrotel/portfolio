@@ -42,7 +42,8 @@ export type Language =
   | "React Native"
   | "NestJS"
   | "Cargo"
-  | "Drizzle";
+  | "Drizzle"
+  | "grammY";
 
 export type Languages = Language[];
 
@@ -61,6 +62,7 @@ export type Project = {
   featured?: boolean;
   tags?: Tags;
   status: Status;
+  icon?: string;
   disabled?: boolean;
 };
 
