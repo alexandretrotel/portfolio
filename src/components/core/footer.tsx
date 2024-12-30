@@ -26,9 +26,9 @@ const EthereumIcon = ({ size }: { size: number }) => (
 
 export default function Footer() {
   return (
-    <footer className="text-center py-8 border-t max-w-5xl mx-auto px-4">
+    <footer className="mx-auto max-w-5xl border-t px-4 py-8 text-center">
       <div className="mx-auto flex flex-col gap-8">
-        <p className="font-semibold text-sm">
+        <p className="text-sm font-semibold">
           Made with ❤️ by Alexandre Trotel
         </p>
         <DonationsComponent />
@@ -46,7 +46,7 @@ function DonationsComponent() {
 
   const copyToClipboard = (
     text: string,
-    setCopied: React.Dispatch<React.SetStateAction<boolean>>
+    setCopied: React.Dispatch<React.SetStateAction<boolean>>,
   ) => {
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
@@ -57,14 +57,14 @@ function DonationsComponent() {
   return (
     <div className="flex flex-col gap-4">
       <div>
-        <p className="font-semibold text-sm">Support me</p>
+        <p className="text-sm font-semibold">Support me</p>
         <p className="text-xs text-muted-foreground">
           If you like my work, you can support me by donating cryptocurrencies,
           it helps me a lot!
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 place-content-center place-items-center mx-auto">
+      <div className="mx-auto grid grid-cols-1 place-content-center place-items-center gap-2 sm:grid-cols-2 sm:gap-4">
         {donations.map((donation, index) => (
           <TooltipProvider key={index}>
             <Tooltip>
@@ -77,7 +77,7 @@ function DonationsComponent() {
                       donation.address,
                       donation.type === "bitcoin"
                         ? setCopiedBitcoin
-                        : setCopiedEthereum
+                        : setCopiedEthereum,
                     )
                   }
                 >

@@ -2,7 +2,7 @@ import { BOARD_SIZE } from "@/data/games/sneeky/parameters";
 
 export const spawnItem = (
   snake: number[][],
-  otherItems: (number[] | null)[]
+  otherItems: (number[] | null)[],
 ): number[] => {
   let position;
   const isConflict = (pos: number[]): boolean =>

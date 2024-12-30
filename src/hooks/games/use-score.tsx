@@ -15,11 +15,11 @@ export function useScore({
 
   const [storedHighestScore, setStoredHighestScore] = useLocalStorage(
     highestScoreLabel,
-    0
+    0,
   );
   const [storedHighestStreak, setStoredHighestStreak] = useLocalStorage(
     highestStreakLabel,
-    0
+    0,
   );
 
   useEffect(() => {
@@ -28,10 +28,10 @@ export function useScore({
       const initialHighestStreak = localStorage.getItem(highestStreakLabel);
 
       setStoredHighestScore(
-        initialHighestScore ? parseInt(initialHighestScore, 10) : 0
+        initialHighestScore ? parseInt(initialHighestScore, 10) : 0,
       );
       setStoredHighestStreak(
-        initialHighestStreak ? parseInt(initialHighestStreak, 10) : 0
+        initialHighestStreak ? parseInt(initialHighestStreak, 10) : 0,
       );
     }
   }, [

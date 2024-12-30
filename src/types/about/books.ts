@@ -16,6 +16,7 @@ export type Tag =
   | "Investing"
   | "Personal development"
   | "Real estate"
-  | "Social";
+  | "Social"
+  | "Psychology";
 
 export type Tags = Tag[];

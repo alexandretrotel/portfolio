@@ -50,15 +50,15 @@ export default function QuatioCard({
   progress,
 }: QuatioCardProps) {
   return (
-    <Card className="w-full mx-auto grow">
+    <Card className="mx-auto w-full grow">
       <CardHeader>
-        <CardTitle className="text-lg font-semibold text-center">
+        <CardTitle className="text-center text-lg font-semibold">
           Quatio
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="difficulty">QuatioDifficulty</Label>
+          <Label htmlFor="difficulty">Difficulty</Label>
           <Select
             value={difficulty}
             onValueChange={(value: QuatioDifficulty) => setDifficulty(value)}
@@ -93,7 +93,7 @@ export default function QuatioCard({
             <Label htmlFor="equation">Equation:</Label>
             <div
               id="equation"
-              className="text-lg font-medium text-center p-2 bg-muted rounded-md"
+              className="rounded-md bg-muted p-2 text-center text-lg font-medium"
             >
               {equationData.equation}
             </div>
@@ -111,7 +111,7 @@ export default function QuatioCard({
               placeholder={
                 unknowns === 1 ? "Enter x" : "Enter x, y (comma separated)"
               }
-              className="flex-grow [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              className="flex-grow [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             />
             <Button onClick={checkAnswer}>Submit</Button>
           </div>
@@ -119,7 +119,7 @@ export default function QuatioCard({
       </CardContent>
       <CardFooter className="flex flex-col items-center space-y-4">
         {feedback && (
-          <div className="flex flex-col gap-2 w-full">
+          <div className="flex w-full flex-col gap-2">
             <div
               className={`text-center font-semibold ${
                 isCorrect ? "text-green-600" : "text-red-600"
