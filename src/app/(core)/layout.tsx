@@ -9,9 +9,9 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="bg-background min-h-screen">
+    <div className="min-h-screen bg-background">
       <Header />
-      <main className="max-w-5xl mx-auto py-12 px-4">{children}</main>
+      <main className="mx-auto max-w-5xl px-4 py-12">{children}</main>
       <Footer />
     </div>
   );

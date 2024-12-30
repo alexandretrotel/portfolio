@@ -20,7 +20,7 @@ export default async function Projects() {
           Here are some of the projects I&apos;ve worked on.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {orderedProjects?.map((project) => (
           <ProjectItem key={project.title} showPreview {...project} />
         ))}

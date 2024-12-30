@@ -4,7 +4,7 @@ export default async function MyCulture() {
   return (
     <div className="flex flex-col gap-4">
       <div>
-        <h1 className="text-lg font-bold text-left">Understand my culture</h1>
+        <h1 className="text-left text-lg font-bold">Understand my culture</h1>
         <p className="text-sm text-muted-foreground">
           I describe below a set of values that I hold dear and that I believe
           are essential to a <strong>fulfilling life</strong> and{" "}
@@ -12,12 +12,12 @@ export default async function MyCulture() {
         </p>
       </div>
 
-      <ol className="space-y-6 mt-4">
+      <ol className="mt-4 space-y-6">
         {rules
           ?.sort((a, b) => a.id - b.id)
           ?.map((rule) => (
             <li key={rule?.id} className="flex items-start">
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-semibold mr-4 flex-shrink-0">
+              <span className="mr-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary font-semibold text-primary-foreground">
                 {rule?.id}
               </span>
               <div>

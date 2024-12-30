@@ -26,7 +26,7 @@ export const useLocalStorage = (key: string, initialValue: number) => {
         localStorage.setItem(key, newValue.toString());
       }
     },
-    [key]
+    [key],
   );
 
   return [value, updateValue] as const;

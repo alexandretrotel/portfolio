@@ -12,7 +12,7 @@ describe("generateMemourizeData", () => {
       const data = generateEasyData();
       expect(data.length).toBe(MEMOURIZE_DIFFICULTY_LENGTH.easy);
       expect(data).toMatch(
-        new RegExp(`^[0-9]{${MEMOURIZE_DIFFICULTY_LENGTH.easy}}$`)
+        new RegExp(`^[0-9]{${MEMOURIZE_DIFFICULTY_LENGTH.easy}}$`),
       );
     });
 
@@ -33,7 +33,7 @@ describe("generateMemourizeData", () => {
       const data = generateMediumData();
       expect(data.length).toBe(MEMOURIZE_DIFFICULTY_LENGTH.medium);
       expect(data).toMatch(
-        new RegExp(`^[0-9A-Za-z]{${MEMOURIZE_DIFFICULTY_LENGTH.medium}}$`)
+        new RegExp(`^[0-9A-Za-z]{${MEMOURIZE_DIFFICULTY_LENGTH.medium}}$`),
       );
     });
 
@@ -60,8 +60,8 @@ describe("generateMemourizeData", () => {
       expect(data.length).toBe(MEMOURIZE_DIFFICULTY_LENGTH.hard);
       expect(data).toMatch(
         new RegExp(
-          `^[0-9A-Za-z!@#$%^&*()_+]{${MEMOURIZE_DIFFICULTY_LENGTH.hard}}$`
-        )
+          `^[0-9A-Za-z!@#$%^&*()_+]{${MEMOURIZE_DIFFICULTY_LENGTH.hard}}$`,
+        ),
       );
     });
 
@@ -88,15 +88,15 @@ describe("generateMemourizeData", () => {
     const hardData = generateMemourizeData("hard");
 
     expect(easyData).toMatch(
-      new RegExp(`^[0-9]{${MEMOURIZE_DIFFICULTY_LENGTH.easy}}$`)
+      new RegExp(`^[0-9]{${MEMOURIZE_DIFFICULTY_LENGTH.easy}}$`),
     );
     expect(mediumData).toMatch(
-      new RegExp(`^[0-9A-Za-z]{${MEMOURIZE_DIFFICULTY_LENGTH.medium}}$`)
+      new RegExp(`^[0-9A-Za-z]{${MEMOURIZE_DIFFICULTY_LENGTH.medium}}$`),
     );
     expect(hardData).toMatch(
       new RegExp(
-        `^[0-9A-Za-z!@#$%^&*()_+]{${MEMOURIZE_DIFFICULTY_LENGTH.hard}}$`
-      )
+        `^[0-9A-Za-z!@#$%^&*()_+]{${MEMOURIZE_DIFFICULTY_LENGTH.hard}}$`,
+      ),
     );
   });
 });

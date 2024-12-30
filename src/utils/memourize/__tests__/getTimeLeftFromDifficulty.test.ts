@@ -17,7 +17,7 @@ describe("getTimeLeftFromDifficulty", () => {
 
   it("should return the correct time for unknown difficulty", () => {
     expect(getTimeLeftFromDifficulty("unknown" as MemourizeDifficulty)).toBe(
-      TIME_TO_MEMORIZE.easy
+      TIME_TO_MEMORIZE.easy,
     );
   });
 });

@@ -34,7 +34,7 @@ export default function Game() {
 
   if (init || gameOver) {
     return (
-      <div className="text-center flex flex-col gap-4">
+      <div className="flex flex-col gap-4 text-center">
         <h2 className="text-lg font-semibold">{gameOver && "Game Over!"}</h2>
         <div className="flex flex-col gap-1">
           {!init && <p>Score: {score}</p>}
@@ -44,7 +44,7 @@ export default function Game() {
               Duration:{" "}
               {endTime
                 ? `${Math.floor(
-                    (endTime.getTime() - startTime.getTime()) / 1000
+                    (endTime.getTime() - startTime.getTime()) / 1000,
                   )} seconds`
                 : "N/A"}
             </p>
@@ -59,7 +59,7 @@ export default function Game() {
     return (
       <div className="flex flex-col gap-4">
         <div
-          className="grid gap-1 mb-4"
+          className="mb-4 grid gap-1"
           style={{
             gridTemplateRows: `repeat(${BOARD_SIZE}, minmax(0, 1fr))`,
             gridTemplateColumns: `repeat(${BOARD_SIZE}, minmax(0, 1fr))`,
@@ -70,20 +70,20 @@ export default function Game() {
             const y = i % BOARD_SIZE;
             const isSnake = isOnSnake(snake, [x, y]);
             const item = activeItems.find(
-              (item) => item.position[0] === x && item.position[1] === y
+              (item) => item.position[0] === x && item.position[1] === y,
             );
 
             return (
               <div
                 key={i}
-                className={`aspect-square rounded-sm flex items-center justify-center ${
+                className={`flex aspect-square items-center justify-center rounded-sm ${
                   isSnake
                     ? "bg-green-500"
                     : item?.type === "apple"
-                    ? "bg-red-500"
-                    : item?.type === "goldApple"
-                    ? "bg-yellow-500"
-                    : "bg-muted"
+                      ? "bg-red-500"
+                      : item?.type === "goldApple"
+                        ? "bg-yellow-500"
+                        : "bg-muted"
                 }`}
               >
                 {isSnake && <span className="text-sm">🐍</span>}
@@ -106,7 +106,7 @@ export default function Game() {
             </p>
             {dashDelay && (
               <div>
-                <p className="text-center text-lg font-semibold animate-pulse">
+                <p className="animate-pulse text-center text-lg font-semibold">
                   Dash disabled
                 </p>
               </div>

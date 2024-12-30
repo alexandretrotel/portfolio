@@ -80,7 +80,7 @@ export const useUser = ({
         setCurrentStreak((prev) => prev + 1);
       } else {
         setFeedback(
-          `Incorrect! The correct answer is x = ${solutionObj.x}, y = ${solutionObj.y}`
+          `Incorrect! The correct answer is x = ${solutionObj.x}, y = ${solutionObj.y}`,
         );
         setCurrentScore((prev) => (correct ? prev - 10 : prev));
         setCurrentStreak(0);
@@ -119,7 +119,7 @@ export const useUser = ({
         checkAnswer();
       }
     },
-    [checkAnswer]
+    [checkAnswer],
   );
 
   return {

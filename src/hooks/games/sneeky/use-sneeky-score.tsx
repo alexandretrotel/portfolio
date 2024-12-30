@@ -6,7 +6,7 @@ export const useSneekyScore = () => {
 
   const [highestScore, setHighestScore] = useLocalStorage(
     "sneekyHighestScore",
-    0
+    0,
   );
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export const useSneekyScore = () => {
       const initialHighestScore = localStorage.getItem("sneekyHighestScore");
 
       setHighestScore(
-        initialHighestScore ? parseInt(initialHighestScore, 10) : 0
+        initialHighestScore ? parseInt(initialHighestScore, 10) : 0,
       );
     }
   }, [setHighestScore]);
