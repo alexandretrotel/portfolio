@@ -14,39 +14,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
 import { motion, AnimatePresence } from "motion/react";
-
-interface ComponentProps {
-  title: string;
-  href: string;
-  disabled?: boolean;
-}
-
-const components: ComponentProps[] = [
-  {
-    title: "Home",
-    href: "/",
-  },
-  {
-    title: "About Me",
-    href: "/about",
-  },
-  {
-    title: "Blog",
-    href: "/blog",
-  },
-  {
-    title: "Projects",
-    href: "/projects",
-  },
-  {
-    title: "Games",
-    href: "/games",
-  },
-  {
-    title: "Contact",
-    href: "/contact",
-  },
-];
+import { links } from "@/data/header";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,7 +36,7 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-6">
           <NavigationMenu>
             <NavigationMenuList className="flex items-center gap-6">
-              {components.map((component) => {
+              {links?.map((component) => {
                 if (component.disabled) {
                   return null;
                 }
@@ -76,7 +44,7 @@ export default function Header() {
                 return (
                   <NavigationMenuItem key={component.title}>
                     <Link href={component.href} legacyBehavior passHref>
-                      <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 bg-transparent">
+                      <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-semibold transition-colors hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 bg-transparent">
                         {component.title}
                       </NavigationMenuLink>
                     </Link>
@@ -114,10 +82,10 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-14 left-0 right-0 bg-background backdrop-blur border-b border-border/40 dark:border-border"
+            className="md:hidden shadow-sm absolute top-14 left-0 right-0 bg-background backdrop-blur border-b border-border/40 dark:border-border"
           >
             <nav className="flex flex-col items-start py-4 px-4 max-w-5xl mx-auto">
-              {components.map((component) => {
+              {links?.map((component) => {
                 if (component.disabled) {
                   return null;
                 }

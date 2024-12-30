@@ -3,17 +3,21 @@ import "client-only";
 
 import { Badge } from "@/components/ui/badge";
 import { skills } from "@/data/skills";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Minus, Plus } from "lucide-react";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Category, Skills } from "@/types/skills";
+import { Separator } from "@/components/ui/separator";
 
 export default function SkillsSection() {
   return <StaticSkillsContent />;
 }
 
+const VISIBLE_SKILLS = 10;
+
 function StaticSkillsContent() {
   const [selectedGroup, setSelectedGroup] = useState<Category | null>(null);
+  const [seeMore, setSeeMore] = useState(false);
 
   const filteredSkills: Skills = useMemo(() => {
     if (selectedGroup === null) {
@@ -25,9 +29,13 @@ function StaticSkillsContent() {
       .flatMap((group) => group.skills);
   }, [selectedGroup]);
 
+  const visibleSkills = seeMore
+    ? filteredSkills
+    : filteredSkills.slice(0, VISIBLE_SKILLS);
+
   return (
     <div>
-      <h1 className="text-lg font-semibold">Skills</h1>
+      <h1 className="text-lg font-bold">Skills</h1>
       <div className="flex flex-col gap-4">
         <p className="text-sm text-muted-foreground">
           I&apos;ve worked with a variety of technologies and tools. Here are
@@ -60,8 +68,10 @@ function StaticSkillsContent() {
             ))}
         </div>
 
+        <Separator className="my-2 w-full" />
+
         <div className="flex flex-wrap gap-2">
-          {filteredSkills
+          {visibleSkills
             ?.sort((a, b) => a.skill.localeCompare(b.skill))
             ?.map((item) => {
               if (item?.url) {
@@ -77,6 +87,18 @@ function StaticSkillsContent() {
                 return <Badge key={item.skill}>{item.skill}</Badge>;
               }
             })}
+          {filteredSkills.length > VISIBLE_SKILLS && (
+            <button onClick={() => setSeeMore(!seeMore)}>
+              <Badge variant="outline">
+                {seeMore ? "See less" : "See more"}
+                {seeMore ? (
+                  <Minus size={16} className="ml-1" />
+                ) : (
+                  <Plus size={16} className="ml-1" />
+                )}
+              </Badge>
+            </button>
+          )}
         </div>
       </div>
     </div>

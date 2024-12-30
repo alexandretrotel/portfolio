@@ -10,8 +10,9 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { features } from "@/data/features";
+import { cn } from "@/lib/utils";
 import { Project } from "@/types/projects";
-import { Info } from "lucide-react";
+import { ArrowUpRight, Info } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,6 +32,7 @@ export function ProjectItem({
   featured,
   showPreview,
   icon,
+  links,
 }: ProjectItemProps) {
   return (
     <Card className="overflow-hidden">
@@ -71,10 +73,29 @@ export function ProjectItem({
                   />
                 )}
                 <CardTitle>{title}</CardTitle>
+                {links && links?.length > 0 && (
+                  <Link
+                    href={links?.[0].url}
+                    target="_blank"
+                    className="hover:translate-x-0.5 hover:-translate-y-0.5 hover:scale-110 duration-200"
+                  >
+                    <ArrowUpRight size={16} />
+                  </Link>
+                )}
               </div>
               <div className="flex items-center gap-2">
                 {featured && <Badge className="text-xs">Featured</Badge>}
-                <Badge variant="outline">{status}</Badge>
+                <Badge
+                  variant="outline"
+                  className={cn(
+                    status === "Completed"
+                      ? "bg-green-500 hover:bg-green-500/80"
+                      : "bg-yellow-500 hover:bg-yellow-500/80",
+                    "border-transparent text-white"
+                  )}
+                >
+                  {status}
+                </Badge>
               </div>
             </div>
             <CardDescription className="text-sm">
@@ -103,11 +124,13 @@ export function ProjectItem({
             <Separator className="my-2 w-full" />
 
             <div className="flex flex-wrap gap-2">
-              {tags?.map((tag) => (
-                <Badge key={tag} variant="secondary">
-                  {tag}
-                </Badge>
-              ))}
+              {tags
+                ?.sort((a, b) => a.localeCompare(b))
+                ?.map((tag) => (
+                  <Badge key={tag} variant="secondary">
+                    {tag}
+                  </Badge>
+                ))}
             </div>
           </div>
         </CardFooter>

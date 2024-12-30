@@ -38,8 +38,8 @@ function StaticBooksContent() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-semibold text-left">
-          Books I&apos;ve Read
+        <h1 className="text-lg font-bold text-left">
+          Read the books that shaped my thinking
         </h1>
       </div>
 
@@ -111,7 +111,7 @@ function BookItem({ title, description, url, tags }: BookItemProps) {
             <Link
               href={url}
               target="_blank"
-              className="hover:translate-x-1 hover:-translate-y-1 hover:scale-110 duration-200"
+              className="hover:translate-x-0.5 hover:-translate-y-0.5 hover:scale-110 duration-200"
             >
               <ArrowUpRight size={16} />
             </Link>

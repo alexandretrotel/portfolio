@@ -5,10 +5,10 @@ import MyCulture from "./my-culture";
 
 export default async function AboutPage() {
   return (
-    <div className="flex flex-col gap-12 w-full max-w-xl mx-auto">
+    <div className="flex flex-col gap-16 w-full max-w-xl mx-auto">
       <About />
-      <Investments />
       <MyCulture />
+      <Investments />
       <Books />
     </div>
   );

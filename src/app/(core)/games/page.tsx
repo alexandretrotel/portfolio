@@ -35,7 +35,7 @@ export default async function Games() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col max-w-sm">
-        <h1 className="text-lg font-semibold">Games</h1>
+        <h1 className="text-lg font-bold">Games</h1>
         <p className="text-muted-foreground text-sm">
           Play my games to have fun and keep your brain sharp.
         </p>
