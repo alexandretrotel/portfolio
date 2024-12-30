@@ -8,7 +8,7 @@ export default async function MyCulture() {
         <p className="text-sm text-muted-foreground">
           I describe below a set of values that I hold dear and that I believe
           are essential to a <strong>fulfilling life</strong> and{" "}
-          <strong>maximizing my productivity</strong>.
+          <strong>maximizing productivity</strong>.
         </p>
       </div>
 

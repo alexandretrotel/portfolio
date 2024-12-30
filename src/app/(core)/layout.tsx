@@ -1,6 +1,7 @@
-import Footer from "@/components/core/footer";
 import "../globals.css";
 
+import Footer from "@/components/core/footer";
+import Animation from "@/components/core/animation";
 import Header from "@/components/core/header";
 
 export default function Layout({
@@ -10,9 +11,13 @@ export default function Layout({
 }>) {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Animation>
+        <Header />
+      </Animation>
       <main className="mx-auto max-w-5xl px-4 py-12">{children}</main>
-      <Footer />
+      <Animation up>
+        <Footer />
+      </Animation>
     </div>
   );
 }

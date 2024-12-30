@@ -1,3 +1,4 @@
+import Animation from "@/components/core/animation";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -33,37 +34,44 @@ const games = [
 
 export default async function Games() {
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex max-w-sm flex-col">
-        <h1 className="text-lg font-bold">Games</h1>
-        <p className="text-sm text-muted-foreground">
-          Play my games to have fun and keep your brain sharp.
-        </p>
-      </div>
+    <Animation>
+      <div className="flex flex-col gap-4">
+        <div className="flex max-w-sm flex-col">
+          <h1 className="text-lg font-bold">Games</h1>
+          <p className="text-sm text-muted-foreground">
+            Play my games to have fun and keep your brain sharp.
+          </p>
+        </div>
 
-      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2">
-        {games.map((game) => (
-          <Card key={game.name} className="flex flex-col justify-between">
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle>{game.name}</CardTitle>
-                <Image
-                  src={game.image}
-                  alt={game.name}
-                  width={32}
-                  height={32}
-                />
-              </div>
-              <CardDescription>{game.description}</CardDescription>
-            </CardHeader>
-            <CardFooter>
-              <Button asChild>
-                <Link href={game.href}>Play now</Link>
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2">
+          {games.map((game, index) => (
+            <Animation key={game.name} delay={index * 0.25}>
+              <Card
+                key={game.name}
+                className="flex h-full flex-col justify-between"
+              >
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle>{game.name}</CardTitle>
+                    <Image
+                      src={game.image}
+                      alt={game.name}
+                      width={32}
+                      height={32}
+                    />
+                  </div>
+                  <CardDescription>{game.description}</CardDescription>
+                </CardHeader>
+                <CardFooter>
+                  <Button asChild>
+                    <Link href={game.href}>Play now</Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </Animation>
+          ))}
+        </div>
       </div>
-    </div>
+    </Animation>
   );
 }

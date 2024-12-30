@@ -18,6 +18,7 @@ import Link from "next/link";
 
 interface ProjectItemProps extends Project {
   showPreview?: boolean;
+  heightFull?: boolean;
 }
 
 export function ProjectItem({
@@ -33,9 +34,10 @@ export function ProjectItem({
   showPreview,
   icon,
   links,
+  heightFull,
 }: ProjectItemProps) {
   return (
-    <Card className="overflow-hidden">
+    <Card className={cn("overflow-hidden", heightFull && "h-full")}>
       <div className="flex h-full w-full flex-col justify-between">
         <div className="flex w-full flex-col gap-2">
           {showPreview && preview && (
