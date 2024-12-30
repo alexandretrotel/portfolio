@@ -1,4 +1,4 @@
-import { QuatioDifficulty } from "@/types/quatio";
+import { QuatioDifficulty } from "@/types/games/quatio";
 
 export const generateEquation = (
   difficulty: QuatioDifficulty,

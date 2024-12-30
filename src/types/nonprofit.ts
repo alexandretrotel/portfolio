@@ -11,4 +11,6 @@ export type Role = {
   positions: Position[];
   disabled?: boolean;
   readMore?: string;
-}[];
+};
+
+export type Roles = Role[];

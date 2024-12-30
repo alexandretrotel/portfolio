@@ -5,7 +5,7 @@ import {
   GOLD_APPLE_SCORE,
   GOLD_APPLE_SEGMENT,
 } from "@/data/games/sneeky/parameters";
-import { Item } from "@/types/sneeky";
+import { Item } from "@/types/games/sneeky";
 import { checkCollision } from "@/utils/sneeky/checkCollision";
 import { spawnItem } from "@/utils/sneeky/spawnItem";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";

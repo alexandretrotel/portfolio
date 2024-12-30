@@ -16,7 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { MemourizeData, MemourizeDifficulty } from "@/types/memourize";
+import { MemourizeData, MemourizeDifficulty } from "@/types/games/memourize";
 import { formatSequence } from "@/utils/memourize/formatSequence";
 
 interface MemourizeCardProps {

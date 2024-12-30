@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { QuatioDifficulty } from "@/types/quatio";
+import { QuatioDifficulty } from "@/types/games/quatio";
 import { Label } from "@/components/ui/label";
 import {
   Select,

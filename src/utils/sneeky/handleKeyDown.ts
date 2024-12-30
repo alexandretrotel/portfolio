@@ -1,4 +1,4 @@
-import { DirectionKey } from "@/types/sneeky";
+import { DirectionKey } from "@/types/games/sneeky";
 
 export const handleKeyDown = (
   e: KeyboardEvent,

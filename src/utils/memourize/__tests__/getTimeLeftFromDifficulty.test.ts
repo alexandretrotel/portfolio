@@ -1,4 +1,4 @@
-import { MemourizeDifficulty } from "@/types/memourize";
+import { MemourizeDifficulty } from "@/types/games/memourize";
 import { getTimeLeftFromDifficulty } from "../getTimeLeftFromDifficulty";
 import { TIME_TO_MEMORIZE } from "@/data/games/memourize/parameters";
 

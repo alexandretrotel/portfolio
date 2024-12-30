@@ -1,6 +1,6 @@
 import { generateEquation } from "@/utils/quatio/generateEquation";
 import { useCallback, useState } from "react";
-import { QuatioDifficulty } from "@/types/quatio";
+import { QuatioDifficulty } from "@/types/games/quatio";
 import { FEEDBACK_DURATION } from "@/data/games/parameters";
 
 type SetEquationDataType = React.Dispatch<
