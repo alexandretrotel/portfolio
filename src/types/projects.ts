@@ -49,6 +49,13 @@ export type Languages = Language[];
 
 export type Status = "In Progress" | "Completed";
 
+export type PreviewType = "image" | "video";
+
+export type Preview = {
+  asset: string;
+  type: PreviewType;
+};
+
 export type Project = {
   title: string;
   description: string;
@@ -57,7 +64,7 @@ export type Project = {
   url?: string;
   links?: Links;
   languages?: Languages;
-  image?: string;
+  preview?: Preview;
   skills?: Skills;
   featured?: boolean;
   tags?: Tags;

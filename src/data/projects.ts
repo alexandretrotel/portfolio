@@ -1,8 +1,9 @@
 import { Projects } from "@/types/projects";
 
 const basePath = "/projects";
-const imageBasePath = "/projects";
+const imageBasePath = "/projects/images";
 const iconBasePath = "/projects/icons";
+const videoBasePath = "/projects/videos";
 
 export const projects: Projects = [
   {
@@ -21,7 +22,10 @@ export const projects: Projects = [
         url: "https://github.com/trotelalexandre/alexandretrotel",
       },
     ],
-    image: `${imageBasePath}/portfolio.png`,
+    preview: {
+      asset: `${videoBasePath}/portfolio.mp4`,
+      type: "video",
+    },
     tags: ["Frontend", "Design"],
     languages: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
     status: "In Progress",
@@ -52,7 +56,6 @@ export const projects: Projects = [
         url: "https://github.com/TrotelCoin",
       },
     ],
-    image: `${imageBasePath}/trotelcoin.png`,
     tags: [
       "Frontend",
       "Backend",
@@ -74,6 +77,10 @@ export const projects: Projects = [
     dateCompleted: new Date("2024-07-05"),
     featured: true,
     icon: `${iconBasePath}/trotelcoin.jpeg`,
+    preview: {
+      asset: `${videoBasePath}/trotelcoin.mp4`,
+      type: "video",
+    },
   },
   {
     title: "Mindify",
@@ -88,7 +95,6 @@ export const projects: Projects = [
       },
       { title: "GitHub", url: "https://github.com/mindify-fr" },
     ],
-    image: `${imageBasePath}/mindify.png`,
     tags: [
       "Mobile",
       "Design",
@@ -103,6 +109,10 @@ export const projects: Projects = [
     status: "In Progress",
     featured: true,
     icon: `${iconBasePath}/mindify.jpeg`,
+    preview: {
+      asset: `${videoBasePath}/mindify.mp4`,
+      type: "video",
+    },
   },
   {
     title: "AgroParisTech Service Études",
@@ -117,7 +127,6 @@ export const projects: Projects = [
         url: "https://agroparistech-service-etudes.fr",
       },
     ],
-    image: `${imageBasePath}/agroparistech-service-etudes.png`,
     tags: ["Frontend", "Design", "Business"],
     status: "Completed",
     dateCompleted: new Date("2024-06-14"),
@@ -131,10 +140,13 @@ export const projects: Projects = [
       { title: "Application", url: "https://progressly-prod.vercel.app" },
       { title: "GitHub", url: "https://github.com/trotelalexandre/progressly" },
     ],
-    image: `${imageBasePath}/progressly.png`,
     tags: ["Frontend", "Backend", "Fullstack", "Design", "Business", "API"],
     languages: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Drizzle"],
     status: "In Progress",
+    preview: {
+      asset: `${videoBasePath}/progressly.mp4`,
+      type: "video",
+    },
   },
   {
     title: "Check Node Packages (cnp)",
@@ -143,7 +155,6 @@ export const projects: Projects = [
     date: new Date("2023-12-03"),
     url: `${basePath}/cnp`,
     links: [{ title: "Github", url: "https://github.com/trotelalexandre/cnp" }],
-    image: `${imageBasePath}/cnp.png`,
     tags: ["CLI", "Tooling"],
     languages: ["Rust", "Cargo"],
     status: "In Progress",
@@ -164,7 +175,6 @@ export const projects: Projects = [
         url: "https://github.com/auroraagence",
       },
     ],
-    image: `${imageBasePath}/aurora.png`,
     tags: ["Frontend", "Design", "Business"],
     languages: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
     status: "In Progress",
@@ -186,7 +196,6 @@ export const projects: Projects = [
         url: "https://github.com/siborg-ads",
       },
     ],
-    image: `${imageBasePath}/siborg.jpeg`,
     tags: ["API", "Backend"],
     languages: ["TypeScript", "grammY"],
     status: "Completed",

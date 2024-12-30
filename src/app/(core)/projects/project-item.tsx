@@ -16,7 +16,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface ProjectItemProps extends Project {
-  showImage?: boolean;
+  showPreview?: boolean;
 }
 
 export function ProjectItem({
@@ -25,26 +25,37 @@ export function ProjectItem({
   date,
   dateCompleted,
   url,
-  image,
+  preview,
   tags,
   status,
   featured,
-  showImage,
+  showPreview,
   icon,
 }: ProjectItemProps) {
   return (
-    <Card>
+    <Card className="overflow-hidden">
       <div className="flex flex-col justify-between w-full h-full">
-        <div>
-          {showImage && image && (
-            <div className="relative w-full h-48">
-              <Image
-                src={image}
-                alt={title}
-                layout="fill"
-                objectFit="cover"
-                className="w-full h-full rounded-t-lg"
-              />
+        <div className="flex flex-col gap-2 w-full">
+          {showPreview && preview && (
+            <div className="relative w-full h-48 border-b">
+              {preview?.type === "image" ? (
+                <Image
+                  src={preview?.asset}
+                  alt={title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="w-full h-full"
+                />
+              ) : (
+                <video
+                  src={preview?.asset}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              )}
             </div>
           )}
           <CardHeader>
