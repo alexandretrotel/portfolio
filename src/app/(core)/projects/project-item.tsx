@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { features } from "@/data/features";
 import { Project } from "@/types/projects";
 import Image from "next/image";
 import Link from "next/link";
@@ -62,7 +63,7 @@ export function ProjectItem({
         </div>
         <CardFooter className="w-full">
           <div className="flex flex-col gap-2 w-full">
-            {url && (
+            {features.canSeeProjectsReadMore && url && (
               <Button asChild size="sm" className="w-fit">
                 <Link href={url}>Learn more</Link>
               </Button>
