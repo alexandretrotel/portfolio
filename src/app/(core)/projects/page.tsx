@@ -1,13 +1,22 @@
-import Link from "next/link";
+import { projects } from "@/data/projects";
+import { ProjectItem } from "./project-item";
 
-export default async function Blog() {
+export default async function Projects() {
   return (
-    <p className="text-muted-foreground text-sm">
-      This page isn&apos;t ready yet but you can check out the{" "}
-      <Link href="/contact" className="text-primary hover:underline">
-        contact
-      </Link>{" "}
-      page.
-    </p>
+    <div className="flex flex-col gap-4">
+      <div>
+        <h1 className="text-lg font-bold">Projects</h1>
+        <p className="text-sm text-muted-foreground">
+          Here are some of the projects I&apos;ve worked on.
+        </p>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {projects
+          ?.sort((a, b) => b.date.getTime() - a.date.getTime())
+          ?.map((project) => (
+            <ProjectItem key={project.title} showImage {...project} />
+          ))}
+      </div>
+    </div>
   );
 }

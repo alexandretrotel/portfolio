@@ -5,7 +5,7 @@ import { useSneekyScore } from "./use-sneeky-score";
 import { useSnake } from "./use-snake";
 import { useGameItems } from "./use-game-items";
 import { useGameState } from "./use-game-state";
-import { directionMap } from "@/types/sneeky";
+import { directionMap } from "@/types/games/sneeky";
 import { isOutOfBonds } from "@/utils/sneeky/isOutOfBonds";
 
 export const useSneeky = () => {
