@@ -12,7 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import { features } from "@/data/features";
 import { cn } from "@/lib/utils";
 import { Project } from "@/types/projects";
-import { Info } from "lucide-react";
+import { ArrowUpRight, Info } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -32,6 +32,7 @@ export function ProjectItem({
   featured,
   showPreview,
   icon,
+  links,
 }: ProjectItemProps) {
   return (
     <Card className="overflow-hidden">
@@ -72,6 +73,15 @@ export function ProjectItem({
                   />
                 )}
                 <CardTitle>{title}</CardTitle>
+                {links && links?.length > 0 && (
+                  <Link
+                    href={links?.[0].url}
+                    target="_blank"
+                    className="hover:translate-x-1 hover:-translate-y-1 hover:scale-110 duration-200"
+                  >
+                    <ArrowUpRight size={16} />
+                  </Link>
+                )}
               </div>
               <div className="flex items-center gap-2">
                 {featured && <Badge className="text-xs">Featured</Badge>}
