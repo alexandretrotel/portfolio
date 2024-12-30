@@ -11,9 +11,7 @@ export default function Layout({
 }>) {
   return (
     <div className="min-h-screen bg-background">
-      <Animation>
-        <Header />
-      </Animation>
+      <Header />
       <main className="mx-auto max-w-5xl px-4 py-12">{children}</main>
       <Animation up>
         <Footer />
