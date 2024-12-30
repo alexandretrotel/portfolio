@@ -98,4 +98,19 @@ export const books: Books = [
     tags: ["Business"],
     url: "https://www.amazon.fr/100M-Leads-Comment-inconnus-Acquisition-com-ebook/dp/B0CWF5HC2Z/ref=sr_1_2?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=38WGBMKO974EA&dib=eyJ2IjoiMSJ9.xxZ1xU_m9eUJkWmbFZFntJsc2uEp3zIMWDy0O9J2GDRZKAONYUpN3xIUoIXHwL0suwrebFVIz5alYPotakQ6JRrPAOKiVPH8-g3RV_JxgUZn6JdaXT2cx4-8hVGBGeNRwGSADdkbL29CfJcSoAn_RQeZqAcDe3AO8wSyfn1doy1kRUNkguaNsKm78vLUTbifGXMjMqa9cGZi4k8YokoBdnhJsDi0mJt_Z55pBhxH7wHxf9DQ4vJua0D5onQG_R5ofJD_jkgWMp7gd26OrnFUaCeb3JAu9495hDeBs1KamHU2FIyP3II6W2nYZhjMG4_1IyehT6h8ACJAzkyuSUNG9HiC3D4AKvB0dFeGxfvQUIRbpDdEanZ89wlW6VMQkb0YDC4vYMXIJbOYuRo8es7jn8-GSXkOZNbZB32siaoWKRz8RT-qN9pwc9wp4VK-X7VP.nYVwCbNcv309rGMl20J4SlSNZHzsR5XtfQq2ShFvzYo&dib_tag=se&keywords=alex+hormozi&nsdOptOutParam=true&qid=1735591241&sprefix=alex+hormozi%2Caps%2C111&sr=8-2",
   },
+  {
+    title: "Votre temps est infini",
+    author: "Fabien Olicard",
+    description: "How to manage your time and be more productive.",
+    tags: ["Personal development"],
+    url: "https://www.amazon.fr/Votre-temps-est-infini-journ%C3%A9e-ebook/dp/B07YBMPNFY/?_encoding=UTF8&pd_rd_w=XygSs&content-id=amzn1.sym.0f397839-e4a6-4db5-bb45-2a80947b193a&pf_rd_p=0f397839-e4a6-4db5-bb45-2a80947b193a&pf_rd_r=XXZ7QV5VBVFPPD2CHKFF&pd_rd_wg=1HHJp&pd_rd_r=2d94e1b6-be71-4208-b597-441f8ed3411e&ref_=pd_hp_d_btf_ddex-mdi-hpd",
+  },
+  {
+    title: "Émile ou de l'éducation",
+    author: "Jean-Jacques Rousseau",
+    description:
+      "The educational philosophy of Jean-Jacques Rousseau, a French philosopher.",
+    tags: ["Personal development"],
+    url: "https://www.amazon.fr/Emile-ou-l%C3%A9ducation-Jean-Jacques-Rousseau/dp/2081206927/ref=sr_1_1?crid=4LKXIXIRE35F&dib=eyJ2IjoiMSJ9.hFuQnoeOmaxwZb0GPSfefTkckTIWZq4TxNEuUYNHT_xBxlh-Q6xagJf_HU9aBLoJlpf2ypBbI8IjKHHUGoo_AMNa8K6lg5eg6tvnSWvCyi9BTtj6WRwe0dGz8_jiATICfSKmvPjNyOd5_rKBkTm7XGPJ4chRjD5rG0qxnNt4qH0TrPVG7r2YcrBCOkzYz7p50btWzGcbkfDLK3EoRrHuqZoZf4QJHMbQ8A6ZF9Qj72CIn76hXCfVAIACmnvlRz1dy7t__CPSPbIldfiRJqZ53GWtxFVUFRSRU4kIHX8CUqQ.jzSnMJAaykdDIWkK9wM9-uelhvh90r7BtnlIVikwrqQ&dib_tag=se&keywords=emile+ou+de+l+%C3%A9ducation&nsdOptOutParam=true&qid=1735592264&sprefix=emile+ou+de+l%27%2Caps%2C121&sr=8-1",
+  },
 ];
