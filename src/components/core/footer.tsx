@@ -68,7 +68,7 @@ function DonationsComponent() {
         {donations.map((donation, index) => (
           <TooltipProvider key={index}>
             <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger asChild>
                 <Button
                   className="flex items-center justify-center"
                   variant="outline"
