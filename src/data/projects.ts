@@ -28,7 +28,7 @@ export const projects: Projects = [
     },
     tags: ["Frontend", "Design"],
     languages: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
-    status: "In Progress",
+    status: "WIP",
     featured: true,
     icon: `${iconBasePath}/logo.png`,
   },
@@ -106,7 +106,7 @@ export const projects: Projects = [
       "API",
     ],
     languages: ["TypeScript", "React Native", "Tailwind CSS", "Expo", "NestJS"],
-    status: "In Progress",
+    status: "WIP",
     featured: true,
     icon: `${iconBasePath}/mindify.jpeg`,
     preview: {
@@ -146,7 +146,7 @@ export const projects: Projects = [
     ],
     tags: ["Frontend", "Backend", "Fullstack", "Design", "Business", "API"],
     languages: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Drizzle"],
-    status: "In Progress",
+    status: "WIP",
     preview: {
       asset: `${videoBasePath}/progressly.mp4`,
       type: "video",
@@ -161,7 +161,7 @@ export const projects: Projects = [
     links: [{ title: "Github", url: "https://github.com/trotelalexandre/cnp" }],
     tags: ["CLI", "Tooling"],
     languages: ["Rust", "Cargo"],
-    status: "In Progress",
+    status: "WIP",
     preview: {
       asset: `${videoBasePath}/cnp.mp4`,
       type: "video",
@@ -185,7 +185,7 @@ export const projects: Projects = [
     ],
     tags: ["Frontend", "Design", "Business"],
     languages: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
-    status: "In Progress",
+    status: "WIP",
     icon: `${iconBasePath}/aurora.jpeg`,
     preview: {
       asset: `${videoBasePath}/aurora.mp4`,

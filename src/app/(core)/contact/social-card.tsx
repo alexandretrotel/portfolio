@@ -6,6 +6,7 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
+import { features } from "@/data/features";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -27,8 +28,10 @@ export default async function SocialCard({
   color,
   icon,
 }: SocialCardProps) {
+  const cardColor = features.enableSocialCardColor ? color : undefined;
+
   return (
-    <Card className={cn(color, color && "border-transparent")}>
+    <Card className={cn(cardColor, cardColor && "border-transparent")}>
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle>{title}</CardTitle>

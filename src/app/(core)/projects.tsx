@@ -19,7 +19,7 @@ export default async function Projects() {
 
   return (
     <div>
-      <h1 className="text-lg font-semibold">Projects</h1>
+      <h1 className="text-lg font-bold">Projects</h1>
       <p className="text-sm text-muted-foreground">
         Here are some of the projects I&apos;ve worked on.
       </p>
