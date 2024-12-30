@@ -26,8 +26,8 @@ const EthereumIcon = ({ size }: { size: number }) => (
 
 export default function Footer() {
   return (
-    <footer className="text-center py-8 border-t max-w-5xl mx-auto">
-      <div className="max-w-5xl mx-auto flex flex-col gap-8">
+    <footer className="text-center py-8 border-t max-w-5xl mx-auto px-4">
+      <div className="mx-auto flex flex-col gap-8">
         <p className="font-semibold text-sm">
           Made with ❤️ by Alexandre Trotel
         </p>
