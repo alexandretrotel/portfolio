@@ -77,7 +77,7 @@ export function ProjectItem({
                   <Link
                     href={links?.[0].url}
                     target="_blank"
-                    className="hover:translate-x-1 hover:-translate-y-1 hover:scale-110 duration-200"
+                    className="hover:translate-x-0.5 hover:-translate-y-0.5 hover:scale-110 duration-200"
                   >
                     <ArrowUpRight size={16} />
                   </Link>
@@ -89,9 +89,9 @@ export function ProjectItem({
                   variant="outline"
                   className={cn(
                     status === "Completed"
-                      ? "bg-green-400 hover:bg-green-400/80"
-                      : "bg-yellow-400 hover:bg-yellow-400/80",
-                    "border-transparent text-background"
+                      ? "bg-green-500 hover:bg-green-500/80"
+                      : "bg-yellow-500 hover:bg-yellow-500/80",
+                    "border-transparent text-white"
                   )}
                 >
                   {status}

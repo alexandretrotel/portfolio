@@ -1,5 +1,6 @@
 export type Position = {
   title: string;
+  description: string;
   date: string;
   disabled?: boolean;
 };
