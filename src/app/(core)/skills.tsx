@@ -7,6 +7,7 @@ import { ArrowUpRight, Minus, Plus } from "lucide-react";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Category, Skills } from "@/types/skills";
+import { Separator } from "@/components/ui/separator";
 
 export default function SkillsSection() {
   return <StaticSkillsContent />;
@@ -66,6 +67,8 @@ function StaticSkillsContent() {
               </Badge>
             ))}
         </div>
+
+        <Separator className="my-2 w-full" />
 
         <div className="flex flex-wrap gap-2">
           {visibleSkills
