@@ -82,7 +82,7 @@ const EducationItem = ({
       </div>
     </CardHeader>
     <CardContent>
-      <p className="text-sm text-muted-foreground">{topic}</p>
+      <p className="text-sm font-medium">{topic}</p>
       <p className="text-xs text-muted-foreground">{date}</p>
     </CardContent>
   </Card>
