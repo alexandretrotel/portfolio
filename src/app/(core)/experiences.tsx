@@ -1,49 +1,24 @@
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
-import { ArrowUpRight, ChevronsUpDown } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { experiences } from "@/data/experiences";
 import { Position } from "@/types/experiences";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import { features } from "@/data/features";
 
 export default async function Experiences() {
   return (
-    <Collapsible className="flex flex-col gap-4" defaultOpen={true}>
-      <div className="flex items-center justify-between">
-        <h1 className="text-lg font-bold text-left">Work experience</h1>
-        {experiences?.length > 1 && (
-          <CollapsibleTrigger asChild>
-            <Button variant="ghost" size="sm">
-              <ChevronsUpDown className="h-4 w-4" />
-              <span className="sr-only">Toggle</span>
-            </Button>
-          </CollapsibleTrigger>
-        )}
+    <div className="flex flex-col gap-4">
+      <h1 className="text-lg font-bold text-left">Work experience</h1>
+
+      <div className="flex flex-col gap-6">
+        {!experiences?.[0]?.disabled && <ExperiencesItem {...experiences[0]} />}
+
+        {experiences?.slice(1)?.map((item, index) => {
+          if (item?.disabled) return null;
+
+          return <ExperiencesItem key={index} {...item} />;
+        })}
       </div>
-
-      {!experiences?.[0]?.disabled && <ExperiencesItem {...experiences[0]} />}
-      <CollapsibleContent>
-        <div className="flex flex-col gap-4">
-          {experiences?.slice(1)?.map((item, index) => {
-            if (item?.disabled) return null;
-
-            return <ExperiencesItem key={index} {...item} />;
-          })}
-        </div>
-      </CollapsibleContent>
-    </Collapsible>
+    </div>
   );
 }
 
@@ -52,7 +27,6 @@ interface WorkExperienceItemProps {
   positions: Position[];
   url?: string;
   image?: string;
-  readMore?: string;
 }
 
 const ExperiencesItem = async ({
@@ -60,56 +34,44 @@ const ExperiencesItem = async ({
   positions,
   url,
   image,
-  readMore,
 }: WorkExperienceItemProps) => (
-  <Card>
-    <CardHeader>
-      <div className="flex items-center justify-between w-full">
-        <div className="flex items-center gap-2">
-          {image && (
-            <Image
-              src={image}
-              width={24}
-              height={24}
-              alt={company}
-              className="rounded-md"
-            />
-          )}
-          <CardTitle>{company}</CardTitle>
-        </div>
+  <div className="flex flex-col gap-2">
+    <div className="flex items-center gap-4 justify-between">
+      <div className="flex items-center gap-2">
+        {image && (
+          <Image
+            src={image}
+            width={24}
+            height={24}
+            alt={company}
+            className="rounded-md"
+          />
+        )}
+        <h2 className="font-bold">{company}</h2>
         {url && (
           <Link
             href={url}
             target="_blank"
-            className="hover:translate-x-1 hover:-translate-y-1 hover:scale-110 duration-200"
+            className="hover:translate-x-0.5 hover:-translate-y-0.5 hover:scale-110 duration-200"
           >
             <ArrowUpRight size={16} />
           </Link>
         )}
       </div>
-    </CardHeader>
-    <CardContent className="pb-4">
-      <div className="flex flex-col gap-4">
-        {positions.map((pos, idx) => (
-          <div key={idx} className="mb-2 flex flex-col gap-2">
-            <div>
-              <p className="text-sm font-medium">{pos.title}</p>
-              <p className="text-xs text-muted-foreground">{pos.date}</p>
-            </div>
+      <p className="text-xs text-muted-foreground whitespace-nowrap">
+        {positions?.[0].date}
+      </p>
+    </div>
+
+    <div className="flex flex-col gap-4">
+      {positions.map((pos, idx) => (
+        <div key={idx} className="flex flex-col gap-4">
+          <div>
+            <p className="text-sm font-semibold">{pos.title}</p>
+            <p className="text-xs text-muted-foreground">{pos.description}</p>
           </div>
-        ))}
-      </div>
-    </CardContent>
-    {features.canSeeExperienceReadMore && (
-      <CardFooter>
-        {readMore && (
-          <Button size="sm" className="w-fit" asChild>
-            <Link href={readMore} passHref>
-              Read More
-            </Link>
-          </Button>
-        )}
-      </CardFooter>
-    )}
-  </Card>
+        </div>
+      ))}
+    </div>
+  </div>
 );

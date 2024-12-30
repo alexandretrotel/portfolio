@@ -182,7 +182,7 @@ export const skills: SkillsGroups = [
     ],
   },
   {
-    category: "Music Production",
+    category: "Music production",
     skills: [
       {
         skill: "FL Studio",

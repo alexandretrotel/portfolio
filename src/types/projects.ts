@@ -47,7 +47,7 @@ export type Language =
 
 export type Languages = Language[];
 
-export type Status = "In Progress" | "Completed";
+export type Status = "WIP" | "Completed";
 
 export type PreviewType = "image" | "video";
 

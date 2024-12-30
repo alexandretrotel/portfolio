@@ -7,7 +7,7 @@ export type Category =
   | "AI"
   | "Blockchain"
   | "Design"
-  | "Music Production"
+  | "Music production"
   | "Others";
 
 export type Skill = {
