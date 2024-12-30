@@ -23,7 +23,7 @@ export const roles: Roles = [
       {
         title: "Vice-President & Board Member",
         description:
-          "Developed and executed a sales strategy, increasing annual sales by 60% and missions by 78%, with an NPS of 57. Led efforts for awards like Prix d'Excellence and Alten's Best Engineering Study Award. Improved business processes for better efficiency. Created a newsletter for 25,000+ Junior-Entrepreneurs, achieving 5,000+ views, 60+ subscribers, and publishing 43 articles. Worked with 15+ Junior-Enterprises and built a custom CRM tool.",
+          "Developed and executed a sales strategy, increasing annual sales by 60% and missions by 78%, with a NPS of 57. Led efforts for awards like Prix d'Excellence and Alten's Best Engineering Study Award. Improved business processes for better efficiency. Created a newsletter for 25,000+ Junior-Entrepreneurs, achieving 5,000+ views, 60+ subscribers, and publishing 43 articles. Worked with 15+ Junior-Enterprises and built a custom CRM tool.",
         date: "Mar. 2023 - Mar. 2024",
       },
     ],
