@@ -14,7 +14,7 @@ export default async function Projects() {
 
   const orderedProjects = [...featuredProjects, ...otherProjects]?.slice(
     0,
-    PROJECTS_LIMIT
+    PROJECTS_LIMIT,
   );
 
   return (
@@ -23,7 +23,7 @@ export default async function Projects() {
       <p className="text-sm text-muted-foreground">
         Here are some of the projects I&apos;ve worked on.
       </p>
-      <div className="grid grid-cols-1 gap-4 mt-4">
+      <div className="mt-4 grid grid-cols-1 gap-4">
         {orderedProjects?.map((project) => (
           <ProjectItem key={project.url} showPreview {...project} />
         ))}

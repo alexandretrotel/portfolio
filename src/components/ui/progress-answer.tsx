@@ -16,19 +16,19 @@ const ProgressAnswer = React.forwardRef<HTMLDivElement, ExtendedProgressProps>(
       className={cn(
         "relative h-2 w-full overflow-hidden rounded-full",
         isCorrect ? "bg-green-200" : "bg-red-200",
-        className
+        className,
       )}
       {...props}
     >
       <ProgressPrimitive.Indicator
         className={cn(
           "h-full w-full flex-1 transition-all",
-          isCorrect ? "bg-green-600" : "bg-red-600"
+          isCorrect ? "bg-green-600" : "bg-red-600",
         )}
         style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
       />
     </ProgressPrimitive.Root>
-  )
+  ),
 );
 ProgressAnswer.displayName = ProgressPrimitive.Root.displayName;
 

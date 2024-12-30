@@ -18,7 +18,7 @@ export const generateEasyData = () => {
   const numbers = "0123456789";
   const data = Array.from(
     { length: MEMOURIZE_DIFFICULTY_LENGTH.easy },
-    () => numbers[Math.floor(Math.random() * numbers.length)]
+    () => numbers[Math.floor(Math.random() * numbers.length)],
   );
   return data.join("");
 };
@@ -34,7 +34,7 @@ export const generateMediumData = () => {
         return numbers[Math.floor(Math.random() * numbers.length)];
       }
       return letters[Math.floor(Math.random() * letters.length)].toUpperCase();
-    }
+    },
   );
   return data.join("");
 };

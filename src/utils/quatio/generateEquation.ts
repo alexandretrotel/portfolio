@@ -2,7 +2,7 @@ import { QuatioDifficulty } from "@/types/games/quatio";
 
 export const generateEquation = (
   difficulty: QuatioDifficulty,
-  unknowns: number
+  unknowns: number,
 ) => {
   const maxRange =
     difficulty === "easy" ? 10 : difficulty === "medium" ? 20 : 50;

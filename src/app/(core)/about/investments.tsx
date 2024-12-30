@@ -14,7 +14,7 @@ export default async function Investments() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-bold text-left">
+        <h1 className="text-left text-lg font-bold">
           Check out my investments
         </h1>
       </div>
@@ -56,7 +56,7 @@ const InvestmentItem = ({
   <Card>
     <CardHeader className="w-full">
       <div className="flex flex-col gap-4">
-        <div className="flex items-center gap-4 justify-between">
+        <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             {image && (
               <Image
@@ -73,7 +73,7 @@ const InvestmentItem = ({
             <Link
               href={url}
               target="_blank"
-              className="hover:translate-x-0.5 hover:-translate-y-0.5 hover:scale-110 duration-200"
+              className="duration-200 hover:-translate-y-0.5 hover:translate-x-0.5 hover:scale-110"
             >
               <ArrowUpRight size={16} />
             </Link>

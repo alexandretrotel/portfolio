@@ -1,7 +1,7 @@
 "use client";
 import "client-only";
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUp, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,11 +10,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { books, INITIAL_NUMBER_OF_BOOKS } from "@/data/about/books";
+import {
+  books,
+  BOOKS_TO_SHOW,
+  INITIAL_NUMBER_OF_BOOKS,
+} from "@/data/about/books";
 import Link from "next/link";
 import { Tag, Tags } from "@/types/about/books";
 import { Badge } from "@/components/ui/badge";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 export default function Books() {
   return <StaticBooksContent />;
@@ -22,7 +26,7 @@ export default function Books() {
 
 function StaticBooksContent() {
   const [selectedTag, setSelectedTag] = useState<Tag | null>(null);
-  const [showMore, setShowMore] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(INITIAL_NUMBER_OF_BOOKS);
 
   const filteredBooks = useMemo(() => {
     return books?.filter((item) => {
@@ -31,14 +35,24 @@ function StaticBooksContent() {
     });
   }, [selectedTag]);
 
-  const visibleBooks = showMore
-    ? filteredBooks
-    : filteredBooks?.slice(0, INITIAL_NUMBER_OF_BOOKS);
+  const visibleBooks = filteredBooks?.slice(0, visibleCount);
+
+  const handleShowMore = useCallback(() => {
+    setVisibleCount((prev) =>
+      Math.min(prev + BOOKS_TO_SHOW, filteredBooks.length),
+    );
+  }, [filteredBooks.length]);
+
+  const handleShowLess = useCallback(() => {
+    setVisibleCount((prev) =>
+      Math.max(prev - BOOKS_TO_SHOW, INITIAL_NUMBER_OF_BOOKS),
+    );
+  }, []);
 
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-bold text-left">
+        <h1 className="text-left text-lg font-bold">
           Read the books that shaped my thinking
         </h1>
       </div>
@@ -75,7 +89,7 @@ function StaticBooksContent() {
           })}
       </div>
 
-      <div className="flex flex-col gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {visibleBooks?.map((item, index) => {
           if (item?.disabled) return null;
           return <BookItem key={index} {...item} />;
@@ -83,10 +97,19 @@ function StaticBooksContent() {
       </div>
 
       {filteredBooks.length > INITIAL_NUMBER_OF_BOOKS && (
-        <div className="flex justify-center mt-4">
-          <Button variant="ghost" onClick={() => setShowMore(!showMore)}>
-            {showMore ? "See Less" : "See More"}
-          </Button>
+        <div className="mt-4 flex justify-center gap-2">
+          {visibleCount > INITIAL_NUMBER_OF_BOOKS && (
+            <Button variant="ghost" onClick={handleShowLess}>
+              Show Less
+              <ArrowUp size={16} />
+            </Button>
+          )}
+          {visibleCount < filteredBooks.length && (
+            <Button variant="ghost" onClick={handleShowMore}>
+              Show More
+              <ArrowDown size={16} />
+            </Button>
+          )}
         </div>
       )}
     </div>
@@ -103,7 +126,7 @@ interface BookItemProps {
 
 function BookItem({ title, description, url, tags }: BookItemProps) {
   return (
-    <Card>
+    <Card className="flex flex-col justify-between">
       <CardHeader className="col-span-3">
         <div className="flex items-center justify-between gap-4">
           <CardTitle>{title}</CardTitle>
@@ -111,7 +134,7 @@ function BookItem({ title, description, url, tags }: BookItemProps) {
             <Link
               href={url}
               target="_blank"
-              className="hover:translate-x-0.5 hover:-translate-y-0.5 hover:scale-110 duration-200"
+              className="duration-200 hover:-translate-y-0.5 hover:translate-x-0.5 hover:scale-110"
             >
               <ArrowUpRight size={16} />
             </Link>
@@ -119,7 +142,7 @@ function BookItem({ title, description, url, tags }: BookItemProps) {
         </div>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardFooter className="flex flex-wrap gap-2 items-center">
+      <CardFooter className="flex flex-wrap items-center gap-2">
         {tags?.map((tag) => {
           return <Badge key={tag}>{tag}</Badge>;
         })}

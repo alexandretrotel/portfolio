@@ -53,10 +53,10 @@ export default function MemourizeCard({
     : memourizeData;
 
   return (
-    <Card className="w-full mx-auto grow">
+    <Card className="mx-auto w-full grow">
       <CardHeader>
         <CardTitle>
-          <h1 className="text-lg font-semibold text-center">Memourize</h1>
+          <h1 className="text-center text-lg font-semibold">Memourize</h1>
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -83,7 +83,7 @@ export default function MemourizeCard({
           </Label>
           <div
             id="equation"
-            className="text-lg font-medium text-center p-2 bg-muted rounded-md"
+            className="rounded-md bg-muted p-2 text-center text-lg font-medium"
           >
             {formatSequence(sequence)}
           </div>
@@ -100,7 +100,7 @@ export default function MemourizeCard({
               onKeyDown={handleKeyPress}
               placeholder={"Enter the answer"}
               disabled={!hidden}
-              className="flex-grow [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              className="flex-grow [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             />
             <Button onClick={checkAnswer} disabled={!hidden}>
               Submit
@@ -110,7 +110,7 @@ export default function MemourizeCard({
       </CardContent>
       <CardFooter className="flex flex-col items-center space-y-4">
         {feedback && (
-          <div className="flex flex-col gap-2 w-full">
+          <div className="flex w-full flex-col gap-2">
             <div
               className={`text-center font-semibold ${
                 isCorrect ? "text-green-600" : "text-red-600"

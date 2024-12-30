@@ -7,7 +7,7 @@ export default async function Education() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-bold text-left">Education</h1>
+        <h1 className="text-left text-lg font-bold">Education</h1>
       </div>
 
       <div className="flex flex-col gap-6">
@@ -39,7 +39,7 @@ const EducationItem = ({
   image,
 }: EducationItemProps) => (
   <div className="flex flex-col gap-2">
-    <div className="flex items-center gap-4 justify-between">
+    <div className="flex items-center justify-between gap-4">
       <div className="flex items-center gap-2">
         {image && (
           <Image
@@ -55,13 +55,13 @@ const EducationItem = ({
           <Link
             href={url}
             target="_blank"
-            className="hover:translate-x-0.5 hover:-translate-y-0.5 hover:scale-110 duration-200"
+            className="duration-200 hover:-translate-y-0.5 hover:translate-x-0.5 hover:scale-110"
           >
             <ArrowUpRight size={16} />
           </Link>
         )}
       </div>
-      <p className="text-xs text-muted-foreground whitespace-nowrap">{date}</p>
+      <p className="whitespace-nowrap text-xs text-muted-foreground">{date}</p>
     </div>
 
     <p className="text-sm font-medium text-muted-foreground">{topic}</p>

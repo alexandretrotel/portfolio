@@ -7,7 +7,7 @@ import { Position } from "@/types/experiences";
 export default async function Experiences() {
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-lg font-bold text-left">Work experience</h1>
+      <h1 className="text-left text-lg font-bold">Work experience</h1>
 
       <div className="flex flex-col gap-6">
         {!experiences?.[0]?.disabled && <ExperiencesItem {...experiences[0]} />}
@@ -36,7 +36,7 @@ const ExperiencesItem = async ({
   image,
 }: WorkExperienceItemProps) => (
   <div className="flex flex-col gap-2">
-    <div className="flex items-center gap-4 justify-between">
+    <div className="flex items-center justify-between gap-4">
       <div className="flex items-center gap-2">
         {image && (
           <Image
@@ -52,13 +52,13 @@ const ExperiencesItem = async ({
           <Link
             href={url}
             target="_blank"
-            className="hover:translate-x-0.5 hover:-translate-y-0.5 hover:scale-110 duration-200"
+            className="duration-200 hover:-translate-y-0.5 hover:translate-x-0.5 hover:scale-110"
           >
             <ArrowUpRight size={16} />
           </Link>
         )}
       </div>
-      <p className="text-xs text-muted-foreground whitespace-nowrap">
+      <p className="whitespace-nowrap text-xs text-muted-foreground">
         {positions?.[0].date}
       </p>
     </div>

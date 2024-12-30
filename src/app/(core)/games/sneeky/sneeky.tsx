@@ -16,18 +16,18 @@ import Game from "./game";
 
 export default function Sneeky() {
   return (
-    <Card className="w-full max-w-md mx-auto relative">
-      <div className="absolute top-0 right-0 p-6">
+    <Card className="relative mx-auto w-full max-w-md">
+      <div className="absolute right-0 top-0 p-6">
         <Popover>
           <PopoverTrigger>
-            <InfoIcon className="w-6 h-6 text-muted-foreground cursor-pointer" />
+            <InfoIcon className="h-6 w-6 cursor-pointer text-muted-foreground" />
           </PopoverTrigger>
           <PopoverContent className="md:w-96">
-            <div className="py-2 px-4">
-              <h2 className="text-xl font-semibold text-center text-foreground mb-4">
+            <div className="px-4 py-2">
+              <h2 className="mb-4 text-center text-xl font-semibold text-foreground">
                 How to Play
               </h2>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+              <ul className="list-inside list-disc space-y-2 text-muted-foreground">
                 <li>
                   <span className="font-semibold">Move:</span> Use the arrow
                   keys to move the snake.
@@ -55,7 +55,7 @@ export default function Sneeky() {
         </Popover>
       </div>
       <CardHeader>
-        <CardTitle className="text-lg font-semibold text-center">
+        <CardTitle className="text-center text-lg font-semibold">
           Sneeky
         </CardTitle>
       </CardHeader>

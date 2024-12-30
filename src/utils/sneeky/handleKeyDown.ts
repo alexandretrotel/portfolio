@@ -4,7 +4,7 @@ export const handleKeyDown = (
   e: KeyboardEvent,
   currentDirection: DirectionKey,
   setDirection: React.Dispatch<React.SetStateAction<DirectionKey>>,
-  snakeLength: number
+  snakeLength: number,
 ) => {
   const key = e.key as DirectionKey;
 
