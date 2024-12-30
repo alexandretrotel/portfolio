@@ -126,7 +126,7 @@ interface BookItemProps {
 
 function BookItem({ title, description, url, tags }: BookItemProps) {
   return (
-    <Card>
+    <Card className="flex flex-col justify-between">
       <CardHeader className="col-span-3">
         <div className="flex items-center justify-between gap-4">
           <CardTitle>{title}</CardTitle>
