@@ -78,7 +78,9 @@ export function ProjectItem({
                 <Badge
                   variant="outline"
                   className={cn(
-                    status === "Completed" ? "bg-green-400" : "bg-yellow-400",
+                    status === "Completed"
+                      ? "bg-green-400 hover:bg-green-400/80"
+                      : "bg-yellow-400 hover:bg-yellow-400/80",
                     "border-transparent"
                   )}
                 >
