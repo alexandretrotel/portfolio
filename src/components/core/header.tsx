@@ -82,7 +82,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="absolute left-0 right-0 top-14 border-b border-border/40 bg-background shadow-sm backdrop-blur dark:border-border md:hidden"
+            className="absolute inset-x-0 top-14 border-b border-border/40 bg-background shadow-sm backdrop-blur dark:border-border md:hidden"
           >
             <nav className="mx-auto flex max-w-5xl flex-col items-start px-4 py-4">
               {links?.map((component) => {
