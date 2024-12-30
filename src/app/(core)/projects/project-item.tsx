@@ -110,24 +110,29 @@ export function ProjectItem({
             <p className="text-sm">{description}</p>
           </CardContent>
         </div>
-        <CardFooter className="w-full">
+        <CardFooter className="w-full px-0">
           <div className="flex flex-col gap-2 w-full">
-            {features.canSeeProjectsReadMore && url && (
-              <Button asChild size="sm" className="w-fit">
-                <Link href={url}>
-                  <Info size={16} />
-                  Learn more
-                </Link>
-              </Button>
-            )}
+            <div className="px-6">
+              {features.canSeeProjectsReadMore && url && (
+                <Button asChild size="sm" className="w-fit">
+                  <Link href={url}>
+                    <Info size={16} />
+                    Learn more
+                  </Link>
+                </Button>
+              )}
+            </div>
 
-            <Separator className="my-2 w-full" />
+            <Separator className="my-3 w-full" />
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 px-6">
               {tags
                 ?.sort((a, b) => a.localeCompare(b))
                 ?.map((tag) => (
-                  <Badge key={tag} variant="secondary">
+                  <Badge
+                    key={tag}
+                    className="bg-foreground hover:bg-foreground/80 text-background"
+                  >
                     {tag}
                   </Badge>
                 ))}
