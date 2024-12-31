@@ -727,4 +727,192 @@ export const songs: Songs = [
     date: new Date("2024-12-11"),
     labels: [recordLabels["SelfReleased"]],
   },
+  {
+    slug: "poulet",
+    title: "Poulet",
+    description: "I tried to make an electro basic bass house drop.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=gg1Rb2T561s",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+    ],
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/poulet.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["Bass House", "EDM"],
+    date: new Date("2023-07-19"),
+  },
+  {
+    slug: "tchu-tcha-tcha-remix",
+    title: "Flavel & Neto - Tchu Tcha Tcha (Alexandre Trotel Remix)",
+    description:
+      "I wanted to make a remix of this song because we had a lot of fun with my friends in Columbia on this song.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://youtu.be/0z1289Ke7R4?feature=shared",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+    ],
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/tchu-tcha-tcha-remix.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Tropical House"],
+    date: new Date("2023-07-23"),
+  },
+  {
+    slug: "poulet-2",
+    title: "Poulet 2",
+    description: "I wanted to make a second version of Poulet.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://youtu.be/v6ncmHQvPTQ?feature=shared",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+    ],
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/poulet-2.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["Tropical House", "EDM", "House"],
+    date: new Date("2023-07-30"),
+  },
+  {
+    slug: "metaphysique",
+    title: "Métaphysique",
+    description: "I really like the drop of this song. Felt inspired.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=QC-KIf8LVdY",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+    ],
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/metaphysique.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "House"],
+    date: new Date("2023-08-09"),
+  },
+  {
+    slug: "my-world",
+    title: "My World",
+    description:
+      "I wanted to make a song that represents my world. Really like the vibes of this song.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=cAjYWKhtlas",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+    ],
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/my-world.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "House"],
+    date: new Date("2023-08-11"),
+  },
+  {
+    slug: "sensational-remix",
+    title: "Atef - Sensational (Alexandre Trotel Remix)",
+    description:
+      "I really loved the original song of Atef and when I was on his Discord, I downloaded the midi and made a remix of it.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=XkM9PN8YqX8",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+    ],
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/sensational-remix.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Trance"],
+    date: new Date("2023-08-13"),
+  },
+  {
+    slug: "stereo",
+    title: "Stereo",
+    description:
+      "I think I made that during some winter vibes. I love the way I made everything sorted out while keeping saturation.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=n2xurq4tlZ8",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+    ],
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/stereo.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Future Bass"],
+    date: new Date("2023-08-22"),
+  },
+  {
+    slug: "we-could-be-together-remix",
+    title: "Gabry Ponte - We Could Be Together (Alexandre Trotel Remix)",
+    description: "Another remix when I love the original song.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=jQD8z_WMpqY",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+    ],
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/we-could-be-together-remix.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Future House"],
+    date: new Date("2023-08-24"),
+  },
 ];
