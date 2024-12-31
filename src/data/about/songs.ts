@@ -39,6 +39,6 @@ export const songs: Songs = [
     ],
     styles: ["Future House", "EDM"],
     date: new Date("2022-09-14"),
-    labels: [{ name: "Self-Released", url: "https://www.alexandretrotel.org" }],
+    labels: [{ name: "Self Released", url: "https://www.alexandretrotel.org" }],
   },
 ];
