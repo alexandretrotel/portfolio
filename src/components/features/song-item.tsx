@@ -13,15 +13,19 @@ import {
 import Link from "next/link";
 import { Play } from "lucide-react";
 
+const songsBasePath = "/songs";
+
 interface SongItemProps extends Song {
   heightFull?: boolean;
 }
 
 export function SongItem({
+  slug,
   title,
   authors,
   status,
   cover,
+  date,
   styles,
   heightFull,
 }: SongItemProps) {
@@ -60,12 +64,25 @@ export function SongItem({
               </Badge>
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            {authors?.map((author) => (
-              <span key={author} className="text-sm text-muted-foreground">
-                {author}
-              </span>
-            ))}
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+              {authors?.map((author) => (
+                <span
+                  key={author}
+                  className="text-sm font-semibold text-muted-foreground"
+                >
+                  {author}
+                </span>
+              ))}
+            </div>
+
+            <span className="text-xs text-muted-foreground">
+              {date?.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </span>
           </div>
         </div>
       </CardHeader>
@@ -73,7 +90,7 @@ export function SongItem({
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <Button size="sm" asChild>
-              <Link href="/songs">
+              <Link href={`${songsBasePath}/${slug}`}>
                 <Play size={16} />
                 Listen now
               </Link>
