@@ -1,5 +1,5 @@
 import { projects } from "@/data/projects";
-import { ProjectItem } from "./projects/project-item";
+import { ProjectItem } from "../../components/features/project-item";
 
 const PROJECTS_LIMIT = 3;
 

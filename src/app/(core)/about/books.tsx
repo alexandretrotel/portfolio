@@ -1,24 +1,17 @@
 "use client";
 import "client-only";
 
-import { ArrowDown, ArrowUp, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import {
   books,
   BOOKS_TO_SHOW,
   INITIAL_NUMBER_OF_BOOKS,
 } from "@/data/about/books";
-import Link from "next/link";
 import { Tag, Tags } from "@/types/about/books";
 import { Badge } from "@/components/ui/badge";
 import { useCallback, useMemo, useState } from "react";
+import { BookItem } from "@/components/features/book-item";
 
 export default function Books() {
   return <StaticBooksContent />;
@@ -113,40 +106,5 @@ function StaticBooksContent() {
         </div>
       )}
     </div>
-  );
-}
-
-interface BookItemProps {
-  title: string;
-  description: string;
-  url?: string;
-  disabled?: boolean;
-  tags?: Tags;
-}
-
-function BookItem({ title, description, url, tags }: BookItemProps) {
-  return (
-    <Card className="flex flex-col justify-between">
-      <CardHeader className="col-span-3">
-        <div className="flex items-center justify-between gap-4">
-          <CardTitle>{title}</CardTitle>
-          {url && (
-            <Link
-              href={url}
-              target="_blank"
-              className="duration-200 hover:-translate-y-0.5 hover:translate-x-0.5 hover:scale-110"
-            >
-              <ArrowUpRight size={16} />
-            </Link>
-          )}
-        </div>
-        <CardDescription>{description}</CardDescription>
-      </CardHeader>
-      <CardFooter className="flex flex-wrap items-center gap-2">
-        {tags?.map((tag) => {
-          return <Badge key={tag}>{tag}</Badge>;
-        })}
-      </CardFooter>
-    </Card>
   );
 }

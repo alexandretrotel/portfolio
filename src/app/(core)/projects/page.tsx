@@ -1,6 +1,7 @@
 import { projects } from "@/data/projects";
-import { ProjectItem } from "./project-item";
+import { ProjectItem } from "../../../components/features/project-item";
 import Animation from "@/components/core/animation";
+import { ANIMATION_DELAY } from "@/data/animation";
 
 export default async function Projects() {
   const featuredProjects = projects
@@ -24,7 +25,7 @@ export default async function Projects() {
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {orderedProjects?.map((project, index) => (
-            <Animation key={project.title} delay={index * 0.25}>
+            <Animation key={project.title} delay={index * ANIMATION_DELAY}>
               <ProjectItem
                 key={project.title}
                 showPreview
