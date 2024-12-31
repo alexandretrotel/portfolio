@@ -26,7 +26,18 @@ export type Style =
   | "Big Room"
   | "EDM"
   | "Trance"
-  | "Happy Hardcore";
+  | "Happy Hardcore"
+  | "Chill House"
+  | "Future Bass"
+  | "Piano"
+  | "Dubstep"
+  | "Electro Pop"
+  | "Brazilian Bass"
+  | "Melbourne Bounce"
+  | "Moombahton"
+  | "Trap"
+  | "Future Rave"
+  | "House";
 
 export type Styles = Style[];
 

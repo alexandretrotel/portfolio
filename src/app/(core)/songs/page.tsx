@@ -26,7 +26,12 @@ export default async function Songs() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
           {orderedSongs?.map((song, index) => (
             <Animation key={song.title} delay={index * ANIMATION_DELAY}>
-              <SongItem key={song.title} heightFull {...song} />
+              <SongItem
+                key={song.title}
+                heightFull
+                {...song}
+                delay={index * ANIMATION_DELAY}
+              />
             </Animation>
           ))}
         </div>

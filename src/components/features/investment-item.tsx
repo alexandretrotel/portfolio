@@ -17,7 +17,7 @@ interface InvestmentItemProps {
   image?: string;
 }
 
-export const InvestmentItem = ({
+export const InvestmentItem = async ({
   asset,
   description,
   date,

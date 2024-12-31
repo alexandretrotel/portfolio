@@ -10,7 +10,7 @@ interface EducationItemProps {
   image?: string;
 }
 
-export const EducationItem = ({
+export const EducationItem = async ({
   school,
   topic,
   date,
