@@ -1,5 +1,5 @@
 import { projects } from "@/data/projects";
-import { ProjectItem } from "./project-item";
+import { ProjectItem } from "../../../components/features/project-item";
 import Animation from "@/components/core/animation";
 
 export default async function Projects() {
