@@ -153,7 +153,7 @@ export default async function Song({ params }: SongProps) {
             <h4 className="text-sm font-medium">
               Asset{song.assets.length > 1 && "s"}
             </h4>
-            <div className="grid gap-2">
+            <div className="grid gap-4">
               {song.assets.map((asset, index) => (
                 <AudioPlayer key={index} asset={asset} />
               ))}
