@@ -1,6 +1,7 @@
 import SocialCard from "@/app/(core)/contact/social-card";
 import { socials } from "@/data/contact/socials";
 import Animation from "@/components/core/animation";
+import { ANIMATION_DELAY } from "@/data/animation";
 
 export default async function Contact() {
   return (
@@ -16,7 +17,7 @@ export default async function Contact() {
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
           {socials?.map((social, index) => (
-            <Animation key={social.title} delay={index * 0.25}>
+            <Animation key={social.title} delay={index * ANIMATION_DELAY}>
               <SocialCard {...social} />
             </Animation>
           ))}

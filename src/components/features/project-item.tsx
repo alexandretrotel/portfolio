@@ -21,7 +21,7 @@ interface ProjectItemProps extends Project {
   heightFull?: boolean;
 }
 
-export function ProjectItem({
+export async function ProjectItem({
   title,
   description,
   date,
