@@ -33,14 +33,10 @@ export default async function Song({ params }: SongProps) {
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-8 md:flex-row">
           {song.cover && (
-            <div className="flex h-fit">
-              <Image
-                src={song.cover}
-                alt={song.title}
-                width={COVER_SIZE}
-                height={COVER_SIZE}
-                className="rounded-lg shadow-lg"
-              />
+            <div
+              className={`relative w-full md:w-${COVER_SIZE} h-${COVER_SIZE} md:h-${COVER_SIZE} aspect-square overflow-hidden rounded-lg shadow-lg`}
+            >
+              <Image src={song.cover} alt={song.title} layout="fill" />
             </div>
           )}
 
