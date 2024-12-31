@@ -20,7 +20,13 @@ export type Author = "Alexandre Trotel";
 
 export type Authors = Author[];
 
-export type Style = "Future House" | "Progressive House" | "Big Room" | "EDM";
+export type Style =
+  | "Future House"
+  | "Progressive House"
+  | "Big Room"
+  | "EDM"
+  | "Trance"
+  | "Happy Hardcore";
 
 export type Styles = Style[];
 
