@@ -1,7 +1,7 @@
 import { projects } from "@/data/projects";
 import { ProjectItem } from "../../components/features/project-item";
 
-const PROJECTS_LIMIT = 3;
+const PROJECTS_LIMIT = 4;
 
 export default async function Projects() {
   const featuredProjects = projects
@@ -23,7 +23,7 @@ export default async function Projects() {
       <p className="text-sm text-muted-foreground">
         Here are some of the projects I&apos;ve worked on.
       </p>
-      <div className="mt-4 grid grid-cols-1 gap-4">
+      <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
         {orderedProjects?.map((project) => (
           <ProjectItem key={project.url} showPreview {...project} />
         ))}
