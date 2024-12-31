@@ -3,6 +3,7 @@ export type Status = "WIP" | "Finished" | "Paused" | "Dropped";
 export type Link = {
   platform: string;
   url: string;
+  icon: React.ReactNode;
 };
 
 export type Links = Link[];
@@ -10,7 +11,7 @@ export type Links = Link[];
 export type Asset = {
   type: string;
   url: string;
-  version: number;
+  version: string;
 };
 
 export type Assets = Asset[];
@@ -23,9 +24,19 @@ export type Style = "Future House" | "Progressive House" | "Big Room" | "EDM";
 
 export type Styles = Style[];
 
+export type RecordLabel = "Self-Released";
+
+export type RecordLabelItem = {
+  name: string;
+  url: string;
+};
+
+export type RecordLabels = RecordLabelItem[];
+
 export type Song = {
   slug: string;
   title: string;
+  description: string;
   authors: Authors;
   status: Status;
   featured?: boolean;
@@ -34,6 +45,7 @@ export type Song = {
   assets?: Assets;
   styles: Styles;
   date: Date;
+  labels: RecordLabels;
 };
 
 export type Songs = Song[];
