@@ -1,1 +1,1 @@
-export const ANIMATION_DELAY = 0.25;
+export const ANIMATION_DELAY = 0.1;

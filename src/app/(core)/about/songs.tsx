@@ -2,6 +2,7 @@ import { songs } from "@/data/about/songs";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { SongItem } from "@/components/features/song-item";
+import { ANIMATION_DELAY } from "@/data/animation";
 
 export default async function Songs() {
   const featuredSongs = songs
@@ -25,7 +26,9 @@ export default async function Songs() {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {orderedSongs?.slice(0, 4)?.map((item, index) => {
-          return <SongItem key={index} {...item} />;
+          return (
+            <SongItem key={index} {...item} delay={index * ANIMATION_DELAY} />
+          );
         })}
       </div>
     </div>

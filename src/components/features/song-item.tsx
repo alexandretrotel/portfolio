@@ -11,25 +11,29 @@ import {
   CardFooter,
 } from "../ui/card";
 import Link from "next/link";
-import { Play } from "lucide-react";
+import { Info } from "lucide-react";
 import { Separator } from "../ui/separator";
+import SongItemAnimation from "./song-item-animation";
 
 const songsBasePath = "/songs";
 
 interface SongItemProps extends Song {
   heightFull?: boolean;
+  delay?: number;
 }
 
-export function SongItem({
+export async function SongItem({
   slug,
   title,
   description,
   authors,
+  featured,
   status,
   cover,
   date,
   styles,
   heightFull,
+  delay = 0,
 }: SongItemProps) {
   return (
     <Card
@@ -40,14 +44,16 @@ export function SongItem({
     >
       <div>
         {cover && (
-          <div className="relative h-48 w-full border-b">
-            <Image
-              src={cover}
-              alt={title}
-              layout="fill"
-              objectFit="cover"
-              className="h-full w-full"
-            />
+          <div className="h-48 w-full border-b">
+            <SongItemAnimation delay={delay}>
+              <Image
+                src={cover}
+                alt={title}
+                layout="fill"
+                objectFit="cover"
+                className="h-full w-full"
+              />
+            </SongItemAnimation>
           </div>
         )}
 
@@ -58,6 +64,7 @@ export function SongItem({
                 <CardTitle>{title}</CardTitle>
               </div>
               <div className="flex items-center gap-2">
+                {featured && <Badge>Featured</Badge>}
                 <Badge
                   variant="outline"
                   className={cn(
@@ -104,8 +111,8 @@ export function SongItem({
         <div className="px-6">
           <Button size="sm" asChild>
             <Link href={`${songsBasePath}/${slug}`}>
-              <Play size={16} />
-              Listen now
+              <Info className="h-4 w-4" />
+              Learn more
             </Link>
           </Button>
         </div>
