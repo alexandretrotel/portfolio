@@ -16,13 +16,13 @@ import { AudioPlayer } from "@/components/features/audio-player";
 const COVER_SIZE = 400;
 
 interface SongProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 }
 
 export default async function Song({ params }: SongProps) {
-  const song = getSongBySlug(params.slug);
+  const { slug } = await params;
+
+  const song = getSongBySlug(slug);
 
   if (!song) {
     notFound();
