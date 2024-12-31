@@ -37,7 +37,9 @@ export type Style =
   | "Moombahton"
   | "Trap"
   | "Future Rave"
-  | "House";
+  | "House"
+  | "Bass House"
+  | "Tropical House";
 
 export type Styles = Style[];
 
@@ -62,7 +64,7 @@ export type Song = {
   assets?: Assets;
   styles: Styles;
   date: Date;
-  labels: RecordLabels;
+  labels?: RecordLabels;
 };
 
 export type Songs = Song[];
