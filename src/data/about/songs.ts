@@ -6,6 +6,7 @@ const assetsBasePath = `${songsBasePath}/assets`;
 
 export const songs: Songs = [
   {
+    slug: "feelings",
     title: "Feelings",
     authors: ["Alexandre Trotel"],
     status: "Finished",

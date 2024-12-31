@@ -24,6 +24,7 @@ export type Style = "Future House" | "Progressive House" | "Big Room" | "EDM";
 export type Styles = Style[];
 
 export type Song = {
+  slug: string;
   title: string;
   authors: Authors;
   status: Status;
