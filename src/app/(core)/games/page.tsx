@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { ANIMATION_DELAY } from "@/data/animation";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -45,7 +46,7 @@ export default async function Games() {
 
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2">
           {games.map((game, index) => (
-            <Animation key={game.name} delay={index * 0.25}>
+            <Animation key={game.name} delay={index * ANIMATION_DELAY}>
               <Card
                 key={game.name}
                 className="flex h-full flex-col justify-between"
