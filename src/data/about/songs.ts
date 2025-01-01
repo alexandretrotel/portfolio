@@ -22,7 +22,7 @@ export const songs: Songs = [
     description:
       "Initially, a remix of Stereo Love, this song is a mix of Future House and Electro House.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     featured: true,
     links: [
       {
@@ -54,7 +54,7 @@ export const songs: Songs = [
     description:
       "My first song under the name of Alexandre Trotel. Journey symbolizes the beginning of a new chapter in my life.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -85,7 +85,7 @@ export const songs: Songs = [
     description:
       "A song that I made for my girlfriend, Angelic Soul is some kind of Trance and Happy Hardcore mix.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -116,7 +116,7 @@ export const songs: Songs = [
     description:
       "I don't know why I called this song Heaven, but still, I called it like that.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -147,7 +147,7 @@ export const songs: Songs = [
     description:
       "Another World is a song that is the continuation of Angelic Soul.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -178,7 +178,7 @@ export const songs: Songs = [
     description:
       "A remix of River Flows in You, a song by Yiruma. This song reminds me a lot of memories. I also used to play this song on the piano.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -209,7 +209,7 @@ export const songs: Songs = [
     description:
       "I tried to make a song that's good for a party. I think I did it. Really happy with the samples used in the drop.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     featured: true,
     links: [
       {
@@ -241,7 +241,7 @@ export const songs: Songs = [
     description:
       "Using big bouncy basses, I was inspired by usual Brazilian Bass songs and Melbourne Bounce songs.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -272,7 +272,7 @@ export const songs: Songs = [
     description:
       "I was inspired by my past relationships to make this song. I think it's a good song to listen to when you're feeling down but still want to dance.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -303,7 +303,7 @@ export const songs: Songs = [
     description:
       "I love this song. I wanted to express the way I feel when I'm solo. I think that's a good song to understand me.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     featured: true,
     links: [
       {
@@ -335,7 +335,7 @@ export const songs: Songs = [
     description:
       "That's the most personal song I've ever made. I wanted to express the way I feel. The song talks itself.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     featured: true,
     links: [
       {
@@ -367,7 +367,7 @@ export const songs: Songs = [
     description:
       "One of the best song I've made during my years at ENSEEIHT. I was so inspired this evening that I was finishing the song at school during the breaks.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     featured: true,
     links: [
       {
@@ -404,7 +404,7 @@ export const songs: Songs = [
     description:
       "I was inspired by the mythological bird, the Phoenix. For that, I used weird vsts effects to achieve an original sound. There's a melodic part and a more EDM-like part.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -435,7 +435,7 @@ export const songs: Songs = [
     description:
       "I wanted to make a full piano song but I'm not that proud of the result. I decided to release it anyway.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -466,7 +466,7 @@ export const songs: Songs = [
     description:
       "I wanted to give some support to Bitcoin through a song. It's a good song for a party.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -497,7 +497,7 @@ export const songs: Songs = [
     description:
       "One of the two songs I made inspired by Future Rave. I love how the sub bass sounds in this song.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -528,7 +528,7 @@ export const songs: Songs = [
     description:
       "The second song inspired by Future Rave. I love the melody in the drop.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -559,7 +559,7 @@ export const songs: Songs = [
     description:
       "A song I made during some holidays. This song remember me the good times I had, it feels like a summer song, it's also calm and inspiring. Pay attention to the background elements.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     featured: true,
     links: [
       {
@@ -591,7 +591,7 @@ export const songs: Songs = [
     description:
       "Love is one of the most important things in life. I wanted to express the way I feel when I'm in love. Something hard and soft at the same time.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -622,7 +622,7 @@ export const songs: Songs = [
     description:
       "An exotic sound but I'm not satisfied with the drop that I didn't work enough. However, really like the vibes that the song gives.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -653,7 +653,7 @@ export const songs: Songs = [
     description:
       "Inspired by Gareth Emery when he collabs with LSR/City, I wanted to make a trance song that feels emotional.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     links: [
       {
         platform: "YouTube",
@@ -684,7 +684,7 @@ export const songs: Songs = [
     description:
       "This song contains all my memories of Paris with my girlfriend. One of the best weekend I had in my life.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     featured: true,
     links: [
       {
@@ -711,7 +711,7 @@ export const songs: Songs = [
     description:
       "The continuation of What You Feel, always inspired by Gareth Emery. Impossible refers to the fact that I will never be able to solve the mystery of life.",
     authors: ["Alexandre Trotel"],
-    status: "Finished",
+    status: "Released",
     featured: true,
     links: [
       {
@@ -966,7 +966,7 @@ export const songs: Songs = [
     slug: "end-of-the-night",
     title: "End of the Night",
     description:
-      "A big party banger never finished. Tried something sensual and powerful.",
+      "A big party banger never Released. Tried something sensual and powerful.",
     authors: ["Alexandre Trotel"],
     status: "Dropped",
     assets: [

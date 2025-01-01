@@ -1,4 +1,4 @@
-export type Status = "WIP" | "Finished" | "Paused" | "Dropped";
+export type Status = "WIP" | "Finished" | "Paused" | "Dropped" | "Released";
 
 export type Link = {
   platform: string;
