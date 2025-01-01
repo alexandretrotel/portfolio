@@ -385,6 +385,11 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
+        url: `${assetsBasePath}/paradox-v2.mp3`,
+        version: "v2",
+      },
+      {
+        type: "Audio",
         url: `${assetsBasePath}/paradox.mp3`,
         version: "Final",
       },
@@ -744,7 +749,7 @@ export const songs: Songs = [
       {
         type: "Audio",
         url: `${assetsBasePath}/poulet.mp3`,
-        version: "Final",
+        version: "v1",
       },
     ],
     styles: ["Bass House", "EDM"],
@@ -768,7 +773,7 @@ export const songs: Songs = [
       {
         type: "Audio",
         url: `${assetsBasePath}/tchu-tcha-tcha-remix.mp3`,
-        version: "Final",
+        version: "v1",
       },
     ],
     styles: ["EDM", "Tropical House"],
@@ -791,7 +796,7 @@ export const songs: Songs = [
       {
         type: "Audio",
         url: `${assetsBasePath}/poulet-2.mp3`,
-        version: "Final",
+        version: "v1",
       },
     ],
     styles: ["Tropical House", "EDM", "House"],
@@ -814,7 +819,7 @@ export const songs: Songs = [
       {
         type: "Audio",
         url: `${assetsBasePath}/metaphysique.mp3`,
-        version: "Final",
+        version: "v1",
       },
     ],
     styles: ["EDM", "House"],
@@ -838,7 +843,7 @@ export const songs: Songs = [
       {
         type: "Audio",
         url: `${assetsBasePath}/my-world.mp3`,
-        version: "Final",
+        version: "v1",
       },
     ],
     styles: ["EDM", "House"],
@@ -862,7 +867,7 @@ export const songs: Songs = [
       {
         type: "Audio",
         url: `${assetsBasePath}/sensational-remix.mp3`,
-        version: "Final",
+        version: "v1",
       },
     ],
     styles: ["EDM", "Trance"],
@@ -888,6 +893,16 @@ export const songs: Songs = [
         url: `${assetsBasePath}/stereo.mp3`,
         version: "Final",
       },
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/stereo-v2.mp3`,
+        version: "v2",
+      },
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/stereo-v1.mp3`,
+        version: "v1",
+      },
     ],
     styles: ["EDM", "Future Bass"],
     date: new Date("2023-08-22"),
@@ -909,10 +924,397 @@ export const songs: Songs = [
       {
         type: "Audio",
         url: `${assetsBasePath}/we-could-be-together-remix.mp3`,
-        version: "Final",
+        version: "v1",
       },
     ],
     styles: ["EDM", "Future House"],
     date: new Date("2023-08-24"),
+  },
+  {
+    slug: "bouge",
+    title: "Bouge",
+    description: "A draft of a future house song that makes you want to dance.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/bouge.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["Future House", "EDM"],
+    date: new Date("2023-10-18"),
+  },
+  {
+    slug: "house",
+    title: "House",
+    description: "A draft of a progressive emotional house song.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/house.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["Progressive House", "EDM"],
+    date: new Date("2022-10-29"),
+  },
+  {
+    slug: "end-of-the-night",
+    title: "End of the Night",
+    description:
+      "A big party banger never finished. Tried something sensual and powerful.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/end-of-the-night.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM", "Bass House"],
+    date: new Date("2022-11-27"),
+  },
+  {
+    slug: "hyperpop-fucked-up",
+    title: "Hyperpop Fucked Up",
+    description:
+      "A weird song that I made one evening trying to make a hyperpop song.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/hyperpop-fucked-up-v2.mp3`,
+        version: "v2",
+      },
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/hyperpop-fucked-up.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["Hyperpop"],
+    date: new Date("2022-11-30"),
+  },
+  {
+    slug: "progressive",
+    title: "Progressive",
+    description: "A draft of a progressive house song.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/progressive.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["Progressive House", "EDM"],
+    date: new Date("2022-08-12"),
+  },
+  {
+    slug: "i-got-it",
+    title: "I Got It",
+    description:
+      "Someone told me that this song would be played at Ibiza. I don't think so but I like the vibes of this song.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/i-got-it.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM"],
+    date: new Date("2022-12-18"),
+  },
+  {
+    slug: "christmas-love",
+    title: "Christmas Love",
+    description:
+      "A tropical house kind of song that I made during the Christmas holidays.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/christmas-love.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["Tropical House", "EDM"],
+    date: new Date("2022-12-24"),
+  },
+  {
+    slug: "chill",
+    title: "Chill",
+    description:
+      "I tried to make a classic electro song to get out of my comfort zone.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/chill.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM"],
+    date: new Date("2023-01-04"),
+  },
+  {
+    slug: "funky",
+    title: "Funky",
+    description: "Some funky electro vibes.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/funky.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM"],
+    date: new Date("2023-01-07"),
+  },
+  {
+    slug: "reversed",
+    title: "Reversed",
+    description:
+      "The goal was to make a song that could be played at the school's party so I needed to talk about alcohol. Stepping back, I don't think it was a good idea haha.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/reversed.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM"],
+    date: new Date("2023-02-19"),
+  },
+  {
+    slug: "dancing-under-the-moon",
+    title: "Dancing Under the Moon",
+    description:
+      "Some nostalgic vibes with this song. The first version is completely different from the second one.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/dancing-under-the-moon-v2.mp3`,
+        version: "v2",
+      },
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/dancing-under-the-moon.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM"],
+    date: new Date("2023-03-05"),
+  },
+  {
+    slug: "make-me-feel",
+    title: "Make Me Feel",
+    description: "Another try of innovative house music.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/make-me-feel.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM"],
+    date: new Date("2023-04-17"),
+  },
+  {
+    slug: "drums",
+    title: "Drums",
+    description: "A big bass house drop.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/drums-v2.mp3`,
+        version: "v2",
+      },
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/drums.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM"],
+    date: new Date("2023-07-31"),
+  },
+  {
+    slug: "outerspace",
+    title: "Outerspace",
+    description:
+      "A song that I made during the holidays. Another try to remix Stereo Love.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/outerspace-v2.mp3`,
+        version: "v2",
+      },
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/outerspace.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM", "Future House"],
+    date: new Date("2023-08-08"),
+  },
+  {
+    slug: "erosion",
+    title: "Erosion",
+    description:
+      "I don't know how to describe this song but could be mixed better.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/erosion.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM"],
+    date: new Date("2023-09-18"),
+  },
+  {
+    slug: "future-bouncy",
+    title: "Future Bouncy",
+    description:
+      "A future house song that I made. I really like the vibes, it reminds an old song I used to like from a friend of mine when playing video games.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/future-bouncy-v2.mp3`,
+        version: "v2",
+      },
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/future-bouncy.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["Future House", "EDM"],
+    date: new Date("2023-10-29"),
+  },
+  {
+    slug: "close-to-you",
+    title: "Close to You",
+    description: "A song for my girlfriend again haha.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/close-to-you.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM", "Happy Hardcore", "Trance"],
+    date: new Date("2023-11-20"),
+  },
+  {
+    slug: "roses-are-red",
+    title: "Roses Are Red",
+    description: "Tried to remix Roses Are Red, Violets Are Blue.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/roses-are-red.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM", "Progressive House"],
+    date: new Date("2024-03-25"),
+  },
+  {
+    slug: "losing-you",
+    title: "Losing You",
+    description: "A future house song; again.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/losing-you.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["Future House", "EDM"],
+    date: new Date("2024-04-24"),
+  },
+  {
+    slug: "i-dont-wanna-wait",
+    title: "I Don't Wanna Wait",
+    description: "A remix of David Guetta's song, I Don't Wanna Wait.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/i-dont-wanna-wait.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM", "Future House", "House"],
+    date: new Date("2024-04-25"),
+  },
+  {
+    slug: "big-rave",
+    title: "Big Rave",
+    description: "I wanted to make a banger, so I tried.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/big-rave.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM", "Big Room"],
+    date: new Date("2024-12-16"),
+  },
+  {
+    slug: "mamamia",
+    title: "Mamamia",
+    description: "Still wanted to make an ultra super banger.",
+    authors: ["Alexandre Trotel"],
+    status: "Dropped",
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/mamamia.mp3`,
+        version: "v1",
+      },
+    ],
+    styles: ["EDM", "Big Room"],
+    date: new Date("2024-12-17"),
   },
 ];
