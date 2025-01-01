@@ -1537,7 +1537,6 @@ export const songs: Songs = [
         icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
       },
     ],
-    cover: `${coverBasePath}/factory.jpg`,
     assets: [
       {
         type: "Audio",
@@ -1568,7 +1567,6 @@ export const songs: Songs = [
         icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
       },
     ],
-    cover: `${coverBasePath}/complicated.jpg`,
     assets: [
       {
         type: "Audio",
@@ -1661,7 +1659,6 @@ export const songs: Songs = [
         icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
       },
     ],
-    cover: `${coverBasePath}/you-cant-stop-me.jpg`,
     assets: [
       {
         type: "Audio",
@@ -1778,7 +1775,6 @@ export const songs: Songs = [
         icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
       },
     ],
-    cover: `${coverBasePath}/a-new-era.jpg`,
     assets: [
       {
         type: "Audio",
