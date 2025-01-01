@@ -6,7 +6,7 @@ import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Card } from "../ui/card";
-import { Asset } from "@/types/about/songs";
+import { Asset } from "@/types/songs";
 
 interface AudioPlayerProps {
   asset: Asset;

@@ -1,4 +1,4 @@
-import { RecordLabelItem, Songs } from "@/types/about/songs";
+import { RecordLabelItem, Songs } from "@/types/songs";
 import { RiSpotifyFill, RiYoutubeFill } from "@remixicon/react";
 import React from "react";
 
@@ -12,6 +12,22 @@ export const recordLabels: { [key: string]: RecordLabelItem } = {
   SelfReleased: {
     name: "Self Released",
     url: "https://www.alexandretrotel.org",
+  },
+  LandersRecords: {
+    name: "Landers Records",
+    url: "https://soundcloud.com/landersrecords",
+  },
+  GottaRecords: {
+    name: "GOTTA RCRDS",
+    url: "https://gottarcrds.com",
+  },
+  ConnectedSounds: {
+    name: "Connected Sounds",
+    url: "https://www.connectedsounds.org",
+  },
+  NoiseplexRecords: {
+    name: "Noiseplex Records",
+    url: "https://noiseplex.com",
   },
 };
 
@@ -754,6 +770,7 @@ export const songs: Songs = [
     ],
     styles: ["Bass House", "EDM"],
     date: new Date("2023-07-19"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "tchu-tcha-tcha-remix",
@@ -778,6 +795,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM", "Tropical House"],
     date: new Date("2023-07-23"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "poulet-2",
@@ -801,6 +819,7 @@ export const songs: Songs = [
     ],
     styles: ["Tropical House", "EDM", "House"],
     date: new Date("2023-07-30"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "metaphysique",
@@ -824,6 +843,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM", "House"],
     date: new Date("2023-08-09"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "my-world",
@@ -848,6 +868,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM", "House"],
     date: new Date("2023-08-11"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "sensational-remix",
@@ -872,6 +893,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM", "Trance"],
     date: new Date("2023-08-13"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "stereo",
@@ -906,6 +928,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM", "Future Bass"],
     date: new Date("2023-08-22"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "we-could-be-together-remix",
@@ -929,6 +952,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM", "Future House"],
     date: new Date("2023-08-24"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "bouge",
@@ -945,6 +969,7 @@ export const songs: Songs = [
     ],
     styles: ["Future House", "EDM"],
     date: new Date("2023-10-18"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "house",
@@ -961,6 +986,7 @@ export const songs: Songs = [
     ],
     styles: ["Progressive House", "EDM"],
     date: new Date("2022-10-29"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "end-of-the-night",
@@ -978,6 +1004,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM", "Bass House"],
     date: new Date("2022-11-27"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "hyperpop-fucked-up",
@@ -1000,6 +1027,7 @@ export const songs: Songs = [
     ],
     styles: ["Hyperpop"],
     date: new Date("2022-11-30"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "progressive",
@@ -1016,6 +1044,7 @@ export const songs: Songs = [
     ],
     styles: ["Progressive House", "EDM"],
     date: new Date("2022-08-12"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "i-got-it",
@@ -1033,6 +1062,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM"],
     date: new Date("2022-12-18"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "christmas-love",
@@ -1050,6 +1080,7 @@ export const songs: Songs = [
     ],
     styles: ["Tropical House", "EDM"],
     date: new Date("2022-12-24"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "chill",
@@ -1067,6 +1098,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM"],
     date: new Date("2023-01-04"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "funky",
@@ -1083,6 +1115,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM"],
     date: new Date("2023-01-07"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "reversed",
@@ -1100,6 +1133,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM"],
     date: new Date("2023-02-19"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "dancing-under-the-moon",
@@ -1122,6 +1156,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM"],
     date: new Date("2023-03-05"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "make-me-feel",
@@ -1138,6 +1173,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM"],
     date: new Date("2023-04-17"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "drums",
@@ -1159,6 +1195,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM"],
     date: new Date("2023-07-31"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "outerspace",
@@ -1181,6 +1218,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM", "Future House"],
     date: new Date("2023-08-08"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "erosion",
@@ -1198,6 +1236,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM"],
     date: new Date("2023-09-18"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "future-bouncy",
@@ -1220,6 +1259,7 @@ export const songs: Songs = [
     ],
     styles: ["Future House", "EDM"],
     date: new Date("2023-10-29"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "close-to-you",
@@ -1236,6 +1276,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM", "Happy Hardcore", "Trance"],
     date: new Date("2023-11-20"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "roses-are-red",
@@ -1252,6 +1293,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM", "Progressive House"],
     date: new Date("2024-03-25"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "losing-you",
@@ -1268,6 +1310,7 @@ export const songs: Songs = [
     ],
     styles: ["Future House", "EDM"],
     date: new Date("2024-04-24"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "i-dont-wanna-wait",
@@ -1284,6 +1327,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM", "Future House", "House"],
     date: new Date("2024-04-25"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "big-rave",
@@ -1300,6 +1344,7 @@ export const songs: Songs = [
     ],
     styles: ["EDM", "Big Room"],
     date: new Date("2024-12-16"),
+    labels: [recordLabels["SelfReleased"]],
   },
   {
     slug: "mamamia",
@@ -1316,5 +1361,494 @@ export const songs: Songs = [
     ],
     styles: ["EDM", "Big Room"],
     date: new Date("2024-12-17"),
+    labels: [recordLabels["SelfReleased"]],
+  },
+  {
+    slug: "flashback-story-deluxe-edition",
+    title: "Flashback Story (Deluxe Edition)",
+    description:
+      "The first song I've made under the name of Alex Lander. I worked more than 70+ hours on this song.",
+    authors: ["Alex Lander"],
+    status: "Released",
+    featured: true,
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=I7LFaZiIc6Q",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/71kcPdSiAGr7WFJuluh54y?si=e4a4ea27436d4cc9",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/flashback-story-deluxe-edition.png`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/flashback-story-deluxe-edition.mp3`,
+        version: "Deluxe Edition",
+      },
+    ],
+    styles: ["EDM", "Future House"],
+    date: new Date("2018-05-14"),
+    labels: [recordLabels["LandersRecords"]],
+  },
+  {
+    slug: "rave",
+    title: "Rave",
+    description:
+      "One of the collab that I really liked with Allan Adams. This song was played in nightclubs.",
+    authors: ["Alex Lander", "Allan Adams"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=1V4XeBkcXZM",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/1FkGhj8E28QAu08JYX2P7r?si=d77b0b321b24429e",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/rave.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/rave.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Big Room"],
+    date: new Date("2020-01-22"),
+    labels: [recordLabels["LandersRecords"]],
+  },
+  {
+    slug: "far-away",
+    title: "Far Away",
+    description:
+      "One of the fav song I've made. I remember trying to put short delay on the vocals and it gave an interesting result.",
+    authors: ["Alex Lander"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=d9d_7fEvWAs",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/79mRPZ17zZ4N9JJ4vEFyxW?si=a8d3acb558b64781",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/far-away.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/far-away.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Progressive House"],
+    date: new Date("2020-05-08"),
+    labels: [recordLabels["LandersRecords"]],
+  },
+  {
+    slug: "feel",
+    title: "Feel",
+    description: "A very emotional song that you can listen when you feel bad.",
+    authors: ["Alex Lander"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=Tq8C7as5TY0",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/2vfu26Jx1SaQV7ss120Tjk?si=221c723853f84ff7",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/feel.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/feel.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Future Bass"],
+    date: new Date("2020-06-12"),
+    labels: [recordLabels["LandersRecords"]],
+  },
+  {
+    slug: "untouchable",
+    title: "Untouchable",
+    description:
+      "I tried to do some original stuff with this song and ended up kind of happy with the result.",
+    authors: ["Alex Lander"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=DRY4pr1FFVY",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/6IhRsGUxtFu37HBnd5ka4W?si=c030a35edd714f1e",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/untouchable.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/untouchable.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Future House", "House"],
+    date: new Date("2020-07-04"),
+    labels: [recordLabels["SelfReleased"]],
+  },
+  {
+    slug: "factory",
+    title: "Factory",
+    description:
+      "One of the best Future House song I've made. Really proud of this one, the structure is almost perfect. I remember that I played it during holidays to some people and they loved it.",
+    authors: ["Alex Lander"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=2PRhLjS-vXs",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/7uo78lRJ5gOza7NkEnol7N?si=d5292b57a36744f9",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/factory.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/factory.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Future House"],
+    date: new Date("2020-08-20"),
+    labels: [recordLabels["SelfReleased"]],
+  },
+  {
+    slug: "complicated",
+    title: "Complicated",
+    description:
+      "A song that was approved by a DJ. I remember that I was really happy when he told me that he liked it.",
+    authors: ["Alex Lander"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=3PHmu0oHEeM",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/0kPupObUngJ6orGwhKwBYS?si=caae89fcef6845c2",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/complicated.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/complicated.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Future House"],
+    date: new Date("2020-08-27"),
+    labels: [recordLabels["SelfReleased"]],
+  },
+  {
+    slug: "amandine",
+    title: "Amandine",
+    description:
+      "A song for an old girlfriend. It's a cringe song thinking it now haha. I never understood how it became my most popular song under the Alex Lander name. It was added in playlist of some other people.",
+    authors: ["Alex Lander"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=HwzfIYxv1bM",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/5nCQdZf4us9goaJGlfgSJi?si=4b1ff0a04e1d4840",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/amandine.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/amandine.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Electro Pop"],
+    date: new Date("2020-04-22"),
+    labels: [recordLabels["SelfReleased"]],
+  },
+  {
+    slug: "forever",
+    title: "Forever",
+    description:
+      "I was finding my music style back during this period. One of the good song I've made during it even if it sounds cheap since I used the default FL Studio plugins and samples.",
+    authors: ["Alex Lander"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=ZIH6XzJwyfc",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/3O4QjdkylusPgsQPmgaCN7?si=b7694c0350cf4cd0",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/forever.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/forever.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM"],
+    date: new Date("2021-04-27"),
+    labels: [recordLabels["SelfReleased"]],
+  },
+  {
+    slug: "you-cant-stop-me",
+    title: "You Can't Stop Me",
+    description:
+      "An original Future House song that has been released on GOTTA RCRDS.",
+    authors: ["Alex Lander"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=wBlZk1mo59I",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/1pYu1D6bQLiMwX7l4Dsv4D?si=def4dfd2364b4d88",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/you-cant-stop-me.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/you-cant-stop-me.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Future House"],
+    date: new Date("2021-09-21"),
+    labels: [recordLabels["GottaRecords"]],
+  },
+  {
+    slug: "i-love-you",
+    title: "I Love You",
+    description: "A classic melodic Progressive House summer song.",
+    authors: ["Alex Lander"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=oHcBZgcCMAk",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/2NF3jf56Ca7lOgVVgh16az?si=2e8a343804474ae7",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/i-love-you.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/i-love-you.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Progressive House"],
+    date: new Date("2020-06-28"),
+    labels: [recordLabels["SelfReleased"]],
+  },
+  {
+    slug: "chaos",
+    title: "Chaos",
+    description: "A classic well executed Future House song.",
+    authors: ["Alex Lander"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=kdvWIkxAsu0",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/chaos-alex-lander.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/chaos-alex-lander.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Future House"],
+    date: new Date("2020-06-05"),
+    labels: [recordLabels["LandersRecords"]],
+  },
+  {
+    slug: "get-funky",
+    title: "Get Funky",
+    description: "Anoter Future House song mixed with some Trap vibes.",
+    authors: ["Alex Lander"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=nqCU0bYm3gY",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/5ZW4ZsfMgZ7CpMHRlqRSil?si=ee1d3c16b6d34021",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/get-funky.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/get-funky.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Future House", "Trap"],
+    date: new Date("2020-05-11"),
+    labels: [recordLabels["LandersRecords"]],
+  },
+
+  {
+    slug: "a-new-era",
+    title: "A New Era",
+    description:
+      "A song that marks the beginning of a new chapter in my music journey.",
+    authors: ["Alexandre Trotel"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=hzdNNQ62l4E",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/65MzBzYKr5DhgHUibMwlL6?si=0f52d6ce8ccf4dff",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/a-new-era.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/a-new-era.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Future House"],
+    date: new Date("2024-04-04"),
+    labels: [recordLabels["SelfReleased"]],
+  },
+  {
+    slug: "mystery",
+    title: "Mystery",
+    description: "A Future House released on Connected Sounds.",
+    authors: ["Alexandre Trotel"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=zEVwg9azdrk",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/0GlloYHI2KFv4ATevVimw7?si=fa87b7f15c864ffa",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/mystery.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/mystery.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Future House"],
+    date: new Date("2020-02-08"),
+    labels: [recordLabels["ConnectedSounds"]],
+  },
+  {
+    slug: "la-castafiore",
+    title: "La Castafiore",
+    description:
+      "I think it's the most iconic song I've made. Just listen to it, and you'll understand.",
+    authors: ["Alexandre Trotel"],
+    status: "Released",
+    links: [
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/watch?v=ybAMoy7gYP4",
+        icon: React.createElement(RiYoutubeFill, { size: ICON_SIZE }),
+      },
+      {
+        platform: "Spotify",
+        url: "https://open.spotify.com/track/4VcgoTecXFpX9IkIVkgxm9?si=046bb902fd2b456e",
+        icon: React.createElement(RiSpotifyFill, { size: ICON_SIZE }),
+      },
+    ],
+    cover: `${coverBasePath}/la-castafiore.jpg`,
+    assets: [
+      {
+        type: "Audio",
+        url: `${assetsBasePath}/la-castafiore.mp3`,
+        version: "Final",
+      },
+    ],
+    styles: ["EDM", "Future House"],
+    date: new Date("2020-05-01"),
+    labels: [recordLabels["NoiseplexRecords"]],
   },
 ];

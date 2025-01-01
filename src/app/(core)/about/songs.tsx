@@ -1,4 +1,4 @@
-import { songs } from "@/data/about/songs";
+import { songs } from "@/data/songs";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { SongItem } from "@/components/features/song-item";
