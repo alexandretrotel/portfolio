@@ -1,7 +1,7 @@
 export type Status = "WIP" | "Finished" | "Paused" | "Dropped" | "Released";
 
 export type Link = {
-  platform: string;
+  platform: Platform;
   url: string;
   icon: React.ReactNode;
 };
@@ -16,7 +16,7 @@ export type Asset = {
 
 export type Assets = Asset[];
 
-export type Author = "Alexandre Trotel";
+export type Author = "Alexandre Trotel" | "Alex Lander" | "Allan Adams";
 
 export type Authors = Author[];
 
@@ -44,7 +44,7 @@ export type Style =
 
 export type Styles = Style[];
 
-export type RecordLabel = "Self-Released";
+export type RecordLabel = "Self Released" | "Connected Sounds" | "GOTTA RCRDS";
 
 export type RecordLabelItem = {
   name: string;
@@ -52,6 +52,10 @@ export type RecordLabelItem = {
 };
 
 export type RecordLabels = RecordLabelItem[];
+
+export type Platform = "YouTube" | "Spotify";
+
+export type Platforms = Platform[];
 
 export type Song = {
   slug: string;
@@ -65,7 +69,7 @@ export type Song = {
   assets?: Assets;
   styles: Styles;
   date: Date;
-  labels?: RecordLabels;
+  labels: RecordLabels;
 };
 
 export type Songs = Song[];
