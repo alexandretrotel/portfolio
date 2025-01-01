@@ -18,6 +18,10 @@ export const links: Links = [
     href: "/projects",
   },
   {
+    title: "Songs",
+    href: "/songs",
+  },
+  {
     title: "Games",
     href: "/games",
   },
