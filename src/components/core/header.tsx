@@ -14,7 +14,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
 import { motion, AnimatePresence } from "motion/react";
-import { links } from "@/data/header";
+import { links } from "@/data/core/header";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
