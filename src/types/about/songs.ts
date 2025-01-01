@@ -39,7 +39,8 @@ export type Style =
   | "Future Rave"
   | "House"
   | "Bass House"
-  | "Tropical House";
+  | "Tropical House"
+  | "Hyperpop";
 
 export type Styles = Style[];
 
