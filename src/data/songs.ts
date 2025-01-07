@@ -7,7 +7,6 @@ const coverBasePath: string = `${songsBasePath}/cover`;
 const assetsBasePath: string = `${songsBasePath}/assets`;
 
 const ICON_SIZE: number = 16;
-const SONG_EXTENSION: string = "m4a";
 
 export const recordLabels: { [key: string]: RecordLabelItem } = {
   SelfReleased: {
@@ -57,7 +56,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/feelings.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/feelings.mp3`,
         version: "Final",
       },
     ],
@@ -88,7 +87,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/journey.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/journey.mp3`,
         version: "Final",
       },
     ],
@@ -119,7 +118,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/angelic-soul.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/angelic-soul.mp3`,
         version: "Final",
       },
     ],
@@ -150,7 +149,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/heaven.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/heaven.mp3`,
         version: "Final",
       },
     ],
@@ -181,7 +180,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/another-world.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/another-world.mp3`,
         version: "Final",
       },
     ],
@@ -212,7 +211,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/river-flows-in-you.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/river-flows-in-you.mp3`,
         version: "Final",
       },
     ],
@@ -244,7 +243,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/BASSLINE.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/BASSLINE.mp3`,
         version: "Final",
       },
     ],
@@ -275,7 +274,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/fight.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/fight.mp3`,
         version: "Final",
       },
     ],
@@ -306,7 +305,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/memories.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/memories.mp3`,
         version: "Final",
       },
     ],
@@ -338,7 +337,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/mon-univers.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/mon-univers.mp3`,
         version: "Final",
       },
     ],
@@ -370,7 +369,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/ton-regard.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/ton-regard.mp3`,
         version: "Final",
       },
     ],
@@ -402,12 +401,12 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/paradox-v2.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/paradox-v2.mp3`,
         version: "v2",
       },
       {
         type: "Audio",
-        url: `${assetsBasePath}/paradox.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/paradox.mp3`,
         version: "Final",
       },
     ],
@@ -438,7 +437,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/phoenix.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/phoenix.mp3`,
         version: "Final",
       },
     ],
@@ -469,7 +468,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/melancolie.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/melancolie.mp3`,
         version: "Final",
       },
     ],
@@ -500,7 +499,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/bitcoin.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/bitcoin.mp3`,
         version: "Final",
       },
     ],
@@ -531,7 +530,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/astral.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/astral.mp3`,
         version: "Final",
       },
     ],
@@ -562,7 +561,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/chaos.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/chaos.mp3`,
         version: "Final",
       },
     ],
@@ -594,7 +593,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/another-day.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/another-day.mp3`,
         version: "Final",
       },
     ],
@@ -625,7 +624,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/love.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/love.mp3`,
         version: "Final",
       },
     ],
@@ -656,7 +655,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/nothing.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/nothing.mp3`,
         version: "Final",
       },
     ],
@@ -687,7 +686,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/what-you-feel.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/what-you-feel.mp3`,
         version: "Final",
       },
     ],
@@ -714,7 +713,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/paris.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/paris.mp3`,
         version: "Final",
       },
     ],
@@ -741,7 +740,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/impossible.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/impossible.mp3`,
         version: "Final",
       },
     ],
@@ -765,7 +764,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/poulet.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/poulet.mp3`,
         version: "v1",
       },
     ],
@@ -790,7 +789,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/tchu-tcha-tcha-remix.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/tchu-tcha-tcha-remix.mp3`,
         version: "v1",
       },
     ],
@@ -814,7 +813,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/poulet-2.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/poulet-2.mp3`,
         version: "v1",
       },
     ],
@@ -838,7 +837,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/metaphysique.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/metaphysique.mp3`,
         version: "v1",
       },
     ],
@@ -863,7 +862,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/my-world.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/my-world.mp3`,
         version: "v1",
       },
     ],
@@ -888,7 +887,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/sensational-remix.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/sensational-remix.mp3`,
         version: "v1",
       },
     ],
@@ -913,17 +912,17 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/stereo.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/stereo.mp3`,
         version: "Final",
       },
       {
         type: "Audio",
-        url: `${assetsBasePath}/stereo-v2.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/stereo-v2.mp3`,
         version: "v2",
       },
       {
         type: "Audio",
-        url: `${assetsBasePath}/stereo-v1.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/stereo-v1.mp3`,
         version: "v1",
       },
     ],
@@ -947,7 +946,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/we-could-be-together-remix.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/we-could-be-together-remix.mp3`,
         version: "v1",
       },
     ],
@@ -964,7 +963,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/bouge.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/bouge.mp3`,
         version: "v1",
       },
     ],
@@ -981,7 +980,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/house.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/house.mp3`,
         version: "v1",
       },
     ],
@@ -999,7 +998,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/end-of-the-night.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/end-of-the-night.mp3`,
         version: "v1",
       },
     ],
@@ -1017,12 +1016,12 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/hyperpop-fucked-up-v2.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/hyperpop-fucked-up-v2.mp3`,
         version: "v2",
       },
       {
         type: "Audio",
-        url: `${assetsBasePath}/hyperpop-fucked-up.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/hyperpop-fucked-up.mp3`,
         version: "v1",
       },
     ],
@@ -1039,7 +1038,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/progressive.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/progressive.mp3`,
         version: "v1",
       },
     ],
@@ -1057,7 +1056,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/i-got-it.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/i-got-it.mp3`,
         version: "v1",
       },
     ],
@@ -1075,7 +1074,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/christmas-love.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/christmas-love.mp3`,
         version: "v1",
       },
     ],
@@ -1093,7 +1092,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/chill.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/chill.mp3`,
         version: "v1",
       },
     ],
@@ -1110,7 +1109,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/funky.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/funky.mp3`,
         version: "v1",
       },
     ],
@@ -1128,7 +1127,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/reversed.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/reversed.mp3`,
         version: "v1",
       },
     ],
@@ -1146,12 +1145,12 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/dancing-under-the-moon-v2.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/dancing-under-the-moon-v2.mp3`,
         version: "v2",
       },
       {
         type: "Audio",
-        url: `${assetsBasePath}/dancing-under-the-moon.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/dancing-under-the-moon.mp3`,
         version: "v1",
       },
     ],
@@ -1168,7 +1167,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/make-me-feel.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/make-me-feel.mp3`,
         version: "v1",
       },
     ],
@@ -1185,12 +1184,12 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/drums-v2.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/drums-v2.mp3`,
         version: "v2",
       },
       {
         type: "Audio",
-        url: `${assetsBasePath}/drums.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/drums.mp3`,
         version: "v1",
       },
     ],
@@ -1208,12 +1207,12 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/outerspace-v2.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/outerspace-v2.mp3`,
         version: "v2",
       },
       {
         type: "Audio",
-        url: `${assetsBasePath}/outerspace.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/outerspace.mp3`,
         version: "v1",
       },
     ],
@@ -1231,7 +1230,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/erosion.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/erosion.mp3`,
         version: "v1",
       },
     ],
@@ -1249,12 +1248,12 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/future-bouncy-v2.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/future-bouncy-v2.mp3`,
         version: "v2",
       },
       {
         type: "Audio",
-        url: `${assetsBasePath}/future-bouncy.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/future-bouncy.mp3`,
         version: "v1",
       },
     ],
@@ -1271,7 +1270,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/close-to-you.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/close-to-you.mp3`,
         version: "v1",
       },
     ],
@@ -1288,7 +1287,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/roses-are-red.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/roses-are-red.mp3`,
         version: "v1",
       },
     ],
@@ -1305,7 +1304,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/losing-you.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/losing-you.mp3`,
         version: "v1",
       },
     ],
@@ -1322,7 +1321,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/i-dont-wanna-wait.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/i-dont-wanna-wait.mp3`,
         version: "v1",
       },
     ],
@@ -1339,7 +1338,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/big-rave.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/big-rave.mp3`,
         version: "v1",
       },
     ],
@@ -1356,7 +1355,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/mamamia.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/mamamia.mp3`,
         version: "v1",
       },
     ],
@@ -1388,7 +1387,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/flashback-story-deluxe-edition.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/flashback-story-deluxe-edition.mp3`,
         version: "Deluxe Edition",
       },
     ],
@@ -1419,7 +1418,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/rave.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/rave.mp3`,
         version: "Final",
       },
     ],
@@ -1450,7 +1449,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/far-away.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/far-away.mp3`,
         version: "Final",
       },
     ],
@@ -1480,7 +1479,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/feel.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/feel.mp3`,
         version: "Final",
       },
     ],
@@ -1511,7 +1510,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/untouchable.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/untouchable.mp3`,
         version: "Final",
       },
     ],
@@ -1541,7 +1540,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/factory.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/factory.mp3`,
         version: "Final",
       },
     ],
@@ -1571,7 +1570,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/complicated.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/complicated.mp3`,
         version: "Final",
       },
     ],
@@ -1602,7 +1601,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/amandine.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/amandine.mp3`,
         version: "Final",
       },
     ],
@@ -1633,7 +1632,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/forever.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/forever.mp3`,
         version: "Final",
       },
     ],
@@ -1663,7 +1662,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/you-cant-stop-me.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/you-cant-stop-me.mp3`,
         version: "Final",
       },
     ],
@@ -1693,7 +1692,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/i-love-you.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/i-love-you.mp3`,
         version: "Final",
       },
     ],
@@ -1702,7 +1701,7 @@ export const songs: Songs = [
     labels: [recordLabels["SelfReleased"]],
   },
   {
-    slug: "chaos-alex-lander",
+    slug: "chaos",
     title: "Chaos",
     description: "A classic well executed Future House song.",
     authors: ["Alex Lander"],
@@ -1718,7 +1717,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/chaos-alex-lander.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/chaos-alex-lander.mp3`,
         version: "Final",
       },
     ],
@@ -1748,7 +1747,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/get-funky.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/get-funky.mp3`,
         version: "Final",
       },
     ],
@@ -1779,7 +1778,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/a-new-era.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/a-new-era.mp3`,
         version: "Final",
       },
     ],
@@ -1809,7 +1808,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/mystery.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/mystery.mp3`,
         version: "Final",
       },
     ],
@@ -1840,7 +1839,7 @@ export const songs: Songs = [
     assets: [
       {
         type: "Audio",
-        url: `${assetsBasePath}/la-castafiore.${SONG_EXTENSION}`,
+        url: `${assetsBasePath}/la-castafiore.mp3`,
         version: "Final",
       },
     ],
