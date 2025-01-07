@@ -1,7 +1,7 @@
 "use client";
 import "client-only";
 
-import { donations } from "@/data/footer";
+import { donations } from "@/data/core/footer";
 import React, { useState } from "react";
 import {
   Tooltip,

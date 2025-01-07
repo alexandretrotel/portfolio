@@ -156,7 +156,7 @@ export const projects: Projects = [
     title: "Check Node Packages (cnp)",
     description:
       "A utility tool written in Rust to check unused node packages.",
-    date: new Date("2023-12-03"),
+    date: new Date("2024-12-03"),
     url: `${basePath}/cnp`,
     links: [{ title: "Github", url: "https://github.com/trotelalexandre/cnp" }],
     tags: ["CLI", "Tooling"],

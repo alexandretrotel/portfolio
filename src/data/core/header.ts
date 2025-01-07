@@ -6,7 +6,7 @@ export const links: Links = [
     href: "/",
   },
   {
-    title: "About me",
+    title: "About",
     href: "/about",
   },
   {
@@ -16,6 +16,10 @@ export const links: Links = [
   {
     title: "Projects",
     href: "/projects",
+  },
+  {
+    title: "Songs",
+    href: "/songs",
   },
   {
     title: "Games",
