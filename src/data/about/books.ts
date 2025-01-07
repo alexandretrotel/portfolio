@@ -60,7 +60,7 @@ export const books: Books = [
     url: "https://www.amazon.fr/Influence-persuasion-3e-%C3%A9dition-augment%C3%A9e/dp/2266326112/ref=sr_1_1?crid=2FTJ877HOJG88&dib=eyJ2IjoiMSJ9.qhM3NjINUXc4RxILrQ28bCZNJuxa_54oYmcc3E3kSEU1tbGKOb2gH-iOt5cQTV1VkQmuaXvdwuoIjhmRI5DcBE5GEIkWnRXA97-upik_siAb0zCoMW6SxUQMZnDSO-YO-03bBx7m-HQooJtXAts3ApzB6fnHcWbmYB5MHSY7cSN5U2P7CNyLXP6xNXKz1TwViwVL9GvDMvTHX515KtuLZCAVQmRGBCCADdpl0M4qq49djbSiLwqfCePnuYFIKQtnnDN8XChjr_dS_kUfQR9c7zYHlhL9RFQYo1NV357cwpPHIpvu7noMBqTHkp_adUJwY9Wrenrs80QpiqCgD2SGjRgpcHFpJHm1EIecSgthSxFL8pLxbc7MvSb6zlWzTJ3sEki3QgeszU_4ESlXz00U3dIvhBkBIE2bwaWNmblifS_0TofM2ijKS3lTPw3u8HV-.0PQPNFusYJZaW8JbCe4Y4GGoTZVLJOFi9ioPcj1N9v4&dib_tag=se&keywords=influence+et+manipulation&nsdOptOutParam=true&qid=1735590869&sprefix=influence%2Caps%2C118&sr=8-1",
   },
   {
-    title: "The 100M Offer",
+    title: "L'offre à 100M $",
     author: "Alex Hormozi",
     description:
       "How to build a business that can generate $100 million in revenue.",
@@ -68,7 +68,7 @@ export const books: Books = [
     url: "https://www.amazon.fr/LOffre-100M-tellement-irr%C3%A9sistibles-Acquisition-com-ebook/dp/B0CTFYGMBT/ref=sr_1_1?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=DZZ9SLO4RL8Y&dib=eyJ2IjoiMSJ9.xxZ1xU_m9eUJkWmbFZFntJsc2uEp3zIMWDy0O9J2GDRZKAONYUpN3xIUoIXHwL0suwrebFVIz5alYPotakQ6JRrPAOKiVPH8-g3RV_JxgUZn6JdaXT2cx4-8hVGBGeNRwGSADdkbL29CfJcSoAn_RQeZqAcDe3AO8wSyfn1doy1kRUNkguaNsKm78vLUTbifGXMjMqa9cGZi4k8YokoBdnhJsDi0mJt_Z55pBhxH7wHxf9DQ4vJua0D5onQG_R5ofJD_jkgWMp7gd26OrnFUaCeb3JAu9495hDeBs1KamHU2FIyP3II6W2nYZhjMG4_1IyehT6h8ACJAzkyuSUNG9HiC3D4AKvB0dFeGxfvQUIRbpDdEanZ89wlW6VMQkb0YDC4vYMXIJbOYuRo8es7jn8-GSXkOZNbZB32siaoWKRz8RT-qN9pwc9wp4VK-X7VP.nYVwCbNcv309rGMl20J4SlSNZHzsR5XtfQq2ShFvzYo&dib_tag=se&keywords=alex+hormozi&nsdOptOutParam=true&qid=1735590933&sprefix=alex+hormozi%2Caps%2C143&sr=8-1",
   },
   {
-    title: "Rich Dad Poor Dad",
+    title: "Père Riche, Père Pauvre",
     author: "Robert Kiyosaki",
     description:
       "The difference between the way rich people and poor people think.",
@@ -120,14 +120,5 @@ export const books: Books = [
       "The story of a man who is indifferent to the world around him and the events that lead to his ultimate demise.",
     tags: ["Philosophy"],
     url: "https://www.amazon.fr/L%C3%A9tranger-Albert-Camus/dp/2070360024/ref=sr_1_1?crid=3R1Z5Y5Z5Z5Z&keywords=l%27%C3%A9tranger+albert+camus&qid=1735592264&sprefix=l%27%C3%A9tranger%2Caps%2C121&sr=8-1",
-  },
-  {
-    title:
-      "21 Lessons: What I’ve Learned From Falling Down the Bitcoin Rabbit Hole",
-    author: "Gigi",
-    description:
-      "An exploration of the questions and lessons learned from studying Bitcoin. Gigi, the author, shares his personal journey and the knowledge he has gained over the years.",
-    tags: ["Finance"],
-    url: "https://www.amazon.fr/-/en/dp/B09MYXXS2X/ref=sr_1_fkmr0_1?crid=3NYFN516KHHXM&dib=eyJ2IjoiMSJ9.TGUWRKKDLW55QyXMG5CdFQu747IMyHVPrP4TDU_iE9cN7VUuNqq2L0YmRpvO9c6GPAQm6x8A1FE86dqCNOJDtNku5UDKbJUTpZ1sZFsC3PE.riwIQfwk5dGUQKEWIqWWQQeqygpOyIMYaxohUPUBykk&dib_tag=se&keywords=21+lessons+on+bitcoin&nsdOptOutParam=true&qid=1736274685&sprefix=21+lessons+on+bitcoin%2Caps%2C82&sr=8-1-fkmr0",
   },
 ];
