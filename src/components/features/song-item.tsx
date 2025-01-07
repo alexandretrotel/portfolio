@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Song } from "@/types/about/songs";
+import { Song } from "@/types/songs";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { Button } from "../ui/button";

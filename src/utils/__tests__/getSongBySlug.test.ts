@@ -1,4 +1,4 @@
-import { songs } from "@/data/about/songs";
+import { songs } from "@/data/songs";
 import { getSongBySlug } from "../getSongBySlug";
 
 describe("getSongBySlug", () => {
