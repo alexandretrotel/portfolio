@@ -92,7 +92,11 @@ export async function ProjectItem({
                   className={cn(
                     status === "Completed"
                       ? "bg-green-500 hover:bg-green-500/80"
-                      : "bg-yellow-500 hover:bg-yellow-500/80",
+                      : status === "WIP"
+                        ? "bg-yellow-500 hover:bg-yellow-500/80"
+                        : status === "Paused"
+                          ? "bg-blue-500 hover:bg-blue-500/80"
+                          : "bg-red-500 hover:bg-red-500/80",
                     "border-transparent text-white",
                   )}
                 >

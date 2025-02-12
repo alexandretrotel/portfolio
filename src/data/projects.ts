@@ -75,7 +75,6 @@ export const projects: Projects = [
     ],
     status: "Completed",
     dateCompleted: new Date("2024-07-05"),
-    featured: true,
     icon: `${iconBasePath}/trotelcoin.jpeg`,
     preview: {
       asset: `${videoBasePath}/trotelcoin.mp4`,
@@ -106,8 +105,7 @@ export const projects: Projects = [
       "API",
     ],
     languages: ["TypeScript", "React Native", "Tailwind CSS", "Expo", "NestJS"],
-    status: "WIP",
-    featured: true,
+    status: "Abandoned",
     icon: `${iconBasePath}/mindify.jpeg`,
     preview: {
       asset: `${videoBasePath}/mindify.mp4`,
@@ -146,7 +144,7 @@ export const projects: Projects = [
     ],
     tags: ["Frontend", "Backend", "Fullstack", "Design", "Business", "API"],
     languages: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Drizzle"],
-    status: "WIP",
+    status: "Paused",
     preview: {
       asset: `${videoBasePath}/progressly.mp4`,
       type: "video",
@@ -185,7 +183,7 @@ export const projects: Projects = [
     ],
     tags: ["Frontend", "Design", "Business"],
     languages: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
-    status: "WIP",
+    status: "Paused",
     icon: `${iconBasePath}/aurora.jpeg`,
     preview: {
       asset: `${videoBasePath}/aurora.mp4`,
@@ -215,6 +213,86 @@ export const projects: Projects = [
     icon: `${iconBasePath}/siborg.jpeg`,
     preview: {
       asset: `${videoBasePath}/siborg-ads-telegram-bot.mp4`,
+      type: "video",
+    },
+  },
+  {
+    title: "Clean That System",
+    description:
+      "A CLI tool to clean your system by deleting unnecessary files.",
+    date: new Date("2025-01-06"),
+    url: `${basePath}/clean-that-system`,
+    links: [
+      {
+        title: "GitHub",
+        url: "https://github.com/trotelalexandre/clean-that-system",
+      },
+      {
+        title: "npm",
+        url: "https://www.npmjs.com/package/clean-that-system",
+      },
+    ],
+    tags: ["CLI", "Tooling"],
+    languages: ["TypeScript"],
+    status: "WIP",
+    preview: {
+      asset: `${videoBasePath}/clean-that-system.mp4`,
+      type: "video",
+    },
+  },
+  {
+    title: "Proto",
+    description:
+      "A blockchain written in Go to learn how blockchains work under the hood. I'm also making an explorer using Vite to visualize the blocks.",
+    date: new Date("2025-01-21"),
+    url: `${basePath}/proto`,
+    links: [
+      {
+        title: "GitHub",
+        url: "https://github.com/trotelalexandre/proto",
+      },
+    ],
+    tags: ["Backend", "Blockchain", "Frontend", "Fullstack"],
+    languages: ["Go", "TypeScript", "React", "Vite"],
+    status: "WIP",
+  },
+  {
+    title: "StockLab",
+    description:
+      "A web application to help users backtest their trading strategies easily.",
+    date: new Date("2025-01-25"),
+    url: `${basePath}/stocklab`,
+    links: [
+      {
+        title: "Website",
+        url: "https://stocklab.vercel.app",
+      },
+      {
+        title: "GitHub",
+        url: "https://github.com/trotelalexandre/stocklab",
+      },
+    ],
+    tags: ["Frontend", "Design", "Business", "API"],
+    languages: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
+    status: "WIP",
+  },
+  {
+    title: "CLI Adventure",
+    description:
+      "A CLI game to play a text-based adventure game in your terminal enriched with AI.",
+    date: new Date("2025-02-08"),
+    url: `${basePath}/cli-adventure`,
+    links: [
+      {
+        title: "GitHub",
+        url: "https://github.com/trotelalexandre/cli-adventure",
+      },
+    ],
+    tags: ["CLI", "AI"],
+    languages: ["TypeScript", "Drizzle"],
+    status: "WIP",
+    preview: {
+      asset: `${videoBasePath}/cli-adventure.mp4`,
       type: "video",
     },
   },
