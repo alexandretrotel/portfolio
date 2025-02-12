@@ -14,7 +14,8 @@ export type Tag =
   | "CLI"
   | "API"
   | "Tooling"
-  | "Other";
+  | "Other"
+  | "Blockchain";
 
 export type Tags = Tag[];
 
@@ -43,11 +44,13 @@ export type Language =
   | "NestJS"
   | "Cargo"
   | "Drizzle"
-  | "grammY";
+  | "grammY"
+  | "Vite"
+  | "Go";
 
 export type Languages = Language[];
 
-export type Status = "WIP" | "Completed";
+export type Status = "WIP" | "Completed" | "Paused" | "Abandoned";
 
 export type PreviewType = "image" | "video";
 
