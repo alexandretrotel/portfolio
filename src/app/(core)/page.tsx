@@ -18,7 +18,7 @@ const sections = [
 
 export default async function Home() {
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-col gap-16">
+    <div className="mx-auto flex w-full max-w-xl flex-col gap-16">
       {sections.map(({ component: Component }, index) => (
         <Animation key={Component.name} delay={index * ANIMATION_DELAY}>
           <Component />

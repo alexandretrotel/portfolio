@@ -60,7 +60,7 @@ export const books: Books = [
     url: "https://www.amazon.fr/Influence-persuasion-3e-%C3%A9dition-augment%C3%A9e/dp/2266326112/ref=sr_1_1?crid=2FTJ877HOJG88&dib=eyJ2IjoiMSJ9.qhM3NjINUXc4RxILrQ28bCZNJuxa_54oYmcc3E3kSEU1tbGKOb2gH-iOt5cQTV1VkQmuaXvdwuoIjhmRI5DcBE5GEIkWnRXA97-upik_siAb0zCoMW6SxUQMZnDSO-YO-03bBx7m-HQooJtXAts3ApzB6fnHcWbmYB5MHSY7cSN5U2P7CNyLXP6xNXKz1TwViwVL9GvDMvTHX515KtuLZCAVQmRGBCCADdpl0M4qq49djbSiLwqfCePnuYFIKQtnnDN8XChjr_dS_kUfQR9c7zYHlhL9RFQYo1NV357cwpPHIpvu7noMBqTHkp_adUJwY9Wrenrs80QpiqCgD2SGjRgpcHFpJHm1EIecSgthSxFL8pLxbc7MvSb6zlWzTJ3sEki3QgeszU_4ESlXz00U3dIvhBkBIE2bwaWNmblifS_0TofM2ijKS3lTPw3u8HV-.0PQPNFusYJZaW8JbCe4Y4GGoTZVLJOFi9ioPcj1N9v4&dib_tag=se&keywords=influence+et+manipulation&nsdOptOutParam=true&qid=1735590869&sprefix=influence%2Caps%2C118&sr=8-1",
   },
   {
-    title: "L'offre à 100M $",
+    title: "The 100M Offer",
     author: "Alex Hormozi",
     description:
       "How to build a business that can generate $100 million in revenue.",
@@ -68,7 +68,7 @@ export const books: Books = [
     url: "https://www.amazon.fr/LOffre-100M-tellement-irr%C3%A9sistibles-Acquisition-com-ebook/dp/B0CTFYGMBT/ref=sr_1_1?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=DZZ9SLO4RL8Y&dib=eyJ2IjoiMSJ9.xxZ1xU_m9eUJkWmbFZFntJsc2uEp3zIMWDy0O9J2GDRZKAONYUpN3xIUoIXHwL0suwrebFVIz5alYPotakQ6JRrPAOKiVPH8-g3RV_JxgUZn6JdaXT2cx4-8hVGBGeNRwGSADdkbL29CfJcSoAn_RQeZqAcDe3AO8wSyfn1doy1kRUNkguaNsKm78vLUTbifGXMjMqa9cGZi4k8YokoBdnhJsDi0mJt_Z55pBhxH7wHxf9DQ4vJua0D5onQG_R5ofJD_jkgWMp7gd26OrnFUaCeb3JAu9495hDeBs1KamHU2FIyP3II6W2nYZhjMG4_1IyehT6h8ACJAzkyuSUNG9HiC3D4AKvB0dFeGxfvQUIRbpDdEanZ89wlW6VMQkb0YDC4vYMXIJbOYuRo8es7jn8-GSXkOZNbZB32siaoWKRz8RT-qN9pwc9wp4VK-X7VP.nYVwCbNcv309rGMl20J4SlSNZHzsR5XtfQq2ShFvzYo&dib_tag=se&keywords=alex+hormozi&nsdOptOutParam=true&qid=1735590933&sprefix=alex+hormozi%2Caps%2C143&sr=8-1",
   },
   {
-    title: "Père Riche, Père Pauvre",
+    title: "Rich Dad, Poor Dad",
     author: "Robert Kiyosaki",
     description:
       "The difference between the way rich people and poor people think.",
@@ -120,5 +120,30 @@ export const books: Books = [
       "The story of a man who is indifferent to the world around him and the events that lead to his ultimate demise.",
     tags: ["Philosophy"],
     url: "https://www.amazon.fr/L%C3%A9tranger-Albert-Camus/dp/2070360024/ref=sr_1_1?crid=3R1Z5Y5Z5Z5Z&keywords=l%27%C3%A9tranger+albert+camus&qid=1735592264&sprefix=l%27%C3%A9tranger%2Caps%2C121&sr=8-1",
+  },
+  {
+    title:
+      "21 Lessons: What I’ve Learned From Falling Down the Bitcoin Rabbit Hole",
+    author: "Gigi",
+    description:
+      "An exploration of the questions and lessons learned from studying Bitcoin. Gigi, the author, shares his personal journey and the knowledge he has gained over the years.",
+    tags: ["Finance"],
+    url: "https://www.amazon.fr/-/en/dp/B09MYXXS2X/ref=sr_1_fkmr0_1?crid=3NYFN516KHHXM&dib=eyJ2IjoiMSJ9.TGUWRKKDLW55QyXMG5CdFQu747IMyHVPrP4TDU_iE9cN7VUuNqq2L0YmRpvO9c6GPAQm6x8A1FE86dqCNOJDtNku5UDKbJUTpZ1sZFsC3PE.riwIQfwk5dGUQKEWIqWWQQeqygpOyIMYaxohUPUBykk&dib_tag=se&keywords=21+lessons+on+bitcoin&nsdOptOutParam=true&qid=1736274685&sprefix=21+lessons+on+bitcoin%2Caps%2C82&sr=8-1-fkmr0",
+  },
+  {
+    title: "Investir pour être libre",
+    author: "Mounir Laggoune",
+    description:
+      "Mounir Laggoune offers a step-by-step method, based on proven concepts, for building wealth. From budget management to real estate, alternative investments and your first shares on the stock market, he gives you the keys to an automatic wealth creation system: your money will work for you.",
+    tags: ["Finance"],
+    url: "https://www.amazon.fr/-/en/dp/B0DJTSFLVD/ref=sr_1_1?crid=1DYG8X4K99VF3&dib=eyJ2IjoiMSJ9.dOwmNyVy5kjdTUKmBHUTxRMFxo6L2nxjmvJNF5ZazXrHYCQHaULSDDLXD2BDCwPVAAVubU3FOBNZoVULrQGfIX36lr4f_w_LcYbdwUNmGp2cZjNxdBz0sZGlHYf8alkijHt3QhhDgJ4q4-ZVpE6wJ39vI13I-03RK9cURF0jI_rxZoB9kZkedZJ35MW_wFhlO5V4BSUhafWtMYKdoykDJjnrb_E-YoPeVoW9VNZCBJ5-ZJO3KIhq1IqbiC1Lve0YXgTpvfoiJhXiD9ZXA_3YJDta-7XupaBY-k25UlLDMyUuUDjgISj8HTMIA0lOmf-nYKD0c9GQxKyBLCQjKGfkhEUKHUejlpjQ-uhbIgwqKpAzX3K1oycqIAqIZQiWGv-e4E0yaVJxhirGvbyXNDgULufirRLdloCppGB9rldH5PC2H38A6yGYVAIpqcJnYAHg.WK9ChF8fb9sUr8vKHrr4RTkcUZPoHRDYPuqHn3QYp-A&dib_tag=se&keywords=finary&qid=1738142516&sprefix=finary%2Caps%2C80&sr=8-1",
+  },
+  {
+    title: "Une sacrée envie de foutre le bordel",
+    author: "Xavier Niel",
+    description:
+      "There aren't many entrepreneurs in France who have made a fortune from scratch. A kid from Créteil who didn't go to school, went to prison and became a billionaire - you can look, there's no one else. It's a conversation between friends about a man, his choices, his regrets, his hopes. It's the story of a success story and the improbable path that led to it.",
+    tags: ["Business"],
+    url: "https://www.amazon.fr/-/en/dp/2080452142/ref=sr_1_1?crid=2LIMADJ3D8RF3&dib=eyJ2IjoiMSJ9.1yDGMJLdb0TUi4tqZyf0jFQfgviwrmWyChds8lMhFwWftG68nH3qZAbp8aEqySRLojz-2KxOEkSpuHFP3M5Ldc5FMRD6jmTbbC3hyJUYquskRNyD-LhfYncTkACVj2qVMyeKqQuwWs1j4Gyscj_Wz0B-IS9bxwnKt9Y-rPcKLyeTnQac8_otBzUlL1fmcaU8oyjRC3I5ExJNy4EDHChNmUAA-otE9PZcFqPa_Iz-xd9M026UOTEBzTXqFnzOoV7HQcuFStCNaD0MnmFvCiFQgspcwLctWKYnI3NCeCepQE3dqyFGQyiSwb4mYnH4HPpUHtEoQNZnTlaTkm9Yaih8_hT3aTS92Hwn5GgO1iwm7UCA7nToue48oTKt_Iff6AqdWBFV7Ws36y99k3KaJgqRrBPi9-gFuFfFreqD7m5hI-w.3F9NByjEzfQhoh3IIKbgkaaosL1cdhCeJcYcLuo2bpw&dib_tag=se&keywords=xavier+niel&qid=1738142593&sprefix=xavier+niel%2Caps%2C80&sr=8-1",
   },
 ];
