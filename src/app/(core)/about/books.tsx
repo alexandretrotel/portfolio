@@ -68,7 +68,8 @@ function StaticBooksContent() {
             }
             return acc;
           }, [])
-          .map((tag) => {
+          ?.sort((a, b) => a.localeCompare(b))
+          ?.map((tag) => {
             return (
               <Badge
                 key={tag}

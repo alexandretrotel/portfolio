@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Song } from "@/types/about/songs";
+import { Song } from "@/types/songs";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { Button } from "../ui/button";
@@ -14,6 +14,7 @@ import Link from "next/link";
 import { Info } from "lucide-react";
 import { Separator } from "../ui/separator";
 import SongItemAnimation from "./song-item-animation";
+import { features } from "@/data/features";
 
 const songsBasePath = "/songs";
 
@@ -102,9 +103,11 @@ export async function SongItem({
             </div>
           </div>
         </CardHeader>
-        <CardContent className="flex flex-col gap-4">
-          <p className="text-sm text-muted-foreground">{description}</p>
-        </CardContent>
+        {features.showSongDescription && (
+          <CardContent className="flex flex-col gap-4">
+            <p className="text-sm text-muted-foreground">{description}</p>
+          </CardContent>
+        )}
       </div>
 
       <CardFooter className="flex w-full flex-col items-start gap-4 px-0">
