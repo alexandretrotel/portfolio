@@ -146,4 +146,12 @@ export const books: Books = [
     tags: ["Business"],
     url: "https://www.amazon.fr/-/en/dp/2080452142/ref=sr_1_1?crid=2LIMADJ3D8RF3&dib=eyJ2IjoiMSJ9.1yDGMJLdb0TUi4tqZyf0jFQfgviwrmWyChds8lMhFwWftG68nH3qZAbp8aEqySRLojz-2KxOEkSpuHFP3M5Ldc5FMRD6jmTbbC3hyJUYquskRNyD-LhfYncTkACVj2qVMyeKqQuwWs1j4Gyscj_Wz0B-IS9bxwnKt9Y-rPcKLyeTnQac8_otBzUlL1fmcaU8oyjRC3I5ExJNy4EDHChNmUAA-otE9PZcFqPa_Iz-xd9M026UOTEBzTXqFnzOoV7HQcuFStCNaD0MnmFvCiFQgspcwLctWKYnI3NCeCepQE3dqyFGQyiSwb4mYnH4HPpUHtEoQNZnTlaTkm9Yaih8_hT3aTS92Hwn5GgO1iwm7UCA7nToue48oTKt_Iff6AqdWBFV7Ws36y99k3KaJgqRrBPi9-gFuFfFreqD7m5hI-w.3F9NByjEzfQhoh3IIKbgkaaosL1cdhCeJcYcLuo2bpw&dib_tag=se&keywords=xavier+niel&qid=1738142593&sprefix=xavier+niel%2Caps%2C80&sr=8-1",
   },
+  {
+    title: "Le discours de la méthode",
+    author: "René Descartes",
+    description:
+      "The Discourse on the Method is a philosophical and autobiographical treatise published by René Descartes in 1637. Its full name is Discourse on the Method of Rightly Conducting One's Reason and of Seeking Truth in the Sciences.",
+    tags: ["Philosophy"],
+    url: "https://www.amazon.fr/-/en/dp/B0B2TP67QP/ref=sr_1_3?crid=79CLVCG7I01M&dib=eyJ2IjoiMSJ9.s69b75TJSjctva3hhyithpLJ8Lvf5ee1IRTY9P65FBkagqyBBm613lpTEGTAMQRO4Pti49ndDc1aXZj_QjAHT72tFxY3f61oBOlWacej_V_kaHMHG2UzAVG0wrQt2spZ77y1oYuVz_kkBRjx3eT4XbKy_DvIG0BpUdDvYY-CPicqko2TUEQ46GZyv6o1ACs9HbqS3FJOJRKhQvcsWo9CTff3NtD5ISa_xgH-rFLEqLIXdKAWV1v2gfEZDbCyW-NSKW2ji1sXnT0IANkVkMfe5MrTlt8VMMazWe2YWSEE-zm_WFTq3s2p-Ozq-jncTc0MpXVkgYMInVLfIpJGRa_zHxoDIOMGDYf1yiLZrQHTbBHRVMT0TbGowr3tSBIMz_0lSf_mzkoXtPTSemPt140HC9z1z-iXptTUL7Km9KFQpH_sQIGtivXGra1yVDC16-uh.easjSltLNO2oyEIuarLJd1wr7X158eH7EJka0ur8KCM&dib_tag=se&keywords=discours+de+la+methode+descartes&qid=1739404127&sprefix=discours+de+la%2Caps%2C82&sr=8-3",
+  },
 ];
