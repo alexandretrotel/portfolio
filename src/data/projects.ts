@@ -296,4 +296,28 @@ export const projects: Projects = [
       type: "video",
     },
   },
+  {
+    title: "Refine My Prompt",
+    description:
+      "A web application to help users create beautiful prompts before sending them to AI models.",
+    date: new Date("2025-02-15"),
+    url: `${basePath}/refine-my-prompt`,
+    links: [
+      {
+        title: "Website",
+        url: "https://refine-my-prompt.vercel.app",
+      },
+      {
+        title: "GitHub",
+        url: "https://github.com/trotelalexandre/refine-my-prompt",
+      },
+    ],
+    tags: ["Frontend", "Design", "AI", "Fullstack", "Backend"],
+    languages: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
+    status: "WIP",
+    preview: {
+      asset: `${videoBasePath}/refine-my-prompt.mp4`,
+      type: "video",
+    },
+  },
 ];
