@@ -12,18 +12,22 @@ const sections = [
   { component: Experiences },
   { component: Nonprofit },
   { component: Education },
-  { component: Skills },
-  { component: Projects },
+  { component: Skills, disabled: true },
+  { component: Projects, disabled: true },
 ];
 
 export default async function Home() {
   return (
     <div className="mx-auto flex w-full max-w-xl flex-col gap-16">
-      {sections.map(({ component: Component }, index) => (
-        <Animation key={Component.name} delay={index * ANIMATION_DELAY}>
-          <Component />
-        </Animation>
-      ))}
+      {sections.map(({ component: Component, disabled }, index) => {
+        if (disabled) return null;
+
+        return (
+          <Animation key={Component.name} delay={index * ANIMATION_DELAY}>
+            <Component />
+          </Animation>
+        );
+      })}
     </div>
   );
 }
