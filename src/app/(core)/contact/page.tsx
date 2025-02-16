@@ -10,17 +10,22 @@ export default async function Contact() {
         <div className="flex flex-col">
           <h1 className="text-lg font-bold">Contact me</h1>
           <p className="text-sm text-muted-foreground">
-            I always asked myself how to send all my social media links at once,
-            so I decided to make my own page.
+            Feel free to reach out to me on social media or by email.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {socials?.map((social, index) => (
-            <Animation key={social.title} delay={index * ANIMATION_DELAY}>
-              <SocialCard {...social} />
-            </Animation>
-          ))}
+          {socials?.map((social, index) => {
+            if (social?.disabled) {
+              return null;
+            }
+
+            return (
+              <Animation key={social.title} delay={index * ANIMATION_DELAY}>
+                <SocialCard {...social} />
+              </Animation>
+            );
+          })}
         </div>
       </div>
     </Animation>

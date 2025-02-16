@@ -1,7 +1,8 @@
 "use client";
 import "client-only";
 
-import { donations } from "@/data/core/footer";
+import { donations, secondaryLinks } from "@/data/core/footer";
+import { mainLinks } from "@/data/core/header";
 import React, { useState } from "react";
 import {
   Tooltip,
@@ -11,6 +12,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Bitcoin, Check, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const EthereumIcon = ({ size }: { size: number }) => (
   <svg
@@ -25,12 +27,33 @@ const EthereumIcon = ({ size }: { size: number }) => (
 );
 
 export default function Footer() {
+  const links = [
+    ...mainLinks.slice(0, -1),
+    ...secondaryLinks,
+    ...mainLinks.slice(-1),
+  ];
+
   return (
-    <footer className="mx-auto max-w-5xl border-t px-4 py-8 text-center">
+    <footer className="mx-auto border-t px-4 py-8 text-center">
       <div className="mx-auto flex flex-col gap-8">
         <p className="text-sm font-semibold">
           Made with ❤️ by Alexandre Trotel
         </p>
+
+        {links?.length > 0 && (
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {links?.map((link, index) => (
+              <Link
+                key={index}
+                href={link.href}
+                className="text-sm text-muted-foreground hover:underline"
+              >
+                {link.title}
+              </Link>
+            ))}
+          </div>
+        )}
+
         <DonationsComponent />
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} Alexandre Trotel. All rights reserved.
