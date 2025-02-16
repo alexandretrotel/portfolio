@@ -33,6 +33,7 @@ export const socials: Socials = [
     button: "Listen to my songs",
     color: "bg-red-100 dark:bg-red-900",
     icon: React.createElement(RiYoutubeFill, { size: 20 }),
+    disabled: true,
   },
   {
     title: "Twitter/X",
@@ -41,6 +42,7 @@ export const socials: Socials = [
     button: "Follow me there anyway",
     color: "bg-yellow-100 dark:bg-yellow-900",
     icon: React.createElement(RiTwitterXFill, { size: 20 }),
+    disabled: true,
   },
   {
     title: "Instagram",
@@ -49,6 +51,7 @@ export const socials: Socials = [
     button: "Learn new things",
     color: "bg-pink-100 dark:bg-pink-900",
     icon: React.createElement(RiInstagramFill, { size: 20 }),
+    disabled: true,
   },
   {
     title: "Get in touch",

@@ -1,13 +1,9 @@
-import { Links } from "@/types/header";
+import { Links } from "@/types/navigation";
 
-export const links: Links = [
+export const mainLinks: Links = [
   {
     title: "Home",
     href: "/",
-  },
-  {
-    title: "About",
-    href: "/about",
   },
   {
     title: "Blog",
@@ -16,14 +12,6 @@ export const links: Links = [
   {
     title: "Projects",
     href: "/projects",
-  },
-  {
-    title: "Songs",
-    href: "/songs",
-  },
-  {
-    title: "Games",
-    href: "/games",
   },
   {
     title: "Contact",
