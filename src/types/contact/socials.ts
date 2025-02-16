@@ -5,6 +5,7 @@ export type Social = {
   button: string;
   color?: string;
   icon: JSX.Element;
+  disabled?: boolean;
 };
 
 export type Socials = Social[];
