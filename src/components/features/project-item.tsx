@@ -11,7 +11,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { features } from "@/data/features";
 import { cn } from "@/lib/utils";
-import { Project } from "@/types/projects";
+import { Project } from "@/types/projects/projects";
 import { ArrowUpRight, Info } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
