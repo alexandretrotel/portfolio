@@ -1,6 +1,6 @@
-import { Links } from "@/types/navigation";
+import { Links } from "@/types/core/navigation";
 
-export const mainLinks: Links = [
+export const links: Links = [
   {
     title: "Home",
     href: "/",

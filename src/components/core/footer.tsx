@@ -1,8 +1,8 @@
 "use client";
 import "client-only";
 
-import { donations, secondaryLinks } from "@/data/core/footer";
-import { mainLinks } from "@/data/core/header";
+import { donations } from "@/data/core/footer";
+import { links } from "@/data/core/header";
 import React, { useState } from "react";
 import {
   Tooltip,
@@ -27,12 +27,6 @@ const EthereumIcon = ({ size }: { size: number }) => (
 );
 
 export default function Footer() {
-  const links = [
-    ...mainLinks.slice(0, -1),
-    ...secondaryLinks,
-    ...mainLinks.slice(-1),
-  ];
-
   return (
     <footer className="mx-auto border-t px-4 py-8 text-center">
       <div className="mx-auto flex flex-col gap-8">

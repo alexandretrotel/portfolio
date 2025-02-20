@@ -14,7 +14,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
 import { motion, AnimatePresence } from "motion/react";
-import { mainLinks } from "@/data/core/header";
+import { links } from "@/data/core/header";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,7 +36,7 @@ export default function Header() {
         <div className="hidden items-center gap-6 md:flex">
           <NavigationMenu>
             <NavigationMenuList className="flex items-center gap-6">
-              {mainLinks?.map((component) => {
+              {links?.map((component) => {
                 if (component.disabled) {
                   return null;
                 }
@@ -85,7 +85,7 @@ export default function Header() {
             className="absolute inset-x-0 top-14 border-b border-border/40 bg-background shadow-sm backdrop-blur dark:border-border md:hidden"
           >
             <nav className="mx-auto flex max-w-5xl flex-col items-start px-4 py-4">
-              {mainLinks?.map((component) => {
+              {links?.map((component) => {
                 if (component.disabled) {
                   return null;
                 }
