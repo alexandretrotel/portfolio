@@ -2,7 +2,6 @@
 import "client-only";
 
 import { donations } from "@/data/core/footer";
-import { links } from "@/data/core/header";
 import React, { useState } from "react";
 import {
   Tooltip,
@@ -12,19 +11,6 @@ import {
 } from "@/components/ui/tooltip";
 import { Bitcoin, Check, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-
-const EthereumIcon = ({ size }: { size: number }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 320 512"
-    width={size}
-    height={size}
-    fill="currentColor"
-  >
-    <path d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z" />
-  </svg>
-);
 
 export default function Footer() {
   return (
@@ -33,20 +19,6 @@ export default function Footer() {
         <p className="text-sm font-semibold">
           Made with ❤️ by Alexandre Trotel
         </p>
-
-        {links?.length > 0 && (
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {links?.map((link, index) => (
-              <Link
-                key={index}
-                href={link.href}
-                className="text-sm text-muted-foreground hover:underline"
-              >
-                {link.title}
-              </Link>
-            ))}
-          </div>
-        )}
 
         <DonationsComponent />
         <p className="text-xs text-muted-foreground">
@@ -59,7 +31,6 @@ export default function Footer() {
 
 function DonationsComponent() {
   const [copiedBitcoin, setCopiedBitcoin] = useState(false);
-  const [copiedEthereum, setCopiedEthereum] = useState(false);
 
   const copyToClipboard = (
     text: string,
@@ -81,7 +52,7 @@ function DonationsComponent() {
         </p>
       </div>
 
-      <div className="mx-auto grid grid-cols-1 place-content-center place-items-center gap-2 sm:grid-cols-2 sm:gap-4">
+      <div className="mx-auto grid grid-cols-1 place-content-center place-items-center gap-2 sm:gap-4">
         {donations.map((donation, index) => (
           <TooltipProvider key={index}>
             <Tooltip>
@@ -90,33 +61,16 @@ function DonationsComponent() {
                   className="flex items-center justify-center"
                   variant="outline"
                   onClick={() =>
-                    copyToClipboard(
-                      donation.address,
-                      donation.type === "bitcoin"
-                        ? setCopiedBitcoin
-                        : setCopiedEthereum,
-                    )
+                    copyToClipboard(donation.address, setCopiedBitcoin)
                   }
                 >
-                  {donation.type === "bitcoin" ? (
-                    <Bitcoin size={16} />
-                  ) : donation.type === "ethereum" ? (
-                    <EthereumIcon size={16} />
-                  ) : null}
-                  {donation.address.slice(0, 6)}...{donation.address.slice(-6)}
-                  {donation.type === "bitcoin" ? (
-                    copiedBitcoin ? (
-                      <Check size={16} />
-                    ) : (
-                      <Copy size={16} />
-                    )
-                  ) : donation.type === "ethereum" ? (
-                    copiedEthereum ? (
-                      <Check size={16} />
-                    ) : (
-                      <Copy size={16} />
-                    )
-                  ) : null}
+                  <Bitcoin size={16} />
+                  <span className="md:hidden">
+                    {donation.address.slice(0, 6)}...
+                    {donation.address.slice(-6)}
+                  </span>
+                  <span className="hidden md:block">{donation.address}</span>
+                  {copiedBitcoin ? <Check size={16} /> : <Copy size={16} />}
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
