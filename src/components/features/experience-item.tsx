@@ -1,4 +1,4 @@
-import { Position } from "@/types/experiences";
+import { Position } from "@/types/home/experiences";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
