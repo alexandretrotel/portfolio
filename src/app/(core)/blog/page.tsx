@@ -6,8 +6,8 @@ export default async function Blog() {
     <Animation>
       <p className="text-sm text-muted-foreground">
         This page isn&apos;t ready yet but you can check out the{" "}
-        <Link href="/contact" className="text-primary hover:underline">
-          contact
+        <Link href="/projects" className="text-primary hover:underline">
+          projects
         </Link>{" "}
         page.
       </p>
