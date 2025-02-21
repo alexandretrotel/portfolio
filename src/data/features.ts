@@ -1,7 +1,7 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const dev = process.env.NODE_ENV !== "production";
 
 export const features = {
-  canSeeProjectsReadMore: dev,
+  canSeeProjectsReadMore: true,
   enableSocialCardColor: false,
-  showSongDescription: false,
 };
