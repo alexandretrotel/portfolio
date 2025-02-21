@@ -48,6 +48,7 @@
     "@radix-ui/react-tooltip": "^1.1.8",
     "@remixicon/react": "^4.6.0",
     "@types/mdx": "^2.0.13",
+    "@upstash/redis": "^1.34.4",
     "@vercel/analytics": "^1.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
