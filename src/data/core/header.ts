@@ -13,4 +13,8 @@ export const links: Links = [
     title: "Projects",
     href: "/projects",
   },
+  {
+    title: "Contact",
+    href: "/contact",
+  },
 ];
