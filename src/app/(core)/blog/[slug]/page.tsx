@@ -2,6 +2,9 @@ import Animation from "@/components/core/animation";
 import { getBlogPosts, getPostFromSlug } from "@/utils/blog";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Redis } from "@upstash/redis";
+
+const redis = Redis.fromEnv();
 
 export async function generateMetadata({
   params,
@@ -40,8 +43,13 @@ export default async function Page({
     notFound();
   }
 
+  const count = await redis.incr("pageviews:" + slug);
+
   return (
     <Animation>
+      <p className="inline-flex items-center gap-1 text-sm text-muted-foreground">
+        {count} view{count > 1 ? "s" : ""}
+      </p>
       <Post />
     </Animation>
   );
