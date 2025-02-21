@@ -1,3 +1,4 @@
+import Animation from "@/components/core/animation";
 import { getBlogPosts, getPostFromSlug } from "@/utils/blog";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -39,7 +40,11 @@ export default async function Page({
     notFound();
   }
 
-  return <Post />;
+  return (
+    <Animation>
+      <Post />
+    </Animation>
+  );
 }
 
 export function generateStaticParams() {
