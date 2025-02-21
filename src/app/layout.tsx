@@ -11,8 +11,22 @@ const font = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Alexandre Trotel",
-  description: "Alexandre Trotel's portfolio",
+  title: "Alexandre Trotel | Official Website",
+  description:
+    "Alexandre Trotel is a tech entrepreneur and full-stack developer with expertise in blockchain, web development, and innovation.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://alexandretrotel.com",
+    title: "Alexandre Trotel | Official Website",
+    description:
+      "Alexandre Trotel is a tech entrepreneur and full-stack developer with expertise in blockchain, web development, and innovation.",
+  },
+  twitter: {
+    title: "Alexandre Trotel | Official Website",
+    description:
+      "Alexandre Trotel is a tech entrepreneur and full-stack developer with expertise in blockchain, web development, and innovation.",
+  },
 };
 
 export default function RootLayout({
