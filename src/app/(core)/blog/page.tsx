@@ -8,7 +8,7 @@ export default async function Blog() {
 
   return (
     <Animation>
-      <div className="mx-auto flex max-w-3xl flex-col gap-4">
+      <div className="flex flex-col gap-4">
         <div>
           <h1 className="text-lg font-bold">Blog</h1>
           <p className="text-sm text-muted-foreground">
