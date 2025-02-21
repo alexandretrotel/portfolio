@@ -2,13 +2,16 @@ import Animation from "@/components/core/animation";
 import { cn } from "@/lib/utils";
 import { getBlogPosts } from "@/utils/blog";
 import Link from "next/link";
+import { Redis } from "@upstash/redis";
+
+const redis = Redis.fromEnv();
 
 export default async function Blog() {
   const posts = getBlogPosts();
 
   return (
     <Animation>
-      <div className="mx-auto flex max-w-3xl flex-col gap-4">
+      <div className="flex flex-col gap-4">
         <div>
           <h1 className="text-lg font-bold">Blog</h1>
           <p className="text-sm text-muted-foreground">
@@ -17,7 +20,7 @@ export default async function Blog() {
         </div>
         <table className="w-full">
           <tbody className="flex flex-col gap-2">
-            {posts?.map((post, index) => {
+            {posts?.map(async (post, index) => {
               const formattedDate = new Date(post.date).toLocaleDateString(
                 "en-US",
                 {
@@ -33,6 +36,8 @@ export default async function Blog() {
                     year: "numeric",
                     month: "short",
                   });
+              const count: number =
+                (await redis.get("pageviews:" + post.slug)) ?? 0;
 
               return (
                 <tr key={post.slug} className="group flex items-center">
@@ -51,6 +56,9 @@ export default async function Blog() {
                     >
                       {post.title}
                     </Link>
+                  </td>
+                  <td className="whitespace-nowrap text-xs text-muted-foreground">
+                    {count} view{count > 1 ? "s" : ""}
                   </td>
                 </tr>
               );
