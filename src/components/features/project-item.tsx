@@ -12,7 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import { features } from "@/data/features";
 import { cn } from "@/lib/utils";
 import { Project } from "@/types/projects/projects";
-import { ArrowUpRight, Info } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,6 +22,7 @@ interface ProjectItemProps extends Project {
 }
 
 export async function ProjectItem({
+  slug,
   title,
   description,
   date,
@@ -127,9 +128,9 @@ export async function ProjectItem({
             <div className="px-6">
               {features.canSeeProjectsReadMore && url && (
                 <Button asChild size="sm" className="w-fit">
-                  <Link href={url}>
-                    <Info size={16} />
+                  <Link href={`/projects/${slug}`}>
                     Learn more
+                    <ArrowRight size={16} />
                   </Link>
                 </Button>
               )}

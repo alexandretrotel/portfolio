@@ -58,6 +58,7 @@ export type Preview = {
 };
 
 export type Project = {
+  slug: string;
   title: string;
   description: string;
   date: Date;
