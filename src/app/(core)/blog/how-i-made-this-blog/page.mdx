@@ -1,0 +1,69 @@
+# How I made this blog?
+
+Hi and welcome to my blog! I wanted to share with you how I built it with **[Next.js](https://nextjs.org/)**. It&apos;s not too hard, and I'll explain it in a simple way. You can find the code on **[GitHub](https://github.com/trotelalexandre/alexandretrotel)**. Let's go through it step by step.
+
+## Understanding the blog structure
+
+My blog shows a list of posts. Each post has:
+
+- A **title** (like `How I made this blog?`).
+- A **date** (when I wrote it).
+- A **slug** (a short name for the link, like `how-i-made-this-blog`).
+
+When you visit the blog page, you see all the posts. You can click a title to read more. It looks clean and simple like I wanted it to be (minimalist).
+
+## Showing all posts
+
+I made a file called `page.mdx` for the blog. This is the main page. Here’s how it works:
+
+- I use a framework called **[Next.js](https://nextjs.org/)**. It helps me build web application fast.
+- I get the list of posts from a function called `getBlogPosts()`. This function takes all my posts and puts them in order (newest first).
+- The page shows a table with the date and title of each post.
+- If you click a title, it takes you to a new page like `/blog/how-i-made-this-blog`.
+
+## How to store the content
+
+My posts are saved in a file called `posts.ts`. It's a data structure that contain all the posts with their `title`, `date` and `slug`. The `getBlogPosts()` function takes this list and sorts it by date. New posts go at the top.
+
+## Styling the blog
+
+I wanted my blog to look good and **_minimalist_**. So, I added some **styles**. Styles are like rules for how things look (big text, colors, etc.). I used a file called `mdx-components.tsx` to do this. Here’s what I changed:
+
+- **Titles (h1, h2, h3)**: Big and bold so they stand out.
+- **Paragraphs (p)**: Easy to read with space between lines.
+- **Quotes (blockquote)**: A line on the left and italic text.
+- **Lists (ul, ol)**: Bullets or numbers with space around them.
+- **Links (a)**: Colored and underlined so you know you can click them.
+- **Images (img)**: Big and clear so you can see them well.
+
+These styles make my blog pretty and easy to use.
+
+## Tools I used
+
+Here are the main tools I used:
+
+- **Next.js**: For building the web app.
+- **MDX**: For writing pages with code and text together.
+- **TypeScript**: To keep my code safe and organized (like saying a title must be text, not a number).
+
+I also made a `types.ts` file. It tells the code what a "post" is: a `title`, a `slug`, and a `date`. This helps me avoid mistakes and be more productive.
+
+## How it all works together
+
+1. I write posts in `posts.ts`.
+2. The `getBlogPosts()` function sorts them.
+3. The `page.tsx` file show them in a table.
+4. When you click a title, NextJS takes you to the post's page (like `how-i-made-this-blog.mdx`).
+5. Styles in `mdx-components.tsx` make everything look nice.
+
+That's it! My blog is simple but works well for me and my readers (_i guess_).
+
+## Why did I make it this way?
+
+I like my blog because:
+
+- It's easy to add new posts. (_i just write markdown_)
+- It looks clean and professional.
+- I can share my ideas with people.
+
+Thanks for reading! See you later for more posts. Bye!
