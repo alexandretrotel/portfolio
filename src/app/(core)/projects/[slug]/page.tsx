@@ -5,6 +5,7 @@ import ProjectHeader from "./project-header";
 import ProjectContent from "./project-content";
 import ProjectPreview from "./project-preview";
 import ProjectFooter from "./project-footer";
+import Animation from "@/components/core/animation";
 
 export async function generateMetadata({
   params,
@@ -45,19 +46,21 @@ export default async function Page({
   }
 
   return (
-    <article className="mx-auto">
-      <ProjectHeader project={project} />
+    <Animation>
+      <article className="mx-auto">
+        <ProjectHeader project={project} />
 
-      <div className="mt-8 grid grid-cols-1 gap-8">
-        <ProjectPreview preview={project.preview} />
-      </div>
+        <div className="mt-8 grid grid-cols-1 gap-8">
+          <ProjectPreview preview={project.preview} />
+        </div>
 
-      <ProjectContent>
-        <ProjectMDX />
-      </ProjectContent>
+        <ProjectContent>
+          <ProjectMDX />
+        </ProjectContent>
 
-      <ProjectFooter project={project} />
-    </article>
+        <ProjectFooter project={project} />
+      </article>
+    </Animation>
   );
 }
 
