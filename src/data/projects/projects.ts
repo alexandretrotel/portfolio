@@ -7,6 +7,7 @@ const videoBasePath = "/projects/videos";
 
 export const projects: Projects = [
   {
+    slug: "portfolio",
     title: "Portfolio",
     description:
       "My personal portfolio featuring my experiences, projects, and skills.",
@@ -33,6 +34,7 @@ export const projects: Projects = [
     icon: `${iconBasePath}/logo.png`,
   },
   {
+    slug: "trotelcoin",
     title: "TrotelCoin",
     description:
       "A blockchain education web application inspired by Duolingo with a token system.",
@@ -82,6 +84,7 @@ export const projects: Projects = [
     },
   },
   {
+    slug: "mindify",
     title: "Mindify",
     description:
       "A mobile application to help users learn new concepts through summarization of resources.",
@@ -113,6 +116,7 @@ export const projects: Projects = [
     },
   },
   {
+    slug: "agroparistech-service-etudes",
     title: "AgroParisTech Service Études",
     description:
       "A website to showcase the services of AgroParisTech Service Études.",
@@ -134,6 +138,7 @@ export const projects: Projects = [
     },
   },
   {
+    slug: "progressly",
     title: "Progressly",
     description: "A full-featured budget tracker and personal growth app.",
     date: new Date("2024-11-03"),
@@ -151,6 +156,7 @@ export const projects: Projects = [
     },
   },
   {
+    slug: "check-node-packages",
     title: "Check Node Packages (cnp)",
     description:
       "A utility tool written in Rust to check unused node packages.",
@@ -166,6 +172,7 @@ export const projects: Projects = [
     },
   },
   {
+    slug: "aurora",
     title: "Aurora",
     description:
       "Our web agency's website to showcase our services and make it easy for clients to contact us.",
@@ -191,6 +198,7 @@ export const projects: Projects = [
     },
   },
   {
+    slug: "siborg-ads-telegram-bot",
     title: "SiBorg Ads Telegram Bot",
     description:
       "A Telegram bot to help users create SiBorg Ads for their Telegram channels.",
@@ -217,6 +225,7 @@ export const projects: Projects = [
     },
   },
   {
+    slug: "clean-that-system",
     title: "Clean That System",
     description:
       "A CLI tool to clean your system by deleting unnecessary files.",
@@ -241,6 +250,7 @@ export const projects: Projects = [
     },
   },
   {
+    slug: "proto",
     title: "Proto",
     description:
       "A blockchain written in Go to learn how blockchains work under the hood. I'm also making an explorer using Vite to visualize the blocks.",
@@ -257,6 +267,7 @@ export const projects: Projects = [
     status: "WIP",
   },
   {
+    slug: "stocklab",
     title: "StockLab",
     description:
       "A web application to help users backtest their trading strategies easily.",
@@ -277,6 +288,7 @@ export const projects: Projects = [
     status: "WIP",
   },
   {
+    slug: "cli-adventure",
     title: "CLI Adventure",
     description:
       "A CLI game to play a text-based adventure game in your terminal enriched with AI.",
@@ -297,6 +309,7 @@ export const projects: Projects = [
     },
   },
   {
+    slug: "refine-my-prompt",
     title: "Refine My Prompt",
     description:
       "A web application to help users create beautiful prompts before sending them to AI models.",
