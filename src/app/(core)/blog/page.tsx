@@ -38,6 +38,9 @@ export default async function Blog() {
                   });
               const count: number =
                 (await redis.get("pageviews:" + post.slug)) ?? 0;
+              const formattedCount = new Intl.NumberFormat("en-US").format(
+                count,
+              );
 
               return (
                 <tr key={post.slug} className="group flex items-center">
@@ -57,9 +60,11 @@ export default async function Blog() {
                       {post.title}
                     </Link>
                   </td>
-                  <td className="whitespace-nowrap text-xs text-muted-foreground">
-                    {count} view{count > 1 ? "s" : ""}
-                  </td>
+                  {count > 0 && (
+                    <td className="whitespace-nowrap text-xs text-muted-foreground">
+                      {formattedCount} view{count > 1 ? "s" : ""}
+                    </td>
+                  )}
                 </tr>
               );
             })}
