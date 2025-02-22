@@ -356,7 +356,7 @@ export const projects: Projects = [
     },
   },
   {
-    slug: "open-ui",
+    slug: "openui",
     title: "OpenUI",
     description:
       "A collection of open-source UI components to help developers build beautiful websites faster.",
