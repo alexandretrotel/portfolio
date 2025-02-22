@@ -15,7 +15,15 @@ export default function Preview({ preview }: { preview?: Preview }) {
           className="w-full object-cover"
         />
       ) : (
-        <video src={preview.asset} controls className="w-full" />
+        <video
+          src={preview.asset}
+          controls
+          className="w-full"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
       )}
     </div>
   );
