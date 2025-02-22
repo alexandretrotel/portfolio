@@ -1,7 +1,6 @@
 {
   "name": "alexandretrotel",
   "private": true,
-  "packageManager": "bun@1.2.3",
   "scripts": {
     "build": "next build",
     "postbuild": "next-sitemap",
