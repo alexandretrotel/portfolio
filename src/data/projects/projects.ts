@@ -361,7 +361,7 @@ export const projects: Projects = [
     description:
       "A collection of open-source UI components to help developers build beautiful websites faster.",
     date: new Date("2025-02-21"),
-    url: `${basePath}/open-ui`,
+    url: `${basePath}/openui`,
     links: [
       {
         title: "Website",
