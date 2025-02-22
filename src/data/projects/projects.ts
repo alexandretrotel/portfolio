@@ -333,4 +333,26 @@ export const projects: Projects = [
       type: "video",
     },
   },
+  {
+    slug: "slippage-slicer",
+    title: "Slippage Slicer",
+    description:
+      "SlippageSlicer is designed to help you execute trades on Uniswap without significantly impacting the price — especially in liquidity pools with low liquidity.",
+    date: new Date("2025-01-04"),
+    url: `${basePath}/slippage-slicer`,
+    links: [
+      {
+        title: "GitHub",
+        url: "https://github.com/trotelalexandre/slippage-slicer",
+      },
+    ],
+    tags: ["Backend", "Blockchain", "API"],
+    languages: ["TypeScript", "Solidity", "Ethers.js"],
+    status: "Completed",
+    dateCompleted: new Date("2025-01-05"),
+    preview: {
+      asset: `${videoBasePath}/slippage-slicer.mp4`,
+      type: "video",
+    },
+  },
 ];
