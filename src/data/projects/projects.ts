@@ -375,25 +375,4 @@ export const projects: Projects = [
       type: "video",
     },
   },
-  {
-    slug: "openui",
-    title: "OpenUI",
-    description:
-      "A collection of open-source UI components to help developers build beautiful websites faster.",
-    date: new Date("2025-02-21"),
-    url: `${basePath}/openui`,
-    links: [
-      {
-        title: "Website",
-        url: "https://openuiproject.vercel.app/",
-      },
-      {
-        title: "GitHub",
-        url: "https://github.com/trotelalexandre/openui",
-      },
-    ],
-    tags: ["Frontend", "Design", "Backend", "API", "Fullstack"],
-    languages: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Drizzle"],
-    status: "WIP",
-  },
 ];
