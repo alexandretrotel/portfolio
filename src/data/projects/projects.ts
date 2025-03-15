@@ -271,7 +271,7 @@ export const projects: Projects = [
     title: "StockQuest",
     description:
       "A gamified application to help users backtest their trading strategies easily.",
-    date: new Date("2025-01-25"),
+    date: new Date("2025-03-06"),
     url: `${basePath}/stockquest`,
     featured: true,
     links: [
@@ -372,6 +372,35 @@ export const projects: Projects = [
     dateCompleted: new Date("2025-01-05"),
     preview: {
       asset: `${videoBasePath}/slippage-slicer.mp4`,
+      type: "video",
+    },
+  },
+  {
+    slug: "zap-ts",
+    title: "Zap.ts",
+    description: "The boilerplate to build application as fast as a zap.",
+    date: new Date("2025-03-15"),
+    url: `${basePath}/zap-ts`,
+    links: [
+      {
+        title: "GitHub",
+        url: "https://github.com/trotelalexandre/zap.ts",
+      },
+    ],
+    tags: [
+      "Frontend",
+      "Backend",
+      "Fullstack",
+      "Design",
+      "API",
+      "AI",
+      "Tooling",
+    ],
+    languages: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
+    status: "Completed",
+    dateCompleted: new Date("2025-03-16"),
+    preview: {
+      asset: `${videoBasePath}/zap-ts.mp4`,
       type: "video",
     },
   },
