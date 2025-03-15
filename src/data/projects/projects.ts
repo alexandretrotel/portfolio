@@ -273,6 +273,7 @@ export const projects: Projects = [
       "A gamified application to help users backtest their trading strategies easily.",
     date: new Date("2025-01-25"),
     url: `${basePath}/stockquest`,
+    featured: true,
     links: [
       {
         title: "Website",
