@@ -6,6 +6,9 @@ import ProjectContent from "./project-content";
 import ProjectPreview from "./project-preview";
 import ProjectFooter from "./project-footer";
 import Animation from "@/components/core/animation";
+import { Redis } from "@upstash/redis";
+
+const redis = Redis.fromEnv();
 
 export async function generateMetadata({
   params,
@@ -45,10 +48,14 @@ export default async function Page({
     notFound();
   }
 
+  const count = await redis.incr("pageviews:" + `project-${slug}`);
+
+  const formattedCount = new Intl.NumberFormat("en-US").format(count);
+
   return (
     <Animation>
       <article className="mx-auto">
-        <ProjectHeader project={project} />
+        <ProjectHeader project={project} viewCount={formattedCount} />
 
         <div className="mt-8 grid grid-cols-1 gap-8">
           <ProjectPreview preview={project.preview} />

@@ -2,7 +2,13 @@ import { Separator } from "@/components/ui/separator";
 import type { Project } from "@/types/projects/projects";
 import { CheckIcon, PauseIcon, XCircleIcon } from "lucide-react";
 
-export default function ProjectHeader({ project }: { project: Project }) {
+export default function ProjectHeader({
+  project,
+  viewCount,
+}: {
+  project: Project;
+  viewCount: string;
+}) {
   const statusIcon = {
     WIP: <PauseIcon className="inline-block h-5 w-5 text-yellow-500" />,
     Completed: <CheckIcon className="inline-block h-5 w-5 text-green-500" />,
@@ -12,7 +18,14 @@ export default function ProjectHeader({ project }: { project: Project }) {
 
   return (
     <header className="flex flex-col gap-4">
-      <h1 className="text-2xl font-bold">{project.title}</h1>
+      <div>
+        {viewCount && (
+          <p className="text-xs text-muted-foreground">
+            {viewCount} {Number(viewCount) > 1 ? "view" : "views"}
+          </p>
+        )}
+        <h1 className="text-2xl font-bold">{project.title}</h1>
+      </div>
       <p className="text-muted-foreground">{project.description}</p>
 
       <div className="flex h-5 flex-wrap items-center gap-4 text-sm">
