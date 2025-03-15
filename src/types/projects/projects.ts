@@ -45,7 +45,8 @@ export type Language =
   | "grammY"
   | "Vite"
   | "Go"
-  | "Ethers.js";
+  | "Ethers.js"
+  | "Flask";
 
 export type Languages = Language[];
 
