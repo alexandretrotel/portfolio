@@ -2,6 +2,9 @@ import { projects } from "@/data/projects/projects";
 import { ProjectItem } from "../../../components/features/project-item";
 import Animation from "@/components/core/animation";
 import { ANIMATION_DELAY } from "@/data/animation";
+import { Redis } from "@upstash/redis";
+
+const redis = Redis.fromEnv();
 
 export default async function Projects() {
   const featuredProjects = projects
@@ -24,16 +27,23 @@ export default async function Projects() {
           </p>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {orderedProjects?.map((project, index) => (
-            <Animation key={project.title} delay={index * ANIMATION_DELAY}>
-              <ProjectItem
-                key={project.title}
-                showPreview
-                heightFull
-                {...project}
-              />
-            </Animation>
-          ))}
+          {orderedProjects?.map(async (project, index) => {
+            const count: number =
+              (await redis.get("pageviews:" + `project-${project.slug}`)) ?? 0;
+            const formattedCount = new Intl.NumberFormat("en-US").format(count);
+
+            return (
+              <Animation key={project.title} delay={index * ANIMATION_DELAY}>
+                <ProjectItem
+                  key={project.title}
+                  showPreview
+                  heightFull
+                  {...project}
+                  viewCount={formattedCount}
+                />
+              </Animation>
+            );
+          })}
         </div>
       </div>
     </Animation>
