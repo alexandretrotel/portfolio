@@ -267,25 +267,44 @@ export const projects: Projects = [
     status: "WIP",
   },
   {
-    slug: "stocklab",
-    title: "StockLab",
+    slug: "stockquest",
+    title: "StockQuest",
     description:
-      "A web application to help users backtest their trading strategies easily.",
+      "A gamified application to help users backtest their trading strategies easily.",
     date: new Date("2025-01-25"),
-    url: `${basePath}/stocklab`,
+    url: `${basePath}/stockquest`,
     links: [
       {
         title: "Website",
-        url: "https://stocklab.vercel.app",
-      },
-      {
-        title: "GitHub",
-        url: "https://github.com/trotelalexandre/stocklab",
+        url: "https://stockquest.vercel.app",
       },
     ],
-    tags: ["Frontend", "Design", "Business", "API"],
-    languages: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
+    tags: [
+      "Frontend",
+      "Design",
+      "Business",
+      "API",
+      "Backend",
+      "AI",
+      "Fullstack",
+      "Marketing",
+      "Product",
+      "Business",
+    ],
+    languages: [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Flask",
+      "Drizzle",
+      "Python",
+    ],
     status: "WIP",
+    preview: {
+      asset: `${videoBasePath}/stockquest.mp4`,
+      type: "video",
+    },
   },
   {
     slug: "cli-adventure",
@@ -354,5 +373,26 @@ export const projects: Projects = [
       asset: `${videoBasePath}/slippage-slicer.mp4`,
       type: "video",
     },
+  },
+  {
+    slug: "openui",
+    title: "OpenUI",
+    description:
+      "A collection of open-source UI components to help developers build beautiful websites faster.",
+    date: new Date("2025-02-21"),
+    url: `${basePath}/openui`,
+    links: [
+      {
+        title: "Website",
+        url: "https://openuiproject.vercel.app/",
+      },
+      {
+        title: "GitHub",
+        url: "https://github.com/trotelalexandre/openui",
+      },
+    ],
+    tags: ["Frontend", "Design", "Backend", "API", "Fullstack"],
+    languages: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Drizzle"],
+    status: "WIP",
   },
 ];
