@@ -19,6 +19,7 @@ import Link from "next/link";
 interface ProjectItemProps extends Project {
   showPreview?: boolean;
   heightFull?: boolean;
+  viewCount: string;
 }
 
 export async function ProjectItem({
@@ -36,6 +37,7 @@ export async function ProjectItem({
   icon,
   links,
   heightFull,
+  viewCount,
 }: ProjectItemProps) {
   return (
     <Card className={cn("overflow-hidden", heightFull && "h-full")}>
@@ -86,6 +88,7 @@ export async function ProjectItem({
                   </Link>
                 )}
               </div>
+
               <div className="flex items-center gap-2">
                 {featured && <Badge className="text-xs">Featured</Badge>}
                 <Badge
@@ -116,8 +119,13 @@ export async function ProjectItem({
                     month: "short",
                     year: "numeric",
                   })
-                : "Present"}
+                : "Present"}{" "}
             </CardDescription>
+            {viewCount && (
+              <p className="text-xs text-muted-foreground">
+                {viewCount} view{Number(viewCount) > 1 ? "s" : ""}
+              </p>
+            )}
           </CardHeader>
           <CardContent>
             <p className="text-sm">{description}</p>
