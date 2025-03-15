@@ -19,7 +19,7 @@ import Link from "next/link";
 interface ProjectItemProps extends Project {
   showPreview?: boolean;
   heightFull?: boolean;
-  viewCount: string;
+  count: number;
 }
 
 export async function ProjectItem({
@@ -37,8 +37,10 @@ export async function ProjectItem({
   icon,
   links,
   heightFull,
-  viewCount,
+  count,
 }: ProjectItemProps) {
+  const formattedCount = new Intl.NumberFormat("en-US").format(count);
+
   return (
     <Card className={cn("overflow-hidden", heightFull && "h-full")}>
       <div className="flex h-full w-full flex-col justify-between">
@@ -121,9 +123,9 @@ export async function ProjectItem({
                   })
                 : "Present"}{" "}
             </CardDescription>
-            {viewCount && (
+            {formattedCount && (
               <p className="text-xs text-muted-foreground">
-                {viewCount} view{Number(viewCount) > 1 ? "s" : ""}
+                {formattedCount} view{Number(count) > 1 ? "s" : ""}
               </p>
             )}
           </CardHeader>
