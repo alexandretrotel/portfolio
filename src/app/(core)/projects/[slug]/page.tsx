@@ -50,12 +50,10 @@ export default async function Page({
 
   const count = await redis.incr("pageviews:" + `project-${slug}`);
 
-  const formattedCount = new Intl.NumberFormat("en-US").format(count);
-
   return (
     <Animation>
       <article className="mx-auto">
-        <ProjectHeader project={project} viewCount={formattedCount} />
+        <ProjectHeader project={project} count={count} />
 
         <div className="mt-8 grid grid-cols-1 gap-8">
           <ProjectPreview preview={project.preview} />

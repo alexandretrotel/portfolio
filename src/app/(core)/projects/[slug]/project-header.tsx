@@ -4,10 +4,10 @@ import { CheckIcon, PauseIcon, XCircleIcon } from "lucide-react";
 
 export default function ProjectHeader({
   project,
-  viewCount,
+  count,
 }: {
   project: Project;
-  viewCount: string;
+  count: number;
 }) {
   const statusIcon = {
     WIP: <PauseIcon className="inline-block h-5 w-5 text-yellow-500" />,
@@ -16,12 +16,14 @@ export default function ProjectHeader({
     Abandoned: <XCircleIcon className="inline-block h-5 w-5 text-red-500" />,
   };
 
+  const formattedCount = new Intl.NumberFormat("en-US").format(count);
+
   return (
     <header className="flex flex-col gap-4">
       <div>
-        {viewCount && (
+        {formattedCount && (
           <p className="text-xs text-muted-foreground">
-            {viewCount} {Number(viewCount) > 1 ? "view" : "views"}
+            {formattedCount} {count > 1 ? "view" : "views"}
           </p>
         )}
         <h1 className="text-2xl font-bold">{project.title}</h1>

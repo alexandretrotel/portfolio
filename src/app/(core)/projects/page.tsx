@@ -30,7 +30,6 @@ export default async function Projects() {
           {orderedProjects?.map(async (project, index) => {
             const count: number =
               (await redis.get("pageviews:" + `project-${project.slug}`)) ?? 0;
-            const formattedCount = new Intl.NumberFormat("en-US").format(count);
 
             return (
               <Animation key={project.title} delay={index * ANIMATION_DELAY}>
@@ -38,8 +37,8 @@ export default async function Projects() {
                   key={project.title}
                   showPreview
                   heightFull
+                  count={count}
                   {...project}
-                  viewCount={formattedCount}
                 />
               </Animation>
             );
