@@ -10,7 +10,7 @@ export const socials: Socials = [
   {
     title: "LinkedIn",
     description: "Let's network together",
-    href: "https://www.linkedin.com/in/trotelalexandre",
+    href: "https://www.linkedin.com/in/alexandretrotel",
     button: "Connect with me",
     color: "bg-blue-100 dark:bg-blue-900",
     icon: React.createElement(RiLinkedinFill, { size: 20 }),
@@ -18,7 +18,7 @@ export const socials: Socials = [
   {
     title: "GitHub",
     description: "I code (sometimes) too much",
-    href: "https://www.github.com/trotelalexandre",
+    href: "https://www.github.com/alexandretrotel",
     button: "Contribute to my projects",
     color: "bg-emerald-100 dark:bg-emerald-900",
     icon: React.createElement(RiGithubFill, { size: 20 }),
