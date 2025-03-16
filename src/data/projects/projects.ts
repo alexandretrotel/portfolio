@@ -20,7 +20,7 @@ export const projects: Projects = [
       },
       {
         title: "GitHub",
-        url: "https://github.com/trotelalexandre/alexandretrotel",
+        url: "https://github.com/alexandretrotel/alexandretrotel",
       },
     ],
     preview: {
@@ -145,7 +145,7 @@ export const projects: Projects = [
     url: `${basePath}/progressly`,
     links: [
       { title: "Application", url: "https://progressly-prod.vercel.app" },
-      { title: "GitHub", url: "https://github.com/trotelalexandre/progressly" },
+      { title: "GitHub", url: "https://github.com/alexandretrotel/progressly" },
     ],
     tags: ["Frontend", "Backend", "Fullstack", "Design", "Business", "API"],
     languages: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Drizzle"],
@@ -162,7 +162,7 @@ export const projects: Projects = [
       "A utility tool written in Rust to check unused node packages.",
     date: new Date("2024-12-03"),
     url: `${basePath}/cnp`,
-    links: [{ title: "Github", url: "https://github.com/trotelalexandre/cnp" }],
+    links: [{ title: "Github", url: "https://github.com/alexandretrotel/cnp" }],
     tags: ["CLI", "Tooling"],
     languages: ["Rust", "Cargo"],
     status: "WIP",
@@ -234,7 +234,7 @@ export const projects: Projects = [
     links: [
       {
         title: "GitHub",
-        url: "https://github.com/trotelalexandre/clean-that-system",
+        url: "https://github.com/alexandretrotel/clean-that-system",
       },
       {
         title: "npm",
@@ -259,7 +259,7 @@ export const projects: Projects = [
     links: [
       {
         title: "GitHub",
-        url: "https://github.com/trotelalexandre/proto",
+        url: "https://github.com/alexandretrotel/proto",
       },
     ],
     tags: ["Backend", "Blockchain", "Frontend", "Fullstack"],
@@ -317,7 +317,7 @@ export const projects: Projects = [
     links: [
       {
         title: "GitHub",
-        url: "https://github.com/trotelalexandre/cli-adventure",
+        url: "https://github.com/alexandretrotel/cli-adventure",
       },
     ],
     tags: ["CLI", "AI"],
@@ -342,7 +342,7 @@ export const projects: Projects = [
       },
       {
         title: "GitHub",
-        url: "https://github.com/trotelalexandre/refine-my-prompt",
+        url: "https://github.com/alexandretrotel/refine-my-prompt",
       },
     ],
     tags: ["Frontend", "Design", "AI", "Fullstack", "Backend"],
@@ -363,7 +363,7 @@ export const projects: Projects = [
     links: [
       {
         title: "GitHub",
-        url: "https://github.com/trotelalexandre/slippage-slicer",
+        url: "https://github.com/alexandretrotel/slippage-slicer",
       },
     ],
     tags: ["Backend", "Blockchain", "API"],
@@ -384,7 +384,7 @@ export const projects: Projects = [
     links: [
       {
         title: "GitHub",
-        url: "https://github.com/trotelalexandre/zap.ts",
+        url: "https://github.com/alexandretrotel/zap.ts",
       },
     ],
     tags: [
