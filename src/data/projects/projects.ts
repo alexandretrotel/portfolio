@@ -277,7 +277,7 @@ export const projects: Projects = [
     links: [
       {
         title: "Website",
-        url: "https://stockquest.vercel.app",
+        url: "https://stockq.app",
       },
     ],
     tags: [
