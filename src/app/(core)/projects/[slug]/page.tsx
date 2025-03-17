@@ -25,7 +25,7 @@ export async function generateMetadata({
       title: project?.title,
       description: project?.description,
       type: "article",
-      url: `https://alexandretrotel.org/projects/${project?.slug}`,
+      url: `https://www.alexandretrotel.org/projects/${project?.slug}`,
     },
     twitter: {
       title: project?.title,

@@ -21,7 +21,7 @@ export async function generateMetadata({
       title: post?.title,
       description: post?.description,
       type: "article",
-      url: `https://alexandretrotel.org/blog/${slug}`,
+      url: `https://www.alexandretrotel.org/blog/${slug}`,
     },
     twitter: {
       title: post?.title,
