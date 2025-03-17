@@ -18,7 +18,7 @@ export const socials: Socials = [
   {
     title: "GitHub",
     description: "I code (sometimes) too much",
-    href: "https://www.github.com/alexandretrotel",
+    href: "https://www.github.com/atrtde",
     button: "Contribute to my projects",
     color: "bg-emerald-100 dark:bg-emerald-900",
     icon: React.createElement(RiGithubFill, { size: 20 }),

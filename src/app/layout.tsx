@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://alexandretrotel.com",
+    url: "https://www.alexandretrotel.org",
     title: "Alexandre Trotel | Official Website",
     description:
       "Alexandre Trotel is a tech entrepreneur and full-stack developer with expertise in blockchain, web development, and innovation.",
