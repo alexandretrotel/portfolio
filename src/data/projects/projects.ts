@@ -383,6 +383,10 @@ export const projects: Projects = [
     url: `${basePath}/zap-ts`,
     links: [
       {
+        title: "Documentation",
+        url: "https://zap-ts.alexandretrotel.org",
+      },
+      {
         title: "GitHub",
         url: "https://github.com/alexandretrotel/zap.ts",
       },
