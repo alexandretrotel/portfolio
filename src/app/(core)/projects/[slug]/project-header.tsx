@@ -13,7 +13,7 @@ export default function ProjectHeader({
     WIP: <PauseIcon className="inline-block h-5 w-5 text-yellow-500" />,
     Completed: <CheckIcon className="inline-block h-5 w-5 text-green-500" />,
     Paused: <PauseIcon className="inline-block h-5 w-5 text-blue-500" />,
-    Abandoned: <XCircleIcon className="inline-block h-5 w-5 text-red-500" />,
+    Archived: <XCircleIcon className="inline-block h-5 w-5 text-red-500" />,
   };
 
   const formattedCount = new Intl.NumberFormat("en-US").format(count);
