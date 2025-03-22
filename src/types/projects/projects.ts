@@ -50,7 +50,7 @@ export type Language =
 
 export type Languages = Language[];
 
-export type Status = "WIP" | "Completed" | "Paused" | "Abandoned";
+export type Status = "WIP" | "Completed" | "Paused" | "Archived";
 
 export type PreviewType = "image" | "video";
 

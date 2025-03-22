@@ -108,7 +108,7 @@ export const projects: Projects = [
       "API",
     ],
     languages: ["TypeScript", "React Native", "Tailwind CSS", "Expo", "NestJS"],
-    status: "Abandoned",
+    status: "Archived",
     icon: `${iconBasePath}/mindify.jpeg`,
     preview: {
       asset: `${videoBasePath}/mindify.mp4`,
@@ -149,7 +149,7 @@ export const projects: Projects = [
     ],
     tags: ["Frontend", "Backend", "Fullstack", "Design", "Business", "API"],
     languages: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Drizzle"],
-    status: "Paused",
+    status: "Archived",
     preview: {
       asset: `${videoBasePath}/progressly.mp4`,
       type: "video",
