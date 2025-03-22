@@ -347,7 +347,7 @@ export const projects: Projects = [
     ],
     tags: ["Frontend", "Design", "AI", "Fullstack", "Backend"],
     languages: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
-    status: "WIP",
+    status: "Archived",
     preview: {
       asset: `${videoBasePath}/refine-my-prompt.mp4`,
       type: "video",
