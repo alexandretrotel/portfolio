@@ -338,7 +338,7 @@ export const projects: Projects = [
     links: [
       {
         title: "Website",
-        url: "https://refine-my-prompt.vercel.app",
+        url: "https://refine-my-prompt.alexandretrotel.org",
       },
       {
         title: "GitHub",
