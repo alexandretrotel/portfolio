@@ -420,7 +420,7 @@ export const projects: Projects = [
     links: [
       {
         title: "Website",
-        url: "https://battledots.alexandretrotel.org",
+        url: "https://battle-dots.alexandretrotel.org",
       },
       {
         title: "GitHub",
