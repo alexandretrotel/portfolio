@@ -46,7 +46,10 @@ export type Language =
   | "Vite"
   | "Go"
   | "Ethers.js"
-  | "Flask";
+  | "Flask"
+  | "Express"
+  | "SocketIO"
+  | "Hono";
 
 export type Languages = Language[];
 

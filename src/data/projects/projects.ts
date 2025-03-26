@@ -306,6 +306,7 @@ export const projects: Projects = [
       asset: `${videoBasePath}/stockquest.mp4`,
       type: "video",
     },
+    icon: `${iconBasePath}/stockquest.png`,
   },
   {
     slug: "cli-adventure",
@@ -399,12 +400,45 @@ export const projects: Projects = [
       "API",
       "AI",
       "Tooling",
+      "CLI",
     ],
-    languages: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
-    status: "Completed",
+    languages: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Drizzle"],
+    status: "WIP",
     dateCompleted: new Date("2025-03-16"),
     preview: {
       asset: `${videoBasePath}/zap-ts.mp4`,
+      type: "video",
+    },
+  },
+  {
+    slug: "battle-dots",
+    title: "Battle Dots",
+    description:
+      "A multiplayer game where you have to shoot the dots of your opponents.",
+    date: new Date("2025-03-24"),
+    url: `${basePath}/battle-dots`,
+    links: [
+      {
+        title: "Website",
+        url: "https://battledots.alexandretrotel.org",
+      },
+      {
+        title: "GitHub",
+        url: "https://github.com/alexandretrotel/battle-dots",
+      },
+    ],
+    tags: ["Frontend", "Design", "API", "Backend", "Fullstack"],
+    languages: [
+      "TypeScript",
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Express",
+      "SocketIO",
+    ],
+    status: "Completed",
+    preview: {
+      asset: `${videoBasePath}/battle-dots.mp4`,
       type: "video",
     },
   },
