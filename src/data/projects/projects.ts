@@ -442,4 +442,30 @@ export const projects: Projects = [
       type: "video",
     },
   },
+  {
+    slug: "feed-your-ai",
+    title: "Feed Your AI",
+    description:
+      "A tool to combine text files for AI processing with filtering options.",
+    date: new Date("2025-03-30"),
+    url: `${basePath}/feed-your-ai`,
+    links: [
+      {
+        title: "GitHub",
+        url: "https://github.com/alexandretrotel/feedyourai",
+      },
+      {
+        title: "Crates.io",
+        url: "https://crates.io/crates/feedyourai",
+      },
+    ],
+    tags: ["CLI", "Tooling"],
+    languages: ["Rust", "Cargo"],
+    status: "Completed",
+    dateCompleted: new Date("2025-03-30"),
+    preview: {
+      asset: `${videoBasePath}/feed-your-ai.mp4`,
+      type: "video",
+    },
+  },
 ];
