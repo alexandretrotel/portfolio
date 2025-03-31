@@ -4,19 +4,6 @@ const imageBasePath = "/experiences";
 
 export const experiences: Experiences = [
   {
-    company: "Mindify",
-    url: "https://www.mindify.fr",
-    image: `${imageBasePath}/mindify.jpeg`,
-    positions: [
-      {
-        title: "Co-Founder & CTO",
-        description:
-          "Coded the entire application from scratch, including the backend, frontend, web and mobile clients. Aligned the technical roadmap with the business strategy. Co-developed the business plan and the pitch deck.",
-        date: "Aug. 2024 - Present",
-      },
-    ],
-  },
-  {
     company: "Aurora",
     url: "https://aurora-com.vercel.app",
     image: `${imageBasePath}/aurora.jpeg`,
@@ -26,6 +13,19 @@ export const experiences: Experiences = [
         description:
           "Made a website for one of our client using Framer as a No-Code tool. Co-developed the agency's website. Obtained the auto-entrepreneur status.",
         date: "Apr. 2024 - Present",
+      },
+    ],
+  },
+  {
+    company: "Mindify",
+    url: "https://www.mindify.fr",
+    image: `${imageBasePath}/mindify.jpeg`,
+    positions: [
+      {
+        title: "Co-Founder & CTO",
+        description:
+          "Coded the entire application from scratch, including the backend, frontend, web and mobile clients. Aligned the technical roadmap with the business strategy. Co-developed the business plan and the pitch deck.",
+        date: "Aug. 2024 - Dec. 2024",
       },
     ],
   },
