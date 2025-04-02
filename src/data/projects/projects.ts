@@ -414,7 +414,7 @@ export const projects: Projects = [
     slug: "battle-dots",
     title: "Battle Dots",
     description:
-      "A multiplayer game where you have to shoot the dots of your opponents.",
+      "A (multiplayer) game where you have to shoot the dots of your opponents.",
     date: new Date("2025-03-24"),
     url: `${basePath}/battle-dots`,
     links: [
