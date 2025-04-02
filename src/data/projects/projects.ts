@@ -468,4 +468,38 @@ export const projects: Projects = [
       type: "video",
     },
   },
+  {
+    slug: "shadow",
+    title: "Shadow",
+    description:
+      "An E2EE chat application with a focus on privacy and security.",
+    date: new Date("2025-04-02"),
+    url: `${basePath}/shadow`,
+    links: [
+      {
+        title: "Website",
+        url: "https://shadow.alexandretrotel.org",
+      },
+      {
+        title: "GitHub",
+        url: "https://github.com/alexandretrotel/shadow",
+      },
+    ],
+    tags: ["Frontend", "Design", "API", "Backend", "Fullstack"],
+    languages: [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Express",
+      "SocketIO",
+      "Drizzle",
+    ],
+    status: "Completed",
+    dateCompleted: new Date("2025-04-04"),
+    preview: {
+      asset: `${videoBasePath}/shadow.mp4`,
+      type: "video",
+    },
+  },
 ];
