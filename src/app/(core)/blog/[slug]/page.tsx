@@ -47,10 +47,12 @@ export default async function Page({
 
   return (
     <Animation>
-      <p className="inline-flex items-center gap-1 text-sm text-muted-foreground">
-        {count} view{count > 1 ? "s" : ""}
-      </p>
-      <Post />
+      <div className="mx-auto max-w-3xl">
+        <p className="inline-flex items-center gap-1 text-sm text-muted-foreground">
+          {count} view{count > 1 ? "s" : ""}
+        </p>
+        <Post />
+      </div>
     </Animation>
   );
 }
