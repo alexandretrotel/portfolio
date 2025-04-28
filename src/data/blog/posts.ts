@@ -9,9 +9,16 @@ export const posts: Posts = [
   },
   {
     slug: "stories-and-the-lessons-we-learn",
-    title: "Stories and the Lessons We Learn",
+    title: "Stories and the lessons we learn",
     description:
       "This article talks about what makes stories special. It’s not just about action or power—it’s about the deep lessons they teach us. Using Mob Psycho 100 as an example, I share how stories help us grow and understand ourselves.",
     date: new Date("2025-04-06"),
+  },
+  {
+    slug: "what-we-know-about-life",
+    title: "What we know about life?",
+    description:
+      "I've came across a lot of content this week that questioned the meaning of life and the purpose of our existence. Here is what I discovered.",
+    date: new Date("2025-04-28"),
   },
 ];
