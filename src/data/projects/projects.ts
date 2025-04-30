@@ -273,7 +273,6 @@ export const projects: Projects = [
       "A gamified application to help users backtest their trading strategies easily.",
     date: new Date("2025-03-06"),
     url: `${basePath}/stockquest`,
-    featured: true,
     links: [
       {
         title: "Website",
@@ -499,6 +498,28 @@ export const projects: Projects = [
     dateCompleted: new Date("2025-04-04"),
     preview: {
       asset: `${videoBasePath}/shadow.mp4`,
+      type: "video",
+    },
+  },
+  {
+    slug: "hbts",
+    title: "hbts",
+    description:
+      "Track your bad habits and improve your life with this simple tool.",
+    date: new Date("2025-04-29"),
+    url: `${basePath}/hbts`,
+    links: [
+      {
+        title: "GitHub",
+        url: "https://github.com/alexandretrotel/hbts",
+      },
+    ],
+    tags: ["CLI", "Tooling"],
+    languages: ["Drizzle", "TypeScript"],
+    status: "Completed",
+    dateCompleted: new Date("2025-04-30"),
+    preview: {
+      asset: `${videoBasePath}/hbts.mp4`,
       type: "video",
     },
   },
