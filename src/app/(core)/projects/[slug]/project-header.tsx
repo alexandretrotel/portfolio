@@ -1,4 +1,5 @@
 import { Separator } from "@/components/ui/separator";
+import { features } from "@/data/features";
 import type { Project } from "@/types/projects/projects";
 import { CheckIcon, PauseIcon, XCircleIcon } from "lucide-react";
 
@@ -31,12 +32,16 @@ export default function ProjectHeader({
       <p className="text-muted-foreground">{project.description}</p>
 
       <div className="flex h-5 flex-wrap items-center gap-4 text-sm">
-        <span className="flex items-center gap-1">
-          {statusIcon[project.status]}
-          {project.status}
-        </span>
+        {features.enableProjectStatus && (
+          <>
+            <span className="flex items-center gap-1">
+              {statusIcon[project.status]}
+              {project.status}
+            </span>
 
-        <Separator orientation="vertical" className="h-full" />
+            <Separator orientation="vertical" className="h-full" />
+          </>
+        )}
 
         <span className="flex items-center gap-1">
           {new Date(project.date).toLocaleDateString("en-US", {
