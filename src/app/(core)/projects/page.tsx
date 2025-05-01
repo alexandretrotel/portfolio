@@ -23,7 +23,8 @@ export default async function Projects() {
         <div>
           <h1 className="text-lg font-bold">Projects</h1>
           <p className="text-sm text-muted-foreground">
-            Here are some of the projects I&apos;ve worked on.
+            Here are some of the projects I&apos;m working on or have worked on
+            in the past. I try to keep this list up to date.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
