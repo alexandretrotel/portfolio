@@ -312,6 +312,10 @@ export const projects: Projects = [
     url: `${basePath}/hbts`,
     links: [
       {
+        title: "Website",
+        url: "https://hbts.alexandretrotel.org",
+      },
+      {
         title: "GitHub",
         url: "https://github.com/alexandretrotel/hbts",
       },
