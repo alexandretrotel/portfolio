@@ -4,6 +4,19 @@ const imageBasePath = "/experiences";
 
 export const experiences: Experiences = [
   {
+    company: "ALLOHOUSTON",
+    url: "https://www.allohouston.fr",
+    image: `${imageBasePath}/allohouston.jpeg`,
+    positions: [
+      {
+        title: "Full Stack Developer Intern",
+        description:
+          "Developed applications using Meteor.js, a reactive JavaScript framework for the web.",
+        date: "May. 2025 - Nov. 2025",
+      },
+    ],
+  },
+  {
     company: "Aurora",
     url: "https://aurora-com.vercel.app",
     image: `${imageBasePath}/aurora.jpeg`,
