@@ -112,19 +112,6 @@ export async function ProjectItem({
                 )}
               </div>
             </div>
-            <CardDescription className="text-sm">
-              {date.toLocaleDateString("en-US", {
-                month: "short",
-                year: "numeric",
-              })}{" "}
-              -{" "}
-              {dateCompleted
-                ? dateCompleted.toLocaleDateString("en-US", {
-                    month: "short",
-                    year: "numeric",
-                  })
-                : "Present"}{" "}
-            </CardDescription>
             {formattedCount && (
               <p className="text-xs text-muted-foreground">
                 {formattedCount} view{Number(count) > 1 ? "s" : ""}
