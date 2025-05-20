@@ -53,8 +53,6 @@ export type Language =
 
 export type Languages = Language[];
 
-export type Status = "WIP" | "Completed" | "Paused" | "Archived";
-
 export type PreviewType = "image" | "video";
 
 export type Preview = {
@@ -66,15 +64,12 @@ export type Project = {
   slug: string;
   title: string;
   description: string;
-  date: Date;
-  dateCompleted?: Date;
   url?: string;
   links?: Links;
   languages?: Languages;
   preview?: Preview;
   featured?: boolean;
   tags?: Tags;
-  status: Status;
   icon?: string;
   disabled?: boolean;
 };
