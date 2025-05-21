@@ -4,19 +4,6 @@ const imageBasePath = "/nonprofit";
 
 export const roles: Roles = [
   {
-    association: "WILL SOCIETY",
-    url: "https://willsociety.com",
-    image: `${imageBasePath}/will-society.jpeg`,
-    positions: [
-      {
-        title: "Ambassador",
-        description:
-          "The first circle to unite talents and leaders of all generations.",
-        date: "Jan. 2025 - Present",
-      },
-    ],
-  },
-  {
     association: "N7 Consulting",
     url: "https://www.n7consulting.fr",
     image: `${imageBasePath}/n7consulting.jpeg`,
