@@ -7,14 +7,8 @@ import { Redis } from "@upstash/redis";
 const redis = Redis.fromEnv();
 
 export default async function Projects() {
-  const featuredProjects = projects
-    ?.filter((project) => project.featured)
-    ?.sort((a, b) => b.date.getTime() - a.date.getTime());
-
-  const otherProjects = projects
-    ?.filter((project) => !project.featured)
-    ?.sort((a, b) => b.date.getTime() - a.date.getTime());
-
+  const featuredProjects = projects?.filter((project) => project.featured);
+  const otherProjects = projects?.filter((project) => !project.featured);
   const orderedProjects = [...featuredProjects, ...otherProjects];
 
   return (
