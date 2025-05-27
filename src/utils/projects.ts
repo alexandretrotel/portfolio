@@ -1,9 +1,7 @@
 import { projects } from "@/data/projects/projects";
 
 export const getProjects = () => {
-  return projects?.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-  );
+  return projects;
 };
 
 export const getProjectFromSlug = (slug: string) => {
