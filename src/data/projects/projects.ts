@@ -177,6 +177,7 @@ export const projects: Projects = [
 			asset: `${videoBasePath}/zap-ts.mp4`,
 			type: "video",
 		},
+		icon: `${iconBasePath}/zap-ts.png`,
 	},
 	{
 		slug: "feed-your-ai",
