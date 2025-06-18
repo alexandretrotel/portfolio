@@ -2,7 +2,7 @@ export default async function Introduction() {
   return (
     <div>
       <h1 className="text-lg font-bold">Introduction</h1>
-      <p className="text-sm text-muted-foreground">
+      <p className="text-muted-foreground text-sm">
         I am passionate about exploring and experimenting with{" "}
         <strong>entrepreneurship</strong> and <strong>new technologies</strong>,
         especially those that can be used to create innovative solutions for{" "}

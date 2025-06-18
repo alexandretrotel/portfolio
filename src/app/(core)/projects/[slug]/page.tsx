@@ -5,7 +5,6 @@ import ProjectHeader from "./project-header";
 import ProjectContent from "./project-content";
 import ProjectPreview from "./project-preview";
 import ProjectFooter from "./project-footer";
-import Animation from "@/components/core/animation";
 import { Redis } from "@upstash/redis";
 
 const redis = Redis.fromEnv();
@@ -51,21 +50,19 @@ export default async function Page({
   const count = await redis.incr("pageviews:" + `project-${slug}`);
 
   return (
-    <Animation>
-      <article className="mx-auto">
-        <ProjectHeader project={project} count={count} />
+    <article className="mx-auto">
+      <ProjectHeader project={project} count={count} />
 
-        <div className="mt-8 grid grid-cols-1 gap-8">
-          <ProjectPreview preview={project.preview} />
-        </div>
+      <div className="mt-8 grid grid-cols-1 gap-8">
+        <ProjectPreview preview={project.preview} />
+      </div>
 
-        <ProjectContent>
-          <ProjectMDX />
-        </ProjectContent>
+      <ProjectContent>
+        <ProjectMDX />
+      </ProjectContent>
 
-        <ProjectFooter project={project} />
-      </article>
-    </Animation>
+      <ProjectFooter project={project} />
+    </article>
   );
 }
 

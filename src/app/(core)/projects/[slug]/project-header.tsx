@@ -15,7 +15,7 @@ export default function ProjectHeader({
     <header className="flex flex-col gap-4">
       <div>
         {formattedCount && (
-          <p className="text-xs text-muted-foreground">
+          <p className="text-muted-foreground text-xs">
             {formattedCount} {count > 1 ? "view" : "views"}
           </p>
         )}

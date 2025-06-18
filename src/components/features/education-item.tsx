@@ -34,15 +34,15 @@ export const EducationItem = async ({
           <Link
             href={url}
             target="_blank"
-            className="duration-200 hover:-translate-y-0.5 hover:translate-x-0.5 hover:scale-110"
+            className="duration-200 hover:translate-x-0.5 hover:-translate-y-0.5 hover:scale-110"
           >
             <ArrowUpRight size={16} />
           </Link>
         )}
       </div>
-      <p className="whitespace-nowrap text-xs text-muted-foreground">{date}</p>
+      <p className="text-muted-foreground text-xs whitespace-nowrap">{date}</p>
     </div>
 
-    <p className="text-sm font-medium text-muted-foreground">{topic}</p>
+    <p className="text-muted-foreground text-sm font-medium">{topic}</p>
   </div>
 );

@@ -80,7 +80,7 @@ export async function ProjectItem({
                   <Link
                     href={links?.[0].url}
                     target="_blank"
-                    className="duration-200 hover:-translate-y-0.5 hover:translate-x-0.5 hover:scale-110"
+                    className="duration-200 hover:translate-x-0.5 hover:-translate-y-0.5 hover:scale-110"
                   >
                     <ArrowUpRight size={16} />
                   </Link>
@@ -109,7 +109,7 @@ export async function ProjectItem({
               </div>
             </div>
             {formattedCount && (
-              <p className="text-xs text-muted-foreground">
+              <p className="text-muted-foreground text-xs">
                 {formattedCount} view{Number(count) > 1 ? "s" : ""}
               </p>
             )}

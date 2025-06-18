@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 export type Social = {
   title: string;
   description: string;
