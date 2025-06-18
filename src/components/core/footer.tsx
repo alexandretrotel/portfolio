@@ -21,7 +21,7 @@ export default function Footer() {
         </p>
 
         <DonationsComponent />
-        <p className="text-xs text-muted-foreground">
+        <p className="text-muted-foreground text-xs">
           © {new Date().getFullYear()} Alexandre Trotel. All rights reserved.
         </p>
       </div>
@@ -46,7 +46,7 @@ function DonationsComponent() {
     <div className="flex flex-col gap-4">
       <div>
         <p className="text-sm font-semibold">Support me</p>
-        <p className="text-xs text-muted-foreground">
+        <p className="text-muted-foreground text-xs">
           If you like my work, you can support me by donating cryptocurrencies,
           it helps me a lot!
         </p>

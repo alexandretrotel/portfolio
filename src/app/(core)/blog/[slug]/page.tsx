@@ -1,4 +1,3 @@
-import Animation from "@/components/core/animation";
 import { getBlogPosts, getPostFromSlug } from "@/utils/blog";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -46,14 +45,12 @@ export default async function Page({
   const count = await redis.incr("pageviews:" + slug);
 
   return (
-    <Animation>
-      <div className="mx-auto max-w-3xl">
-        <p className="inline-flex items-center gap-1 text-sm text-muted-foreground">
-          {count} view{count > 1 ? "s" : ""}
-        </p>
-        <Post />
-      </div>
-    </Animation>
+    <div className="mx-auto max-w-3xl">
+      <p className="text-muted-foreground inline-flex items-center gap-1 text-sm">
+        {count} view{count > 1 ? "s" : ""}
+      </p>
+      <Post />
+    </div>
   );
 }
 

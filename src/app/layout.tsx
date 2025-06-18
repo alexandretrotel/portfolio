@@ -3,8 +3,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const font = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -45,9 +43,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
-
-          <Analytics />
-          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>

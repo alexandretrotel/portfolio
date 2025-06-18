@@ -33,20 +33,20 @@ export const NonprofitItem = async ({
           <Link
             href={url}
             target="_blank"
-            className="duration-200 hover:-translate-y-0.5 hover:translate-x-0.5 hover:scale-110"
+            className="duration-200 hover:translate-x-0.5 hover:-translate-y-0.5 hover:scale-110"
           >
             <ArrowUpRight size={16} />
           </Link>
         )}
       </div>
-      <p className="text-xs text-muted-foreground">{positions?.[0]?.date}</p>
+      <p className="text-muted-foreground text-xs">{positions?.[0]?.date}</p>
     </div>
 
     {positions.map((pos, idx) => (
       <div key={idx} className="flex flex-col gap-4">
         <div>
           <p className="text-sm font-semibold">{pos.title}</p>
-          <p className="text-xs text-muted-foreground">{pos.description}</p>
+          <p className="text-muted-foreground text-xs">{pos.description}</p>
         </div>
       </div>
     ))}
