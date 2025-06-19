@@ -1,14 +1,10 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
 
 const font = Geist({
-	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-	subsets: ["latin"],
-});
-const fontMono = Geist_Mono({
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 	subsets: ["latin"],
 });
@@ -39,7 +35,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={`${font.className} ${fontMono.className} antialiased`}>
+			<body className={`${font.className} antialiased`}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
