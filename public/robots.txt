@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.alexandretrotel.org
-
-# Sitemaps
-Sitemap: https://www.alexandretrotel.org/sitemap.xml
