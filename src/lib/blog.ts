@@ -1,11 +1,11 @@
 import { posts } from "@/data/posts";
 
 export const getBlogPosts = () => {
-	return posts?.sort(
-		(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-	);
+  return posts?.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
 };
 
 export const getPostFromSlug = (slug: string) => {
-	return posts.find((post) => post.slug === slug);
+  return posts.find((post) => post.slug === slug);
 };
