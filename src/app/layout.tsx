@@ -36,9 +36,9 @@ export default function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 			<body className={`${font.className} antialiased`}>
 				<Providers>
-					<div className="bg-background min-h-screen">
+					<div className="bg-background min-h-screen px-6">
 						<Header />
-						<main className="mx-auto max-w-5xl px-4 py-12 md:py-24">
+						<main className="h-[calc(100vh-4rem)] max-w-3xl mx-auto py-24">
 							{children}
 						</main>
 					</div>
