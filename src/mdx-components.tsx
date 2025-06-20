@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
-import Image, { ImageProps } from "next/image";
+import Image, { type ImageProps } from "next/image";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -128,6 +128,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <a
         href={href}
         target="_blank"
+        rel="noopener noreferrer"
         style={{
           color: "hsl(var(--primary))",
           display: "inline-flex",
