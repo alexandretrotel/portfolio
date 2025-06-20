@@ -45,9 +45,8 @@ export default function Home() {
         >
           I&apos;m{" "}
           <span className="text-foreground font-medium">Alexandre Trotel</span>,
-          a<span className="italic"> tech entrepreneur</span> and{" "}
-          <span className="italic">full stack developer</span> with interests in{" "}
-          web development machine learning, and open source.
+          a tech entrepreneur and full stack developer with interests in web
+          development machine learning, and open source.
         </motion.p>
 
         <motion.p
