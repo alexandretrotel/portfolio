@@ -46,7 +46,7 @@ export default function Home() {
           I&apos;m{" "}
           <span className="text-foreground font-medium">Alexandre Trotel</span>,
           a tech entrepreneur and full stack developer with interests in web
-          development machine learning, and open source.
+          development, machine learning, and open source.
         </motion.p>
 
         <motion.p
