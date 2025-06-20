@@ -6,7 +6,6 @@ import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
 import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { ArrowUpRight } from "lucide-react";
 import { cubicBezier, motion } from "motion/react";
 
 export const links = [
@@ -114,10 +113,7 @@ export default function Header() {
                     className={"text-sm font-medium transition-colors"}
                     aria-disabled={link.hidden}
                   >
-                    {link.title}{" "}
-                    {link.target === "_blank" && (
-                      <ArrowUpRight className="inline h-4 w-4" />
-                    )}
+                    {link.title}
                   </Link>
                 </Button>
               </motion.div>
