@@ -2,7 +2,9 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import { ThemeProvider } from "@/providers/theme-provider";
+import { METADATA } from "@/data/metadata";
+import Header from "@/components/header";
+import { Providers } from "@/providers/providers";
 
 const font = Geist({
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -10,21 +12,18 @@ const font = Geist({
 });
 
 export const metadata: Metadata = {
-	title: "Alexandre Trotel | Official Website",
-	description:
-		"Alexandre Trotel is a tech entrepreneur and full-stack developer with expertise in blockchain, web development, and innovation.",
+	title: METADATA.TITLE,
+	description: METADATA.DESCRIPTION,
 	openGraph: {
 		type: "website",
 		locale: "en_US",
-		url: "https://www.alexandretrotel.org",
-		title: "Alexandre Trotel | Official Website",
-		description:
-			"Alexandre Trotel is a tech entrepreneur and full-stack developer with expertise in blockchain, web development, and innovation.",
+		url: METADATA.BASE_URL,
+		title: METADATA.TITLE,
+		description: METADATA.DESCRIPTION,
 	},
 	twitter: {
-		title: "Alexandre Trotel | Official Website",
-		description:
-			"Alexandre Trotel is a tech entrepreneur and full-stack developer with expertise in blockchain, web development, and innovation.",
+		title: METADATA.TITLE,
+		description: METADATA.DESCRIPTION,
 	},
 };
 
@@ -36,14 +35,14 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body className={`${font.className} antialiased`}>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="system"
-					enableSystem
-					disableTransitionOnChange
-				>
-					{children}
-				</ThemeProvider>
+				<Providers>
+					<div className="bg-background min-h-screen px-6">
+						<Header />
+						<main className="h-[calc(100vh-4rem)] max-w-3xl mx-auto py-24">
+							{children}
+						</main>
+					</div>
+				</Providers>
 			</body>
 		</html>
 	);
