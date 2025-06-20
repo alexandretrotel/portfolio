@@ -3,3 +3,4 @@ onlyBuiltDependencies:
   - "@vercel/speed-insights"
   - sharp
   - unrs-resolver
+  - esbuild
