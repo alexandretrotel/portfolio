@@ -35,7 +35,7 @@ export default function Home() {
 			animate="visible"
 			className="flex flex-col h-full gap-16"
 		>
-			<div className="flex w-full max-w-xl gap-6 flex-col text-muted-foreground font-light text-sm md:text-base">
+			<div className="flex w-full max-w-xl gap-6 flex-col text-muted-foreground font-light">
 				<motion.p
 					variants={paragraphVariants}
 					initial="hidden"
