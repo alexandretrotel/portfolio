@@ -1,32 +1,15 @@
-"use client";
-import "client-only";
-
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardFooter,
-} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function NotFound() {
-  const router = useRouter();
-
-  return (
-    <div className="flex h-screen flex-col items-center justify-center space-y-4">
-      <Card className="border-transparent bg-transparent shadow-none">
-        <CardHeader>
-          <CardTitle>Not found</CardTitle>
-          <CardDescription>
-            The page you are looking for does not exist.
-          </CardDescription>
-        </CardHeader>
-        <CardFooter>
-          <Button onClick={() => router.back()}>Go back</Button>
-        </CardFooter>
-      </Card>
-    </div>
-  );
+	return (
+		<div className="flex h-full flex-col items-center justify-center space-y-4">
+			<div className="flex items-center justify-center flex-col space-y-2">
+				<p className="text-muted-foreground">This page doesn&apos;t exist.</p>
+			</div>
+			<Button variant={"ghost"} className="mt-4" asChild>
+				<Link href={"/"}>Go home</Link>
+			</Button>
+		</div>
+	);
 }
