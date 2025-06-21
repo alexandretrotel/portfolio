@@ -31,7 +31,6 @@ export const Animation = ({
     <motion.div
       initial="hidden"
       animate="visible"
-      exit="exit"
       variants={fadeInUpVariants}
     >
       {children}
