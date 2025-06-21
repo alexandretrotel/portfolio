@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Redis } from "@upstash/redis";
 
-const redis = Redis.fromEnv();
+const redis = process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN 
+  ? Redis.fromEnv() 
+  : null;
 
 export async function generateMetadata({
   params,
@@ -42,7 +44,7 @@ export default async function Page({
     notFound();
   }
 
-  const count = await redis.incr(`pageviews:${slug}`);
+  const count = await redis?.incr(`pageviews:${slug}`) ?? 0;
 
   return (
     <div className="mx-auto max-w-3xl">
