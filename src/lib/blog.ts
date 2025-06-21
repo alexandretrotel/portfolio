@@ -21,22 +21,13 @@ export async function getBlogPosts() {
       const views: number = (await redis?.get(`pageviews:${post.slug}`)) ?? 0;
 
       // format date
-      const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      });
+      const formattedDate = formatDate(post.date);
 
       // show date only for first, last, or when different from next post
       const showDate =
         index === 0 ||
         index === arr.length - 1 ||
-        formattedDate !==
-          new Date(arr[index + 1]?.date).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-          });
+        formattedDate !== formatDate(arr[index + 1]?.date);
 
       return {
         ...post,
