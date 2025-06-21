@@ -46,7 +46,12 @@ export default async function Page({
     notFound();
   }
 
-  const count = (await redis?.incr(`pageviews:${slug}`)) ?? 0;
+  let count = 0;
+  if (redis) {
+    count = await redis.incr(`pageviews:${slug}`);
+  } else {
+    console.warn("Redis is not configured. Page view count will not be tracked.");
+  }
 
   return (
     <Animation>
