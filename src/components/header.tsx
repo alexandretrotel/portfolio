@@ -17,7 +17,7 @@ export const links = [
   {
     title: "\\blog",
     href: "/blog",
-    hidden: true,
+    hidden: false,
   },
   {
     title: "\\github",
@@ -57,7 +57,7 @@ export default function Header() {
 
   return (
     <motion.header
-      className="border-border/40 bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 h-16 w-full backdrop-blur"
+      className="border-border/40 bg-background/95 supports-backdrop-filter:bg-background/60 top-0 z-50 h-16 w-full backdrop-blur"
       variants={headerVariants}
       initial="hidden"
       animate="visible"
