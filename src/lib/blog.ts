@@ -10,7 +10,7 @@ export async function getBlogPosts() {
   if (!posts) return [];
 
   // sort posts by date (descending)
-  const sortedPosts = posts.sort(
+  const sortedPosts = [...posts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
