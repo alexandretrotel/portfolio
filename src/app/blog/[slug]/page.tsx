@@ -50,7 +50,9 @@ export default async function Page({
   if (redis) {
     count = await redis.incr(`pageviews:${slug}`);
   } else {
-    console.warn("Redis is not configured. Page view count will not be tracked.");
+    console.warn(
+      "Redis is not configured. Page view count will not be tracked.",
+    );
   }
 
   return (

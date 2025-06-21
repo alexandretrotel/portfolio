@@ -28,11 +28,7 @@ export const Animation = ({
   };
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={fadeInUpVariants}
-    >
+    <motion.div initial="hidden" animate="visible" variants={fadeInUpVariants}>
       {children}
     </motion.div>
   );
