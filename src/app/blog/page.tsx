@@ -3,7 +3,9 @@ import { getBlogPosts } from "@/lib/blog";
 import Link from "next/link";
 import { Redis } from "@upstash/redis";
 
-const redis = Redis.fromEnv();
+const redis = process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN 
+  ? Redis.fromEnv() 
+  : null;
 
 export default async function Blog() {
   const posts = getBlogPosts();
@@ -35,7 +37,7 @@ export default async function Blog() {
                   month: "short",
                 });
             const count: number =
-              (await redis.get(`pageviews:${post.slug}`)) ?? 0;
+              (await redis?.get(`pageviews:${post.slug}`)) ?? 0;
             const formattedCount = new Intl.NumberFormat("en-US").format(count);
 
             return (
