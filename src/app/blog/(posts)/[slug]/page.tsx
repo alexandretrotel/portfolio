@@ -1,10 +1,8 @@
-import { getBlogPosts, getPostFromSlug } from "@/lib/blog";
-import type { Metadata } from "next";
+import { getPostFromSlug } from "@/lib/blog";
 import { Redis } from "@upstash/redis";
-import { Animation } from "@/components/animation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { customComponents as components } from "@/mdx-components";
-import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 const redis =
 	process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
@@ -47,45 +45,20 @@ export default async function Page({
 }: {
 	params: Promise<{ slug: string }>;
 }) {
-	const slug = (await params).slug;
+	const { slug } = await params;
 	const post = await getPostFromSlug(slug);
 
 	let count = 0;
 	if (redis) {
 		count = await redis.incr(`pageviews:${slug}`);
-	} else {
-		console.warn(
-			"Redis is not configured. Page view count will not be tracked.",
-		);
-	}
-
-	if (!post) {
-		notFound();
 	}
 
 	return (
-		<Animation>
-			<article className="mx-auto max-w-3xl">
-				<div className="prose prose-gray dark:prose-invert max-w-none">
-					<p className="text-muted-foreground inline-flex items-center gap-1 text-sm">
-						{count} view{count > 1 ? "s" : ""}
-					</p>
-
-					<MDXRemote source={post.content} components={components} />
-				</div>
-			</article>
-		</Animation>
+		<>
+			<p className="text-muted-foreground inline-flex items-center gap-1 text-sm">
+				{count} view{count > 1 ? "s" : ""}
+			</p>
+			<MDXRemote source={post?.content ?? ""} components={components} />
+		</>
 	);
 }
-
-export async function generateStaticParams() {
-	const posts = await getBlogPosts();
-
-	return posts.map((post) => ({
-		params: {
-			slug: post.slug,
-		},
-	}));
-}
-
-export const dynamicParams = false;

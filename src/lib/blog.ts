@@ -8,7 +8,7 @@ const redis =
 		? Redis.fromEnv()
 		: null;
 
-const postsDirectory = path.join(process.cwd(), "src/blog");
+const postsDirectory = path.join(process.cwd(), "src/data/blog");
 
 export interface BlogPost {
 	slug: string;
