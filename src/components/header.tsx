@@ -7,25 +7,29 @@ import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { cubicBezier, motion } from "motion/react";
+import { getNumberOfPosts } from "@/lib/blog";
+import { useAsyncEffect } from "@/hooks/use-async";
 
-export const links = [
-  {
-    title: "\\home",
-    href: "/",
-    hidden: true,
-  },
-  {
-    title: "\\blog",
-    href: "/blog",
-    hidden: false,
-  },
-  {
-    title: "\\github",
-    href: "https://www.github.com/alexandretrotel",
-    hidden: false,
-    target: "_blank",
-  },
-];
+export const getLinks = async () => {
+  return [
+    {
+      title: "\\home",
+      href: "/",
+      hidden: true,
+    },
+    {
+      title: "\\blog",
+      href: "/blog",
+      hidden: (await getNumberOfPosts()) === 0,
+    },
+    {
+      title: "\\github",
+      href: "https://www.github.com/alexandretrotel",
+      hidden: false,
+      target: "_blank",
+    },
+  ];
+};
 
 const headerVariants = {
   hidden: { opacity: 0, y: -20 },
@@ -54,6 +58,7 @@ const itemVariants = {
 
 export default function Header() {
   const pathname = usePathname();
+  const { data: links } = useAsyncEffect(getLinks);
 
   return (
     <motion.header
@@ -79,7 +84,7 @@ export default function Header() {
         </Link>
 
         <div className="flex items-center gap-2">
-          {links.map((link, index) => {
+          {links?.map((link, index) => {
             if (link.hidden) {
               return null;
             }
