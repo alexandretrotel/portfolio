@@ -155,3 +155,14 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+.mdx-link {
+	color: var(--foreground);
+	font-weight: 500;
+	text-decoration: none;
+	transition: text-decoration 0.2s ease;
+}
+
+.mdx-link:hover {
+	text-decoration: underline;
+}
