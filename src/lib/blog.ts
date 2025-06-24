@@ -14,6 +14,11 @@ const formatDate = (date: Date) => {
   });
 };
 
+export async function getNumberOfPosts() {
+  if (!posts) return 0;
+  return posts.length;
+}
+
 export async function getBlogPosts() {
   if (!posts) return [];
 
