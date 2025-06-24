@@ -1,75 +1,148 @@
-import { posts } from "@/data/posts";
+import fs from "node:fs";
+import path from "node:path";
+import matter from "gray-matter";
 import { Redis } from "@upstash/redis";
 
 const redis =
-  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
-    ? Redis.fromEnv()
-    : null;
+	process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
+		? Redis.fromEnv()
+		: null;
+
+const postsDirectory = path.join(process.cwd(), "src/blog");
+
+export interface BlogPost {
+	slug: string;
+	title: string;
+	description: string;
+	date: Date;
+	content: string;
+	views?: number;
+	formattedViews?: string;
+	formattedDate?: string;
+	showDate?: boolean;
+}
 
 const formatDate = (date: Date) => {
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
+	return new Date(date).toLocaleDateString("en-US", {
+		year: "numeric",
+		month: "short",
+		day: "numeric",
+	});
 };
 
-export async function getNumberOfPosts() {
-  if (!posts) return 0;
-  return posts.length;
+export async function getBlogPosts(): Promise<BlogPost[]> {
+	try {
+		const fileNames = fs.readdirSync(postsDirectory);
+		const mdxFiles = fileNames.filter((fileName) => fileName.endsWith(".mdx"));
+
+		const posts = await Promise.all(
+			mdxFiles.map(async (fileName) => {
+				const slug = fileName.replace(/\.mdx$/, "");
+				const fullPath = path.join(postsDirectory, fileName);
+				const fileContents = fs.readFileSync(fullPath, "utf8");
+
+				const { data, content } = matter(fileContents);
+
+				if (!data.title || !data.description || !data.date) {
+					console.warn(`Missing required frontmatter in ${fileName}`);
+					return null;
+				}
+
+				const date = new Date(data.date);
+				if (Number.isNaN(date.getTime())) {
+					console.warn(`Invalid date in ${fileName}: ${data.date}`);
+					return null;
+				}
+
+				return {
+					slug,
+					title: data.title,
+					description: data.description,
+					date,
+					content,
+				};
+			}),
+		);
+
+		const validPosts = posts.filter((post): post is BlogPost => post !== null);
+		const sortedPosts = validPosts.sort(
+			(a, b) => b.date.getTime() - a.date.getTime(),
+		);
+
+		const enhancedPosts = await Promise.all(
+			sortedPosts.map(async (post, index, arr) => {
+				const views: number = (await redis?.get(`pageviews:${post.slug}`)) ?? 0;
+
+				const formattedDate = formatDate(post.date);
+
+				const showDate =
+					index === 0 ||
+					index === arr.length - 1 ||
+					formattedDate !== formatDate(arr[index + 1]?.date);
+
+				return {
+					...post,
+					views,
+					formattedViews: new Intl.NumberFormat("en-US").format(views),
+					formattedDate,
+					showDate,
+				};
+			}),
+		);
+
+		return enhancedPosts;
+	} catch (error) {
+		console.error("Error reading blog posts:", error);
+		return [];
+	}
 }
 
-export async function getBlogPosts() {
-  if (!posts) return [];
+export async function getPostFromSlug(slug: string): Promise<BlogPost | null> {
+	try {
+		const fullPath = path.join(postsDirectory, `${slug}.mdx`);
 
-  // sort posts by date (descending)
-  const sortedPosts = [...posts].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-  );
+		if (!fs.existsSync(fullPath)) {
+			return null;
+		}
 
-  // pre-fetch view counts and format data
-  const enhancedPosts = await Promise.all(
-    sortedPosts.map(async (post, index, arr) => {
-      // fetch view count from Redis (default to 0 if null or Redis unavailable)
-      const views: number = (await redis?.get(`pageviews:${post.slug}`)) ?? 0;
+		const fileContents = fs.readFileSync(fullPath, "utf8");
+		const { data, content } = matter(fileContents);
 
-      // format date
-      const formattedDate = formatDate(post.date);
+		if (!data.title || !data.description || !data.date) {
+			console.warn(`Missing required frontmatter in ${slug}.mdx`);
+			return null;
+		}
 
-      // show date only for first, last, or when different from next post
-      const showDate =
-        index === 0 ||
-        index === arr.length - 1 ||
-        formattedDate !== formatDate(arr[index + 1]?.date);
+		const date = new Date(data.date);
+		if (Number.isNaN(date.getTime())) {
+			console.warn(`Invalid date in ${slug}.mdx: ${data.date}`);
+			return null;
+		}
 
-      return {
-        ...post,
-        views,
-        formattedViews: new Intl.NumberFormat("en-US").format(views),
-        formattedDate,
-        showDate,
-      };
-    }),
-  );
+		const views: number = (await redis?.get(`pageviews:${slug}`)) ?? 0;
 
-  return enhancedPosts;
+		return {
+			slug,
+			title: data.title,
+			description: data.description,
+			date,
+			content,
+			views,
+			formattedViews: new Intl.NumberFormat("en-US").format(views),
+			formattedDate: formatDate(date),
+		};
+	} catch (error) {
+		console.error(`Error reading post ${slug}:`, error);
+		return null;
+	}
 }
 
-export async function getPostFromSlug(slug: string) {
-  const post = posts.find((post) => post.slug === slug);
-  if (!post) return null;
-
-  // fetch view count for consistency
-  const views: number = (await redis?.get(`pageviews:${slug}`)) ?? 0;
-
-  return {
-    ...post,
-    views,
-    formattedViews: new Intl.NumberFormat("en-US").format(views),
-    formattedDate: new Date(post.date).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    }),
-  };
+export async function getNumberOfPosts(): Promise<number> {
+	try {
+		const posts = await getBlogPosts();
+		return posts.length;
+	} catch (error) {
+		console.error("Error getting number of posts:", error);
+		return 0;
+	}
 }

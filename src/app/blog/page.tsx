@@ -15,12 +15,12 @@ export default async function Blog() {
 							<Link
 								href={`/blog/${post.slug}`}
 								aria-label={`Read blog post: ${post.title}`}
-								className="group hover:bg-muted/50 active:bg-muted/50 flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4 rounded-sm p-4 transition-all active:scale-95"
+								className="group hover:bg-muted/50 active:bg-muted/50 flex flex-col items-start gap-1 rounded-sm p-4 transition-all active:scale-95 md:flex-row md:items-center md:gap-4"
 							>
-								<div className="flex items-center gap-2 text-muted-foreground">
+								<div className="text-muted-foreground flex items-center gap-2">
 									<span
 										className={cn(
-											"text-muted-foreground md:w-20 shrink-0 text-xs font-light",
+											"text-muted-foreground shrink-0 text-xs font-light md:w-20",
 											{
 												"opacity-0": !post.showDate,
 											},
@@ -34,8 +34,8 @@ export default async function Blog() {
 									{post.title}
 								</span>
 
-								{post.views > 0 && (
-									<span className="hidden md:flex text-muted-foreground text-right text-xs font-light">
+								{!!post.views && post.views > 0 && (
+									<span className="text-muted-foreground hidden text-right text-xs font-light md:flex">
 										{post.formattedViews} view{post.views > 1 ? "s" : ""}
 									</span>
 								)}
