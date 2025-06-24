@@ -1,15 +1,19 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function NotFound() {
-  return (
-    <div className="flex h-full flex-col items-center justify-center space-y-4">
-      <div className="flex flex-col items-center justify-center space-y-2">
-        <p className="text-muted-foreground">This page doesn&apos;t exist.</p>
-      </div>
-      <Button variant={"ghost"} className="mt-4" asChild>
-        <Link href={"/"}>Go home</Link>
-      </Button>
-    </div>
-  );
+	const router = useRouter();
+
+	return (
+		<div className="flex h-full flex-col items-center justify-center gap-2 py-32">
+			<div className="flex flex-col items-center justify-center">
+				<p className="text-muted-foreground">This page doesn&apos;t exist.</p>
+			</div>
+			<Button variant={"ghost"} onClick={() => router.back()}>
+				Go back
+			</Button>
+		</div>
+	);
 }
