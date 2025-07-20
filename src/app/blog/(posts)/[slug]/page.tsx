@@ -1,4 +1,4 @@
-import { getPostFromSlug } from "@/lib/blog";
+import { getBlogPosts, getPostFromSlug } from "@/lib/blog";
 import { Redis } from "@upstash/redis";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { customComponents as components } from "@/mdx-components";
@@ -8,6 +8,13 @@ const redis =
 	process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
 		? Redis.fromEnv()
 		: null;
+
+export async function generateStaticParams() {
+	const posts = await getBlogPosts();
+	return posts.map((post) => ({
+		slug: post.slug,
+	}));
+}
 
 export async function generateMetadata({
 	params,
