@@ -38,7 +38,7 @@ export default function RootLayout({
 				<Providers>
 					<div className="bg-background min-h-screen px-6">
 						<Header />
-						<main className="mx-auto min-h-[calc(100vh-4rem)] max-w-3xl md:py-24 py-12">
+						<main className="mx-auto min-h-[calc(100vh-4rem)] max-w-3xl md:py-18 py-12">
 							{children}
 						</main>
 					</div>

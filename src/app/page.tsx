@@ -11,7 +11,7 @@ export default function Home() {
 		visible: {
 			opacity: 1,
 			transition: {
-				duration: 0.6,
+				duration: 0.2,
 				ease: cubicBezier(0.4, 0, 0.2, 1),
 			},
 		},
@@ -23,7 +23,7 @@ export default function Home() {
 			opacity: 1,
 			y: 0,
 			transition: {
-				duration: 0.5,
+				duration: 0.3,
 				ease: cubicBezier(0.4, 0, 0.2, 1),
 				delay: i * 0.2,
 			},
