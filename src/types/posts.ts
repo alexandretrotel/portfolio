@@ -8,5 +8,3 @@ export type Post = {
   formattedDate?: string;
   showDate?: boolean;
 };
-
-export type Posts = Post[];

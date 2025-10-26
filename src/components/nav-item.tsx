@@ -1,6 +1,5 @@
 "use client";
 
-import { cubicBezier, motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -15,26 +14,9 @@ type NavItemLink = {
 
 type NavItemProps = {
   link: NavItemLink;
-  index: number;
 };
 
-const DEFAULT_DELAY = 0.1;
-
-const itemVariants = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: (i: number) => ({
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.4,
-      // biome-ignore lint/style/noMagicNumbers: It's a bezier curve so it's easier to read with numbers
-      ease: cubicBezier(0.4, 0.0, 0.2, 1.0),
-      delay: i * DEFAULT_DELAY,
-    },
-  }),
-};
-
-export function NavItem({ link, index }: NavItemProps) {
+export function NavItem({ link }: NavItemProps) {
   const pathname = usePathname();
 
   if (link.hidden) {
@@ -44,15 +26,7 @@ export function NavItem({ link, index }: NavItemProps) {
   const isActive = pathname.startsWith(link.href);
 
   return (
-    <motion.div
-      animate="visible"
-      custom={index + 1}
-      initial="hidden"
-      key={link.href}
-      variants={itemVariants}
-      whileHover="hover"
-      whileTap="tap"
-    >
+    <div key={link.href}>
       <Button
         asChild
         className={cn(
@@ -71,6 +45,6 @@ export function NavItem({ link, index }: NavItemProps) {
           {link.title}
         </Link>
       </Button>
-    </motion.div>
+    </div>
   );
 }

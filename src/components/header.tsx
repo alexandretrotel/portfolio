@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { DarkModeToggle } from "@/components/dark-mode-toggle";
-import { HeaderAnimation } from "@/components/header-animation";
 import { NavItem } from "@/components/nav-item";
 import { getNumberOfPosts } from "@/lib/blog";
+import type { LinkItem } from "@/types/nav";
 
-export const getLinks = async () => [
+export const getLinks: () => Promise<LinkItem[]> = async () => [
   {
     title: "\\home",
     href: "/",
@@ -28,7 +28,7 @@ export default async function Header() {
   const links = await getLinks();
 
   return (
-    <HeaderAnimation>
+    <div className="top-0 z-50 h-16 w-full border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="mx-auto flex h-14 max-w-3xl items-center justify-between py-8">
         <Link
           className="flex items-center gap-4 transition-transform active:scale-90"
@@ -46,8 +46,8 @@ export default async function Header() {
         </Link>
 
         <div className="flex items-center gap-2">
-          {links?.map((link, index) => (
-            <NavItem index={index} key={link.href} link={link} />
+          {links.map((link) => (
+            <NavItem key={link.href} link={link} />
           ))}
 
           <div className="transition-transform active:scale-90">
@@ -55,6 +55,6 @@ export default async function Header() {
           </div>
         </div>
       </div>
-    </HeaderAnimation>
+    </div>
   );
 }
