@@ -10,7 +10,7 @@ const redis =
 
 const postsDirectory = path.join(process.cwd(), "src/data/blog");
 
-export interface BlogPost {
+export type BlogPost = {
   slug: string;
   title: string;
   description: string;
@@ -20,7 +20,7 @@ export interface BlogPost {
   formattedViews?: string;
   formattedDate?: string;
   showDate?: boolean;
-}
+};
 
 const formatDate = (date: Date) =>
   new Date(date).toLocaleDateString("en-US", {
@@ -29,26 +29,30 @@ const formatDate = (date: Date) =>
     day: "numeric",
   });
 
+const MDX_REGEX = /\.mdx$/;
+
 export async function getBlogPosts(): Promise<BlogPost[]> {
   try {
     const fileNames = fs.readdirSync(postsDirectory);
     const mdxFiles = fileNames.filter((fileName) => fileName.endsWith(".mdx"));
 
     const posts = await Promise.all(
-      mdxFiles.map(async (fileName) => {
-        const slug = fileName.replace(/\.mdx$/, "");
+      mdxFiles.map((fileName) => {
+        const slug = fileName.replace(MDX_REGEX, "");
         const fullPath = path.join(postsDirectory, fileName);
         const fileContents = fs.readFileSync(fullPath, "utf8");
 
         const { data, content } = matter(fileContents);
 
         if (!(data.title && data.description && data.date)) {
+          // biome-ignore lint/suspicious/noConsole: Missing required frontmatter is important to log
           console.warn(`Missing required frontmatter in ${fileName}`);
           return null;
         }
 
         const date = new Date(data.date);
         if (Number.isNaN(date.getTime())) {
+          // biome-ignore lint/suspicious/noConsole: Invalid date is important to log
           console.warn(`Invalid date in ${fileName}: ${data.date}`);
           return null;
         }
@@ -91,7 +95,9 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
 
     return enhancedPosts;
   } catch (error) {
-    console.error("Error reading blog posts:", error);
+    process.stderr.write(
+      `Error reading blog posts: ${JSON.stringify(error)}\n`
+    );
     return [];
   }
 }
@@ -108,12 +114,14 @@ export async function getPostFromSlug(slug: string): Promise<BlogPost | null> {
     const { data, content } = matter(fileContents);
 
     if (!(data.title && data.description && data.date)) {
+      // biome-ignore lint/suspicious/noConsole: Missing required frontmatter is important to log
       console.warn(`Missing required frontmatter in ${slug}.mdx`);
       return null;
     }
 
     const date = new Date(data.date);
     if (Number.isNaN(date.getTime())) {
+      // biome-ignore lint/suspicious/noConsole: Invalid date is important to log
       console.warn(`Invalid date in ${slug}.mdx: ${data.date}`);
       return null;
     }
@@ -131,7 +139,9 @@ export async function getPostFromSlug(slug: string): Promise<BlogPost | null> {
       formattedDate: formatDate(date),
     };
   } catch (error) {
-    console.error(`Error reading post ${slug}:`, error);
+    process.stderr.write(
+      `Error reading post ${slug}: ${JSON.stringify(error)}\n`
+    );
     return null;
   }
 }
@@ -141,7 +151,9 @@ export async function getNumberOfPosts(): Promise<number> {
     const posts = await getBlogPosts();
     return posts.length;
   } catch (error) {
-    console.error("Error getting number of posts:", error);
+    process.stderr.write(
+      `Error getting number of posts: ${JSON.stringify(error)}\n`
+    );
     return 0;
   }
 }

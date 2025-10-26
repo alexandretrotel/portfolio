@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { DarkModeToggle } from "@/components/dark-mode-toggle";
 import { HeaderAnimation } from "@/components/header-animation";
 import { NavItem } from "@/components/nav-item";
-import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
 import { getNumberOfPosts } from "@/lib/blog";
 
 export const getLinks = async () => [

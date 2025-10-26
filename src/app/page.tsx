@@ -5,6 +5,8 @@ import { cubicBezier, motion } from "motion/react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
+const DEFAULT_DELAY = 0.2;
+
 export default function Home() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -12,6 +14,7 @@ export default function Home() {
       opacity: 1,
       transition: {
         duration: 0.2,
+        // biome-ignore lint/style/noMagicNumbers: It's a bezier curve so it's easier to read with numbers
         ease: cubicBezier(0.4, 0, 0.2, 1),
       },
     },
@@ -24,8 +27,9 @@ export default function Home() {
       y: 0,
       transition: {
         duration: 0.3,
+        // biome-ignore lint/style/noMagicNumbers: It's a bezier curve so it's easier to read with numbers
         ease: cubicBezier(0.4, 0, 0.2, 1),
-        delay: i * 0.2,
+        delay: i * DEFAULT_DELAY,
       },
     }),
   };
