@@ -1,8 +1,11 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { shouldShowBlog } from "@/lib/blog";
 
-export default function Home() {
+export default async function Home() {
+  const showBlog = await shouldShowBlog();
+
   return (
     <div className="flex h-full flex-col gap-16">
       <div className="flex w-full max-w-xl flex-col gap-6 font-light text-muted-foreground">
@@ -41,21 +44,23 @@ export default function Home() {
           by providing high-quality templates and tools.
         </p>
 
-        <div>
-          <Button
-            asChild
-            className="active:scale-95 active:bg-accent"
-            variant="ghost"
-          >
-            <Link
-              className="flex items-center gap-2 font-medium text-primary text-sm"
-              href="/blog"
+        {showBlog && (
+          <div>
+            <Button
+              asChild
+              className="active:scale-95 active:bg-accent"
+              variant="ghost"
             >
-              <ArrowRight size={16} />
-              Check out my blog
-            </Link>
-          </Button>
-        </div>
+              <Link
+                className="flex items-center gap-2 font-medium text-primary text-sm"
+                href="/blog"
+              >
+                <ArrowRight size={16} />
+                Check out my blog
+              </Link>
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );

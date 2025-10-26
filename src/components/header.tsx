@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { DarkModeToggle } from "@/components/dark-mode-toggle";
 import { NavItem } from "@/components/nav-item";
-import { getNumberOfPosts } from "@/lib/blog";
+import { shouldShowBlog } from "@/lib/blog";
 import type { LinkItem } from "@/types/nav";
 
 export const getLinks: () => Promise<LinkItem[]> = async () => [
@@ -14,7 +14,7 @@ export const getLinks: () => Promise<LinkItem[]> = async () => [
   {
     title: "\\blog",
     href: "/blog",
-    hidden: (await getNumberOfPosts()) === 0,
+    hidden: await shouldShowBlog().then((show) => !show),
   },
   {
     title: "\\github",
