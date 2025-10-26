@@ -1,48 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import useSWR from "swr";
+import { fetcher } from "@/lib/swr";
 
 type PageviewCounterProps = {
   slug: string;
 };
 
 export default function PageviewCounter({ slug }: PageviewCounterProps) {
-  const [count, setCount] = useState<number | null>(null);
+  const url = `/api/pageview?slug=${encodeURIComponent(slug)}`;
 
-  useEffect(() => {
-    let mounted = true;
+  const { data: count } = useSWR<number>(url, fetcher, {
+    revalidateOnFocus: false,
+    revalidateOnReconnect: false,
+    revalidateIfStale: false,
+    dedupingInterval: 60_000,
+  });
 
-    async function fetchCount() {
-      try {
-        const res = await fetch(
-          `/api/pageview?slug=${encodeURIComponent(slug)}`
-        );
-        if (!res.ok) {
-          return;
-        }
-        const data = await res.json();
-        if (mounted && typeof data.count === "number") {
-          setCount(data.count);
-        }
-      } catch {
-        // ignore errors
-      }
-    }
-
-    fetchCount();
-
-    return () => {
-      mounted = false;
-    };
-  }, [slug]);
-
-  if (!count) {
-    return null;
-  }
+  const finalCount = count ?? 0;
 
   return (
     <p className="inline-flex items-center gap-1 text-muted-foreground text-sm">
-      {count} view{count > 1 ? "s" : ""}
+      {finalCount} view{finalCount > 1 ? "s" : ""}
     </p>
   );
 }
