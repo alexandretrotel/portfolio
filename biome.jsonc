@@ -5,5 +5,8 @@
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
+  },
+  "files": {
+    "includes": ["**", "!src/components/ui"]
   }
 }
