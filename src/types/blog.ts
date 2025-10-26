@@ -1,4 +1,4 @@
-export type Post = {
+export type PostBase = {
   slug: string;
   title: string;
   description: string;
@@ -7,4 +7,10 @@ export type Post = {
   formattedViews?: string;
   formattedDate?: string;
   showDate?: boolean;
+};
+
+export type Post = PostBase;
+
+export type BlogPost = PostBase & {
+  content: string;
 };
