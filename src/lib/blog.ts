@@ -1,87 +1,110 @@
-import fs from "node:fs";
+import fs from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
 import { redis } from "@/lib/redis";
+import type { BlogPost, FrontMatter } from "@/types/blog";
 
+const MDX_EXTENSION = ".mdx" as const;
 const postsDirectory = path.join(process.cwd(), "src/data/blog");
 
-export type BlogPost = {
-  slug: string;
-  title: string;
-  description: string;
-  date: Date;
-  content: string;
-  views?: number;
-  formattedViews?: string;
-  formattedDate?: string;
-  showDate?: boolean;
-};
-
-const formatDate = (date: Date) =>
-  new Date(date).toLocaleDateString("en-US", {
+const formatDate = (date: Date): string =>
+  date.toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
     day: "numeric",
   });
 
-const MDX_REGEX = /\.mdx$/;
+const isValidFrontMatter = (data: unknown): data is FrontMatter =>
+  typeof data === "object" &&
+  data !== null &&
+  "title" in data &&
+  "description" in data &&
+  "date" in data &&
+  typeof (data as FrontMatter).title === "string" &&
+  typeof (data as FrontMatter).description === "string";
+
+const parseDate = (dateValue: string | Date): Date | null => {
+  const date = new Date(dateValue);
+  return Number.isNaN(date.getTime()) ? null : date;
+};
+
+async function getViewCount(slug: string): Promise<number> {
+  if (!redis) {
+    return 0;
+  }
+
+  try {
+    const views = await redis.get(`pageviews:${slug}`);
+    return typeof views === "number" ? views : 0;
+  } catch {
+    return 0;
+  }
+}
+
+const formatViewCount = (views: number): string =>
+  new Intl.NumberFormat("en-US").format(views);
+
+async function parseBlogPost(fileName: string): Promise<BlogPost | null> {
+  const slug = fileName.replace(MDX_EXTENSION, "");
+  const fullPath = path.join(postsDirectory, fileName);
+
+  try {
+    const fileContents = await fs.readFile(fullPath, "utf8");
+    const { data, content } = matter(fileContents);
+
+    if (!isValidFrontMatter(data)) {
+      return null;
+    }
+
+    const date = parseDate(data.date);
+    if (!date) {
+      return null;
+    }
+
+    return {
+      slug,
+      title: data.title,
+      description: data.description,
+      date,
+      content,
+    };
+  } catch {
+    return null;
+  }
+}
 
 export async function getBlogPosts(): Promise<BlogPost[]> {
   try {
-    const fileNames = fs.readdirSync(postsDirectory);
-    const mdxFiles = fileNames.filter((fileName) => fileName.endsWith(".mdx"));
-
-    const posts = await Promise.all(
-      mdxFiles.map((fileName) => {
-        const slug = fileName.replace(MDX_REGEX, "");
-        const fullPath = path.join(postsDirectory, fileName);
-        const fileContents = fs.readFileSync(fullPath, "utf8");
-
-        const { data, content } = matter(fileContents);
-
-        if (!(data.title && data.description && data.date)) {
-          // biome-ignore lint/suspicious/noConsole: Missing required frontmatter is important to log
-          console.warn(`Missing required frontmatter in ${fileName}`);
-          return null;
-        }
-
-        const date = new Date(data.date);
-        if (Number.isNaN(date.getTime())) {
-          // biome-ignore lint/suspicious/noConsole: Invalid date is important to log
-          console.warn(`Invalid date in ${fileName}: ${data.date}`);
-          return null;
-        }
-
-        return {
-          slug,
-          title: data.title,
-          description: data.description,
-          date,
-          content,
-        };
-      })
+    const fileNames = await fs.readdir(postsDirectory);
+    const mdxFiles = fileNames.filter((fileName) =>
+      fileName.endsWith(MDX_EXTENSION)
     );
 
+    // Parse all posts
+    const posts = await Promise.all(mdxFiles.map(parseBlogPost));
     const validPosts = posts.filter((post): post is BlogPost => post !== null);
+
+    // Sort by date (newest first)
     const sortedPosts = validPosts.sort(
       (a, b) => b.date.getTime() - a.date.getTime()
     );
 
+    // Enhance posts with view counts and formatted data
     const enhancedPosts = await Promise.all(
       sortedPosts.map(async (post, index, arr) => {
-        const views: number = (await redis?.get(`pageviews:${post.slug}`)) ?? 0;
-
+        const views = await getViewCount(post.slug);
         const formattedDate = formatDate(post.date);
 
+        // Show date if it's the first post, last post, or different from next post
         const showDate =
           index === 0 ||
           index === arr.length - 1 ||
-          formattedDate !== formatDate(arr[index + 1]?.date);
+          (arr[index + 1] && formattedDate !== formatDate(arr[index + 1].date));
 
         return {
           ...post,
           views,
-          formattedViews: new Intl.NumberFormat("en-US").format(views),
+          formattedViews: formatViewCount(views),
           formattedDate,
           showDate,
         };
@@ -89,39 +112,31 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
     );
 
     return enhancedPosts;
-  } catch (error) {
-    process.stderr.write(
-      `Error reading blog posts: ${JSON.stringify(error)}\n`
-    );
+  } catch {
     return [];
   }
 }
 
 export async function getPostFromSlug(slug: string): Promise<BlogPost | null> {
+  const fullPath = path.join(postsDirectory, `${slug}${MDX_EXTENSION}`);
+
   try {
-    const fullPath = path.join(postsDirectory, `${slug}.mdx`);
+    // Check if file exists
+    await fs.access(fullPath);
 
-    if (!fs.existsSync(fullPath)) {
-      return null;
-    }
-
-    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const fileContents = await fs.readFile(fullPath, "utf8");
     const { data, content } = matter(fileContents);
 
-    if (!(data.title && data.description && data.date)) {
-      // biome-ignore lint/suspicious/noConsole: Missing required frontmatter is important to log
-      console.warn(`Missing required frontmatter in ${slug}.mdx`);
+    if (!isValidFrontMatter(data)) {
       return null;
     }
 
-    const date = new Date(data.date);
-    if (Number.isNaN(date.getTime())) {
-      // biome-ignore lint/suspicious/noConsole: Invalid date is important to log
-      console.warn(`Invalid date in ${slug}.mdx: ${data.date}`);
+    const date = parseDate(data.date);
+    if (!date) {
       return null;
     }
 
-    const views: number = (await redis?.get(`pageviews:${slug}`)) ?? 0;
+    const views = await getViewCount(slug);
 
     return {
       slug,
@@ -130,25 +145,23 @@ export async function getPostFromSlug(slug: string): Promise<BlogPost | null> {
       date,
       content,
       views,
-      formattedViews: new Intl.NumberFormat("en-US").format(views),
+      formattedViews: formatViewCount(views),
       formattedDate: formatDate(date),
     };
   } catch (error) {
-    process.stderr.write(
-      `Error reading post ${slug}: ${JSON.stringify(error)}\n`
-    );
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return null;
+    }
     return null;
   }
 }
 
 export async function getNumberOfPosts(): Promise<number> {
   try {
-    const posts = await getBlogPosts();
-    return posts.length;
-  } catch (error) {
-    process.stderr.write(
-      `Error getting number of posts: ${JSON.stringify(error)}\n`
-    );
+    const fileNames = await fs.readdir(postsDirectory);
+    return fileNames.filter((fileName) => fileName.endsWith(MDX_EXTENSION))
+      .length;
+  } catch {
     return 0;
   }
 }
