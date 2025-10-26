@@ -3,11 +3,11 @@ import "client-only";
 
 import { cubicBezier, motion } from "motion/react";
 
-interface AnimationProps {
+type AnimationProps = {
   children: React.ReactNode;
   delay?: number;
   duration?: number;
-}
+};
 
 export const Animation = ({
   children,
@@ -22,6 +22,7 @@ export const Animation = ({
       transition: {
         duration,
         delay,
+        // biome-ignore lint/style/noMagicNumbers: It's a bezier curve so it's easier to read with numbers
         ease: cubicBezier(0.25, 0.1, 0.25, 1),
       },
     },

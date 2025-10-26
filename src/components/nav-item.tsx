@@ -6,15 +6,19 @@ import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-interface NavItemProps {
-  link: {
-    title: string;
-    href: string;
-    hidden: boolean;
-    target?: string;
-  };
+type NavItemLink = {
+  title: string;
+  href: string;
+  hidden: boolean;
+  target?: string;
+};
+
+type NavItemProps = {
+  link: NavItemLink;
   index: number;
-}
+};
+
+const DEFAULT_DELAY = 0.1;
 
 const itemVariants = {
   hidden: { opacity: 0, scale: 0.9 },
@@ -23,8 +27,9 @@ const itemVariants = {
     scale: 1,
     transition: {
       duration: 0.4,
+      // biome-ignore lint/style/noMagicNumbers: It's a bezier curve so it's easier to read with numbers
       ease: cubicBezier(0.4, 0.0, 0.2, 1.0),
-      delay: i * 0.1,
+      delay: i * DEFAULT_DELAY,
     },
   }),
 };

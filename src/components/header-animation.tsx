@@ -2,9 +2,9 @@
 
 import { cubicBezier, motion } from "motion/react";
 
-interface HeaderAnimationProps {
+type HeaderAnimationProps = {
   children: React.ReactNode;
-}
+};
 
 const headerVariants = {
   hidden: { opacity: 0, y: -20 },
@@ -13,6 +13,7 @@ const headerVariants = {
     y: 0,
     transition: {
       duration: 0.6,
+      // biome-ignore lint/style/noMagicNumbers: It's a bezier curve so it's easier to read with numbers
       ease: cubicBezier(0.4, 0.0, 0.2, 1.0),
     },
   },
