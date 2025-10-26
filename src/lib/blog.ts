@@ -1,12 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import { Redis } from "@upstash/redis";
 import matter from "gray-matter";
-
-const redis =
-  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
-    ? Redis.fromEnv()
-    : null;
+import { redis } from "@/lib/redis";
 
 const postsDirectory = path.join(process.cwd(), "src/data/blog");
 

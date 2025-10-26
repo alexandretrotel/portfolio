@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getBlogPosts } from "@/lib/blog";
 import { cn } from "@/lib/utils";
+import type { BlogPost } from "@/types/blog";
 
 export default async function Blog() {
   const posts = await getBlogPosts();
@@ -15,8 +16,6 @@ export default async function Blog() {
     </div>
   );
 }
-
-type BlogPost = Awaited<ReturnType<typeof getBlogPosts>>[number];
 
 type PostItemProps = {
   post: BlogPost;

@@ -4,13 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-type NavItemLink = {
-  title: string;
-  href: string;
-  hidden: boolean;
-  target?: string;
-};
+import type { NavItemLink } from "@/types/nav";
 
 type NavItemProps = {
   link: NavItemLink;
