@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-export default function PageviewCounter({ slug }: { slug: string }) {
+type PageviewCounterProps = {
+  slug: string;
+};
+
+export default function PageviewCounter({ slug }: PageviewCounterProps) {
   const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
@@ -32,12 +36,8 @@ export default function PageviewCounter({ slug }: { slug: string }) {
     };
   }, [slug]);
 
-  if (count === null) {
-    return (
-      <p className="inline-flex items-center gap-1 text-muted-foreground text-sm">
-        Loading…
-      </p>
-    );
+  if (!count) {
+    return null;
   }
 
   return (
