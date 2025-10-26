@@ -1,15 +1,10 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
 import Header from "@/components/header";
 import { METADATA } from "@/data/metadata";
+import { font } from "@/lib/fonts";
 import { Providers } from "@/providers/providers";
-
-const font = Geist({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: METADATA.TITLE,
@@ -27,11 +22,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+type RootLayoutProps = Readonly<{
   children: React.ReactNode;
-}>) {
+}>;
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${font.className} antialiased`}>
