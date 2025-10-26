@@ -21,10 +21,10 @@ const headerVariants = {
 export function HeaderAnimation({ children }: HeaderAnimationProps) {
   return (
     <motion.header
-      className="border-border/40 bg-background/95 supports-backdrop-filter:bg-background/60 top-0 z-50 h-16 w-full backdrop-blur"
-      variants={headerVariants}
-      initial="hidden"
       animate="visible"
+      className="top-0 z-50 h-16 w-full border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60"
+      initial="hidden"
+      variants={headerVariants}
     >
       {children}
     </motion.header>

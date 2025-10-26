@@ -1,10 +1,10 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { cubicBezier, motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface NavItemProps {
   link: {
@@ -40,28 +40,28 @@ export function NavItem({ link, index }: NavItemProps) {
 
   return (
     <motion.div
+      animate="visible"
+      custom={index + 1}
+      initial="hidden"
       key={link.href}
       variants={itemVariants}
-      initial="hidden"
-      animate="visible"
       whileHover="hover"
       whileTap="tap"
-      custom={index + 1}
     >
       <Button
-        key={link.href}
-        variant={"ghost"}
+        asChild
         className={cn(
           "transition-transform active:scale-90",
-          isActive ? "dark:bg-accent/50 bg-accent" : "text-foreground/60",
+          isActive ? "bg-accent dark:bg-accent/50" : "text-foreground/60"
         )}
-        asChild
+        key={link.href}
+        variant={"ghost"}
       >
         <Link
+          aria-disabled={link.hidden}
+          className={"font-medium text-sm transition-colors"}
           href={link.href}
           target={link.target}
-          className={"text-sm font-medium transition-colors"}
-          aria-disabled={link.hidden}
         >
           {link.title}
         </Link>

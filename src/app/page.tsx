@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { cubicBezier, motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import { cubicBezier, motion } from "motion/react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -32,37 +32,37 @@ export default function Home() {
 
   return (
     <motion.div
-      variants={containerVariants}
-      initial="hidden"
       animate="visible"
       className="flex h-full flex-col gap-16"
+      initial="hidden"
+      variants={containerVariants}
     >
-      <div className="text-muted-foreground flex w-full max-w-xl flex-col gap-6 font-light">
+      <div className="flex w-full max-w-xl flex-col gap-6 font-light text-muted-foreground">
         <motion.p
-          variants={paragraphVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
           custom={0}
+          initial="hidden"
+          variants={paragraphVariants}
+          viewport={{ once: true, amount: 0.3 }}
+          whileInView="visible"
         >
           I&apos;m{" "}
-          <span className="text-foreground font-medium">Alexandre Trotel</span>,
+          <span className="font-medium text-foreground">Alexandre Trotel</span>,
           a tech entrepreneur and full stack developer with interests in web
           development, machine learning, and open source.
         </motion.p>
 
         <motion.p
-          variants={paragraphVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
           custom={1}
+          initial="hidden"
+          variants={paragraphVariants}
+          viewport={{ once: true, amount: 0.3 }}
+          whileInView="visible"
         >
           Currently working as a{" "}
           <span className="italic">Consultant-Développeur®</span> at{" "}
           <Link
+            className="font-medium text-primary hover:underline"
             href="https://www.allohouston.fr"
-            className="text-primary font-medium hover:underline"
             target="_blank"
           >
             <span className="italic">ALLO</span>
@@ -73,16 +73,16 @@ export default function Home() {
         </motion.p>
 
         <motion.p
-          variants={paragraphVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
           custom={2}
+          initial="hidden"
+          variants={paragraphVariants}
+          viewport={{ once: true, amount: 0.3 }}
+          whileInView="visible"
         >
           I&apos;m also the author of{" "}
           <Link
+            className="font-medium text-primary hover:underline"
             href="https://zap-ts.alexandretrotel.org"
-            className="text-primary font-medium hover:underline"
             target="_blank"
           >
             Zap.ts ⚡️
@@ -92,20 +92,20 @@ export default function Home() {
         </motion.p>
 
         <motion.div
-          variants={paragraphVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
           custom={3}
+          initial="hidden"
+          variants={paragraphVariants}
+          viewport={{ once: true, amount: 0.3 }}
+          whileInView="visible"
         >
           <Button
-            variant="ghost"
-            className="active:bg-accent active:scale-95"
             asChild
+            className="active:scale-95 active:bg-accent"
+            variant="ghost"
           >
             <Link
+              className="flex items-center gap-2 font-medium text-primary text-sm"
               href="/blog/the-story-of-my-life"
-              className="text-primary flex items-center gap-2 text-sm font-medium"
             >
               <ArrowRight size={16} />
               Read my story
