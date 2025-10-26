@@ -134,10 +134,10 @@ export const customComponents: MDXComponents = {
   ),
   a: ({ children, href }) => (
     <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
       className="mdx-link"
+      href={href}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       {children}
     </a>

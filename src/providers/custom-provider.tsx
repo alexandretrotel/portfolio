@@ -8,8 +8,8 @@ export function CustomProviders({ children }: { children: React.ReactNode }) {
 
   return (
     <ProgressProvider
-      height="4px"
       color={theme.theme === "dark" ? "#fff" : "#000"}
+      height="4px"
       options={{ showSpinner: false }}
       shallowRouting
     >

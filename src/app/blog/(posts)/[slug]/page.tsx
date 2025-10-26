@@ -1,8 +1,8 @@
-import { getBlogPosts, getPostFromSlug } from "@/lib/blog";
 import { Redis } from "@upstash/redis";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { customComponents as components } from "@/mdx-components";
 import type { Metadata } from "next";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { getBlogPosts, getPostFromSlug } from "@/lib/blog";
+import { customComponents as components } from "@/mdx-components";
 
 const redis =
   process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
@@ -62,10 +62,10 @@ export default async function Page({
 
   return (
     <>
-      <p className="text-muted-foreground inline-flex items-center gap-1 text-sm">
+      <p className="inline-flex items-center gap-1 text-muted-foreground text-sm">
         {count} view{count > 1 ? "s" : ""}
       </p>
-      <MDXRemote source={post?.content ?? ""} components={components} />
+      <MDXRemote components={components} source={post?.content ?? ""} />
     </>
   );
 }

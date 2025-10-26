@@ -20,17 +20,13 @@
     ],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "**/*.js",
-    "**/*.jsx",
-    "**/*.md",
-    "**/*.mdx"
+    "**/*.{js,jsx,ts,tsx,md,mdx}",
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

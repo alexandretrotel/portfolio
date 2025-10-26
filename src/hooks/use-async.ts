@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export function useAsyncEffect<T>(asyncFn: () => Promise<T>) {
   const [data, setData] = useState<T | null>(null);

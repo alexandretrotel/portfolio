@@ -2,8 +2,8 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import { METADATA } from "@/data/metadata";
 import Header from "@/components/header";
+import { METADATA } from "@/data/metadata";
 import { Providers } from "@/providers/providers";
 
 const font = Geist({
@@ -36,7 +36,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${font.className} antialiased`}>
         <Providers>
-          <div className="bg-background min-h-screen px-6">
+          <div className="min-h-screen bg-background px-6">
             <Header />
             <main className="mx-auto min-h-[calc(100vh-4rem)] max-w-3xl py-12 md:py-18">
               {children}

@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import matter from "gray-matter";
 import { Redis } from "@upstash/redis";
+import matter from "gray-matter";
 
 const redis =
   process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
@@ -22,13 +22,12 @@ export interface BlogPost {
   showDate?: boolean;
 }
 
-const formatDate = (date: Date) => {
-  return new Date(date).toLocaleDateString("en-US", {
+const formatDate = (date: Date) =>
+  new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
     day: "numeric",
   });
-};
 
 export async function getBlogPosts(): Promise<BlogPost[]> {
   try {
@@ -43,7 +42,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
 
         const { data, content } = matter(fileContents);
 
-        if (!data.title || !data.description || !data.date) {
+        if (!(data.title && data.description && data.date)) {
           console.warn(`Missing required frontmatter in ${fileName}`);
           return null;
         }
@@ -61,12 +60,12 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
           date,
           content,
         };
-      }),
+      })
     );
 
     const validPosts = posts.filter((post): post is BlogPost => post !== null);
     const sortedPosts = validPosts.sort(
-      (a, b) => b.date.getTime() - a.date.getTime(),
+      (a, b) => b.date.getTime() - a.date.getTime()
     );
 
     const enhancedPosts = await Promise.all(
@@ -87,7 +86,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
           formattedDate,
           showDate,
         };
-      }),
+      })
     );
 
     return enhancedPosts;
@@ -108,7 +107,7 @@ export async function getPostFromSlug(slug: string): Promise<BlogPost | null> {
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
 
-    if (!data.title || !data.description || !data.date) {
+    if (!(data.title && data.description && data.date)) {
       console.warn(`Missing required frontmatter in ${slug}.mdx`);
       return null;
     }

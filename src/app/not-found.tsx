@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { useRouter } from "@bprogress/next/app";
+import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   const router = useRouter();
@@ -12,9 +12,9 @@ export default function NotFound() {
         <p className="text-muted-foreground">This page doesn&apos;t exist.</p>
       </div>
       <Button
-        variant={"ghost"}
-        className="active:bg-accent active:scale-90"
+        className="active:scale-90 active:bg-accent"
         onClick={() => router.back()}
+        variant={"ghost"}
       >
         Go back
       </Button>
