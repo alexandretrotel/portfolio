@@ -165,3 +165,8 @@ export async function getNumberOfPosts(): Promise<number> {
     return 0;
   }
 }
+
+export async function shouldShowBlog(): Promise<boolean> {
+  const posts = await getBlogPosts();
+  return posts.length > 0;
+}
