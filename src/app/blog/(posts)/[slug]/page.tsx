@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import PageviewCounter from "@/components/pageview-counter";
 import { getBlogPosts, getPostFromSlug } from "@/lib/blog";
-import { redis } from "@/lib/redis";
 import { customComponents as components } from "@/mdx-components";
 
 export async function generateStaticParams() {
@@ -52,16 +52,9 @@ export default async function Page({ params }: SlugPageProps) {
   const { slug } = await params;
   const post = await getPostFromSlug(slug);
 
-  let count = 0;
-  if (redis) {
-    count = await redis.incr(`pageviews:${slug}`);
-  }
-
   return (
     <>
-      <p className="inline-flex items-center gap-1 text-muted-foreground text-sm">
-        {count} view{count > 1 ? "s" : ""}
-      </p>
+      <PageviewCounter slug={slug} />
       <MDXRemote components={components} source={post?.content ?? ""} />
     </>
   );
