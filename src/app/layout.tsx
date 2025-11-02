@@ -28,7 +28,7 @@ type RootLayoutProps = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className={`${font.className} antialiased`}>
         <Providers>
           <div className="min-h-screen bg-background px-6">
