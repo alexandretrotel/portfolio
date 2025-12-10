@@ -1,0 +1,99 @@
+---
+import { getCollection } from "astro:content";
+import { redis } from "@/lib/redis";
+
+let posts: Awaited<ReturnType<typeof getCollection<"blog">>> = [];
+try {
+    posts = await getCollection("blog");
+} catch {
+    posts = [];
+}
+
+const formatDate = (date: Date): string =>
+    date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+    });
+
+const formatViewCount = (views: number): string =>
+    new Intl.NumberFormat("en-US").format(views);
+
+async function getViewCount(slug: string): Promise<number> {
+    if (!redis) {
+        return 0;
+    }
+    try {
+        const views = await redis.get(`pageviews:${slug}`);
+        return typeof views === "number" ? views : 0;
+    } catch {
+        return 0;
+    }
+}
+
+// Sort by date (newest first) and add view counts
+const sortedPosts = posts.sort(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const enhancedPosts = await Promise.all(
+    sortedPosts.map(async (post, index, arr) => {
+        const views = await getViewCount(post.slug);
+        const formattedDate = formatDate(post.data.date);
+
+        const showDate =
+            index === 0 ||
+            index === arr.length - 1 ||
+            (arr[index + 1] &&
+                formattedDate !== formatDate(arr[index + 1].data.date));
+
+        return {
+            ...post,
+            views,
+            formattedViews: formatViewCount(views),
+            formattedDate,
+            showDate,
+        };
+    }),
+);
+---
+
+<Layout title="Blog | Alexandre Trotel">
+    <div class="flex flex-col gap-6">
+        <ul class="flex flex-col">
+            {
+                enhancedPosts.map((post) => (
+                    <li>
+                        <a
+                            aria-label={`Read blog post: ${post.data.title}`}
+                            class="group flex flex-col items-start gap-1 rounded-sm py-4 transition-all hover:bg-muted/50 active:scale-95 md:flex-row md:items-center md:gap-4 md:p-4"
+                            href={`/blog/${post.slug}`}
+                        >
+                            <div class="flex items-center gap-2 text-muted-foreground">
+                                <span
+                                    class={cn(
+                                        "shrink-0 font-light text-muted-foreground text-xs md:w-20",
+                                        { "opacity-0": !post.showDate },
+                                    )}
+                                >
+                                    {post.formattedDate}
+                                </span>
+                            </div>
+
+                            <span class="flex-1 font-medium text-base text-foreground">
+                                {post.data.title}
+                            </span>
+
+                            {post.views > 0 && (
+                                <span class="hidden text-right font-light text-muted-foreground text-xs md:flex">
+                                    {post.formattedViews} view
+                                    {post.views > 1 ? "s" : ""}
+                                </span>
+                            )}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</Layout>

@@ -1,0 +1,71 @@
+---
+import "@/styles/globals.css";
+import { METADATA } from "@/data/metadata";
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const { title = METADATA.TITLE, description = METADATA.DESCRIPTION } =
+  Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={description}>
+    <meta name="generator" content={Astro.generator}>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content={METADATA.BASE_URL}>
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+
+    <!-- Twitter -->
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+
+    <link rel="icon" type="image/png" href="/logo.png">
+    <title>{title}</title>
+
+    <!-- Geist Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    >
+
+    <!-- Theme Script (prevents flash) -->
+    <script is:inline>
+      const getThemePreference = () => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      };
+      const theme = getThemePreference();
+      document.documentElement.classList.toggle("dark", theme === "dark");
+    </script>
+
+    <ViewTransitions/>
+  </head>
+  <body class="font-['Geist',sans-serif] antialiased">
+    <div class="min-h-screen bg-background px-6">
+      <Header/>
+      <main class="mx-auto min-h-[calc(100vh-4rem)] max-w-3xl py-12 md:py-18">
+        <slot/>
+      </main>
+    </div>
+  </body>
+</html>

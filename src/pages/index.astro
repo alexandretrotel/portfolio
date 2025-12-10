@@ -1,0 +1,58 @@
+---
+import { getCollection } from "astro:content";
+
+let showBlog = false;
+try {
+  const blogPosts = await getCollection("blog");
+  showBlog = blogPosts.length > 0;
+} catch {
+  showBlog = false;
+}
+---
+
+<Layout>
+  <div class="flex h-full flex-col gap-16">
+    <div
+      class="flex w-full max-w-xl flex-col gap-6 font-light text-muted-foreground"
+    >
+      <p>
+        I'm{" "}
+        <span class="font-medium text-foreground">Alexandre Trotel</span>, a
+        tech entrepreneur and full stack developer with interests in web
+        development, machine learning, and open source.
+      </p>
+
+      <p>
+        I'm also the author of{" "}
+        <a
+          class="font-medium text-primary hover:underline"
+          href="https://www.zapstudio.dev"
+          target="_blank"
+        >
+          Zap Studio
+        </a>
+        {" "}– where we help developers and businesses create powerful
+        applications by providing high-quality templates and tools.
+      </p>
+
+      {
+                showBlog && (
+                    <div>
+                        <Button
+                            variant="ghost"
+                            class="active:scale-95 active:bg-accent"
+                        >
+                            <a
+                                class="flex items-center gap-2 font-medium text-primary text-sm"
+                                href="/blog"
+                            >
+                                <ArrowRight size={16} />
+                                Check out my blog
+                            </a>
+                        </Button>
+                    </div>
+                )
+            }
+    </div>
+  </div>
+</Layout>

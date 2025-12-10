@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["ultracite/core", "ultracite/next", "ultracite/react"],
+  "extends": ["ultracite/core", "ultracite/astro", "ultracite/react"],
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**", "!src/components/ui"]
+    "includes": ["**"]
   }
 }

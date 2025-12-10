@@ -1,0 +1,30 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    return posts.map((_post) => ({
+        params: { slug: _post.slug },
+        props: { _post },
+    }));
+}
+
+type Props = {
+    post: CollectionEntry<"blog">;
+};
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout
+    title={`${post.data.title} | Alexandre Trotel`}
+    description={post.data.description}
+>
+    <article class="mx-auto max-w-3xl">
+        <div class="prose prose-gray dark:prose-invert max-w-none">
+            <PageviewCounter slug={post.slug} client:load />
+            <Content />
+        </div>
+    </article>
+</Layout>
