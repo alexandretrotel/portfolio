@@ -4,64 +4,64 @@ import { redis } from "@/lib/redis";
 
 let posts: Awaited<ReturnType<typeof getCollection<"blog">>> = [];
 try {
-    posts = await getCollection("blog");
+  posts = await getCollection("blog");
 } catch {
-    posts = [];
+  posts = [];
 }
 
 const formatDate = (date: Date): string =>
-    date.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-    });
+  date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 
 const formatViewCount = (views: number): string =>
-    new Intl.NumberFormat("en-US").format(views);
+  new Intl.NumberFormat("en-US").format(views);
 
 async function getViewCount(slug: string): Promise<number> {
-    if (!redis) {
-        return 0;
-    }
-    try {
-        const views = await redis.get(`pageviews:${slug}`);
-        return typeof views === "number" ? views : 0;
-    } catch {
-        return 0;
-    }
+  if (!redis) {
+    return 0;
+  }
+  try {
+    const views = await redis.get(`pageviews:${slug}`);
+    return typeof views === "number" ? views : 0;
+  } catch {
+    return 0;
+  }
 }
 
 // Sort by date (newest first) and add view counts
 const sortedPosts = posts.sort(
-    (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 
 const enhancedPosts = await Promise.all(
-    sortedPosts.map(async (post, index, arr) => {
-        const views = await getViewCount(post.slug);
-        const formattedDate = formatDate(post.data.date);
+  sortedPosts.map(async (post, index, arr) => {
+    const views = await getViewCount(post.slug);
+    const formattedDate = formatDate(post.data.date);
 
-        const showDate =
-            index === 0 ||
-            index === arr.length - 1 ||
-            (arr[index + 1] &&
-                formattedDate !== formatDate(arr[index + 1].data.date));
+    const showDate =
+      index === 0 ||
+      index === arr.length - 1 ||
+      (arr[index + 1] &&
+        formattedDate !== formatDate(arr[index + 1].data.date));
 
-        return {
-            ...post,
-            views,
-            formattedViews: formatViewCount(views),
-            formattedDate,
-            showDate,
-        };
-    }),
+    return {
+      ...post,
+      views,
+      formattedViews: formatViewCount(views),
+      formattedDate,
+      showDate,
+    };
+  })
 );
 ---
 
 <Layout title="Blog | Alexandre Trotel">
-    <div class="flex flex-col gap-6">
-        <ul class="flex flex-col">
-            {
+  <div class="flex flex-col gap-6">
+    <ul class="flex flex-col">
+      {
                 enhancedPosts.map((post) => (
                     <li>
                         <a
@@ -94,6 +94,6 @@ const enhancedPosts = await Promise.all(
                     </li>
                 ))
             }
-        </ul>
-    </div>
+    </ul>
+  </div>
 </Layout>
