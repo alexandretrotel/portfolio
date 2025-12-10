@@ -4,29 +4,31 @@ import PageviewCounter from "@/components/page-view-counter";
 import Layout from "@/layouts/layout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  return posts.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { post: entry },
-  }));
+    const posts = await getCollection("blog");
+    return posts.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { post: entry },
+    }));
 }
 
 type Props = {
-  post: CollectionEntry<"blog">;
+    post: CollectionEntry<"blog">;
 };
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+export const prerender = true;
 ---
 
 <Layout
-  title={`${post.data.title} | Alexandre Trotel`}
-  description={post.data.description}
+    title={`${post.data.title} | Alexandre Trotel`}
+    description={post.data.description}
 >
-  <article class="mx-auto max-w-3xl">
-    <div class="prose prose-gray dark:prose-invert max-w-none">
-      <PageviewCounter slug={post.slug} client:load/>
-      <Content/>
-    </div>
-  </article>
+    <article class="mx-auto max-w-3xl">
+        <div class="prose prose-gray dark:prose-invert max-w-none">
+            <PageviewCounter slug={post.slug} client:load />
+            <Content />
+        </div>
+    </article>
 </Layout>
