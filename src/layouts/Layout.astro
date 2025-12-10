@@ -1,5 +1,7 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import "@/styles/globals.css";
+import Header from "@/components/header.astro";
 import { METADATA } from "@/data/metadata";
 
 type Props = {
@@ -58,7 +60,7 @@ const { title = METADATA.TITLE, description = METADATA.DESCRIPTION } =
       document.documentElement.classList.toggle("dark", theme === "dark");
     </script>
 
-    <ViewTransitions/>
+    <ClientRouter/>
   </head>
   <body class="font-['Geist',sans-serif] antialiased">
     <div class="min-h-screen bg-background px-6">
