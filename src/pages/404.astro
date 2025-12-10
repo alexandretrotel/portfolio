@@ -1,10 +1,15 @@
+---
+import Button from "@/components/ui/button.astro";
+import Layout from "@/layouts/layout.astro";
+---
+
 <Layout title="Not Found | Alexandre Trotel">
   <div class="flex h-full flex-col items-center justify-center gap-4 py-32">
     <div class="flex flex-col items-center justify-center">
-      <p class="text-muted-foreground">This page doesn't exist.</p>
+      <p class="text-muted-foreground">This page does not exist.</p>
     </div>
     <Button variant="ghost" class="active:scale-90 active:bg-accent">
-      <a href="/" onclick="history.back(); return false;"> Go back </a>
+      <a href="/" onclick="history.back(); return false;">Go back</a>
     </Button>
   </div>
 </Layout>
