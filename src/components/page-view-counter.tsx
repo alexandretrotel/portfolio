@@ -1,11 +1,17 @@
-"use client";
-
+import { api } from "@zap-studio/fetch";
 import useSWR from "swr";
-import { fetcher } from "@/lib/swr";
+import { z } from "zod";
 
 type PageviewCounterProps = {
   slug: string;
 };
+
+const PageviewSchema = z.object({
+  count: z.number(),
+});
+
+const fetcher = (url: string) =>
+  api.get(url, PageviewSchema).then((data) => data.count);
 
 export default function PageviewCounter({ slug }: PageviewCounterProps) {
   const url = `/api/pageview?slug=${encodeURIComponent(slug)}`;

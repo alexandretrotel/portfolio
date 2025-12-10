@@ -1,0 +1,41 @@
+---
+type LinkItem = {
+  title: string;
+  href: string;
+  hidden: boolean;
+  target?: string;
+};
+
+type Props = {
+  link: LinkItem;
+};
+
+const { link } = Astro.props;
+const pathname = Astro.url.pathname;
+
+if (link.hidden) {
+  return null;
+}
+
+const isActive =
+  (pathname.startsWith(link.href) && link.href !== "/") ||
+  pathname === link.href;
+---
+
+<div>
+  <Button
+    variant="ghost"
+    class={cn(
+            "transition-transform active:scale-90",
+            isActive ? "bg-accent dark:bg-accent/50" : "text-foreground/60",
+        )}
+  >
+    <a
+      class="font-medium text-sm transition-colors"
+      href={link.href}
+      target={link.target}
+    >
+      {link.title}
+    </a>
+  </Button>
+</div>
