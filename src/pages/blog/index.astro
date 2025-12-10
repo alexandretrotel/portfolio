@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
+import Layout from "@/layouts/layout.astro";
 import { redis } from "@/lib/redis";
+import { cn } from "@/lib/utils";
 
 let posts: Awaited<ReturnType<typeof getCollection<"blog">>> = [];
 try {
