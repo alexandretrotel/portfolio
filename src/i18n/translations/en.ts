@@ -12,14 +12,14 @@ export const en = {
     github: "\\github",
   },
   home: {
-    intro: "I'm",
+    intro: "",
     name: "Alexandre Trotel",
-    bio: ", a tech entrepreneur and full stack developer with interests in web development, machine learning, and open source.",
-    authorOf: "I'm also the founder of",
+    bio: ". Full-stack developer. I build things, ship fast, and iterate. I care about code that works, not code that impresses.",
+    authorOf: "I run",
     zapStudio: "Zap Studio",
     zapStudioDesc:
-      "– where we help developers and businesses create powerful applications by providing high-quality templates and tools.",
-    checkBlog: "Check out my blog",
+      "– open-source tools, libraries, and templates for developers who'd rather ship than write boilerplate.",
+    checkBlog: "Read the blog",
   },
   blog: {
     title: "Blog",
