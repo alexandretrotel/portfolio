@@ -1,7 +1,10 @@
 ---
 import { getCollection } from "astro:content";
 import DarkModeToggle from "@/components/dark-mode-toggle.svelte";
+import LanguageSwitcher from "@/components/language-switcher.astro";
 import NavItem from "@/components/nav-item.astro";
+import { getTranslations } from "@/i18n/translations";
+import { getLocaleFromUrl } from "@/i18n/utils";
 
 type LinkItem = {
   title: string;
@@ -10,9 +13,14 @@ type LinkItem = {
   target?: string;
 };
 
+const locale = getLocaleFromUrl(Astro.url);
+const t = getTranslations(locale);
+const prefix = locale === "en" ? "" : `/${locale}`;
+
 let showBlog = false;
 try {
-  const blogPosts = await getCollection("blog");
+  const collectionName = locale === "fr" ? "blog-fr" : "blog-en";
+  const blogPosts = await getCollection(collectionName);
   showBlog = blogPosts.length > 0;
 } catch {
   showBlog = false;
@@ -20,17 +28,17 @@ try {
 
 const links: LinkItem[] = [
   {
-    title: "\\home",
-    href: "/",
+    title: t.nav.home,
+    href: `${prefix}/`,
     hidden: true,
   },
   {
-    title: "\\blog",
-    href: "/blog",
+    title: t.nav.blog,
+    href: `${prefix}/blog`,
     hidden: !showBlog,
   },
   {
-    title: "\\github",
+    title: t.nav.github,
     href: "https://www.github.com/alexandretrotel",
     hidden: false,
     target: "_blank",
@@ -44,7 +52,7 @@ const links: LinkItem[] = [
   <div class="mx-auto flex h-14 max-w-3xl items-center justify-between py-8">
     <a
       class="flex items-center gap-4 transition-transform active:scale-90"
-      href="/"
+      href={`${prefix}/`}
     >
       <img
         alt="Logo"
@@ -55,8 +63,10 @@ const links: LinkItem[] = [
       >
     </a>
 
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-4">
       {links.map((link) => <NavItem link={link} />)}
+
+      <LanguageSwitcher/>
 
       <div class="transition-transform active:scale-90">
         <DarkModeToggle client:load/>

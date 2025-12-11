@@ -1,20 +1,27 @@
 ---
-import { ClientRouter } from "astro:transitions";
 import "@/styles/globals.css";
+
+import { ClientRouter } from "astro:transitions";
 import Header from "@/components/header.astro";
-import { METADATA } from "@/data/metadata";
+import { getTranslations } from "@/i18n/translations";
+import { getLocaleFromUrl } from "@/i18n/utils";
 
 type Props = {
   title?: string;
   description?: string;
 };
 
-const { title = METADATA.TITLE, description = METADATA.DESCRIPTION } =
+const locale = getLocaleFromUrl(Astro.url);
+const t = getTranslations(locale);
+
+const { title = t.metadata.title, description = t.metadata.description } =
   Astro.props;
+
+const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,8 +30,8 @@ const { title = METADATA.TITLE, description = METADATA.DESCRIPTION } =
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:url" content={METADATA.BASE_URL}>
+    <meta property="og:locale" content={ogLocale}>
+    <meta property="og:url" content={Astro.url.href}>
     <meta property="og:title" content={title}>
     <meta property="og:description" content={description}>
 

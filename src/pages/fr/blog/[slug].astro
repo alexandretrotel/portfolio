@@ -4,7 +4,7 @@ import PageviewCounter from "@/components/page-view-counter.svelte";
 import Layout from "@/layouts/layout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog-en");
+  const posts = await getCollection("blog-fr");
   return posts.map((entry) => ({
     params: { slug: entry.slug },
     props: { post: entry },
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 type Props = {
-  post: CollectionEntry<"blog-en">;
+  post: CollectionEntry<"blog-fr">;
 };
 
 const { post } = Astro.props;
@@ -27,7 +27,7 @@ export const prerender = true;
 >
   <article class="mx-auto max-w-3xl">
     <div class="prose prose-gray dark:prose-invert max-w-none">
-      <PageviewCounter slug={post.slug} client:load/>
+      <PageviewCounter slug={`fr:${post.slug}`} client:load/>
       <Content/>
     </div>
   </article>
