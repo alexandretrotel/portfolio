@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import DarkModeToggle from "@/components/dark-mode-toggle.svelte";
-import LanguageSwitcher from "@/components/language-switcher.astro";
+
 import NavItem from "@/components/nav-item.astro";
 import { getTranslations } from "@/i18n/translations";
 import { getLocaleFromUrl } from "@/i18n/utils";
@@ -65,7 +65,6 @@ const links: LinkItem[] = [
 
     <div class="flex items-center gap-2">
       {links.map((link) => <NavItem link={link} />)}
-      <LanguageSwitcher/>
       <DarkModeToggle client:load/>
     </div>
   </div>
