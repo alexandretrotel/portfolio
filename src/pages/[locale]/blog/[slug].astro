@@ -4,15 +4,20 @@ import PageviewCounter from "@/components/page-view-counter.svelte";
 import { defaultLocale, type Locale, locales } from "@/i18n/locales";
 import { getBlogEntry } from "@/i18n/utils";
 import Layout from "@/layouts/layout.astro";
+import type { BlogCollection } from "@/content/config";
 
 export async function getStaticPaths() {
-  const paths: { params: { slug: string; locale: Locale } }[] = [];
+  const paths: {
+    params: { slug: string; locale: Locale };
+    props: { post: CollectionEntry<BlogCollection> };
+  }[] = [];
   for (const locale of locales) {
     const blogEntry = getBlogEntry(locale ?? defaultLocale);
     const posts = await getCollection(blogEntry);
     for (const _post of posts) {
       paths.push({
         params: { slug: _post.slug, locale: locale ?? defaultLocale },
+        props: { post: _post },
       });
     }
   }
