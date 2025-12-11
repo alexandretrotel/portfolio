@@ -1,11 +1,10 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { defaultLocale, type Locale, localeFormats } from "./locales";
+import { defaultLocale, type Locale, localeFormats, locales } from "./locales";
 
-// FIXME: make it work independantly of just "fr" locale
 export function getLocaleFromUrl(url: URL): Locale {
   const [, lang] = url.pathname.split("/");
-  if (lang === "fr") {
-    return "fr";
+  if (locales.includes(lang as Locale)) {
+    return lang as Locale;
   }
   return defaultLocale;
 }
@@ -26,10 +25,9 @@ export function formatNumber(num: number, locale: Locale): string {
   return new Intl.NumberFormat(localeFormats[locale]).format(num);
 }
 
-// FIXME: make it work independantly of just "fr" locale
 export function stripLocaleFromPath(pathname: string): string {
   const segments = pathname.split("/").filter(Boolean);
-  if (segments[0] === "fr") {
+  if (locales.includes(segments[0] as Locale)) {
     const rest = segments.slice(1).join("/");
     return rest ? `/${rest}` : "/";
   }
