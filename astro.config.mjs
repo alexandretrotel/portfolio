@@ -15,6 +15,10 @@ export default defineConfig({
   output: "server",
   adapter: vercel(),
   integrations: [svelte(), mdx(), sitemap()],
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "fr"],
+  },
   vite: {
     plugins: [tailwindcss()],
     resolve: {
