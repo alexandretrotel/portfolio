@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { createQuery } from "@tanstack/svelte-query";
   import { api } from "@zap-studio/fetch";
   import { z } from "astro/zod";
+  import { onMount } from "svelte";
 
   type Props = {
     slug: string;
@@ -13,20 +13,24 @@
     count: z.number(),
   });
 
-  const query = createQuery(() => ({
-    queryKey: ["pageview", slug],
-    queryFn: async () => {
+  let pageViewCount: number | null = $state(null);
+  let isLoaded = $state(false);
+
+  onMount(async () => {
+    try {
       const result = await api.get(
         `/api/pageview?slug=${encodeURIComponent(slug)}`,
         PageCountSchema
       );
-      return result.count;
-    },
-  }));
+      pageViewCount = result.count;
+    } finally {
+      isLoaded = true;
+    }
+  });
 </script>
 
-{#if query.isSuccess}
+{#if isLoaded && pageViewCount !== null}
   <p class="inline-flex items-center gap-1 text-muted-foreground text-sm">
-    {query.data}view{query.data !== 1 ? "s" : ""}
+    {pageViewCount}view{pageViewCount !== 1 ? "s" : ""}
   </p>
 {/if}
