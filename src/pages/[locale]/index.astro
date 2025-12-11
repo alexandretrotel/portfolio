@@ -2,14 +2,18 @@
 import { getCollection } from "astro:content";
 import { ArrowRight } from "lucide-svelte";
 import Button from "@/components/ui/button.astro";
+import { defaultLocale, type Locale } from "@/i18n/locales";
 import { getTranslations } from "@/i18n/translations";
+import { getBlogEntry } from "@/i18n/utils";
 import Layout from "@/layouts/layout.astro";
 
-const t = getTranslations("fr");
+const locale = Astro.params.locale as Locale | undefined;
+const t = getTranslations(locale);
 
 let showBlog = false;
 try {
-  const blogPosts = await getCollection("blog-fr");
+  const blogEntry = getBlogEntry(locale ?? defaultLocale);
+  const blogPosts = await getCollection(blogEntry);
   showBlog = blogPosts.length > 0;
 } catch {
   showBlog = false;
