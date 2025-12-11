@@ -35,3 +35,7 @@ export function stripLocaleFromPath(pathname: string): string {
   }
   return pathname;
 }
+
+export function getBlogEntry(locale: Locale): `blog-${Locale}` {
+  return `blog-${locale}` as const;
+}

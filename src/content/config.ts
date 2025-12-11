@@ -21,3 +21,5 @@ export const collections = {
   "blog-en": englishBlog,
   "blog-fr": frenchBlog,
 };
+
+export type BlogCollection = keyof typeof collections;
