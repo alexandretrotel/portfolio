@@ -52,7 +52,7 @@ const enhancedPosts = await Promise.all(
                             <div class="flex items-center gap-2 text-muted-foreground">
                                 <span
                                     class={cn(
-                                        "shrink-0 font-light text-muted-foreground text-xs md:w-20",
+                                        "shrink-0 font-light text-muted-foreground text-sm md:w-20",
                                         { "opacity-0": !post.showDate },
                                     )}
                                 >
@@ -60,7 +60,7 @@ const enhancedPosts = await Promise.all(
                                 </span>
                             </div>
 
-                            <span class="flex-1 font-medium text-base text-foreground">
+                            <span class="flex-1 font-medium text-lg text-foreground">
                                 {post.data.title}
                             </span>
                         </a>
