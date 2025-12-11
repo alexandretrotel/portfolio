@@ -39,3 +39,4 @@ yarn-error.log*
 # public seo files
 public/robots.txt
 public/sitemap*.xml
+.env*.local
