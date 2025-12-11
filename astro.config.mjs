@@ -1,6 +1,5 @@
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 import vercel from "@astrojs/vercel";
@@ -16,7 +15,7 @@ export default defineConfig({
   output: "server",
   prefetch: true,
   adapter: vercel(),
-  integrations: [svelte(), mdx(), sitemap()],
+  integrations: [svelte(), sitemap()],
   i18n: {
     defaultLocale,
     locales,
