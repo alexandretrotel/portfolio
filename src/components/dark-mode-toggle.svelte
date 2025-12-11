@@ -14,6 +14,7 @@
         "inline-flex size-9 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium text-sm outline-none transition-all",
         "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         "focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50",
+        "transition-transform active:scale-90"
     )}
   on:click={toggleTheme}
   type="button"
