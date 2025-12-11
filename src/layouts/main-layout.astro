@@ -2,6 +2,7 @@
 import "@/styles/globals.css";
 
 import { ClientRouter } from "astro:transitions";
+import Footer from "@/components/footer.astro";
 import Header from "@/components/header.astro";
 import { getTranslations } from "@/i18n/translations";
 import { getLocaleFromUrl } from "@/i18n/utils";
@@ -81,6 +82,7 @@ const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
       <main class="mx-auto min-h-[calc(100vh-4rem)] max-w-3xl py-12 md:py-18">
         <slot/>
       </main>
+      <Footer/>
     </div>
   </body>
 </html>
