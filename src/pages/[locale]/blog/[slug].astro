@@ -4,7 +4,7 @@ import PageviewCounter from "@/components/page-view-counter.svelte";
 import type { BlogCollection } from "@/content/config";
 import { defaultLocale, type Locale, locales } from "@/i18n/locales";
 import { getBlogEntry } from "@/i18n/utils";
-import Layout from "@/layouts/layout.astro";
+import Layout from "@/layouts/main-layout.astro";
 
 export async function getStaticPaths() {
   const paths: {

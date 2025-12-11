@@ -5,7 +5,7 @@ import Button from "@/components/ui/button.astro";
 import { defaultLocale, type Locale } from "@/i18n/locales";
 import { getTranslations } from "@/i18n/translations";
 import { getBlogEntry } from "@/i18n/utils";
-import Layout from "@/layouts/layout.astro";
+import Layout from "@/layouts/main-layout.astro";
 
 const locale = Astro.params.locale as Locale | undefined;
 const t = getTranslations(locale);
