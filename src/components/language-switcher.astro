@@ -1,0 +1,36 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { defaultLocale, type Locale, locales } from "@/i18n/locales";
+import { getLocaleFromUrl, stripLocaleFromPath } from "@/i18n/utils";
+
+const currentLocale = getLocaleFromUrl(Astro.url);
+const currentPath = stripLocaleFromPath(Astro.url.pathname);
+
+function getLocaleUrl(locale: Locale): string {
+  if (locale === defaultLocale) {
+    return currentPath || "/";
+  }
+  return getRelativeLocaleUrl(locale, currentPath);
+}
+---
+
+<div class="flex items-center gap-1 text-sm">
+  {locales.map((locale, index) => (
+    <>
+      <a
+        href={getLocaleUrl(locale)}
+        class:list={[
+          "transition-colors hover:text-foreground",
+          locale === currentLocale
+            ? "font-medium text-foreground"
+            : "text-muted-foreground",
+        ]}
+      >
+        {locale.toUpperCase()}
+      </a>
+      {index < locales.length - 1 && (
+        <span class="text-muted-foreground/50">/</span>
+      )}
+    </>
+  ))}
+</div>

@@ -1,5 +1,6 @@
 ---
 import Button from "@/components/ui/button.astro";
+import { stripLocaleFromPath } from "@/i18n/utils";
 import { cn } from "@/lib/utils";
 
 type LinkItem = {
@@ -16,9 +17,13 @@ type Props = {
 const { link } = Astro.props;
 const pathname = Astro.url.pathname;
 
+const normalizedPathname = stripLocaleFromPath(pathname);
+const normalizedHref = stripLocaleFromPath(link.href);
+
 const isActive =
-  (pathname.startsWith(link.href) && link.href !== "/") ||
-  pathname === link.href;
+  (normalizedPathname.startsWith(normalizedHref) && normalizedHref !== "/") ||
+  normalizedPathname === normalizedHref ||
+  (normalizedHref === "/" && normalizedPathname === "");
 ---
 
 {

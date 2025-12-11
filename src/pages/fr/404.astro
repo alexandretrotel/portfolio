@@ -3,7 +3,7 @@ import Button from "@/components/ui/button.astro";
 import { getTranslations } from "@/i18n/translations";
 import Layout from "@/layouts/layout.astro";
 
-const t = getTranslations("en");
+const t = getTranslations("fr");
 ---
 
 <Layout title={t.notFound.title}>
@@ -12,7 +12,7 @@ const t = getTranslations("en");
       <p class="text-muted-foreground">{t.notFound.message}</p>
     </div>
     <Button variant="ghost" class="active:scale-90 active:bg-accent">
-      <a href="/" onclick="history.back(); return false;"
+      <a href="/fr" onclick="history.back(); return false;"
         >{t.notFound.goBack}</a
       >
     </Button>

@@ -5,18 +5,18 @@ import Button from "@/components/ui/button.astro";
 import { getTranslations } from "@/i18n/translations";
 import Layout from "@/layouts/layout.astro";
 
-const t = getTranslations("en");
+const t = getTranslations("fr");
 
 let showBlog = false;
 try {
-  const blogPosts = await getCollection("blog-en");
+  const blogPosts = await getCollection("blog-fr");
   showBlog = blogPosts.length > 0;
 } catch {
   showBlog = false;
 }
 ---
 
-<Layout>
+<Layout title={t.metadata.title} description={t.metadata.description}>
   <div class="flex h-full flex-col gap-16">
     <div
       class="flex w-full max-w-xl flex-col gap-6 font-light text-muted-foreground"
@@ -25,9 +25,7 @@ try {
         {t.home.intro}
         {" "}
         <span class="font-medium text-foreground">{t.home.name}</span>
-        {
-                    t.home.bio
-                }
+        {t.home.bio}
       </p>
 
       <p>
@@ -53,7 +51,7 @@ try {
                         >
                             <a
                                 class="flex items-center gap-2 font-medium text-primary text-sm"
-                                href="/blog"
+                                href="/fr/blog"
                             >
                                 <ArrowRight size={16} />
                                 {t.home.checkBlog}

@@ -1,25 +1,19 @@
 ---
 import { getCollection } from "astro:content";
+import { getTranslations } from "@/i18n/translations";
+import { formatDate, formatNumber } from "@/i18n/utils";
 import Layout from "@/layouts/layout.astro";
 import { redis } from "@/lib/redis";
 import { cn } from "@/lib/utils";
 
-let posts: Awaited<ReturnType<typeof getCollection<"blog">>> = [];
+const t = getTranslations("en");
+
+let posts: Awaited<ReturnType<typeof getCollection<"blog-en">>> = [];
 try {
-  posts = await getCollection("blog");
+  posts = await getCollection("blog-en");
 } catch {
   posts = [];
 }
-
-const formatDate = (date: Date): string =>
-  date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-
-const formatViewCount = (views: number): string =>
-  new Intl.NumberFormat("en-US").format(views);
 
 async function getViewCount(slug: string): Promise<number> {
   if (!redis) {
@@ -41,26 +35,26 @@ const sortedPosts = posts.sort(
 const enhancedPosts = await Promise.all(
   sortedPosts.map(async (post, index, arr) => {
     const views = await getViewCount(post.slug);
-    const formattedDate = formatDate(post.data.date);
+    const formattedDateStr = formatDate(post.data.date, "en");
 
     const showDate =
       index === 0 ||
       index === arr.length - 1 ||
       (arr[index + 1] &&
-        formattedDate !== formatDate(arr[index + 1].data.date));
+        formattedDateStr !== formatDate(arr[index + 1].data.date, "en"));
 
     return {
       ...post,
       views,
-      formattedViews: formatViewCount(views),
-      formattedDate,
+      formattedViews: formatNumber(views, "en"),
+      formattedDate: formattedDateStr,
       showDate,
     };
   })
 );
 ---
 
-<Layout title="Blog | Alexandre Trotel">
+<Layout title={t.blog.pageTitle}>
   <div class="flex flex-col gap-6">
     <ul class="flex flex-col">
       {
@@ -88,8 +82,10 @@ const enhancedPosts = await Promise.all(
 
                             {post.views > 0 && (
                                 <span class="hidden text-right font-light text-muted-foreground text-xs md:flex">
-                                    {post.formattedViews} view
-                                    {post.views > 1 ? "s" : ""}
+                                    {post.formattedViews}{" "}
+                                    {post.views > 1
+                                        ? t.blog.views
+                                        : t.blog.view}
                                 </span>
                             )}
                         </a>
