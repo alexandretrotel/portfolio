@@ -70,8 +70,14 @@ const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
           ? "dark"
           : "light";
       };
-      const theme = getThemePreference();
-      document.documentElement.classList.toggle("dark", theme === "dark");
+
+      const applyTheme = () => {
+        const theme = getThemePreference();
+        document.documentElement.classList.toggle("dark", theme === "dark");
+      };
+
+      applyTheme();
+      document.addEventListener("astro:page-load", applyTheme);
     </script>
 
     <ClientRouter/>
