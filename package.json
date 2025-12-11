@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "format": "pnpm dlx ultracite fix",
-    "lint": "pnpm dlx ultracite check"
+    "lint": "pnpm dlx ultracite check",
+    "validate": "pnpm run check && pnpm run format && pnpm run build"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
