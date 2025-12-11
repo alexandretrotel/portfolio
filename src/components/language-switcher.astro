@@ -1,12 +1,12 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
+import Button from "@/components/ui/button.astro";
 import {
   defaultLocale,
-  type Locale,
   locales as importedLocales,
+  type Locale,
 } from "@/i18n/locales";
 import { getLocaleFromUrl, stripLocaleFromPath } from "@/i18n/utils";
-import Button from "@/components/ui/button.astro";
 
 const locales = importedLocales ?? ["en", "fr"];
 const currentLocale = getLocaleFromUrl?.(Astro.url) ?? locales[0];
