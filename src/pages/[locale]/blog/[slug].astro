@@ -1,10 +1,10 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import PageviewCounter from "@/components/page-view-counter.svelte";
+import type { BlogCollection } from "@/content/config";
 import { defaultLocale, type Locale, locales } from "@/i18n/locales";
 import { getBlogEntry } from "@/i18n/utils";
 import Layout from "@/layouts/layout.astro";
-import type { BlogCollection } from "@/content/config";
 
 export async function getStaticPaths() {
   const paths: {
