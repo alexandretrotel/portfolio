@@ -17,7 +17,18 @@ export default defineConfig({
   output: "server",
   prefetch: true,
   adapter: vercel(),
-  integrations: [svelte(), sitemap()],
+  integrations: [
+    svelte(),
+    sitemap({
+      i18n: {
+        defaultLocale: "en",
+        locales: {
+          en: "en",
+          fr: "fr",
+        },
+      },
+    }),
+  ],
   i18n: {
     defaultLocale,
     locales,
