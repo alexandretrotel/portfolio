@@ -5,6 +5,8 @@ import svelte from "@astrojs/svelte";
 import vercel from "@astrojs/vercel";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
 import { defaultLocale, locales } from "./src/i18n/locales";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -22,6 +24,10 @@ export default defineConfig({
     routing: {
       prefixDefaultLocale: false,
     },
+  },
+  markdown: {
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
   },
   vite: {
     plugins: [tailwindcss()],
