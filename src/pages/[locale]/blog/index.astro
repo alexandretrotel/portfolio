@@ -3,9 +3,8 @@ import { getCollection } from "astro:content";
 import type { BlogCollection } from "@/content/config";
 import { defaultLocale, type Locale } from "@/i18n/locales";
 import { getTranslations } from "@/i18n/translations";
-import { formatDate, formatNumber, getBlogEntry } from "@/i18n/utils";
+import { formatDate, getBlogEntry } from "@/i18n/utils";
 import Layout from "@/layouts/main.astro";
-import { redis } from "@/lib/redis";
 import { cn } from "@/lib/utils";
 
 const locale = Astro.params.locale as Locale | undefined;
@@ -19,25 +18,12 @@ try {
   posts = [];
 }
 
-async function getViewCount(slug: string): Promise<number> {
-  if (!redis) {
-    return 0;
-  }
-  try {
-    const views = await redis.get(`pageviews:fr:${slug}`);
-    return typeof views === "number" ? views : 0;
-  } catch {
-    return 0;
-  }
-}
-
 const sortedPosts = posts.sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 
 const enhancedPosts = await Promise.all(
-  sortedPosts.map(async (post, index, arr) => {
-    const views = await getViewCount(post.slug);
+  sortedPosts.map((post, index, arr) => {
     const formattedDate = formatDate(post.data.date, "fr");
 
     const showDate =
@@ -48,8 +34,6 @@ const enhancedPosts = await Promise.all(
 
     return {
       ...post,
-      views,
-      formattedViews: formatNumber(views, "fr"),
       formattedDate,
       showDate,
     };
@@ -83,11 +67,7 @@ const enhancedPosts = await Promise.all(
                 {post.data.title}
               </span>
 
-              {post.views > 0 && (
-                <span class="hidden text-right font-light text-muted-foreground text-xs md:flex">
-                  {post.formattedViews} {post.views > 1 ? t.blog.views : t.blog.view}
-                </span>
-              )}
+
             </a>
           </li>
         ))

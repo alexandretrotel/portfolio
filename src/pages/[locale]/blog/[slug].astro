@@ -1,6 +1,5 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import PageviewCounter from "@/components/page-view-counter.svelte";
 import type { BlogCollection } from "@/content/config";
 import { defaultLocale, type Locale, locales } from "@/i18n/locales";
 import { getBlogEntry } from "@/i18n/utils";
@@ -40,7 +39,6 @@ export const prerender = true;
 >
   <article class="mx-auto max-w-3xl">
     <div class="prose prose-gray dark:prose-invert max-w-none">
-      <PageviewCounter slug={`fr:${post.slug}`} client:load/>
       <Content/>
     </div>
   </article>
