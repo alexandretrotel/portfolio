@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import PageviewCounter from "@/components/page-view-counter.svelte";
-import Layout from "@/layouts/main-layout.astro";
+import Layout from "@/layouts/main.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog-en");
