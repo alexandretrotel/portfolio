@@ -6,6 +6,7 @@ import svelte from "@astrojs/svelte";
 import vercel from "@astrojs/vercel";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
+import { defaultLocale, locales } from "./src/i18n/locales";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -17,8 +18,8 @@ export default defineConfig({
   adapter: vercel(),
   integrations: [svelte(), mdx(), sitemap()],
   i18n: {
-    defaultLocale: "en",
-    locales: ["en", "fr"],
+    defaultLocale,
+    locales,
     routing: {
       prefixDefaultLocale: false,
     },
