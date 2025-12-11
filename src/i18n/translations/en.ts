@@ -15,7 +15,7 @@ export const en = {
     intro: "I'm",
     name: "Alexandre Trotel",
     bio: ", a tech entrepreneur and full stack developer with interests in web development, machine learning, and open source.",
-    authorOf: "I'm also the author of",
+    authorOf: "I'm also the founder of",
     zapStudio: "Zap Studio",
     zapStudioDesc:
       "– where we help developers and businesses create powerful applications by providing high-quality templates and tools.",
