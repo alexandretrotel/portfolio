@@ -1,7 +1,6 @@
 ---
 import "@/styles/globals.css";
 
-import { ClientRouter } from "astro:transitions";
 import Header from "@/components/header.astro";
 import { getTranslations } from "@/i18n/translations";
 import { getLocaleFromUrl } from "@/i18n/utils";
@@ -66,8 +65,6 @@ const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
       const theme = getThemePreference();
       document.documentElement.classList.toggle("dark", theme === "dark");
     </script>
-
-    <ClientRouter/>
   </head>
   <body class="font-['Geist',sans-serif] antialiased">
     <div class="min-h-screen bg-background px-6">
