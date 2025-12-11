@@ -12,14 +12,14 @@ export const fr = {
     github: "\\github",
   },
   home: {
-    intro: "Je suis",
+    intro: "",
     name: "Alexandre Trotel",
-    bio: ", un entrepreneur tech et développeur full stack avec des intérêts pour le développement web, le machine learning et l'open source.",
-    authorOf: "Je suis également le fondateur de",
+    bio: ". Développeur full-stack. Je construis, je livre vite, et j'itère. Je préfère du code qui marche à du code qui impressionne.",
+    authorOf: "Je dirige",
     zapStudio: "Zap Studio",
     zapStudioDesc:
-      "– où nous aidons les développeurs et les entreprises à créer des applications puissantes en fournissant des templates et des outils de haute qualité.",
-    checkBlog: "Découvrez mon blog",
+      "– des outils open-source, des librairies et des templates pour les développeurs qui préfèrent livrer plutôt qu'écrire du boilerplate.",
+    checkBlog: "Lire le blog",
   },
   blog: {
     title: "Blog",
