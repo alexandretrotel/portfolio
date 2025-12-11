@@ -1,16 +1,20 @@
 ---
 import { getCollection } from "astro:content";
+import type { BlogCollection } from "@/content/config";
+import { defaultLocale, type Locale } from "@/i18n/locales";
 import { getTranslations } from "@/i18n/translations";
-import { formatDate, formatNumber } from "@/i18n/utils";
+import { formatDate, formatNumber, getBlogEntry } from "@/i18n/utils";
 import Layout from "@/layouts/layout.astro";
 import { redis } from "@/lib/redis";
 import { cn } from "@/lib/utils";
 
-const t = getTranslations("fr");
+const locale = Astro.params.locale as Locale | undefined;
+const t = getTranslations(locale);
 
-let posts: Awaited<ReturnType<typeof getCollection<"blog-fr">>> = [];
+let posts: Awaited<ReturnType<typeof getCollection<BlogCollection>>> = [];
 try {
-  posts = await getCollection("blog-fr");
+  const blogEntry = getBlogEntry(locale ?? defaultLocale);
+  posts = await getCollection(blogEntry);
 } catch {
   posts = [];
 }
