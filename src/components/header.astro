@@ -65,12 +65,8 @@ const links: LinkItem[] = [
 
     <div class="flex items-center gap-2">
       {links.map((link) => <NavItem link={link} />)}
-
       <LanguageSwitcher/>
-
-      <div class="transition-transform active:scale-90">
-        <DarkModeToggle client:load/>
-      </div>
+      <DarkModeToggle client:load/>
     </div>
   </div>
 </div>
