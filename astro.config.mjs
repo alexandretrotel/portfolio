@@ -13,6 +13,7 @@ const __dirname = dirname(__filename);
 export default defineConfig({
   site: "https://www.alexandretrotel.org",
   output: "server",
+  prefetch: true,
   adapter: vercel(),
   integrations: [svelte(), mdx(), sitemap()],
   i18n: {
