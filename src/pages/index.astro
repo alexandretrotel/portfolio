@@ -21,20 +21,20 @@ try {
     <div
       class="flex w-full max-w-xl flex-col gap-6 font-light text-muted-foreground"
     >
-      <p>
+      <p class="text-xl">
         {t.home.intro}
         {" "}
-        <span class="font-medium text-foreground">{t.home.name}</span>
+        <span class="font-medium text-foreground text-2xl">{t.home.name}</span>
         {
                     t.home.bio
                 }
       </p>
 
-      <p>
+      <p class="text-xl">
         {t.home.authorOf}
         {" "}
         <a
-          class="font-medium text-primary hover:underline"
+          class="font-medium text-primary hover:underline text-2xl"
           href="https://www.zapstudio.dev"
           target="_blank"
         >
@@ -52,7 +52,7 @@ try {
                             class="active:scale-95 active:bg-accent"
                         >
                             <a
-                                class="flex items-center gap-2 font-medium text-primary text-sm"
+                                class="flex items-center gap-2 font-medium text-primary text-lg"
                                 href="/blog"
                             >
                                 <ArrowRight size={16} />
