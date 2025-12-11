@@ -1,0 +1,32 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Layout from "@/layouts/main.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog-en");
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { post: entry },
+  }));
+}
+
+type Props = {
+  post: CollectionEntry<"blog-en">;
+};
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+export const prerender = true;
+---
+
+<Layout
+  title={`${post.data.title} | Alexandre Trotel`}
+  description={post.data.description}
+>
+  <article class="mx-auto max-w-3xl">
+    <div class="prose prose-gray dark:prose-invert max-w-none">
+      <Content/>
+    </div>
+  </article>
+</Layout>
