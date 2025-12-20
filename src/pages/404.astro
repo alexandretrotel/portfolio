@@ -9,10 +9,10 @@ const t = getTranslations("en");
 <Layout title={t.notFound.title}>
   <div class="flex h-full flex-col items-center justify-center gap-4 py-32">
     <div class="flex flex-col items-center justify-center">
-      <p class="text-muted-foreground text-xl">{t.notFound.message}</p>
+      <p class="text-muted-foreground text-base">{t.notFound.message}</p>
     </div>
     <Button variant="ghost" class="active:scale-90 active:bg-accent">
-      <a href="/" class="text-lg" onclick="history.back(); return false;"
+      <a href="/" class="text-sm" onclick="history.back(); return false;"
         >{t.notFound.goBack}</a
       >
     </Button>
