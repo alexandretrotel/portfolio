@@ -48,7 +48,6 @@ const enhancedPosts = await Promise.all(
         enhancedPosts.map((post) => (
           <li>
             <a
-              data-astro-prefetch
               aria-label={`Lire l'article : ${post.data.title}`}
               class="group flex flex-col items-start gap-1 rounded-sm py-4 transition-all hover:bg-muted/50 active:scale-95 md:flex-row md:items-center md:gap-4 md:p-4"
               href={`/fr/blog/${post.slug}`}

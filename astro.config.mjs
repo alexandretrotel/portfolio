@@ -15,7 +15,10 @@ const __dirname = dirname(__filename);
 export default defineConfig({
   site: "https://www.alexandretrotel.org",
   output: "server",
-  prefetch: true,
+  prefetch: {
+    prefetch: true,
+    prefetchAll: true,
+  },
   adapter: vercel(),
   integrations: [
     svelte(),
