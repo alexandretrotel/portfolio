@@ -13,8 +13,8 @@ export const en = {
   },
   home: {
     intro: "",
-    name: "Alexandre Trotel",
-    bio: ". Full-stack developer. I build things, ship fast, and iterate. I care about code that works, not code that impresses.",
+    name: "Alexandre Trotel.",
+    bio: "Full-stack developer. I build things, ship fast, and iterate. I care about code that works, not code that impresses.",
     authorOf: "I run",
     zapStudio: "Zap Studio",
     zapStudioDesc:
