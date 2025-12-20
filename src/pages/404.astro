@@ -12,11 +12,7 @@ const t = getTranslations("en");
       <p class="text-muted-foreground text-xl">{t.notFound.message}</p>
     </div>
     <Button variant="ghost" class="active:scale-90 active:bg-accent">
-      <a
-        data-astro-prefetch
-        href="/"
-        class="text-lg"
-        onclick="history.back(); return false;"
+      <a href="/" class="text-lg" onclick="history.back(); return false;"
         >{t.notFound.goBack}</a
       >
     </Button>
