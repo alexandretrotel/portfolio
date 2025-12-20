@@ -16,7 +16,6 @@ export default defineConfig({
   site: "https://www.alexandretrotel.org",
   output: "server",
   prefetch: {
-    prefetch: true,
     prefetchAll: true,
   },
   adapter: vercel(),
