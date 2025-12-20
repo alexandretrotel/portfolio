@@ -13,8 +13,8 @@ export const fr = {
   },
   home: {
     intro: "",
-    name: "Alexandre Trotel",
-    bio: ". Développeur full-stack. Je construis, je livre vite, et j'itère. Je préfère du code qui marche à du code qui impressionne.",
+    name: "Alexandre Trotel.",
+    bio: "Développeur full-stack. Je construis, je livre vite, et j'itère. Je préfère du code qui marche à du code qui impressionne.",
     authorOf: "Je dirige",
     zapStudio: "Zap Studio",
     zapStudioDesc:
