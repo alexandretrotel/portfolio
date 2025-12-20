@@ -22,6 +22,7 @@ function getLocaleUrl(locale: Locale): string {
         const isActive = locale === currentLocale;
         return (
           <a
+            data-astro-prefetch
             href={getLocaleUrl(locale)}
             class={cn(
               "min-h-11 min-w-11 flex items-center justify-center px-2 font-medium text-base transition-colors hover:text-foreground",
