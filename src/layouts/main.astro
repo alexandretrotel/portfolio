@@ -59,7 +59,7 @@ const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
 
     <!-- Theme Script (prevents flash) -->
     <script is:inline>
-      const getThemePreference = () => {
+      function getThemePreference() {
         if (
           typeof localStorage !== "undefined" &&
           localStorage.getItem("theme")
@@ -69,15 +69,15 @@ const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
         return window.matchMedia("(prefers-color-scheme: dark)").matches
           ? "dark"
           : "light";
-      };
+      }
 
-      const applyTheme = () => {
+      function applyTheme() {
         const theme = getThemePreference();
         document.documentElement.classList.toggle("dark", theme === "dark");
-      };
+      }
 
+      document.addEventListener("astro:after-swap", applyTheme);
       applyTheme();
-      document.addEventListener("astro:page-load", applyTheme);
     </script>
 
     <ClientRouter/>
