@@ -1,5 +1,6 @@
 ---
 import "@/styles/globals.css";
+import "@fontsource-variable/geist";
 
 import { ClientRouter } from "astro:transitions";
 import Footer from "@/components/footer.astro";
@@ -43,14 +44,6 @@ const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
     <link rel="icon" type="image/png" href="/logo.png">
     <title>{title}</title>
 
-    <!-- Geist Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
-      rel="stylesheet"
-    >
-
     <!-- Katex -->
     <link
       rel="stylesheet"
@@ -82,7 +75,7 @@ const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
 
     <ClientRouter/>
   </head>
-  <body class="font-['Geist',sans-serif] antialiased">
+  <body class="antialiased">
     <div class="min-h-screen bg-background px-6">
       <Header/>
       <main class="mx-auto min-h-[calc(100vh-8rem)] max-w-3xl py-12 md:py-18">
