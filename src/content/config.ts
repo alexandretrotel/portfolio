@@ -1,6 +1,7 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 
-const blogSchema = z.object({
+const BlogSchema = z.object({
   title: z.string(),
   description: z.string(),
   date: z.date(),
@@ -9,17 +10,15 @@ const blogSchema = z.object({
 
 const englishBlog = defineCollection({
   type: "content",
-  schema: blogSchema,
+  schema: BlogSchema,
 });
 
 const frenchBlog = defineCollection({
   type: "content",
-  schema: blogSchema,
+  schema: BlogSchema,
 });
 
 export const collections = {
   "blog-en": englishBlog,
   "blog-fr": frenchBlog,
 };
-
-export type BlogCollection = keyof typeof collections;
