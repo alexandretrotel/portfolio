@@ -4,6 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-sans: "Geist Variable", "sans-serif";
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
