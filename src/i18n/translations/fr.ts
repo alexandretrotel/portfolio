@@ -26,6 +26,7 @@ export const fr = {
     pageTitle: "Blog | Alexandre Trotel",
     view: "vue",
     views: "vues",
+    readPost: "Lire l'article : {title}",
   },
   notFound: {
     title: "Page introuvable | Alexandre Trotel",

@@ -26,6 +26,7 @@ export const en = {
     pageTitle: "Blog | Alexandre Trotel",
     view: "view",
     views: "views",
+    readPost: "Read blog post: {title}",
   },
   notFound: {
     title: "Not Found | Alexandre Trotel",
