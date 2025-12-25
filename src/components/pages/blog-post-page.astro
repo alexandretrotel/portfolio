@@ -1,0 +1,23 @@
+---
+import { type CollectionEntry } from "astro:content";
+import type { BlogCollection } from "@/content/config";
+import Layout from "@/layouts/main.astro";
+
+type Props = {
+  post: CollectionEntry<BlogCollection>;
+};
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout
+  title={`${post.data.title} | Alexandre Trotel`}
+  description={post.data.description}
+>
+  <article class="mx-auto max-w-3xl">
+    <div class="prose prose-gray dark:prose-invert max-w-none">
+      <Content/>
+    </div>
+  </article>
+</Layout>

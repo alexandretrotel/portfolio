@@ -1,25 +1,30 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
+import BlogPostPage from "@/components/pages/blog-post-page.astro";
 import type { BlogCollection } from "@/content/config";
-import { defaultLocale, type Locale, locales } from "@/i18n/locales";
+import { defaultLocale, locales } from "@/i18n/locales";
 import { getBlogEntry } from "@/i18n/utils";
-import Layout from "@/layouts/main.astro";
 
 export async function getStaticPaths() {
   const paths: {
-    params: { slug: string; locale: Locale };
+    params: { slug: string; locale: string };
     props: { post: CollectionEntry<BlogCollection> };
   }[] = [];
-  for (const locale of locales) {
-    const blogEntry = getBlogEntry(locale ?? defaultLocale);
+
+  for (const l of locales) {
+    if (l === defaultLocale) {
+      continue;
+    }
+    const blogEntry = getBlogEntry(l);
     const posts = await getCollection(blogEntry);
-    for (const _post of posts) {
+    for (const p of posts) {
       paths.push({
-        params: { slug: _post.slug, locale: locale ?? defaultLocale },
-        props: { post: _post },
+        params: { slug: p.slug, locale: l },
+        props: { post: p },
       });
     }
   }
+
   return paths;
 }
 
@@ -28,18 +33,8 @@ type Props = {
 };
 
 const { post } = Astro.props;
-const { Content } = await post.render();
 
 export const prerender = true;
 ---
 
-<Layout
-  title={`${post.data.title} | Alexandre Trotel`}
-  description={post.data.description}
->
-  <article class="mx-auto max-w-3xl">
-    <div class="prose prose-gray dark:prose-invert max-w-none">
-      <Content/>
-    </div>
-  </article>
-</Layout>
+<BlogPostPage post={post}/>

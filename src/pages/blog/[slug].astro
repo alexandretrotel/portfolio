@@ -1,0 +1,26 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import BlogPostPage from "@/components/pages/blog-post-page.astro";
+import type { BlogCollection } from "@/content/config";
+import { defaultLocale } from "@/i18n/locales";
+import { getBlogEntry } from "@/i18n/utils";
+
+export async function getStaticPaths() {
+  const blogEntry = getBlogEntry(defaultLocale);
+  const posts = await getCollection(blogEntry);
+  return posts.map((p) => ({
+    params: { slug: p.slug },
+    props: { post: p },
+  }));
+}
+
+type Props = {
+  post: CollectionEntry<BlogCollection>;
+};
+
+const { post } = Astro.props;
+
+export const prerender = true;
+---
+
+<BlogPostPage post={post}/>

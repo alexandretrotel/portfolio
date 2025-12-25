@@ -1,74 +1,14 @@
 ---
-import { getCollection } from "astro:content";
-import ArrowRight from "@lucide/astro/icons/arrow-right";
-import Button from "@/components/ui/button.astro";
-import { defaultLocale, type Locale, locales } from "@/i18n/locales";
-import { getTranslations } from "@/i18n/translations";
-import { getBlogEntry, getLocalizedPath } from "@/i18n/utils";
-import Layout from "@/layouts/main.astro";
+import HomePage from "@/components/pages/home-page.astro";
+import { getLocaleFromParams, getLocaleStaticPaths } from "@/i18n/utils";
 
 export function getStaticPaths() {
-  return locales.map((l) => ({ params: { locale: l } }));
+  return getLocaleStaticPaths();
 }
 
 export const prerender = true;
 
-const locale = (Astro.params.locale as Locale) ?? defaultLocale;
-const t = getTranslations(locale);
-
-let showBlog = false;
-try {
-  const blogEntry = getBlogEntry(locale ?? defaultLocale);
-  const blogPosts = await getCollection(blogEntry);
-  showBlog = blogPosts.length > 0;
-} catch {
-  showBlog = false;
-}
+const locale = getLocaleFromParams(Astro.params.locale);
 ---
 
-<Layout title={t.metadata.title} description={t.metadata.description}>
-  <div class="flex h-full flex-col gap-16">
-    <div
-      class="flex w-full max-w-xl flex-col gap-6 font-light text-muted-foreground"
-    >
-      <p class="text-base">
-        {t.home.intro}
-        <span class="font-medium text-foreground text-base">{t.home.name}</span>
-        {t.home.bio}
-      </p>
-
-      <p class="text-base">
-        {t.home.authorOf}
-        {" "}
-        <a
-          class="font-medium text-primary hover:underline text-base"
-          href="https://www.zapstudio.dev"
-          target="_blank"
-        >
-          {t.home.zapStudio}
-        </a>
-        {" "}
-        {t.home.zapStudioDesc}
-      </p>
-
-      {
-                showBlog && (
-                    <div>
-                        <Button
-                            variant="ghost"
-                            class="active:scale-95 active:bg-accent"
-                        >
-                            <a
-                                class="flex items-center gap-2 font-medium text-primary text-sm"
-                                href={getLocalizedPath(locale, "/blog")}
-                            >
-                                <ArrowRight size={16} />
-                                {t.home.checkBlog}
-                            </a>
-                        </Button>
-                    </div>
-                )
-            }
-    </div>
-  </div>
-</Layout>
+<HomePage locale={locale}/>
