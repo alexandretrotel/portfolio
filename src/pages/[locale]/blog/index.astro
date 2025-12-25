@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import type { BlogCollection } from "@/content/config";
 import { defaultLocale, type Locale } from "@/i18n/locales";
 import { getTranslations } from "@/i18n/translations";
@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const locale = Astro.params.locale as Locale | undefined;
 const t = getTranslations(locale);
 
-let posts: Awaited<ReturnType<typeof getCollection<BlogCollection>>> = [];
+let posts: CollectionEntry<BlogCollection>[] = [];
 try {
   const blogEntry = getBlogEntry(locale ?? defaultLocale);
   posts = await getCollection(blogEntry);
@@ -22,23 +22,21 @@ const sortedPosts = posts.sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 
-const enhancedPosts = await Promise.all(
-  sortedPosts.map((post, index, arr) => {
-    const formattedDate = formatDate(post.data.date, "fr");
+const enhancedPosts = sortedPosts.map((post, index, arr) => {
+  const formattedDate = formatDate(post.data.date, "fr");
 
-    const showDate =
-      index === 0 ||
-      index === arr.length - 1 ||
-      (arr[index + 1] &&
-        formattedDate !== formatDate(arr[index + 1].data.date, "fr"));
+  const showDate =
+    index === 0 ||
+    index === arr.length - 1 ||
+    (arr[index + 1] &&
+      formattedDate !== formatDate(arr[index + 1].data.date, "fr"));
 
-    return {
-      ...post,
-      formattedDate,
-      showDate,
-    };
-  })
-);
+  return {
+    ...post,
+    formattedDate,
+    showDate,
+  };
+});
 ---
 
 <Layout title={t.blog.pageTitle}>
