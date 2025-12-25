@@ -1,13 +1,19 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import type { BlogCollection } from "@/content/config";
-import { defaultLocale, type Locale } from "@/i18n/locales";
+import { defaultLocale, type Locale, locales } from "@/i18n/locales";
 import { getTranslations } from "@/i18n/translations";
-import { formatDate, getBlogEntry } from "@/i18n/utils";
+import { formatDate, getBlogEntry, getLocalizedPath } from "@/i18n/utils";
 import Layout from "@/layouts/main.astro";
 import { cn } from "@/lib/utils";
 
-const locale = Astro.params.locale as Locale | undefined;
+export function getStaticPaths() {
+  return locales.map((l) => ({ params: { locale: l } }));
+}
+
+export const prerender = true;
+
+const locale = (Astro.params.locale as Locale) ?? defaultLocale;
 const t = getTranslations(locale);
 
 let posts: CollectionEntry<BlogCollection>[] = [];
@@ -23,13 +29,13 @@ const sortedPosts = posts.sort(
 );
 
 const enhancedPosts = sortedPosts.map((post, index, arr) => {
-  const formattedDate = formatDate(post.data.date, "fr");
+  const formattedDate = formatDate(post.data.date, locale);
 
   const showDate =
     index === 0 ||
     index === arr.length - 1 ||
     (arr[index + 1] &&
-      formattedDate !== formatDate(arr[index + 1].data.date, "fr"));
+      formattedDate !== formatDate(arr[index + 1].data.date, locale));
 
   return {
     ...post,
@@ -46,9 +52,9 @@ const enhancedPosts = sortedPosts.map((post, index, arr) => {
         enhancedPosts.map((post) => (
           <li>
             <a
-              aria-label={`Lire l'article : ${post.data.title}`}
+              aria-label={t.blog.readPost.replace("{title}", post.data.title)}
               class="group flex flex-col items-start gap-1 rounded-sm py-4 transition-all hover:bg-muted/50 active:scale-95 md:flex-row md:items-center md:gap-4 md:p-4"
-              href={`/fr/blog/${post.slug}`}
+              href={getLocalizedPath(locale, `/blog/${post.slug}`)}
             >
               <div class="flex items-center gap-2 text-muted-foreground">
                 <span

@@ -2,12 +2,18 @@
 import { getCollection } from "astro:content";
 import ArrowRight from "@lucide/astro/icons/arrow-right";
 import Button from "@/components/ui/button.astro";
-import { defaultLocale, type Locale } from "@/i18n/locales";
+import { defaultLocale, type Locale, locales } from "@/i18n/locales";
 import { getTranslations } from "@/i18n/translations";
-import { getBlogEntry } from "@/i18n/utils";
+import { getBlogEntry, getLocalizedPath } from "@/i18n/utils";
 import Layout from "@/layouts/main.astro";
 
-const locale = Astro.params.locale as Locale | undefined;
+export function getStaticPaths() {
+  return locales.map((l) => ({ params: { locale: l } }));
+}
+
+export const prerender = true;
+
+const locale = (Astro.params.locale as Locale) ?? defaultLocale;
 const t = getTranslations(locale);
 
 let showBlog = false;
@@ -54,7 +60,7 @@ try {
                         >
                             <a
                                 class="flex items-center gap-2 font-medium text-primary text-sm"
-                                href="/fr/blog"
+                                href={getLocalizedPath(locale, "/blog")}
                             >
                                 <ArrowRight size={16} />
                                 {t.home.checkBlog}
