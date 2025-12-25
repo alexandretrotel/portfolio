@@ -1,32 +1,26 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import Layout from "@/layouts/main.astro";
+import BlogPostPage from "@/components/pages/blog-post-page.astro";
+import type { BlogCollection } from "@/content.config";
+import { defaultLocale } from "@/i18n/locales";
+import { getBlogEntry } from "@/i18n/utils";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog-en");
-  return posts.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { post: entry },
+  const blogEntry = getBlogEntry(defaultLocale);
+  const posts = await getCollection(blogEntry);
+  return posts.map((p) => ({
+    params: { slug: p.id },
+    props: { post: p },
   }));
 }
 
 type Props = {
-  post: CollectionEntry<"blog-en">;
+  post: CollectionEntry<BlogCollection>;
 };
 
 const { post } = Astro.props;
-const { Content } = await post.render();
 
 export const prerender = true;
 ---
 
-<Layout
-  title={`${post.data.title} | Alexandre Trotel`}
-  description={post.data.description}
->
-  <article class="mx-auto max-w-3xl">
-    <div class="prose prose-gray dark:prose-invert max-w-none">
-      <Content/>
-    </div>
-  </article>
-</Layout>
+<BlogPostPage post={post}/>

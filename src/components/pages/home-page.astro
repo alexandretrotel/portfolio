@@ -1,0 +1,69 @@
+---
+import { getCollection } from "astro:content";
+import ArrowRight from "@lucide/astro/icons/arrow-right";
+import Button from "@/components/ui/button.astro";
+import { type Locale } from "@/i18n/locales";
+import { getTranslations } from "@/i18n/translations";
+import { getBlogEntry, getLocalizedPath } from "@/i18n/utils";
+import Layout from "@/layouts/main.astro";
+
+type Props = {
+  locale: Locale;
+};
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+
+let showBlog = false;
+try {
+  const blogEntry = getBlogEntry(locale);
+  const blogPosts = await getCollection(blogEntry);
+  showBlog = blogPosts.length > 0;
+} catch {
+  showBlog = false;
+}
+---
+
+<Layout title={t.metadata.title} description={t.metadata.description}>
+  <div class="flex h-full flex-col gap-16">
+    <div
+      class="flex w-full max-w-xl flex-col gap-6 font-light text-muted-foreground"
+    >
+      <p class="text-base">
+        {t.home.intro}
+        <span class="font-medium text-foreground text-base">{t.home.name}</span>
+        {t.home.bio}
+      </p>
+
+      <p class="text-base">
+        {t.home.authorOf}
+        {" "}
+        <a
+          class="font-medium text-primary hover:underline text-base"
+          href="https://www.zapstudio.dev"
+          target="_blank"
+        >
+          {t.home.zapStudio}
+        </a>
+        {" "}
+        {t.home.zapStudioDesc}
+      </p>
+
+      {
+        showBlog && (
+          <div>
+            <Button variant="ghost" class="active:scale-95 active:bg-accent">
+              <a
+                class="flex items-center gap-2 font-medium text-primary text-sm"
+                href={getLocalizedPath(locale, "/blog")}
+              >
+                <ArrowRight size={16} />
+                {t.home.checkBlog}
+              </a>
+            </Button>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</Layout>

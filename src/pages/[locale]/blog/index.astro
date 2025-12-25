@@ -1,77 +1,14 @@
 ---
-import { getCollection } from "astro:content";
-import type { BlogCollection } from "@/content/config";
-import { defaultLocale, type Locale } from "@/i18n/locales";
-import { getTranslations } from "@/i18n/translations";
-import { formatDate, getBlogEntry } from "@/i18n/utils";
-import Layout from "@/layouts/main.astro";
-import { cn } from "@/lib/utils";
+import BlogListPage from "@/components/pages/blog-list-page.astro";
+import { getLocaleFromParams, getLocaleStaticPaths } from "@/i18n/utils";
 
-const locale = Astro.params.locale as Locale | undefined;
-const t = getTranslations(locale);
-
-let posts: Awaited<ReturnType<typeof getCollection<BlogCollection>>> = [];
-try {
-  const blogEntry = getBlogEntry(locale ?? defaultLocale);
-  posts = await getCollection(blogEntry);
-} catch {
-  posts = [];
+export function getStaticPaths() {
+  return getLocaleStaticPaths();
 }
 
-const sortedPosts = posts.sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime()
-);
+export const prerender = true;
 
-const enhancedPosts = await Promise.all(
-  sortedPosts.map((post, index, arr) => {
-    const formattedDate = formatDate(post.data.date, "fr");
-
-    const showDate =
-      index === 0 ||
-      index === arr.length - 1 ||
-      (arr[index + 1] &&
-        formattedDate !== formatDate(arr[index + 1].data.date, "fr"));
-
-    return {
-      ...post,
-      formattedDate,
-      showDate,
-    };
-  })
-);
+const locale = getLocaleFromParams(Astro.params.locale);
 ---
 
-<Layout title={t.blog.pageTitle}>
-  <div class="flex flex-col gap-6">
-    <ul class="flex flex-col">
-      {
-        enhancedPosts.map((post) => (
-          <li>
-            <a
-              aria-label={`Lire l'article : ${post.data.title}`}
-              class="group flex flex-col items-start gap-1 rounded-sm py-4 transition-all hover:bg-muted/50 active:scale-95 md:flex-row md:items-center md:gap-4 md:p-4"
-              href={`/fr/blog/${post.slug}`}
-            >
-              <div class="flex items-center gap-2 text-muted-foreground">
-                <span
-                  class={cn(
-                    "shrink-0 font-light text-muted-foreground text-xs md:w-20",
-                    { "opacity-0": !post.showDate },
-                  )}
-                >
-                  {post.formattedDate}
-                </span>
-              </div>
-
-              <span class="flex-1 font-medium text-base text-foreground">
-                {post.data.title}
-              </span>
-
-
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-</Layout>
+<BlogListPage locale={locale}/>

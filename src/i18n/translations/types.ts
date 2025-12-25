@@ -22,6 +22,7 @@ export type Translations = {
     pageTitle: string;
     view: string;
     views: string;
+    readPost: string;
   };
   notFound: {
     title: string;
