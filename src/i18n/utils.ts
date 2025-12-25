@@ -40,7 +40,21 @@ export function getBlogEntry(locale: Locale): `blog/${Locale}` {
 
 // Get locale from route params (handles undefined for default locale)
 export function getLocaleFromParams(localeParam: string | undefined): Locale {
-  return (localeParam as Locale) ?? defaultLocale;
+  // Return defaultLocale when missing or empty
+  if (!localeParam) {
+    return defaultLocale;
+  }
+
+  // Normalize input (trim whitespace) and perform a case-insensitive lookup
+  const normalized = localeParam.trim();
+  if (normalized === "") {
+    return defaultLocale;
+  }
+
+  const match = locales.find(
+    (l) => l.toLowerCase() === normalized.toLowerCase()
+  );
+  return match ?? defaultLocale;
 }
 
 // Generate static paths for locale pages (excludes default locale from [locale] routes)
