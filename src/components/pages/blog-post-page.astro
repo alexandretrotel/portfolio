@@ -1,6 +1,6 @@
 ---
-import { type CollectionEntry } from "astro:content";
-import type { BlogCollection } from "@/content/config";
+import { type CollectionEntry, render } from "astro:content";
+import type { BlogCollection } from "@/content.config";
 import Layout from "@/layouts/main.astro";
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 };
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <Layout

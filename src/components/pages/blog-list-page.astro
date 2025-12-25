@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import type { BlogCollection } from "@/content/config";
+import type { BlogCollection } from "@/content.config";
 import { type Locale } from "@/i18n/locales";
 import { getTranslations } from "@/i18n/translations";
 import { formatDate, getBlogEntry, getLocalizedPath } from "@/i18n/utils";
@@ -52,7 +52,7 @@ const enhancedPosts = sortedPosts.map((post, index, arr) => {
             <a
               aria-label={t.blog.readPost.replace("{title}", post.data.title)}
               class="group flex flex-col items-start gap-1 rounded-sm py-4 transition-all hover:bg-muted/50 active:scale-95 md:flex-row md:items-center md:gap-4 md:p-4"
-              href={getLocalizedPath(locale, `/blog/${post.slug}`)}
+              href={getLocalizedPath(locale, `/blog/${post.id}`)}
             >
               <div class="flex items-center gap-2 text-muted-foreground">
                 <span
