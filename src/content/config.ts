@@ -1,6 +1,8 @@
 import { defineCollection } from "astro:content";
 import { z } from "astro/zod";
 
+export type BlogCollection = "blog-en" | "blog-fr";
+
 const BlogSchema = z.object({
   title: z.string(),
   description: z.string(),
