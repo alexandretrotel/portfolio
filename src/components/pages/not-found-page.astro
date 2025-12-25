@@ -19,10 +19,7 @@ const t = getTranslations(locale);
       <p class="text-muted-foreground text-base">{t.notFound.message}</p>
     </div>
     <Button variant="ghost" class="active:scale-90 active:bg-accent">
-      <a
-        href={getLocalizedPath(locale, "/")}
-        class="text-sm"
-        onclick="history.back(); return false;"
+      <a href={getLocalizedPath(locale, "/")} class="text-sm"
         >{t.notFound.goBack}</a
       >
     </Button>
