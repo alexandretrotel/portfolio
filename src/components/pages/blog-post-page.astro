@@ -30,7 +30,8 @@ if (rawMinutes !== undefined && rawMinutes !== null) {
   <article class="mx-auto max-w-3xl">
     <header class="mb-8">
       <p class="text-muted-foreground text-sm">
-        {formatDate(post.data.date, locale)}&middot; {minutesRead}
+        {formatDate(post.data.date, locale)}
+        {" "}&middot; {minutesRead}
       </p>
     </header>
     <div class="prose prose-gray dark:prose-invert max-w-none">
