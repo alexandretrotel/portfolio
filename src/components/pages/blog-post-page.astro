@@ -11,7 +11,16 @@ type Props = {
 const { post } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await render(post);
 const locale = getLocaleFromUrl(Astro.url);
-const minutesRead = remarkPluginFrontmatter.minutesRead as string;
+let minutesRead = "0";
+const rawMinutes = remarkPluginFrontmatter?.minutesRead;
+if (rawMinutes !== undefined && rawMinutes !== null) {
+  if (typeof rawMinutes === "number" && !Number.isNaN(rawMinutes)) {
+    minutesRead = String(Math.round(rawMinutes));
+  } else if (typeof rawMinutes === "string") {
+    const trimmed = rawMinutes.trim();
+    minutesRead = trimmed === "" ? "0" : trimmed;
+  }
+}
 ---
 
 <Layout
