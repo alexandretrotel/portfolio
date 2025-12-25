@@ -19,7 +19,7 @@ const prefix = locale === "en" ? "" : `/${locale}`;
 
 let showBlog = false;
 try {
-  const collectionName = locale === "fr" ? "blog-fr" : "blog-en";
+  const collectionName = locale === "fr" ? "blog/fr" : "blog/en";
   const blogPosts = await getCollection(collectionName);
   showBlog = blogPosts.length > 0;
 } catch {

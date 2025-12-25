@@ -34,6 +34,18 @@ export function stripLocaleFromPath(pathname: string): string {
   return pathname;
 }
 
-export function getBlogEntry(locale: Locale): `blog-${Locale}` {
-  return `blog-${locale}` as const;
+export function getBlogEntry(locale: Locale): `blog/${Locale}` {
+  return `blog/${locale}` as const;
+}
+
+// Get locale from route params (handles undefined for default locale)
+export function getLocaleFromParams(localeParam: string | undefined): Locale {
+  return (localeParam as Locale) ?? defaultLocale;
+}
+
+// Generate static paths for locale pages (excludes default locale from [locale] routes)
+export function getLocaleStaticPaths() {
+  return locales
+    .filter((l) => l !== defaultLocale)
+    .map((l) => ({ params: { locale: l } }));
 }

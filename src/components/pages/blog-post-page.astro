@@ -1,0 +1,31 @@
+---
+import { type CollectionEntry, render } from "astro:content";
+import type { BlogCollection } from "@/content.config";
+import { formatDate, getLocaleFromUrl } from "@/i18n/utils";
+import Layout from "@/layouts/main.astro";
+
+type Props = {
+  post: CollectionEntry<BlogCollection>;
+};
+
+const { post } = Astro.props;
+const { Content, remarkPluginFrontmatter } = await render(post);
+const locale = getLocaleFromUrl(Astro.url);
+const minutesRead = remarkPluginFrontmatter.minutesRead as string;
+---
+
+<Layout
+  title={`${post.data.title} | Alexandre Trotel`}
+  description={post.data.description}
+>
+  <article class="mx-auto max-w-3xl">
+    <header class="mb-8">
+      <p class="text-muted-foreground text-sm">
+        {formatDate(post.data.date, locale)}&middot; {minutesRead}
+      </p>
+    </header>
+    <div class="prose prose-gray dark:prose-invert max-w-none">
+      <Content/>
+    </div>
+  </article>
+</Layout>

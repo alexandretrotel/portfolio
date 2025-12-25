@@ -9,6 +9,6 @@
     "jsxImportSource": "react",
     "strictNullChecks": true
   },
-  "include": ["src/**/*", "src/content/config.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }

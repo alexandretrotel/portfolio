@@ -44,6 +44,17 @@ const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
     <link rel="icon" type="image/png" href="/logo.png">
     <title>{title}</title>
 
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml">
+
+    <!-- RSS -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Alexandre Trotel"
+      href={new URL("rss.xml", Astro.site)}
+    >
+
     <!-- Katex -->
     <link
       rel="stylesheet"

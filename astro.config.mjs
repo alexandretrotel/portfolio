@@ -8,6 +8,7 @@ import { defineConfig } from "astro/config";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 import { defaultLocale, locales } from "./src/i18n/locales";
+import { remarkReadingTime } from "./src/lib/remark-reading-time";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -39,7 +40,7 @@ export default defineConfig({
     },
   },
   markdown: {
-    remarkPlugins: [remarkMath],
+    remarkPlugins: [remarkMath, remarkReadingTime],
     rehypePlugins: [rehypeKatex],
   },
   vite: {
