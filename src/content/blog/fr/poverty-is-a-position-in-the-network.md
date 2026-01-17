@@ -12,19 +12,21 @@ Alors j'ai fait exactement ça. Je me suis inscrit en [CPGE](https://fr.wikipedi
 
 Et j'ai échoué.
 
-Pas complètement—j'ai intégré une bonne école. Juste pas *la* bonne, celle pour laquelle tout le monde se bat.
+Pas complètement—j'ai intégré une bonne école. Juste pas la *meilleure*.
 
 Ça s'est avéré être l'échec le plus chanceux de ma vie.
 
-Voici ce qui se passe quand tu n'intègres pas la meilleure école : tu ne peux pas te reposer sur le prestige. Personne ne va te donner quoi que ce soit à cause d'un nom sur ton diplôme. Tu dois construire des choses.
+Voici ce qui se passe quand tu n'intègres pas la meilleure école : tu ne peux pas te reposer seulement sur le prestige. Personne ne va te donner quoi que ce soit à cause d'un nom sur ton diplôme. Tu dois construire des choses.
 
-Alors à l'[ENSEEIHT](https://www.enseeiht.fr/), j'ai rejoint la [Junior-Entreprise](https://junior-entreprises.com/) et je suis devenu Vice-Président. J'ai créé des entreprises. J'ai investi. J'ai passé mes nuits à lire des livres sur tout—philosophie, économie, psychologie, mathématiques.
+Alors à l'[ENSEEIHT](https://www.enseeiht.fr/), j'ai rejoint la [Junior-Entreprise](https://junior-entreprises.com/) et je suis devenu Vice-Président. J'ai créé des entreprises. J'ai appris à investir mon argent. J'ai passé mes nuits à lire des livres.
 
-Récemment, une question m'est venue à l'esprit : pourquoi certaines personnes deviennent riches alors que d'autres restent pauvres ?
+Et en lisant, j’ai commencé à trouver une réponse à une question à laquelle j’avais toujours eu du mal à répondre : pourquoi certaines personnes deviennent riches tandis que d’autres restent pauvres ?
 
 La réponse conventionnelle, c'est l'effort. Travaille plus dur. Mais je venais de passer deux ans à travailler plus dur que jamais, et j'avais échoué à ce pour quoi je travaillais. Pendant ce temps, je voyais des gens qui semblaient travailler moins se retrouver dans de meilleures positions. Quelque chose ne collait pas.
 
-Avec tout ce que j'avais lu, j'avais enfin les outils pour y répondre. Cinq ans après cet échec, je suis arrivé à une conclusion qui aurait choqué mon moi de 18 ans.
+Avec tout ce que j'avais lu, j'avais enfin les outils pour y répondre. Cinq ans après cet échec, je suis arrivé à une conclusion qui aurait choqué mon moi de l'époque.
+
+Et j’ai fini par comprendre.
 
 **La pauvreté n'est pas une question d'efforts. C'est une question de position dans le réseau.**
 
@@ -36,11 +38,13 @@ Pense à internet. Une poignée de sites—Google, Facebook, Amazon—captent pr
 
 L'économie fonctionne de la même façon. Quelques nœuds captent la majorité de l'argent. Tous les autres se battent pour les miettes.
 
-Je n'ai pas trouvé ça tout seul. Un physicien hongrois nommé [Albert Barabási](https://fr.wikipedia.org/wiki/Albert-L%C3%A1szl%C3%B3_Barab%C3%A1si) a fait le gros du travail. Il a étudié les réseaux complexes—internet, les réseaux sociaux, les systèmes biologiques—et a découvert quelque chose de surprenant. Ils suivent tous le même schéma.
+En effet, c'est exactement ce qu'[Albert Barabási](https://fr.wikipedia.org/wiki/Albert-L%C3%A1szl%C3%B3_Barab%C3%A1si) a étudié. Les réseaux complexes comme internet, les réseaux sociaux, les systèmes biologiques suivent tous le même schéma.
 
 ![Loi de puissance vs Distribution normale](/assets/power-law.png)
 
-La plupart des choses qu'on apprend à l'école suivent une distribution normale. Les notes. La fameuse courbe en cloche. Mais la richesse ne fonctionne pas comme ça. La richesse suit une loi de puissance. Un nombre infime de personnes possède presque tout. Tous les autres n'ont presque rien.
+La plupart des choses qu'on apprend à l'école suivent une distribution normale. Les notes, ça vous rappelle quelque chose? La fameuse courbe en cloche.
+
+Mais la richesse ne fonctionne pas comme ça. La richesse suit une loi de puissance. Un nombre infime de personnes possède presque tout. Tous les autres n'ont presque rien.
 
 Quand j'ai appris ça pour la première fois, ma réaction a été : c'est injuste.
 
@@ -75,7 +79,7 @@ Réfléchis-y pratiquement. Si tu es un jeune diplômé qui cherche un emploi, t
 
 Évidemment la deuxième. Et cette personne est devenue bien connectée en ayant des connexions au départ. Les riches s'enrichissent.
 
-Ça crée une question qui me trotte dans la tête depuis que j'ai compris ça :
+Ça a crée une nouvelle question quand j'ai compris ça :
 
 **Comment devient-on un hub quand on part de la périphérie ?**
 
@@ -163,7 +167,7 @@ C'est pourquoi de petites différences de connexions au départ créent des diff
 
 ## Pourquoi j'ai changé d'avis sur la sécurité sociale
 
-J'étais sceptique envers les programmes d'aide sociale. Je pensais qu'ils créaient de la dépendance.
+Prenons un pas de côté. Avant, j'étais sceptique envers les programmes d'aide sociale. Je pensais qu'ils créaient de la dépendance.
 
 Puis j'ai mieux compris les réseaux.
 
@@ -195,11 +199,11 @@ $$
 \text{Valeur captée} \sim k^{\beta}, \quad \beta > 1
 $$
 
-C'est pourquoi les hubs s'enrichissent exponentiellement. Ce n'est pas de l'avidité. C'est de la géométrie.
+C'est pourquoi les hubs s'enrichissent exponentiellement. Ce n'est pas de l'avidité.
 
 ## Une dernière chose
 
-Je devrais mentionner le [Bitcoin](https://bitcoin.org/). Pas à cause du prix ou de la technologie, mais à cause de ce qu'il représente.
+Je voulais aussi parler de [Bitcoin](https://bitcoin.org/). Pas à cause de son prix ou de la technologie, mais à cause de ce qu'il représente.
 
 Le système financier actuel a les banques centrales comme hubs ultimes. Elles contrôlent les flux d'argent. Bitcoin est une expérience pour créer un réseau sans ces hubs centralisés.
 

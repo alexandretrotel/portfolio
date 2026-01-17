@@ -12,19 +12,21 @@ So I did exactly that. I enrolled in a [CPGE](https://en.wikipedia.org/wiki/Clas
 
 And I failed.
 
-Not completely—I got into a good school. Just not *the* school, the one everyone fights for.
+Not completely—I got into a good school. Just not the *best* school.
 
 It turned out to be the luckiest failure of my life.
 
-Here's what happens when you don't get into the top school: you can't coast on prestige. Nobody's going to hand you anything because of a name on your diploma. You have to build things.
+Here's what happens when you don't get into the top school: you can't rely solely on prestige. Nobody's going to hand you anything because of a name on your diploma. You have to build things.
 
-So at [ENSEEIHT](https://www.enseeiht.fr/), I joined the [Junior-Entreprise](https://junior-entreprises.com/) and became Vice-President. I started companies. I invested. I spent my nights reading books about everything—philosophy, economics, psychology, mathematics.
+So at [ENSEEIHT](https://www.enseeiht.fr/), I joined the [Junior-Entreprise](https://junior-entreprises.com/) and became Vice-President. I built companies. I learned to invest my money. I spent my nights reading books.
 
-Recently, a question popped into my head: why do some people get rich while others stay poor?
+And as I was reading, I started to get an answer to a question I always strugged to answer: why do some people get rich while others stay poor?
 
 The conventional answer is effort. Work harder. But I'd just spent two years working harder than I ever had, and I'd failed at the thing I was working toward. Meanwhile, I watched people who seemed to work less end up in better positions. Something didn't add up.
 
-With everything I'd been reading, I finally had the tools to answer it. Five years after that failure, I've arrived at a conclusion that would have shocked my 18-year-old self.
+With everything I'd been reading, I finally had the tools to answer it. Five years after that failure, I've arrived at a conclusion that would have shocked my old self.
+
+And I figured out.
 
 **Poverty isn't about how hard you work. It's about where you sit in the network.**
 
@@ -34,15 +36,17 @@ This sounds abstract. Let me make it concrete.
 
 Think about the internet. A handful of websites—Google, Facebook, Amazon—capture almost all the traffic. Millions of other sites exist, but they're invisible. Nobody visits them.
 
-The economy works the same way. A few nodes capture most of the money. Everyone else fights for scraps.
+Economy works the same way. A few nodes capture most of the money. Everyone else fights for scraps.
 
-I didn't figure this out myself. A Hungarian physicist named [Albert Barabási](https://en.wikipedia.org/wiki/Albert_L._Barab%C3%A1si) did the hard work. He studied complex networks—the internet, social networks, biological systems—and discovered something surprising. They all follow the same pattern.
+Indeed, this is exactly what [Albert Barabási](https://en.wikipedia.org/wiki/Albert_L._Barab%C3%A1si) studied. Complex networks like the internet, social networks, biological systems all follow the same pattern.
 
 ![Power Law vs Normal Distribution](/assets/power-law.png)
 
-Most things we learn about in school follow a normal distribution. Test scores. The classic bell curve. But wealth doesn't work that way. Wealth follows a power law. A tiny number of people have almost everything. Everyone else has almost nothing.
+Most things we learn about in school follow a normal distribution. Test scores, remember you something right?. The classic bell curve.
 
-When I first learned this, my reaction was: that's unfair.
+But wealth doesn't work that way. Wealth follows a power law. A tiny number of people have almost everything. Everyone else has almost nothing.
+
+When I first learned about this, my reaction was: that's unfair.
 
 But then I thought about it more.
 
@@ -75,7 +79,7 @@ Think about it practically. If you're a new graduate looking for a job, would yo
 
 Obviously the second. And that person got well-connected by having connections in the first place. The rich get richer.
 
-This creates a question that's been nagging me ever since I understood it:
+This created a new question when I understood it:
 
 **How do you become a hub when you're starting from the edge?**
 
@@ -143,7 +147,7 @@ $$
 
 Where γ is typically between 2 and 3.
 
-In plain English: in any network, a tiny number of hubs capture most of the connections. Most nodes are peripheral.
+In plain words: in any network, a tiny number of hubs capture most of the connections. Most nodes are peripheral.
 
 Think about companies. BlackRock, Vanguard, Palantir—these are hubs. They don't just have money. They have *connections*. They sit at the center of flows.
 
@@ -163,7 +167,7 @@ This is why small differences in connections early on create massive differences
 
 ## Why I changed my mind about social safety
 
-I used to be skeptical of welfare programs. I thought they created dependency.
+Let's step ahead a little bit. Before, I used to be skeptical of welfare programs. I thought they created dependency.
 
 Then I understood networks better.
 
@@ -195,11 +199,11 @@ $$
 \text{Value captured} \sim k^{\beta}, \quad \beta > 1
 $$
 
-That's why hubs get exponentially richer. It's not greed. It's geometry.
+That's why hubs get exponentially richer. It's not greed.
 
 ## One more thing
 
-I should mention [Bitcoin](https://bitcoin.org/). Not because of the price or the technology, but because of what it represents.
+I also wanted to talk about [Bitcoin](https://bitcoin.org/). Not because of its price or the technology, but because of what it represents.
 
 The current financial system has central banks as the ultimate hubs. They control the flows of money. Bitcoin is an experiment in creating a network without those centralized hubs.
 
