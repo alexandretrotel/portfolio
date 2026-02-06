@@ -7,9 +7,9 @@ import { formatDate, getBlogEntry, getLocalizedPath } from "@/i18n/utils";
 import Layout from "@/layouts/main.astro";
 import { cn } from "@/lib/utils";
 
-type Props = {
+interface Props {
   locale: Locale;
-};
+}
 
 const { locale } = Astro.props;
 const t = getTranslations(locale);
@@ -46,8 +46,7 @@ const enhancedPosts = sortedPosts.map((post, index, arr) => {
 <Layout title={t.blog.pageTitle}>
   <div class="flex flex-col gap-6">
     <ul class="flex flex-col">
-      {
-        enhancedPosts.map((post) => (
+      {enhancedPosts.map((post) => (
           <li>
             <a
               aria-label={t.blog.readPost.replace("{title}", post.data.title)}
@@ -70,8 +69,7 @@ const enhancedPosts = sortedPosts.map((post, index, arr) => {
               </span>
             </a>
           </li>
-        ))
-      }
+        ))}
     </ul>
   </div>
 </Layout>

@@ -8,10 +8,10 @@ import Header from "@/components/header.astro";
 import { getTranslations } from "@/i18n/translations";
 import { getLocaleFromUrl } from "@/i18n/utils";
 
-type Props = {
+interface Props {
   title?: string;
   description?: string;
-};
+}
 
 const locale = getLocaleFromUrl(Astro.url);
 const t = getTranslations(locale);
@@ -86,15 +86,15 @@ const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
       applyTheme();
     </script>
 
-    <ClientRouter/>
+    <ClientRouter />
   </head>
   <body class="antialiased">
     <div class="min-h-screen bg-background px-6">
-      <Header/>
+      <Header />
       <main class="mx-auto min-h-[calc(100vh-8rem)] max-w-3xl py-12 md:py-18">
-        <slot/>
+        <slot />
       </main>
-      <Footer/>
+      <Footer />
     </div>
   </body>
 </html>

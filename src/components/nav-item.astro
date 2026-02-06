@@ -3,16 +3,16 @@ import Button from "@/components/ui/button.astro";
 import { stripLocaleFromPath } from "@/i18n/utils";
 import { cn } from "@/lib/utils";
 
-type LinkItem = {
+interface LinkItem {
   title: string;
   href: string;
   hidden: boolean;
   target?: string;
-};
+}
 
-type Props = {
+interface Props {
   link: LinkItem;
-};
+}
 
 const { link } = Astro.props;
 const pathname = Astro.url.pathname;
@@ -26,8 +26,7 @@ const isActive =
   (normalizedHref === "/" && normalizedPathname === "");
 ---
 
-{
-    !link.hidden && (
+{!link.hidden && (
         <div>
             <Button
                 variant="ghost"
@@ -47,5 +46,4 @@ const isActive =
                 </a>
             </Button>
         </div>
-    )
-}
+    )}

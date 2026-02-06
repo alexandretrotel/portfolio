@@ -6,12 +6,12 @@ import NavItem from "@/components/nav-item.astro";
 import { getTranslations } from "@/i18n/translations";
 import { getLocaleFromUrl } from "@/i18n/utils";
 
-type LinkItem = {
+interface LinkItem {
   title: string;
   href: string;
   hidden: boolean;
   target?: string;
-};
+}
 
 const locale = getLocaleFromUrl(Astro.url);
 const t = getTranslations(locale);
@@ -65,7 +65,7 @@ const links: LinkItem[] = [
 
     <div class="flex items-center gap-2">
       {links.map((link) => <NavItem link={link} />)}
-      <DarkModeToggle client:load/>
+      <DarkModeToggle client:load />
     </div>
   </div>
 </div>
