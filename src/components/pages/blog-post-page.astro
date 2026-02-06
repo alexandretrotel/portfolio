@@ -4,9 +4,9 @@ import type { BlogCollection } from "@/content.config";
 import { formatDate, getLocaleFromUrl } from "@/i18n/utils";
 import Layout from "@/layouts/main.astro";
 
-type Props = {
+interface Props {
   post: CollectionEntry<BlogCollection>;
-};
+}
 
 const { post } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await render(post);
@@ -35,7 +35,7 @@ if (rawMinutes !== undefined && rawMinutes !== null) {
       </p>
     </header>
     <div class="prose prose-gray dark:prose-invert max-w-none">
-      <Content/>
+      <Content />
     </div>
   </article>
 </Layout>

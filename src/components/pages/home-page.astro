@@ -7,9 +7,9 @@ import { getTranslations } from "@/i18n/translations";
 import { getBlogEntry, getLocalizedPath } from "@/i18n/utils";
 import Layout from "@/layouts/main.astro";
 
-type Props = {
+interface Props {
   locale: Locale;
-};
+}
 
 const { locale } = Astro.props;
 const t = getTranslations(locale);
@@ -49,8 +49,7 @@ try {
         {t.home.zapStudioDesc}
       </p>
 
-      {
-        showBlog && (
+      {showBlog && (
           <div>
             <Button variant="ghost" class="active:scale-95 active:bg-accent">
               <a
@@ -62,8 +61,7 @@ try {
               </a>
             </Button>
           </div>
-        )
-      }
+        )}
     </div>
   </div>
 </Layout>
