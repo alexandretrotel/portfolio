@@ -35,11 +35,11 @@ const buttonVariants = cva(
 
 type ButtonVariants = VariantProps<typeof buttonVariants>;
 
-type Props = {
+interface Props {
   variant?: ButtonVariants["variant"];
   size?: ButtonVariants["size"];
   class?: string;
-};
+}
 
 const { variant, size, class: className } = Astro.props;
 ---
@@ -48,5 +48,5 @@ const { variant, size, class: className } = Astro.props;
   class={cn(buttonVariants({ variant, size, className }))}
   data-slot="button"
 >
-  <slot/>
+  <slot />
 </span>
