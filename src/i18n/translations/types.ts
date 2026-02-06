@@ -1,4 +1,4 @@
-export type Translations = {
+export interface Translations {
   metadata: {
     title: string;
     description: string;
@@ -29,4 +29,4 @@ export type Translations = {
     message: string;
     goBack: string;
   };
-};
+}
