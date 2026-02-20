@@ -1,45 +1,45 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { defaultLocale, type Locale, localeFormats, locales } from "./locales";
 
-export function getLocaleFromUrl(url: URL): Locale {
+import { defaultLocale, localeFormats, locales } from "./locales";
+import type { Locale } from "./locales";
+
+export const getLocaleFromUrl = (url: URL): Locale => {
   const [, lang] = url.pathname.split("/");
   if (locales.includes(lang as Locale)) {
     return lang as Locale;
   }
   return defaultLocale;
-}
+};
 
-export function getLocalizedPath(locale: Locale, path: string): string {
-  return getRelativeLocaleUrl(locale, path);
-}
+export const getLocalizedPath = (locale: Locale, path: string): string =>
+  getRelativeLocaleUrl(locale, path);
 
-export function formatDate(date: Date, locale: Locale): string {
-  return date.toLocaleDateString(localeFormats[locale], {
-    year: "numeric",
-    month: "short",
+export const formatDate = (date: Date, locale: Locale): string =>
+  date.toLocaleDateString(localeFormats[locale], {
     day: "numeric",
+    month: "short",
+    year: "numeric",
   });
-}
 
-export function formatNumber(num: number, locale: Locale): string {
-  return new Intl.NumberFormat(localeFormats[locale]).format(num);
-}
+export const formatNumber = (num: number, locale: Locale): string =>
+  new Intl.NumberFormat(localeFormats[locale]).format(num);
 
-export function stripLocaleFromPath(pathname: string): string {
+export const stripLocaleFromPath = (pathname: string): string => {
   const segments = pathname.split("/").filter(Boolean);
   if (locales.includes(segments[0] as Locale)) {
     const rest = segments.slice(1).join("/");
     return rest ? `/${rest}` : "/";
   }
   return pathname;
-}
+};
 
-export function getBlogEntry(locale: Locale): `blog/${Locale}` {
-  return `blog/${locale}` as const;
-}
+export const getBlogEntry = (locale: Locale): `blog/${Locale}` =>
+  `blog/${locale}` as const;
 
 // Get locale from route params (handles undefined for default locale)
-export function getLocaleFromParams(localeParam: string | undefined): Locale {
+export const getLocaleFromParams = (
+  localeParam: string | undefined
+): Locale => {
   // Return defaultLocale when missing or empty
   if (!localeParam) {
     return defaultLocale;
@@ -55,11 +55,10 @@ export function getLocaleFromParams(localeParam: string | undefined): Locale {
     (l) => l.toLowerCase() === normalized.toLowerCase()
   );
   return match ?? defaultLocale;
-}
+};
 
 // Generate static paths for locale pages (excludes default locale from [locale] routes)
-export function getLocaleStaticPaths() {
-  return locales
+export const getLocaleStaticPaths = () =>
+  locales
     .filter((l) => l !== defaultLocale)
     .map((l) => ({ params: { locale: l } }));
-}

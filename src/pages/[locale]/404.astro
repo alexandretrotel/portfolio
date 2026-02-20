@@ -2,13 +2,11 @@
 import NotFoundPage from "@/components/pages/not-found-page.astro";
 import { getLocaleFromParams, getLocaleStaticPaths } from "@/i18n/utils";
 
-export function getStaticPaths() {
-  return getLocaleStaticPaths();
-}
+export const getStaticPaths = () => getLocaleStaticPaths();
 
 export const prerender = true;
 
-const locale = getLocaleFromParams(Astro.params.locale);
+const locale = getLocaleFromParams(Astro.params?.locale);
 ---
 
 <NotFoundPage locale={locale} />

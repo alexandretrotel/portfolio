@@ -3,11 +3,11 @@
   import Sun from "@lucide/svelte/icons/sun";
   import { cn } from "@/lib/utils";
 
-  function toggleTheme() {
+  const toggleTheme = () => {
     const root = document.documentElement;
     const isDark = root.classList.toggle("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
-  }
+  };
 </script>
 
 <button

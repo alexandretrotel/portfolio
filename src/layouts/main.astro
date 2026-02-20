@@ -9,8 +9,8 @@ import { getTranslations } from "@/i18n/translations";
 import { getLocaleFromUrl } from "@/i18n/utils";
 
 interface Props {
-  title?: string;
   description?: string;
+  title?: string;
 }
 
 const locale = getLocaleFromUrl(Astro.url);
@@ -65,7 +65,8 @@ const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
 
     <!-- Theme Script (prevents flash) -->
     <script is:inline>
-      function getThemePreference() {
+      /* eslint-disable jest/require-hook */
+      const getThemePreference = () => {
         if (
           typeof localStorage !== "undefined" &&
           localStorage.getItem("theme")
@@ -75,12 +76,12 @@ const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
         return window.matchMedia("(prefers-color-scheme: dark)").matches
           ? "dark"
           : "light";
-      }
+      };
 
-      function applyTheme() {
+      const applyTheme = () => {
         const theme = getThemePreference();
         document.documentElement.classList.toggle("dark", theme === "dark");
-      }
+      };
 
       document.addEventListener("astro:after-swap", applyTheme);
       applyTheme();
