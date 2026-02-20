@@ -4,10 +4,10 @@ import { stripLocaleFromPath } from "@/i18n/utils";
 import { cn } from "@/lib/utils";
 
 interface LinkItem {
-  title: string;
-  href: string;
   hidden: boolean;
+  href: string;
   target?: string;
+  title: string;
 }
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
 }
 
 const { link } = Astro.props;
-const pathname = Astro.url.pathname;
+const {pathname} = Astro.url;
 
 const normalizedPathname = stripLocaleFromPath(pathname);
 const normalizedHref = stripLocaleFromPath(link.href);

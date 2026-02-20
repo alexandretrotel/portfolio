@@ -1,12 +1,10 @@
 export interface Translations {
-  metadata: {
+  blog: {
     title: string;
-    description: string;
-  };
-  nav: {
-    home: string;
-    blog: string;
-    github: string;
+    pageTitle: string;
+    view: string;
+    views: string;
+    readPost: string;
   };
   home: {
     intro: string;
@@ -17,12 +15,14 @@ export interface Translations {
     zapStudioDesc: string;
     checkBlog: string;
   };
-  blog: {
+  metadata: {
     title: string;
-    pageTitle: string;
-    view: string;
-    views: string;
-    readPost: string;
+    description: string;
+  };
+  nav: {
+    home: string;
+    blog: string;
+    github: string;
   };
   notFound: {
     title: string;

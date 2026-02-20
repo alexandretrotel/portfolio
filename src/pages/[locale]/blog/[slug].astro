@@ -1,11 +1,12 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import BlogPostPage from "@/components/pages/blog-post-page.astro";
 import type { BlogCollection } from "@/content.config";
 import { defaultLocale, locales } from "@/i18n/locales";
 import { getBlogEntry } from "@/i18n/utils";
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const paths: {
     params: { slug: string; locale: string };
     props: { post: CollectionEntry<BlogCollection> };
@@ -19,14 +20,14 @@ export async function getStaticPaths() {
     const posts = await getCollection(blogEntry);
     for (const p of posts) {
       paths.push({
-        params: { slug: p.id, locale: l },
+        params: { locale: l, slug: p.id },
         props: { post: p },
       });
     }
   }
 
   return paths;
-}
+};
 
 interface Props {
   post: CollectionEntry<BlogCollection>;

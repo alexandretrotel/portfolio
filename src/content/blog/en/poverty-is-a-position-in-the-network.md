@@ -12,7 +12,7 @@ So I did exactly that. I enrolled in a [CPGE](https://en.wikipedia.org/wiki/Clas
 
 And I failed.
 
-Not completely—I got into a good school. Just not the *best* school.
+Not completely—I got into a good school. Just not the _best_ school.
 
 It turned out to be the luckiest failure of my life.
 
@@ -87,7 +87,7 @@ This created a new question when I understood it:
 
 Here's where most people go wrong. They try to solve the problem by working harder at their job.
 
-If you work *h* hours at *w* dollars per hour, your income is:
+If you work _h_ hours at _w_ dollars per hour, your income is:
 
 $$
 I = w \cdot h
@@ -99,13 +99,13 @@ But it won't make you rich. It can't, mathematically.
 
 Hubs don't sell time. They capture flows.
 
-Imagine you create something—a platform, a product, a piece of content—that attracts *k* users, each generating value *v*. Your income becomes:
+Imagine you create something—a platform, a product, a piece of content—that attracts _k_ users, each generating value _v_. Your income becomes:
 
 $$
 I = v \cdot k
 $$
 
-And here's the magic: *k* can grow exponentially because of network effects.
+And here's the magic: _k_ can grow exponentially because of network effects.
 
 $$
 k_{t+1} = k_t + \alpha k_t
@@ -139,7 +139,7 @@ Barabási discovered that most real-world networks are "scale-free." This means:
 
 1. **Preferential attachment**: new nodes connect to nodes that already have many connections.
 2. **Hubs dominate**: a few nodes end up with most of the connections.
-3. **Power-law distribution**: the probability that a node has *k* connections follows:
+3. **Power-law distribution**: the probability that a node has _k_ connections follows:
 
 $$
 P(k) \sim k^{-\gamma}
@@ -149,7 +149,7 @@ Where γ is typically between 2 and 3.
 
 In plain words: in any network, a tiny number of hubs capture most of the connections. Most nodes are peripheral.
 
-Think about companies. BlackRock, Vanguard, Palantir—these are hubs. They don't just have money. They have *connections*. They sit at the center of flows.
+Think about companies. BlackRock, Vanguard, Palantir—these are hubs. They don't just have money. They have _connections_. They sit at the center of flows.
 
 ## A concrete example
 
