@@ -41,10 +41,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.3",
     "@types/mdast": "^4.0.4",
-    "lefthook": "^2.1.1",
-    "typescript": "^5.9.3",
-    "ultracite": "^7.2.3"
+    "typescript": "^5.9.3"
   }
 }
