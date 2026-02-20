@@ -1,21 +1,21 @@
-import { getCollection } from "astro:content";
 import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
+import { getCollection } from "astro:content";
 
-export async function GET(context: APIContext) {
+export const GET = async (context: APIContext) => {
   const blogEn = await getCollection("blog/en");
 
   return rss({
-    title: "Alexandre Trotel",
+    customData: "<language>en-us</language>",
     description:
       "Alexandre Trotel is a tech entrepreneur and full-stack developer.",
-    site: context.site ?? new URL("https://www.alexandretrotel.org"),
-    items: blogEn.map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.date,
+    items: blogEn.map((post: (typeof blogEn)[number]) => ({
       description: post.data.description,
       link: `/blog/${post.id}/`,
+      pubDate: post.data.date,
+      title: post.data.title,
     })),
-    customData: "<language>en-us</language>",
+    site: context.site ?? new URL("https://www.alexandretrotel.org"),
+    title: "Alexandre Trotel",
   });
-}
+};

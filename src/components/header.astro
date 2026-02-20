@@ -1,4 +1,5 @@
 ---
+/* eslint-disable jest/require-hook */
 import { getCollection } from "astro:content";
 import DarkModeToggle from "@/components/dark-mode-toggle.svelte";
 
@@ -7,10 +8,10 @@ import { getTranslations } from "@/i18n/translations";
 import { getLocaleFromUrl } from "@/i18n/utils";
 
 interface LinkItem {
-  title: string;
-  href: string;
   hidden: boolean;
+  href: string;
   target?: string;
+  title: string;
 }
 
 const locale = getLocaleFromUrl(Astro.url);
@@ -28,20 +29,20 @@ try {
 
 const links: LinkItem[] = [
   {
-    title: t.nav.home,
-    href: `${prefix}/`,
     hidden: true,
+    href: `${prefix}/`,
+    title: t.nav.home,
   },
   {
-    title: t.nav.blog,
-    href: `${prefix}/blog`,
     hidden: !showBlog,
+    href: `${prefix}/blog`,
+    title: t.nav.blog,
   },
   {
-    title: t.nav.github,
-    href: "https://www.github.com/atrtde",
     hidden: false,
+    href: "https://www.github.com/atrtde",
     target: "_blank",
+    title: t.nav.github,
   },
 ];
 ---

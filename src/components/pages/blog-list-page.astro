@@ -1,7 +1,9 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+/* eslint-disable jest/require-hook */
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import type { BlogCollection } from "@/content.config";
-import { type Locale } from "@/i18n/locales";
+import type { Locale } from "@/i18n/locales";
 import { getTranslations } from "@/i18n/translations";
 import { formatDate, getBlogEntry, getLocalizedPath } from "@/i18n/utils";
 import Layout from "@/layouts/main.astro";
@@ -22,7 +24,7 @@ try {
   posts = [];
 }
 
-const sortedPosts = posts.sort(
+const sortedPosts = posts.toSorted(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 

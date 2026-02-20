@@ -1,6 +1,6 @@
 export const METADATA = {
-  TITLE: "Alexandre Trotel",
+  BASE_URL: "https://www.alexandretrotel.org",
   DESCRIPTION:
     "Alexandre Trotel is a tech entrepreneur and full-stack developer.",
-  BASE_URL: "https://www.alexandretrotel.org",
+  TITLE: "Alexandre Trotel",
 } as const;

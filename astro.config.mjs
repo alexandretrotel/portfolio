@@ -1,5 +1,3 @@
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 import vercel from "@astrojs/vercel";
@@ -7,19 +5,19 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
+
 import { defaultLocale, locales } from "./src/i18n/locales";
 import { remarkReadingTime } from "./src/lib/remark-reading-time";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
 export default defineConfig({
-  site: "https://www.alexandretrotel.org",
-  output: "server",
-  prefetch: {
-    prefetchAll: true,
-  },
   adapter: vercel(),
+  i18n: {
+    defaultLocale,
+    locales,
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   integrations: [
     svelte(),
     sitemap({
@@ -32,22 +30,20 @@ export default defineConfig({
       },
     }),
   ],
-  i18n: {
-    defaultLocale,
-    locales,
-    routing: {
-      prefixDefaultLocale: false,
-    },
-  },
   markdown: {
-    remarkPlugins: [remarkMath, remarkReadingTime],
     rehypePlugins: [rehypeKatex],
+    remarkPlugins: [remarkMath, remarkReadingTime],
   },
+  output: "server",
+  prefetch: {
+    prefetchAll: true,
+  },
+  site: "https://www.alexandretrotel.org",
   vite: {
     plugins: [tailwindcss()],
     resolve: {
       alias: {
-        "@": resolve(__dirname, "./src"),
+        "@": new URL("src", import.meta.url).pathname,
       },
     },
   },

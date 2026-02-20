@@ -1,11 +1,8 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
 import Button from "@/components/ui/button.astro";
-import {
-  defaultLocale,
-  locales as importedLocales,
-  type Locale,
-} from "@/i18n/locales";
+import { defaultLocale, locales as importedLocales } from '@/i18n/locales';
+import type { Locale } from '@/i18n/locales';
 import { getLocaleFromUrl, stripLocaleFromPath } from "@/i18n/utils";
 
 const locales = importedLocales ?? ["en", "fr"];
@@ -14,12 +11,12 @@ const currentPath = stripLocaleFromPath?.(Astro.url?.pathname ?? "/") ?? "/";
 const currentIndex = locales.indexOf(currentLocale);
 const nextLocale = locales[(currentIndex + 1) % locales.length];
 
-function getLocaleUrl(locale: Locale): string {
+const getLocaleUrl = (locale: Locale): string => {
   if (locale === defaultLocale) {
     return currentPath || "/";
   }
   return getRelativeLocaleUrl(locale, currentPath);
-}
+};
 ---
 
 <Button variant="ghost" class="transition-transform active:scale-90">
