@@ -2,13 +2,11 @@
 import BlogListPage from "@/components/pages/blog-list-page.astro";
 import { getLocaleFromParams, getLocaleStaticPaths } from "@/i18n/utils";
 
-export function getStaticPaths() {
-  return getLocaleStaticPaths();
-}
+export const getStaticPaths = () => getLocaleStaticPaths();
 
 export const prerender = true;
 
-const locale = getLocaleFromParams(Astro.params.locale);
+const locale = getLocaleFromParams(Astro.params?.locale);
 ---
 
 <BlogListPage locale={locale} />

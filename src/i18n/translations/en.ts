@@ -1,36 +1,36 @@
 import type { Translations } from "./types";
 
 export const en = {
-  metadata: {
-    title: "Alexandre Trotel",
-    description:
-      "Alexandre Trotel is a tech entrepreneur and full-stack developer.",
-  },
-  nav: {
-    home: "\\home",
-    blog: "\\blog",
-    github: "\\github",
+  blog: {
+    pageTitle: "Blog | Alexandre Trotel",
+    readPost: "Read blog post: {title}",
+    title: "Blog",
+    view: "view",
+    views: "views",
   },
   home: {
+    authorOf: "I run",
+    bio: "Full-stack developer. I build things, ship fast, and iterate. I care about code that works, not code that impresses.",
+    checkBlog: "Read the blog",
     intro: "",
     name: "Alexandre Trotel.",
-    bio: "Full-stack developer. I build things, ship fast, and iterate. I care about code that works, not code that impresses.",
-    authorOf: "I run",
     zapStudio: "Zap Studio",
     zapStudioDesc:
       "– open-source tools, libraries, and templates for developers who'd rather ship than write boilerplate.",
-    checkBlog: "Read the blog",
   },
-  blog: {
-    title: "Blog",
-    pageTitle: "Blog | Alexandre Trotel",
-    view: "view",
-    views: "views",
-    readPost: "Read blog post: {title}",
+  metadata: {
+    description:
+      "Alexandre Trotel is a tech entrepreneur and full-stack developer.",
+    title: "Alexandre Trotel",
+  },
+  nav: {
+    blog: "\\blog",
+    github: "\\github",
+    home: "\\home",
   },
   notFound: {
-    title: "Not Found | Alexandre Trotel",
-    message: "This page does not exist.",
     goBack: "Go back",
+    message: "This page does not exist.",
+    title: "Not Found | Alexandre Trotel",
   },
 } as const satisfies Translations;

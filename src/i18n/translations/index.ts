@@ -1,4 +1,6 @@
-import { defaultLocale, type Locale } from "../locales";
+import { defaultLocale } from "@/i18n/locales";
+import type { Locale } from "@/i18n/locales";
+
 import { en } from "./en";
 import { fr } from "./fr";
 import type { Translations } from "./types";
@@ -7,6 +9,5 @@ export const translations: Record<Locale, Translations> = {
   fr,
 };
 
-export function getTranslations(locale?: Locale): Translations {
-  return translations[locale ?? defaultLocale];
-}
+export const getTranslations = (locale?: Locale): Translations =>
+  translations[locale ?? defaultLocale];

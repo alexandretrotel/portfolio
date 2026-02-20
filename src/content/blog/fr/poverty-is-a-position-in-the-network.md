@@ -12,7 +12,7 @@ Alors j'ai fait exactement ça. Je me suis inscrit en [CPGE](https://fr.wikipedi
 
 Et j'ai échoué.
 
-Pas complètement—j'ai intégré une bonne école. Juste pas la *meilleure*.
+Pas complètement—j'ai intégré une bonne école. Juste pas la _meilleure_.
 
 Ça s'est avéré être l'échec le plus chanceux de ma vie.
 
@@ -87,7 +87,7 @@ Réfléchis-y pratiquement. Si tu es un jeune diplômé qui cherche un emploi, t
 
 C'est là que la plupart des gens se trompent. Ils essaient de résoudre le problème en travaillant plus dur à leur job.
 
-Si tu travailles *h* heures à *w* euros de l'heure, ton revenu est :
+Si tu travailles _h_ heures à _w_ euros de l'heure, ton revenu est :
 
 $$
 I = w \cdot h
@@ -99,13 +99,13 @@ Mais ça ne te rendra pas riche. Ça ne peut pas, mathématiquement.
 
 Les hubs ne vendent pas leur temps. Ils captent des flux.
 
-Imagine que tu crées quelque chose—une plateforme, un produit, un contenu—qui attire *k* utilisateurs, chacun générant une valeur *v*. Ton revenu devient :
+Imagine que tu crées quelque chose—une plateforme, un produit, un contenu—qui attire _k_ utilisateurs, chacun générant une valeur _v_. Ton revenu devient :
 
 $$
 I = v \cdot k
 $$
 
-Et voici la magie : *k* peut croître exponentiellement grâce aux effets de réseau.
+Et voici la magie : _k_ peut croître exponentiellement grâce aux effets de réseau.
 
 $$
 k_{t+1} = k_t + \alpha k_t
@@ -139,7 +139,7 @@ Barabási a découvert que la plupart des réseaux du monde réel sont "sans éc
 
 1. **Attachement préférentiel** : les nouveaux nœuds se connectent aux nœuds qui ont déjà beaucoup de connexions.
 2. **Les hubs dominent** : quelques nœuds finissent avec la majorité des connexions.
-3. **Distribution en loi de puissance** : la probabilité qu'un nœud ait *k* connexions suit :
+3. **Distribution en loi de puissance** : la probabilité qu'un nœud ait _k_ connexions suit :
 
 $$
 P(k) \sim k^{-\gamma}
@@ -149,7 +149,7 @@ Où γ est typiquement entre 2 et 3.
 
 En clair : dans n'importe quel réseau, un nombre infime de hubs capte la majorité des connexions. La plupart des nœuds sont périphériques.
 
-Pense aux entreprises. BlackRock, Vanguard, Palantir—ce sont des hubs. Ils n'ont pas juste de l'argent. Ils ont des *connexions*. Ils sont au centre des flux.
+Pense aux entreprises. BlackRock, Vanguard, Palantir—ce sont des hubs. Ils n'ont pas juste de l'argent. Ils ont des _connexions_. Ils sont au centre des flux.
 
 ## Un exemple concret
 
