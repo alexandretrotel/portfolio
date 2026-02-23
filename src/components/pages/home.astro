@@ -10,15 +10,14 @@ const metadata = {
   title: "atrtde",
 };
 
-let showBlog = false;
-try {
-  const blogPosts = await getCollection("blog");
-  showBlog = blogPosts.length > 0;
-} catch {
-  showBlog = false;
-}
-
 const blogHref = "/blog";
+
+const formatDate = (date: Date): string =>
+  date.toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
 
 const openSourceProjects = [
   {
@@ -50,6 +49,29 @@ const ventures = [
     url: "https://github.com/zap-studio",
   },
 ];
+
+let latestPost:
+  | { title: string; description: string; url: string; date: Date }
+  | null = null;
+
+try {
+  const posts = await getCollection("blog");
+  const publishedPosts = posts
+    .filter((p) => p.data.published !== false)
+    .toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+  const [p] = publishedPosts;
+  if (p) {
+    latestPost = {
+      date: p.data.date,
+      description: p.data.description,
+      title: p.data.title,
+      url: `/blog/${p.id}/`,
+    };
+  }
+} catch {
+  latestPost = null;
+}
 ---
 
 <Layout title={metadata.title} description={metadata.description}>
@@ -71,6 +93,30 @@ const ventures = [
       <HomeSection title="Ventures">
         <ItemList items={ventures} linkTarget="_blank" linkRel="noreferrer" />
       </HomeSection>
+
+      {latestPost && (
+            <HomeSection title="Blog">
+              <ItemList
+                linkTarget="_self"
+                items={[
+                  {
+                    name: latestPost.title,
+                    summary: formatDate(latestPost.date),
+                    url: latestPost.url,
+                  },
+                ]}
+              />
+
+              <div class="pt-3">
+                <a
+                  class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  href={blogHref}
+                >
+                  Read all posts →
+                </a>
+              </div>
+            </HomeSection>
+          )}
     </div>
   </section>
 </Layout>
