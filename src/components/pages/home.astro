@@ -1,0 +1,122 @@
+---
+/* eslint-disable jest/require-hook */
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/main.astro";
+import HomeSection from "@/components/ui/home-section.astro";
+import ItemList from "@/components/ui/item-list.astro";
+
+const metadata = {
+  description: "atrtde is a tech entrepreneur and full-stack developer.",
+  title: "atrtde",
+};
+
+const blogHref = "/blog";
+
+const formatDate = (date: Date): string =>
+  date.toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
+const openSourceProjects = [
+  {
+    name: "todo-tree",
+    summary: "find and display TODO-style comments in your codebase.",
+    url: "https://github.com/atrtde/todo-tree",
+  },
+  {
+    name: "mntn",
+    summary: "manage your dotfiles with the use of profiles.",
+    url: "https://github.com/atrtde/mntn",
+  },
+  {
+    name: "feedyourai",
+    summary: "combine multiple files into a single file for LLM processing with filtering options.",
+    url: "https://github.com/atrtde/feedyourai",
+  },
+];
+
+const ventures = [
+  {
+    name: "Stealth Startup",
+    summary: "developing a next-generation product.",
+    url: "https://en.wikipedia.org/wiki/Stealth_startup",
+  },
+  {
+    name: "Zap Studio",
+    summary: "open source libraries, templates, and specifications.",
+    url: "https://github.com/zap-studio",
+  },
+];
+
+let latestPost:
+  | { title: string; description: string; url: string; date: Date }
+  | null = null;
+
+try {
+  const posts = await getCollection("blog");
+  const publishedPosts = posts
+    .filter((p) => p.data.published !== false)
+    .toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+  const [p] = publishedPosts;
+  if (p) {
+    latestPost = {
+      date: p.data.date,
+      description: p.data.description,
+      title: p.data.title,
+      url: `/blog/${p.id}/`,
+    };
+  }
+} catch {
+  latestPost = null;
+}
+---
+
+<Layout title={metadata.title} description={metadata.description}>
+  <section class="mx-auto flex h-full w-full max-w-3xl flex-col gap-12 py-2">
+    <article class="space-y-4">
+      <h1 class="serif-title max-w-2xl text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
+          Shaped by what I build.
+      </h1>
+      <p class="max-w-2xl font-serif text-sm leading-relaxed text-muted-foreground md:text-base">
+          I build tools, launch ventures, and share code publicly. Every project shapes the way I think and develop, and in turn, I shape the project through my ideas and effort.
+      </p>
+    </article>
+
+    <div class="space-y-10">
+      <HomeSection title="Open Source">
+        <ItemList items={openSourceProjects} />
+      </HomeSection>
+
+      <HomeSection title="Ventures">
+        <ItemList items={ventures} linkTarget="_blank" linkRel="noreferrer" />
+      </HomeSection>
+
+      {latestPost && (
+            <HomeSection title="Blog">
+              <ItemList
+                linkTarget="_self"
+                items={[
+                  {
+                    name: latestPost.title,
+                    summary: formatDate(latestPost.date),
+                    url: latestPost.url,
+                  },
+                ]}
+              />
+
+              <div class="pt-3">
+                <a
+                  class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  href={blogHref}
+                >
+                  Read all posts →
+                </a>
+              </div>
+            </HomeSection>
+          )}
+    </div>
+  </section>
+</Layout>
