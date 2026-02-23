@@ -5,25 +5,25 @@ import "@fontsource-variable/geist";
 import { ClientRouter } from "astro:transitions";
 import Footer from "@/components/footer.astro";
 import Header from "@/components/header.astro";
-import { getTranslations } from "@/i18n/translations";
-import { getLocaleFromUrl } from "@/i18n/utils";
 
 interface Props {
   description?: string;
   title?: string;
 }
 
-const locale = getLocaleFromUrl(Astro.url);
-const t = getTranslations(locale);
+const defaultMetadata = {
+  description: "Alexandre Trotel is a tech entrepreneur and full-stack developer.",
+  title: "Alexandre Trotel",
+};
 
-const { title = t.metadata.title, description = t.metadata.description } =
+const { title = defaultMetadata.title, description = defaultMetadata.description } =
   Astro.props;
 
-const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
+const ogLocale = "en_US";
 ---
 
 <!doctype html>
-<html lang={locale}>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
