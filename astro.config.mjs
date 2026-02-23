@@ -6,30 +6,11 @@ import { defineConfig } from "astro/config";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 
-import { defaultLocale, locales } from "./src/i18n/locales";
 import { remarkReadingTime } from "./src/lib/remark-reading-time";
 
 export default defineConfig({
   adapter: vercel(),
-  i18n: {
-    defaultLocale,
-    locales,
-    routing: {
-      prefixDefaultLocale: false,
-    },
-  },
-  integrations: [
-    svelte(),
-    sitemap({
-      i18n: {
-        defaultLocale: "en",
-        locales: {
-          en: "en",
-          fr: "fr",
-        },
-      },
-    }),
-  ],
+  integrations: [svelte(), sitemap({})],
   markdown: {
     rehypePlugins: [rehypeKatex],
     remarkPlugins: [remarkMath, remarkReadingTime],

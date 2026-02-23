@@ -3,51 +3,57 @@
 import { getCollection } from "astro:content";
 import ArrowRight from "@lucide/astro/icons/arrow-right";
 import Button from "@/components/ui/button.astro";
-import type { Locale } from "@/i18n/locales";
-import { getTranslations } from "@/i18n/translations";
-import { getBlogEntry, getLocalizedPath } from "@/i18n/utils";
 import Layout from "@/layouts/main.astro";
 
-interface Props {
-  locale: Locale;
-}
+const metadata = {
+  description: "Alexandre Trotel is a tech entrepreneur and full-stack developer.",
+  title: "Alexandre Trotel",
+};
 
-const { locale } = Astro.props;
-const t = getTranslations(locale);
+const story = {
+  authorOf: "I run",
+  bio: "Full-stack developer. I build things, ship fast, and iterate. I care about code that works, not code that impresses.",
+  checkBlog: "Read the blog",
+  name: "Alexandre Trotel.",
+  zapStudio: "Zap Studio",
+  zapStudioDesc:
+    "– open-source tools, libraries, and templates for developers who'd rather ship than write boilerplate.",
+};
 
 let showBlog = false;
 try {
-  const blogEntry = getBlogEntry(locale);
-  const blogPosts = await getCollection(blogEntry);
+  const blogPosts = await getCollection("blog");
   showBlog = blogPosts.length > 0;
 } catch {
   showBlog = false;
 }
+
+const blogHref = "/blog";
 ---
 
-<Layout title={t.metadata.title} description={t.metadata.description}>
+<Layout title={metadata.title} description={metadata.description}>
   <div class="flex h-full flex-col gap-16">
     <div
       class="flex w-full max-w-xl flex-col gap-6 font-light text-muted-foreground"
     >
       <p class="text-base">
-        {t.home.intro}
-        <span class="font-medium text-foreground text-base">{t.home.name}</span>
-        {t.home.bio}
+        <span class="font-medium text-foreground text-base">{story.name}</span>
+        {story.bio}
       </p>
 
       <p class="text-base">
-        {t.home.authorOf}
+        {story.authorOf}
         {" "}
         <a
           class="font-medium text-primary hover:underline text-base"
           href="https://www.zapstudio.dev"
           target="_blank"
+          rel="noreferrer"
         >
-          {t.home.zapStudio}
+          {story.zapStudio}
         </a>
         {" "}
-        {t.home.zapStudioDesc}
+        {story.zapStudioDesc}
       </p>
 
       {showBlog && (
@@ -55,10 +61,10 @@ try {
             <Button variant="ghost" class="active:scale-95 active:bg-accent">
               <a
                 class="flex items-center gap-2 font-medium text-primary text-sm"
-                href={getLocalizedPath(locale, "/blog")}
+                href={blogHref}
               >
                 <ArrowRight size={16} />
-                {t.home.checkBlog}
+                {story.checkBlog}
               </a>
             </Button>
           </div>
