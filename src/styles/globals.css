@@ -5,6 +5,7 @@
 
 @theme inline {
   --font-sans: "Geist Variable", "sans-serif";
+  --font-serif: "Lora Variable", "serif";
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -114,8 +115,18 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
   }
 
   .prose {

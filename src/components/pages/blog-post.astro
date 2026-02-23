@@ -1,10 +1,16 @@
 ---
 /* eslint-disable jest/require-hook */
-import { render } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
+import { render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import type { BlogCollection } from "@/content.config";
-import { formatDate, getLocaleFromUrl } from "@/i18n/utils";
 import Layout from "@/layouts/main.astro";
+
+const formatDate = (date: Date): string =>
+  date.toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
 
 interface Props {
   post: CollectionEntry<BlogCollection>;
@@ -12,7 +18,6 @@ interface Props {
 
 const { post } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await render(post);
-const locale = getLocaleFromUrl(Astro.url);
 let minutesRead = "0";
 const rawMinutes = remarkPluginFrontmatter?.minutesRead;
 if (rawMinutes !== undefined && rawMinutes !== null) {
@@ -26,13 +31,13 @@ if (rawMinutes !== undefined && rawMinutes !== null) {
 ---
 
 <Layout
-  title={`${post.data.title} | Alexandre Trotel`}
+  title={`${post.data.title} | atrtde`}
   description={post.data.description}
 >
   <article class="mx-auto max-w-3xl">
     <header class="mb-8">
       <p class="text-muted-foreground text-sm">
-        {formatDate(post.data.date, locale)}
+        {formatDate(post.data.date)}
         {" "}&middot; {minutesRead}
       </p>
     </header>

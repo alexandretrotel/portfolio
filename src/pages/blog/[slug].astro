@@ -1,15 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
-import BlogPostPage from "@/components/pages/blog-post-page.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import BlogPostPage from "@/components/pages/blog-post.astro";
 import type { BlogCollection } from "@/content.config";
-import { defaultLocale } from "@/i18n/locales";
-import { getBlogEntry } from "@/i18n/utils";
 
 export const getStaticPaths = async () => {
-  const blogEntry = getBlogEntry(defaultLocale);
-  const posts = await getCollection(blogEntry);
-  return posts.map((p: (typeof posts)[number]) => ({
+  const posts: CollectionEntry<BlogCollection>[] = await getCollection("blog");
+  return posts.map((p) => ({
     params: { slug: p.id },
     props: { post: p },
   }));

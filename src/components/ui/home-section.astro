@@ -1,0 +1,10 @@
+---
+const { title } = Astro.props as { title: string };
+---
+
+<article class="space-y-3">
+  <h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-foreground">
+    {title}
+  </h2>
+  <slot />
+</article>
