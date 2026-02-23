@@ -1,23 +1,13 @@
 ---
 /* eslint-disable jest/require-hook */
 import { getCollection } from "astro:content";
-import ArrowRight from "@lucide/astro/icons/arrow-right";
-import Button from "@/components/ui/button.astro";
 import Layout from "@/layouts/main.astro";
+import HomeSection from "@/components/ui/home-section.astro";
+import ItemList from "@/components/ui/item-list.astro";
 
 const metadata = {
   description: "atrtde is a tech entrepreneur and full-stack developer.",
   title: "atrtde",
-};
-
-const story = {
-  authorOf: "I run",
-  bio: "Full-stack developer. I build things, ship fast, and iterate.",
-  checkBlog: "Read the blog",
-  name: "atrtde.",
-  zapStudio: "Zap Studio",
-  zapStudioDesc:
-    "– open-source tools, libraries, and templates for developers who'd rather ship than write boilerplate.",
 };
 
 let showBlog = false;
@@ -29,46 +19,58 @@ try {
 }
 
 const blogHref = "/blog";
+
+const openSourceProjects = [
+  {
+    name: "todo-tree",
+    summary: "find and display TODO-style comments in your codebase.",
+    url: "https://github.com/atrtde/todo-tree",
+  },
+  {
+    name: "mntn",
+    summary: "manage your dotfiles with the use of profiles.",
+    url: "https://github.com/atrtde/mntn",
+  },
+  {
+    name: "feedyourai",
+    summary: "combine multiple files into a single file for LLM processing with filtering options.",
+    url: "https://github.com/atrtde/feedyourai",
+  },
+];
+
+const ventures = [
+  {
+    name: "Steath Startup",
+    summary: "developing a next-generation product.",
+    url: "https://en.wikipedia.org/wiki/Stealth_startup",
+  },
+  {
+    name: "Zap Studio",
+    summary: "open source libraries, templates, and specifications.",
+    url: "https://github.com/zap-studio",
+  },
+];
 ---
 
 <Layout title={metadata.title} description={metadata.description}>
-  <div class="flex h-full flex-col gap-16">
-    <div
-      class="flex w-full max-w-xl flex-col gap-6 font-light text-muted-foreground"
-    >
-      <p class="text-base">
-        <span class="font-medium text-foreground text-base">{story.name}</span>
-        {story.bio}
+  <section class="mx-auto flex h-full w-full max-w-3xl flex-col gap-12 py-2">
+    <article class="space-y-4">
+      <h1 class="serif-title max-w-2xl text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
+          Shaped by what I build.
+      </h1>
+      <p class="max-w-2xl font-serif text-sm leading-relaxed text-muted-foreground md:text-base">
+          I build tools, launch ventures, and share code publicly. Every project shapes the way I think and develop, and in turn, I shape the project through my ideas and effort.
       </p>
+    </article>
 
-      <p class="text-base">
-        {story.authorOf}
-        {" "}
-        <a
-          class="font-medium text-primary hover:underline text-base"
-          href="https://www.zapstudio.dev"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {story.zapStudio}
-        </a>
-        {" "}
-        {story.zapStudioDesc}
-      </p>
+    <div class="space-y-10">
+      <HomeSection title="Open Source">
+        <ItemList items={openSourceProjects} />
+      </HomeSection>
 
-      {showBlog && (
-          <div>
-            <Button variant="ghost" class="active:scale-95 active:bg-accent">
-              <a
-                class="flex items-center gap-2 font-medium text-primary text-sm"
-                href={blogHref}
-              >
-                <ArrowRight size={16} />
-                {story.checkBlog}
-              </a>
-            </Button>
-          </div>
-        )}
+      <HomeSection title="Ventures">
+        <ItemList items={ventures} linkTarget="_blank" linkRel="noreferrer" />
+      </HomeSection>
     </div>
-  </div>
+  </section>
 </Layout>
