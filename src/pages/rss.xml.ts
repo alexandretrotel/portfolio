@@ -11,8 +11,7 @@ export const GET = async (context: APIContext) => {
 
   return rss({
     customData: "<language>en-us</language>",
-    description:
-      "Alexandre Trotel is a tech entrepreneur and full-stack developer.",
+    description: "atrtde is a tech entrepreneur and full-stack developer.",
     items: blogPosts.map((post) => ({
       description: post.data.description,
       link: `/blog/${post.id}/`,
@@ -20,6 +19,6 @@ export const GET = async (context: APIContext) => {
       title: post.data.title,
     })),
     site: context.site ?? new URL("https://www.alexandretrotel.org"),
-    title: "Alexandre Trotel",
+    title: "atrtde",
   });
 };
