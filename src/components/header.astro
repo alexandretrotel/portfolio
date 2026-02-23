@@ -1,36 +1,5 @@
 ---
-/* eslint-disable jest/require-hook */
-import { getCollection } from "astro:content";
 import DarkModeToggle from "@/components/dark-mode-toggle.svelte";
-import NavItem from "@/components/nav-item.astro";
-
-interface LinkItem {
-  hidden: boolean;
-  href: string;
-  target?: string;
-  title: string;
-}
-
-let showBlog = false;
-try {
-  const blogPosts = await getCollection("blog");
-  showBlog = blogPosts.length > 0;
-} catch {
-  showBlog = false;
-}
-
-const links: LinkItem[] = [
-  {
-    hidden: true,
-    href: "/",
-    title: "Home",
-  },
-  {
-    hidden: !showBlog,
-    href: "/blog",
-    title: "Blog",
-  },
-];
 ---
 
 <div
