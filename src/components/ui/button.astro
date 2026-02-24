@@ -1,6 +1,6 @@
 ---
-import { cva } from 'class-variance-authority';
-import type { VariantProps } from 'class-variance-authority';
+import type { VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
@@ -42,7 +42,8 @@ interface Props {
   variant?: ButtonVariants["variant"];
 }
 
-const { variant, size, class: className } = Astro.props;
+const props = Astro.props as Props;
+const { variant, size, class: className } = props;
 ---
 
 <span

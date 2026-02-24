@@ -1,11 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "@/layouts/main.astro";
 import HomeSection from "@/components/ui/home-section.astro";
 import ItemList from "@/components/ui/item-list.astro";
+import Layout from "@/layouts/main.astro";
 
 const metadata = {
-  description: "Alexandre Trotel is a tech entrepreneur and full-stack developer.",
+  description:
+    "Alexandre Trotel is a tech entrepreneur and full-stack developer.",
   title: "Alexandre Trotel",
 };
 
@@ -31,7 +32,8 @@ const openSourceProjects = [
   },
   {
     name: "feedyourai",
-    summary: "combine multiple files into a single file for LLM processing with filtering options.",
+    summary:
+      "combine multiple files into a single file for LLM processing with filtering options.",
     url: "https://github.com/alexandretrotel/feedyourai",
   },
 ];
@@ -49,9 +51,12 @@ const ventures = [
   },
 ];
 
-let latestPost:
-  | { title: string; description: string; url: string; date: Date }
-  | null = null;
+let latestPost: {
+  title: string;
+  description: string;
+  url: string;
+  date: Date;
+} | null = null;
 
 try {
   const posts = await getCollection("blog");
@@ -76,11 +81,17 @@ try {
 <Layout title={metadata.title} description={metadata.description}>
   <section class="mx-auto flex h-full w-full max-w-3xl flex-col gap-12 py-2">
     <article class="space-y-4">
-      <h1 class="serif-title max-w-2xl text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
-          Shaped by what I build.
+      <h1
+        class="serif-title max-w-2xl text-3xl leading-tight tracking-tight text-foreground md:text-4xl"
+      >
+        Shaped by what I build.
       </h1>
-      <p class="max-w-2xl font-serif text-sm leading-relaxed text-muted-foreground md:text-base">
-          I build tools, launch ventures, and share code publicly. Every project shapes the way I think and develop, and in turn, I shape the project through my ideas and effort.
+      <p
+        class="max-w-2xl font-serif text-sm leading-relaxed text-muted-foreground md:text-base"
+      >
+        I build tools, launch ventures, and share code publicly. Every project
+        shapes the way I think and develop, and in turn, I shape the project
+        through my ideas and effort.
       </p>
     </article>
 
@@ -94,28 +105,28 @@ try {
       </HomeSection>
 
       {latestPost && (
-            <HomeSection title="Blog">
-              <ItemList
-                linkTarget="_self"
-                items={[
-                  {
-                    name: latestPost.title,
-                    summary: formatDate(latestPost.date),
-                    url: latestPost.url,
-                  },
-                ]}
-              />
+        <HomeSection title="Blog">
+          <ItemList
+            items={[
+              {
+                name: latestPost.title,
+                summary: formatDate(latestPost.date),
+                url: latestPost.url,
+              },
+            ]}
+            linkTarget="_self"
+          />
 
-              <div class="pt-3">
-                <a
-                  class="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                  href={blogHref}
-                >
-                  Read all posts →
-                </a>
-              </div>
-            </HomeSection>
-          )}
+          <div class="pt-3">
+            <a
+              class="text-muted-foreground text-sm transition-colors hover:text-foreground"
+              href={blogHref}
+            >
+              Read all posts →
+            </a>
+          </div>
+        </HomeSection>
+      )}
     </div>
   </section>
 </Layout>

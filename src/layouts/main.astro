@@ -13,12 +13,16 @@ interface Props {
 }
 
 const defaultMetadata = {
-  description: "Alexandre Trotel is a tech entrepreneur and full-stack developer.",
+  description:
+    "Alexandre Trotel is a tech entrepreneur and full-stack developer.",
   title: "Alexandre Trotel",
 };
 
-const { title = defaultMetadata.title, description = defaultMetadata.description } =
-  Astro.props;
+const props = Astro.props as Props;
+const {
+  title = defaultMetadata.title,
+  description = defaultMetadata.description,
+} = props;
 
 const ogLocale = "en_US";
 ---
@@ -51,10 +55,10 @@ const ogLocale = "en_US";
     <!-- RSS -->
     {Astro.site && (
       <link
-        rel="alternate"
-        type="application/rss+xml"
-        title="Alexandre Trotel"
         href={new URL("rss.xml", Astro.site)}
+        rel="alternate"
+        title="Alexandre Trotel"
+        type="application/rss+xml"
       />
     )}
 
