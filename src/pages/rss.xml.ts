@@ -1,7 +1,7 @@
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
 
 import type { BlogCollection } from "@/content.config";
 

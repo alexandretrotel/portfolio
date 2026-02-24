@@ -1,6 +1,6 @@
 ---
-import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import BlogPostPage from "@/components/pages/blog-post.astro";
 import type { BlogCollection } from "@/content.config";
 
@@ -16,7 +16,8 @@ interface Props {
   post: CollectionEntry<BlogCollection>;
 }
 
-const { post } = Astro.props;
+const props = Astro.props as Props;
+const { post } = props;
 
 export const prerender = true;
 ---

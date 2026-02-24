@@ -1,7 +1,6 @@
 ---
-/* eslint-disable jest/require-hook */
-import { render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 import type { BlogCollection } from "@/content.config";
 import Layout from "@/layouts/main.astro";
 
@@ -16,7 +15,8 @@ interface Props {
   post: CollectionEntry<BlogCollection>;
 }
 
-const { post } = Astro.props;
+const props = Astro.props as Props;
+const post = props.post;
 const { Content, remarkPluginFrontmatter } = await render(post);
 let minutesRead = "0";
 const rawMinutes = remarkPluginFrontmatter?.minutesRead;
