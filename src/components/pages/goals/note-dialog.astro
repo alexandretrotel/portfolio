@@ -1,0 +1,75 @@
+---
+import Dialog from "@/components/ui/dialog.astro";
+---
+
+<Dialog id="goal-note-dialog">
+  <header class="space-y-1">
+    <p
+      class="font-mono text-[11px] text-muted-foreground uppercase tracking-[0.18em]"
+    >
+      Note
+    </p>
+    <h3 id="goal-note-title" class="serif-title text-lg text-card-foreground">
+      Goal note
+    </h3>
+  </header>
+  <p
+    id="goal-note-content"
+    class="font-mono text-muted-foreground text-sm leading-relaxed"
+  />
+  <form method="dialog">
+    <button
+      type="submit"
+      class="rounded border border-border px-3 py-1 font-mono text-sm text-foreground transition-colors hover:bg-muted"
+    >
+      Close
+    </button>
+  </form>
+</Dialog>
+
+<script is:inline>
+  const noteDialog = document.getElementById("goal-note-dialog");
+  const noteTitle = document.getElementById("goal-note-title");
+  const noteContent = document.getElementById("goal-note-content");
+
+  if (
+    noteDialog instanceof HTMLDialogElement &&
+    noteTitle instanceof HTMLElement &&
+    noteContent instanceof HTMLElement
+  ) {
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) {
+        return;
+      }
+
+      const trigger = target.closest("[data-note-trigger]");
+      if (!(trigger instanceof HTMLButtonElement)) {
+        return;
+      }
+
+      const title = trigger.dataset.noteTitle ?? "Note";
+      const content = trigger.dataset.noteContent;
+      if (!content) {
+        return;
+      }
+
+      noteTitle.textContent = title;
+      noteContent.textContent = content;
+      noteDialog.showModal();
+    });
+
+    noteDialog.addEventListener("click", (event) => {
+      const rect = noteDialog.getBoundingClientRect();
+      const isInDialog =
+        rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width;
+
+      if (!isInDialog) {
+        noteDialog.close();
+      }
+    });
+  }
+</script>

@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import HomeSection from "@/components/ui/home-section.astro";
-import ItemList from "@/components/ui/item-list.astro";
+import Hero from "@/components/pages/home/hero.astro";
+import Sections from "@/components/pages/home/sections.astro";
 import Layout from "@/layouts/main.astro";
 
 const metadata = {
@@ -53,7 +53,6 @@ const ventures = [
 
 let latestPost: {
   title: string;
-  description: string;
   url: string;
   date: Date;
 } | null = null;
@@ -68,7 +67,6 @@ try {
   if (p) {
     latestPost = {
       date: p.data.date,
-      description: p.data.description,
       title: p.data.title,
       url: `/blog/${p.id}/`,
     };
@@ -80,61 +78,18 @@ try {
 
 <Layout title={metadata.title} description={metadata.description}>
   <section class="mx-auto flex h-full w-full max-w-3xl flex-col gap-12 py-2">
-    <article class="space-y-4">
-      <h1
-        class="serif-title max-w-2xl text-3xl leading-tight tracking-tight text-foreground md:text-4xl"
-      >
-        Shaped by what I build.
-      </h1>
-      <p
-        class="max-w-2xl font-serif text-sm leading-relaxed text-muted-foreground md:text-base"
-      >
-        I build tools, launch ventures, and share code publicly. Every project
-        shapes the way I think and develop, and in turn, I shape the project
-        through my ideas and effort.
-      </p>
-      <div class="flex flex-wrap items-center gap-4">
-        <a
-          class="inline-flex text-sm text-muted-foreground transition-colors hover:text-foreground"
-          href="/goals"
-        >
-          Check my goals →
-        </a>
-      </div>
-    </article>
-
-    <div class="space-y-10">
-      <HomeSection title="Open Source">
-        <ItemList items={openSourceProjects} />
-      </HomeSection>
-
-      <HomeSection title="Ventures">
-        <ItemList items={ventures} linkTarget="_blank" linkRel="noreferrer" />
-      </HomeSection>
-
-      {latestPost && (
-        <HomeSection title="Blog">
-          <ItemList
-            items={[
-              {
-                name: latestPost.title,
-                summary: formatDate(latestPost.date),
-                url: latestPost.url,
-              },
-            ]}
-            linkTarget="_self"
-          />
-
-          <div class="pt-3">
-            <a
-              class="text-muted-foreground text-sm transition-colors hover:text-foreground"
-              href={blogHref}
-            >
-              Read all posts →
-            </a>
-          </div>
-        </HomeSection>
-      )}
-    </div>
+    <Hero />
+    <Sections
+      blogHref={blogHref}
+      latestBlogItem={latestPost
+        ? {
+            name: latestPost.title,
+            summary: formatDate(latestPost.date),
+            url: latestPost.url,
+          }
+        : null}
+      openSourceProjects={openSourceProjects}
+      ventures={ventures}
+    />
   </section>
 </Layout>

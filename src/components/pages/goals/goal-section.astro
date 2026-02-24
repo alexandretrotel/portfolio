@@ -1,0 +1,27 @@
+---
+import GoalItem from "@/components/pages/goals/goal-item.astro";
+import type { Goal } from "@/types/goals";
+
+interface Props {
+  items: Goal[];
+  sectionLabel: string;
+}
+
+const props = Astro.props as Props;
+const { items, sectionLabel } = props;
+---
+
+<section class="space-y-4">
+  <h2
+    class="-rotate-[0.15deg] font-mono font-semibold text-foreground text-sm uppercase tracking-[0.18em]"
+  >
+    {sectionLabel}
+  </h2>
+  <article class="space-y-2">
+    <ul class="space-y-3">
+      {items.map((goal) => (
+        <GoalItem goal={goal} />
+      ))}
+    </ul>
+  </article>
+</section>
