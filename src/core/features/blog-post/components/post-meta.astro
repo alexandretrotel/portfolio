@@ -1,0 +1,16 @@
+---
+interface Props {
+  dateLabel: string;
+  minutesRead: string;
+}
+
+const props = Astro.props as Props;
+const { dateLabel, minutesRead } = props;
+---
+
+<header class="mb-8">
+  <p class="text-muted-foreground text-sm">
+    {dateLabel}
+    {" "}&middot; {minutesRead}
+  </p>
+</header>

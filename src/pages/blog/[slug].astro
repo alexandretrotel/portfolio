@@ -1,8 +1,8 @@
 ---
-import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import BlogPostPage from "@/components/pages/blog-post.astro";
+import { getCollection } from "astro:content";
 import type { BlogCollection } from "@/content.config";
+import BlogPostPage from "@/core/features/blog-post/page.astro";
 
 export const getStaticPaths = async () => {
   const posts: CollectionEntry<BlogCollection>[] = await getCollection("blog");
@@ -16,7 +16,8 @@ interface Props {
   post: CollectionEntry<BlogCollection>;
 }
 
-const { post } = Astro.props;
+const props = Astro.props as Props;
+const { post } = props;
 
 export const prerender = true;
 ---

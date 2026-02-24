@@ -1,0 +1,89 @@
+---
+import type { Goal } from "@/core/primitives/schemas/goals";
+
+interface Props {
+  goal: Goal;
+}
+
+const props = Astro.props as Props;
+const { goal } = props;
+
+const isDone = goal.status === "success";
+const isFailed = goal.status === "failed";
+const percent =
+  goal.progressPercent !== undefined ? `(${goal.progressPercent}%)` : null;
+---
+
+<li class="space-y-2">
+  <div class="flex items-start gap-3">
+    <span
+      aria-hidden="true"
+      class:list={[
+        "mt-[3px] inline-flex h-3.5 w-3.5 items-center justify-center rounded-xs border text-[10px] leading-none",
+        {
+          "border-foreground": !isFailed,
+          "bg-foreground text-background": isDone,
+          "bg-transparent": !isDone,
+          "border-red-600 text-red-600 dark:border-red-400 dark:text-red-400":
+            isFailed,
+        },
+      ]}
+    >
+      {isDone ? "✓" : ""}
+    </span>
+
+    {goal.notes ? (
+      <button
+        data-note-content={goal.notes}
+        data-note-title={goal.title}
+        data-note-trigger
+        class:list={[
+          "rounded-sm text-left transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-1",
+          {
+            "focus-visible:ring-foreground/40": !isFailed,
+            "focus-visible:ring-red-500/40": isFailed,
+          },
+        ]}
+        type="button"
+      >
+        <p
+          class:list={[
+            "font-mono text-foreground text-sm",
+            {
+              "text-red-700 dark:text-red-400": isFailed,
+            },
+          ]}
+        >
+          <span
+            class:list={{
+              "decoration-2 line-through opacity-70": isDone,
+            }}
+          >
+            <span class="underline decoration-dashed underline-offset-3">
+              {goal.title}
+            </span>
+          </span>
+          {percent && <span class="ml-2 text-muted-foreground text-xs">{percent}</span>}
+        </p>
+      </button>
+    ) : (
+      <p
+        class:list={[
+          "font-mono text-foreground text-sm",
+          {
+            "text-red-700 dark:text-red-400": isFailed,
+          },
+        ]}
+      >
+        <span
+          class:list={{
+            "decoration-2 line-through opacity-70": isDone,
+          }}
+        >
+          {goal.title}
+        </span>
+        {percent && <span class="ml-2 text-muted-foreground text-xs">{percent}</span>}
+      </p>
+    )}
+  </div>
+</li>

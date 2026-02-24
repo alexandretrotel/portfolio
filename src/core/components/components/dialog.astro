@@ -1,0 +1,20 @@
+---
+interface Props {
+  articleClass?: string;
+  class?: string;
+  id: string;
+}
+
+const props = Astro.props as Props;
+const { class: className = "", articleClass = "space-y-4 p-5", id } = props;
+---
+
+<dialog
+  id={id}
+  class:list={[
+    "fixed inset-0 m-auto w-[min(92vw,32rem)] max-h-[85vh] overflow-auto rounded-lg border border-border bg-card p-0 text-card-foreground shadow-xl backdrop:bg-black/25",
+    className,
+  ]}
+>
+  <article class={articleClass}><slot /></article>
+</dialog>
