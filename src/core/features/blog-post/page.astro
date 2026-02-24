@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
+import type { BlogCollection } from "@/content.config";
+import Layout from "@/core/components/layout/main-layout.astro";
+import PostBody from "@/core/features/blog-post/components/post-body.astro";
+import PostMeta from "@/core/features/blog-post/components/post-meta.astro";
+
+const formatDate = (date: Date): string =>
+  date.toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
+interface Props {
+  post: CollectionEntry<BlogCollection>;
+}
+
+const props = Astro.props as Props;
+const post = props.post;
+const { Content, remarkPluginFrontmatter } = await render(post);
+let minutesRead = "0";
+const rawMinutes = remarkPluginFrontmatter?.minutesRead;
+if (rawMinutes !== undefined && rawMinutes !== null) {
+  if (typeof rawMinutes === "number" && !Number.isNaN(rawMinutes)) {
+    minutesRead = String(Math.round(rawMinutes));
+  } else if (typeof rawMinutes === "string") {
+    const trimmed = rawMinutes.trim();
+    minutesRead = trimmed === "" ? "0" : trimmed;
+  }
+}
+---
+
+<Layout
+  title={`${post.data.title} | Alexandre Trotel`}
+  description={post.data.description}
+>
+  <article class="mx-auto max-w-3xl">
+    <PostMeta
+      dateLabel={formatDate(post.data.date)}
+      minutesRead={minutesRead}
+    />
+    <PostBody> <Content /> </PostBody>
+  </article>
+</Layout>

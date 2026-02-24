@@ -117,8 +117,8 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
     font-family: var(--font-sans);
+    @apply bg-background text-foreground antialiased;
   }
 
   h1,

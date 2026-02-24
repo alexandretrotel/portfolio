@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import type { BlogCollection } from "@/content.config";
+import Layout from "@/core/components/layout/main-layout.astro";
+import Header from "@/core/features/blog/components/header.astro";
+import PostList from "@/core/features/blog/components/post-list.astro";
+
+const metadata = {
+  description: "Writing on building, networks, and technology.",
+  title: "Blog | Alexandre Trotel",
+};
+
+const formatDate = (date: Date): string =>
+  date.toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
+const posts: CollectionEntry<BlogCollection>[] = await getCollection("blog");
+
+const publishedPosts = posts
+  .filter((p) => p.data.published !== false)
+  .toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const items = publishedPosts.map((p) => ({
+  name: p.data.title,
+  summary: formatDate(p.data.date),
+  url: `/blog/${p.id}/`,
+}));
+---
+
+<Layout title={metadata.title} description={metadata.description}>
+  <section class="mx-auto flex w-full max-w-3xl flex-col gap-10">
+    <Header title="Blog" description="My essays and notes." />
+    <PostList items={items} />
+  </section>
+</Layout>

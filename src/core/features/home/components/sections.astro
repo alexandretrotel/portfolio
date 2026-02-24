@@ -1,0 +1,39 @@
+---
+import BlogPreview from "@/core/features/home/components/blog-preview.astro";
+import HomeSection from "@/core/features/home/components/home-section.astro";
+import ItemList from "@/core/features/home/components/item-list.astro";
+
+interface ListItem {
+  name: string;
+  summary: string;
+  url?: string;
+}
+
+interface LatestBlogItem {
+  name: string;
+  summary: string;
+  url: string;
+}
+
+interface Props {
+  blogHref: string;
+  latestBlogItem: LatestBlogItem | null;
+  openSourceProjects: ListItem[];
+  ventures: ListItem[];
+}
+
+const props = Astro.props as Props;
+const { blogHref, latestBlogItem, openSourceProjects, ventures } = props;
+---
+
+<div class="space-y-10">
+  <HomeSection title="Open Source">
+    <ItemList items={openSourceProjects} />
+  </HomeSection>
+
+  <HomeSection title="Ventures">
+    <ItemList items={ventures} linkTarget="_blank" linkRel="noreferrer" />
+  </HomeSection>
+
+  {latestBlogItem && <BlogPreview blogHref={blogHref} latestBlogItem={latestBlogItem} />}
+</div>

@@ -1,0 +1,46 @@
+---
+interface Item {
+  name: string;
+  summary: string;
+  url?: string;
+}
+
+interface Props {
+  items: Item[];
+  linkRel?: string;
+  linkTarget?: string;
+}
+const props = Astro.props as Props;
+const { items, linkTarget = "_blank", linkRel = "noreferrer" } = props;
+---
+
+<ul class="space-y-5">
+  {items.map((item) => (
+    <li>
+      {item.url ? (
+        <a
+          class="group block space-y-1 text-muted-foreground transition-colors hover:text-foreground focus:text-foreground"
+          href={item.url}
+          rel={linkRel}
+          target={linkTarget}
+        >
+          <div class="flex items-center gap-2">
+            <span class="font-medium text-sm">{item.name}</span>
+          </div>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            {item.summary}
+          </p>
+        </a>
+      ) : (
+        <div class="block space-y-1 text-muted-foreground">
+          <div class="flex items-center gap-2">
+            <span class="font-medium text-foreground text-sm">{item.name}</span>
+          </div>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            {item.summary}
+          </p>
+        </div>
+      )}
+    </li>
+  ))}
+</ul>
