@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import logo from "@/assets/logo.png";
 import DarkModeToggle from "@/core/components/components/dark-mode-toggle.svelte";
 ---
 
@@ -8,16 +10,17 @@ import DarkModeToggle from "@/core/components/components/dark-mode-toggle.svelte
   <div class="mx-auto flex h-14 max-w-3xl items-center justify-between py-8">
     <div class="flex items-center gap-6">
       <a
+        aria-label="Go to homepage"
         class="flex items-center gap-4 transition-transform active:scale-90"
         href="/"
       >
-        <img
+        <Image
           alt="Logo"
-          class="rounded-md hover:opacity-80"
-          height="32"
-          width="32"
-          src="/logo.png"
-        >
+          class="h-8 w-8 rounded-md hover:opacity-80"
+          height={128}
+          src={logo}
+          width={128}
+        />
       </a>
     </div>
 
