@@ -1,5 +1,7 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
+import type { BlogCollection } from "@/content.config";
 import Layout from "@/core/components/layout/main-layout.astro";
 import Header from "@/core/features/blog/components/header.astro";
 import PostList from "@/core/features/blog/components/post-list.astro";
@@ -16,7 +18,7 @@ const formatDate = (date: Date): string =>
     year: "numeric",
   });
 
-const posts = await getCollection("blog");
+const posts: CollectionEntry<BlogCollection>[] = await getCollection("blog");
 
 const publishedPosts = posts
   .filter((p) => p.data.published !== false)
