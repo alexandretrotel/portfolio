@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import ItemList from "@/components/ui/item-list.astro";
+import Header from "@/components/pages/blog/header.astro";
+import PostList from "@/components/pages/blog/post-list.astro";
 import Layout from "@/layouts/main.astro";
 
 const metadata = {
@@ -30,23 +31,7 @@ const items = publishedPosts.map((p) => ({
 
 <Layout title={metadata.title} description={metadata.description}>
   <section class="mx-auto flex w-full max-w-3xl flex-col gap-10">
-    <header class="space-y-3">
-      <h1
-        class="serif-title text-3xl leading-tight tracking-tight text-foreground md:text-4xl"
-      >
-        Blog
-      </h1>
-      <p
-        class="max-w-2xl font-serif text-sm leading-relaxed text-muted-foreground md:text-base"
-      >
-        My essays and notes.
-      </p>
-    </header>
-
-    {items.length > 0 ? (
-      <ItemList items={items} linkRel="noreferrer" linkTarget="_self" />
-    ) : (
-      <p class="text-muted-foreground text-sm">No posts yet.</p>
-    )}
+    <Header title="Blog" description="My essays and notes." />
+    <PostList items={items} />
   </section>
 </Layout>
