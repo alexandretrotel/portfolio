@@ -6,7 +6,7 @@ import { defineConfig } from "astro/config";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 
-import { remarkReadingTime } from "./src/lib/remark-reading-time";
+import { remarkReadingTime } from "./src/core/primitives/utils/remark-reading-time";
 
 export default defineConfig({
   adapter: vercel(),

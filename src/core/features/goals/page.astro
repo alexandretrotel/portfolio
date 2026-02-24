@@ -1,0 +1,102 @@
+---
+import Layout from "@/core/components/layout/main-layout.astro";
+import GoalSection from "@/core/features/goals/components/goal-section.astro";
+import NoteDialog from "@/core/features/goals/components/note-dialog.astro";
+import { roadmap } from "@/core/primitives/constants/goals";
+import type {
+  Goal as GoalItem,
+  YearGroup as GoalYearGroup,
+} from "@/core/primitives/schemas/goals";
+
+const metadata = {
+  description:
+    "Year-by-year goals grouped by category with clear progress tracking.",
+  title: "Goals | Alexandre Trotel",
+};
+
+interface ResolvedYearGroup extends GoalYearGroup {
+  sectionLabel: string;
+}
+
+const currentYear = new Date().getFullYear();
+
+const goalsBySection: ResolvedYearGroup[] = roadmap
+  .map((yearGroup) => ({
+    ...yearGroup,
+    sectionLabel:
+      yearGroup.year === "future" ? "In my life" : `${yearGroup.year}`,
+  }))
+  .toSorted((a, b) => {
+    if (a.year === "future" && b.year === "future") {
+      return 0;
+    }
+
+    if (a.year === "future") {
+      return -1;
+    }
+
+    if (b.year === "future") {
+      return 1;
+    }
+
+    if (a.year === currentYear && b.year !== currentYear) {
+      return -1;
+    }
+
+    if (b.year === currentYear && a.year !== currentYear) {
+      return 1;
+    }
+
+    return b.year - a.year;
+  });
+
+const completionRank = (goal: GoalItem): number => {
+  if (goal.status === "success") {
+    return 1;
+  }
+
+  if (goal.status === "failed") {
+    return 2;
+  }
+
+  return 0;
+};
+
+const sortGoalsByCompletion = (items: GoalItem[]): GoalItem[] =>
+  items.toSorted((a, b) => {
+    const completionDiff = completionRank(a) - completionRank(b);
+    if (completionDiff !== 0) {
+      return completionDiff;
+    }
+
+    return a.title.localeCompare(b.title, "en", {
+      sensitivity: "base",
+    });
+  });
+---
+
+<Layout title={metadata.title} description={metadata.description}>
+  <section class="mx-auto flex w-full max-w-3xl flex-col gap-12">
+    <header class="space-y-4">
+      <h1
+        class="serif-title -rotate-[0.35deg] text-3xl leading-tight tracking-tight text-foreground md:text-4xl"
+      >
+        Goals
+      </h1>
+      <p
+        class="max-w-2xl font-mono text-sm leading-relaxed text-muted-foreground"
+      >
+        Ambitious people turn big ideas into action.
+      </p>
+    </header>
+
+    {goalsBySection.map((yearGroup) => (
+      <GoalSection
+        items={sortGoalsByCompletion(yearGroup.items)}
+        sectionLabel={yearGroup.sectionLabel}
+      />
+    ))}
+  </section>
+
+  <NoteDialog />
+</Layout>
