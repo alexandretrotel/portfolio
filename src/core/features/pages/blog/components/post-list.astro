@@ -1,0 +1,22 @@
+---
+import ItemList from "@/core/components/components/item-list.astro";
+
+interface Item {
+  name: string;
+  summary: string;
+  url?: string;
+}
+
+interface Props {
+  items: Item[];
+}
+
+const props = Astro.props as Props;
+const { items } = props;
+---
+
+{items.length > 0 ? (
+    <ItemList items={items} linkRel="noreferrer" linkTarget="_self" />
+  ) : (
+    <p class="text-muted-foreground text-sm">No posts yet.</p>
+  )}
