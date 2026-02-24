@@ -53,11 +53,6 @@ const completionRank = (goal: GoalItem): number => {
   if (goal.status === "success") {
     return 1;
   }
-
-  if (goal.status === "failed") {
-    return 2;
-  }
-
   return 0;
 };
 
