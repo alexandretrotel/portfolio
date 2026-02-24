@@ -3,8 +3,8 @@ import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
 import type { BlogCollection } from "@/content.config";
 import Layout from "@/core/components/layout/main-layout.astro";
-import PostBody from "@/core/features/pages/blog-post/components/post-body.astro";
-import PostMeta from "@/core/features/pages/blog-post/components/post-meta.astro";
+import PostBody from "@/core/features/blog-post/components/post-body.astro";
+import PostMeta from "@/core/features/blog-post/components/post-meta.astro";
 
 const formatDate = (date: Date): string =>
   date.toLocaleDateString("en-US", {

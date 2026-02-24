@@ -2,7 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import type { BlogCollection } from "@/content.config";
-import BlogPostPage from "@/core/features/pages/blog-post/page.astro";
+import BlogPostPage from "@/core/features/blog-post/page.astro";
 
 export const getStaticPaths = async () => {
   const posts: CollectionEntry<BlogCollection>[] = await getCollection("blog");
