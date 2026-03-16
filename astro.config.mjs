@@ -26,6 +26,7 @@ export default defineConfig({
       alias: {
         "@": new URL("src", import.meta.url).pathname,
       },
+      noExternal: ["@lucide/svelte"],
     },
   },
 });
