@@ -6,13 +6,13 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "check": "astro check",
-    "format": "ultracite fix",
-    "lint": "ultracite check",
-    "validate": "pnpm run check && pnpm run format && pnpm run build",
+    "check": "ultracite check",
+    "dev": "astro dev",
     "fix": "ultracite fix",
-    "prepare": "lefthook install"
+    "prepare": "lefthook install",
+    "preview": "astro preview",
+    "typecheck": "astro check",
+    "validate": "pnpm run check && pnpm run format && pnpm run build"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
