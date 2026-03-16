@@ -10,7 +10,7 @@ const { goal } = props;
 
 const isDone = goal.status === "success";
 const percent =
-  goal.progressPercent !== undefined ? `(${goal.progressPercent}%)` : null;
+  goal.progressPercent === undefined ? null : `(${goal.progressPercent}%)`;
 ---
 
 <li class="space-y-2">
@@ -18,7 +18,7 @@ const percent =
     <span
       aria-hidden="true"
       class:list={[
-        "mt-[3px] inline-flex h-3.5 w-3.5 items-center justify-center rounded-xs border border-foreground text-[10px] leading-none",
+        "mt-0.75 inline-flex h-3.5 w-3.5 items-center justify-center rounded-xs border border-foreground text-[10px] leading-none",
         {
           "bg-foreground text-background": isDone,
           "bg-transparent": !isDone,
