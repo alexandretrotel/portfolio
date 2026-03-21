@@ -1,31 +1,27 @@
 ---
 import ItemList from "@/core/features/home/components/item-list.astro";
-import HomeSection from "@/core/features/home/components/section.astro";
 
 interface LatestBlogItem {
   name: string;
-  summary: string;
   url: string;
+  yearLabel: string;
+  yearValue: string;
 }
 
 interface Props {
-  blogHref: string;
-  latestBlogItem: LatestBlogItem;
+  posts: LatestBlogItem[];
 }
 
 const props = Astro.props as Props;
-const { blogHref, latestBlogItem } = props;
+const { posts } = props;
 ---
 
-<HomeSection title="Blog">
-  <ItemList items={[latestBlogItem]} linkTarget="_self" />
-
-  <div class="pt-3">
-    <a
-      class="text-muted-foreground text-sm transition-colors hover:text-foreground"
-      href={blogHref}
-    >
-      Read all posts
-    </a>
-  </div>
-</HomeSection>
+<section>
+  {posts.length > 0 ? (
+    <ItemList items={posts} linkTarget="_self" linkRel={undefined} />
+  ) : (
+    <p class="text-sm leading-relaxed text-muted-foreground">
+      New posts will appear here.
+    </p>
+  )}
+</section>

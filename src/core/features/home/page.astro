@@ -3,94 +3,49 @@ import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import type { BlogCollection } from "@/content.config";
 import Layout from "@/core/components/layout/main-layout.astro";
-import Hero from "@/core/features/home/components/hero.astro";
-import Sections from "@/core/features/home/components/sections.astro";
+import BlogPreview from "@/core/features/home/components/blog-preview.astro";
 
 const metadata = {
   description: "Notes on building things and trying to understand them.",
   title: "Alexandre Trotel",
 };
 
-const blogHref = "/blog";
-
-const formatDate = (date: Date): string =>
-  date.toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  });
-
-const openSourceProjects = [
-  {
-    name: "todo-tree",
-    summary: "find and display TODO-style comments in your codebase.",
-    url: "https://github.com/alexandretrotel/todo-tree",
-  },
-  {
-    name: "mntn",
-    summary: "manage your dotfiles with the use of profiles.",
-    url: "https://github.com/alexandretrotel/mntn",
-  },
-  {
-    name: "feedyourai",
-    summary:
-      "combine multiple files into a single file for LLM processing with filtering options.",
-    url: "https://github.com/alexandretrotel/feedyourai",
-  },
-];
-
-const ventures = [
-  {
-    name: "Stealth Startup",
-    summary: "developing a next-generation product.",
-    url: "https://en.wikipedia.org/wiki/Stealth_startup",
-  },
-  {
-    name: "Zap Studio",
-    summary: "open source libraries and templates.",
-    url: "https://www.zapstudio.dev",
-  },
-];
-
-let latestPost: {
+let recentPosts: {
   title: string;
   url: string;
   date: Date;
-} | null = null;
+}[] = [];
 
 try {
   const posts: CollectionEntry<BlogCollection>[] = await getCollection("blog");
-  const publishedPosts = posts
+  recentPosts = posts
     .filter((p) => p.data.published !== false)
-    .toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime());
-
-  const [p] = publishedPosts;
-  if (p) {
-    latestPost = {
-      date: p.data.date,
-      title: p.data.title,
-      url: `/blog/${p.id}/`,
-    };
-  }
+    .toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime())
+    .map((post) => ({
+      date: post.data.date,
+      title: post.data.title,
+      url: `/blog/${post.id}/`,
+    }));
 } catch {
-  latestPost = null;
+  recentPosts = [];
 }
 ---
 
 <Layout title={metadata.title} description={metadata.description}>
-  <section class="mx-auto flex h-full w-full max-w-3xl flex-col gap-12 py-2">
-    <Hero />
-    <Sections
-      blogHref={blogHref}
-      latestBlogItem={latestPost
-        ? {
-            name: latestPost.title,
-            summary: formatDate(latestPost.date),
-            url: latestPost.url,
-          }
-        : null}
-      openSourceProjects={openSourceProjects}
-      ventures={ventures}
+  <section class="mx-auto flex h-full w-full max-w-3xl flex-col py-2">
+    <BlogPreview
+      posts={recentPosts.map((post, index, allPosts) => {
+        const year = post.date.getFullYear().toString();
+        const previousYear =
+          index > 0 ? allPosts[index - 1]?.date.getFullYear().toString() : null;
+
+        return {
+          yearLabel: previousYear === year ? "" : year,
+          yearValue: year,
+          name: post.title,
+          url: post.url,
+        };
+      })}
     />
   </section>
 </Layout>
