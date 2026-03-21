@@ -8,10 +8,8 @@
     "check": "ultracite check",
     "dev": "astro dev",
     "fix": "ultracite fix",
-    "prepare": "lefthook install",
     "preview": "astro preview",
-    "typecheck": "astro check",
-    "validate": "pnpm run check && pnpm run format && pnpm run build"
+    "typecheck": "astro check"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
