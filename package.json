@@ -22,7 +22,7 @@
     "@lucide/svelte": "^0.577.0",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
-    "@tanstack/svelte-query": "^6.1.6",
+    "@tanstack/svelte-query": "^6.1.7",
     "@upstash/redis": "^1.37.0",
     "@zap-studio/fetch": "^0.4.7",
     "astro": "^6.0.8",
