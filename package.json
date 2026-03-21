@@ -5,13 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "astro build",
-    "check": "pnpm run lint && pnpm run fmt:check",
+    "check": "vp check && astro check",
     "dev": "astro dev",
-    "fix": "pnpm run lint:fix && pnpm run fmt",
-    "fmt": "oxfmt . --ignore-path .gitignore",
-    "fmt:check": "oxfmt . --check --ignore-path .gitignore",
-    "lint": "oxlint . --ignore-path .gitignore",
-    "lint:fix": "oxlint . --fix --ignore-path .gitignore",
     "preview": "astro preview",
     "typecheck": "astro check"
   },
@@ -46,10 +41,8 @@
   },
   "devDependencies": {
     "@types/mdast": "^4.0.4",
-    "oxfmt": "^0.41.0",
-    "oxlint": "^1.56.0",
-    "oxlint-tsgolint": "^0.17.1",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vite-plus": "catalog:"
   },
   "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be"
 }
