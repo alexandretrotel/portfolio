@@ -7,7 +7,6 @@ export const remarkReadingTime =
   (tree: Root, { data }: { data: Record<string, unknown> }) => {
     const textOnPage = mdastToString(tree);
     const readingTime = getReadingTime(textOnPage);
-    (
-      data.astro as { frontmatter: Record<string, unknown> }
-    ).frontmatter.minutesRead = readingTime.text;
+    (data.astro as { frontmatter: Record<string, unknown> }).frontmatter.minutesRead =
+      readingTime.text;
   };

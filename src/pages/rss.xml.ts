@@ -6,8 +6,7 @@ import type { BlogCollection } from "@/content.config";
 import { SITE_CONFIG } from "@/shared/config/site";
 
 export const GET = async (context: APIContext) => {
-  const blogPosts: CollectionEntry<BlogCollection>[] =
-    await getCollection("blog");
+  const blogPosts: CollectionEntry<BlogCollection>[] = await getCollection("blog");
 
   return rss({
     customData: "<language>en-us</language>",
