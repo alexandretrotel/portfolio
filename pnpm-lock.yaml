@@ -46,8 +46,8 @@ importers:
         specifier: ^4.2.2
         version: 4.2.2(vite@7.3.1(@types/node@24.12.0)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3))
       '@tanstack/svelte-query':
-        specifier: ^6.1.6
-        version: 6.1.6(svelte@5.54.1)
+        specifier: ^6.1.7
+        version: 6.1.7(svelte@5.54.1)
       '@upstash/redis':
         specifier: ^1.37.0
         version: 1.37.0
@@ -1154,11 +1154,11 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7 || ^8
 
-  '@tanstack/query-core@5.94.4':
-    resolution: {integrity: sha512-3i2NkmyZykkxcoZ8Yhe2QMCJwHoIoGNt6FEhjYziyblvMYWcz8iqLnxwZRP06Xr8W6mB8sGFn+EhwyvvEB+hvw==}
+  '@tanstack/query-core@5.94.5':
+    resolution: {integrity: sha512-Vx1JJiBURW/wdNGP45afjrqn0LfxYwL7K/bSrQvNRtyLGF1bxQPgUXCpzscG29e+UeFOh9hz1KOVala0N+bZiA==}
 
-  '@tanstack/svelte-query@6.1.6':
-    resolution: {integrity: sha512-1Tvt5rb15NlLFPmUx+PPfoRvYf6/k+oUBPMkCXgGM0/2kt4hbv2xKXL48xyqy21nI5I9jXaogzCyOXGUME13ng==}
+  '@tanstack/svelte-query@6.1.7':
+    resolution: {integrity: sha512-ade0y34eSXIl1Pt2linCENXABTu+Xf3h8I5R8OyXSbKaStRafikEfrTAIb8aMkfnUIn1+3D9Y+EQxp9wVRtsAg==}
     peerDependencies:
       svelte: ^5.25.0
 
@@ -2858,8 +2858,8 @@ packages:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
     engines: {node: '>=10'}
 
-  ws@8.19.0:
-    resolution: {integrity: sha512-blAT2mjOEIi0ZzruJfIhb3nps74PRWTCz1IjglWEEpQl5XS/UNama6u2/rjFkDDouqr4L67ry+1aGIALViWjDg==}
+  ws@8.20.0:
+    resolution: {integrity: sha512-sAt8BhgNbzCtgGbt2OxmpuryO63ZoDk/sqaB/znQm94T4fCEsy/yV+7CdC1kJhOU9lboAEU7R3kquuycDoibVA==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -3708,11 +3708,11 @@ snapshots:
       tailwindcss: 4.2.2
       vite: 7.3.1(@types/node@24.12.0)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)
 
-  '@tanstack/query-core@5.94.4': {}
+  '@tanstack/query-core@5.94.5': {}
 
-  '@tanstack/svelte-query@6.1.6(svelte@5.54.1)':
+  '@tanstack/svelte-query@6.1.7(svelte@5.54.1)':
     dependencies:
-      '@tanstack/query-core': 5.94.4
+      '@tanstack/query-core': 5.94.5
       svelte: 5.54.1
 
   '@types/chai@5.2.3':
@@ -3841,7 +3841,7 @@ snapshots:
       tinyexec: 1.0.4
       tinyglobby: 0.2.15
       vite: 7.3.1(@types/node@24.12.0)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)
-      ws: 8.19.0
+      ws: 8.20.0
     optionalDependencies:
       '@types/node': 24.12.0
     transitivePeerDependencies:
@@ -5761,7 +5761,7 @@ snapshots:
       string-width: 4.2.3
       strip-ansi: 6.0.1
 
-  ws@8.19.0: {}
+  ws@8.20.0: {}
 
   xxhash-wasm@1.1.0: {}
 
