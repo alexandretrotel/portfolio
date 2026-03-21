@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "astro build",
+    "check": "pnpm run lint && pnpm run fmt:check",
     "dev": "astro dev",
+    "fix": "pnpm run lint:fix && pnpm run fmt",
     "fmt": "oxfmt . --ignore-path .gitignore",
     "fmt:check": "oxfmt . --check --ignore-path .gitignore",
     "lint": "oxlint . --ignore-path .gitignore",
