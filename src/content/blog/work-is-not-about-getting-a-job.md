@@ -1,6 +1,6 @@
 ---
 title: "work isn't about getting a job"
-date: 2026-04-30
+date: 2026-03-30
 description: "While most people see work as a way to make money, I see it as something deeper: an alignment between who you are and what the world needs."
 ---
 
