@@ -52,16 +52,6 @@ const ogLocale = "en_US";
     <!-- Sitemap -->
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml">
 
-    <!-- RSS -->
-    {Astro.site && (
-      <link
-        href={new URL("rss.xml", Astro.site)}
-        rel="alternate"
-        title="Alexandre Trotel"
-        type="application/rss+xml"
-      />
-    )}
-
     <!-- Katex -->
     <link
       rel="stylesheet"

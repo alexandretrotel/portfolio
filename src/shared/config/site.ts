@@ -1,5 +1,5 @@
 export const SITE_CONFIG = {
   baseUrl: "https://www.alexandretrotel.org",
-  description: "Notes on building things and trying to understand them.",
+  description: "Software builder focused on useful products, entrepreneurship, and technology.",
   title: "Alexandre Trotel",
 } as const;
