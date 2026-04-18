@@ -1,12 +1,11 @@
----
-import Button from "@/core/components/components/button.astro";
----
-
 <div class="flex h-full flex-col items-center justify-center gap-4 py-32">
   <div class="flex flex-col items-center justify-center">
     <p class="text-muted-foreground text-base">This page does not exist.</p>
   </div>
-  <Button variant="ghost" class="active:scale-90 active:bg-accent">
-    <a href="/" class="text-sm">Go back</a>
-  </Button>
+  <a
+    href="/"
+    class="rounded-md px-3 py-2 text-sm text-foreground transition-colors hover:bg-accent hover:text-accent-foreground active:scale-90"
+  >
+    Go back
+  </a>
 </div>

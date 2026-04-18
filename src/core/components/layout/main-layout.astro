@@ -2,7 +2,6 @@
 import "@/styles/globals.css";
 import "@fontsource-variable/inter";
 
-import { ClientRouter } from "astro:transitions";
 import Header from "@/core/components/layout/header.astro";
 import { METADATA } from "@/core/primitives/constants/metadata";
 
@@ -50,34 +49,6 @@ const ogLocale = "en_US";
         <!-- Sitemap -->
         <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
 
-        <!-- Theme Script (prevents flash) -->
-        <script is:inline>
-            /* eslint-disable jest/require-hook */
-            const getThemePreference = () => {
-                if (
-                    typeof localStorage !== "undefined" &&
-                    localStorage.getItem("theme")
-                ) {
-                    return localStorage.getItem("theme");
-                }
-                return window.matchMedia("(prefers-color-scheme: dark)").matches
-                    ? "dark"
-                    : "light";
-            };
-
-            const applyTheme = () => {
-                const theme = getThemePreference();
-                document.documentElement.classList.toggle(
-                    "dark",
-                    theme === "dark",
-                );
-            };
-
-            document.addEventListener("astro:after-swap", applyTheme);
-            applyTheme();
-        </script>
-
-        <ClientRouter />
     </head>
     <body class="antialiased">
         <div class="min-h-screen bg-background px-6">
