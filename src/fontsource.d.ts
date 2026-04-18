@@ -1,2 +1,1 @@
-declare module "@fontsource-variable/geist";
-declare module "@fontsource-variable/lora";
+declare module "@fontsource-variable/inter";
