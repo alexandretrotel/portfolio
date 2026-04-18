@@ -1,51 +1,193 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import { getCollection } from "astro:content";
-import type { BlogCollection } from "@/content.config";
 import Layout from "@/core/components/layout/main-layout.astro";
-import BlogPreview from "@/core/features/home/components/blog-preview.astro";
 
 const metadata = {
-  description: "Notes on building things and trying to understand them.",
-  title: "Alexandre Trotel",
+    description:
+        "Alexandre Trotel is a software builder focused on useful products, entrepreneurship, and technology.",
+    title: "Alexandre Trotel",
 };
 
-let recentPosts: {
-  title: string;
-  url: string;
-  date: Date;
-}[] = [];
-
-try {
-  const posts: CollectionEntry<BlogCollection>[] = await getCollection("blog");
-  recentPosts = posts
-    .filter((p) => p.data.published !== false)
-    .toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime())
-    .map((post) => ({
-      date: post.data.date,
-      title: post.data.title,
-      url: `/blog/${post.id}/`,
-    }));
-} catch {
-  recentPosts = [];
-}
+const linkClass =
+    "font-medium text-foreground decoration-border/80 decoration-[0.06em] underline underline-offset-[0.18em] transition-colors hover:text-muted-foreground";
 ---
 
 <Layout title={metadata.title} description={metadata.description}>
-  <section class="mx-auto flex h-full w-full max-w-3xl flex-col py-2">
-    <BlogPreview
-      posts={recentPosts.map((post, index, allPosts) => {
-        const year = post.date.getFullYear().toString();
-        const previousYear =
-          index > 0 ? allPosts[index - 1]?.date.getFullYear().toString() : null;
-
-        return {
-          yearLabel: previousYear === year ? "" : year,
-          yearValue: year,
-          name: post.title,
-          url: post.url,
-        };
-      })}
-    />
-  </section>
+    <section class="mx-auto flex h-full w-full max-w-[38rem] flex-col py-1">
+        <div class="space-y-5">
+            <h1
+                class="font-sans text-[1.0625rem] leading-6 font-semibold text-foreground"
+            >
+                Alexandre Trotel
+            </h1>
+            <div
+                class="space-y-3.5 text-[0.9375rem] leading-[1.85] text-muted-foreground"
+            >
+                <p>
+                    I believe the world becomes clear through action, which is
+                    why I constantly build, explore, and experiment.
+                </p>
+                <p>
+                    I am the co-founder of <a
+                        class={linkClass}
+                        href="https://www.radion.app"
+                        rel="noreferrer"
+                        target="_blank">Radion</a
+                    >, where we turn prediction market activity into clear
+                    market and trader intelligence. Our goal is to help traders
+                    make better decisions with transparent data that is easy to
+                    read.
+                </p>
+                <p>
+                    I also run <a
+                        class={linkClass}
+                        href="https://www.zapstudio.dev"
+                        rel="noreferrer"
+                        target="_blank">Zap Studio</a
+                    >, a side project for type-safe TypeScript libraries that
+                    work across stacks, so developers can move between tools
+                    more easily.
+                </p>
+                <p>Through Zap Studio:</p>
+                <ul
+                    class="list-disc space-y-1.5 pl-5 marker:text-muted-foreground"
+                >
+                    <li class="pl-1">
+                        <a
+                            class={linkClass}
+                            href="https://jsr.io/@zap-studio/validation"
+                            rel="noreferrer"
+                            target="_blank">validation</a
+                        > provides Standard Schema utilities and validation error
+                        helpers.
+                    </li>
+                    <li class="pl-1">
+                        <a
+                            class={linkClass}
+                            href="https://jsr.io/@zap-studio/fetch"
+                            rel="noreferrer"
+                            target="_blank">fetch</a
+                        > is a type-safe fetch wrapper with Standard Schema validation.
+                    </li>
+                    <li class="pl-1">
+                        <a
+                            class={linkClass}
+                            href="https://jsr.io/@zap-studio/permit"
+                            rel="noreferrer"
+                            target="_blank">permit</a
+                        > is a type-safe authorization library for TypeScript with
+                        Standard Schema support.
+                    </li>
+                    <li class="pl-1">
+                        <a
+                            class={linkClass}
+                            href="https://jsr.io/@zap-studio/webhooks"
+                            rel="noreferrer"
+                            target="_blank">webhooks</a
+                        > provides type-safe webhook routing with signature verification.
+                    </li>
+                </ul>
+                <p>I also maintain some tools under licenses like GPL-3.0:</p>
+                <ul
+                    class="list-disc space-y-1.5 pl-5 marker:text-muted-foreground"
+                >
+                    <li class="pl-1">
+                        <a
+                            class={linkClass}
+                            href="https://github.com/alexandretrotel/todo-tree"
+                            rel="noreferrer"
+                            target="_blank">todo-tree</a
+                        > finds and displays TODO-style comments in your codebase.
+                    </li>
+                    <li class="pl-1">
+                        <a
+                            class={linkClass}
+                            href="https://github.com/alexandretrotel/mntn"
+                            rel="noreferrer"
+                            target="_blank">mntn</a
+                        > is a command-line tool to manage your dotfiles.
+                    </li>
+                    <li class="pl-1">
+                        <a
+                            class={linkClass}
+                            href="https://github.com/alexandretrotel/feedyourai"
+                            rel="noreferrer"
+                            target="_blank">fyai</a
+                        > combines text files for AI processing with filtering options.
+                    </li>
+                </ul>
+                <p>
+                    If you meet me, I could talk hours about <a
+                        class={linkClass}
+                        href="https://en.wikipedia.org/wiki/Software_engineering"
+                        rel="noreferrer"
+                        target="_blank">software engineering</a
+                    >, <a
+                        class={linkClass}
+                        href="https://en.wikipedia.org/wiki/Alfred_Adler"
+                        rel="noreferrer"
+                        target="_blank">Adlerian philosophy</a
+                    >, <a
+                        class={linkClass}
+                        href="https://en.wikipedia.org/wiki/Psychology"
+                        rel="noreferrer"
+                        target="_blank">psychology</a
+                    >, <a
+                        class={linkClass}
+                        href="https://en.wikipedia.org/wiki/Startup_company"
+                        rel="noreferrer"
+                        target="_blank">startups</a
+                    >, <a
+                        class={linkClass}
+                        href="https://en.wikipedia.org/wiki/Bitcoin"
+                        rel="noreferrer"
+                        target="_blank">Bitcoin</a
+                    >, <a
+                        class={linkClass}
+                        href="https://en.wikipedia.org/wiki/Investment"
+                        rel="noreferrer"
+                        target="_blank">investment</a
+                    >, and <a
+                        class={linkClass}
+                        href="https://en.wikipedia.org/wiki/Science"
+                        rel="noreferrer"
+                        target="_blank">science</a
+                    >, from <a
+                        class={linkClass}
+                        href="https://en.wikipedia.org/wiki/Quantum_physics"
+                        rel="noreferrer"
+                        target="_blank">quantum physics</a
+                    > to <a
+                        class={linkClass}
+                        href="https://en.wikipedia.org/wiki/Astronomy"
+                        rel="noreferrer"
+                        target="_blank">astronomy</a
+                    >. I feel like each of these topics help me to understand
+                    how the universe works.
+                </p>
+                <p>
+                    Finally, outside of code, I do music production (<a
+                        class={linkClass}
+                        href="https://en.wikipedia.org/wiki/Progressive_house"
+                        rel="noreferrer"
+                        target="_blank">progressive house</a
+                    >, <a
+                        class={linkClass}
+                        href="https://en.wikipedia.org/wiki/Future_house"
+                        rel="noreferrer"
+                        target="_blank">future house</a
+                    >, <a
+                        class={linkClass}
+                        href="https://en.wikipedia.org/wiki/Bass_house"
+                        rel="noreferrer"
+                        target="_blank">bass house</a
+                    >, and <a
+                        class={linkClass}
+                        href="https://en.wikipedia.org/wiki/Future_bass"
+                        rel="noreferrer"
+                        target="_blank">future bass</a
+                    >), watch anime, read books, and play badminton.
+                </p>
+            </div>
+        </div>
+    </section>
 </Layout>
