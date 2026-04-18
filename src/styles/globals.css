@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -37,12 +36,6 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-
-  --prose-body: var(--foreground);
-  --prose-headings: oklch(0.18 0 0);
-  --prose-lead: oklch(0.32 0 0);
-  --prose-muted: oklch(0.55 0 0);
-  --prose-border: oklch(0.88 0 0);
 }
 
 :root {
@@ -103,11 +96,6 @@
   --input: oklch(0.42 0 0);
 
   --ring: oklch(0.55 0 0);
-
-  --prose-headings: oklch(0.94 0 0);
-  --prose-body: oklch(0.92 0 0);
-  --prose-muted: oklch(0.7 0 0);
-  --prose-border: oklch(0.38 0 0);
 }
 
 @layer base {
@@ -118,15 +106,5 @@
   body {
     font-family: var(--font-sans);
     @apply bg-background text-foreground antialiased;
-  }
-
-  .prose {
-    --tw-prose-body: var(--prose-body);
-    --tw-prose-headings: var(--prose-headings);
-    --tw-prose-lead: var(--prose-lead);
-    --tw-prose-muted: var(--prose-muted);
-    --tw-prose-quotes: var(--prose-muted);
-
-    --tw-prose-borders: var(--prose-border);
   }
 }
