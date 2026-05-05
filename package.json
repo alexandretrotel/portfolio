@@ -11,21 +11,21 @@
     "typecheck": "astro check"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.8",
+    "@astrojs/check": "^0.9.9",
     "@astrojs/sitemap": "^3.7.2",
-    "@astrojs/vercel": "^10.0.4",
+    "@astrojs/vercel": "^10.0.6",
     "@fontsource-variable/inter": "^5.2.8",
-    "@tailwindcss/vite": "^4.2.2",
-    "astro": "^6.1.8",
+    "@tailwindcss/vite": "^4.2.4",
+    "astro": "^6.2.2",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.5.0",
-    "tailwindcss": "^4.2.2"
+    "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
     "typescript": "^6.0.3",
-    "vite-plus": "^0.1.18"
+    "vite-plus": "^0.1.20"
   },
-  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
+  "packageManager": "pnpm@10.33.3+sha512.a19744364a7e248b92657a4ca5973f9354d21caf982579674b1c539f32c7420c47138ad8b1254df07aba9bc782d9b3029e3db34d5dbff974326eb74dac8ff489",
   "pnpm": {
     "overrides": {
       "vite": "npm:@voidzero-dev/vite-plus-core@0.1.18",
