@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "astro build",
-    "check": "pnpm run format:check && pnpm runi lint && astro check",
+    "check": "pnpm run format:check && pnpm run lint && astro check",
     "dev": "astro dev",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
