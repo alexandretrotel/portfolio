@@ -1,0 +1,9 @@
+{
+  "ignorePatterns": ["dist/**", ".astro/**", ".vercel/**"],
+  "sortImports": {},
+  "sortPackageJson": true,
+  "sortTailwindcss": {
+    "functions": ["cn", "clsx", "cva", "tw"],
+    "stylesheet": "./src/styles/globals.css"
+  }
+}
