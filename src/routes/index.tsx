@@ -33,7 +33,7 @@ function Home() {
           tracking for traders who take the space seriously.
         </p>
         <p className="stagger-item [transition-delay:80ms]">
-          From there, I started{" "}
+          I also started{" "}
           <a
             className={linkClass}
             href="https://www.zapstudio.dev"
