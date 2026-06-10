@@ -109,3 +109,18 @@
     @apply bg-background text-foreground antialiased;
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .stagger-item {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 280ms ease-out,
+      transform 280ms ease-out;
+
+    @starting-style {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+  }
+}

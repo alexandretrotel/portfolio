@@ -18,21 +18,22 @@ export const Route = createFileRoute("/")({
 });
 
 const linkClass =
-  "font-medium text-foreground decoration-border/80 decoration-[0.06em] underline underline-offset-[0.18em] transition-colors hover:text-muted-foreground";
+  "font-medium text-foreground decoration-border/80 decoration-[0.06em] underline underline-offset-[0.18em] transition-colors duration-150 hover:decoration-foreground active:opacity-70";
 
 function Home() {
   return (
     <section className="mx-auto flex h-full w-full max-w-152 flex-col py-1">
       <div className="space-y-5">
+        <p className="stagger-item text-sm text-muted-foreground">Alexandre Trotel</p>
         <div className="space-y-3.5 text-[0.9375rem] leading-[1.85] text-muted-foreground">
-          <p>
+          <p className="stagger-item [transition-delay:60ms]">
             I&apos;m the co-founder of{" "}
             <a className={linkClass} href="https://www.radion.app" rel="noreferrer" target="_blank">
               Radion
             </a>
             , where we help prediction market traders by building the ultimate intelligence layer.
           </p>
-          <p>
+          <p className="stagger-item [transition-delay:120ms]">
             I also created{" "}
             <a
               className={linkClass}
@@ -90,7 +91,7 @@ function Home() {
             </a>
             .
           </p>
-          <p>
+          <p className="stagger-item [transition-delay:180ms]">
             I also maintain{" "}
             <a
               className={linkClass}
