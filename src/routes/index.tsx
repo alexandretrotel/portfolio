@@ -13,6 +13,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:title", content: SITE.title },
       { name: "twitter:description", content: SITE.description },
     ],
+    links: [{ rel: "canonical", href: SITE.baseUrl }],
   }),
   component: Home,
 });
