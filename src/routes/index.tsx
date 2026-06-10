@@ -22,7 +22,7 @@ const linkClass =
 
 function Home() {
   return (
-    <section className="mx-auto flex h-full w-full max-w-152 flex-col py-1">
+    <section className="mx-auto flex h-full w-full max-w-152 flex-col pt-[15vh]">
       <div className="space-y-3.5 text-[0.9375rem] leading-[1.85] text-muted-foreground">
         <p className="stagger-item">
           I co-founded{" "}
