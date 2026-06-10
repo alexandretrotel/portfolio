@@ -25,14 +25,15 @@ function Home() {
     <section className="mx-auto flex h-full w-full max-w-152 flex-col py-1">
       <div className="space-y-3.5 text-[0.9375rem] leading-[1.85] text-muted-foreground">
         <p className="stagger-item">
-          I&apos;m the co-founder of{" "}
+          I co-founded{" "}
           <a className={linkClass} href="https://www.radion.app" rel="noreferrer" target="_blank">
             Radion
-          </a>
-          , where we help prediction market traders by building the ultimate intelligence layer.
+          </a>{" "}
+          to build the intelligence layer for prediction markets — research tools and signal
+          tracking for traders who take the space seriously.
         </p>
         <p className="stagger-item [transition-delay:60ms]">
-          I also created{" "}
+          I started{" "}
           <a
             className={linkClass}
             href="https://www.zapstudio.dev"
@@ -40,9 +41,9 @@ function Home() {
             target="_blank"
           >
             Zap Studio
-          </a>
-          , an open-source initiative for type-safe TypeScript libraries that work across any stack
-          with projects like{" "}
+          </a>{" "}
+          to build the TypeScript utilities I kept reaching for but couldn&apos;t find — type-safe,
+          runtime-agnostic, dependency-light:{" "}
           <a
             className={linkClass}
             href="https://www.zapstudio.dev/packages/validation"
@@ -90,7 +91,7 @@ function Home() {
           .
         </p>
         <p className="stagger-item [transition-delay:120ms]">
-          I also maintain{" "}
+          Outside of that, I maintain a few open-source tools for my own workflow:{" "}
           <a
             className={linkClass}
             href="https://github.com/alexandretrotel/todo-tree"
@@ -98,8 +99,8 @@ function Home() {
             target="_blank"
           >
             todo-tree
-          </a>
-          ,{" "}
+          </a>{" "}
+          for surfacing TODO comments,{" "}
           <a
             className={linkClass}
             href="https://github.com/alexandretrotel/mntn"
@@ -107,8 +108,8 @@ function Home() {
             target="_blank"
           >
             mntn
-          </a>
-          , and{" "}
+          </a>{" "}
+          for dotfile management, and{" "}
           <a
             className={linkClass}
             href="https://github.com/alexandretrotel/feedyourai"
@@ -117,8 +118,7 @@ function Home() {
           >
             fyai
           </a>{" "}
-          under GPL-3.0 which are tools for finding TODO comments, managing dotfiles, and bundling
-          files for AI processing respectively.
+          for packaging files into LLM context.
         </p>
       </div>
     </section>
