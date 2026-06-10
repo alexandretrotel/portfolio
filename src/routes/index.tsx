@@ -32,7 +32,7 @@ function Home() {
           to build the intelligence layer for prediction markets — research tools and signal
           tracking for traders who take the space seriously.
         </p>
-        <p className="stagger-item [animation-delay:150ms]">
+        <p className="stagger-item">
           I also started{" "}
           <a
             className={linkClass}
@@ -90,7 +90,7 @@ function Home() {
           </a>
           .
         </p>
-        <p className="stagger-item [animation-delay:300ms]">
+        <p className="stagger-item">
           Outside of that, I maintain a few open-source tools for my own workflow:{" "}
           <a
             className={linkClass}
