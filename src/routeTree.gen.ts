@@ -10,13 +10,7 @@
 
 import { Route as rootRouteImport } from "./routes/__root";
 import { Route as IndexRouteImport } from "./routes/index";
-import { Route as RobotsDottxtRouteImport } from "./routes/robots[.]txt";
 
-const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
-  id: "/robots.txt",
-  path: "/robots.txt",
-  getParentRoute: () => rootRouteImport,
-} as any);
 const IndexRoute = IndexRouteImport.update({
   id: "/",
   path: "/",
@@ -25,39 +19,28 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   "/": typeof IndexRoute;
-  "/robots.txt": typeof RobotsDottxtRoute;
 }
 export interface FileRoutesByTo {
   "/": typeof IndexRoute;
-  "/robots.txt": typeof RobotsDottxtRoute;
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport;
   "/": typeof IndexRoute;
-  "/robots.txt": typeof RobotsDottxtRoute;
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: "/" | "/robots.txt";
+  fullPaths: "/";
   fileRoutesByTo: FileRoutesByTo;
-  to: "/" | "/robots.txt";
-  id: "__root__" | "/" | "/robots.txt";
+  to: "/";
+  id: "__root__" | "/";
   fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
-  RobotsDottxtRoute: typeof RobotsDottxtRoute;
 }
 
 declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    "/robots.txt": {
-      id: "/robots.txt";
-      path: "/robots.txt";
-      fullPath: "/robots.txt";
-      preLoaderRoute: typeof RobotsDottxtRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
     "/": {
       id: "/";
       path: "/";
@@ -70,7 +53,6 @@ declare module "@tanstack/react-router" {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  RobotsDottxtRoute: RobotsDottxtRoute,
 };
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
