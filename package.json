@@ -4,33 +4,40 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "astro build",
-    "check": "pnpm run format:check && pnpm run lint && astro check",
-    "dev": "astro dev",
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node .output/server/index.mjs",
+    "check": "pnpm run format:check && pnpm run lint",
     "format": "oxfmt .",
     "format:check": "oxfmt --check .",
     "lint": "oxlint --type-aware --type-check",
     "lint:fix": "oxlint --type-aware --type-check --fix",
-    "preview": "astro preview",
     "prepare": "lefthook install"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.9",
-    "@astrojs/sitemap": "^3.7.2",
-    "@astrojs/vercel": "^10.0.6",
     "@fontsource-variable/inter": "^5.2.8",
-    "@tailwindcss/vite": "^4.2.4",
-    "astro": "^6.2.2",
+    "@tanstack/react-router": "^1.170.15",
+    "@tanstack/react-start": "^1.168.25",
     "clsx": "^2.1.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.2.4",
+    "@types/node": "^22.5.4",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^6.0.1",
     "lefthook": "^2.1.6",
+    "nitro": "^3.0.260603-beta",
     "oxfmt": "^0.48.0",
     "oxlint": "^1.63.0",
     "oxlint-tsgolint": "^0.22.1",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vite": "^8.0.14"
   },
   "engines": {
     "node": ">=20.0.0"
