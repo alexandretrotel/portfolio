@@ -10,6 +10,6 @@
   "sortImports": {},
   "sortPackageJson": true,
   "sortTailwindcss": {
-    "stylesheet": "./src/styles/globals.css"
+    "stylesheet": "./src/styles/app.css"
   }
 }
