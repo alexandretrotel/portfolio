@@ -32,8 +32,8 @@ function Home() {
           to build the intelligence layer for prediction markets — research tools and signal
           tracking for traders who take the space seriously.
         </p>
-        <p className="stagger-item [transition-delay:60ms]">
-          I started{" "}
+        <p className="stagger-item [transition-delay:80ms]">
+          From there, I started{" "}
           <a
             className={linkClass}
             href="https://www.zapstudio.dev"
@@ -90,7 +90,7 @@ function Home() {
           </a>
           .
         </p>
-        <p className="stagger-item [transition-delay:120ms]">
+        <p className="stagger-item [transition-delay:160ms]">
           Outside of that, I maintain a few open-source tools for my own workflow:{" "}
           <a
             className={linkClass}
