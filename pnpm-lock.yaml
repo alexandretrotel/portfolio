@@ -17,18 +17,12 @@ importers:
       '@tanstack/react-start':
         specifier: ^1.168.25
         version: 1.168.25(crossws@0.4.5(srvx@0.11.16))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(vite@8.0.16(@types/node@24.13.1)(jiti@2.7.0))
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       react:
         specifier: ^19.0.0
         version: 19.2.7
       react-dom:
         specifier: ^19.0.0
         version: 19.2.7(react@19.2.7)
-      tailwind-merge:
-        specifier: ^3.6.0
-        version: 3.6.0
       tailwindcss:
         specifier: ^4.3.0
         version: 4.3.0
@@ -964,10 +958,6 @@ packages:
     resolution: {integrity: sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==}
     engines: {node: '>= 20.19.0'}
 
-  clsx@2.1.1:
-    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
-    engines: {node: '>=6'}
-
   consola@3.4.2:
     resolution: {integrity: sha512-5IKcdX0nnYavi6G7TtOhwkYzyjfJlatbjMjuLSfE2kYT5pMDOilZ4OvMhi637CcDICTmz3wARPoyhqyX1Y+XvA==}
     engines: {node: ^14.18.0 || >=16.10.0}
@@ -1426,9 +1416,6 @@ packages:
     resolution: {integrity: sha512-bp07zRuycfTY43IjAvvTFnmnJi8ikW0VFiHwOhhYcVW/L4xQ1XY4PAd4Nuum1rsA17C39zL7x+CDhrn5AL32Rw==}
     engines: {node: '>=20.16.0'}
     hasBin: true
-
-  tailwind-merge@3.6.0:
-    resolution: {integrity: sha512-uxL7qAVQriqRQPAyK3pj66VqskWqoZ37PW94jwOTwNfq/z9oyu1V+eqrZqtR2+fCiXdYOZe/Modt8GtvqNzu+w==}
 
   tailwindcss@4.3.0:
     resolution: {integrity: sha512-y6nxMGB1nMW9R6k96e5gdIFzcfL/gTJRNaqGes1YvkLnPVXzWgbqFF2yLC0T8G774n24cx3Pe8XrKoniCOAH+Q==}
@@ -2346,8 +2333,6 @@ snapshots:
     dependencies:
       readdirp: 5.0.0
 
-  clsx@2.1.1: {}
-
   consola@3.4.2: {}
 
   convert-source-map@2.0.0: {}
@@ -2737,8 +2722,6 @@ snapshots:
   source-map@0.7.6: {}
 
   srvx@0.11.16: {}
-
-  tailwind-merge@3.6.0: {}
 
   tailwindcss@4.3.0: {}
 
