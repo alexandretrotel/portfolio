@@ -26,7 +26,7 @@ export const Route = createRootRoute({
       {
         rel: "sitemap",
         type: "application/xml",
-        href: "/sitemap-index.xml",
+        href: "/sitemap.xml",
       },
     ],
   }),

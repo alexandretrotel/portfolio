@@ -17,6 +17,9 @@ export default defineConfig({
         crawlLinks: true,
         autoStaticPathsDiscovery: true,
       },
+      sitemap: {
+        host: "https://www.alexandretrotel.org",
+      },
     }),
     viteReact(),
     nitro({ preset: "vercel" }),
