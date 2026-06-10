@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { Header } from "~/components/Header";
 import { SITE } from "~/lib/site";
 
-import globalsCss from "~/styles/globals.css?url";
+import globalsCss from "~/styles/app.css?url";
 
 export const Route = createRootRoute({
   head: () => ({
