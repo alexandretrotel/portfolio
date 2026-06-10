@@ -2,3 +2,6 @@ allowBuilds:
   esbuild: true
   lefthook: true
   sharp: true
+
+minimumReleaseAge: "10080"
+trustPolicy: no-downgrade

@@ -11,11 +11,10 @@
 # testing
 /coverage
 
-# astro
+# build output
 /.astro/
 /dist/
-
-# production
+/.output/
 /build
 
 # misc
@@ -36,7 +35,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# public seo files
-public/robots.txt
-public/sitemap*.xml
 .env*.local
