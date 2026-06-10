@@ -10,14 +10,16 @@ export function Header() {
           >
             <img
               alt="Logo"
-              className="h-8 w-8 rounded-md hover:opacity-80"
+              className="animate-logo h-8 w-8 rounded-md hover:opacity-80"
               height={128}
               src="/logo.png"
               width={128}
             />
           </a>
         </div>
-        <span className="hidden text-sm text-muted-foreground sm:block">Alexandre Trotel</span>
+        <span className="animate-name hidden text-sm text-muted-foreground sm:block">
+          Alexandre Trotel
+        </span>
       </div>
     </div>
   );
