@@ -1,6 +1,12 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "ignorePatterns": ["**/.astro/**", "**/dist/**", "**/node_modules/**", "**/.vercel/**"],
+  "ignorePatterns": [
+    "**/.astro/**",
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/.vercel/**",
+    "**/routeTree.gen.ts"
+  ],
   "sortImports": {},
   "sortPackageJson": true,
   "sortTailwindcss": {
