@@ -11,7 +11,7 @@ const personSchema = {
   "@type": "Person",
   name: "Alexandre Trotel",
   url: SITE.baseUrl,
-  sameAs: [SITE.github],
+  sameAs: [SITE.github, SITE.twitter],
   jobTitle: "Founder & Developer",
   description: SITE.description,
 };
@@ -30,6 +30,7 @@ export const Route = createRootRoute({
       { property: "og:description", content: SITE.description },
       { property: "og:image", content: SITE.ogImage },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:creator", content: "@alexandretrotel" },
       { name: "twitter:title", content: SITE.title },
       { name: "twitter:description", content: SITE.description },
       { name: "twitter:image", content: SITE.ogImage },
