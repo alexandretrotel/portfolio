@@ -6,6 +6,16 @@ import { SITE } from "~/lib/site";
 
 import globalsCss from "~/styles/app.css?url";
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Alexandre Trotel",
+  url: SITE.baseUrl,
+  sameAs: [SITE.github, SITE.twitter],
+  jobTitle: "Founder & Developer",
+  description: SITE.description,
+};
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -15,18 +25,25 @@ export const Route = createRootRoute({
       { name: "description", content: SITE.description },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_US" },
+      { property: "og:site_name", content: "Alexandre Trotel" },
       { property: "og:title", content: SITE.title },
       { property: "og:description", content: SITE.description },
+      { property: "og:image", content: SITE.ogImage },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:creator", content: "@alexandretrotel" },
       { name: "twitter:title", content: SITE.title },
       { name: "twitter:description", content: SITE.description },
+      { name: "twitter:image", content: SITE.ogImage },
     ],
     links: [
       { rel: "stylesheet", href: globalsCss },
       { rel: "icon", type: "image/png", href: "/logo.png" },
+      { rel: "sitemap", type: "application/xml", href: "/sitemap.xml" },
+    ],
+    scripts: [
       {
-        rel: "sitemap",
-        type: "application/xml",
-        href: "/sitemap.xml",
+        type: "application/ld+json",
+        children: JSON.stringify(personSchema),
       },
     ],
   }),
