@@ -17,6 +17,7 @@ export function Header() {
             />
           </a>
         </div>
+        <span className="hidden text-sm text-muted-foreground sm:block">Alexandre Trotel</span>
       </div>
     </div>
   );
