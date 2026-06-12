@@ -1,7 +1,4 @@
 pre-commit:
-  parallel: false
   jobs:
-    - name: fix
-      run: pnpm exec ultracite fix {staged_files}
-      glob: "*"
+    - run: pnpm exec ultracite fix
       stage_fixed: true
