@@ -8,11 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "start": "node .output/server/index.mjs",
-    "check": "pnpm run format:check && pnpm run lint",
-    "format": "oxfmt .",
-    "format:check": "oxfmt --check .",
-    "lint": "oxlint --type-aware --type-check",
-    "lint:fix": "oxlint --type-aware --type-check --fix",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
     "prepare": "lefthook install"
   },
   "dependencies": {
@@ -30,11 +27,12 @@
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^6.0.1",
     "lefthook": "^2.1.9",
-    "nitro": "^3.0.260603-beta",
+    "nitro": "^3.0.260610-beta",
     "oxfmt": "^0.54.0",
-    "oxlint": "^1.69.0",
+    "oxlint": "^1.68.0",
     "oxlint-tsgolint": "^0.23.0",
     "typescript": "^6.0.3",
+    "ultracite": "^7.8.1",
     "vite": "^8.0.14"
   },
   "engines": {
