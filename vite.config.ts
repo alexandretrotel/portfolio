@@ -5,23 +5,23 @@ import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  resolve: {
-    tsconfigPaths: true,
-  },
   plugins: [
     tailwindcss(),
     tanstackStart({
-      srcDirectory: "src",
       prerender: {
-        enabled: true,
-        crawlLinks: true,
         autoStaticPathsDiscovery: true,
+        crawlLinks: true,
+        enabled: true,
       },
       sitemap: {
         host: "https://www.alexandretrotel.org",
       },
+      srcDirectory: "src",
     }),
     viteReact(),
     nitro({ preset: "vercel" }),
   ],
+  resolve: {
+    tsconfigPaths: true,
+  },
 });
