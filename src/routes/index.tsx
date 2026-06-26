@@ -3,12 +3,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SITE } from "~/lib/site";
 
 const linkClass =
-  "font-medium text-foreground decoration-border/80 decoration-[0.06em] underline underline-offset-[0.18em] transition-colors duration-150 hover:decoration-foreground active:opacity-70";
+  "font-medium text-foreground decoration-border/80 decoration-[0.06em] underline underline-offset-[0.18em] hover:decoration-foreground active:opacity-70";
 
 const Home = () => (
   <section className="mx-auto flex h-full w-full max-w-152 flex-col pt-[15vh]">
     <div className="space-y-3.5 text-[0.9375rem] leading-[1.85] text-muted-foreground">
-      <p className="stagger-item">
+      <p>
         I co-founded{" "}
         <a
           className={linkClass}
@@ -21,7 +21,7 @@ const Home = () => (
         to build the intelligence layer for prediction markets — research tools
         and signal tracking for traders who take the space seriously.
       </p>
-      <p className="stagger-item">
+      <p>
         I also started{" "}
         <a
           className={linkClass}
@@ -79,7 +79,7 @@ const Home = () => (
         </a>
         .
       </p>
-      <p className="stagger-item">
+      <p>
         Outside of that, I maintain a few open-source tools for my own workflow:{" "}
         <a
           className={linkClass}

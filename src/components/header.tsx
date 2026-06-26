@@ -4,19 +4,19 @@ export const Header = () => (
       <div className="flex items-center gap-6">
         <a
           aria-label="Go to homepage"
-          className="flex items-center gap-4 transition-transform active:scale-90"
+          className="flex items-center gap-4 active:opacity-70"
           href="/"
         >
           <img
             alt="Logo"
-            className="animate-logo h-8 w-8 rounded-md hover:opacity-80"
+            className="h-8 w-8 hover:opacity-80"
             height={128}
             src="/logo.png"
             width={128}
           />
         </a>
       </div>
-      <span className="animate-name hidden text-sm text-muted-foreground sm:block">
+      <span className="hidden text-sm text-muted-foreground sm:block">
         Alexandre Trotel
       </span>
     </div>

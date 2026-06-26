@@ -15,7 +15,7 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   description: SITE.description,
-  jobTitle: "Founder & Developer",
+  jobTitle: "Entrepreneur & Developer",
   name: "Alexandre Trotel",
   sameAs: [SITE.github, SITE.twitter],
   url: SITE.baseUrl,

@@ -13,7 +13,6 @@
     "prepare": "lefthook install"
   },
   "dependencies": {
-    "@fontsource-variable/inter": "^5.2.8",
     "@tanstack/react-router": "^1.170.16",
     "@tanstack/react-start": "^1.168.26",
     "react": "^19.2.7",
