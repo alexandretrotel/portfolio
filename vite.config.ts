@@ -34,6 +34,7 @@ export default defineConfig({
         enabled: true,
       },
       sitemap: {
+        enabled: true,
         host: "https://www.alexandretrotel.org",
       },
       srcDirectory: "src",
