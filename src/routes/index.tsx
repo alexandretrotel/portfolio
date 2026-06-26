@@ -3,11 +3,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SITE } from "~/lib/site";
 
 const linkClass =
-  "font-medium text-foreground decoration-border/80 decoration-[0.06em] underline underline-offset-[0.18em] hover:decoration-foreground active:opacity-70";
+  "font-medium text-link decoration-link/40 decoration-[0.06em] underline underline-offset-[0.18em] hover:decoration-link active:opacity-70";
 
 const Home = () => (
   <section className="mx-auto flex h-full w-full max-w-152 flex-col pt-[15vh]">
-    <div className="space-y-3.5 text-[0.9375rem] leading-[1.85] text-muted-foreground">
+    <div className="space-y-3.5 text-[0.9375rem] leading-[1.85] text-foreground">
       <p>
         Co-founded{" "}
         <a

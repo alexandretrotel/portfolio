@@ -24,6 +24,8 @@
 
   --color-destructive: var(--destructive);
 
+  --color-link: var(--link);
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -39,6 +41,8 @@
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.22 0 0);
+
+  --link: oklch(0.52 0.2 257);
 
   --card: oklch(0.99 0 0);
   --card-foreground: oklch(0.22 0 0);
@@ -78,7 +82,7 @@
 
 @layer components {
   .prose {
-    @apply text-[0.9375rem] leading-[1.85] text-muted-foreground;
+    @apply text-[0.9375rem] leading-[1.85] text-foreground;
   }
 
   .prose > * + * {
@@ -94,7 +98,7 @@
   }
 
   .prose a {
-    @apply font-medium text-foreground underline decoration-border/80 decoration-[0.06em] underline-offset-[0.18em] hover:decoration-foreground active:opacity-70;
+    @apply font-medium text-link underline decoration-link/40 decoration-[0.06em] underline-offset-[0.18em] hover:decoration-link active:opacity-70;
   }
 
   .prose strong {
