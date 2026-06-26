@@ -32,36 +32,42 @@ const Home = () => (
         </a>{" "}
         building type-safe, runtime-agnostic and lightweight libraries.
       </p>
-      <p>
-        Making open-source tools that developers use daily:{" "}
-        <a
-          className={linkClass}
-          href="https://github.com/alexandretrotel/todo-tree"
-          rel="noreferrer"
-          target="_blank"
-        >
-          todo-tree
-        </a>{" "}
-        for surfacing TODO comments,{" "}
-        <a
-          className={linkClass}
-          href="https://github.com/alexandretrotel/mntn"
-          rel="noreferrer"
-          target="_blank"
-        >
-          mntn
-        </a>{" "}
-        for dotfile management, and{" "}
-        <a
-          className={linkClass}
-          href="https://github.com/alexandretrotel/feedyourai"
-          rel="noreferrer"
-          target="_blank"
-        >
-          fyai
-        </a>{" "}
-        for packaging files into LLM context.
-      </p>
+      <p>Making open-source tools that developers use daily:</p>
+      <ul className="list-disc pl-5">
+        <li>
+          <a
+            className={linkClass}
+            href="https://github.com/alexandretrotel/todo-tree"
+            rel="noreferrer"
+            target="_blank"
+          >
+            todo-tree
+          </a>{" "}
+          for surfacing TODO comments
+        </li>
+        <li>
+          <a
+            className={linkClass}
+            href="https://github.com/alexandretrotel/mntn"
+            rel="noreferrer"
+            target="_blank"
+          >
+            mntn
+          </a>{" "}
+          for dotfile management
+        </li>
+        <li>
+          <a
+            className={linkClass}
+            href="https://github.com/alexandretrotel/feedyourai"
+            rel="noreferrer"
+            target="_blank"
+          >
+            fyai
+          </a>{" "}
+          for packaging files into LLM context
+        </li>
+      </ul>
     </div>
   </section>
 );
