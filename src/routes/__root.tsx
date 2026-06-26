@@ -1,5 +1,6 @@
 import {
   HeadContent,
+  Link,
   Outlet,
   Scripts,
   createRootRoute,
@@ -38,6 +39,28 @@ const RootDocument = ({ children }: { children: ReactNode }) => (
   </html>
 );
 
+const notFoundLinkClass =
+  "font-medium text-link decoration-link/40 decoration-[0.06em] underline underline-offset-[0.18em] hover:decoration-link active:opacity-70";
+
+const NotFound = () => (
+  <section className="mx-auto flex h-full w-full max-w-152 flex-col pt-[15vh]">
+    <div className="space-y-3.5 text-base leading-relaxed text-foreground">
+      <h1 className="text-xl font-medium">Lost the thread.</h1>
+      <p>
+        That page isn't here. Head{" "}
+        <Link className={notFoundLinkClass} to="/">
+          home
+        </Link>{" "}
+        or read some{" "}
+        <Link className={notFoundLinkClass} to="/essays">
+          essays
+        </Link>{" "}
+        instead.
+      </p>
+    </div>
+  </section>
+);
+
 export const Route = createRootRoute({
   component: () => <Outlet />,
   head: () => ({
@@ -70,5 +93,6 @@ export const Route = createRootRoute({
       },
     ],
   }),
+  notFoundComponent: NotFound,
   shellComponent: RootDocument,
 });
