@@ -18,8 +18,7 @@ const Home = () => (
         >
           Radion
         </a>{" "}
-        to help prediction market traders find the right information to make
-        better trades.
+        to help prediction market traders copy the best traders.
       </p>
       <p>
         Also started{" "}
