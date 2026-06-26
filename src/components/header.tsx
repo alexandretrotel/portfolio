@@ -16,11 +16,6 @@ export const Header = () => (
           />
         </a>
       </div>
-      <nav className="flex items-center text-sm text-foreground">
-        <a className="hover:underline" href="/essays">
-          Essays
-        </a>
-      </nav>
     </div>
   </div>
 );

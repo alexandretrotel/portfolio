@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 
+import { essays } from "~/lib/essays";
 import { SITE } from "~/lib/site";
 
 const linkClass =
@@ -67,6 +68,20 @@ const Home = () => (
           </a>{" "}
           for compressing code for LLMs
         </li>
+      </ul>
+      <p>Read some of my essays below:</p>
+      <ul className="list-disc pl-5">
+        {essays.map((essay) => (
+          <li key={essay.slug}>
+            <Link
+              className={linkClass}
+              params={{ slug: essay.slug }}
+              to="/essays/$slug"
+            >
+              {essay.title}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   </section>

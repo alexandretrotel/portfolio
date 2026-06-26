@@ -50,12 +50,8 @@ const NotFound = () => (
         That page isn't here. Head{" "}
         <Link className={notFoundLinkClass} to="/">
           home
-        </Link>{" "}
-        or read some{" "}
-        <Link className={notFoundLinkClass} to="/essays">
-          essays
-        </Link>{" "}
-        instead.
+        </Link>
+        .
       </p>
     </div>
   </section>

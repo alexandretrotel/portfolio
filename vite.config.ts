@@ -16,10 +16,7 @@ export default defineConfig({
     {
       enforce: "pre",
       ...mdx({
-        rehypePlugins: [
-          rehypeSlug,
-          [rehypePretty, { keepBackground: false, theme: "github-light" }],
-        ],
+        rehypePlugins: [rehypeSlug, [rehypePretty, { theme: "github-light" }]],
         remarkPlugins: [
           remarkGfm,
           remarkFrontmatter,
