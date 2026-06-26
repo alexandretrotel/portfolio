@@ -9,7 +9,7 @@ const Home = () => (
   <section className="mx-auto flex h-full w-full max-w-152 flex-col pt-[15vh]">
     <div className="space-y-3.5 text-[0.9375rem] leading-[1.85] text-muted-foreground">
       <p>
-        I co-founded{" "}
+        Co-founded{" "}
         <a
           className={linkClass}
           href="https://www.radion.app"
@@ -18,11 +18,11 @@ const Home = () => (
         >
           Radion
         </a>{" "}
-        to build the intelligence layer for prediction markets — research tools
-        and signal tracking for traders who take the space seriously.
+        to help prediction market traders find the right information to make
+        better trades.
       </p>
       <p>
-        I also started{" "}
+        Also started{" "}
         <a
           className={linkClass}
           href="https://www.zapstudio.dev"
@@ -31,8 +31,8 @@ const Home = () => (
         >
           Zap Studio
         </a>{" "}
-        to build the TypeScript utilities I kept reaching for but couldn&apos;t
-        find — type-safe, runtime-agnostic, dependency-light:{" "}
+        because I kept reaching for end-to-end type-safe, runtime-agnostic and
+        light libraries:{" "}
         <a
           className={linkClass}
           href="https://www.zapstudio.dev/packages/validation"
@@ -80,7 +80,7 @@ const Home = () => (
         .
       </p>
       <p>
-        Outside of that, I maintain a few open-source tools for my own workflow:{" "}
+        Finally, made open-source tools that developers and I use daily:{" "}
         <a
           className={linkClass}
           href="https://github.com/alexandretrotel/todo-tree"
