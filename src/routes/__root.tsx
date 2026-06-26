@@ -45,7 +45,7 @@ const notFoundLinkClass =
 const NotFound = () => (
   <section className="mx-auto flex h-full w-full max-w-152 flex-col pt-[15vh]">
     <div className="space-y-3.5 text-base leading-relaxed text-foreground">
-      <h1 className="text-xl font-medium">Lost the thread.</h1>
+      <h1 className="text-xl font-medium">You are lost.</h1>
       <p>
         That page isn't here. Head{" "}
         <Link className={notFoundLinkClass} to="/">
