@@ -4,6 +4,6 @@ export const SITE = {
     "Co-founder of Radion, the intelligence layer for prediction markets, and Zap Studio, a suite of type-safe TypeScript utilities for real workflows.",
   github: "https://github.com/alexandretrotel",
   ogImage: "https://www.alexandretrotel.org/logo.png",
-  title: "Alexandre Trotel | Founder & Open Source Developer",
+  title: "Alexandre Trotel | Entrepreneur & Open Source Developer",
   twitter: "https://x.com/alexandretrotel",
 } as const;
