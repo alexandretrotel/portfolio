@@ -65,7 +65,7 @@ const Home = () => (
           >
             fyai
           </a>{" "}
-          for packaging files into LLM context
+          for compressing code for LLMs
         </li>
       </ul>
     </div>
