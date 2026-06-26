@@ -21,7 +21,7 @@ const Home = () => (
         to help prediction market traders copy the best traders.
       </p>
       <p>
-        Also started{" "}
+        Started{" "}
         <a
           className={linkClass}
           href="https://www.zapstudio.dev"
@@ -30,56 +30,10 @@ const Home = () => (
         >
           Zap Studio
         </a>{" "}
-        because I kept reaching for end-to-end type-safe, runtime-agnostic and
-        lightweight libraries:{" "}
-        <a
-          className={linkClass}
-          href="https://www.zapstudio.dev/packages/validation"
-          rel="noreferrer"
-          target="_blank"
-        >
-          validation
-        </a>
-        ,{" "}
-        <a
-          className={linkClass}
-          href="https://www.zapstudio.dev/packages/fetch"
-          rel="noreferrer"
-          target="_blank"
-        >
-          fetch
-        </a>
-        ,{" "}
-        <a
-          className={linkClass}
-          href="https://www.zapstudio.dev/packages/permit"
-          rel="noreferrer"
-          target="_blank"
-        >
-          permit
-        </a>
-        ,{" "}
-        <a
-          className={linkClass}
-          href="https://www.zapstudio.dev/packages/retry"
-          rel="noreferrer"
-          target="_blank"
-        >
-          retry
-        </a>
-        , and{" "}
-        <a
-          className={linkClass}
-          href="https://www.zapstudio.dev/packages/webhooks"
-          rel="noreferrer"
-          target="_blank"
-        >
-          webhooks
-        </a>
-        .
+        building type-safe, runtime-agnostic and lightweight libraries.
       </p>
       <p>
-        Finally, made open-source tools that developers use daily:{" "}
+        Making open-source tools that developers use daily:{" "}
         <a
           className={linkClass}
           href="https://github.com/alexandretrotel/todo-tree"
