@@ -1,12 +1,32 @@
+import mdx from "@mdx-js/rollup";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
+import rehypePretty from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import remarkFrontmatter from "remark-frontmatter";
+import remarkGfm from "remark-gfm";
+import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [
     tailwindcss(),
+    {
+      enforce: "pre",
+      ...mdx({
+        rehypePlugins: [
+          rehypeSlug,
+          [rehypePretty, { keepBackground: false, theme: "github-light" }],
+        ],
+        remarkPlugins: [
+          remarkGfm,
+          remarkFrontmatter,
+          [remarkMdxFrontmatter, { name: "frontmatter" }],
+        ],
+      }),
+    },
     tanstackStart({
       prerender: {
         autoStaticPathsDiscovery: true,
@@ -18,7 +38,7 @@ export default defineConfig({
       },
       srcDirectory: "src",
     }),
-    viteReact(),
+    viteReact({ include: /\.(?:jsx|tsx|mdx)$/u }),
     nitro({ preset: "vercel" }),
   ],
   resolve: {

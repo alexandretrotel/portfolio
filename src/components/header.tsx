@@ -16,9 +16,11 @@ export const Header = () => (
           />
         </a>
       </div>
-      <span className="hidden text-sm text-muted-foreground sm:block">
-        Alexandre Trotel
-      </span>
+      <nav className="flex items-center text-sm text-foreground">
+        <a className="hover:underline" href="/essays">
+          Essays
+        </a>
+      </nav>
     </div>
   </div>
 );
