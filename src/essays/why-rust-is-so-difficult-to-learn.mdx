@@ -3,13 +3,13 @@ title: Why Rust is so difficult to learn?
 date: 2026-06-26
 ---
 
-[Rust](https://rustlang.org/) is not like any other languages. I've been coding in [TypeScript](https://www.typescriptlang.org/) and [Python](https://www.python.org/) for 5 years. For Rust, only 2 years but I can already tell you which language taught me the most.
+[Rust](https://rustlang.org/) is not like any other languages. I've been coding in [TypeScript](https://www.typescriptlang.org/) and [Python](https://www.python.org/) for 5 years. On the other hand, I've coded in Rust for only 2 years but I can already tell you which language taught me the most.
 
-From my personal experience, Rust introduces completely new concepts that exist in no other languages. Concepts such as ownership, borrowing, the orphan rule that we will cover briefly in this essay.
+From my personal experience, Rust introduces completely new concepts that exist in no other languages and force you to learn everything from scratch, again. Concepts such as ownership, borrowing, and `Vec`s that we will cover briefly in this essay.
 
 But first, the best way to illustrate my thoughts is probably to show you the same code in Python and Rust.
 
-In the following code, we define a simple `User` class with a constructor and a method called `greet()` that greets the current user using its name. We also define a `print_name()` function that display the user's name. Finally, we store users in an array add some code to use the `User` class.
+In the following code, we define a simple `User` class with a constructor. We also define a method called `greet()` that greets the current user using its name. Then, we define a `print_name()` function that display the user's name. And finally, we store users in an array and add a little bit of code to create an instance of the `User` class and play with it.
 
 Here's the Python code:
 
@@ -75,20 +75,28 @@ fn main() {
 }
 ```
 
-To understand the differences, let's introduce all Rust concepts we used here.
+## Rust's basic concepts
 
-## Ownership
+To understand the differences, let's explain basic Rust concepts we used in the code above.
+
+### Ownership
 
 In Rust, when we declare a variable, it owns its value.
 
-## Borrowing
+### Borrowing
 
 Borrowing allow to use variables without taking ownership.
 
-## Vectors
+### Vectors
 
 `Vec` (short for Vectors) are one of the most important data structure in Rust. Rust make the difference with arrays explict and we'll understand why in this section.
 
-## Strings
+### Strings
 
 Finally, `String` is another data structure in Rust built on top of `Vec`.
+
+## The borrow checker
+
+Rust is a compiled language. Like every compiled language, it has a compiler.
+
+Rust's compiler is [rustc](https://doc.rust-lang.org/rustc/index.html) which comes pre-installed when you install Rust.
