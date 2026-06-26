@@ -30,7 +30,7 @@ const RootDocument = ({ children }: { children: ReactNode }) => (
     <body className="antialiased">
       <div className="min-h-screen bg-background px-6">
         <Header />
-        <main className="mx-auto min-h-[calc(100vh-8rem)] max-w-152 pb-12 md:pb-18">
+        <main className="mx-auto min-h-[calc(100vh-4rem)] max-w-152 pb-12 md:pb-18">
           {children}
         </main>
       </div>
