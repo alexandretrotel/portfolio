@@ -8,7 +8,7 @@ const linkClass =
 
 const Essays = () => (
   <section className="mx-auto flex h-full w-full max-w-152 flex-col pt-[15vh]">
-    <div className="space-y-3.5 text-[0.9375rem] leading-[1.85] text-foreground">
+    <div className="space-y-3.5 text-base leading-relaxed text-foreground">
       <p>
         I had difficulty to crystallize my thought; and writing helped me at
         this. Thus, here are some essays I've written.

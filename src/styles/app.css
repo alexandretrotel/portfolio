@@ -82,7 +82,7 @@
 
 @layer components {
   .prose {
-    @apply text-[0.9375rem] leading-[1.85] text-foreground;
+    @apply text-base leading-relaxed text-foreground;
   }
 
   .prose > * + * {
@@ -90,11 +90,11 @@
   }
 
   .prose h2 {
-    @apply mt-10 text-lg font-medium text-foreground;
+    @apply mt-10 text-xl font-medium text-foreground;
   }
 
   .prose h3 {
-    @apply mt-8 font-medium text-foreground;
+    @apply mt-8 text-lg font-medium text-foreground;
   }
 
   .prose a {
@@ -114,7 +114,7 @@
   }
 
   .prose :not(pre) > code {
-    @apply rounded bg-muted px-1.5 py-0.5 font-mono text-[0.85em];
+    @apply rounded bg-muted px-1.5 py-0.5 font-mono text-sm;
   }
 
   .prose table {
@@ -136,11 +136,11 @@
   }
 
   .prose [data-rehype-pretty-code-title] {
-    @apply rounded-t-lg border border-b-0 border-border bg-muted px-4 py-2 font-mono text-xs text-foreground;
+    @apply rounded-t-lg border border-b-0 border-border bg-muted px-4 py-2 font-mono text-sm text-foreground;
   }
 
   .prose pre {
-    @apply overflow-x-auto rounded-lg border border-border bg-muted py-4 text-[0.85rem] leading-relaxed;
+    @apply overflow-x-auto rounded-lg border border-border bg-muted py-4 text-sm leading-relaxed;
   }
 
   .prose [data-rehype-pretty-code-title] + pre {
