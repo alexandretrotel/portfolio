@@ -32,7 +32,7 @@ const Home = () => (
           Zap Studio
         </a>{" "}
         because I kept reaching for end-to-end type-safe, runtime-agnostic and
-        light libraries:{" "}
+        lightweight libraries:{" "}
         <a
           className={linkClass}
           href="https://www.zapstudio.dev/packages/validation"
@@ -80,7 +80,7 @@ const Home = () => (
         .
       </p>
       <p>
-        Finally, made open-source tools that developers and I use daily:{" "}
+        Finally, made open-source tools that developers use daily:{" "}
         <a
           className={linkClass}
           href="https://github.com/alexandretrotel/todo-tree"
