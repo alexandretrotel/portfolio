@@ -75,3 +75,83 @@
     @apply bg-background text-foreground antialiased;
   }
 }
+
+@layer components {
+  .prose {
+    @apply text-[0.9375rem] leading-[1.85] text-muted-foreground;
+  }
+
+  .prose > * + * {
+    @apply mt-5;
+  }
+
+  .prose h2 {
+    @apply mt-10 text-lg font-medium text-foreground;
+  }
+
+  .prose h3 {
+    @apply mt-8 font-medium text-foreground;
+  }
+
+  .prose a {
+    @apply font-medium text-foreground underline decoration-border/80 decoration-[0.06em] underline-offset-[0.18em] hover:decoration-foreground active:opacity-70;
+  }
+
+  .prose strong {
+    @apply font-medium text-foreground;
+  }
+
+  .prose ul {
+    @apply list-disc pl-5;
+  }
+
+  .prose ol {
+    @apply list-decimal pl-5;
+  }
+
+  .prose :not(pre) > code {
+    @apply rounded bg-muted px-1.5 py-0.5 font-mono text-[0.85em];
+  }
+
+  .prose table {
+    @apply w-full border-collapse text-sm;
+  }
+
+  .prose th,
+  .prose td {
+    @apply border border-border px-3 py-2 text-left;
+  }
+
+  .prose th {
+    @apply font-medium text-foreground;
+  }
+
+  /* rehype-pretty-code (Shiki, light-only) */
+  .prose figure[data-rehype-pretty-code-figure] {
+    @apply mt-5;
+  }
+
+  .prose [data-rehype-pretty-code-title] {
+    @apply rounded-t-lg border border-b-0 border-border bg-muted px-4 py-2 font-mono text-xs text-foreground;
+  }
+
+  .prose pre {
+    @apply overflow-x-auto rounded-lg border border-border bg-muted py-4 text-[0.85rem] leading-relaxed;
+  }
+
+  .prose [data-rehype-pretty-code-title] + pre {
+    @apply rounded-t-none;
+  }
+
+  .prose pre [data-line] {
+    @apply px-4;
+  }
+
+  .prose [data-highlighted-line] {
+    @apply bg-foreground/[0.06];
+  }
+
+  .prose [data-highlighted-chars] {
+    @apply rounded bg-foreground/10 px-1;
+  }
+}
