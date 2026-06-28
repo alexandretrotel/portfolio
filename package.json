@@ -8,8 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "start": "node .output/server/index.mjs",
-    "check": "ultracite check",
-    "fix": "ultracite fix",
+    "check": "ultracite check --type-aware --type-check",
+    "fix": "ultracite fix --type-aware --type-check",
     "prepare": "lefthook install"
   },
   "dependencies": {
