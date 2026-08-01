@@ -8,9 +8,6 @@ A site this small does not need a framework.
 - A few kilobytes of HTML and CSS, a couple over the wire once [brotli](https://en.wikipedia.org/wiki/Brotli) has had its way with them, zero JavaScript. Nothing to parse, nothing to [hydrate](https://en.wikipedia.org/wiki/Hydration_(web_development)).
 - Fewer bytes over the wire and less CPU per visit means less energy burned.
 
-Frameworks I love, like Astro and TanStack Start, are built on top of exactly this.
-Writing it by hand is the fastest way to understand what they do for you, and why.
-
 ## Preview
 
 ```sh
