@@ -5,7 +5,7 @@
 
   "assets": {
     "directory": ".",
-    "html_handling": "drop-trailing-slash",
+    "html_handling": "none",
     "not_found_handling": "404-page"
   },
 
