@@ -14,10 +14,14 @@ Writing it by hand is the fastest way to understand what they do for you, and wh
 ## Preview
 
 ```sh
-npx serve .
+npx wrangler dev
 ```
 
 We need to use a server for development since the [`file://`](https://en.wikipedia.org/wiki/File_URI_scheme) protocol breaks absolute asset paths.
+
+Use `wrangler dev` rather than a generic static server. It applies the same routing as
+production, so `.html` URLs behave locally the way they will once deployed. Most static
+servers strip the extension and would hide that difference.
 
 ## Adding an essay
 
