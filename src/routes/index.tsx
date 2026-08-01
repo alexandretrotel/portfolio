@@ -10,19 +10,7 @@ const Home = () => (
   <section className="mx-auto flex h-full w-full max-w-152 flex-col pt-[15vh]">
     <div className="space-y-3.5 text-base leading-relaxed text-foreground">
       <p>
-        Co-founded{" "}
-        <a
-          className={linkClass}
-          href="https://www.radion.app"
-          rel="noreferrer"
-          target="_blank"
-        >
-          Radion
-        </a>{" "}
-        to help prediction market traders copy the best traders.
-      </p>
-      <p>
-        Started{" "}
+        Created{" "}
         <a
           className={linkClass}
           href="https://www.zapstudio.dev"
@@ -31,9 +19,10 @@ const Home = () => (
         >
           Zap Studio
         </a>{" "}
-        building type-safe, runtime-agnostic and lightweight libraries.
+        to make type-safe, runtime-agnostic and lightweight libraries for the
+        web.
       </p>
-      <p>Making open-source tools that developers use daily:</p>
+      <p>Also making open-source tools that developers use daily:</p>
       <ul className="list-disc pl-5">
         <li>
           <a
