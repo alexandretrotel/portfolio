@@ -1,11 +1,19 @@
 # Same syntax as .gitignore. Everything not listed here ships as a static asset.
+
+# tooling
+.assetsignore
 .git
 .gitignore
-.assetsignore
 .wrangler
 wrangler.jsonc
-README.md
+
+# docs
 LICENSE
+README.md
+
+# drafts
 essays/_template.html
+
+# local
 .DS_Store
 .env*
