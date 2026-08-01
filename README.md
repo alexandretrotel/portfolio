@@ -14,7 +14,7 @@ Writing it by hand is the fastest way to understand what they do for you, and wh
 ## Preview
 
 ```sh
-pnpm dlx serve .
+npx serve .
 ```
 
 We need to use a server for development since the [`file://`](https://en.wikipedia.org/wiki/File_URI_scheme) protocol breaks absolute asset paths.
