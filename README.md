@@ -5,7 +5,7 @@ A site this small does not need a framework.
 - Nothing to build, install or upgrade: the source is what ships.
 - Hosts anywhere that serves files: any [CDN](https://en.wikipedia.org/wiki/Content_delivery_network), any [static](https://en.wikipedia.org/wiki/Static_web_page) host, a USB stick.
 - No dependencies, no lockfile, no [supply chain](https://en.wikipedia.org/wiki/Supply_chain_attack) to audit.
-- 7,107 bytes of HTML and CSS (2,179 gzipped), zero JavaScript. Nothing to parse, nothing to [hydrate](https://en.wikipedia.org/wiki/Hydration_(web_development)).
+- 6,982 bytes of HTML and CSS (2,117 gzipped), zero JavaScript. Nothing to parse, nothing to [hydrate](https://en.wikipedia.org/wiki/Hydration_(web_development)).
 - Fewer bytes over the wire and less CPU per visit means less energy burned.
 
 Frameworks I love, like Astro and TanStack Start, are built on top of exactly this.
