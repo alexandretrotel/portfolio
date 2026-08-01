@@ -1,0 +1,11 @@
+# Same syntax as .gitignore. Everything not listed here ships as a static asset.
+.git
+.gitignore
+.assetsignore
+.wrangler
+wrangler.jsonc
+README.md
+LICENSE
+essays/_template.html
+.DS_Store
+.env*

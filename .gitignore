@@ -1,8 +1,8 @@
 # macOS
 .DS_Store
 
-# vercel
-.vercel
-
 # env
 .env*
+
+# cloudflare
+.wrangler
