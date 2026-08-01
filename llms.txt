@@ -1,0 +1,23 @@
+# Alexandre Trotel
+
+> Personal site of Alexandre Trotel, entrepreneur and open source developer. Founder of Zap Studio, where the work is type-safe, framework-agnostic TypeScript libraries for the web.
+
+Essays live under `/essays/` as individual HTML files, each linked from the home page and listed in the sitemap.
+
+## Site
+
+- [Home](https://www.alexandretrotel.org/): bio, current work, links to every essay.
+- [Sitemap](https://www.alexandretrotel.org/sitemap.xml): every indexable URL, with last-modified dates.
+
+## Projects
+
+- [Zap Studio](https://www.zapstudio.dev): framework-agnostic TypeScript libraries for the web, covering fetch, permit, retry, validation and webhooks.
+- [todo-tree](https://github.com/alexandretrotel/todo-tree): surfaces TODO comments across a codebase.
+- [mntn](https://github.com/alexandretrotel/mntn): dotfile management.
+- [fyai](https://github.com/alexandretrotel/feedyourai): compresses code for LLMs.
+
+## Optional
+
+- [Source](https://github.com/alexandretrotel/portfolio): the repository this site is built from.
+- [GitHub](https://github.com/alexandretrotel): other open source work.
+- [X](https://x.com/alexandretrotel): short-form writing.
