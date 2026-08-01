@@ -23,6 +23,11 @@ Use `wrangler dev` rather than a generic static server. It applies the same rout
 production, so `.html` URLs behave locally the way they will once deployed. Most static
 servers strip the extension and would hide that difference.
 
+The site lives in `public/`, which is the only thing Wrangler serves or uploads.
+Everything else in the repo stays out of the deploy by construction rather than by an
+exclusion list. It also keeps Wrangler's own `.wrangler/` state outside the directory it
+watches, which would otherwise make it reload itself forever.
+
 ## Adding an essay
 
 1. `cp essays/_template.html essays/my-slug.html`

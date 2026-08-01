@@ -1,0 +1,10 @@
+# Same syntax as .gitignore. Everything else in public/ ships as a static asset.
+
+.assetsignore
+
+# drafts
+essays/_template.html
+
+# local
+.DS_Store
+.env*
