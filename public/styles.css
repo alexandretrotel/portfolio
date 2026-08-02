@@ -117,6 +117,10 @@ main a {
   text-decoration: none;
 }
 
+a:active {
+  opacity: 0.7;
+}
+
 main a:hover {
   text-decoration: underline;
 }
@@ -125,10 +129,6 @@ main a:hover {
   width: 0.9em;
   height: 0.9em;
   vertical-align: -0.1em;
-}
-
-a:active {
-  opacity: 0.7;
 }
 
 main ul {
