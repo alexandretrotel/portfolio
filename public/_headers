@@ -1,11 +1,11 @@
-/styles.css
-  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+/styles.*.css
+  Cache-Control: public, max-age=31536000, immutable
 
-/logo.png
-  Cache-Control: public, max-age=604800
+/logo*.png
+  Cache-Control: public, max-age=31536000, immutable
 
-/logo-96.png
-  Cache-Control: public, max-age=604800
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
 
 /sitemap.xml
   Cache-Control: public, max-age=3600

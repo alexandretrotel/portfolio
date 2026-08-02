@@ -22,3 +22,15 @@ npx wrangler dev
 4. Add a `<li>` to `index.html` and a `<url>` to `sitemap.xml`.
 
 Code blocks are unhighlighted by design since [syntax highlighting](https://en.wikipedia.org/wiki/Syntax_highlighting) with `shiki` for instance would need a build step.
+
+## Replacing the stylesheet or a logo
+
+The stylesheet and the logos ship under content-hashed names, `styles.<hash>.css`, `logo.<hash>.png` and `logo-96.<hash>.png`, so `_headers` can serve them with a one-year `immutable` [cache](https://en.wikipedia.org/wiki/Web_cache) lifetime. Without a build step, the hash is bumped by hand. After changing any of those files:
+
+1. `shasum -a 256 <file> | cut -c1-8`
+2. Rename the file to the new hash.
+3. Update every reference under `public/`, including the `og:image` and `twitter:image` URLs for the logo.
+
+`_headers` matches `/styles.*.css` and `/logo*.png`, so it needs no change. Skipping the rename means visitors keep the old file for up to a year.
+
+`.html` files are served `max-age=0, must-revalidate`, so markup changes go out immediately.
