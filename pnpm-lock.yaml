@@ -17,6 +17,9 @@ importers:
       stylelint:
         specifier: ^17.14.1
         version: 17.14.1
+      stylelint-config-recommended:
+        specifier: ^18.0.0
+        version: 18.0.0(stylelint@17.14.1)
 
 packages:
 
@@ -627,6 +630,12 @@ packages:
     resolution: {integrity: sha512-yDPMNjp4WyfYBkHnjIRLfca1i6KMyGCtsVgoKe/z1+6vukgaENdgGBZt+ZmKPc4gavvEZ5OgHfHdrazhgNyG7w==}
     engines: {node: '>=12'}
 
+  stylelint-config-recommended@18.0.0:
+    resolution: {integrity: sha512-mxgT2XY6YZ3HWWe3Di8umG6aBmWmHTblTgu/f10rqFXnyWxjKWwNdjSWkgkwCtxIKnqjSJzvFmPT5yabVIRxZg==}
+    engines: {node: '>=20.19.0'}
+    peerDependencies:
+      stylelint: ^17.0.0
+
   stylelint@17.14.1:
     resolution: {integrity: sha512-xVQwyiuxALUBNB2fBe0tmNemg9KqLtdj3T64mioFDar79B2cU8LIyz+3KL6LdiHs9NkeNfwxpKSaIVOY8f112g==}
     engines: {node: '>=20.19.0'}
@@ -1137,6 +1146,10 @@ snapshots:
   strip-ansi@7.2.0:
     dependencies:
       ansi-regex: 6.2.2
+
+  stylelint-config-recommended@18.0.0(stylelint@17.14.1):
+    dependencies:
+      stylelint: 17.14.1
 
   stylelint@17.14.1:
     dependencies:
