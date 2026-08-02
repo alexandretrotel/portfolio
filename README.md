@@ -4,13 +4,13 @@ A site this small does not need a framework.
 
 - Hosts anywhere that serves files: any [CDN](https://en.wikipedia.org/wiki/Content_delivery_network), any [static](https://en.wikipedia.org/wiki/Static_web_page) host, a USB stick.
 - No build step. `public/` is the site, byte for byte: the edited file is the shipped file.
-- No dependencies, no `package.json`, no lockfile, no `node_modules`, no [supply chain](https://en.wikipedia.org/wiki/Supply_chain_attack) to audit. Tooling runs ad hoc through `npx`.
+- No dependencies, no `package.json`, no lockfile, no `node_modules`, no [supply chain](https://en.wikipedia.org/wiki/Supply_chain_attack) to audit. Tooling runs ad hoc through `nubx`.
 - A few kilobytes of HTML and CSS, a couple over the wire once [brotli](https://en.wikipedia.org/wiki/Brotli) has had its way with them, zero JavaScript. Nothing to parse, nothing to [hydrate](<https://en.wikipedia.org/wiki/Hydration_(web_development)>).
 - Fewer bytes over the wire and less CPU per visit means less energy burned.
 
 ## Commands
 
-Nothing to install first. Every tool is fetched on demand and cached by `npx`.
+Nothing to install first. Every tool is fetched on demand and cached by `nubx`.
 
 ```sh
 nubx -y wrangler dev                          # serve public/ locally
