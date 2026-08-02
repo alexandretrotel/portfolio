@@ -2,7 +2,9 @@
   Cache-Control: public, max-age=0, stale-while-revalidate=86400
 
 /styles.css
+  ! Cache-Control
   Cache-Control: public, max-age=3600, stale-while-revalidate=604800
 
 /logo*.png
+  ! Cache-Control
   Cache-Control: public, max-age=3600, stale-while-revalidate=604800
