@@ -9,3 +9,6 @@
 
 # node
 node_modules
+
+# build
+dist
