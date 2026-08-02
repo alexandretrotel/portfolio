@@ -4,14 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node build.js",
-    "dev": "pnpm run build && npx wrangler dev",
-    "deploy": "pnpm run build && npx wrangler deploy",
+    "dev": "npx wrangler dev",
+    "deploy": "npx wrangler deploy",
     "format": "oxfmt .",
     "format:check": "oxfmt --check .",
     "lint": "pnpm run lint:html && pnpm run lint:css",
-    "lint:css": "stylelint \"src/**/*.css\"",
-    "lint:html": "html-validate \"src/**/*.html\"",
+    "lint:css": "stylelint \"public/**/*.css\"",
+    "lint:html": "html-validate \"public/**/*.html\"",
     "check": "pnpm run format:check && pnpm run lint"
   },
   "devDependencies": {
