@@ -13,13 +13,13 @@ A site this small does not need a framework.
 Nothing to install first. Every tool is fetched on demand and cached by `npx`.
 
 ```sh
-npx wrangler dev                          # serve public/ locally
-npx wrangler deploy                       # ship it
+nubx -y wrangler dev                          # serve public/ locally
+nubx -y wrangler deploy                       # ship it
 
-npx oxfmt .                               # format
-npx oxfmt --check .                       # format check
-npx html-validate "public/**/*.html"      # lint markup
-npx stylelint "public/**/*.css"           # lint styles
+nubx -y oxfmt .                               # format
+nubx -y oxfmt --check .                       # format check
+nubx -y html-validate "public/**/*.html"      # lint markup
+nubx -y stylelint "public/**/*.css"           # lint styles
 ```
 
 ## Caching
