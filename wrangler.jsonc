@@ -2,22 +2,18 @@
   "$schema": "https://unpkg.com/wrangler/config-schema.json",
   "name": "portfolio",
   "compatibility_date": "2026-08-01",
-
   "assets": {
     "directory": "./public",
     "html_handling": "none",
     "not_found_handling": "404-page",
   },
-
   "routes": [
     {
       "pattern": "www.alexandretrotel.org",
       "custom_domain": true,
     },
   ],
-
   "workers_dev": false,
   "preview_urls": false,
-
   "send_metrics": false,
 }
