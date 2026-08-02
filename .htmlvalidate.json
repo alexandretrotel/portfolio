@@ -7,10 +7,10 @@
   ],
   "root": true,
   "rules": {
-    "require-sri": ["error", { "target": "crossorigin" }],
-    "no-unknown-elements": "error",
+    "class-pattern": ["error", { "pattern": "kebabcase" }],
     "no-style-tag": "error",
-    "svg-focusable": "error",
-    "class-pattern": ["error", { "pattern": "kebabcase" }]
+    "no-unknown-elements": "error",
+    "require-sri": ["error", { "target": "crossorigin" }],
+    "svg-focusable": "error"
   }
 }
