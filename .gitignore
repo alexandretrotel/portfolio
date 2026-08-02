@@ -6,3 +6,6 @@
 
 # cloudflare
 .wrangler
+
+# node
+node_modules
