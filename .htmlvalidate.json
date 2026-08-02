@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "html-validate:recommended",
+    "html-validate:document",
+    "html-validate:a11y",
+    "html-validate:prettier"
+  ],
+  "root": true,
+  "rules": {
+    "require-sri": ["error", { "target": "crossorigin" }],
+    "no-unknown-elements": "error",
+    "no-style-tag": "error",
+    "svg-focusable": "error",
+    "class-pattern": ["error", { "pattern": "kebabcase" }]
+  }
+}
