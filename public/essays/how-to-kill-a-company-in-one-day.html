@@ -295,6 +295,82 @@ safe_tip = tip - INDEXER_CONFIRMATIONS</code></pre>
           to <code>frontier - 1 hour</code>. It runs every 15 minutes.
         </p>
 
+        <h2>Storing billions of rows so they can be read</h2>
+
+        <p>
+          This is the part I would tell a younger version of myself first, because it is the part
+          that decides whether the product feels fast or feels broken. Storage is not a place you
+          put rows. It is a set of physical choices, and Postgres will make them for you badly if
+          you do not make them yourself.
+        </p>
+
+        <p>
+          Start with the hypertable. A
+          <a
+            href="https://docs.tigerdata.com/use-timescale/latest/hypertables/"
+            target="_blank"
+            rel="noreferrer"
+            >hypertable</a
+          >
+          is not a special storage engine. It is a parent table with many child tables underneath,
+          one per time range, called chunks. Timescale routes an insert to the right chunk and the
+          planner throws away the chunks a query cannot touch. That last part is the whole point. A
+          query for one day of trades never opens the other 4 months, because those chunks are
+          excluded before a single page is read.
+        </p>
+
+        <p>
+          Which makes chunk size a real decision. Ours started at 7 days everywhere. That was wrong
+          for the hot tables. We later moved <code>onchain_trades</code> and
+          <code>onchain_balances</code> to 1 day and <code>onchain_positions</code> to 2 days. Too
+          large and every insert dirties a huge index and exclusion stops helping. Too small and the
+          planner walks thousands of chunks to answer one question. It is a tuning knob shaped like
+          a schema decision, which is why people miss it.
+        </p>
+
+        <p>
+          Then compression, which is where Timescale stops looking like Postgres. Compressing a
+          chunk rewrites it from rows into columns. Each column becomes an array, batched about a
+          thousand rows at a time, and each array is encoded by type. That is why the
+          <code>segmentby</code> choice matters more than the compression itself. We used
+          <code>compress_segmentby = 'condition_id'</code> on trades and positions. Rows for the
+          same market land in the same compressed batch, so a filter on that market reads a handful
+          of batches instead of decompressing the chunk. Pick the wrong segment key and you have
+          built a table that is smaller and slower.
+        </p>
+
+        <p>
+          There is a cost you have to accept. A compressed chunk is close to immutable. So we did
+          not compress on a fixed age. We wrote a procedure that reads the frontier per table, then
+          compresses only chunks older than
+          <code>frontier - 7 days</code>. We didn't want a background job decide what is settled
+          based on wall clock time, because during a backfill the wall clock is lying to you. The
+          data is 4 months old and the clock says now.
+        </p>
+
+        <p>
+          Continuous aggregates deserve the same suspicion. A cagg is a materialized view plus an
+          invalidation log: writes to the source table record which time ranges went stale, and a
+          refresh recomputes only those ranges. We chained them. <code>candles_1m</code> reads
+          <code>onchain_trades</code>, <code>candles_1h</code> reads <code>candles_1m</code>, and
+          <code>candles_1d</code> reads <code>candles_1h</code>. A daily candle over 4 months never
+          touches a trade row. Each level also keeps <code>materialized_only = false</code>, so a
+          query near the frontier gets the materialized part unioned with a live read of the recent
+          tail allowing the user to see fresh data.
+        </p>
+
+        <p>
+          Retention closes the loop. We keep 90 days of 1-minute candles and 2 years of hourly ones,
+          dropped with <code>drop_chunks</code> against the frontier again. Dropping a chunk is a
+          <code>DROP TABLE</code>. It is instant and it leaves nothing behind, unlike a
+          <code>DELETE</code>, which writes as much as it removes and hands you the bloat as a gift.
+        </p>
+
+        <p>
+          None of this is exotic. It is knowing what the database does physically when you write a
+          row, and refusing to let a default choose it for you.
+        </p>
+
         <h2>It worked</h2>
 
         <p>
