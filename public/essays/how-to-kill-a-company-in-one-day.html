@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+
+    <title>How to kill a company in one day?</title>
+    <meta
+      name="description"
+      content="Radion indexed 8 billion Polymarket events on Polygon in two days. Forty-three days later we shut it down. What public onchain data really costs, and why the right to read is not the right to sell."
+    />
+
+    <link rel="canonical" href="https://www.alexandretrotel.org/essays/8-billion-events.html" />
+    <link rel="icon" type="image/png" href="/logo-96.png" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="stylesheet" href="/styles.css" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Alexandre Trotel" />
+    <meta
+      property="og:url"
+      content="https://www.alexandretrotel.org/essays/8-billion-events.html"
+    />
+    <meta property="og:title" content="How to kill a company in one day?" />
+    <meta
+      property="og:description"
+      content="Radion indexed 8 billion Polymarket events on Polygon in two days. Forty-three days later we shut it down. What public onchain data really costs."
+    />
+    <meta property="og:image" content="https://www.alexandretrotel.org/logo.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@alexandretrotel" />
+    <meta name="twitter:title" content="How to kill a company in one day?" />
+    <meta
+      name="twitter:description"
+      content="Radion indexed 8 billion Polymarket events on Polygon in two days. Forty-three days later we shut it down. What public onchain data really costs."
+    />
+    <meta name="twitter:image" content="https://www.alexandretrotel.org/logo.png" />
+  </head>
+
+  <body>
+    <header>
+      <a href="/" aria-label="Go to homepage">
+        <img src="/logo-96.png" alt="Logo" width="32" height="32" />
+      </a>
+    </header>
+
+    <main>
+      <article>
+        <header>
+          <h1>How to kill a company in one day?</h1>
+          <time datetime="2026-08-01">Aug 1, 2026</time>
+        </header>
+
+        <p>
+          We indexed 8 billion onchain events from more than 19 smart contracts on
+          <a href="https://polygon.technology" target="_blank" rel="noreferrer">Polygon</a>.
+          Indexing all of them took us only days instead of weeks and building the whole pipeline
+          took us 43 days. This is mainly because we needed to learn everything from scratch with
+          little prior knowledge.
+        </p>
+
+        <p>And finally, we decided to kill the company. But why?</p>
+
+        <p>
+          Nothing broke. There was no outage. And we lost no data along the way. To be honest, it
+          was rather the contrary. The infrastructure was working pretty well. We were reading
+          hundreds of events per second into billions of rows, and multiple companies were waiting
+          to test our product. But, as I said, we stopped. Why?
+        </p>
+
+        <p>
+          To explain all of this, I wanted to explain our whole journey around prediction markets.
+        </p>
+
+        <h2>What we believed</h2>
+
+        <p>
+          Radion started in March as a different product. For 3 months we worked on smart money:
+          find the best traders, show our users who they are, and what they believe. It was an
+          interesting idea, but nobody wanted it enough.
+        </p>
+
+        <p>
+          But we kept noticing the same thing. The interesting problem was one level down. Every
+          question about a trader or a market was in reality a question involving onchain data. And
+          every time we looked for that data, it was missing, slow, or wrong.
+        </p>
+
+        <p>
+          So on 18 June 2026 we completely changed the initial idea and built the thing we kept
+          needing.
+        </p>
+
+        <p>
+          Here is the belief behind that choice.
+          <a href="https://polymarket.com" target="_blank" rel="noreferrer">Polymarket</a>
+          runs on Polygon. Every trade, every result, every transfer is written on the blockchain.
+          There is no API key. No company limits our requests. Nobody can take our access away,
+          because there is no access to take.
+        </p>
+
+        <p>
+          I still think this is true. After all, this is the real promise of the blockchain. But
+          wait, it seems I was partially wrong.
+        </p>
+
+        <h2>Public does not mean easy to get</h2>
+
+        <p>
+          The
+          <a href="https://en.wikipedia.org/wiki/Blockchain" target="_blank" rel="noreferrer"
+            >blockchain</a
+          >
+          is not a database. To get data from the blockchain, we need to connect to a node through
+          the
+          <a href="https://www.jsonrpc.org/specification" target="_blank" rel="noreferrer"
+            >JSON-RPC</a
+          >
+          protocol. The node will answer to our requests with hard limits. For example, the call you
+          use for history is <code>eth_getLogs</code>.
+        </p>
+
+        <p>
+          You give it a block range, a contract address, and topic filters. Providers cap that
+          range, often at a few thousand blocks, and cap how many logs come back. So you paginate.
+          You cannot ask for every trade by 1 wallet over 4 months. That query does not exist.
+        </p>
+
+        <p>
+          I decided I didn't want to spend weeks fighting rate limits so I used
+          <a href="https://docs.envio.dev/docs/HyperSync/overview" target="_blank" rel="noreferrer"
+            >HyperSync</a
+          >. It is around 1,000 to 2,000 times faster than a normal RPC node. Reading and decoding
+          all 8 billion events took us days instead of weeks.
+        </p>
+
+        <p>
+          That is the main point. A whole industry exists because the normal way to reach public
+          data does not work at scale. The data was free. But reaching it only worked because
+          someone else had already solved the reaching.
+        </p>
+
+        <h2>Public does not mean easy to read</h2>
+
+        <p>
+          An event log is not a row in a table. It is a contract address, up to 4 topics, and a
+          <code>data</code> blob.
+        </p>
+
+        <p>
+          Topic 0 is the
+          <a href="https://en.wikipedia.org/wiki/Hash_function" target="_blank" rel="noreferrer"
+            >Keccak-256</a
+          >
+          hash of the event signature, so
+          <code>Trade(address,address,uint256,uint256)</code> becomes 32 bytes. Parameters marked
+          <code>indexed</code> go into topics 1 to 3, where a node can filter them without decoding
+          anything. Everything else is ABI-encoded into <code>data</code>, padded into 32-byte
+          words, in declaration order.
+        </p>
+
+        <p>
+          So you need the
+          <a
+            href="https://docs.soliditylang.org/en/latest/abi-spec.html"
+            target="_blank"
+            rel="noreferrer"
+            >ABI</a
+          >, the file that declares the type of every parameter. Without it, a log is a hash and a
+          stream of 32-byte words. With it, the same log is a trade with a maker, a taker, a price
+          and a size. The bytes did not change. You brought the meaning.
+        </p>
+
+        <p>
+          19 contracts means 19 sets of event schemas, and they do not agree with each other. We put
+          every binding in one <code>decode</code> crate: a typed struct per event, plus one shared
+          decoder. After that, the rest of the system could pretend the chain had always spoken in
+          Rust types.
+        </p>
+
+        <p>
+          The chain does not store meaning. It stores bytes, plus a promise about which contract
+          wrote them. You supply the meaning, and supplying it is most of the work.
+        </p>
+
+        <h2>Public does not mean final</h2>
+
+        <p>
+          Polygon makes a new block every 1.5 to 2 seconds. We waited for 64 blocks before we sent
+          anything forward:
+        </p>
+
+        <pre><code>INDEXER_CONFIRMATIONS   = 64    // blocks to wait before emitting
+INDEXER_MAX_REORG_DEPTH = 256   // deepest rewind we handle
+
+safe_tip = tip - INDEXER_CONFIRMATIONS</code></pre>
+
+        <p>
+          64 blocks at 2 seconds is 128 seconds. At 1.5 seconds it is 96. So we were always about 2
+          minutes behind the front of the chain, on purpose.
+        </p>
+
+        <p>
+          Speed was our whole product. Users wanted the freshest data. Every one of those 128
+          seconds was a cost. That number was not a default, it was an intentional choice.
+        </p>
+
+        <p>
+          We were afraid of one thing: a reorg. A chain is allowed to change its mind. Blocks you
+          already saved can be replaced by different blocks. If you wrote trades from the old blocks
+          into a database, you are now serving a history that never happened.
+        </p>
+
+        <p>
+          Detecting one is simpler than it sounds, and I think it is beautiful. HyperSync returns a
+          rollback guard with every response. It carries the tip block number and its hash, the
+          first block number of the window, and the parent hash of that first block. We store the
+          tip number and tip hash in Postgres.
+        </p>
+
+        <p>
+          On the next poll we compare. We declare a fork only when both things are true. The new
+          window starts exactly at <code>saved_tip + 1</code>, and its
+          <code>first_parent_hash</code> no longer equals the <code>tip_hash</code> we saved. The
+          first condition proves the 2 windows are adjacent. The second proves the link between them
+          broke. Everything else is normal growth, including gaps, the first response, and any block
+          already final.
+        </p>
+
+        <p>
+          When a fork is declared, the producer rewinds to
+          <code>saved_tip - INDEXER_MAX_REORG_DEPTH</code>, clamped to the first block we ever
+          scanned. It clears the stored guard, emits a <code>ReorgSignal</code> carrying that fork
+          block, and lowers its dedup floor so the corrected blocks get published again. Every
+          consumer then deletes its rows above the fork block. 9 tables carry that method: trades,
+          positions, balances, wallets, resolutions, market lifecycle, resolution lifecycle, order
+          events, token mappings. Rewinding too far is safe. Rewinding too little is not.
+        </p>
+
+        <p>It never happened. Not once in production.</p>
+
+        <p>
+          I do not think it was wasted. You pay for being correct before you know you would need it.
+          You write the undo path for a rollback that may never come, the same way you buy insurance
+          for a house that does not burn.
+        </p>
+
+        <h2>We did the work early</h2>
+
+        <p>
+          The stack under all this was
+          <a href="https://www.rust-lang.org" target="_blank" rel="noreferrer">Rust</a> and
+          <a href="https://www.redpanda.com" target="_blank" rel="noreferrer">Redpanda</a>. We chose
+          Redpanda over
+          <a href="https://kafka.apache.org" target="_blank" rel="noreferrer">Kafka</a> for simple
+          reasons. It has less weight. Its CLI, <code>rpk</code>, made me faster.
+          <a href="https://seastar.io" target="_blank" rel="noreferrer">Seastar</a>
+          underneath is quick. And because every broker runs
+          <a href="https://raft.github.io" target="_blank" rel="noreferrer">Raft</a>, one machine is
+          already a valid cluster. That last point mattered more than it should. I could run the
+          whole pipeline on one small
+          <a href="https://railway.com" target="_blank" rel="noreferrer">Railway</a> service and
+          test it for free.
+        </p>
+
+        <p>
+          The producer decodes inline and writes
+          <a href="https://protobuf.dev" target="_blank" rel="noreferrer">Protobuf</a>
+          messages. Blocks and reorg signals go on the same topic, on purpose. A consumer then sees
+          them in order, and it cannot apply a block that a later signal has already cancelled.
+          Ordering is the guarantee we needed, so we paid for it with a single partition instead of
+          trying to fix it later in the consumer.
+        </p>
+
+        <p>
+          The storage idea was simple: stop computing things when someone asks. Our
+          <code>analytics_buckets</code> table is a Timescale hypertable. One row is one time bucket
+          for one scope, a market or a wallet. Every metric appears twice, once as a
+          <code>delta_</code> column and once as a <code>cum_</code> column: volume, shares, trade
+          counts, unique traders, fees, buy size distribution. The consumer writes both as the data
+          lands. When a question arrives, the answer is already in a column.
+        </p>
+
+        <p>
+          On top of that we used
+          <a
+            href="https://docs.tigerdata.com/use-timescale/latest/continuous-aggregates/"
+            target="_blank"
+            rel="noreferrer"
+            >Timescale continuous aggregates</a
+          >
+          for <code>candles_1m</code>, <code>candles_1h</code> and <code>candles_1d</code>. Here is
+          the detail I would keep if I could keep only one. We dropped the default policies with
+          <code>remove_continuous_aggregate_policy</code> and wrote our own procedure. It reads
+          <code>max(ts)</code> from the trades table, calls that the frontier, and refreshes only up
+          to <code>frontier - 1 hour</code>. It runs every 15 minutes.
+        </p>
+
+        <h2>It worked</h2>
+
+        <p>
+          By the end of July it ran. Hundreds of events per second. Billions of rows. An HTTP and
+          WebSocket API in Rust on
+          <a href="https://github.com/tokio-rs/axum" target="_blank" rel="noreferrer">Axum</a>, with
+          per-key egress metering. An
+          <a href="https://modelcontextprotocol.io" target="_blank" rel="noreferrer">MCP</a>
+          server, so an AI assistant could query the whole index directly.
+        </p>
+
+        <p>
+          We had sold nothing. I want that written down, because it changes how the rest of this
+          reads. No revenue. No signed contract. No customer to lose. What we had were some
+          companies who said they would move to our infrastructure as soon as we were faster than
+          the others. We were close. Not there. Close.
+        </p>
+
+        <p>But something happened.</p>
+
+        <h2>The blockchain is not as free as I thought</h2>
+
+        <p>
+          Here is the sentence I wish I had 4 months ago. The chain let me read the data. The terms
+          said I was not allowed to be the kind of company that reads it.
+        </p>
+
+        <p>
+          We did not find the terms ourselves. Our competitors did. Polymarket and ICE contacted
+          them directly. We heard about it second hand, from people we were competing with. I have
+          never seen that message, and I will not pretend I have.
+        </p>
+
+        <p>
+          The terms had been active since 17 July. We had spent 12 days building inside a rule we
+          did not know about.
+        </p>
+
+        <p>
+          From the
+          <a href="https://polymarket.com/tos" target="_blank" rel="noreferrer"
+            >Polymarket terms of service</a
+          >, section 4, "Your Responsibilities, Representations &amp; Prohibited Conduct", effective
+          17 July 2026. You agree not to:
+        </p>
+
+        <blockquote>
+          Access or use any data, content, or information contained on our Site, any Interface or
+          Features directly or through an API, or any other means, including on-chain, whether in
+          raw, derived, aggregated, or anonymized form (the "Data") if you are (i) a non-retail,
+          professional entity that engages in capital markets activities (e.g., brokerage, market
+          making, proprietary trading, index calculation, or ETF issuance) [...] (each, a "Capital
+          Market Client"), or (ii) a market data distributor, in each case unless otherwise agreed
+          to in writing by us;
+        </blockquote>
+
+        <p>And right after it:</p>
+
+        <blockquote>
+          Sell, resell, sublicense, redistribute, or otherwise commercially exploit the Data to any
+          Capital Market Client or market data distributor, unless otherwise agreed to in writing by
+          us;
+        </blockquote>
+
+        <p>
+          Two words carry the whole clause: <strong>including on-chain</strong>. Whoever wrote that
+          saw my argument coming and closed it before I could make it. And
+          <strong>raw, derived, aggregated, or anonymized</strong> closes every other shape the
+          product could take. We were never going to resell their database. We were going to read
+          Polygon and compute our own numbers. The clause names that and forbids it.
+        </p>
+
+        <p>
+          Now look at what the first clause really limits. It does not describe an action you may
+          not do. It describes a company you may not be. A market data distributor may not access
+          the data. That was exactly what we were.
+        </p>
+
+        <p>
+          Do these terms apply to a company that never used Polymarket's site or API, and read
+          Polygon directly instead? That is a real question, and I will not answer it. I am not a
+          lawyer, and Radion was 3 people with no revenue. The question was never whether we would
+          win in the end. It was that finding out would cost more than the company was worth.
+        </p>
+
+        <p>
+          That was a few days before I'm writing this essay. The second signal was 9 months old. We
+          had read it at the time and missed what it meant.
+        </p>
+
+        <p>
+          On 7 October 2025, ICE announced an investment of up to $2 billion in Polymarket, at a
+          value of about $8 billion before the money. From
+          <a
+            href="https://ir.theice.com/press/news-details/2025/ICE-Announces-Strategic-Investment-in-Polymarket/default.aspx"
+            target="_blank"
+            rel="noreferrer"
+            >their press release</a
+          >:
+        </p>
+
+        <blockquote>
+          ICE will become a global distributor of Polymarket's event-driven data, providing
+          customers with sentiment indicators on topics of market relevance.
+        </blockquote>
+
+        <p>
+          Read both documents next to each other. Both rules end with the same 6 words:
+          <strong>unless otherwise agreed to in writing by us</strong>. The terms do not ban selling
+          Polymarket data. They turn it into a right you must buy. And 9 months earlier, someone had
+          bought it.
+        </p>
+
+        <p>
+          I am not saying the terms were written for that deal. I have no proof, and neither does
+          anyone outside those two companies. What I am saying is smaller and worse. If you are a
+          6-week-old data company reading both documents on the same afternoon, the question
+          changes. It is no longer whether you can win. It is whether there is anything left to win.
+        </p>
+
+        <p>
+          The third signal is the weakest, and I will say so, because it is an opinion and not a
+          fact. Prediction markets feel like they are slowing down. That is my read from talking to
+          multiple people in this space, including our biggest competitor. Builders we knew were
+          moving to other things. Nobody told me the market was still growing fast. Of course,
+          alone, this would have changed nothing since this is only a feeling.
+        </p>
+
+        <h2>One day to kill the company</h2>
+
+        <p>
+          I am not Shannon, but I guess he could say something similar. One signal is noise. Two is
+          bad luck. Three pointing the same way is information.
+        </p>
+
+        <p>We learned on Wednesday. We killed it on Thursday.</p>
+
+        <p>
+          43 days to build it. One day to end it. I am prouder of the second number, and it took me
+          a while to understand why.
+        </p>
+
+        <p>
+          Here is the thing. We waited before trusting the chain and we waited one day between the
+          first signal and the decision. The skill is the same. Know how long to wait before you
+          believe something. Then do not wait any longer than that.
+        </p>
+
+        <p>
+          We built for 43 days, and I would build it again. We stopped in one, and I would stop
+          again. By the end, I had learned things no first job out of school would have taught me.
+        </p>
+      </article>
+    </main>
+  </body>
+</html>
