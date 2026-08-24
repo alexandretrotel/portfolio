@@ -1,39 +1,47 @@
 # portfolio
 
-A site this small does not need a framework.
+A small [Astro](https://astro.build) site. Static output, zero client-side JavaScript, deployed as-is to Cloudflare Workers assets.
 
-- Hosts anywhere that serves files: any [CDN](https://en.wikipedia.org/wiki/Content_delivery_network), any [static](https://en.wikipedia.org/wiki/Static_web_page) host, a USB stick.
-- No build step. `public/` is the site, byte for byte: the edited file is the shipped file.
-- No dependencies, no `package.json`, no lockfile, no `node_modules`, no [supply chain](https://en.wikipedia.org/wiki/Supply_chain_attack) to audit. Tooling runs ad hoc through `nubx`.
-- A few kilobytes of HTML and CSS, a couple over the wire once [brotli](https://en.wikipedia.org/wiki/Brotli) has had its way with them, zero JavaScript. Nothing to parse, nothing to [hydrate](<https://en.wikipedia.org/wiki/Hydration_(web_development)>).
-- Fewer bytes over the wire and less CPU per visit means less energy burned.
+- Content lives in [content collections](https://docs.astro.build/en/guides/content-collections/): one Markdown file per essay or note, validated against a shared schema. No hand-copied HTML template, no per-page head boilerplate to keep in sync.
+- Every essay/note page, its `.md` twin, the `/essays/llms.txt` and `/notes/llms.txt` indexes, and the root `/llms.txt` / `/agents.md` are generated from that same content at build time. Add a Markdown file, the homepage list, the sitemap, and every AI-discoverability file update themselves.
+- Still no client JavaScript shipped to the browser. Astro renders everything to plain HTML at build time.
+- Code blocks stay unhighlighted by design (see `astro.config.mjs`, `markdown.syntaxHighlight: false`): [syntax highlighting](https://en.wikipedia.org/wiki/Syntax_highlighting) would ship a payload larger than the essays themselves.
+
+## Stack
+
+- [pnpm](https://pnpm.io) via [Corepack](https://nodejs.org/api/corepack.html) — no global install, the pinned version in `packageManager` is what runs.
+- [`@zap-studio/oxlint`](https://www.npmjs.com/package/@zap-studio/oxlint) / [`@zap-studio/oxfmt`](https://www.npmjs.com/package/@zap-studio/oxfmt) — [oxc](https://oxc.rs)-based lint and format presets, configured in `oxlint.config.ts` / `oxfmt.config.ts`.
+- [`@astrojs/sitemap`](https://docs.astro.build/en/guides/integrations-guide/sitemap/) generates `sitemap-index.xml` from the actual page list, instead of a hand-maintained `sitemap.xml`.
 
 ## Commands
 
-Nothing to install first. Every tool is fetched on demand and cached by `nubx`.
-
 ```sh
-nubx -y wrangler dev                          # serve public/ locally
-nubx -y wrangler deploy                       # ship it
+corepack enable       # one-time, lets corepack manage pnpm
+pnpm install
 
-nubx -y oxfmt .                               # format
-nubx -y oxfmt --check .                       # format check
-nubx -y html-validate "public/**/*.html"      # lint markup
-nubx -y stylelint "public/**/*.css"           # lint styles
+pnpm dev               # local dev server
+pnpm build             # build to dist/
+pnpm preview            # serve the built dist/ locally
+
+pnpm format            # format
+pnpm format:check      # format check
+pnpm lint               # lint
+pnpm lint:fix           # lint, applying auto-fixes
 ```
 
 ## Caching
 
-`_headers` leans on [`stale-while-revalidate`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control#stale-while-revalidate) rather than content-hashed filenames. A stale copy paints instantly while the browser refetches in the background, so assets keep their plain names and nothing has to rewrite references at build time.
+`public/_headers` leans on [`stale-while-revalidate`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control#stale-while-revalidate) rather than content-hashed filenames, and is copied through to `dist/` unchanged at build time.
 
 - Everything defaults to `max-age=0, stale-while-revalidate=86400`. Markup changes go out on the next visit, and no visit waits on the network.
 - `styles.css` and the logos get `max-age=3600, stale-while-revalidate=604800`. They change rarely and are cheap to serve stale.
+- Each essay/note also gets a `Link: <...md>; rel="alternate"` header pointing at its markdown twin. This is the one thing that's still hand-maintained per page — add the matching rule in `public/_headers` when adding an essay or note.
 
-## Adding an essay
+## Adding an essay or note
 
-1. `cp public/essays/_template.html public/essays/my-slug.html`
-2. Fill in title, description, date and [canonical](https://en.wikipedia.org/wiki/Canonical_link_element) URL.
-3. Write the body inside `<article>`, after its `<header>`.
-4. Add a `<li>` to `public/index.html` and a `<url>` to `public/sitemap.xml`.
+1. Add a Markdown file under `src/content/essays/` or `src/content/notes/`, named after the slug (e.g. `my-slug.md`).
+2. Fill in the frontmatter: `title`, `description`, `llmsSummary`, `date`, and `updated: true` if it's a living note you'll keep revising rather than a one-off essay. See `src/content.config.ts` for the full schema.
+3. Write the body as plain Markdown.
+4. Add the matching `Link` rule to `public/_headers` (see Caching above).
 
-Code blocks are unhighlighted by design since [syntax highlighting](https://en.wikipedia.org/wiki/Syntax_highlighting) with `shiki` for instance would ship a payload larger than the essays.
+The page, its `.md` twin, the homepage listing, the sitemap, and every `llms.txt`/`agents.md` entry are generated from that file — nothing else to edit.

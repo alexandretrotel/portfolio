@@ -1,6 +1,10 @@
-# A founder's framework
-
-_Last updated Aug 4, 2026_
+---
+title: A founder's framework
+description: A living document of requirements and learnings from my entrepreneurship journey. The criteria I set for myself before starting the next company.
+llmsSummary: the criteria he holds himself to before starting another company, covering market, problem, product development, founder involvement, founder quality, sustainability, and team dynamics.
+date: 2026-08-04
+updated: true
+---
 
 After [killing my company](/essays/how-to-kill-a-company-in-one-day.html), I decided to define the criteria I will hold myself to so I do not repeat the mistakes I made: the market, the product development, and the team. I will keep it up to date as I learn.
 

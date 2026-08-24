@@ -3,7 +3,7 @@
   "name": "portfolio",
   "compatibility_date": "2026-08-01",
   "assets": {
-    "directory": "./public",
+    "directory": "./dist",
     "html_handling": "none",
     "not_found_handling": "404-page",
   },

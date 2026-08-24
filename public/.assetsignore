@@ -1,8 +1,3 @@
-.assetsignore
-
-# drafts
-essays/_template.html
-
 # local
 .DS_Store
 .env*

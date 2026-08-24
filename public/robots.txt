@@ -47,4 +47,4 @@ Disallow: /
 User-agent: ByteSpider
 Disallow: /
 
-Sitemap: https://www.alexandretrotel.org/sitemap.xml
+Sitemap: https://www.alexandretrotel.org/sitemap-index.xml

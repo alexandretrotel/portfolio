@@ -1,6 +1,10 @@
-# How to discover startup opportunities
-
-_Last updated Aug 16, 2026_
+---
+title: How to discover startup opportunities
+description: "My process for finding a startup worth building: understand myself as a founder first, then hunt for real, evidenced problems instead of generating ideas."
+llmsSummary: "his process for finding a startup worth building, from founder profiling through evidenced problem search to opportunity scoring. Packaged as an agent skill at https://github.com/alexandretrotel/skills."
+date: 2026-08-16
+updated: true
+---
 
 I don't start from an idea. I've tried that before, and it leads to the same trap every time: falling in love with a solution before confirming anyone has the problem. So I built myself a process to follow with extreme discipline instead of brainstorming ideas. This note is a summary of that process, mostly so I stay honest with myself and follow it the next time I'm looking for what to build.
 
@@ -58,8 +62,6 @@ The highest score doesn't automatically win. Before I let myself get attached to
 - Can I get the first 10 customers without paid ads?
 
 If any answer is weak, I make it explicit instead of trying to hide it. Be honest with yourself.
-
-Then one of four calls, never just because the score is high:
 
 ## Why this beats plain brainstorming by a mile
 

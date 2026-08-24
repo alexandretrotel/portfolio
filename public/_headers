@@ -1,6 +1,6 @@
 /*
   Cache-Control: public, max-age=0, stale-while-revalidate=86400
-  Link: </sitemap.xml>; rel="sitemap", </.well-known/ai-catalog.json>; rel="describedby", </llms.txt>; rel="llms-txt"
+  Link: </sitemap-index.xml>; rel="sitemap", </.well-known/ai-catalog.json>; rel="describedby", </llms.txt>; rel="llms-txt"
 
 /styles.css
   ! Cache-Control

@@ -30,8 +30,8 @@
       "identifier": "urn:air:alexandretrotel.org:sitemap",
       "displayName": "Sitemap",
       "type": "application/xml",
-      "url": "https://www.alexandretrotel.org/sitemap.xml",
-      "description": "Every indexable URL on this site, with last-modified dates."
+      "url": "https://www.alexandretrotel.org/sitemap-index.xml",
+      "description": "Every indexable URL on this site."
     }
   ]
 }

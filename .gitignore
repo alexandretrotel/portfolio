@@ -9,3 +9,7 @@
 
 # node
 node_modules
+
+# astro
+dist
+.astro
