@@ -3,17 +3,11 @@ import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import rehypeExternalLinks from "rehype-external-links";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://www.alexandretrotel.org",
   output: "static",
   trailingSlash: "never",
   markdown: {
-    // keep straight quotes/hyphens as authored, matching the original
-    // hand-written HTML instead of remark's smart-typography conversion
-    smartypants: false,
-    // code blocks stay unhighlighted by design, see README
-    syntaxHighlight: false,
     rehypePlugins: [[rehypeExternalLinks, { target: "_blank", rel: ["noreferrer"] }]],
   },
   build: {
