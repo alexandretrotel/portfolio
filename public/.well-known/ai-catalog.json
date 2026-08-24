@@ -1,0 +1,37 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Alexandre Trotel",
+    "identifier": "alexandretrotel.org"
+  },
+  "entries": [
+    {
+      "identifier": "urn:ai:alexandretrotel.org:context:llms-txt",
+      "displayName": "llms.txt",
+      "type": "text/markdown",
+      "url": "https://www.alexandretrotel.org/llms.txt",
+      "description": "Navigation index and agent context for this site: who Alexandre Trotel is, what to use this site for, and links to every page."
+    },
+    {
+      "identifier": "urn:ai:alexandretrotel.org:context:agents-md",
+      "displayName": "agents.md",
+      "type": "text/markdown",
+      "url": "https://www.alexandretrotel.org/agents.md",
+      "description": "Same agent context as llms.txt, served at the agents.md path some clients look for first."
+    },
+    {
+      "identifier": "urn:ai:alexandretrotel.org:skill:startup-opportunity-discovery",
+      "displayName": "Startup opportunity discovery skill",
+      "type": "text/markdown",
+      "url": "https://github.com/alexandretrotel/skills",
+      "description": "An installable agent skill packaging Alexandre Trotel's process for discovering startup opportunities: founder profiling, evidenced problem search, and opportunity scoring."
+    },
+    {
+      "identifier": "urn:ai:alexandretrotel.org:sitemap",
+      "displayName": "Sitemap",
+      "type": "application/xml",
+      "url": "https://www.alexandretrotel.org/sitemap.xml",
+      "description": "Every indexable URL on this site, with last-modified dates."
+    }
+  ]
+}
