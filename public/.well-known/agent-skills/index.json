@@ -1,0 +1,11 @@
+{
+  "name": "Alexandre Trotel",
+  "description": "Personal site and skill index for Alexandre Trotel, entrepreneur and open source developer.",
+  "skills": [
+    {
+      "name": "startup-opportunity-discovery",
+      "description": "Interactive process for discovering startup opportunities: build a founder-DNA profile, search for evidenced problem signals across Reddit, Hacker News, review sites and forums, cluster them into opportunities, and score each one against founder-market fit, market size, and MVP feasibility before deciding whether to build.",
+      "url": "https://github.com/alexandretrotel/skills"
+    }
+  ]
+}
