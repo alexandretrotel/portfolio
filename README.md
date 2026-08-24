@@ -8,12 +8,12 @@ A small [Astro](https://astro.build) site. Static output, zero client-side JavaS
 corepack enable       # one-time, lets corepack manage pnpm
 pnpm install
 
-pnpm dev               # local dev server
-pnpm build             # build to dist/
-pnpm preview            # serve the built dist/ locally
+pnpm run dev               # local dev server
+pnpm run build             # build to dist/
+pnpm run preview            # serve the built dist/ locally
 
-pnpm format            # format
-pnpm format:check      # format check
-pnpm lint               # lint
-pnpm lint:fix           # lint, applying auto-fixes
+pnpm run format            # format
+pnpm run format:check      # format check
+pnpm run lint               # lint
+pnpm run lint:fix           # lint, applying auto-fixes
 ```
