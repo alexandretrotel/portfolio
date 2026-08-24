@@ -12,6 +12,10 @@
       "pattern": "www.alexandretrotel.org",
       "custom_domain": true,
     },
+    {
+      "pattern": "alexandretrotel.org",
+      "custom_domain": true,
+    },
   ],
   "workers_dev": false,
   "preview_urls": false,
