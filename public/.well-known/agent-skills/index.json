@@ -5,8 +5,10 @@
   "skills": [
     {
       "name": "startup-opportunity-discovery",
+      "type": "skill-md",
       "description": "Interactive process for discovering startup opportunities: build a founder-DNA profile, search for evidenced problem signals across Reddit, Hacker News, review sites and forums, cluster them into opportunities, and score each one against founder-market fit, market size, and MVP feasibility before deciding whether to build.",
-      "url": "https://github.com/alexandretrotel/skills"
+      "url": "https://raw.githubusercontent.com/alexandretrotel/skills/main/entrepreneurship/discovery/SKILL.md",
+      "digest": "sha256:27b3962733015a52882bdbf8feb2ecb2dd150744dd3277fe0b226bb6c21cb9ea"
     }
   ]
 }
