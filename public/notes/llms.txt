@@ -1,0 +1,8 @@
+# Notes — Alexandre Trotel
+
+> Living notes by Alexandre Trotel: documents he keeps updating as he learns, rather than one-off essays. For one-off essays, see /essays/llms.txt. For general site context, see /llms.txt at the root.
+
+## Notes
+
+- [A founder's framework](https://www.alexandretrotel.org/notes/a-founders-framework.html) ([markdown](https://www.alexandretrotel.org/notes/a-founders-framework.md)): the criteria he holds himself to before starting another company, covering market, problem, product development, founder involvement, founder quality, sustainability, and team dynamics.
+- [How to discover startup opportunities](https://www.alexandretrotel.org/notes/how-to-discover-startup-opportunities.html) ([markdown](https://www.alexandretrotel.org/notes/how-to-discover-startup-opportunities.md)): his process for finding a startup worth building, from founder profiling through evidenced problem search to opportunity scoring. Packaged as an agent skill at https://github.com/alexandretrotel/skills.

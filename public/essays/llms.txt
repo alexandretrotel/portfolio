@@ -1,0 +1,7 @@
+# Essays — Alexandre Trotel
+
+> One-off essays by Alexandre Trotel, each a self-contained write-up of a specific event or decision. For his ongoing, living notes, see /notes/llms.txt. For general site context, see /llms.txt at the root.
+
+## Essays
+
+- [How to kill a company in one day?](https://www.alexandretrotel.org/essays/how-to-kill-a-company-in-one-day.html) ([markdown](https://www.alexandretrotel.org/essays/how-to-kill-a-company-in-one-day.md)): why Radion, a prediction-market data indexer that read 8 billion onchain events off Polygon, shut down 43 days after launch over a terms-of-service conflict, plus the technical decisions (Rust, Timescale, HyperSync, reorg handling) behind the pipeline it built.
