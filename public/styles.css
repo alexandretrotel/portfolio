@@ -99,20 +99,34 @@ main {
   }
 }
 
-main > * + * {
+main > * + *,
+article > * + * {
   margin-top: 1.25rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
 }
 
 h1 {
   font-size: 1.5rem;
-  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1.125rem;
 }
 
 strong {
   font-weight: 500;
 }
 
-main a {
+a {
   color: var(--link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -123,7 +137,7 @@ a:active {
   opacity: 0.7;
 }
 
-main a:hover {
+a:hover {
   text-decoration-thickness: 2px;
 }
 
@@ -148,10 +162,6 @@ p + ol {
   margin-top: 0.5rem;
 }
 
-article > * + * {
-  margin-top: 1.25rem;
-}
-
 article > header {
   margin-bottom: 2rem;
 }
@@ -165,14 +175,10 @@ article > header time {
 
 article h2 {
   margin-top: 2.5rem;
-  font-size: 1.25rem;
-  font-weight: 500;
 }
 
 article h3 {
   margin-top: 2rem;
-  font-size: 1.125rem;
-  font-weight: 500;
 }
 
 blockquote {
