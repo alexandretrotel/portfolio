@@ -15,11 +15,7 @@ export const markdownTwinRoutes = (collection: WritingCollection) => {
     }));
   };
 
-  const GET: APIRoute = async ({
-    props,
-  }: {
-    props: { entry: CollectionEntry<WritingCollection> };
-  }) => {
+  const GET: APIRoute<{ entry: CollectionEntry<WritingCollection> }> = async ({ props }) => {
     const { entry } = props;
     const { title, date, updated } = entry.data;
     const body = `# ${title}\n\n_${formatDate(date, updated)}_\n\n${entry.body}`;
