@@ -45,24 +45,42 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Alexandre Trotel",
-        "jobTitle": "Entrepreneur & Open Source Developer",
-        "description": "Alexandre Trotel, entrepreneur and open source developer.",
+        "@type": "ProfilePage",
         "url": "https://www.alexandretrotel.org",
-        "sameAs": [
-          "https://github.com/alexandretrotel",
-          "https://x.com/alexandretrotel",
-          "https://www.zapstudio.dev"
-        ],
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Alexandre Trotel",
+          "jobTitle": "Entrepreneur & Open Source Developer",
+          "description": "Alexandre Trotel, entrepreneur and open source developer.",
+          "url": "https://www.alexandretrotel.org",
+          "sameAs": [
+            "https://github.com/alexandretrotel",
+            "https://www.linkedin.com/in/alexandretrotel",
+            "https://x.com/alexandretrotel",
+            "https://www.zapstudio.dev"
+          ],
+          "founder": {
+            "@type": "Organization",
+            "name": "Zap Studio",
+            "url": "https://www.zapstudio.dev"
+          },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["main > p:first-of-type"]
+          }
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Zap Studio",
+        "url": "https://www.zapstudio.dev",
         "founder": {
-          "@type": "Organization",
-          "name": "Zap Studio",
-          "url": "https://www.zapstudio.dev"
-        },
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": ["main > p:first-of-type"]
+          "@type": "Person",
+          "name": "Alexandre Trotel",
+          "url": "https://www.alexandretrotel.org"
         }
       }
     </script>
