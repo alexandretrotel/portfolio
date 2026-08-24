@@ -1,4 +1,50 @@
 User-agent: *
 Allow: /
+Content-Signal: search=yes, ai-train=no
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: DeepSeekBot
+Allow: /
+
+User-agent: ora-agent
+Allow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ByteSpider
+Disallow: /
 
 Sitemap: https://www.alexandretrotel.org/sitemap.xml
