@@ -1,4 +1,5 @@
 {
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
   "name": "Alexandre Trotel",
   "description": "Personal site and skill index for Alexandre Trotel, entrepreneur and open source developer.",
   "skills": [
