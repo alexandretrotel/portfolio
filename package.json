@@ -6,13 +6,13 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
+    "deploy": "astro build && wrangler deploy",
     "dev": "astro dev",
     "format": "pnpm exec oxfmt .",
     "format:check": "pnpm exec oxfmt --check .",
     "lint": "pnpm exec oxlint .",
     "lint:fix": "pnpm exec oxlint --fix .",
-    "preview": "astro preview",
-    "deploy": "astro build && wrangler deploy"
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.2.4",
