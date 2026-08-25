@@ -2,6 +2,9 @@
   "$schema": "https://unpkg.com/wrangler/config-schema.json",
   "name": "portfolio",
   "compatibility_date": "2026-08-01",
+  "build": {
+    "command": "astro build",
+  },
   "assets": {
     "directory": "./dist/client",
     "html_handling": "drop-trailing-slash",
