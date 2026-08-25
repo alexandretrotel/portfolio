@@ -11,9 +11,11 @@
     "format:check": "pnpm exec oxfmt --check .",
     "lint": "pnpm exec oxlint .",
     "lint:fix": "pnpm exec oxlint --fix .",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "deploy": "astro build && wrangler deploy"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^14.2.4",
     "@astrojs/markdown-remark": "^7.2.4",
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^7.2.5",
@@ -25,13 +27,11 @@
     "@zap-studio/oxlint": "^2.2.1",
     "oxfmt": "^0.64.0",
     "oxlint": "^1.79.0",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "wrangler": "^4.125.0"
   },
   "engines": {
     "node": ">=22.12.0"
   },
-  "packageManager": "pnpm@11.24.0+sha512.bd27e345e976dcb0be0b7a1228217b049a817e21b1f355c90dbe7dc46671895a8bc1e6d06c24554505ea93ea0b45f489a27ec1bfbc8de6a9659fca0f16fa0000",
-  "allowScripts": {
-    "esbuild": true
-  }
+  "packageManager": "pnpm@11.24.0+sha512.bd27e345e976dcb0be0b7a1228217b049a817e21b1f355c90dbe7dc46671895a8bc1e6d06c24554505ea93ea0b45f489a27ec1bfbc8de6a9659fca0f16fa0000"
 }
