@@ -1,10 +1,15 @@
 ---
-import Base from '../layouts/Base.astro';
-import { SITE } from '../data/site';
+import Base from "../layouts/Base.astro";
+import { SITE } from "../data/site";
 ---
 
-<Base title={`Page not found | ${SITE.name}`} description="Page not found." path="/404.html" noindex>
-  <h1>Nothing here</h1>
-  <p>This page doesn't exist. It may have moved, or it never did.</p>
-  <p><a href="/">Go home</a></p>
+<Base
+    title={`Page not found | ${SITE.name}`}
+    description="Page not found."
+    path="/404.html"
+    noindex
+>
+    <h1>Nothing here</h1>
+    <p>This page doesn't exist. It may have moved, or it never did.</p>
+    <p><a href="/">Go home</a></p>
 </Base>

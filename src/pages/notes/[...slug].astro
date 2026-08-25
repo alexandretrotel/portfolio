@@ -1,13 +1,13 @@
 ---
-import { getCollection, render } from 'astro:content';
-import Article from '../../layouts/Article.astro';
+import { getCollection, render } from "astro:content";
+import Article from "../../layouts/Article.astro";
 
 export const getStaticPaths = async () => {
-  const entries = await getCollection('notes');
-  return entries.map((entry) => ({
-    params: { slug: entry.id },
-    props: { entry },
-  }));
+    const entries = await getCollection("notes");
+    return entries.map((entry) => ({
+        params: { slug: entry.id },
+        props: { entry },
+    }));
 };
 
 const { entry } = Astro.props;
@@ -16,11 +16,11 @@ const path = `/notes/${entry.id}.html`;
 ---
 
 <Article
-  title={entry.data.title}
-  description={entry.data.description}
-  path={path}
-  date={entry.data.date}
-  updated={entry.data.updated}
+    title={entry.data.title}
+    description={entry.data.description}
+    path={path}
+    date={entry.data.date}
+    updated={entry.data.updated}
 >
-  <Content />
+    <Content />
 </Article>
