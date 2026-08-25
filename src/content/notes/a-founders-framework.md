@@ -1,7 +1,6 @@
 ---
 title: A founder's framework
 description: A living document of requirements and learnings from my entrepreneurship journey. The criteria I set for myself before starting the next company.
-llmsSummary: the criteria he holds himself to before starting another company, covering market, problem, product development, founder involvement, founder quality, sustainability, and team dynamics.
 date: 2026-08-04
 updated: true
 ---

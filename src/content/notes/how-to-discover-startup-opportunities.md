@@ -1,7 +1,6 @@
 ---
 title: How to discover startup opportunities
 description: "My process for finding a startup worth building: understand myself as a founder first, then hunt for real, evidenced problems instead of generating ideas."
-llmsSummary: "his process for finding a startup worth building, from founder profiling through evidenced problem search to opportunity scoring. Packaged as an agent skill at https://github.com/alexandretrotel/skills."
 date: 2026-08-16
 updated: true
 ---

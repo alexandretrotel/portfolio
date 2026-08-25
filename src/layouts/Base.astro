@@ -1,87 +1,107 @@
 ---
-import { SITE } from '../data/site';
-import '../styles/global.css';
+import { SITE } from "../data/site";
+import "../styles/global.css";
 
 interface Props {
-  title: string;
-  description: string;
-  path: string;
-  type?: 'website' | 'article';
-  socialDescription?: string;
-  noindex?: boolean;
-  mdTwin?: string;
-  jsonLd?: object[];
+    title: string;
+    description: string;
+    path: string;
+    type?: "website" | "article";
+    noindex?: boolean;
+    markdownTwin?: string;
+    jsonLd?: object[];
 }
 
 const {
-  title,
-  description,
-  path,
-  type = 'website',
-  socialDescription,
-  noindex = false,
-  mdTwin,
-  jsonLd = [],
+    title,
+    description,
+    path,
+    type = "website",
+    noindex = false,
+    markdownTwin,
+    jsonLd = [],
 } = Astro.props;
 
 const canonical = new URL(path, SITE.url).toString();
-const ogDescription = socialDescription ?? description;
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light dark" />
+        <meta
+            name="theme-color"
+            content="#ffffff"
+            media="(prefers-color-scheme: light)"
+        />
+        <meta
+            name="theme-color"
+            content="#0a0a0a"
+            media="(prefers-color-scheme: dark)"
+        />
 
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex" />}
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        {noindex && <meta name="robots" content="noindex" />}
 
-    <link rel="canonical" href={canonical} />
-    <link rel="icon" type="image/png" href="/logo-96.png" />
-    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
-    {mdTwin && <link rel="alternate" type="text/markdown" href={mdTwin} />}
+        <link rel="canonical" href={canonical} />
+        <link rel="icon" type="image/png" href="/logo-96.png" />
+        <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+        {markdownTwin && (
+            <link rel="alternate" type="text/markdown" href={markdownTwin} />
+        )}
 
-    {
-      !noindex && (
-        <>
-          <meta property="og:type" content={type} />
-          <meta property="og:locale" content="en_US" />
-          <meta property="og:site_name" content={SITE.name} />
-          <meta property="og:url" content={canonical} />
-          <meta property="og:title" content={title} />
-          <meta property="og:description" content={ogDescription} />
-          <meta property="og:image" content={`${SITE.url}/logo.png`} />
+        {
+            !noindex && (
+                <>
+                    <meta property="og:type" content={type} />
+                    <meta property="og:locale" content="en_US" />
+                    <meta property="og:site_name" content={SITE.name} />
+                    <meta property="og:url" content={canonical} />
+                    <meta property="og:title" content={title} />
+                    <meta property="og:description" content={description} />
+                    <meta
+                        property="og:image"
+                        content={`${SITE.url}/logo.png`}
+                    />
 
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:creator" content={SITE.twitter} />
-          <meta name="twitter:title" content={title} />
-          <meta name="twitter:description" content={ogDescription} />
-          <meta name="twitter:image" content={`${SITE.url}/logo.png`} />
-        </>
-      )
-    }
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:creator" content={SITE.twitter} />
+                    <meta name="twitter:title" content={title} />
+                    <meta
+                        name="twitter:description"
+                        content={description}
+                    />
+                    <meta
+                        name="twitter:image"
+                        content={`${SITE.url}/logo.png`}
+                    />
+                </>
+            )
+        }
 
-    {
-      jsonLd.map((entry) => (
-        <script type="application/ld+json" set:html={JSON.stringify(entry)} is:inline />
-      ))
-    }
-  </head>
+        {
+            jsonLd.map((entry) => (
+                <script
+                    type="application/ld+json"
+                    set:html={JSON.stringify(entry)}
+                    is:inline
+                />
+            ))
+        }
+    </head>
 
-  <body>
-    <header>
-      <a href="/" aria-label="Go to homepage">
-        <img src="/logo-96.png" alt="Logo" width="32" height="32" />
-      </a>
-    </header>
+    <body>
+        <header>
+            <a href="/" aria-label="Go to homepage">
+                <img src="/logo-96.png" alt="Logo" width="32" height="32" />
+            </a>
+        </header>
 
-    <main>
-      <slot />
-    </main>
-  </body>
+        <main>
+            <slot />
+        </main>
+    </body>
 </html>

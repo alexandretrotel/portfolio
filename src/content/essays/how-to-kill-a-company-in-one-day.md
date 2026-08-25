@@ -1,8 +1,6 @@
 ---
 title: How to kill a company in one day?
 description: Radion indexed 8 billion Polymarket events on Polygon in two days. Forty-three days later we shut it down. What public onchain data really costs, and why the right to read is not the right to sell.
-socialDescription: Radion indexed 8 billion Polymarket events on Polygon in two days. Forty-three days later we shut it down. What public onchain data really costs.
-llmsSummary: why Radion, a prediction-market data indexer that read 8 billion onchain events off Polygon, shut down 43 days after launch over a terms-of-service conflict, plus the technical decisions (Rust, Timescale, HyperSync, reorg handling) behind the pipeline it built.
 date: 2026-08-01
 ---
 

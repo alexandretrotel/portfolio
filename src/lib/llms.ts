@@ -9,7 +9,7 @@ const entryUrl = (collection: "essays" | "notes", id: string, ext: "html" | "md"
 const listItem = (entry: CollectionEntry<"essays" | "notes">, collection: "essays" | "notes") => {
   const html = entryUrl(collection, entry.id, "html");
   const md = entryUrl(collection, entry.id, "md");
-  return `- [${entry.data.title}](${html}) ([markdown](${md})): ${entry.data.llmsSummary}`;
+  return `- [${entry.data.title}](${html}) ([markdown](${md})): ${entry.data.description}`;
 };
 
 export const essaysDirectoryTxt = (entries: CollectionEntry<"essays">[]) => {
@@ -41,10 +41,10 @@ export const rootLlmsTxt = (
   notes: CollectionEntry<"notes">[],
 ) => {
   const essayItems = essays
-    .map((e) => `- [${e.data.title}](${entryUrl("essays", e.id, "html")}): ${e.data.llmsSummary}`)
+    .map((e) => `- [${e.data.title}](${entryUrl("essays", e.id, "html")}): ${e.data.description}`)
     .join("\n");
   const noteItems = notes
-    .map((e) => `- [${e.data.title}](${entryUrl("notes", e.id, "html")}): ${e.data.llmsSummary}`)
+    .map((e) => `- [${e.data.title}](${entryUrl("notes", e.id, "html")}): ${e.data.description}`)
     .join("\n");
 
   return `# ${SITE.name}

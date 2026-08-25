@@ -5,8 +5,6 @@ import { defineCollection } from "astro:content";
 const writing = z.object({
   title: z.string(),
   description: z.string(),
-  socialDescription: z.string().optional(),
-  llmsSummary: z.string(),
   date: z.coerce.date(),
   updated: z.boolean().default(false),
 });

@@ -1,53 +1,51 @@
 ---
-import Base from './Base.astro';
-import { JSON_LD_CONTEXT, SITE } from '../data/site';
-import { formatDate } from '../lib/format';
+import Base from "./Base.astro";
+import { JSON_LD_CONTEXT, SITE } from "../data/site";
+import { formatDate } from "../lib/format";
 
 interface Props {
-  title: string;
-  description: string;
-  socialDescription?: string;
-  path: string;
-  date: Date;
-  updated?: boolean;
+    title: string;
+    description: string;
+    path: string;
+    date: Date;
+    updated?: boolean;
 }
 
-const { title, description, socialDescription, path, date, updated = false } = Astro.props;
+const { title, description, path, date, updated = false } = Astro.props;
 
 const dateLabel = formatDate(date, updated);
 const datetime = date.toISOString().slice(0, 10);
 
 const articleJsonLd = {
-  '@context': JSON_LD_CONTEXT,
-  '@type': 'Article',
-  headline: title,
-  description,
-  url: new URL(path, SITE.url).toString(),
-  datePublished: datetime,
-  dateModified: datetime,
-  author: {
-    '@type': 'Person',
-    name: SITE.name,
-    url: SITE.url,
-  },
-  mainEntityOfPage: new URL(path, SITE.url).toString(),
+    "@context": JSON_LD_CONTEXT,
+    "@type": "Article",
+    headline: title,
+    description,
+    url: new URL(path, SITE.url).toString(),
+    datePublished: datetime,
+    dateModified: datetime,
+    author: {
+        "@type": "Person",
+        name: SITE.name,
+        url: SITE.url,
+    },
+    mainEntityOfPage: new URL(path, SITE.url).toString(),
 };
 ---
 
 <Base
-  title={title}
-  description={description}
-  socialDescription={socialDescription}
-  path={path}
-  type="article"
-  jsonLd={[articleJsonLd]}
+    title={title}
+    description={description}
+    path={path}
+    type="article"
+    jsonLd={[articleJsonLd]}
 >
-  <article>
-    <header>
-      <h1>{title}</h1>
-      <time datetime={datetime}>{dateLabel}</time>
-    </header>
+    <article>
+        <header>
+            <h1>{title}</h1>
+            <time datetime={datetime}>{dateLabel}</time>
+        </header>
 
-    <slot />
-  </article>
+        <slot />
+    </article>
 </Base>
