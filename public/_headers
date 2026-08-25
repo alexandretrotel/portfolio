@@ -2,10 +2,6 @@
   Cache-Control: public, max-age=0, stale-while-revalidate=86400
   Link: </sitemap-index.xml>; rel="sitemap", </.well-known/ai-catalog.json>; rel="describedby", </llms.txt>; rel="llms-txt"
 
-/styles.css
-  ! Cache-Control
-  Cache-Control: public, max-age=3600, stale-while-revalidate=604800
-
 /logo*.png
   ! Cache-Control
   Cache-Control: public, max-age=3600, stale-while-revalidate=604800

@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../data/site';
+import '../styles/global.css';
 
 interface Props {
   title: string;
@@ -44,7 +45,6 @@ const ogDescription = socialDescription ?? description;
     <link rel="icon" type="image/png" href="/logo-96.png" />
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
     {mdTwin && <link rel="alternate" type="text/markdown" href={mdTwin} />}
-    <link rel="stylesheet" href="/styles.css" />
 
     {
       !noindex && (
