@@ -1,107 +1,109 @@
 ---
-import { getCollection } from 'astro:content';
-import Base from '../layouts/Base.astro';
-import { JSON_LD_CONTEXT, SITE, PROJECTS } from '../data/site';
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import { JSON_LD_CONTEXT, SITE, PROJECTS } from "../data/site";
 
-const essays = await getCollection('essays');
-const notes = await getCollection('notes');
+const essays = await getCollection("essays");
+const notes = await getCollection("notes");
 
 const profilePageJsonLd = {
-  '@context': JSON_LD_CONTEXT,
-  '@type': 'ProfilePage',
-  url: SITE.url,
-  mainEntity: {
-    '@type': 'Person',
-    name: SITE.name,
-    jobTitle: SITE.jobTitle,
-    description: SITE.description,
+    "@context": JSON_LD_CONTEXT,
+    "@type": "ProfilePage",
     url: SITE.url,
-    sameAs: SITE.sameAs,
-    founder: {
-      '@type': 'Organization',
-      name: SITE.founder.name,
-      url: SITE.founder.url,
+    mainEntity: {
+        "@type": "Person",
+        name: SITE.name,
+        jobTitle: SITE.jobTitle,
+        description: SITE.description,
+        url: SITE.url,
+        sameAs: SITE.sameAs,
+        founder: {
+            "@type": "Organization",
+            name: SITE.founder.name,
+            url: SITE.founder.url,
+        },
+        speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: ["main > p:first-of-type"],
+        },
     },
-    speakable: {
-      '@type': 'SpeakableSpecification',
-      cssSelector: ['main > p:first-of-type'],
-    },
-  },
 };
 
 const organizationJsonLd = {
-  '@context': JSON_LD_CONTEXT,
-  '@type': 'Organization',
-  name: SITE.founder.name,
-  url: SITE.founder.url,
-  founder: {
-    '@type': 'Person',
-    name: SITE.name,
-    url: SITE.url,
-  },
+    "@context": JSON_LD_CONTEXT,
+    "@type": "Organization",
+    name: SITE.founder.name,
+    url: SITE.founder.url,
+    founder: {
+        "@type": "Person",
+        name: SITE.name,
+        url: SITE.url,
+    },
 };
 
 const websiteJsonLd = {
-  '@context': JSON_LD_CONTEXT,
-  '@type': 'WebSite',
-  name: SITE.name,
-  url: SITE.url,
-  author: {
-    '@type': 'Person',
+    "@context": JSON_LD_CONTEXT,
+    "@type": "WebSite",
     name: SITE.name,
-  },
+    url: SITE.url,
+    author: {
+        "@type": "Person",
+        name: SITE.name,
+    },
 };
-
 ---
 
 <Base
-  title={SITE.title}
-  description={SITE.description}
-  path="/"
-  mdTwin="/index.md"
-  jsonLd={[profilePageJsonLd, organizationJsonLd, websiteJsonLd]}
+    title={SITE.title}
+    description={SITE.description}
+    path="/"
+    mdTwin="/index.md"
+    jsonLd={[profilePageJsonLd, organizationJsonLd, websiteJsonLd]}
 >
-  <h1>{SITE.name}</h1>
-  <p>
-    Entrepreneur and open source developer. Founded{' '}
-    <a href={SITE.founder.url} target="_blank" rel="noreferrer">
-      {SITE.founder.name}
-    </a>{' '}
-    to ship the type-safe, framework-agnostic and composable TypeScript libraries the web is still missing.
-  </p>
-  <p>Making open-source tools that developers use daily:</p>
-  <ul>
-    {
-      PROJECTS.map((project) => (
-        <li>
-          <a href={project.url} target="_blank" rel="noreferrer">
-            {project.name}
-          </a>{' '}
-          {project.blurb}
-        </li>
-      ))
-    }
-  </ul>
+    <h1>{SITE.name}</h1>
+    <p>
+        Founded{" "}
+        <a href={SITE.founder.url} target="_blank" rel="noreferrer">
+            {SITE.founder.name}
+        </a>{" "}
+        to ship the type-safe, framework-agnostic and composable TypeScript libraries
+        the web is still missing.
+    </p>
+    <p>Making open-source tools that developers use daily:</p>
+    <ul>
+        {
+            PROJECTS.map((project) => (
+                <li>
+                    <a href={project.url} target="_blank" rel="noreferrer">
+                        {project.name}
+                    </a>{" "}
+                    {project.blurb}
+                </li>
+            ))
+        }
+    </ul>
 
-  <p>Read some of my essays below:</p>
-  <ul>
-    {
-      essays.map((essay) => (
-        <li>
-          <a href={`/essays/${essay.id}.html`}>{essay.data.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+    <p>Read some of my essays below:</p>
+    <ul>
+        {
+            essays.map((essay) => (
+                <li>
+                    <a href={`/essays/${essay.id}.html`}>{essay.data.title}</a>
+                </li>
+            ))
+        }
+    </ul>
 
-  <p>I also keep some living notes on company building and startup discovery:</p>
-  <ul>
-    {
-      notes.map((note) => (
-        <li>
-          <a href={`/notes/${note.id}.html`}>{note.data.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+    <p>
+        I also keep some living notes on company building and startup discovery:
+    </p>
+    <ul>
+        {
+            notes.map((note) => (
+                <li>
+                    <a href={`/notes/${note.id}.html`}>{note.data.title}</a>
+                </li>
+            ))
+        }
+    </ul>
 </Base>
