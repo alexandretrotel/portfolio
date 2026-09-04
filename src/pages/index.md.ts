@@ -6,11 +6,9 @@ import { SITE, PROJECTS } from "../data/site";
 
 export const GET: APIRoute = async () => {
   const essays = await getCollection("essays");
-  const notes = await getCollection("notes");
 
   const projectItems = PROJECTS.map((p) => `- [${p.name}](${p.url}) ${p.blurb}`).join("\n");
   const essayItems = essays.map((e) => `- [${e.data.title}](/essays/${e.id}.html)`).join("\n");
-  const noteItems = notes.map((n) => `- [${n.data.title}](/notes/${n.id}.html)`).join("\n");
 
   const body = `# ${SITE.name}
 
@@ -23,10 +21,6 @@ ${projectItems}
 Read some of my essays below:
 
 ${essayItems}
-
-I also keep some living notes:
-
-${noteItems}
 `;
 
   return new Response(body, {

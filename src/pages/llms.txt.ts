@@ -6,8 +6,7 @@ import { rootLlmsTxt } from "../lib/llms";
 
 export const GET: APIRoute = async () => {
   const essays = await getCollection("essays");
-  const notes = await getCollection("notes");
-  return new Response(rootLlmsTxt(essays, notes), {
+  return new Response(rootLlmsTxt(essays), {
     headers: { "Content-Type": "text/markdown; charset=utf-8" },
   });
 };

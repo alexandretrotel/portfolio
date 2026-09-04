@@ -4,7 +4,6 @@ import Base from "../layouts/Base.astro";
 import { JSON_LD_CONTEXT, SITE, PROJECTS } from "../data/site";
 
 const essays = await getCollection("essays");
-const notes = await getCollection("notes");
 
 const profilePageJsonLd = {
     "@context": JSON_LD_CONTEXT,
@@ -89,19 +88,6 @@ const websiteJsonLd = {
             essays.map((essay) => (
                 <li>
                     <a href={`/essays/${essay.id}.html`}>{essay.data.title}</a>
-                </li>
-            ))
-        }
-    </ul>
-
-    <p>
-        I also keep some living notes on company building and startup discovery:
-    </p>
-    <ul>
-        {
-            notes.map((note) => (
-                <li>
-                    <a href={`/notes/${note.id}.html`}>{note.data.title}</a>
                 </li>
             ))
         }

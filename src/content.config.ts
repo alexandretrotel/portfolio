@@ -14,11 +14,6 @@ const essays = defineCollection({
   schema: writing,
 });
 
-const notes = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/notes" }),
-  schema: writing,
-});
-
-export const collections = { essays, notes };
+export const collections = { essays };
 
 export type WritingData = z.infer<typeof writing>;

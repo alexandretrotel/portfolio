@@ -4,7 +4,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 
 import { formatDate } from "./format";
 
-type WritingCollection = "essays" | "notes";
+type WritingCollection = "essays";
 
 export const markdownTwinRoutes = (collection: WritingCollection) => {
   const getStaticPaths = async () => {
