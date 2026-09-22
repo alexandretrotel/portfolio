@@ -33,7 +33,7 @@ export const rootLlmsTxt = (essays: CollectionEntry<"essays">[]) => {
 
 > Personal site of ${SITE.name}, entrepreneur and open source developer. Founder of Zap Studio, where the work is type-safe, framework-agnostic TypeScript libraries for the web.
 
-Essays live under \`/essays/\` as individual HTML files, each linked from the home page and listed in the sitemap. Every page also has a markdown twin at the same path with a \`.md\` extension (e.g. \`/essays/how-to-kill-a-company-in-one-day.md\`).
+Essays live under \`/essays/\` as individual HTML files, each linked from the home page and listed in the sitemap. Every page also has a markdown twin at the same path with a \`.md\` extension (e.g. \`/essays/a-founders-framework.md\`).
 
 ## When to use this
 

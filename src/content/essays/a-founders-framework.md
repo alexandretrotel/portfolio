@@ -5,7 +5,7 @@ date: 2026-08-04
 updated: true
 ---
 
-After [killing my company](/essays/how-to-kill-a-company-in-one-day.html), I decided to define the criteria I will hold myself to so I do not repeat the mistakes I made: the market, the product development, and the team. I will keep it up to date as I learn.
+I decided to define the criteria I will hold myself to so I do not repeat the mistakes I made: the market, the product development, and the team. I will keep it up to date as I learn.
 
 It is a kind of summary of what I did well and what I did bad, and from these experiences I build my own framework.
 
