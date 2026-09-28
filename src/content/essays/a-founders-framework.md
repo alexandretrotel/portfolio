@@ -252,13 +252,36 @@ A startup amplifies existing dynamics between founders. What is mildly annoying 
 
 ### Protect health and learning
 
-Keep a sane baseline of sleep, physical activity, nutrition, relationships and time away from work.
+I can't insist enough on this one. Keep a sane baseline of sleep, physical activity, nutrition, relationships and time away from work.
 
-**Mistake I've made:** I stopped taking time for sports and good sleep, even though I understood why they mattered. Understanding is not enough. It has to be protected by structure. One solution worth trying: an hours model close to a salaried job, with a start and an end to the day. A bounded schedule protects sleep and sports by default, and forces working better, not more.
+Don't fall for the FOMO of founders bragging about 100-hour weeks. The pragmatic choice is to stay healthy. If you can't, because you keep working more, it means one of two things:
 
-> A company that destroys you is not a successful company.
+- **You can't see the real problem.** A tired founder needs more hours to produce what a rested one would with better priorities and more focus. You are working more to make up for working worse, and you are too tired to notice.
+- **The bar is too high for you right now.** You are not yet good enough to reach it at a healthy pace. Then lower the bar.
 
-Never stop learning either. [Warren Buffett](https://en.wikipedia.org/wiki/Warren_Buffett) spends most of his day reading. Bill Gates disappears twice a year for Think Weeks, alone with a pile of books. Knowledge compounds like capital. Positive entertainment counts too: mangas, movies, art, music. It leaves something behind, a story, an idea, a skill. [Doomscrolling](https://en.wikipedia.org/wiki/Doomscrolling) leaves nothing.
+Never try to beat this by pushing harder. Accept it, and adjust.
+
+Knowing all this is not enough. It has to be protected by structure.
+
+One solution worth trying is an hours model close to a salaried job, with a start and an end to the day. A bounded schedule protects sleep and sports by default, and forces you to work better, not more.
+
+There is no point in being wealthy or building a great company if you lose your health, or die young, on the way.
+
+The same logic applies to learning. It can feel like time taken away from the company, but it makes you better every day.
+
+It helps you rethink your priorities, in business and in your personal life, and it compounds. On the long term, it is what lets you work less, not more.
+
+[Warren Buffett](https://en.wikipedia.org/wiki/Warren_Buffett) spends most of his day reading. Bill Gates disappears twice a year for Think Weeks, alone with a pile of books. Knowledge compounds like capital.
+
+Finally, rest. Most of what people call rest is not rest. An hour of [doomscrolling](https://en.wikipedia.org/wiki/Doomscrolling) leaves you more tired than before, and nothing behind.
+
+Positive entertainment is different. Books, mangas, webtoons, movies, good YouTube videos, art and music leave something behind, a story, an idea, a skill.
+
+Even games count, as long as they are great ones. Not the free games designed to keep you hooked, but paid games made by people who care.
+
+If I showed you my screen time, you would see almost no social media, and hours of books, webtoons and YouTube videos. Change your habits. It is far healthier.
+
+Anyway, I could write about health and learning for hours, and I encourage you to dig deeper into both. But this is the essential.
 
 ## V. A path to product-market fit
 
