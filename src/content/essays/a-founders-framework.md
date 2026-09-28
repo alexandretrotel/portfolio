@@ -125,11 +125,17 @@ The strongest signal is having lived the problem many times and already built yo
 
 ### Find 20 users in two weeks
 
+Understanding the problem means nothing if you can't reach the people who have it. Before building anything, ask yourself:
+
 > With zero product today, could you find 20 relevant users to interview within two weeks?
 
-Prefer markets where users are reachable through professional networks, companies, industry events, existing relationships, search, partnerships, or physical locations. Be cautious about markets where reaching users first requires building a community, an audience, or a new ecosystem.
+Prefer markets where users are reachable through professional networks, companies, industry events, existing relationships, search, partnerships, or physical locations.
 
-Why? Because building the audience becomes the job, and the real job, understanding and solving a painful problem, [waits](https://en.wikipedia.org/wiki/Lean_software_development#Eliminate_waste). And the people it attracts come for the content, the community or the hype. Their feedback looks like validation when it isn't.
+Be cautious about markets where reaching users first requires building a community, an audience, or a new ecosystem.
+
+Why? Because building the audience becomes the job, and the real job which is understanding and solving a painful problem, [waits](https://en.wikipedia.org/wiki/Lean_software_development#Eliminate_waste).
+
+Even worse, the people it attracts come for the content, the community or the hype. Their feedback looks like validation when it's not.
 
 **Mistake I've made:** building to attract users. We came from a [web3](https://en.wikipedia.org/wiki/Web3)-like market where getting people from Discord into interviews was hard. So we built a product to attract them, and got lost building instead of finding product-market fit.
 
@@ -139,7 +145,9 @@ Finding users once isn't enough.
 
 > Can you keep continuous access to the same category of users through the entire product-development process?
 
-The ideal market gives an ongoing loop: problem, interview, hypothesis, experiment, feedback, iteration. Not: build, launch, hope users appear, try to understand them. We lived the second one. Never again.
+The ideal market gives an ongoing loop: problem, interview, hypothesis, experiment, feedback, iteration.
+
+The opposite is building, launching, hoping users show up, and only then trying to understand them.
 
 ## III. A big enough market
 
