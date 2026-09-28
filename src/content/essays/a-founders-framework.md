@@ -67,13 +67,23 @@ The first objective is not to build a product. It is to prove the problem is pai
 
 ### The pain must be real
 
-There is a scale: nice-to-have, useful, painful, urgent, existential. Aim for painful or urgent. A good test:
+A product is either a vitamin or a painkiller. A vitamin is nice to take, and easy to skip. A painkiller is something people go looking for, and pay for, the moment it hurts.
+
+Pain comes on a scale: nice-to-have, useful, painful, urgent, existential. Aim for painful or urgent. The others don't work for a startup:
+
+- **Nice-to-have:** people agree it's a good idea, then never change their habits. Nobody pays to fix a problem they can live with.
+- **Useful:** people use it when it's free and easy, but it's the first thing cut when budgets shrink.
+- **Existential:** the problem threatens the customer's survival, like payroll or security. The pain is real, but they can't afford to bet on an unproven company. They pick established vendors, and a startup waits months for a deal it rarely wins.
+
+Painful or urgent is the sweet spot. People run into it often enough to look for a solution, and are willing to try a new one.
+
+A good test is to be able to answer the following question:
 
 > What does the user currently do because the product doesn't exist?
 
 If the answer is "nothing," that's a warning. If they spend 10 hours a week on it manually, lose money over it, or pay someone to handle it, it starts to look like a real problem.
 
-**Mistake we made:** mistaking engagement for pain. People joining a Discord, liking something, or saying it is "cool" is not evidence of a painful problem.
+**Mistake I've made:** mistaking engagement for pain. People joining a Discord, liking something, or saying it is "cool" is not evidence of a painful problem.
 
 ### Dogfood it
 
@@ -101,7 +111,7 @@ Prefer markets where users are reachable through professional networks, companie
 
 Why? Because building the audience becomes the job, and the real job, understanding and solving a painful problem, [waits](https://en.wikipedia.org/wiki/Lean_software_development#Eliminate_waste). And the people it attracts come for the content, the community or the hype. Their feedback looks like validation when it isn't.
 
-**Mistake we made:** building to attract users. We came from a [web3](https://en.wikipedia.org/wiki/Web3)-like market where getting people from Discord into interviews was hard. So we built a product to attract them, and got lost building instead of finding product-market fit.
+**Mistake I've made:** building to attract users. We came from a [web3](https://en.wikipedia.org/wiki/Web3)-like market where getting people from Discord into interviews was hard. So we built a product to attract them, and got lost building instead of finding product-market fit.
 
 ### Keep access
 
@@ -139,7 +149,7 @@ A stagnant market requires stealing customers. A growing market creates new ones
 
 If the business depends on a single platform, or the market carries too much regulatory uncertainty, don't go.
 
-**Mistake we made:** we learned this one the hard way. A single clause in a platform's terms of service was enough to kill our company.
+**Mistake I've made:** we learned this one the hard way. A single clause in a platform's terms of service was enough to kill our company.
 
 ## IV. A team built to last
 
@@ -192,7 +202,7 @@ A startup amplifies existing founder dynamics. What is mildly annoying before st
 
 Founders should keep a sane baseline of sleep, physical activity, nutrition, relationships and time away from work.
 
-**Mistake we made:** we stopped taking time for sports and good sleep, even though we understood why they mattered. Understanding is not enough. It has to be protected by structure. One solution worth trying: an hours model close to a salaried job, with a start and an end to the day. A bounded schedule protects sleep and sports by default, and forces working better, not more.
+**Mistake I've made:** I stopped taking time for sports and good sleep, even though I understood why they mattered. Understanding is not enough. It has to be protected by structure. One solution worth trying: an hours model close to a salaried job, with a start and an end to the day. A bounded schedule protects sleep and sports by default, and forces working better, not more.
 
 > A company that destroys its founders is not a successful company.
 
@@ -219,7 +229,7 @@ At any moment, the team should know what stage the company is in and what must b
 
 Each stage is a [learning process](https://en.wikipedia.org/wiki/Validated_learning), not a box to tick. Wanting to skip one is a signal: the team probably doesn't understand its purpose, and should go back and [rework why it is necessary](https://en.wikipedia.org/wiki/Double-loop_learning). When the team blocks, the question is whether the blocker invalidates the whole idea or can be avoided. The focus stays on solving the stage, not advancing to the next.
 
-**Mistake we made:** skipping validation because we could build quickly. Being able to build fast makes validating first more important, not less.
+**Mistake I've made:** skipping validation because I could build quickly. Being able to build fast makes validating first more important, not less.
 
 ### Roles come late
 
@@ -231,7 +241,7 @@ Every founder should hold a sustainable rhythm: learn, decide, execute, measure,
 
 > Optimize [productivity](https://en.wikipedia.org/wiki/Productivity) before optimizing hours.
 
-**Mistake we made:** confusing activity with progress. Shipping code is not necessarily progress. Progress means reducing uncertainty.
+**Mistake I've made:** confusing activity with progress. Shipping code is not necessarily progress. Progress means reducing uncertainty.
 
 ## The checklist
 
