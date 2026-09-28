@@ -177,7 +177,9 @@ A small lake can still be worth fishing if it is filling up fast, flows into a m
 
 ### The market must grow
 
-Look for a market where the underlying need is becoming more important: technological change, regulatory change, demographic change, new behaviors, increasing willingness to pay.
+Look for a market where the underlying need is becoming more important. That can come from new technology, new regulation, demographic shifts, new behaviors, or people willing to pay more.
+
+You should be able to answer to this question:
 
 > Why is this problem going to become more important over the next 5 to 10 years?
 
@@ -187,7 +189,7 @@ A stagnant market requires stealing customers. A growing market creates new ones
 
 If the business depends on a single platform, or the market carries too much regulatory uncertainty, don't go.
 
-**Mistake I've made:** we learned this one the hard way. A single clause in a platform's terms of service was enough to kill our company.
+**Mistake I've made:** a single clause in a platform's terms of service was enough to kill our company.
 
 ## IV. A team built to last
 
