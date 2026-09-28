@@ -153,17 +153,27 @@ The opposite is building, launching, hoping users show up, and only then trying 
 
 ### Size it bottom-up
 
+The market sets the ceiling on what great execution can reach. The best fisherman in the world still can't catch more fish than the lake holds.
+
 "Big market" should not mean a big [TAM](https://en.wikipedia.org/wiki/Total_addressable_market) slide. The question is:
 
 > If you execute extremely well, can this become a very large company without changing markets completely?
 
-For a venture-scale company, the minimum bar is a credible $1B+ TAM with a realistic path toward $100M+ in annual revenue. But the calculation to trust is bottom-up:
+For a venture-scale company, the minimum bar is a credible $1B+ TAM with a realistic path toward $100M+ in annual revenue.
 
-**potential customers × realistic annual revenue per customer**
+Don't trust big claims like "the restaurant industry is worth hundreds of billions."
 
-500,000 potential customers paying $2,000/year is a $1B market on paper. That is the TAM: everyone who could theoretically buy. Now shrink it to the SAM, the part the company can realistically reach and serve. This is where small markets get exposed. If the reachable market is $100M, even an unrealistic 50% share makes a $50M business. Too small.
+Count it yourself, customer by customer: **number of customers × what each one pays per year**
 
-One exception: a smaller market can work if it grows extremely fast, is a wedge into a much larger adjacent one, or is underestimated. But then write down why it will become much larger.
+Take the restaurant example:
+
+- **Everyone who could buy (TAM):** 500,000 independent restaurants × $2,000/year = $1B. Looks great.
+- **Everyone you can actually reach (SAM):** your app only works in French, so you can only sell in France. 50,000 restaurants × $2,000/year = $100M.
+- **What you can realistically win:** even if half of them buy, which never happens, that's a $50M business. Too small.
+
+The $1B goes on the pitch deck. The $100M is the real size of your lake.
+
+A small lake can still be worth fishing if it is filling up fast, flows into a much bigger one, or holds more fish than everyone thinks. If you make that bet, write down why you believe it.
 
 ### The market must grow
 
