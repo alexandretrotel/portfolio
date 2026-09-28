@@ -113,7 +113,7 @@ A swimming coach who has never been in the water can only repeat the textbook an
 
 [Founder-market fit](https://cdixon.org/2011/06/19/foundermarket-fit/) means you are the right person for this specific market.
 
-There are three levels:
+There are three levels for a good fit:
 
 - **Experience:** you have lived the problem. For example, you managed a restaurant for years and reordered supplies every morning at 7am.
 - **Knowledge:** you know the users, workflows, jargon and existing tools. For example, you know which suppliers only take orders by phone.
