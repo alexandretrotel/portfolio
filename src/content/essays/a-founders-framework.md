@@ -38,7 +38,7 @@ Either you can define it better, and your definition is worth sharing. Or you do
 ## The parts
 
 1. [A painful problem](#i-a-painful-problem)
-2. [A customer you understand](#ii-people-you-understand)
+2. [A customer you understand](#ii-a-customer-you-understand)
 3. [A big enough market](#iii-a-big-enough-market)
 4. [A team built to last](#iv-a-team-built-to-last)
 5. [A path to product-market fit](#v-a-path-to-product-market-fit)
@@ -107,7 +107,7 @@ Always prefer businesses where you understand the problem yourself over ones whe
 
 A swimming coach who has never been in the water can only repeat the textbook and what other swimmers tell them. They still can't tell you why you are sinking.
 
-## II. People you understand
+## II. A customer you understand
 
 ### Founder-market fit
 
@@ -335,37 +335,38 @@ Explaining your actual week to your friends would take ten minutes. Saying "I'm 
 
 ## The checklist
 
-Before committing to a new company, you and your cofounders should be able to answer "yes" to most of these.
+Do it with your cofounders before starting. Tick a box only if you all honestly say "yes."
 
 ### A painful problem
 
-- Can we describe the problem without describing our solution?
-- Do people already spend time, money or effort solving it?
-- Can we dogfood the solution?
+- [ ] Can we describe the problem without describing our solution?
+- [ ] Do people already spend time, money or effort solving it?
+- [ ] Do we use the product ourselves?
 
-### People you understand
+### A customer you understand
 
-- Have at least two thirds of us personally experienced the problem?
-- Can we find 20 relevant users within two weeks?
-- Can we keep access to them throughout development?
+- [ ] Have most of us, ideally all, lived the problem ourselves?
+- [ ] Could we find 20 relevant users within two weeks?
+- [ ] Can we keep access to them throughout development?
 
 ### A big enough market
 
-- Is there a credible, bottom-up path toward $100M+ annual revenue?
-- Is the market growing, and can we explain why?
-- Does the business survive if one platform changes its rules?
+- [ ] Does a bottom-up count give a credible path to $100M+ in annual revenue?
+- [ ] Is the need growing, and can we explain why?
+- [ ] Would the business survive if one platform changed its rules?
 
 ### A team built to last
 
-- Does each of us talk to users and understand the core technology?
-- Have we agreed on ambition, commitment, ownership and exit?
-- Would we choose each other again, for the next 5 to 10 years?
+- [ ] Does every founder talk to users and understand the core technology?
+- [ ] Have we agreed on ambition, commitment, ownership and exit?
+- [ ] Would we choose each other again, for the next 5 to 10 years?
+- [ ] Can we keep a healthy pace for years, not months?
 
 ### A path to product-market fit
 
-- Do we know our stage and what we must prove next?
-- Are we validating before building, even though we can build fast?
-- Is our work reducing uncertainty, not just shipping code?
+- [ ] Do we know our current stage and what we must prove next?
+- [ ] Are we validating before building, even though we can build fast?
+- [ ] Are we solving problems together instead of hiding behind titles?
 
 If you cannot confidently answer these questions, don't start building yet.
 

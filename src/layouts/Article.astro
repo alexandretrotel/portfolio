@@ -49,3 +49,37 @@ const articleJsonLd = {
         <slot />
     </article>
 </Base>
+
+<script>
+    const key = `checklist:${location.pathname}`;
+    const boxes = [
+        ...document.querySelectorAll<HTMLInputElement>(
+            "article .task-list-item > input[type='checkbox']",
+        ),
+    ];
+
+    let saved: unknown = [];
+    try {
+        saved = JSON.parse(localStorage.getItem(key) ?? "[]");
+    } catch {}
+    const checked = Array.isArray(saved) ? saved : [];
+
+    const save = () => {
+        try {
+            localStorage.setItem(key, JSON.stringify(boxes.map((box) => box.checked)));
+        } catch {}
+    };
+
+    for (const [index, box] of boxes.entries()) {
+        const item = box.parentElement;
+        if (!item) continue;
+
+        const label = document.createElement("label");
+        label.append(...item.childNodes);
+        item.append(label);
+
+        box.disabled = false;
+        box.checked = checked[index] === true;
+        box.addEventListener("change", save);
+    }
+</script>
