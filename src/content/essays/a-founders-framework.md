@@ -105,7 +105,7 @@ Use your own product every day. This is called [dogfooding](https://en.wikipedia
 
 Always prefer businesses where you understand the problem yourself over ones where you need to keep asking users what they want.
 
-A swimming coach who has never been in the water can only repeat the textbook and what other swimmers tell them. They still can't tell you why you are sinking.
+A swimming coach who has never been in the water can only repeat the textbook and what other swimmers tell them. They can't swim themselves.
 
 ## II. A customer you understand
 
