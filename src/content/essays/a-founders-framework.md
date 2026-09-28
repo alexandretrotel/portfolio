@@ -19,19 +19,15 @@ Impressive or not, building was never the hardest part. The hardest part was und
 
 If you are about to start a company, use this as a checklist of the traps to avoid. It can save you the months I spent building before validating. It is a living document, updated as I learn.
 
-## The philosophy
+## The definition
 
-I am not looking for:
+Every criterion starts from one definition of what to look for:
 
-- a cool technology
-- an interesting product
-- a market that is currently fashionable
-- an idea that sounds impressive
-- a company for the sake of having a company
+> A painful problem, experienced by people the founders understand deeply, in a big enough market, where the team has an unusually strong founder-market fit and a credible path to [product-market fit](https://en.wikipedia.org/wiki/Product/market_fit).
 
-I am looking for:
+Everything else in this framework follows from it. A cool technology, an interesting product, a fashionable market or an idea that sounds impressive is not on the list. Neither is a company for the sake of having one.
 
-> A painful problem, experienced by people I understand deeply, in a big enough market, where the team has an unusually strong founder-market fit and a credible path to [product-market fit](https://en.wikipedia.org/wiki/Product/market_fit).
+If you don't agree with this definition, one of two things is true. Either you can define it better, and your definition is worth sharing. Or you don't really want to build a startup. You want something else, and that's fine.
 
 ## The parts
 
