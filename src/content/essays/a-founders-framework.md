@@ -25,67 +25,23 @@ Every criterion starts from one definition of what to look for:
 
 > A painful problem, experienced by people the founders understand deeply, in a big enough market, where the team has an unusually strong founder-market fit and a credible path to [product-market fit](https://en.wikipedia.org/wiki/Product/market_fit).
 
-Everything else in this framework follows from it. A cool technology, an interesting product, a fashionable market or an idea that sounds impressive is not on the list. Neither is a company for the sake of having one.
+Everything else in this framework unpacks it, phrase by phrase. A cool technology, an interesting product, a fashionable market or an idea that sounds impressive is not on the list. Neither is a company for the sake of having one.
 
 If you don't agree with this definition, one of two things is true. Either you can define it better, and your definition is worth sharing. Or you don't really want to build a startup. You want something else, and that's fine.
 
 ## The parts
 
-The framework is organized in nine parts:
+1. **A painful problem**
+2. **A customer you understand**
+3. **A big enough market**
+4. **A team built to last**
+5. **A path to product-market fit**
 
-- **Market:** founder-market fit, market size, market growth, risks.
-- **The problem:** problem before product, dogfooding, real pain, finding and keeping access to users.
-- **Product development:** following the stages of a startup, role of each member.
-- **Founder involvement:** everyone talks to users, everyone understands the tech.
-- **Founder quality:** never stop learning, keep the execution quality.
-- **Life and sustainability:** health as a company criterion.
-- **Team dynamics:** aligned philosophy, complementarity without silos, enjoying working together.
-- **My requirements:** the mistakes from our previous company that I refuse to repeat.
-- **The ultimate checklist:** the questions that decide whether to start.
+The checklist at the end sums it all up.
 
-## I. Market
+## I. A painful problem
 
-### 1. Strong founder-market fit
-
-Ideally, all founders should have a founder-market fit with the market:
-
-- **Experience:** the founders have personally experienced the problem.
-- **Knowledge:** they understand the users, workflows, terminology and existing solutions.
-- **Access:** they can naturally reach potential users, customers, experts and distribution channels.
-
-The ideal situation is when the founders are themselves members of the target market, able to understand the user's problem without months of research to become credible.
-
-A strong signal is when most of the founders have personally experienced the problem, ideally all of them. An exceptional signal is when they have experienced the problem repeatedly and already built their own workaround. That is stronger than someone saying "I think this would be useful."
-
-### 2. The market size should be big enough
-
-"Big market" should not mean a big [TAM](https://en.wikipedia.org/wiki/Total_addressable_market) slide. The question is:
-
-> If the team executes extremely well, can this become a very large company without changing markets completely?
-
-For a venture-scale company, my minimum bar is a credible $1B+ TAM with a realistic path toward $100M+ in annual revenue. But the calculation I trust more is bottom-up:
-
-**potential customers × realistic annual revenue per customer**
-
-For example, 500,000 potential customers each paying $2,000/year is a $1B market on paper. That is the TAM: everyone who could theoretically buy. The next step is to shrink it to the SAM, the portion of that market the company can realistically serve and reach. This is where small markets get exposed. If the reachable market is only $100M, then even winning an unrealistic 50% of it produces just a $50M business. Too small.
-
-TAMs are too easy to inflate. Forcing myself to model customers × price × achievable penetration makes the discussion concrete.
-
-One exception. A smaller market can still be attractive if growth is extremely fast, the market is structurally expanding, the initial market is a wedge into a much larger adjacent one, or the market is underestimated. But then I should write down why I believe the market will become much larger.
-
-I should also take the risks into account. If the business depends on one platform only, or if the market carries too much regulatory uncertainty, don't go. We learned this one the hard way: a single clause in a terms of service was enough to kill our company.
-
-### 3. Market growth matters
-
-I don't only want a large market. I want a market where the underlying need is becoming more important: secular growth, technological change, regulatory change, demographic change, new behaviors, increasing willingness to pay, increasing urgency.
-
-> Why is this problem going to become more important over the next 5 to 10 years?
-
-A stagnant market requires stealing customers. A growing market creates new ones.
-
-## II. The problem
-
-### 4. Start with a problem, not a product
+### 1. Problem before product
 
 I should be able to describe the problem without mentioning the solution.
 
@@ -93,71 +49,49 @@ Bad: "We should build an AI platform for X."
 
 Good: "People who do X struggle with Y because Z."
 
-Before talking about features, technology or architecture, I want to know:
+Before talking about features, technology or architecture, I want to know who experiences the problem, how often, how painful it is, how they solve it today, and why existing solutions fall short.
 
-- Who experiences the problem?
-- How frequently?
-- How painful is it?
-- What happens if they don't solve it?
-- How are they solving it today?
-- What does the current solution cost?
-- Why are existing solutions insufficient?
+The first objective is not to build a product. It is to prove the problem is painful enough that people will change their behavior to solve it.
 
-The initial objective is not to build a product. It is to prove the problem is painful enough that people will change their behavior to solve it.
+### 2. The pain must be real
 
-### 5. Dogfooding should be possible
-
-[Dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) is the best way to make a successful company for me. Ideally, all founders are users of the product.
-
-Why? Because dogfooding gives:
-
-- constant exposure to the problem
-- instant feedback
-- intuition about what matters
-- faster iteration
-- better product judgment
-- lower dependence on external interviews
-- a natural source of product ideas
-
-I am suspicious of businesses where the founders need to repeatedly ask users what they want because they don't understand the problem themselves.
-
-### 6. The pain must be real
-
-There is a scale: nice-to-have, useful, painful, urgent, existential. I strongly prefer painful or urgent. A good test:
+There is a scale: nice-to-have, useful, painful, urgent, existential. Aim for painful or urgent. A good test:
 
 > What does the user currently do because the product doesn't exist?
 
-If the answer is "nothing," that's a warning. If the answer is:
+If the answer is "nothing," that's a warning. If they spend 10 hours a week on it manually, lose money over it, or pay someone to handle it, it starts to look like a real problem.
 
-- spend 10 hours a week doing something manually
-- lose thousands of dollars
-- make repeated mistakes
-- employ someone specifically to handle it
-- use a terrible workaround
-- lose revenue
-- take significant risk
+**Mistake I made:** mistaking engagement for pain. People joining a Discord, liking something, or saying it is "cool" is not evidence of a painful problem.
 
-then it starts to look like a real problem.
+### 3. Dogfood it
 
-### 7. Users must be easy to find
+[Dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) is the best way I know to build a successful company. Ideally, every founder uses the product. It gives constant exposure to the problem, instant feedback, and an intuition about what matters that no interview can replace.
 
-This one comes directly from our experience. We came from a [web3](https://en.wikipedia.org/wiki/Web3)-like market. Getting users from Discord and into interviews was difficult, so we iterated the bad way: building a product to attract users, and getting lost in building a product rather than finding product-market fit and answering a problem.
+I am suspicious of businesses where the founders need to keep asking users what they want because they don't understand the problem themselves.
 
-So I should be able to identify and reach potential users before building the product.
+## II. People you understand
+
+### 4. Founder-market fit
+
+Ideally, every founder has a fit with the market:
+
+- **Experience:** they have personally experienced the problem.
+- **Knowledge:** they understand the users, workflows, terminology and existing solutions.
+- **Access:** they can naturally reach users, customers, experts and distribution channels.
+
+The ideal is founders who are themselves members of the target market, credible without months of research. An exceptional signal is when they have lived the problem repeatedly and already built their own workaround. That beats anyone saying "I think this would be useful."
+
+### 5. Find 20 users in two weeks
 
 > With zero product today, could I find 20 relevant users to interview within two weeks?
 
-And ideally, 100+ people with the problem, without having to build an audience first.
+I prefer markets where users are reachable through professional networks, companies, industry events, existing relationships, search, partnerships, or physical locations. I am cautious about markets where reaching users first requires building a community, an audience, or a new ecosystem.
 
-I prefer markets where users are reachable through existing professional networks, communities, companies, industry events, existing relationships, search, partnerships, or physical locations.
+Why? Because building the audience becomes the job, and the real job, understanding and solving a painful problem, [waits](https://en.wikipedia.org/wiki/Lean_software_development#Eliminate_waste). And the people it attracts come for the content, the community or the hype. Their feedback looks like validation when it isn't.
 
-I am cautious about markets where acquisition depends on creating a community first, building an audience, going viral, convincing people to join a new ecosystem, or building a product solely to attract the people I want to interview.
+**Mistake I made:** building to attract users. We came from a [web3](https://en.wikipedia.org/wiki/Web3)-like market where getting people from Discord into interviews was hard. So we built a product to attract them, and got lost building instead of finding product-market fit.
 
-Why? Because it [wastes time](https://en.wikipedia.org/wiki/Lean_software_development#Eliminate_waste) on something that is not solving the problem. Building the audience becomes the job, and the real job, understanding and solving a painful problem, waits. And the people it attracts are not necessarily people with a painful problem. They come for the content, the community or the hype, and their feedback looks like validation when it isn't.
-
-> I should be able to talk to users without building the product first.
-
-### 8. Users should be reachable repeatedly
+### 6. Keep access
 
 Finding users once isn't enough.
 
@@ -165,13 +99,100 @@ Finding users once isn't enough.
 
 The ideal market gives an ongoing loop: problem, interview, hypothesis, experiment, feedback, iteration. Not: build, launch, hope users appear, try to understand them. We lived the second one. Never again.
 
-## III. Product development
+## III. A big enough market
 
-### 9. Follow the stages
+### 7. Size it bottom-up
 
-Have a well defined process and follow carefully the classic stages of a startup. The team is answering a user's pain, not making a company or building a product at first. For example, following [Disciplined Entrepreneurship](https://www.d-eship.com), [Lean Startup](https://en.wikipedia.org/wiki/Lean_startup), [Customer Development](https://en.wikipedia.org/wiki/Customer_development), or [Jobs-to-be-Done](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done). The exact framework matters less than the discipline.
+"Big market" should not mean a big [TAM](https://en.wikipedia.org/wiki/Total_addressable_market) slide. The question is:
 
-At any moment I should know what stage the company is in and what must be proven before moving to the next one. For example:
+> If the team executes extremely well, can this become a very large company without changing markets completely?
+
+For a venture-scale company, my minimum bar is a credible $1B+ TAM with a realistic path toward $100M+ in annual revenue. But the calculation I trust is bottom-up:
+
+**potential customers × realistic annual revenue per customer**
+
+500,000 potential customers paying $2,000/year is a $1B market on paper. That is the TAM: everyone who could theoretically buy. Now shrink it to the SAM, the part the company can realistically reach and serve. This is where small markets get exposed. If the reachable market is $100M, even an unrealistic 50% share makes a $50M business. Too small.
+
+One exception: a smaller market can work if it grows extremely fast, is a wedge into a much larger adjacent one, or is underestimated. But then I should write down why I believe it will become much larger.
+
+### 8. The market must grow
+
+I want a market where the underlying need is becoming more important: technological change, regulatory change, demographic change, new behaviors, increasing willingness to pay.
+
+> Why is this problem going to become more important over the next 5 to 10 years?
+
+A stagnant market requires stealing customers. A growing market creates new ones.
+
+### 9. Never depend on one platform
+
+If the business depends on a single platform, or the market carries too much regulatory uncertainty, don't go.
+
+**Mistake I made:** we learned this one the hard way. A single clause in a platform's terms of service was enough to kill our company.
+
+## IV. A team built to last
+
+### 10. Everyone talks to users
+
+Every founder takes part in interviews, user calls, observations and customer discussions, and personally hears the problem from users. This prevents one founder from becoming the sole source of "customer truth."
+
+### 11. No technical black box
+
+Tech shouldn't rely on one founder. The technical founder masters the details, but everyone understands how the system works, the critical architecture, what is hard vs easy, and where the technical risk is. For deeply technical products, like an API or infrastructure, this is non-negotiable: the product is the technology.
+
+The best CEOs prove it is possible. [Patrick Collison](https://en.wikipedia.org/wiki/Patrick_Collison) runs Stripe and is a programmer. [Tobi Lütke](https://en.wikipedia.org/wiki/Tobias_L%C3%BCtke) runs Shopify and contributed to Ruby on Rails. [Jensen Huang](https://en.wikipedia.org/wiki/Jensen_Huang) runs NVIDIA and is an electrical engineer. [Drew Houston](https://en.wikipedia.org/wiki/Drew_Houston) wrote the first lines of Dropbox himself.
+
+> Specialization should determine where founders spend their time, not what they are capable of understanding.
+
+A founder can say "I don't have time to do this." They shouldn't say "I don't understand this part of our company."
+
+### 12. Agree before starting
+
+Before starting, all founders should explicitly agree on:
+
+- ambition and expected commitment
+- working hours and availability
+- risk tolerance and financial expectations
+- fundraising, company size, and exit vs independence
+- ownership, responsibilities and decision-making
+- what happens if someone wants to leave
+
+Do not postpone difficult conversations because "we'll figure it out later."
+
+### 13. Complementary, not siloed
+
+Complementary strengths: product, engineering, sales, distribution, domain expertise, operations. But complementarity should not mean silos.
+
+> Different areas of excellence, shared understanding of everything.
+
+### 14. Choose them again
+
+This sounds less analytical, but it matters enormously:
+
+> Would I willingly choose these people again if I were starting from zero?
+
+> Do I trust their judgment when I strongly disagree with them?
+
+> Can I have difficult conversations with them without damaging the relationship?
+
+A startup amplifies existing founder dynamics. What is mildly annoying before starting may become unbearable under pressure.
+
+### 15. Protect health and learning
+
+Founders should keep a sane baseline of sleep, physical activity, nutrition, relationships and time away from work.
+
+**Mistake I made:** I stopped taking time for sports and good sleep, even though I understood why they mattered. Understanding is not enough. It has to be protected by structure. One solution I want to try: an hours model close to a salaried job, with a start and an end to the day. A bounded schedule protects sleep and sports by default, and forces working better, not more.
+
+> A company that destroys its founders is not a successful company.
+
+Founders should also never stop learning. [Warren Buffett](https://en.wikipedia.org/wiki/Warren_Buffett) spends most of his day reading. Bill Gates disappears twice a year for Think Weeks, alone with a pile of books. Knowledge compounds like capital. Positive entertainment counts too: mangas, movies, art, music. It leaves something behind, a story, an idea, a skill. [Doomscrolling](https://en.wikipedia.org/wiki/Doomscrolling) leaves nothing.
+
+## V. A path to product-market fit
+
+### 16. Follow the stages
+
+The team is answering a user's pain, not making a company or building a product at first. Pick a method, like [Disciplined Entrepreneurship](https://www.d-eship.com), [Lean Startup](https://en.wikipedia.org/wiki/Lean_startup), [Customer Development](https://en.wikipedia.org/wiki/Customer_development) or [Jobs-to-be-Done](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done). The exact method matters less than the discipline.
+
+At any moment, I should know what stage the company is in and what must be proven before moving on. For example:
 
 1. Identify a problem
 2. Identify a specific customer segment
@@ -184,183 +205,55 @@ At any moment I should know what stage the company is in and what must be proven
 9. Build a repeatable sales and acquisition process
 10. Scale
 
-Founders should always try to understand the stage they are in and what they are trying to do in it. Each stage is a [learning process](https://en.wikipedia.org/wiki/Validated_learning), not a box to tick. Wanting to skip a stage is a signal in itself: it could mean the team doesn't understand its purpose, and in that case the work is to go back and [rework why this stage is necessary](https://en.wikipedia.org/wiki/Double-loop_learning) after all.
+Each stage is a [learning process](https://en.wikipedia.org/wiki/Validated_learning), not a box to tick. Wanting to skip one is a signal: the team probably doesn't understand its purpose, and should go back and [rework why it is necessary](https://en.wikipedia.org/wiki/Double-loop_learning). When the team blocks, the question is whether the blocker invalidates the whole idea or can be avoided. The focus stays on solving the stage, not advancing to the next.
 
-When the team blocks, it should ask whether the blocker is critical, meaning it invalidates the whole business idea, or whether it can be avoided. And to answer that, the focus should be on solving the stage, not on advancing to the following one.
+**Mistake I made:** skipping validation because I can build quickly. Being able to build fast makes validating first more important, not less.
 
-### 10. Roles come late
+### 17. Roles come late
 
-I am talking about the role of each team member. Titles like CEO, CTO, CFO or CMO don't mean anything at the beginning, especially when most of the members don't have much experience. A team of fresh graduates won't have deep expertise yet, and that is perfectly normal.
+Titles like CEO, CTO or CMO don't mean much at the beginning, especially for a team of fresh graduates without deep expertise yet. That is perfectly normal. Instead of handing out titles, focus on solving the problem. Roles should emerge from what the company actually needs.
 
-So instead of trying to divide tasks and hand out titles, focus on executing and solving the problem. The role of each member should emerge from what the company actually needs, not from a title decided on day one.
+### 18. Productivity before hours
 
-## IV. Founder involvement
-
-### 11. All founders talk to users
-
-All founders should take part in user interviews and discussions: interviews, user calls, observations, customer discussions, product decisions. No founder should be separated from users. Every founder should personally hear the problem from users. This prevents one founder from becoming the sole source of "customer truth."
-
-### 12. Tech should not rely on only one founder
-
-Tech shouldn't rely on only one founder, in the sense that the others should have a minimum intuition and know how to build the thing.
-
-This does not mean mastering every implementation detail. Everyone should understand how the system works, the major technical constraints, the critical architecture, what is difficult vs easy, what can be outsourced, what creates technical risk, and what the major trade-offs are. The technical founder should be substantially stronger and master the details.
-
-How strict to be depends on the market and the product. For deeply technical products, like an API or infrastructure, this is non-negotiable: the product is the technology, and a founder who cannot reason about it cannot make good decisions. For less technical products, the bar can be more relaxed.
-
-The best CEOs prove this is possible. [Patrick Collison](https://en.wikipedia.org/wiki/Patrick_Collison) runs Stripe and is a programmer. [Tobi Lütke](https://en.wikipedia.org/wiki/Tobias_L%C3%BCtke) runs Shopify and contributed to Ruby on Rails. [Jensen Huang](https://en.wikipedia.org/wiki/Jensen_Huang) runs NVIDIA and is an electrical engineer. [Drew Houston](https://en.wikipedia.org/wiki/Drew_Houston) wrote the first lines of Dropbox himself. Being CEO doesn't mean giving up technical depth. It means using it to make better decisions.
-
-### 13. Founders should be capable of building, not merely managing
-
-A right founder should excel everywhere but not have the time to focus on everything. Think of [Bill Gates](https://en.wikipedia.org/wiki/Bill_Gates), [Elon Musk](https://en.wikipedia.org/wiki/Elon_Musk), [Mark Zuckerberg](https://en.wikipedia.org/wiki/Mark_Zuckerberg) having a profound understanding of their product and users. The ideal founder isn't the person doing every task. They understand enough about users, technology, product, business, distribution and economics to make excellent decisions across the company.
-
-> Specialization should determine where founders spend their time, not what they are capable of understanding.
-
-A founder can say "I don't have time to do this." They shouldn't say "I don't understand this part of our company."
-
-## V. Founder quality
-
-### 14. Never stop learning
-
-Founders should never stop learning. Executing and producing is good, but on the long term what pays is what a founder still learns. The best entrepreneurs read a lot and still learn a lot. [Warren Buffett](https://en.wikipedia.org/wiki/Warren_Buffett) spends most of his day reading, and [Charlie Munger](https://en.wikipedia.org/wiki/Charlie_Munger) called him a learning machine. Bill Gates disappears twice a year for Think Weeks, alone with a pile of books. It's like building wealth: investing money at the beginning of the month builds wealth over time, and the same goes for knowledge and skills.
-
-Every founder should protect time for their own long-term growth. For example, reading, technical learning, talking to experts, studying markets and competitors, learning new tools, improving leadership and communication, developing domain expertise.
-
-But learning is not the only input that matters. Positive entertainment counts too: reading mangas, watching movies, going to an art exposition, making music. These activities feed curiosity, creativity and taste, and they recharge the mind in a way pure work never does.
-
-Don't get me wrong: scrolling on TikTok or Instagram is not positive entertainment. It is passive consumption designed to capture attention, and it will never be productive. The difference is simple. Positive entertainment leaves something behind: a story, an idea, an emotion, a skill. [Doomscrolling](https://en.wikipedia.org/wiki/Doomscrolling) leaves nothing.
-
-The goal isn't consuming content for its own sake. The goal is increasing the capability and the richness of the founder over time. Capabilities should compound just like capital does.
-
-### 15. Keep the execution quality
-
-Learning cannot become an excuse for low execution. Every founder should hold a sustainable rhythm: learn, decide, execute, measure, learn again.
-
-If someone consistently cannot follow the rhythm or keep up with the day to day job, the way of working is not good, and the team should find out why. The answer shouldn't automatically be "work more." First look at prioritization, focus, working methods, communication, delegation, organization, health, energy, unnecessary work.
+Every founder should hold a sustainable rhythm: learn, decide, execute, measure, learn again. If someone can't keep up, the answer shouldn't automatically be "work more." First look at prioritization, focus, working methods, delegation and energy.
 
 > Optimize [productivity](https://en.wikipedia.org/wiki/Productivity) before optimizing hours.
 
-## VI. Life and sustainability
+**Mistake I made:** confusing activity with progress. Shipping code is not necessarily progress. Progress means reducing uncertainty.
 
-### 16. Founder health is part of the company
+## The checklist
 
-Having a good life hygiene is extremely important. A founder should keep a sane baseline of sleep, physical activity, nutrition, mental health, relationships, and time away from work. Doing sports is strongly preferred, but at least work in a sane environment, for mental health and quality of work.
+Before committing to a new company, the whole founding team should be able to answer "yes" to most of these.
 
-I say this because I failed at it. I stopped taking time for sports and good sleep, even though I understood the necessity of it. Understanding is not enough. It has to be protected by structure.
-
-One solution I want to try: following an hours model close to a salaried job, with a start and an end to the day. It sounds counterintuitive for a founder, but a bounded schedule protects sleep and sports by default, and it also forces a founder to work better, not more.
-
-> A company that destroys its founders is not a successful company.
-
-Founders are choosing to spend years together. The working environment should let them remain effective for years, not just survive six months of intense effort.
-
-## VII. Team dynamics
-
-### 17. Agree on the philosophy before starting
-
-Before starting, all founders should explicitly agree on:
-
-- ambition
-- expected commitment
-- working hours and availability
-- risk tolerance
-- financial expectations
-- fundraising philosophy
-- desired company size
-- desired exit vs independence
-- decision-making
-- ownership
-- responsibilities
-- conflict resolution
-- what happens if someone wants to leave
-
-Do not postpone difficult conversations because "we'll figure it out later."
-
-### 18. Complementarity without silos
-
-Complementary strengths: product, engineering, sales, distribution, domain expertise, operations. But complementarity should not mean silos. Everyone should understand the whole company.
-
-> Different areas of excellence, shared understanding of everything.
-
-### 19. Genuinely enjoy working together
-
-This sounds less analytical, but it matters enormously. The questions I ask myself:
-
-> Would I willingly choose these people again if I were starting from zero?
-
-> Do I trust their judgment when I strongly disagree with them?
-
-> Can I have difficult conversations with them without damaging the relationship?
-
-A startup amplifies existing founder dynamics. If something is mildly annoying before starting, it may become unbearable under pressure.
-
-## VIII. My requirements
-
-Based on my previous companies, I explicitly want to avoid:
-
-1. **Building before finding users.** If I cannot identify and speak with users, I don't build.
-2. **Building to attract users.** Never create a product merely because I don't know how to reach users.
-3. **Mistaking engagement for pain.** People joining a Discord, liking something, or saying something is "cool" is not evidence of a painful problem.
-4. **Falling in love with technology.** Technology is an enabler. It isn't the problem.
-5. **Premature product definition.** Don't spend months defining the product before proving the underlying problem.
-6. **Founder silos.** No founder disconnected from users, product or technology.
-7. **Skipping validation because I can build quickly.** Being able to build something quickly makes it more important, not less, to validate before building.
-8. **Confusing activity with progress.** Shipping code is not necessarily progress. Progress means reducing uncertainty.
-
-## IX. The ultimate checklist
-
-Before committing to a new company, I want the whole founding team to be able to answer "yes" to most of these.
-
-### Market
-
-- Do we have strong founder-market fit?
-- Have at least 66% of us personally experienced the problem?
-- Ideally, have all of us experienced it?
-- Is there a credible $1B+ TAM?
-- Is there a credible path toward $100M+ annual revenue?
-- Is the underlying market growing?
-- Can we explain why this market becomes more important over 5 to 10 years?
-
-### Problem
+### A painful problem
 
 - Can we describe the problem without describing our solution?
-- Is the problem genuinely painful, and do we deeply understand it?
 - Do people already spend time, money or effort solving it?
-- Is it frequent enough to matter?
 - Can we dogfood the solution?
+
+### People you understand
+
+- Have at least two thirds of us personally experienced the problem?
 - Can we find 20 relevant users within two weeks?
-- Can we maintain access to users throughout development?
+- Can we keep access to them throughout development?
 
-### Product
+### A big enough market
 
-- Are we solving a problem rather than building a product?
-- Do we know what stage of startup development we're in?
-- Do we know what we need to prove next?
-- Are we resisting premature product definition?
-- Are we following a disciplined methodology?
-- When we block, do we check whether the blocker invalidates the whole idea?
-- Can we commit to discovering the truth before falling in love with what we want to build?
+- Is there a credible, bottom-up path toward $100M+ annual revenue?
+- Is the market growing, and can we explain why?
+- Does the business survive if one platform changes its rules?
 
-### Founders
+### A team built to last
 
-- Does every founder participate in user interviews?
-- Does every founder understand the product deeply?
-- Does every founder understand the core technology?
-- Is there no critical technical black box owned by one founder?
-- Are our skills complementary?
-- Do we trust each other's judgment?
-- Can we disagree productively?
-- Do we have aligned ambitions and commitment levels?
-- Are we unusually well positioned to solve this problem compared with other teams?
+- Does every founder talk to users and understand the core technology?
+- Have we agreed on ambition, commitment, ownership and exit?
+- Would we choose each other again, for the next 5 to 10 years?
 
-### Long-term
+### A path to product-market fit
 
-- Does every founder commit around 10% of time to long-term learning?
-- Do we have sustainable working habits?
-- Are we physically and mentally taking care of ourselves?
-- Can we imagine doing this together for 5 to 10 years?
-- Are we building a company we actually want to live with?
-- Does this market justify dedicating years of our lives to it?
+- Do we know our stage and what we must prove next?
+- Are we validating before building, even though we can build fast?
+- Is our work reducing uncertainty, not just shipping code?
 
 If I cannot confidently answer these questions, I shouldn't start building yet.
 
