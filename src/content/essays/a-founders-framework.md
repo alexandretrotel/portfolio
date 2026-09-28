@@ -311,7 +311,7 @@ Each stage is a [learning process](https://en.wikipedia.org/wiki/Validated_learn
 
 If you feel like skipping a stage, it usually means you don't see its purpose yet. Stop and [ask yourself why it exists](https://en.wikipedia.org/wiki/Double-loop_learning) before moving on.
 
-### Roles come late
+### Roles should come late
 
 Titles like CEO, CTO or CMO don't mean much at the beginning, especially for a team of fresh graduates without deep expertise yet. That is perfectly normal. Instead of handing out titles, focus on solving the problem. Roles should emerge from what the company actually needs.
 
