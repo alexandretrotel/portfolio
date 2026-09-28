@@ -301,9 +301,11 @@ The student wants to learn the flashy moves right away. Only later does he reali
 
 A startup works the same way. Each stage builds what the next one depends on, and skipping one leaves a gap you pay for later.
 
-At first, you are answering a user's pain, not making a company or building a product. This is the core idea of the [Lean Startup](https://en.wikipedia.org/wiki/Lean_startup).
+In the early stages, your job is not to build a company or a product. Your job is to learn whether the problem is real and whether your solution fixes it.
 
-Treat every belief about your business as a hypothesis, test it as cheaply as possible, and only invest more once the test says yes. Build, measure, learn, repeat.
+That is the core idea of the [Lean Startup](https://en.wikipedia.org/wiki/Lean_startup). Everything you believe about your business is a guess until users prove it.
+
+So you build the smallest thing that can test a guess, measure how users react, and learn whether to keep going or change course. Then you repeat that loop, and you only invest more once the evidence says yes.
 
 Skipping a stage almost always means investing money and time in something you haven't validated. Six months of development on a problem nobody confirmed is six months you don't get back.
 
