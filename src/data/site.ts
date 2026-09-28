@@ -3,10 +3,11 @@ export const JSON_LD_CONTEXT = "https://schema.org";
 export const SITE = {
   url: "https://www.alexandretrotel.org",
   name: "Alexandre Trotel",
-  title: "Alexandre Trotel | Entrepreneur & Open Source Developer",
-  description: "Alexandre Trotel, entrepreneur and open source developer.",
+  title: "Alexandre Trotel | Founder & Engineer",
+  description:
+    "Alexandre Trotel, founder and engineer. Founder of Zap Studio, previously co-founder and CTO of Radion and Mindify.",
   twitter: "@alexandretrotel",
-  jobTitle: "Entrepreneur & Open Source Developer",
+  jobTitle: "Founder & Engineer",
   sameAs: [
     "https://github.com/alexandretrotel",
     "https://www.linkedin.com/in/alexandretrotel",
@@ -19,26 +20,7 @@ export const SITE = {
   },
 } as const;
 
-export const PROJECTS = [
-  {
-    name: "todo-tree",
-    url: "https://github.com/alexandretrotel/todo-tree",
-    blurb: "for surfacing TODO comments",
-  },
-  {
-    name: "dotfiles-manager",
-    url: "https://github.com/alexandretrotel/dotfiles-manager",
-    blurb: "for dotfile management",
-  },
-  {
-    name: "feedyourai",
-    url: "https://github.com/alexandretrotel/feedyourai",
-    blurb: "for LLM code compression",
-  },
-] as const;
-
-export const OPTIONAL_LINKS = [
-  { name: "Source", url: "https://github.com/alexandretrotel/portfolio" },
+export const FOOTER_LINKS = [
   { name: "GitHub", url: "https://github.com/alexandretrotel" },
   { name: "X", url: "https://x.com/alexandretrotel" },
 ] as const;

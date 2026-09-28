@@ -1,9 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
-import { JSON_LD_CONTEXT, SITE, PROJECTS } from "../data/site";
+import { JSON_LD_CONTEXT, SITE, FOOTER_LINKS } from "../data/site";
 
-const essays = await getCollection("essays");
+const essays = (await getCollection("essays")).sort(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
 
 const profilePageJsonLd = {
     "@context": JSON_LD_CONTEXT,
@@ -16,6 +18,11 @@ const profilePageJsonLd = {
         description: SITE.description,
         url: SITE.url,
         sameAs: SITE.sameAs,
+        worksFor: {
+            "@type": "Organization",
+            name: SITE.founder.name,
+            url: SITE.founder.url,
+        },
         founder: {
             "@type": "Organization",
             name: SITE.founder.name,
@@ -61,28 +68,81 @@ const websiteJsonLd = {
 >
     <h1>{SITE.name}</h1>
     <p>
-        Founded{" "}
+        I'm Alexandre, a founder and engineer. I start companies and write the
+        software behind them.
+    </p>
+    <h2>Work</h2>
+    <p>
+        Today, I run{" "}
         <a href={SITE.founder.url} target="_blank" rel="noreferrer">
             {SITE.founder.name}
-        </a>{" "}
-        to ship the type-safe, framework-agnostic and composable TypeScript libraries
-        the web is still missing.
+        </a>, where I build type-safe TypeScript libraries that work in any
+        framework and any runtime: 16 packages, zero dependencies, 7,000+
+        downloads a month.
     </p>
-    <p>Making open-source tools that developers use daily:</p>
-    <ul>
-        {
-            PROJECTS.map((project) => (
-                <li>
-                    <a href={project.url} target="_blank" rel="noreferrer">
-                        {project.name}
-                    </a>{" "}
-                    {project.blurb}
-                </li>
-            ))
-        }
-    </ul>
+    <p>
+        Alongside it, I co-founded{" "}
+        <a href="https://x.com/radion_app" target="_blank" rel="noreferrer">Radion</a>, a real-time data platform for prediction markets,
+        as CTO. We ingested 8 billion Polymarket events in under two days and
+        served them at 70ms p95.
+    </p>
+    <p>
+        Before Radion, I was a full stack engineer at{" "}
+        <a href="https://www.allohouston.fr/" target="_blank" rel="noreferrer"
+            ><i>ALLO</i><b>HOUSTON</b></a
+        >,
+        first as an intern, then as a freelancer. I synced our database with a
+        client's CRM state, built OCR document processing, and prepared the
+        stack for AI code review.
+    </p>
+    <p>
+        Earlier, I co-founded Mindify as CTO and shipped a web and mobile app with 1,000+
+        downloads. Around the same time, I interned at{" "}
+        <a href="https://www.siborg.io/" target="_blank" rel="noreferrer">SiBorg</a>{" "}
+        as a full stack engineer and won
+        The Graph Prize at the Coinbase Onchain Summer hackathon.
+    </p>
+    <p>
+        It all started with{" "}
+        <a href="https://coinmarketcap.com/currencies/trotelcoin-v2/" target="_blank" rel="noreferrer">TrotelCoin</a>, my first company: a Web3 project with 10+ Solidity
+        contracts and 200+ app users. In parallel, I was vice president of N7
+        Consulting, where I led a team of 26 and generated €100K in revenue.
+    </p>
 
-    <p>Read some of my essays below:</p>
+    <h2>Projects</h2>
+    <p>
+        From Zap Studio,{" "}
+        <a
+            href="https://www.zapstudio.dev/docs/permit"
+            target="_blank"
+            rel="noreferrer">@zap-studio/permit</a
+        >{" "}
+        supports ABAC and RBAC out of the box and keeps permission policies in
+        one place, with full type safety.
+    </p>
+    <p>
+        On the side, I maintain developer tools:{" "}
+        <a
+            href="https://github.com/alexandretrotel/todo-tree"
+            target="_blank"
+            rel="noreferrer">todo-tree</a
+        >{" "}
+        finds every TODO comment in a codebase,{" "}
+        <a
+            href="https://github.com/alexandretrotel/dotfiles-manager"
+            target="_blank"
+            rel="noreferrer">dotfiles-manager</a
+        >{" "}
+        keeps dotfiles consistent across machines with profiles, and{" "}
+        <a
+            href="https://github.com/alexandretrotel/feedyourai"
+            target="_blank"
+            rel="noreferrer">feedyourai</a
+        >{" "}
+        packs a codebase into one file for LLM context.
+    </p>
+
+    <h2>Writing</h2>
     <ul>
         {
             essays.map((essay) => (
@@ -92,4 +152,18 @@ const websiteJsonLd = {
             ))
         }
     </ul>
+
+    <footer>
+        <ul>
+            {
+                FOOTER_LINKS.map((link) => (
+                    <li>
+                        <a href={link.url} target="_blank" rel="noreferrer">
+                            {link.name}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </footer>
 </Base>

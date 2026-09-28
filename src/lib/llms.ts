@@ -31,7 +31,7 @@ export const rootLlmsTxt = (essays: CollectionEntry<"essays">[]) => {
 
   return `# ${SITE.name}
 
-> Personal site of ${SITE.name}, entrepreneur and open source developer. Founder of Zap Studio, where the work is type-safe, framework-agnostic TypeScript libraries for the web.
+> Personal site of ${SITE.name}, founder and engineer. Founder of Zap Studio, where the work is type-safe, framework-agnostic TypeScript libraries for the web. Previously co-founder and CTO of Radion (real-time prediction market data) and Mindify.
 
 Essays live under \`/essays/\` as individual HTML files, each linked from the home page and listed in the sitemap. Every page also has a markdown twin at the same path with a \`.md\` extension (e.g. \`/essays/a-founders-framework.md\`).
 
@@ -48,7 +48,7 @@ This is not an API and has no programmatic endpoints beyond the static files lis
 
 ## Site
 
-- [Home](${SITE.url}/): bio, current work, links to every essay.
+- [Home](${SITE.url}/): bio, work history, projects, links to every essay.
 - [Sitemap](${SITE.url}/sitemap-index.xml): every indexable URL.
 - [Agent instructions](${SITE.url}/agents.md): the same context as this file, for agents that look for \`agents.md\` first.
 
@@ -58,7 +58,7 @@ ${essayItems}
 
 ## Projects
 
-- [Zap Studio](https://www.zapstudio.dev): framework-agnostic TypeScript libraries for the web, covering fetch, permit, retry, validation and webhooks.
+- [Zap Studio](https://www.zapstudio.dev): 16 zero-dependency, framework-agnostic TypeScript libraries for the web, including webhooks, permit, fetch, retry and validation.
 - [todo-tree](https://github.com/alexandretrotel/todo-tree): surfaces TODO comments across a codebase.
 - [dotfiles-manager](https://github.com/alexandretrotel/dotfiles-manager): dotfile management.
 - [fyai](https://github.com/alexandretrotel/feedyourai): compresses code for LLMs.

@@ -228,3 +228,35 @@ hr {
   border: 0;
   border-top: 1px solid var(--border);
 }
+
+main > h2 {
+  margin-top: 2.5rem;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}
+
+main > h2 + ul {
+  margin-top: 1rem;
+}
+
+main > footer {
+  margin-top: 3rem;
+}
+
+main > footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-left: 0;
+  list-style: none;
+  font-size: 0.875rem;
+}
+
+main > footer a {
+  color: var(--muted-foreground);
+  text-decoration: none;
+}
+
+main > footer a:hover {
+  color: var(--foreground);
+}
