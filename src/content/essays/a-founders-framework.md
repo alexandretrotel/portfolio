@@ -313,7 +313,21 @@ If you feel like skipping a stage, it usually means you don't see its purpose ye
 
 ### Roles should come late
 
-Titles like CEO, CTO or CMO don't mean much at the beginning, especially for a team of fresh graduates without deep expertise yet. That is perfectly normal. Instead of handing out titles, focus on solving the problem. Roles should emerge from what the company actually needs.
+Titles like CEO, CTO or CMO mean little at the beginning. Most early teams don't have the experience to fill them yet, and that is perfectly normal.
+
+The needs also change constantly. This month the company needs interviews, next month a prototype, the month after that its first sales.
+
+A role fixed on day one describes a company that doesn't exist yet. Titles only start to mean something once the company grows and the work becomes stable enough to divide.
+
+So, instead of handing out titles, focus on solving the problem. Let roles emerge from what the company actually needs, and from what each of you turns out to be good at.
+
+The best startup cultures work this way. A problem belongs to whoever can solve it, not to whoever holds the title.
+
+At Tesla, Elon Musk [told employees](https://www.inc.com/justin-bariso/this-email-from-elon-musk-to-tesla-employees-descr.html) that anyone can and should talk to anyone else, skipping the chain of command, if that is the fastest way to solve a problem.
+
+At Stripe, the Collison brothers didn't wait for a sales team. When someone agreed to try Stripe, they would say "Right then, give me your laptop" and [set it up themselves](https://paulgraham.com/ds.html).
+
+Everyone helps, not only engineers. The CTO joins sales calls, the CEO answers support tickets, and nobody says "that's not my job." Put your ego aside. The company doesn't need your title. It needs the problem solved.
 
 ### Productivity before hours
 
