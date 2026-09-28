@@ -228,7 +228,7 @@ Before starting, you and your cofounders should explicitly agree on:
 - ownership, responsibilities and decision-making
 - what happens if someone wants to leave
 
-Do not postpone difficult conversations because you think that "you'll figure it out later."
+Have the difficult conversations now. "We'll figure it out later" usually means fighting about it later, under pressure.
 
 ### Complementary, not siloed
 
