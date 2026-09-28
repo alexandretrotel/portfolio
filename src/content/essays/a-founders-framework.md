@@ -57,9 +57,9 @@ Good: "People who do X struggle with Y because Z."
 
 This is called a business thesis, or [problem statement](https://en.wikipedia.org/wiki/Problem_statement).
 
-You may have written one in class and thought it was bullshit. The point is to make it concrete that you are solving a problem, not building a product.
+You may have written one in class and thought it was bullshit. Its job is to force you to name the pain before you picture the solution.
 
-This difference shapes your whole mindset: are you building a product, or solving a problem?
+That shift changes everything downstream: what you build, who you talk to, and how you know you are winning.
 
 To write a good one, you need five answers about the problem:
 
