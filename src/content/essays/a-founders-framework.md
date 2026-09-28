@@ -329,6 +329,10 @@ At Stripe, the Collison brothers didn't wait for a sales team. When someone agre
 
 Everyone helps, not only engineers. The CTO joins sales calls, the CEO answers support tickets, and nobody says "that's not my job." Put your ego aside. The company doesn't need your title. It needs the problem solved.
 
+Then why give titles at all? Mostly for culture and convenience. A title is a shortcut that tells people roughly what you do in one word.
+
+Explaining your actual week to your friends would take ten minutes. Saying "I'm a full stack developer" takes two seconds.
+
 ### Productivity before hours
 
 Hold a sustainable rhythm: learn, decide, execute, measure, learn again. If you or a cofounder can't keep up, the answer shouldn't automatically be "work more." First look at prioritization, focus, working methods, delegation and energy.
