@@ -209,7 +209,7 @@ This prevents one person from becoming the sole source of "customer truth."
 
 The same goes for tech. It shouldn't rely on one person.
 
-The technical co-founder masters the details, but everyone understands how the system works, the critical architecture, what is hard vs easy, and where the technical risk is.
+The technical co-founder masters the details, but everyone should understand how the system works, the critical architecture, what is hard vs easy, and where the technical risk is.
 
 Otherwise, the people making decisions can't see the risk coming.
 
