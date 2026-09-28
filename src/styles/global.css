@@ -175,6 +175,20 @@ article h3 {
   margin-top: 2rem;
 }
 
+article :is(h2, h3) {
+  scroll-margin-top: 1.5rem;
+}
+
+article :is(h2, h3) > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+article :is(h2, h3) > a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
 blockquote {
   margin: 1.25rem 0 0;
   padding-left: 1rem;
