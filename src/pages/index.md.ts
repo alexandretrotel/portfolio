@@ -22,7 +22,7 @@ Today, I run [${SITE.founder.name}](${SITE.founder.url}), where I build type-saf
 
 Alongside it, I co-founded [Radion](https://x.com/radion_app), a real-time data platform for prediction markets, as CTO. We ingested 8 billion Polymarket events in under two days and served them at 70ms p95.
 
-Before Radion, I was a full stack engineer at [ALLOHOUSTON](https://www.allohouston.fr/), first as an intern, then as a freelancer. I synced our database with a client's CRM state, built OCR document processing, and prepared the stack for AI code review.
+Before Radion, I was a full stack engineer at [ALLOHOUSTON](https://www.allohouston.fr/), first as an intern, then as a freelancer. I wrote the conflict resolution that kept our database and a client's CRM in sync without losing local state, built an end-to-end OCR pipeline with computer vision, and prepared the stack for AI code review.
 
 Earlier, I co-founded Mindify as CTO and shipped a web and mobile app with 1,000+ downloads. Around the same time, I interned at [SiBorg](https://www.siborg.io/) as a full stack engineer and won The Graph Prize at the Coinbase Onchain Summer hackathon.
 
