@@ -301,22 +301,15 @@ Skipping a stage almost always means investing money and time in something you h
 
 There are rare exceptions. Some "fat startups" raise big money early and build heavily before validating, like hardware or deep tech companies that can't test cheaply. If you are reading this, you are most likely not one of them.
 
-At any moment, you should know what stage the company is in and what must be proven before moving on. For example:
+At any moment, you should know which stage you are in and what must be proven before moving on. The Lean Startup path has three:
 
-1. Identify a problem
-2. Identify a specific customer segment
-3. Validate the problem
-4. Understand existing alternatives
-5. Formulate hypotheses
-6. Test willingness to pay and behavior
-7. Build the [smallest possible solution](https://en.wikipedia.org/wiki/Minimum_viable_product)
-8. Validate product-market fit
-9. Build a repeatable sales and acquisition process
-10. Scale
+1. **Problem-solution fit.** Pick a specific customer segment, validate the problem through interviews, understand the existing alternatives, and test whether people would pay for your idea. You are done when customers describe the problem without prompting and commit to trying your solution, with a preorder, a pilot or a letter of intent.
+2. **Product-market fit.** Build the [smallest possible solution](https://en.wikipedia.org/wiki/Minimum_viable_product) and put it in real hands. You are done when users come back on their own, pay, and would be upset if it disappeared.
+3. **Scale.** Build a repeatable sales and acquisition process, then grow. You are done when each new customer brings in more than they cost, and growth becomes predictable.
 
-Each stage is a [learning process](https://en.wikipedia.org/wiki/Validated_learning), not a box to tick. Wanting to skip one is a signal: you probably don't understand its purpose, and should go back and [rework why it is necessary](https://en.wikipedia.org/wiki/Double-loop_learning). When you get blocked, the question is whether the blocker invalidates the whole idea or can be avoided. The focus stays on solving the stage, not advancing to the next.
+Each stage is a [learning process](https://en.wikipedia.org/wiki/Validated_learning), not a box to tick.
 
-**Mistake I've made:** skipping validation because I could build quickly. Being able to build fast makes validating first more important, not less.
+If you feel like skipping a stage, it usually means you don't see its purpose yet. Stop and [ask yourself why it exists](https://en.wikipedia.org/wiki/Double-loop_learning) before moving on.
 
 ### Roles come late
 
