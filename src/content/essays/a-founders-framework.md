@@ -1,15 +1,23 @@
 ---
 title: A founder's framework
-description: A living document of requirements and learnings from my entrepreneurship journey. The criteria I set for myself before starting the next company.
+description: The criteria to check before starting a company, on market, product development and team. Built from the mistakes of four ventures, so you don't have to repeat them.
 date: 2026-08-04
 updated: true
 ---
 
-I decided to define the criteria I will hold myself to so I do not repeat the mistakes I made: the market, the product development, and the team. I will keep it up to date as I learn.
+Most startups don't fail because the product can't be built. They fail because the problem isn't painful enough.
 
-It is a kind of summary of what I did well and what I did bad, and from these experiences I build my own framework.
+None of this is new. Anyone serious about startups has already read it: solve a customer's problem, talk to users, validate before building.
 
-I also think what I learn may serve other founders who wish to launch their own company. This is of course based on my own experience, but I doubt I'm the only one experiencing this.
+But here's the thing, most founders I talk to can recite it. Few apply it. Knowing the rule is easy. Noticing you are breaking it, while you are breaking it, is hard.
+
+Or, it just means you are lying to yourself, because you don't really know what you want from your life yet. That's okay too.
+
+Every criterion listed here comes from a mistake I made. Over four ventures, I shipped 10+ smart contracts to 200+ users, a mobile app with 1,000+ downloads, and a data platform that ingested 8 billion events in under two days.
+
+Impressive or not, building was never the hardest part. The hardest part was understanding the customer's problem, then getting them to pay for our solution.
+
+If you are about to start a company, use this as a checklist of the traps to avoid. It can save you the months I spent building before validating. It is a living document, updated as I learn.
 
 ## The philosophy
 
