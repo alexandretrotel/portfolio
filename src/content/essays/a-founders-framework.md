@@ -23,7 +23,7 @@ If you are about to start a company, use this as a checklist of the traps to avo
 
 Every criterion starts from one definition of what to look for:
 
-> A painful problem, experienced by people the founders understand deeply, in a big enough market, where the team has an unusually strong founder-market fit and a credible path to [product-market fit](https://en.wikipedia.org/wiki/Product/market_fit).
+> A painful problem, experienced by people you understand deeply, in a big enough market, where your team has an unusually strong founder-market fit and a credible path to [product-market fit](https://en.wikipedia.org/wiki/Product/market_fit).
 
 Everything else in this framework unpacks it, phrase by phrase. A cool technology, an interesting product, a fashionable market or an idea that sounds impressive is not on the list. Neither is a company for the sake of having one.
 
@@ -43,7 +43,7 @@ The [checklist](#the-checklist) at the end sums it all up.
 
 ### Problem before product
 
-Founders should be able to describe the problem without mentioning the solution.
+You should be able to describe the problem without mentioning the solution.
 
 Bad: "We should build an AI platform for X."
 
@@ -87,9 +87,9 @@ If the answer is "nothing," that's a warning. If they spend 10 hours a week on i
 
 ### Dogfood it
 
-The best founders use their own product every day. This is called [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food). Living with the problem gives instant feedback and an intuition about what matters that no interview can replace.
+Use your own product every day. This is called [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food). Living with the problem gives instant feedback and an intuition about what matters that no interview can replace.
 
-Always prefer businesses where the founders understand the problem themselves over ones where they need to keep asking users what they want.
+Always prefer businesses where you understand the problem yourself over ones where you need to keep asking users what they want.
 
 A swimming coach who has never been in the water can repeat what the textbook says, but can't tell you why you are sinking.
 
@@ -97,17 +97,21 @@ A swimming coach who has never been in the water can repeat what the textbook sa
 
 ### Founder-market fit
 
-Ideally, every founder has a fit with the market:
+[Founder-market fit](https://cdixon.org/2011/06/19/foundermarket-fit/) means you are the right person for this specific market.
 
-- **Experience:** they have personally experienced the problem.
-- **Knowledge:** they understand the users, workflows, terminology and existing solutions.
-- **Access:** they can naturally reach users, customers, experts and distribution channels.
+There are three levels:
 
-The ideal is founders who are themselves members of the target market, credible without months of research. An exceptional signal is when they have lived the problem repeatedly and already built their own workaround. That beats anyone saying "I think this would be useful."
+- **Experience:** you have lived the problem. For example, you managed a restaurant for years and reordered supplies every morning at 7am.
+- **Knowledge:** you know the users, workflows, jargon and existing tools. For example, you know which suppliers only take orders by phone.
+- **Access:** you can reach users, experts and distribution channels without cold outreach. For example, you can call ten restaurant owners tomorrow.
+
+Always prefer markets you are part of. You are credible from day one, without months of research.
+
+The strongest signal is having lived the problem many times and already built your own workaround. That beats anyone saying "I think this would be useful."
 
 ### Find 20 users in two weeks
 
-> With zero product today, could the team find 20 relevant users to interview within two weeks?
+> With zero product today, could you find 20 relevant users to interview within two weeks?
 
 Prefer markets where users are reachable through professional networks, companies, industry events, existing relationships, search, partnerships, or physical locations. Be cautious about markets where reaching users first requires building a community, an audience, or a new ecosystem.
 
@@ -119,7 +123,7 @@ Why? Because building the audience becomes the job, and the real job, understand
 
 Finding users once isn't enough.
 
-> Can the team keep continuous access to the same category of users through the entire product-development process?
+> Can you keep continuous access to the same category of users through the entire product-development process?
 
 The ideal market gives an ongoing loop: problem, interview, hypothesis, experiment, feedback, iteration. Not: build, launch, hope users appear, try to understand them. We lived the second one. Never again.
 
@@ -129,7 +133,7 @@ The ideal market gives an ongoing loop: problem, interview, hypothesis, experime
 
 "Big market" should not mean a big [TAM](https://en.wikipedia.org/wiki/Total_addressable_market) slide. The question is:
 
-> If the team executes extremely well, can this become a very large company without changing markets completely?
+> If you execute extremely well, can this become a very large company without changing markets completely?
 
 For a venture-scale company, the minimum bar is a credible $1B+ TAM with a realistic path toward $100M+ in annual revenue. But the calculation to trust is bottom-up:
 
@@ -157,21 +161,21 @@ If the business depends on a single platform, or the market carries too much reg
 
 ### Everyone talks to users
 
-Every founder takes part in interviews, user calls, observations and customer discussions, and personally hears the problem from users. This prevents one founder from becoming the sole source of "customer truth."
+You and every cofounder take part in interviews, user calls, observations and customer discussions, and hear the problem from users firsthand. This prevents one person from becoming the sole source of "customer truth."
 
 ### No technical black box
 
-Tech shouldn't rely on one founder. The technical founder masters the details, but everyone understands how the system works, the critical architecture, what is hard vs easy, and where the technical risk is. For deeply technical products, like an API or infrastructure, this is non-negotiable: the product is the technology.
+Tech shouldn't rely on one person. Your technical cofounder masters the details, but everyone understands how the system works, the critical architecture, what is hard vs easy, and where the technical risk is. For deeply technical products, like an API or infrastructure, this is non-negotiable: the product is the technology.
 
 The best CEOs prove it is possible. [Patrick Collison](https://en.wikipedia.org/wiki/Patrick_Collison) runs Stripe and is a programmer. [Tobi Lütke](https://en.wikipedia.org/wiki/Tobias_L%C3%BCtke) runs Shopify and contributed to Ruby on Rails. [Jensen Huang](https://en.wikipedia.org/wiki/Jensen_Huang) runs NVIDIA and is an electrical engineer. [Drew Houston](https://en.wikipedia.org/wiki/Drew_Houston) wrote the first lines of Dropbox himself.
 
-> Specialization should determine where founders spend their time, not what they are capable of understanding.
+> Specialization should determine where you spend your time, not what they are capable of understanding.
 
-A founder can say "I don't have time to do this." They shouldn't say "I don't understand this part of our company."
+You can say "I don't have time to do this." You shouldn't say "I don't understand this part of our company."
 
 ### Agree before starting
 
-Before starting, all founders should explicitly agree on:
+Before starting, you and your cofounders should explicitly agree on:
 
 - ambition and expected commitment
 - working hours and availability
@@ -198,25 +202,25 @@ This sounds less analytical, but it matters enormously:
 
 > Can you have difficult conversations with them without damaging the relationship?
 
-A startup amplifies existing founder dynamics. What is mildly annoying before starting may become unbearable under pressure.
+A startup amplifies existing dynamics between cofounders. What is mildly annoying before starting may become unbearable under pressure.
 
 ### Protect health and learning
 
-Founders should keep a sane baseline of sleep, physical activity, nutrition, relationships and time away from work.
+Keep a sane baseline of sleep, physical activity, nutrition, relationships and time away from work.
 
 **Mistake I've made:** I stopped taking time for sports and good sleep, even though I understood why they mattered. Understanding is not enough. It has to be protected by structure. One solution worth trying: an hours model close to a salaried job, with a start and an end to the day. A bounded schedule protects sleep and sports by default, and forces working better, not more.
 
-> A company that destroys its founders is not a successful company.
+> A company that destroys you is not a successful company.
 
-Founders should also never stop learning. [Warren Buffett](https://en.wikipedia.org/wiki/Warren_Buffett) spends most of his day reading. Bill Gates disappears twice a year for Think Weeks, alone with a pile of books. Knowledge compounds like capital. Positive entertainment counts too: mangas, movies, art, music. It leaves something behind, a story, an idea, a skill. [Doomscrolling](https://en.wikipedia.org/wiki/Doomscrolling) leaves nothing.
+Never stop learning either. [Warren Buffett](https://en.wikipedia.org/wiki/Warren_Buffett) spends most of his day reading. Bill Gates disappears twice a year for Think Weeks, alone with a pile of books. Knowledge compounds like capital. Positive entertainment counts too: mangas, movies, art, music. It leaves something behind, a story, an idea, a skill. [Doomscrolling](https://en.wikipedia.org/wiki/Doomscrolling) leaves nothing.
 
 ## V. A path to product-market fit
 
 ### Follow the stages
 
-The team is answering a user's pain, not making a company or building a product at first. Pick a method, like [Disciplined Entrepreneurship](https://www.d-eship.com), [Lean Startup](https://en.wikipedia.org/wiki/Lean_startup), [Customer Development](https://en.wikipedia.org/wiki/Customer_development) or [Jobs-to-be-Done](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done). The exact method matters less than the discipline.
+At first, you are answering a user's pain, not making a company or building a product. Pick a method, like [Disciplined Entrepreneurship](https://www.d-eship.com), [Lean Startup](https://en.wikipedia.org/wiki/Lean_startup), [Customer Development](https://en.wikipedia.org/wiki/Customer_development) or [Jobs-to-be-Done](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done). The exact method matters less than the discipline.
 
-At any moment, the team should know what stage the company is in and what must be proven before moving on. For example:
+At any moment, you should know what stage the company is in and what must be proven before moving on. For example:
 
 1. Identify a problem
 2. Identify a specific customer segment
@@ -229,7 +233,7 @@ At any moment, the team should know what stage the company is in and what must b
 9. Build a repeatable sales and acquisition process
 10. Scale
 
-Each stage is a [learning process](https://en.wikipedia.org/wiki/Validated_learning), not a box to tick. Wanting to skip one is a signal: the team probably doesn't understand its purpose, and should go back and [rework why it is necessary](https://en.wikipedia.org/wiki/Double-loop_learning). When the team blocks, the question is whether the blocker invalidates the whole idea or can be avoided. The focus stays on solving the stage, not advancing to the next.
+Each stage is a [learning process](https://en.wikipedia.org/wiki/Validated_learning), not a box to tick. Wanting to skip one is a signal: you probably don't understand its purpose, and should go back and [rework why it is necessary](https://en.wikipedia.org/wiki/Double-loop_learning). When you get blocked, the question is whether the blocker invalidates the whole idea or can be avoided. The focus stays on solving the stage, not advancing to the next.
 
 **Mistake I've made:** skipping validation because I could build quickly. Being able to build fast makes validating first more important, not less.
 
@@ -239,7 +243,7 @@ Titles like CEO, CTO or CMO don't mean much at the beginning, especially for a t
 
 ### Productivity before hours
 
-Every founder should hold a sustainable rhythm: learn, decide, execute, measure, learn again. If someone can't keep up, the answer shouldn't automatically be "work more." First look at prioritization, focus, working methods, delegation and energy.
+Hold a sustainable rhythm: learn, decide, execute, measure, learn again. If you or a cofounder can't keep up, the answer shouldn't automatically be "work more." First look at prioritization, focus, working methods, delegation and energy.
 
 > Optimize [productivity](https://en.wikipedia.org/wiki/Productivity) before optimizing hours.
 
@@ -247,7 +251,7 @@ Every founder should hold a sustainable rhythm: learn, decide, execute, measure,
 
 ## The checklist
 
-Before committing to a new company, the whole founding team should be able to answer "yes" to most of these.
+Before committing to a new company, you and your cofounders should be able to answer "yes" to most of these.
 
 ### A painful problem
 
@@ -269,7 +273,7 @@ Before committing to a new company, the whole founding team should be able to an
 
 ### A team built to last
 
-- Does every founder talk to users and understand the core technology?
+- Does each of us talk to users and understand the core technology?
 - Have we agreed on ambition, commitment, ownership and exit?
 - Would we choose each other again, for the next 5 to 10 years?
 
@@ -279,7 +283,7 @@ Before committing to a new company, the whole founding team should be able to an
 - Are we validating before building, even though we can build fast?
 - Is our work reducing uncertainty, not just shipping code?
 
-If the team cannot confidently answer these questions, it shouldn't start building yet.
+If you cannot confidently answer these questions, don't start building yet.
 
 The goal is not to predict that a company will succeed. The goal is to make sure that, before committing years of your life, you have earned the right to take the next step.
 
