@@ -9,15 +9,15 @@ Most startups don't fail because the product can't be built. They fail because t
 
 None of this is new. Anyone serious about startups has already read it: solve a customer's problem, talk to users, validate before building.
 
-But here's the thing, most founders I talk to can recite it. Few apply it. Knowing the rule is easy. Noticing you are breaking it, while you are breaking it, is hard.
+But here's the thing, most founders can recite it. Few apply it. Knowing the rule is easy. Noticing you are breaking it, while you are breaking it, is hard.
 
 Or, it just means you are lying to yourself, because you don't really know what you want from your life yet. That's okay too.
 
-Every criterion listed here comes from a mistake I made. Over four ventures, I shipped 10+ smart contracts to 200+ users, a mobile app with 1,000+ downloads, and a data platform that ingested 8 billion events in under two days.
+Every criterion listed here comes from a mistake we made. Over four ventures, we shipped 10+ smart contracts to 200+ users, a mobile app with 1,000+ downloads, and a data platform that ingested 8 billion events in under two days.
 
 Impressive or not, building was never the hardest part. The hardest part was understanding the customer's problem, then getting them to pay for our solution.
 
-If you are about to start a company, use this as a checklist of the traps to avoid. It can save you the months I spent building before validating. It is a living document, updated as I learn.
+If you are about to start a company, use this as a checklist of the traps to avoid. It can save you the months we spent building before validating. It is a living document, updated as we learn.
 
 ## The definition
 
@@ -43,13 +43,25 @@ The checklist at the end sums it all up.
 
 ### 1. Problem before product
 
-I should be able to describe the problem without mentioning the solution.
+Founders should be able to describe the problem without mentioning the solution.
 
 Bad: "We should build an AI platform for X."
 
 Good: "People who do X struggle with Y because Z."
 
-Before talking about features, technology or architecture, I want to know who experiences the problem, how often, how painful it is, how they solve it today, and why existing solutions fall short.
+This is called a business thesis, or [problem statement](https://en.wikipedia.org/wiki/Problem_statement).
+
+You may have written one in class and thought it was bullshit. The point is to make it concrete that you are solving a problem, not building a product.
+
+The difference is subtle, but the way you pitch and define what you do shapes your whole mindset: are you building a product, or solving a problem?
+
+Before talking about features, technology or architecture, know:
+
+- **Who experiences it:** a specific group, not "everyone." For example, independent restaurant owners with one to three locations, not "restaurants."
+- **How often:** daily, weekly, once a year. For example, they reorder supplies every morning before service.
+- **How painful it is:** the cost in time, money or risk. For example, 45 minutes each morning, and a missing ingredient can cost a full night of sales.
+- **How they solve it today:** the current workaround. For example, a notebook, WhatsApp messages to suppliers, and a spreadsheet nobody updates.
+- **Why existing solutions fall short:** For example, inventory software built for chains is too expensive and takes weeks to set up.
 
 The first objective is not to build a product. It is to prove the problem is painful enough that people will change their behavior to solve it.
 
@@ -61,13 +73,13 @@ There is a scale: nice-to-have, useful, painful, urgent, existential. Aim for pa
 
 If the answer is "nothing," that's a warning. If they spend 10 hours a week on it manually, lose money over it, or pay someone to handle it, it starts to look like a real problem.
 
-**Mistake I made:** mistaking engagement for pain. People joining a Discord, liking something, or saying it is "cool" is not evidence of a painful problem.
+**Mistake we made:** mistaking engagement for pain. People joining a Discord, liking something, or saying it is "cool" is not evidence of a painful problem.
 
 ### 3. Dogfood it
 
-[Dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) is the best way I know to build a successful company. Ideally, every founder uses the product. It gives constant exposure to the problem, instant feedback, and an intuition about what matters that no interview can replace.
+[Dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) is the best way we know to build a successful company. Ideally, every founder uses the product. It gives constant exposure to the problem, instant feedback, and an intuition about what matters that no interview can replace.
 
-I am suspicious of businesses where the founders need to keep asking users what they want because they don't understand the problem themselves.
+Be suspicious of businesses where the founders need to keep asking users what they want because they don't understand the problem themselves.
 
 ## II. People you understand
 
@@ -83,19 +95,19 @@ The ideal is founders who are themselves members of the target market, credible 
 
 ### 5. Find 20 users in two weeks
 
-> With zero product today, could I find 20 relevant users to interview within two weeks?
+> With zero product today, could the team find 20 relevant users to interview within two weeks?
 
-I prefer markets where users are reachable through professional networks, companies, industry events, existing relationships, search, partnerships, or physical locations. I am cautious about markets where reaching users first requires building a community, an audience, or a new ecosystem.
+Prefer markets where users are reachable through professional networks, companies, industry events, existing relationships, search, partnerships, or physical locations. Be cautious about markets where reaching users first requires building a community, an audience, or a new ecosystem.
 
 Why? Because building the audience becomes the job, and the real job, understanding and solving a painful problem, [waits](https://en.wikipedia.org/wiki/Lean_software_development#Eliminate_waste). And the people it attracts come for the content, the community or the hype. Their feedback looks like validation when it isn't.
 
-**Mistake I made:** building to attract users. We came from a [web3](https://en.wikipedia.org/wiki/Web3)-like market where getting people from Discord into interviews was hard. So we built a product to attract them, and got lost building instead of finding product-market fit.
+**Mistake we made:** building to attract users. We came from a [web3](https://en.wikipedia.org/wiki/Web3)-like market where getting people from Discord into interviews was hard. So we built a product to attract them, and got lost building instead of finding product-market fit.
 
 ### 6. Keep access
 
 Finding users once isn't enough.
 
-> Can I keep continuous access to the same category of users through the entire product-development process?
+> Can the team keep continuous access to the same category of users through the entire product-development process?
 
 The ideal market gives an ongoing loop: problem, interview, hypothesis, experiment, feedback, iteration. Not: build, launch, hope users appear, try to understand them. We lived the second one. Never again.
 
@@ -107,17 +119,17 @@ The ideal market gives an ongoing loop: problem, interview, hypothesis, experime
 
 > If the team executes extremely well, can this become a very large company without changing markets completely?
 
-For a venture-scale company, my minimum bar is a credible $1B+ TAM with a realistic path toward $100M+ in annual revenue. But the calculation I trust is bottom-up:
+For a venture-scale company, the minimum bar is a credible $1B+ TAM with a realistic path toward $100M+ in annual revenue. But the calculation to trust is bottom-up:
 
 **potential customers × realistic annual revenue per customer**
 
 500,000 potential customers paying $2,000/year is a $1B market on paper. That is the TAM: everyone who could theoretically buy. Now shrink it to the SAM, the part the company can realistically reach and serve. This is where small markets get exposed. If the reachable market is $100M, even an unrealistic 50% share makes a $50M business. Too small.
 
-One exception: a smaller market can work if it grows extremely fast, is a wedge into a much larger adjacent one, or is underestimated. But then I should write down why I believe it will become much larger.
+One exception: a smaller market can work if it grows extremely fast, is a wedge into a much larger adjacent one, or is underestimated. But then write down why it will become much larger.
 
 ### 8. The market must grow
 
-I want a market where the underlying need is becoming more important: technological change, regulatory change, demographic change, new behaviors, increasing willingness to pay.
+Look for a market where the underlying need is becoming more important: technological change, regulatory change, demographic change, new behaviors, increasing willingness to pay.
 
 > Why is this problem going to become more important over the next 5 to 10 years?
 
@@ -127,7 +139,7 @@ A stagnant market requires stealing customers. A growing market creates new ones
 
 If the business depends on a single platform, or the market carries too much regulatory uncertainty, don't go.
 
-**Mistake I made:** we learned this one the hard way. A single clause in a platform's terms of service was enough to kill our company.
+**Mistake we made:** we learned this one the hard way. A single clause in a platform's terms of service was enough to kill our company.
 
 ## IV. A team built to last
 
@@ -168,11 +180,11 @@ Complementary strengths: product, engineering, sales, distribution, domain exper
 
 This sounds less analytical, but it matters enormously:
 
-> Would I willingly choose these people again if I were starting from zero?
+> Would you willingly choose these people again if you were starting from zero?
 
-> Do I trust their judgment when I strongly disagree with them?
+> Do you trust their judgment when you strongly disagree with them?
 
-> Can I have difficult conversations with them without damaging the relationship?
+> Can you have difficult conversations with them without damaging the relationship?
 
 A startup amplifies existing founder dynamics. What is mildly annoying before starting may become unbearable under pressure.
 
@@ -180,7 +192,7 @@ A startup amplifies existing founder dynamics. What is mildly annoying before st
 
 Founders should keep a sane baseline of sleep, physical activity, nutrition, relationships and time away from work.
 
-**Mistake I made:** I stopped taking time for sports and good sleep, even though I understood why they mattered. Understanding is not enough. It has to be protected by structure. One solution I want to try: an hours model close to a salaried job, with a start and an end to the day. A bounded schedule protects sleep and sports by default, and forces working better, not more.
+**Mistake we made:** we stopped taking time for sports and good sleep, even though we understood why they mattered. Understanding is not enough. It has to be protected by structure. One solution worth trying: an hours model close to a salaried job, with a start and an end to the day. A bounded schedule protects sleep and sports by default, and forces working better, not more.
 
 > A company that destroys its founders is not a successful company.
 
@@ -192,7 +204,7 @@ Founders should also never stop learning. [Warren Buffett](https://en.wikipedia.
 
 The team is answering a user's pain, not making a company or building a product at first. Pick a method, like [Disciplined Entrepreneurship](https://www.d-eship.com), [Lean Startup](https://en.wikipedia.org/wiki/Lean_startup), [Customer Development](https://en.wikipedia.org/wiki/Customer_development) or [Jobs-to-be-Done](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done). The exact method matters less than the discipline.
 
-At any moment, I should know what stage the company is in and what must be proven before moving on. For example:
+At any moment, the team should know what stage the company is in and what must be proven before moving on. For example:
 
 1. Identify a problem
 2. Identify a specific customer segment
@@ -207,7 +219,7 @@ At any moment, I should know what stage the company is in and what must be prove
 
 Each stage is a [learning process](https://en.wikipedia.org/wiki/Validated_learning), not a box to tick. Wanting to skip one is a signal: the team probably doesn't understand its purpose, and should go back and [rework why it is necessary](https://en.wikipedia.org/wiki/Double-loop_learning). When the team blocks, the question is whether the blocker invalidates the whole idea or can be avoided. The focus stays on solving the stage, not advancing to the next.
 
-**Mistake I made:** skipping validation because I can build quickly. Being able to build fast makes validating first more important, not less.
+**Mistake we made:** skipping validation because we could build quickly. Being able to build fast makes validating first more important, not less.
 
 ### 17. Roles come late
 
@@ -219,7 +231,7 @@ Every founder should hold a sustainable rhythm: learn, decide, execute, measure,
 
 > Optimize [productivity](https://en.wikipedia.org/wiki/Productivity) before optimizing hours.
 
-**Mistake I made:** confusing activity with progress. Shipping code is not necessarily progress. Progress means reducing uncertainty.
+**Mistake we made:** confusing activity with progress. Shipping code is not necessarily progress. Progress means reducing uncertainty.
 
 ## The checklist
 
@@ -255,13 +267,13 @@ Before committing to a new company, the whole founding team should be able to an
 - Are we validating before building, even though we can build fast?
 - Is our work reducing uncertainty, not just shipping code?
 
-If I cannot confidently answer these questions, I shouldn't start building yet.
+If the team cannot confidently answer these questions, it shouldn't start building yet.
 
-The goal is not to predict that a company will succeed. The goal is to make sure that, before committing years of my life, I have earned the right to take the next step.
+The goal is not to predict that a company will succeed. The goal is to make sure that, before committing years of your life, you have earned the right to take the next step.
 
 ## Sources
 
-I can't list everything. Many, many books and readings shaped my current philosophy. But these are the essential reads:
+Not everything can be listed here. Many, many books and readings shaped this framework. But these are the essential reads:
 
 - [The Mom Test](https://www.momtestbook.com) by Rob Fitzpatrick, on talking to users without fooling yourself
 - [The Lean Startup](https://theleanstartup.com) by Eric Ries, on validated learning and build-measure-learn
