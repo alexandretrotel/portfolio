@@ -87,9 +87,11 @@ If the answer is "nothing," that's a warning. If they spend 10 hours a week on i
 
 ### Dogfood it
 
-[Dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) is the best way we know to build a successful company. Ideally, every founder uses the product. It gives constant exposure to the problem, instant feedback, and an intuition about what matters that no interview can replace.
+The best founders use their own product every day. This is called [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food). Living with the problem gives instant feedback and an intuition about what matters that no interview can replace.
 
-Be suspicious of businesses where the founders need to keep asking users what they want because they don't understand the problem themselves.
+Always prefer businesses where the founders understand the problem themselves over ones where they need to keep asking users what they want.
+
+A swimming coach who has never been in the water can repeat what the textbook says, but can't tell you why you are sinking.
 
 ## II. People you understand
 
