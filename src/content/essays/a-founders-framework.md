@@ -285,7 +285,7 @@ Finally, rest. Most of what people call rest is not rest. An hour of [doomscroll
 
 Positive entertainment is different. Books, mangas, webtoons, movies, good YouTube videos, art and music leave something behind, a story, an idea, a skill.
 
-Even games count, as long as they are great ones. Not the free games designed to keep you hooked, but paid games made by people who care.
+Even video games count, as long as they are great ones. Not the free games designed to keep you hooked, but paid games made by people who care.
 
 If I showed you my screen time, you would see almost no social media, and hours of books, webtoons and YouTube videos. Change your habits. It is far healthier.
 
