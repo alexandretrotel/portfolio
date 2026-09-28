@@ -159,7 +159,9 @@ The opposite is building, launching, hoping users show up, and only then trying 
 
 The market sets the ceiling on what great execution can reach. The best fisherman in the world still can't catch more fish than the lake holds.
 
-"Big market" should not mean a big [TAM](https://en.wikipedia.org/wiki/Total_addressable_market) slide. The question is:
+"Big market" should not mean a big [TAM](https://en.wikipedia.org/wiki/Total_addressable_market) slide.
+
+The question is:
 
 > If you execute extremely well, can this become a very large company without changing markets completely?
 
