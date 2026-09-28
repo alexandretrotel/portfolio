@@ -260,7 +260,9 @@ A startup amplifies existing dynamics between founders. What is mildly annoying 
 
 I can't insist enough on this one. Keep a sane baseline of sleep, physical activity, nutrition, relationships and time away from work.
 
-Don't fall for the FOMO of founders bragging about 100-hour weeks. The pragmatic choice is to stay healthy. If you can't, because you keep working more, it means one of two things:
+Don't fall for the FOMO of founders bragging about 100-hour weeks. The pragmatic choice is to stay healthy.
+
+If you can't, because you keep working more, it means one of two things:
 
 - **You can't see the real problem.** A tired founder needs more hours to produce what a rested one would with better priorities and more focus. You are working more to make up for working worse, and you are too tired to notice.
 - **The bar is too high for you right now.** You are not yet good enough to reach it at a healthy pace. Then lower the bar.
