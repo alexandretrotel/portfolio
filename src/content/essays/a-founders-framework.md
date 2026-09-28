@@ -81,7 +81,9 @@ Thus, a new solution has to be roughly ten times better to make people switch.
 
 A product is either a vitamin or a painkiller. A vitamin is nice to take, and easy to skip. A painkiller is something people go looking for, and pay for, the moment it hurts.
 
-Pain comes on a scale: nice-to-have, useful, painful, urgent, existential. Aim for painful or urgent. The others don't work for a startup:
+Pain comes on a scale: nice-to-have, useful, painful, urgent, existential.
+
+Aim for painful or urgent. The others don't work for a startup:
 
 - **Nice-to-have:** people agree it's a good idea, then never change their habits. Nobody pays to fix a problem they can live with.
 - **Useful:** people use it when it's free and easy, but it's the first thing cut when budgets shrink.
@@ -103,7 +105,7 @@ Use your own product every day. This is called [dogfooding](https://en.wikipedia
 
 Always prefer businesses where you understand the problem yourself over ones where you need to keep asking users what they want.
 
-A swimming coach who has never been in the water can repeat what the textbook says, but can't tell you why you are sinking.
+A swimming coach who has never been in the water can only repeat the textbook and what other swimmers tell them. They still can't tell you why you are sinking.
 
 ## II. People you understand
 
