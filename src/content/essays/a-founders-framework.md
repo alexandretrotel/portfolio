@@ -244,13 +244,11 @@ To avoid it, share the work that matters. Join customer calls together, review t
 
 This sounds less analytical, but it matters enormously:
 
-> Would you willingly choose these people again if you were starting from zero?
+- Would you willingly choose these people again if you were starting from zero?
+- Do you trust their judgment when you strongly disagree with them?
+- Can you have difficult conversations with them without damaging the relationship?
 
-> Do you trust their judgment when you strongly disagree with them?
-
-> Can you have difficult conversations with them without damaging the relationship?
-
-A startup amplifies existing dynamics between cofounders. What is mildly annoying before starting may become unbearable under pressure.
+A startup amplifies existing dynamics between founders. What is mildly annoying before starting may become unbearable under pressure.
 
 ### Protect health and learning
 
