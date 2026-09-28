@@ -232,9 +232,13 @@ Have the difficult conversations now. "We'll figure it out later" usually means 
 
 ### Complementary, not siloed
 
-Complementary strengths: product, engineering, sales, distribution, domain expertise, operations. But complementarity should not mean silos.
+A good founding team covers different ground.
 
-> Different areas of excellence, shared understanding of everything.
+One of you is strong in product, another in engineering, another in sales or in the domain itself. Two engineers alone will build a great product nobody hears about. Two salespeople alone will sell something they can't build.
+
+But different strengths should not become separate worlds. In a siloed team, the engineer never hears a customer, the salesperson promises features without knowing what they cost, and each side blames the other when things slip.
+
+To avoid it, share the work that matters. Join customer calls together, review the product together, and explain your decisions to each other until everyone could defend them.
 
 ### Choose them again
 
