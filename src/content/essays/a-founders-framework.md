@@ -1,7 +1,7 @@
 ---
 title: A founder's framework
 description: The criteria to check before starting a company, on market, product development and team. Built from the mistakes of four ventures, so you don't have to repeat them.
-date: 2026-08-04
+date: 2026-09-28
 updated: true
 ---
 
@@ -13,11 +13,13 @@ But here's the thing, most founders can recite it. Few apply it. Knowing the rul
 
 Or, it just means you are lying to yourself, because you don't really know what you want from your life yet. That's okay too.
 
-Every criterion listed here comes from a mistake we made. Over four ventures, we shipped 10+ smart contracts to 200+ users, a mobile app with 1,000+ downloads, and a data platform that ingested 8 billion events in under two days.
+Every criterion listed here comes from a mistake I've made.
 
-Impressive or not, building was never the hardest part. The hardest part was understanding the customer's problem, then getting them to pay for our solution.
+Over four ventures, I've shipped 10+ smart contracts to 200+ users, a mobile app with 1,000+ downloads, and a data platform that ingested 8 billion events in under two days.
 
-If you are about to start a company, use this as a checklist of the traps to avoid. It can save you the months we spent building before validating. It is a living document, updated as we learn.
+Impressive or not, building was never the hardest part. The hardest part was understanding the customer's problem, then getting them to pay for my solution.
+
+If you are about to start a company, use this as a checklist of the traps to avoid. It can save you the months I've spent building before validating. It is a living document, updated as I learn.
 
 ## The definition
 
@@ -25,9 +27,13 @@ Every criterion starts from one definition of what to look for:
 
 > A painful problem, experienced by people you understand deeply, in a big enough market, where your team has an unusually strong founder-market fit and a credible path to [product-market fit](https://en.wikipedia.org/wiki/Product/market_fit).
 
-Everything else in this framework unpacks it, phrase by phrase. A cool technology, an interesting product, a fashionable market or an idea that sounds impressive is not on the list. Neither is a company for the sake of having one.
+Everything else in this framework unpacks it, phrase by phrase.
 
-If you don't agree with this definition, one of two things is true. Either you can define it better, and your definition is worth sharing. Or you don't really want to build a startup. You want something else, and that's fine.
+A cool technology, an interesting product, a fashionable market or an idea that sounds impressive is not on the list.
+
+If you don't agree with this definition, one of two things is true.
+
+Either you can define it better, and your definition is worth sharing. Or you don't really want to build a startup. You want something else, and that's fine.
 
 ## The parts
 
@@ -53,9 +59,9 @@ This is called a business thesis, or [problem statement](https://en.wikipedia.or
 
 You may have written one in class and thought it was bullshit. The point is to make it concrete that you are solving a problem, not building a product.
 
-The difference is subtle, but the way you pitch and define what you do shapes your whole mindset: are you building a product, or solving a problem?
+This difference shapes your whole mindset: are you building a product, or solving a problem?
 
-Before talking about features, technology or architecture, know:
+To write a good one, you need five answers about the problem:
 
 - **Who experiences it:** a specific group, not "everyone." For example, independent restaurant owners with one to three locations, not "restaurants."
 - **How often:** daily, weekly, once a year. For example, they reorder supplies every morning before service.
@@ -63,7 +69,13 @@ Before talking about features, technology or architecture, know:
 - **How they solve it today:** the current workaround. For example, a notebook, WhatsApp messages to suppliers, and a spreadsheet nobody updates.
 - **Why existing solutions fall short:** For example, inventory software built for chains is too expensive and takes weeks to set up.
 
-The first objective is not to build a product. It is to prove the problem is painful enough that people will change their behavior to solve it.
+Remember that your goal is not to build a product. It is to prove the problem is painful enough that people will change their behavior to solve it.
+
+And changing behavior is very hard. People stick with the bad spreadsheet they know over the better tool they would have to learn.
+
+For example, Harvard professor John Gourville [found](https://hbr.org/2006/06/eager-sellers-and-stony-buyers-understanding-the-psychology-of-new-product-adoption) that users overvalue what they already have by about three times, while the people building a new product overvalue it by about three times.
+
+Thus, a new solution has to be roughly ten times better to make people switch.
 
 ### The pain must be real
 
