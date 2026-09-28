@@ -193,19 +193,29 @@ If the business depends on a single platform, or the market carries too much reg
 
 ## IV. A team built to last
 
-### Everyone talks to users
+### Every founder talks to users
 
-You and every cofounder take part in interviews, user calls, observations and customer discussions, and hear the problem from users firsthand. This prevents one person from becoming the sole source of "customer truth."
+You and every founder should take part in interviews, user calls, observations and customer discussions. Basically, everyone should hear the problem from users firsthand.
+
+This prevents one person from becoming the sole source of "customer truth."
 
 ### No technical black box
 
-Tech shouldn't rely on one person. Your technical cofounder masters the details, but everyone understands how the system works, the critical architecture, what is hard vs easy, and where the technical risk is. For deeply technical products, like an API or infrastructure, this is non-negotiable: the product is the technology.
+The same goes for tech. It shouldn't rely on one person.
 
-The best CEOs prove it is possible. [Patrick Collison](https://en.wikipedia.org/wiki/Patrick_Collison) runs Stripe and is a programmer. [Tobi Lütke](https://en.wikipedia.org/wiki/Tobias_L%C3%BCtke) runs Shopify and contributed to Ruby on Rails. [Jensen Huang](https://en.wikipedia.org/wiki/Jensen_Huang) runs NVIDIA and is an electrical engineer. [Drew Houston](https://en.wikipedia.org/wiki/Drew_Houston) wrote the first lines of Dropbox himself.
+The technical co-founder masters the details, but everyone understands how the system works, the critical architecture, what is hard vs easy, and where the technical risk is.
 
-> Specialization should determine where you spend your time, not what they are capable of understanding.
+Otherwise, the people making decisions can't see the risk coming.
 
-You can say "I don't have time to do this." You shouldn't say "I don't understand this part of our company."
+Friendster is the classic example. As the site grew, pages became painfully slow, but the board kept pushing new features and deals instead of fixing the infrastructure. Users left for MySpace, and Friendster [never recovered](https://www.nytimes.com/2006/10/15/business/yourmoney/15friend.html).
+
+For deeply technical products, like an API or infrastructure, this is non-negotiable since the product is mostly the technology.
+
+Look at who runs the biggest tech companies. Many of their CEOs are technical experts too: [Patrick Collison](https://en.wikipedia.org/wiki/Patrick_Collison) (Stripe), [Tobi Lütke](https://en.wikipedia.org/wiki/Tobias_L%C3%BCtke) (Shopify) and [Drew Houston](https://en.wikipedia.org/wiki/Drew_Houston) (Dropbox) all started as programmers.
+
+So if you are not technical, start learning now. It matters even more with AI. When anyone can generate a product in a weekend, the edge goes to people who master the hard things others don't understand.
+
+The best CEOs will be the ones who see what others can't, and being technical is one pillar of that.
 
 ### Agree before starting
 
@@ -218,7 +228,7 @@ Before starting, you and your cofounders should explicitly agree on:
 - ownership, responsibilities and decision-making
 - what happens if someone wants to leave
 
-Do not postpone difficult conversations because "we'll figure it out later."
+Do not postpone difficult conversations because you think that "you'll figure it out later."
 
 ### Complementary, not siloed
 
