@@ -287,7 +287,19 @@ Anyway, I could write about health and learning for hours, and I encourage you t
 
 ### Follow the stages
 
-At first, you are answering a user's pain, not making a company or building a product. Pick a method, like [Disciplined Entrepreneurship](https://www.d-eship.com), [Lean Startup](https://en.wikipedia.org/wiki/Lean_startup), [Customer Development](https://en.wikipedia.org/wiki/Customer_development) or [Jobs-to-be-Done](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done). The exact method matters less than the discipline.
+Think of the old master in martial arts films who makes his student repeat boring chores for days.
+
+The student wants to learn the flashy moves right away. Only later does he realize every chore was building the skills he needed to fight.
+
+A startup works the same way. Each stage builds what the next one depends on, and skipping one leaves a gap you pay for later.
+
+At first, you are answering a user's pain, not making a company or building a product. This is the core idea of the [Lean Startup](https://en.wikipedia.org/wiki/Lean_startup).
+
+Treat every belief about your business as a hypothesis, test it as cheaply as possible, and only invest more once the test says yes. Build, measure, learn, repeat.
+
+Skipping a stage almost always means investing money and time in something you haven't validated. Six months of development on a problem nobody confirmed is six months you don't get back.
+
+There are rare exceptions. Some "fat startups" raise big money early and build heavily before validating, like hardware or deep tech companies that can't test cheaply. If you are reading this, you are most likely not one of them.
 
 At any moment, you should know what stage the company is in and what must be proven before moving on. For example:
 
