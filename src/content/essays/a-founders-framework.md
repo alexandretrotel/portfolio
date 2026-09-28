@@ -333,14 +333,6 @@ Then why give titles at all? Mostly for culture and convenience. A title is a sh
 
 Explaining your actual week to your friends would take ten minutes. Saying "I'm a full stack developer" takes two seconds.
 
-### Productivity before hours
-
-Hold a sustainable rhythm: learn, decide, execute, measure, learn again. If you or a cofounder can't keep up, the answer shouldn't automatically be "work more." First look at prioritization, focus, working methods, delegation and energy.
-
-> Optimize [productivity](https://en.wikipedia.org/wiki/Productivity) before optimizing hours.
-
-**Mistake I've made:** confusing activity with progress. Shipping code is not necessarily progress. Progress means reducing uncertainty.
-
 ## The checklist
 
 Before committing to a new company, you and your cofounders should be able to answer "yes" to most of these.
