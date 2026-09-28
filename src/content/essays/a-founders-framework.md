@@ -59,7 +59,7 @@ This is called a business thesis, or [problem statement](https://en.wikipedia.or
 
 You may have written one in class and thought it was bullshit. Its job is to force you to name the pain before you picture the solution.
 
-That shift changes everything downstream: what you build, who you talk to, and how you know you are winning.
+That shift changes what you build, who you talk to, and how you know you are winning.
 
 To write a good one, you need five answers about the problem:
 
@@ -141,9 +141,13 @@ Even worse, the people it attracts come for the content, the community or the hy
 
 ### Keep access
 
-Finding users once isn't enough.
+Finding users once isn't enough. Ten great interviews at the start get you a thesis, not a product. You need to reach the same kind of user again and again.
 
-> Can you keep continuous access to the same category of users through the entire product-development process?
+You will want to test your first mockup with them, watch them use the first version, and ask why they stopped using it after a week.
+
+Every step of building raises a new question, and only those users can answer it. If you lose access after the first round, you end up guessing, and guessing is how you build something nobody asked for.
+
+So before you commit, ask yourself whether you will still be able to talk to these people in six months, every week if you need to.
 
 The ideal market gives an ongoing loop: problem, interview, hypothesis, experiment, feedback, iteration.
 
