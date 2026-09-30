@@ -12,6 +12,7 @@ export const SITE = {
     "https://github.com/alexandretrotel",
     "https://www.linkedin.com/in/alexandretrotel",
     "https://x.com/alexandretrotel",
+    "https://www.instagram.com/alexandretrotel",
   ],
   openSource: {
     name: "Zap Studio",
@@ -23,6 +24,7 @@ export const FOOTER_LINKS = [
   { name: "GitHub", url: "https://github.com/alexandretrotel" },
   { name: "LinkedIn", url: "https://www.linkedin.com/in/alexandretrotel" },
   { name: "X", url: "https://x.com/alexandretrotel" },
+  { name: "Instagram", url: "https://www.instagram.com/alexandretrotel" },
 ] as const;
 
 export const SKILLS_REPO_URL = "https://github.com/alexandretrotel/skills";
