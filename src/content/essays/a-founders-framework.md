@@ -37,7 +37,7 @@ If you don't agree with this definition, then one of two things is true.
 
 Either you can define it better, and your definition is worth sharing. Or you don't really want to build a startup. You want something else, and that's fine.
 
-## Journey to building an incredible startup
+## Journey to build a startup
 
 Here's the list of everything we're going to cover.
 
