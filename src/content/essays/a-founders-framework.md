@@ -55,105 +55,116 @@ The [checklist](#the-checklist) at the end sums it all up.
 
 You should be able to describe the problem without mentioning the solution.
 
-Bad: "We should build an AI platform for X."
+- Bad: "We should build an AI platform for X."
+- Good: "People who do X struggle with Y because Z."
 
-Good: "People who do X struggle with Y because Z."
+This is called a [problem statement](https://en.wikipedia.org/wiki/Problem_statement).
 
-This is called a business thesis, or [problem statement](https://en.wikipedia.org/wiki/Problem_statement).
+You may have seen this in entrepreneurial courses and thought it was bullshit. I thought it too. But then I understood its job was much deeper. The goal is to force you to name the pain before you picture the solution.
 
-You may have written one in class and thought it was bullshit. Its job is to force you to name the pain before you picture the solution.
+That shift changes what you do, who you talk to, and how you know you are going in the right direction.
 
-That shift changes what you build, who you talk to, and how you know you are winning.
+To write a good statement, you need five answers about the problem:
 
-To write a good one, you need five answers about the problem:
-
-- **Who experiences it:** a specific group, not "everyone." For example, independent restaurant owners with one to three locations, not "restaurants."
+- **Who experiences it:** it should be a specific group, not "everyone." For example, independent restaurant owners with one to three locations, not "restaurants."
 - **How often:** daily, weekly, once a year. For example, they reorder supplies every morning before service.
 - **How painful it is:** the cost in time, money or risk. For example, 45 minutes each morning, and a missing ingredient can cost a full night of sales.
 - **How they solve it today:** the current workaround. For example, a notebook, WhatsApp messages to suppliers, and a spreadsheet nobody updates.
 - **Why existing solutions fall short:** For example, inventory software built for chains is too expensive and takes weeks to set up.
 
-Remember that your goal is not to build a product. It is to prove the problem is painful enough that people will change their behavior to solve it.
+Always remember that your goal is not to build a product. It is to prove the problem is painful enough that people will change their behavior to solve it.
 
-And changing behavior is very hard. People stick with the bad spreadsheet they know over the better tool they would have to learn.
+And changing people's behavior is very hard. People stick with the bad spreadsheet they know over the better tool they would have to learn.
 
-For example, Harvard professor John Gourville [found](https://hbr.org/2006/06/eager-sellers-and-stony-buyers-understanding-the-psychology-of-new-product-adoption) that users overvalue what they already have by about three times, while the people building a new product overvalue it by about three times.
+To justify that, listen to Harvard professor John Gourville who [found](https://hbr.org/2006/06/eager-sellers-and-stony-buyers-understanding-the-psychology-of-new-product-adoption) that users overvalue what they already have by about three times. Even worse, people building a new product overvalue it by about three times.
 
 Thus, a new solution has to be roughly ten times better to make people switch.
 
+At this point, there's no need to continue reading if what you want isn't solving a painful problem, because being a founder is exactly this. If you prefer coding or building a product, join a startup that inspire you isntead.
+
 ### The pain must be real
 
-A product is either a vitamin or a painkiller. A vitamin is nice to take, and easy to skip. A painkiller is something people go looking for, and pay for, the moment it hurts.
+As we say, a product is either a vitamin or a painkiller.
 
-Pain comes on a scale: nice-to-have, useful, painful, urgent, existential.
+Shortly, a vitamin is something nice to take but easy to skip. On the other hand, a painkiller is something people go looking for, and more importantly pay for it the moment it hurts.
 
-Aim for painful or urgent. The others don't work for a startup:
+But how do we define pain? I'd say pain comes on a scale of five.
+
+1. nice-to-have
+2. useful
+3. painful
+4. urgent
+5. existential
+
+Aim for painful or urgent. The others are often bad for startups:
 
 - **Nice-to-have:** people agree it's a good idea, then never change their habits. Nobody pays to fix a problem they can live with.
 - **Useful:** people use it when it's free and easy, but it's the first thing cut when budgets shrink.
-- **Existential:** the problem threatens the customer's survival, like payroll or security. The pain is real, but they can't afford to bet on an unproven company. They pick established vendors, and a startup waits months for a deal it rarely wins.
+- **Existential:** the problem threatens the customer's survival. The pain is real which is amazing, but they can't afford to bet on an unproven company. They pick established vendors, and a startup waits months for a deal it rarely wins.
 
-Painful or urgent is the sweet spot. People run into it often enough to look for a solution, and are willing to try a new one.
+As you can see, painful or urgent is the sweet spot. People run into the pain often enough to look for a solution, and are willing to try a new one.
 
 A good test is to be able to answer the following question:
 
 > What does the user currently do because the product doesn't exist?
 
-If the answer is "nothing," that's a warning. If they spend 10 hours a week on it manually, lose money over it, or pay someone to handle it, it starts to look like a real problem.
+If the answer is "nothing," that's a warning but if they spend 10 hours a week on it manually, lose money over it, or pay someone to handle it, it starts to look like a real problem.
 
-**Mistake I've made:** mistaking engagement for pain. People joining a Discord, liking something, or saying it is "cool" is not evidence of a painful problem.
+### Dogfood and abuse doing it
 
-### Dogfood it
+Use your own product every day.
 
-Use your own product every day. This is called [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food). Living with the problem gives instant feedback and an intuition about what matters that no interview can replace.
+This is so important that a term even exist for it, it's called [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food).
+
+Living with the problem gives you instant feedback and an intuition about what matters that no interview can replace.
 
 Always prefer businesses where you understand the problem yourself over ones where you need to keep asking users what they want.
 
-A swimming coach who has never been in the water can only repeat the textbook and what other swimmers tell them. They can't swim themselves.
+This is the same as asking your friends at school to do the job for you because you can't do anything, it works until you're alone facing your fate.
+
+Don't get me wrong, customers are essential because they make the business generate profits but ultimately, you have to take decisions to strive on the long term.
 
 ## II. A customer you understand
 
 ### Founder-market fit
 
-[Founder-market fit](https://cdixon.org/2011/06/19/foundermarket-fit/) means you are the right person for this specific market.
+[Founder-market fit](https://cdixon.org/2011/06/19/foundermarket-fit/) means you are the right person for a specific market you chose.
 
-There are three levels for a good fit:
+I can think of three levels for a good fit:
 
 - **Experience:** you have lived the problem. For example, you managed a restaurant for years and reordered supplies every morning at 7am.
 - **Knowledge:** you know the users, workflows, jargon and existing tools. For example, you know which suppliers only take orders by phone.
 - **Access:** you can reach users, experts and distribution channels without cold outreach. For example, you can call ten restaurant owners tomorrow.
 
-Always prefer markets you are part of. You are credible from day one, without months of research.
+Always prefer markets you are part of. This make you credible from day one, without months of research allowing you to go even faster.
 
-The strongest signal is having lived the problem many times and already built your own workaround. That beats anyone saying "I think this would be useful."
+For me, the strongest signal is having lived the problem many times and already built your own workaround. That beats anyone saying "I think this would be useful" or people pretending to know everything but it's just Dunning Kruger doing its job.
 
 ### Find 20 users in two weeks
 
-Understanding the problem means nothing if you can't reach the people who have it. Before building anything, ask yourself:
+Understanding the problem means nothing if you can't reach the people who have it. Before building anything, you should ask yourself:
 
-> With zero product today, could you find 20 relevant users to interview within two weeks?
+> With zero product today, could I find 20 relevant users to interview within two weeks?
 
-Prefer markets where users are reachable through professional networks, companies, industry events, existing relationships, search, partnerships, or physical locations.
+Prefer markets where users are reachable through professional networks, events, existing relationships, companies, search, partnerships, or physical locations.
 
-Be cautious about markets where reaching users first requires building a community, an audience, or a new ecosystem.
+Be cautious about markets where reaching users first requires building a community, an audience, or a new ecosystem. I've made the mistake, multiple times.
 
-Why? Because building the audience becomes the job, and the real job which is understanding and solving a painful problem, [waits](https://en.wikipedia.org/wiki/Lean_software_development#Eliminate_waste).
+So why you shouldn't build an audience at first? Because building the audience becomes the job, and the REAL job which is understanding and solving a painful problem, [waits](https://en.wikipedia.org/wiki/Lean_software_development#Eliminate_waste).
 
-Even worse, the people it attracts come for the content, the community or the hype. Their feedback looks like validation when it's not.
+Even worse, most people it attracts come for the content, the community or the hype. Their feedback looks like validation, but believe me, it really is not.
 
-**Mistake I've made:** building to attract users. We came from a [web3](https://en.wikipedia.org/wiki/Web3)-like market where getting people from Discord into interviews was hard. So we built a product to attract them, and got lost building instead of finding product-market fit.
+### Keep access to users
 
-### Keep access
+Finding users once isn't enough too. Ten great interviews at the start get you a thesis, not a product. You need to reach the same kind of user again and again.
 
-Finding users once isn't enough. Ten great interviews at the start get you a thesis, not a product. You need to reach the same kind of user again and again.
-
-You will want to test your first mockup with them, watch them use the first version, and ask why they stopped using it after a week.
+You will want to test your first draft with them, watch them use it, and ask why they stopped using it after a week.
 
 Every step of building raises a new question, and only those users can answer it. If you lose access after the first round, you end up guessing, and guessing is how you build something nobody asked for.
 
-So before you commit, ask yourself whether you will still be able to talk to these people in six months, every week if you need to.
+So before you commit, ask yourself whether you will still be able to talk to these people in six months and preferably every week if possible.
 
-The ideal market gives an ongoing loop: problem, interview, hypothesis, experiment, feedback, iteration.
+The ideal market gives an ongoing loop: problem, hypothesis, interview, new hypothesis, experiment, feedback, iteration.
 
 The opposite is building, launching, hoping users show up, and only then trying to understand them.
 
@@ -161,11 +172,11 @@ The opposite is building, launching, hoping users show up, and only then trying 
 
 ### Size it bottom-up
 
-The market sets the ceiling on what great execution can reach. The best fisherman in the world still can't catch more fish than the lake holds.
+The market sets the ceiling on what great execution can reach. For example, the best fisherman in the world still can't catch more fish than the lake holds.
 
-"Big market" should not mean a big [TAM](https://en.wikipedia.org/wiki/Total_addressable_market) slide.
+And also, "big market" doesn't mean a big [TAM](https://en.wikipedia.org/wiki/Total_addressable_market) slide.
 
-The question is:
+The question is deeper:
 
 > If you execute extremely well, can this become a very large company without changing markets completely?
 
@@ -185,27 +196,31 @@ The $1B goes on the pitch deck. The $100M is the real size of your lake.
 
 A small lake can still be worth fishing if it is filling up fast, flows into a much bigger one, or holds more fish than everyone thinks. If you make that bet, write down why you believe it.
 
+Oh, and replace the lake by the market. I'm talking about market growth of course.
+
 ### The market must grow
 
-Look for a market where the underlying need is becoming more important. That can come from new technology, new regulation, demographic shifts, new behaviors, or people willing to pay more.
+Look for a market where the underlying need is becoming more important. That can come from new technology, new regulation, demographic shifts, new behaviors, or people willing to pay more for any reason.
 
-You should be able to answer to this question:
+But, you should be able to answer to this question and justify:
 
 > Why is this problem going to become more important over the next 5 to 10 years?
 
-A stagnant market requires stealing customers. A growing market creates new ones.
+Answering this question will help you and make raising funds with investors more easy as they will ask you this.
+
+And remember what path you chose. A stagnant market requires stealing customers. A growing market creates new ones.
 
 ### Never depend on one platform
 
 If the business depends on a single platform, or the market carries too much regulatory uncertainty, don't go.
 
-**Mistake I've made:** a single clause in a platform's terms of service was enough to kill our company.
+Thank me later. For one of my startup, a single clause in a platform's terms of service was enough to kill our company.
 
 ## IV. A team built to last
 
 ### Every founder talks to users
 
-You and every founder should take part in interviews, user calls, observations and customer discussions. Basically, everyone should hear the problem from users firsthand.
+You and every founder should take part in interviews, user calls and observations. Basically, everyone should hear the problem from users firsthand.
 
 This prevents one person from becoming the sole source of "customer truth."
 
@@ -213,19 +228,23 @@ This prevents one person from becoming the sole source of "customer truth."
 
 The same goes for tech. It shouldn't rely on one person.
 
-The technical co-founder masters the details, but everyone should understand how the system works, the critical architecture, what is hard vs easy, and where the technical risk is.
+Some teams love to rely on one technical co-founder. The famous commercial + tech incredible teams.
 
-Otherwise, the people making decisions can't see the risk coming.
+Teams where the technical co-founder masters the details.
 
-Friendster is the classic example. As the site grew, pages became painfully slow, but the board kept pushing new features and deals instead of fixing the infrastructure. Users left for MySpace, and Friendster [never recovered](https://www.nytimes.com/2006/10/15/business/yourmoney/15friend.html).
+But, I stronly disagree with this. EVERYONE should understand how the system works, the critical parts of the architecture, what's hard vs what's easy, and where the technical risks are.
 
-For deeply technical products, like an API or infrastructure, this is non-negotiable since the product is mostly the technology.
+Otherwise, people making decisions can't see the risk coming, and these people are all the founders.
 
-Look at who runs the biggest tech companies. Many of their CEOs are technical experts too: [Patrick Collison](https://en.wikipedia.org/wiki/Patrick_Collison) (Stripe), [Tobi Lütke](https://en.wikipedia.org/wiki/Tobias_L%C3%BCtke) (Shopify) and [Drew Houston](https://en.wikipedia.org/wiki/Drew_Houston) (Dropbox) all started as programmers.
+Take the example of Friendster. As the site grew, pages became painfully slow, but the board kept pushing new features and deals instead of fixing the infrastructure. Thus, users left for MySpace, and Friendster [never recovered](https://www.nytimes.com/2006/10/15/business/yourmoney/15friend.html).
 
-So if you are not technical, start learning now. It matters even more with AI. When anyone can generate a product in a weekend, the edge goes to people who master the hard things others don't understand.
+For deeply technical products, like an API or infrastructure, this is even more non-negotiable since the product is mostly the technology.
 
-The best CEOs will be the ones who see what others can't, and being technical is one pillar of that.
+If it's not enough. Look at who runs the biggest tech companies. Many of their CEOs are technical experts too: [Patrick Collison](https://en.wikipedia.org/wiki/Patrick_Collison) (Stripe), [Tobi Lütke](https://en.wikipedia.org/wiki/Tobias_L%C3%BCtke) (Shopify) and [Drew Houston](https://en.wikipedia.org/wiki/Drew_Houston) (Dropbox) all started as programmers.
+
+So if you are not technical, start learning now. It matters even more now that we have AI tools. When anyone can generate a product in a weekend, the edge goes to people who master complex things others don't understand.
+
+My take is that the best CEOs will be the ones who see what others can't, and being technical is one pillar of that.
 
 ### Agree before starting
 
@@ -240,60 +259,54 @@ Before starting, you and your cofounders should explicitly agree on:
 
 Have the difficult conversations now. "We'll figure it out later" usually means fighting about it later, under pressure.
 
+Ask any AI to generate a checklist from this paragraph and it should one shot something sufficient, but just do it.
+
 ### Complementary, not siloed
 
 A good founding team covers different ground.
 
-One of you is strong in product, another in engineering, another in sales or in the domain itself. Two engineers alone will build a great product nobody hears about. Two salespeople alone will sell something they can't build.
+One of you is strong in product, another in engineering, another in sales or in the domain itself. Great, but not sufficient.
+
+Of course, the worst cast is two engineers alone that will build a great product nobody hears about. Or, two salespeople alone will sell something they can't build.
 
 But different strengths should not become separate worlds. In a siloed team, the engineer never hears a customer, the salesperson promises features without knowing what they cost, and each side blames the other when things slip.
 
 To avoid it, share the work that matters. Join customer calls together, review the product together, and explain your decisions to each other until everyone could defend them.
 
-### Choose them again
-
-This sounds less analytical, but it matters enormously:
-
-- Would you willingly choose these people again if you were starting from zero?
-- Do you trust their judgment when you strongly disagree with them?
-- Can you have difficult conversations with them without damaging the relationship?
-
-A startup amplifies existing dynamics between founders. What is mildly annoying before starting may become unbearable under pressure.
-
 ### Protect health and learning
 
 I can't insist enough on this one. Keep a sane baseline of sleep, physical activity, nutrition, relationships and time away from work.
 
-Don't fall for the FOMO of founders bragging about 100-hour weeks. The pragmatic choice is to stay healthy.
+Don't fall for the FOMO of founders bragging about 100-hour weeks. The pragmatic choice is to stay healthy to perform better.
 
-If you can't, because you keep working more, it means one of two things:
+Working less is often working better on more important tasks.
+
+If you can't and find yourself keep working more, it means one of two things:
 
 - **You can't see the real problem.** A tired founder needs more hours to produce what a rested one would with better priorities and more focus. You are working more to make up for working worse, and you are too tired to notice.
 - **The bar is too high for you right now.** You are not yet good enough to reach it at a healthy pace. Then lower the bar.
 
 Never try to beat this by pushing harder. Accept it, and adjust.
 
-Knowing all this is not enough. It has to be protected by structure.
+Knowing all this is not enough. It has to be protected by structure because it's hard to stay pragmatic.
 
 One solution worth trying is an hours model close to a salaried job, with a start and an end to the day. A bounded schedule protects sleep and sports by default, and forces you to work better, not more.
 
 There is no point in being wealthy or building a great company if you lose your health, or die young, on the way.
 
-The same logic applies to learning. It can feel like time taken away from the company, but it makes you better every day.
+Another important topic is to always keep learning. It can feel like time taken away from the company, but it makes you better every day.
 
-It helps you rethink your priorities, in business and in your personal life, and it compounds. On the long term, it is what lets you work less, not more.
+It helps you rethink your priorities in business and personal life, and more important, it compounds. On the long term, it is what lets you work less, not more.
 
-[Warren Buffett](https://en.wikipedia.org/wiki/Warren_Buffett) spends most of his day reading. Bill Gates disappears twice a year for Think Weeks, alone with a pile of books. Knowledge compounds like capital.
+[Warren Buffett](https://en.wikipedia.org/wiki/Warren_Buffett) spends most of his day reading. Bill Gates disappears twice a year for Think Weeks, alone with a pile of books.
 
-Finally, rest. Most of what people call rest is not rest. An hour of [doomscrolling](https://en.wikipedia.org/wiki/Doomscrolling) leaves you more tired than before, and nothing behind.
+Finally, rest. Most of what people call rest is not rest. An hour of [doomscrolling](https://en.wikipedia.org/wiki/Doomscrolling) leaves you more tired than before.
 
 Positive entertainment is different. Books, mangas, webtoons, movies, good YouTube videos, art and music leave something behind, a story, an idea, a skill.
 
-Even video games count, as long as they are great ones. Not the free games designed to keep you hooked, but paid games made by people who care.
+Even video games count, as long as they are great ones. Not the games designed to keep you hooked, but paid games made by people who care.
 
-If I showed you my screen time, you would see almost no social media, and hours of books, webtoons and YouTube videos. Change your habits. It is far healthier.
-
-Anyway, I could write about health and learning for hours, and I encourage you to dig deeper into both. But this is the essential.
+If I showed you my screen time, you would see almost no social media, and hours of books, webtoons and YouTube videos. Change your habits.
 
 ## V. A path to product-market fit
 
