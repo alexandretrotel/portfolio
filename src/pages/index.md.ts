@@ -32,7 +32,11 @@ It all started with [TrotelCoin](https://coinmarketcap.com/currencies/trotelcoin
 
 From Zap Studio, [@zap-studio/permit](https://www.zapstudio.dev/docs/permit) supports ABAC and RBAC out of the box and keeps permission policies in one place, with full type safety.
 
-On the side, I maintain developer tools: [todo-tree](https://github.com/alexandretrotel/todo-tree) finds every TODO comment in a codebase, [dotfiles-manager](https://github.com/alexandretrotel/dotfiles-manager) keeps dotfiles consistent across machines with profiles, and [feedyourai](https://github.com/alexandretrotel/feedyourai) packs a codebase into one file for LLM context.
+On the side, I maintain developer tools:
+
+- [todo-tree](https://github.com/alexandretrotel/todo-tree) finds every TODO comment in a codebase.
+- [dotfiles-manager](https://github.com/alexandretrotel/dotfiles-manager) keeps dotfiles consistent across machines with profiles.
+- [feedyourai](https://github.com/alexandretrotel/feedyourai) packs a codebase into one file for LLM context.
 
 ## Writing
 
