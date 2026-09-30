@@ -12,7 +12,7 @@ export const getStaticPaths = async () => {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const path = `/essays/${entry.id}.html`;
+const path = `/essays/${entry.id}`;
 ---
 
 <Article
