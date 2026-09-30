@@ -9,7 +9,7 @@ export const GET: APIRoute = async () => {
     (a, b) => b.data.date.getTime() - a.data.date.getTime(),
   );
 
-  const essayItems = essays.map((e) => `- [${e.data.title}](/essays/${e.id}.html)`).join("\n");
+  const essayItems = essays.map((e) => `- [${e.data.title}](/essays/${e.id})`).join("\n");
   const links = FOOTER_LINKS.map((l) => `[${l.name}](${l.url})`).join(" · ");
 
   const body = `# ${SITE.name}
@@ -24,7 +24,7 @@ Alongside it, I co-founded [Radion](https://x.com/radion_app), a real-time data 
 
 Before Radion, I was a full stack engineer at [ALLOHOUSTON](https://www.allohouston.fr/), first as an intern, then as a freelancer. I wrote the conflict resolution that kept our database and a client's CRM in sync without losing local state, built an end-to-end OCR pipeline with computer vision, and prepared the stack for AI code review.
 
-Earlier, I co-founded Mindify as CTO and shipped a web and mobile app with 1,000+ downloads. Around the same time, I interned at [SiBorg](https://www.siborg.io/) as a full stack engineer and won The Graph Prize at the Coinbase Onchain Summer hackathon.
+Earlier, I co-founded Mindify as CTO and shipped a web and mobile app with 1,000+ downloads. Around the same time, I interned at [SiBorg](https://www.siborg.io/) as a full stack engineer and won [The Graph Prize](https://devfolio.co/projects/siborg-ads-6138) at the Coinbase Onchain Summer hackathon.
 
 It all started with [TrotelCoin](https://coinmarketcap.com/currencies/trotelcoin-v2/), my first company: a Web3 project with 10+ Solidity contracts and 200+ app users. In parallel, I was vice president of N7 Consulting, where I led a team of 26 and generated €100K in revenue.
 
