@@ -1,7 +1,7 @@
 // @ts-check
 import cloudflare from "@astrojs/cloudflare";
-import sitemap from "@astrojs/sitemap";
 import { rehypeHeadingIds } from "@astrojs/markdown-remark";
+import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
