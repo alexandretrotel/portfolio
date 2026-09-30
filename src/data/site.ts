@@ -22,6 +22,7 @@ export const SITE = {
 
 export const FOOTER_LINKS = [
   { name: "GitHub", url: "https://github.com/alexandretrotel" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/alexandretrotel" },
   { name: "X", url: "https://x.com/alexandretrotel" },
 ] as const;
 
