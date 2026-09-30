@@ -1,7 +1,7 @@
 ---
 title: A founder's framework
 description: The criteria to check before starting a company, on market, product development and team. Built from the mistakes of four ventures, so you don't have to repeat them.
-date: 2026-09-28
+date: 2026-09-30
 updated: true
 ---
 
@@ -381,25 +381,3 @@ Do it with your cofounders before starting. Tick a box only if you all honestly 
 If you cannot confidently answer these questions, don't start building yet.
 
 The goal is not to predict that a company will succeed. It is to make sure you have earned the next step before you give it years of your life.
-
-## Sources
-
-This framework is built on everything I have learned, which is why [learning matters so much](#protect-health-and-learning).
-
-These readings helped me understand what I was doing, and what I had done wrong, across my ventures. Start with them.
-
-[**The Mom Test**](https://www.momtestbook.com) by Rob Fitzpatrick. The best guide to talking with users without fooling yourself. Read it before your first interview, since most people ask questions that only get polite lies back.
-
-[**The Lean Startup**](https://theleanstartup.com) by Eric Ries. The origin of build, measure, learn. It explains why validating before investing saves you months, and it is the backbone of [the stages](#follow-the-stages).
-
-[**How to Get Startup Ideas**](https://paulgraham.com/startupideas.html) by Paul Graham. The best ideas come from problems you have yourself. This is the root of founder-market fit and dogfooding.
-
-[**Do Things That Don't Scale**](https://paulgraham.com/ds.html) by Paul Graham. Early users are recruited by hand, one by one. It is where the Stripe story in this essay comes from.
-
-[**How to Start a Startup**](https://paulgraham.com/start.html) by Paul Graham. Good people, a product people want, and spending little. The fundamentals, in one read.
-
-[**Four Reasons Why Crypto Startups Fail**](https://www.alliance.xyz/essays/four-reasons-why-crypto-startups-fail) by Qiao Wang. Crypto is the market I built in, and this essay describes failure patterns my team lived firsthand, like building for hype instead of real users.
-
-[**What Does It Take to be a Good Crypto Founder?**](https://www.alliance.xyz/essays/what-does-it-take-to-be-a-good-crypto-founder) by Qiao Wang. The founder qualities that matter, and most of them apply far beyond crypto.
-
-[**20 Lessons for Crypto Founders**](https://www.alliance.xyz/essays/lessons-for-crypto-founders) by Imran Khan. Short, hard-earned lessons you can read in ten minutes.
