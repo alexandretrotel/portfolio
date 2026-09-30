@@ -3,7 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import { SITE, SKILLS_REPO_URL } from "../data/site";
 
 const entryUrl = (id: string, ext: "html" | "md") => {
-  return `${SITE.url}/essays/${id}.${ext}`;
+  return `${SITE.url}/essays/${id}${ext === "md" ? ".md" : ""}`;
 };
 
 const listItem = (entry: CollectionEntry<"essays">) => {
