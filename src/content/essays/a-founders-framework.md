@@ -316,17 +316,17 @@ Think of the old master in martial arts films who makes his student repeat borin
 
 The student wants to learn the flashy moves right away. Only later does he realize every chore was building the skills he needed to fight.
 
-A startup works the same way. Each stage builds what the next one depends on, and skipping one leaves a gap you pay for later.
+A startup works the same way. Each stage builds what the next one depends on. And skipping one leaves a gap you pay for later, like a debt.
 
-In the early stages, your job is not to build a company or a product. Your job is to learn whether the problem is real and whether your solution fixes it.
+Remember, in the early stages, your job is not to build a company or a product. Your job is to learn whether the problem is real and craft the best solution to fix it.
 
-That is the core idea of the [Lean Startup](https://en.wikipedia.org/wiki/Lean_startup). Everything you believe about your business is a guess until users prove it.
+That is the core idea of the [Lean Startup](https://en.wikipedia.org/wiki/Lean_startup) philosophy. Everything you believe about your business is a guess until the market prove it.
 
 So you build the smallest thing that can test a guess, measure how users react, and learn whether to keep going or change course. Then you repeat that loop, and you only invest more once the evidence says yes.
 
-Skipping a stage almost always means investing money and time in something you haven't validated. Six months of development on a problem nobody confirmed is six months you don't get back.
+Skipping a stage almost always means investing money and time in something you haven't validated. Six months of development on a problem nobody confirmed is six months you don't get back. Competitors may take the market before you within that time.
 
-There are rare exceptions. Some "fat startups" raise big money early and build heavily before validating, like hardware or deep tech companies that can't test cheaply. If you are reading this, you are most likely not one of them.
+However, there are rare exceptions. This is what we called "fat startups". They raise big money early and build heavily before validating like hardware or deep tech companies that can't test cheaply. But, if you are reading this, you are most likely not one of them.
 
 At any moment, you should know which stage you are in and what must be proven before moving on. The Lean Startup path has three:
 
@@ -334,40 +334,40 @@ At any moment, you should know which stage you are in and what must be proven be
 2. **Product-market fit.** Build the [smallest possible solution](https://en.wikipedia.org/wiki/Minimum_viable_product) and put it in real hands. You are done when users come back on their own, pay, and would be upset if it disappeared.
 3. **Scale.** Build a repeatable sales and acquisition process, then grow. You are done when each new customer brings in more than they cost, and growth becomes predictable.
 
-Each stage is a [learning process](https://en.wikipedia.org/wiki/Validated_learning), not a box to tick.
+More importantly, each stage is a [learning process](https://en.wikipedia.org/wiki/Validated_learning), not a box to tick.
 
-If you feel like skipping a stage, it usually means you don't see its purpose yet. Stop and [ask yourself why it exists](https://en.wikipedia.org/wiki/Double-loop_learning) before moving on.
+Finally, if you feel like skipping a stage, it usually means you don't see its purpose yet. Stop and [ask yourself why it exists](https://en.wikipedia.org/wiki/Double-loop_learning) before moving on.
 
 ### Roles should come late
 
-Titles like CEO, CTO or CMO mean little at the beginning. Most early teams don't have the experience to fill them yet, and that is perfectly normal.
+Titles like CEO, CTO or CMO mean little at the beginning. And anyway, most early teams don't have the experience to fill them yet, and that's perfectly normal.
 
-The needs also change constantly. This month the company needs interviews, next month a prototype, the month after that its first sales.
+The needs also change constantly. The first month the company needs interviews, next month a prototype, the month after that its first sales.
 
-A role fixed on day one describes a company that doesn't exist yet. Titles only start to mean something once the company grows and the work becomes stable enough to divide.
+A role fixed on day one describes a company that doesn't exist yet. Titles only start to mean something once the company grows and the work becomes stable enough to DIVIDE.
 
 So, instead of handing out titles, focus on solving the problem. Let roles emerge from what the company actually needs, and from what each of you turns out to be good at.
 
 The best startup cultures work this way. A problem belongs to whoever can solve it, not to whoever holds the title.
 
-At Tesla, Elon Musk [told employees](https://www.inc.com/justin-bariso/this-email-from-elon-musk-to-tesla-employees-descr.html) that anyone can and should talk to anyone else, skipping the chain of command, if that is the fastest way to solve a problem.
+To convince you, take a look at Tesla, Elon Musk [told employees](https://www.inc.com/justin-bariso/this-email-from-elon-musk-to-tesla-employees-descr.html) that anyone can and should talk to anyone else, skipping the chain of command, if that is the fastest way to solve a problem.
 
 At Stripe, the Collison brothers didn't wait for a sales team. When someone agreed to try Stripe, they would say "Right then, give me your laptop" and [set it up themselves](https://paulgraham.com/ds.html).
 
-Everyone helps, not only engineers. The CTO joins sales calls, the CEO answers support tickets, and nobody says "that's not my job." Put your ego aside. The company doesn't need your title. It needs the problem solved.
+Everyone should help, not only engineers. The CTO joins sales calls, the CEO answers support tickets, and nobody says "that's not my job." Put your ego aside. The company doesn't need your title. It needs the problem solved.
 
-Then why give titles at all? Mostly for culture and convenience. A title is a shortcut that tells people roughly what you do in one word.
+So you may ask, why give titles at all? My reason is that it's mostly cultural and convenient. A title is a shortcut that tells people roughly what you do in one word.
 
 Explaining your actual week to your friends would take ten minutes. Saying "I'm a full stack developer" takes two seconds.
 
-## The checklist
+## A checklist to apply the framework
 
 Do it with your cofounders before starting. Tick a box only if you all honestly say "yes."
 
 ### A painful problem
 
 - [ ] Can we describe the problem without describing our solution?
-- [ ] Do people already spend time, money or effort solving it?
+- [ ] Do potential customers already spend time, money or effort solving it?
 - [ ] Do we use the product ourselves?
 
 ### A customer you understand
@@ -386,7 +386,6 @@ Do it with your cofounders before starting. Tick a box only if you all honestly 
 
 - [ ] Does every founder talk to users and understand the core technology?
 - [ ] Have we agreed on ambition, commitment, ownership and exit?
-- [ ] Would we choose each other again, for the next 5 to 10 years?
 - [ ] Can we keep a healthy pace for years, not months?
 
 ### A path to product-market fit
@@ -395,6 +394,6 @@ Do it with your cofounders before starting. Tick a box only if you all honestly 
 - [ ] Are we validating before building, even though we can build fast?
 - [ ] Are we solving problems together instead of hiding behind titles?
 
-If you cannot confidently answer these questions, don't start building yet.
+If you cannot confidently answer these questions, try to understand the issues and fix them.
 
-The goal is not to predict that a company will succeed. It is to make sure you have earned the next step before you give it years of your life.
+The goal is not to predict that a company will succeed. It's to make sure to avoid the traps that can cost you years of your live and fail goals you set up for yourself.
