@@ -100,8 +100,9 @@ const websiteJsonLd = {
         Earlier, I co-founded Mindify as CTO and shipped a web and mobile app with 1,000+
         downloads. Around the same time, I interned at{" "}
         <a href="https://www.siborg.io/" target="_blank" rel="noreferrer">SiBorg</a>{" "}
-        as a full stack engineer and won
-        The Graph Prize at the Coinbase Onchain Summer hackathon.
+        as a full stack engineer and won{" "}
+        <a href="https://devfolio.co/projects/siborg-ads-6138" target="_blank" rel="noreferrer">The Graph Prize</a>{" "}
+        at the Coinbase Onchain Summer hackathon.
     </p>
     <p>
         It all started with{" "}
@@ -144,7 +145,7 @@ const websiteJsonLd = {
         {
             essays.map((essay) => (
                 <li>
-                    <a href={`/essays/${essay.id}.html`}>{essay.data.title}</a>
+                    <a href={`/essays/${essay.id}`}>{essay.data.title}</a>
                 </li>
             ))
         }
