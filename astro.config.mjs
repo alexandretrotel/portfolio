@@ -13,7 +13,7 @@ export default defineConfig({
   adapter: cloudflare(),
   markdown: {
     rehypePlugins: [
-      [rehypeExternalLinks, { target: "_blank", rel: ["noreferrer"] }],
+      [rehypeExternalLinks, { rel: ["noreferrer"] }],
       rehypeHeadingIds,
       [rehypeAutolinkHeadings, { behavior: "wrap" }],
     ],

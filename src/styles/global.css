@@ -274,8 +274,7 @@ hr {
 
 main > h2 {
   margin-top: 2.5rem;
-  color: var(--muted-foreground);
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 main > h2 + ul {
