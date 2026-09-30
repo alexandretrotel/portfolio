@@ -48,7 +48,7 @@ In my free time, I like to read books on topics such as science, economy, psycho
 
 I play the piano and make EDM music on FL Studio. I also started playing curated video games to avoid wasting time on addictive, poorly designed games.
 
-I also create content to teach what I learn and explain it in simple terms, with more than 10K followers on Instagram.
+I also create social media content to vulgarize what I learn and get better at explaining complex topics. I have more than 10k followers on [Instagram](https://www.instagram.com/alexandretrotel).
 
 ## Writing
 
