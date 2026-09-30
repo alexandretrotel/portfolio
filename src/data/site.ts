@@ -5,16 +5,15 @@ export const SITE = {
   name: "Alexandre Trotel",
   title: "Alexandre Trotel | Founder & Engineer",
   description:
-    "Alexandre Trotel, founder and engineer. Founder of Zap Studio, previously co-founder and CTO of Radion and Mindify.",
+    "Alexandre Trotel, founder and engineer. Maintainer of Zap Studio, an open-source TypeScript project, previously co-founder and CTO of Radion and Mindify.",
   twitter: "@alexandretrotel",
   jobTitle: "Founder & Engineer",
   sameAs: [
     "https://github.com/alexandretrotel",
     "https://www.linkedin.com/in/alexandretrotel",
     "https://x.com/alexandretrotel",
-    "https://www.zapstudio.dev",
   ],
-  founder: {
+  openSource: {
     name: "Zap Studio",
     url: "https://www.zapstudio.dev",
   },

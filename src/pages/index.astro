@@ -18,32 +18,10 @@ const profilePageJsonLd = {
         description: SITE.description,
         url: SITE.url,
         sameAs: SITE.sameAs,
-        worksFor: {
-            "@type": "Organization",
-            name: SITE.founder.name,
-            url: SITE.founder.url,
-        },
-        founder: {
-            "@type": "Organization",
-            name: SITE.founder.name,
-            url: SITE.founder.url,
-        },
         speakable: {
             "@type": "SpeakableSpecification",
             cssSelector: ["main > p:first-of-type"],
         },
-    },
-};
-
-const organizationJsonLd = {
-    "@context": JSON_LD_CONTEXT,
-    "@type": "Organization",
-    name: SITE.founder.name,
-    url: SITE.founder.url,
-    founder: {
-        "@type": "Person",
-        name: SITE.name,
-        url: SITE.url,
     },
 };
 
@@ -64,87 +42,107 @@ const websiteJsonLd = {
     description={SITE.description}
     path="/"
     markdownTwin="/index.md"
-    jsonLd={[profilePageJsonLd, organizationJsonLd, websiteJsonLd]}
+    jsonLd={[profilePageJsonLd, websiteJsonLd]}
 >
     <h1>{SITE.name}</h1>
-    <p>
-        I'm Alexandre, a founder and full-stack engineer.
-    </p>
-    <p>
-        I'm interested in ML/AI, web3 and open-source software. I also write essays about software engineering and startups.
-    </p>
-    <p>
-        On my free time, I like to read books on topics such as science, economy, psychology and philosophy. I also run 20-30km per week and do street workouts.
-    </p>
-    <p>
-        Finally, I play the piano and make EDM music on FL Studio. I also started playing curated video games to avoid wasting time on poorly addictive designed games.
-    </p>
+    <p>I'm Alexandre, a founder and full-stack engineer.</p>
 
     <h2>Work</h2>
     <p>
         During my free time, I work on{" "}
-        <a href={SITE.founder.url} rel="noreferrer">
-            {SITE.founder.name}
-        </a>, an open-source initiative where I build type-safe and composable TypeScript libraries that work on any runtime. I made 16 packages with zero dependencies and 7,000+
-        downloads per month. This mainly comes from my experience fighting
-        with JavaScript and legacy code.
+        <a href={SITE.openSource.url} rel="noreferrer">{SITE.openSource.name}</a>,
+        an open-source project where I build type-safe and composable TypeScript
+        libraries that work on any runtime. I made 16 packages with zero
+        dependencies and 7,000+ downloads per month. This mainly comes from my
+        experience fighting with JavaScript and legacy code.
     </p>
     <p>
         At the same time, I co-founded{" "}
-        <a href="https://x.com/radion_app" rel="noreferrer">Radion</a> as CTO. We built a real-time and historical data platform for prediction markets to help traders make better decisions. We ingested 8 billion Polymarket events in under two days and
-        served them at 70ms p95 on a Rust multi-threaded API.
+        <a href="https://x.com/radion_app" rel="noreferrer">Radion</a> as CTO.
+        We built a real-time and historical data platform for prediction
+        markets to help traders make better decisions. We ingested 8 billion
+        Polymarket events in under two days and served them at 70ms p95 on a
+        Rust multi-threaded API. We shut it down after a terms-of-service
+        conflict.
     </p>
     <p>
-        Before Radion, I was a full stack engineer intern and freelancer at{" "}
+        Before Radion, I was a full-stack engineer intern and freelancer at{" "}
         <a href="https://www.allohouston.fr/" rel="noreferrer"
             ><i>ALLO</i><b>HOUSTON</b></a
-        >. Here, I wrote a conflict
-        resolution algorithm that kept our database in sync with a client's CRM without
-        losing local state. I also built an end-to-end OCR pipeline to scan and process informations from critical documents to score their validity against public and private databases.
+        >. There, I wrote a conflict resolution algorithm that kept our database
+        in sync with a client's CRM without losing local state. I also built an
+        end-to-end OCR pipeline to scan and process information from critical
+        documents to score their validity against public and private databases.
     </p>
     <p>
-        Before all of that, during my studies, I co-founded Mindify as CTO. It was a startup focused on empowering individuals by helping them discover new topics and change their day to day life. I've built and shipped a web and mobile app with 1,000+
-        downloads.
+        Before all of that, during my studies, I co-founded Mindify as CTO. It
+        was a startup focused on empowering individuals by helping them
+        discover new topics and change their day-to-day life. I built and
+        shipped a web and mobile app with 1,000+ downloads.
     </p>
     <p>
         Around the same time, I interned at{" "}
-        <a href="https://www.siborg.io/" rel="noreferrer">SiBorg</a>{" "}
-        as a full stack engineer and won{" "}
-        <a href="https://devfolio.co/projects/siborg-ads-6138" rel="noreferrer">The Graph Prize</a>{" "}
-        at the Coinbase Onchain Summer hackathon.
+        <a href="https://www.siborg.io/" rel="noreferrer">SiBorg</a> as a
+        full-stack engineer and won{" "}
+        <a href="https://devfolio.co/projects/siborg-ads-6138" rel="noreferrer"
+            >The Graph Prize</a
+        > at the Coinbase Onchain Summer hackathon.
     </p>
     <p>
-        Finally, it all started with my first startup{" "}
-        <a href="https://coinmarketcap.com/currencies/trotelcoin-v2/" rel="noreferrer">TrotelCoin</a>. A web3 project to help students and non-technical users learn about blockchain and cryptocurrencies. I've developed more than 10 Solidity
+        It all started with my first startup{" "}
+        <a
+            href="https://coinmarketcap.com/currencies/trotelcoin-v2/"
+            rel="noreferrer">TrotelCoin</a
+        >, a web3 project to help students and non-technical users learn about
+        blockchain and cryptocurrencies. I developed more than 10 Solidity
         contracts and reached more than 200 users.
     </p>
     <p>
-        In parallel, I was vice president of <a href="https://www.n7consulting.fr/" rel="noreferrer">N7
-        Consulting</a>, where I led a team of 26 and generated €100K in revenue. I was mainly doing strategy, operations, sales, management and optimizing processes.
+        In parallel, I was vice president of{" "}
+        <a href="https://www.n7consulting.fr/" rel="noreferrer">N7 Consulting</a
+        >, where I led a team of 26 and generated €100K in revenue. I was mainly
+        doing strategy, operations, sales, management and optimizing processes.
     </p>
 
     <h2>Projects</h2>
     <p>I also maintain developer tools, mostly written in Rust:</p>
     <ul>
         <li>
-            <a
-                href="https://github.com/alexandretrotel/todo-tree" rel="noreferrer">todo-tree</a
-            >{" "}
-            finds every TODO comment in a codebase.
+            <a href="https://github.com/alexandretrotel/todo-tree" rel="noreferrer"
+                >todo-tree</a
+            > finds every TODO comment in a codebase.
         </li>
         <li>
             <a
-                href="https://github.com/alexandretrotel/dotfiles-manager" rel="noreferrer">dotfiles-manager</a
-            >{" "}
-            keeps dotfiles consistent across machines with profiles.
+                href="https://github.com/alexandretrotel/dotfiles-manager"
+                rel="noreferrer">dotfiles-manager</a
+            > keeps dotfiles consistent across machines with profiles.
         </li>
         <li>
-            <a
-                href="https://github.com/alexandretrotel/feedyourai" rel="noreferrer">feedyourai</a
-            >{" "}
-            packs a codebase into one file for LLM context.
+            <a href="https://github.com/alexandretrotel/feedyourai" rel="noreferrer"
+                >feedyourai</a
+            > packs a codebase into one file for LLM context.
         </li>
     </ul>
+
+    <h2>Outside work</h2>
+    <p>
+        I'm interested in ML/AI, web3 and open-source software. I also write
+        essays about software engineering and startups.
+    </p>
+    <p>
+        In my free time, I like to read books on topics such as science,
+        economy, psychology and philosophy. I also run 20-30 km per week and do
+        street workouts.
+    </p>
+    <p>
+        I play the piano and make EDM music on FL Studio. I also started playing
+        curated video games to avoid wasting time on addictive, poorly designed
+        games.
+    </p>
+    <p>
+        I also create social media content to vulgarize what I learn and get better at explaining complex topics. I have more than 10k followers on Instagram.
+    </p>
 
     <h2>Writing</h2>
     <ul>

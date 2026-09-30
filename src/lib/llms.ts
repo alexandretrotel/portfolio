@@ -31,7 +31,7 @@ export const rootLlmsTxt = (essays: CollectionEntry<"essays">[]) => {
 
   return `# ${SITE.name}
 
-> Personal site of ${SITE.name}, founder and engineer. Founder of Zap Studio, where the work is type-safe, framework-agnostic TypeScript libraries for the web. Previously co-founder and CTO of Radion (real-time prediction market data) and Mindify.
+> Personal site of ${SITE.name}, founder and engineer. Maintainer of Zap Studio, an open-source project of type-safe, framework-agnostic TypeScript libraries for the web. Previously co-founder and CTO of Radion (real-time prediction market data) and Mindify.
 
 Essays live under \`/essays/\` as individual HTML files, each linked from the home page and listed in the sitemap. Every page also has a markdown twin at the same path with a \`.md\` extension (e.g. \`/essays/a-founders-framework.md\`).
 
