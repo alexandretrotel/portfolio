@@ -28,7 +28,7 @@ Before all of that, during my studies, I co-founded Mindify as CTO. It was a sta
 
 Around the same time, I interned at [SiBorg](https://www.siborg.io/) as a full-stack engineer and won [The Graph Prize](https://devfolio.co/projects/siborg-ads-6138) at the Coinbase Onchain Summer hackathon.
 
-It all started with my first startup [TrotelCoin](https://coinmarketcap.com/currencies/trotelcoin-v2/), a web3 project to help students and non-technical users learn about blockchain and cryptocurrencies. I developed more than 10 Solidity contracts and reached more than 200 users.
+It all started with my first startup [TrotelCoin](https://coinmarketcap.com/currencies/trotelcoin-v2/), a web3 project to help students and non-technical users learn about blockchain and cryptocurrencies. I developed more than 10 Solidity smart contracts and reached more than 200 users.
 
 In parallel, I was vice president of [N7 Consulting](https://www.n7consulting.fr/), where I led a team of 26 and generated €100K in revenue. I was mainly doing strategy, operations, sales, management and optimizing processes.
 
