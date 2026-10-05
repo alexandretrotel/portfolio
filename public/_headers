@@ -15,3 +15,9 @@
 /essays/a-founders-framework
   Link: </essays/a-founders-framework.md>; rel="alternate"; type="text/markdown"
 
+
+/resume/en.pdf
+  Content-Disposition: attachment; filename="alexandre_trotel_resume.pdf"
+
+/resume/fr.pdf
+  Content-Disposition: attachment; filename="alexandre_trotel_cv.pdf"

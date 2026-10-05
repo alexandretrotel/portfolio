@@ -30,8 +30,8 @@ export const FOOTER_LINKS = [
 export const RESUME_URL = "/resume";
 
 export const RESUME_LINKS = {
-  en: { name: "Resume", url: "/resume/en.pdf", filename: "Alexandre-Trotel-Resume.pdf" },
-  fr: { name: "CV", url: "/resume/fr.pdf", filename: "Alexandre-Trotel-CV.pdf" },
+  en: { name: "Resume", url: "/resume/en.pdf", filename: "alexandre_trotel_resume.pdf" },
+  fr: { name: "CV", url: "/resume/fr.pdf", filename: "alexandre_trotel_cv.pdf" },
 } as const;
 
 export const SKILLS_REPO_URL = "https://github.com/alexandretrotel/skills";
