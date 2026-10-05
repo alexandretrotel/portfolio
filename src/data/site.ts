@@ -27,19 +27,11 @@ export const FOOTER_LINKS = [
   { name: "Instagram", url: "https://www.instagram.com/alexandretrotel" },
 ] as const;
 
-export const RESUME_LINKS = [
-  {
-    name: "Resume",
-    url: "/resume/en.pdf",
-    lang: "en",
-    filename: "Alexandre-Trotel-Resume.pdf",
-  },
-  {
-    name: "CV (FR)",
-    url: "/resume/fr.pdf",
-    lang: "fr",
-    filename: "Alexandre-Trotel-CV.pdf",
-  },
-] as const;
+export const RESUME_URL = "/resume";
+
+export const RESUME_LINKS = {
+  en: { name: "Resume", url: "/resume/en.pdf", filename: "Alexandre-Trotel-Resume.pdf" },
+  fr: { name: "CV", url: "/resume/fr.pdf", filename: "Alexandre-Trotel-CV.pdf" },
+} as const;
 
 export const SKILLS_REPO_URL = "https://github.com/alexandretrotel/skills";
