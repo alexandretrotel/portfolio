@@ -17,7 +17,7 @@
 
 
 /resume/en.pdf
-  Content-Disposition: attachment; filename="alexandre_trotel_resume.pdf"
+  Content-Disposition: inline; filename="alexandre_trotel_resume.pdf"
 
 /resume/fr.pdf
-  Content-Disposition: attachment; filename="alexandre_trotel_cv.pdf"
+  Content-Disposition: inline; filename="alexandre_trotel_cv.pdf"

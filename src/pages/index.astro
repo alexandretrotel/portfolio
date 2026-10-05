@@ -166,10 +166,10 @@ const websiteJsonLd = {
                 ))
             }
             <li id="resume-link" hidden>
-                <a href={RESUME_URL}>{RESUME_LINKS.en.name}</a>
+                <a href={RESUME_URL} target="_blank">{RESUME_LINKS.en.name}</a>
             </li>
             <noscript>
-                <li><a href={RESUME_URL}>{RESUME_LINKS.en.name}</a></li>
+                <li><a href={RESUME_URL} target="_blank">{RESUME_LINKS.en.name}</a></li>
             </noscript>
         </ul>
     </footer>
@@ -193,7 +193,6 @@ const websiteJsonLd = {
 
             anchor.href = link.url;
             anchor.hreflang = locale;
-            anchor.download = link.filename;
             anchor.textContent = link.name;
             item.hidden = false;
         }
