@@ -11,6 +11,9 @@ export default defineConfig({
   output: "static",
   trailingSlash: "never",
   adapter: cloudflare(),
+  redirects: {
+    "/resume": "/resume/en.pdf",
+  },
   markdown: {
     rehypePlugins: [
       [rehypeExternalLinks, { rel: ["noreferrer"] }],

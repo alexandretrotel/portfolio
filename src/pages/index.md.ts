@@ -2,7 +2,7 @@ import type { APIRoute } from "astro";
 
 import { getCollection } from "astro:content";
 
-import { SITE, FOOTER_LINKS, RESUME_LINKS, RESUME_URL } from "../data/site";
+import { SITE, FOOTER_LINKS, RESUME_LINK } from "../data/site";
 
 export const GET: APIRoute = async () => {
   const essays = (await getCollection("essays")).sort(
@@ -10,7 +10,7 @@ export const GET: APIRoute = async () => {
   );
 
   const essayItems = essays.map((e) => `- [${e.data.title}](/essays/${e.id})`).join("\n");
-  const links = [...FOOTER_LINKS, { name: RESUME_LINKS.en.name, url: RESUME_URL }]
+  const links = [...FOOTER_LINKS, RESUME_LINK]
     .map((l) => `[${l.name}](${l.url})`)
     .join(" · ");
 

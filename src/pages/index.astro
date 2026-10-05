@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
-import { JSON_LD_CONTEXT, SITE, FOOTER_LINKS, RESUME_LINKS, RESUME_URL } from "../data/site";
+import { JSON_LD_CONTEXT, SITE, FOOTER_LINKS, RESUME_LINK } from "../data/site";
 
 const essays = (await getCollection("essays")).sort(
     (a, b) => b.data.date.getTime() - a.data.date.getTime(),
@@ -165,36 +165,9 @@ const websiteJsonLd = {
                     </li>
                 ))
             }
-            <li id="resume-link" hidden>
-                <a href={RESUME_URL} target="_blank">{RESUME_LINKS.en.name}</a>
+            <li>
+                <a href={RESUME_LINK.url} target="_blank">{RESUME_LINK.name}</a>
             </li>
-            <noscript>
-                <li><a href={RESUME_URL} target="_blank">{RESUME_LINKS.en.name}</a></li>
-            </noscript>
         </ul>
     </footer>
 </Base>
-
-<script>
-    import { RESUME_LINKS } from "../data/site";
-    import { LOCALE_COOKIE, detectLocale } from "../lib/locale";
-
-    {
-        const item = document.querySelector<HTMLLIElement>("#resume-link");
-        const anchor = item?.querySelector("a");
-
-        if (item && anchor) {
-            const cookie = document.cookie
-                .split("; ")
-                .find((entry) => entry.startsWith(`${LOCALE_COOKIE}=`))
-                ?.slice(LOCALE_COOKIE.length + 1);
-            const locale = detectLocale(cookie, navigator.languages);
-            const link = RESUME_LINKS[locale];
-
-            anchor.href = link.url;
-            anchor.hreflang = locale;
-            anchor.textContent = link.name;
-            item.hidden = false;
-        }
-    }
-</script>
