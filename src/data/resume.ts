@@ -67,12 +67,16 @@ export const RESUME = {
           fr: "Conception d'une plateforme de données temps réel et historiques pour les marchés prédictifs Polymarket, dans un monorepo Rust de 9 services dont une API Axum, un serveur MCP et les pipelines d'ingestion",
         },
         {
-          en: "Designed a reorg-safe pipeline from self-hosted Polygon nodes through Redpanda (Protobuf) into TimescaleDB, processing 1,000+ events/s",
-          fr: "Architecture d'un pipeline résistant aux réorganisations de chaîne, des nœuds Polygon auto-hébergés vers TimescaleDB via Redpanda (Protobuf), traitant plus de 1 000 événements/s",
+          en: "Designed a reorg-safe historical pipeline from HyperSync through Redpanda into TimescaleDB, processing 1,000+ events/s",
+          fr: "Architecture d'un pipeline historique résistant aux réorganisations de chaîne, de HyperSync vers TimescaleDB via Redpanda, traitant plus de 1 000 événements/s",
+        },
+        {
+          en: "Built a real-time pipeline streaming on-chain events and mempool transactions from a self-hosted Polygon node to WebSocket clients",
+          fr: "Développement d'un pipeline temps réel diffusant les événements on-chain et les transactions du mempool d'un nœud Polygon auto-hébergé vers les clients WebSocket",
         },
         {
           en: "Ingested 8B+ on-chain events in under 2 days and stored 400+ GB compressed",
-          fr: "Ingestion de plus de 8 milliards d'événements on-chain en moins de 2 jours, soit plus de 400 Go compressés",
+          fr: "Ingestion de plus de 8 milliards d'événements on-chain en moins de 2 jours et stockage de plus de 400 Go compressés",
         },
         {
           en: "Served REST and WebSocket data at 70ms p95, among the fastest in the market",
@@ -94,12 +98,12 @@ export const RESUME = {
       period: { start: "2025-07", end: null },
       highlights: [
         {
-          en: "Built 16 type-safe, framework-agnostic TypeScript packages (fetch, validation, store, permissions, webhooks, WebMCP) with zero runtime dependencies",
-          fr: "Développement de 16 packages TypeScript typés et indépendants de tout framework (fetch, validation, store, permissions, webhooks, WebMCP), sans aucune dépendance",
+          en: "Built 16 type-safe, framework-agnostic TypeScript packages with zero runtime dependencies",
+          fr: "Développement de 16 packages TypeScript typés et indépendants de tout framework sans aucune dépendance",
         },
         {
           en: "Reached 7,000+ monthly downloads and 170+ GitHub stars, with the whole ecosystem at 164 KB gzipped",
-          fr: "Plus de 7 000 téléchargements mensuels et 170 étoiles GitHub, pour un écosystème complet de 164 Ko compressé",
+          fr: "Plus de 7 000 téléchargements mensuels et 170+ étoiles GitHub, pour un écosystème complet de 164 Ko compressé",
         },
       ],
     },
@@ -117,7 +121,7 @@ export const RESUME = {
         },
         {
           en: "Built an end-to-end OCR pipeline with Mistral OCR that extracts document data and scores validity against public and private databases",
-          fr: "Pipeline OCR de bout en bout avec Mistral OCR : extraction des données de documents et score de validité croisé avec des bases publiques et privées",
+          fr: "Développement d'un pipeline OCR de bout en bout avec Mistral OCR, qui extrait les données des documents et évalue leur validité en les croisant avec des bases publiques et privées",
         },
         {
           en: "Improved type safety across the stack and prepared it for AI-powered code review",
@@ -131,8 +135,8 @@ export const RESUME = {
       period: { start: "2024-07", end: "2024-12" },
       highlights: [
         {
-          en: "Shipped a Next.js web app and an Expo mobile app on the App Store and Google Play: 1,000+ downloads, 300+ beta users",
-          fr: "Lancement d'une app web Next.js et mobile Expo (App Store, Google Play) : 1 000+ téléchargements, 300 bêta-testeurs",
+          en: "Shipped a Next.js web app and an Expo mobile app on the App Store and Google Play, reaching 1,000+ downloads and 300+ beta users",
+          fr: "Lancement d'une app web Next.js et d'une app mobile Expo sur l'App Store et Google Play, avec plus de 1 000 téléchargements et plus de 300 bêta-testeurs",
         },
         {
           en: "Built the NestJS backend with Supabase and OpenAI-powered features",
@@ -157,8 +161,8 @@ export const RESUME = {
       period: { start: "2023-07", end: "2024-07" },
       highlights: [
         {
-          en: "Deployed 10+ Solidity smart contracts and a web app used by 200+ users; reached 342 holders",
-          fr: "Déploiement de plus de 10 smart contracts Solidity et d'une app web utilisée par plus de 200 personnes ; 342 détenteurs",
+          en: "Deployed 10+ Solidity smart contracts and a web app used by 200+ users",
+          fr: "Déploiement de plus de 10 smart contracts Solidity et d'une app web utilisée par plus de 200 personnes",
         },
       ],
     },
@@ -223,8 +227,8 @@ export const RESUME = {
       name: "todo-tree",
       url: "https://github.com/alexandretrotel/todo-tree",
       description: {
-        en: "Rust CLI to find TODO comments",
-        fr: "CLI Rust pour trouver les commentaires TODO",
+        en: "Finds TODO comments across a codebase and lists them as a tree",
+        fr: "Repère les commentaires TODO d'une codebase et les affiche en arborescence",
       },
       stars: 56,
     },
@@ -232,8 +236,8 @@ export const RESUME = {
       name: "dotfiles-manager",
       url: "https://github.com/alexandretrotel/dotfiles-manager",
       description: {
-        en: "Rust CLI to sync dotfiles with profiles",
-        fr: "CLI Rust pour synchroniser ses dotfiles par profil",
+        en: "Syncs dotfiles across machines with profiles",
+        fr: "Synchronise les dotfiles entre machines, par profil",
       },
       stars: 33,
     },
@@ -241,8 +245,8 @@ export const RESUME = {
       name: "feedyourai",
       url: "https://github.com/alexandretrotel/feedyourai",
       description: {
-        en: "Rust CLI to pack a codebase for LLMs",
-        fr: "CLI Rust pour condenser une codebase pour les LLM",
+        en: "Packs a whole codebase into one prompt for LLMs",
+        fr: "Condense une codebase entière en un seul prompt pour les LLM",
       },
       stars: 4,
     },
