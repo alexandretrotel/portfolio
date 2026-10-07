@@ -38,7 +38,6 @@ export const RESUME_LABELS = {
 export const RESUME = {
   name: "Alexandre Trotel",
   headline: { en: "Junior Full-Stack Engineer", fr: "Ingénieur Full-Stack Junior" },
-  status: { en: "Open to roles", fr: "Ouvert aux opportunités" },
   location: {
     en: "Paris, France, open to relocation",
     fr: "Paris, France, mobile",
@@ -71,16 +70,12 @@ export const RESUME = {
           fr: "Architecture d'un pipeline historique résistant aux réorganisations de chaîne, de HyperSync vers TimescaleDB via Redpanda, traitant plus de 1 000 événements/s",
         },
         {
-          en: "Built a real-time pipeline streaming on-chain events and mempool transactions from a self-hosted Polygon node to WebSocket clients",
-          fr: "Développement d'un pipeline temps réel diffusant les événements on-chain et les transactions du mempool d'un nœud Polygon auto-hébergé vers les clients WebSocket",
-        },
-        {
           en: "Ingested 8B+ on-chain events in under 2 days and stored 400+ GB compressed",
-          fr: "Ingestion de plus de 8 milliards d'événements on-chain en moins de 2 jours et stockage de plus de 400 Go compressés",
+          fr: "Ingestion de plus de 8 milliards d'événements on-chain en moins de 2 jours, stockés sur plus de 400 Go compressés",
         },
         {
-          en: "Served REST and WebSocket data at 70ms p95, among the fastest in the market",
-          fr: "Données servies en REST et WebSocket à 70 ms au p95, parmi les plus rapides du marché",
+          en: "Served REST and WebSocket data at 70ms p95, streaming live events and mempool from a self-hosted Polygon node",
+          fr: "Données REST et WebSocket servies à 70 ms au p95, en direct depuis un nœud Polygon auto-hébergé",
         },
         {
           en: "Shipped official SDKs in TypeScript, Rust and Python, plus usage-based billing with Stripe",
@@ -121,7 +116,7 @@ export const RESUME = {
         },
         {
           en: "Built an end-to-end OCR pipeline with Mistral OCR that extracts document data and scores validity against public and private databases",
-          fr: "Développement d'un pipeline OCR de bout en bout avec Mistral OCR, qui extrait les données des documents et évalue leur validité en les croisant avec des bases publiques et privées",
+          fr: "Pipeline OCR de bout en bout (Mistral OCR) qui extrait et vérifie les données des documents via des bases publiques et privées",
         },
         {
           en: "Improved type safety across the stack and prepared it for AI-powered code review",
@@ -136,7 +131,7 @@ export const RESUME = {
       highlights: [
         {
           en: "Shipped a Next.js web app and an Expo mobile app on the App Store and Google Play, reaching 1,000+ downloads and 300+ beta users",
-          fr: "Lancement d'une app web Next.js et d'une app mobile Expo sur l'App Store et Google Play, avec plus de 1 000 téléchargements et plus de 300 bêta-testeurs",
+          fr: "Lancement d'apps web Next.js et mobile Expo sur les stores, avec 1 000+ téléchargements et 300+ bêta-testeurs",
         },
         {
           en: "Built the NestJS backend with Supabase and OpenAI-powered features",
@@ -176,8 +171,8 @@ export const RESUME = {
       },
       period: { start: "2025-01", end: "2026-05" },
       details: {
-        en: "Machine Learning, ML for Trading, Network Security",
-        fr: "Machine Learning, ML pour le trading, sécurité des réseaux",
+        en: "Machine Learning, Advanced Computer Architecture, Online Machine Learning, Machine Learning for Trading, Digital Speech Processing, Solar Cells, Computer Network Security",
+        fr: "Machine learning, architecture avancée des ordinateurs, online machine learning, machine learning pour le trading, traitement numérique de la parole, cellules solaires, sécurité des réseaux",
       },
     },
     {
@@ -185,8 +180,8 @@ export const RESUME = {
       degree: { en: "MS Computer Science", fr: "Diplôme d'ingénieur en informatique" },
       period: { start: "2022-09", end: "2025-07" },
       details: {
-        en: "Networks, Distributed Systems, Cloud and Big Data",
-        fr: "Réseaux, systèmes distribués, cloud et big data",
+        en: "Internet and Graph Theory, Local and Telecom Networks, Functional Programming and Compilers, Concurrent and Distributed Applications, IoT Networks, Cloud Infrastructure and Big Data",
+        fr: "Internet et graphes, réseaux locaux et de télécommunications, programmation fonctionnelle et traduction des langages, applications concurrentes et communicantes, réseaux pour l'IoT, infrastructure cloud et big data",
       },
     },
     {
@@ -209,17 +204,16 @@ export const RESUME = {
         "PostgreSQL",
         "TimescaleDB",
         "Redpanda",
-        "Protobuf",
         "GraphQL",
       ],
     },
     {
       category: { en: "Frontend", fr: "Frontend" },
-      items: ["React", "Next.js", "TanStack Start", "React Native", "Expo", "Tailwind CSS"],
+      items: ["React", "Next.js", "TanStack Start", "Vite", "React Native", "Expo", "Tailwind CSS"],
     },
     {
       category: { en: "Infra & AI", fr: "Infra & IA" },
-      items: ["Docker", "Railway", "GitHub Actions", "MCP", "LLM APIs"],
+      items: ["Docker", "Vercel", "Cloudflare", "Railway", "GitHub Actions", "MCP", "Mastra", "AI SDK", "TanStack AI"],
     },
   ],
   projects: [
@@ -272,7 +266,6 @@ export const RESUME = {
 } as const satisfies {
   name: string;
   headline: Localized;
-  status: Localized;
   location: Localized;
   contact: readonly { label: string; url: string }[];
   summary: Localized;

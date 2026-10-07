@@ -60,7 +60,7 @@ const css = `
   a { color: inherit; text-decoration: none; }
   header { display: flex; flex-direction: column; gap: 3px; }
   h1 { font-size: 24px; font-weight: 700; line-height: 1.1; }
-  .headline { font-size: 13px; font-weight: 500; }
+  .headline { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 13px; font-weight: 500; }
   .meta { display: flex; flex-wrap: wrap; gap: 4px 12px; color: #555; }
   section { display: flex; flex-direction: column; gap: 5px; }
   h2 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding-bottom: 2px; border-bottom: 1px solid #ccc; }
@@ -84,7 +84,10 @@ const buildHtml = (locale: ResumeLocale): string => {
 
   const header = html`<header>
     <h1>${RESUME.name}</h1>
-    <p class="headline">${t(RESUME.headline)} · ${t(RESUME.status)} · ${t(RESUME.location)}</p>
+    <p class="headline">
+      <span>${t(RESUME.headline)}</span>
+      <span class="muted">${t(RESUME.location)}</span>
+    </p>
     <div class="meta">${RESUME.contact.map((c) => html`<a href="${c.url}">${c.label}</a>`)}</div>
   </header>`;
 
@@ -94,7 +97,7 @@ const buildHtml = (locale: ResumeLocale): string => {
     labels.experience,
     html`${RESUME.experience.map((job) =>
       entry(
-        html`${job.company} <span>· ${t(job.role)}</span>`,
+        html`${job.company}<span>, ${t(job.role)}</span>`,
         formatPeriod(job.period, locale),
         html`<ul>
           ${job.highlights.map((h) => html`<li><span>•</span>${t(h)}</li>`)}
@@ -107,7 +110,7 @@ const buildHtml = (locale: ResumeLocale): string => {
     labels.education,
     html`${RESUME.education.map((school) =>
       entry(
-        html`${school.school} <span>· ${t(school.degree)}</span>`,
+        html`${school.school}<span>, ${t(school.degree)}</span>`,
         formatPeriod(school.period, locale),
         "details" in school ? html`<p class="muted">${t(school.details)}</p>` : "",
       ),
@@ -169,7 +172,7 @@ export const renderResume = async (locale: ResumeLocale): Promise<Uint8Array> =>
     css,
     lang: locale,
     metadata: {
-      title: `${RESUME.name} · ${RESUME.headline[locale]}`,
+      title: `${RESUME.name}, ${RESUME.headline[locale]}`,
       authors: [RESUME.name],
     },
   });
