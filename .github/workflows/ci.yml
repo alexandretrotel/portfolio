@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Setup pnpm
+        uses: ./.github/actions/setup-pnpm
+      - name: Run format check
+        run: pnpm run format:check
+      - name: Run typecheck
+        run: pnpm run typecheck
+      - name: Run lint
+        run: pnpm run lint

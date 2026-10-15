@@ -12,29 +12,30 @@
     "format:check": "pnpm exec oxfmt --check .",
     "lint": "pnpm exec oxlint .",
     "lint:fix": "pnpm exec oxlint --fix .",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.3.4",
     "@astrojs/markdown-remark": "^7.3.2",
     "@astrojs/sitemap": "^3.7.4",
-    "astro": "^7.3.6",
+    "astro": "^7.3.8",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-external-links": "^3.0.0",
-    "takumi-pdf": "^0.15.0"
+    "takumi-pdf": "^0.17.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@zap-studio/oxfmt": "^1.0.0",
     "@zap-studio/oxlint": "^2.2.1",
     "eslint": "^10.12.0",
-    "oxfmt": "^0.72.0",
-    "oxlint": "^1.87.0",
+    "oxfmt": "^0.73.0",
+    "oxlint": "^1.88.0",
     "typescript": "^7.0.2",
-    "wrangler": "^4.148.0"
+    "wrangler": "^4.151.0"
   },
   "engines": {
     "node": ">=22.12.0"
   },
-  "packageManager": "pnpm@12.10.1+sha512.ba40a37eb1a370d60fea8c4cf1d364c13bcccef518e98ad2bcee954f539d38da37458e58261a3fa55e06523450ea0ffff9f497b135be41f2c15c1642bacace6c"
+  "packageManager": "pnpm@12.13.0+sha512.1e55719bf26e809dce5c5084fdebaa64efb3da9038ae5d68a9f8a68311f1a45841c8c3b76a37298c3b66f6bcc80409a9b7f33c78a7168a3e90fb65a5d8235ae4"
 }
