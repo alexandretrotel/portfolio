@@ -25,6 +25,13 @@
     "issues": {
       "enabled": true,
     },
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+    },
+    "traces": {
+      "enabled": true,
+    },
   },
   "placement": {
     "mode": "smart",
