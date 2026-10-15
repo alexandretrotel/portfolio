@@ -20,6 +20,15 @@
       "custom_domain": true,
     },
   ],
+  "observability": {
+    "enabled": true,
+    "issues": {
+      "enabled": true,
+    },
+  },
+  "placement": {
+    "mode": "smart",
+  },
   "workers_dev": false,
   "preview_urls": false,
   "send_metrics": false,
