@@ -10,9 +10,7 @@ export const GET: APIRoute = async () => {
   );
 
   const essayItems = essays.map((e) => `- [${e.data.title}](/essays/${e.id})`).join("\n");
-  const links = [...FOOTER_LINKS, RESUME_LINK]
-    .map((l) => `[${l.name}](${l.url})`)
-    .join(" · ");
+  const links = [...FOOTER_LINKS, RESUME_LINK].map((l) => `[${l.name}](${l.url})`).join(" · ");
 
   const body = `# ${SITE.name}
 

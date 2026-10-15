@@ -197,15 +197,7 @@ export const RESUME = {
     },
     {
       category: { en: "Backend & data", fr: "Backend & données" },
-      items: [
-        "Axum",
-        "Tokio",
-        "NestJS",
-        "PostgreSQL",
-        "TimescaleDB",
-        "Redpanda",
-        "GraphQL",
-      ],
+      items: ["Axum", "Tokio", "NestJS", "PostgreSQL", "TimescaleDB", "Redpanda", "GraphQL"],
     },
     {
       category: { en: "Frontend", fr: "Frontend" },
@@ -213,7 +205,17 @@ export const RESUME = {
     },
     {
       category: { en: "Infra & AI", fr: "Infra & IA" },
-      items: ["Docker", "Vercel", "Cloudflare", "Railway", "GitHub Actions", "MCP", "Mastra", "AI SDK", "TanStack AI"],
+      items: [
+        "Docker",
+        "Vercel",
+        "Cloudflare",
+        "Railway",
+        "GitHub Actions",
+        "MCP",
+        "Mastra",
+        "AI SDK",
+        "TanStack AI",
+      ],
     },
   ],
   projects: [
