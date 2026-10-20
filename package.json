@@ -8,31 +8,27 @@
     "build": "astro build",
     "deploy": "astro build && wrangler deploy",
     "dev": "astro dev",
-    "format": "pnpm exec oxfmt .",
-    "format:check": "pnpm exec oxfmt --check .",
-    "lint": "pnpm exec oxlint .",
-    "lint:fix": "pnpm exec oxlint --fix .",
     "preview": "astro preview",
-    "typecheck": "astro sync && tsc --noEmit"
+    "typecheck": "astro sync && tsc --noEmit",
+    "check": "ultracite check",
+    "fix": "ultracite fix"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^14.4.0",
+    "@astrojs/cloudflare": "^14.4.1",
     "@astrojs/markdown-remark": "^7.3.3",
     "@astrojs/sitemap": "^3.7.4",
-    "astro": "^7.4.0",
+    "astro": "^7.4.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-external-links": "^3.0.0",
-    "takumi-pdf": "^0.17.4"
+    "takumi-pdf": "^0.18.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@zap-studio/oxfmt": "^1.0.0",
-    "@zap-studio/oxlint": "^2.2.1",
-    "eslint": "^10.13.0",
-    "oxfmt": "^0.73.0",
-    "oxlint": "^1.88.0",
+    "@astrojs/check": "^0.9.11",
+    "oxfmt": "^0.74.0",
+    "oxlint": "^1.89.0",
     "typescript": "^7.0.2",
-    "wrangler": "^4.151.1"
+    "ultracite": "8.0.1",
+    "wrangler": "^4.151.2"
   },
   "engines": {
     "node": ">=22.12.0"

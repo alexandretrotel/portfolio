@@ -24,9 +24,7 @@ jobs:
         with:
           cache: true
           run_install: true
-      - name: Run format check
-        run: pnpm run format:check
       - name: Run typecheck
         run: pnpm run typecheck
-      - name: Run lint
-        run: pnpm run lint
+      - name: Run Ultracite
+        run: pnpm run check

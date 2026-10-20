@@ -1,9 +1,13 @@
 import { measure, render } from "takumi-pdf";
 
-import { RESUME, RESUME_LABELS, type ResumeLocale } from "../data/resume";
+import { RESUME, RESUME_LABELS } from "../data/resume";
+import type { ResumeLocale } from "../data/resume";
 
 class SafeHtml {
-  constructor(readonly value: string) {}
+  readonly value: string;
+  constructor(value: string) {
+    this.value = value;
+  }
 }
 
 const escapeHtml = (value: string): string =>
@@ -14,13 +18,19 @@ const escapeHtml = (value: string): string =>
     .replaceAll('"', "&quot;");
 
 const toHtml = (value: unknown): string => {
-  if (value instanceof SafeHtml) return value.value;
-  if (Array.isArray(value)) return value.map(toHtml).join("");
+  if (value instanceof SafeHtml) {
+    return value.value;
+  }
+  if (Array.isArray(value)) {
+    return value.map(toHtml).join("");
+  }
   return escapeHtml(String(value));
 };
 
 const html = (strings: TemplateStringsArray, ...values: unknown[]): SafeHtml =>
-  new SafeHtml(strings.reduce((out, part, i) => out + toHtml(values[i - 1]) + part));
+  new SafeHtml(
+    strings.reduce((out, part, i) => out + toHtml(values[i - 1]) + part)
+  );
 
 const formatMonth = (value: string, locale: ResumeLocale): string => {
   const [year, month] = value.split("-").map(Number);
@@ -33,9 +43,11 @@ const formatMonth = (value: string, locale: ResumeLocale): string => {
 
 const formatPeriod = (
   period: { start: string; end: string | null },
-  locale: ResumeLocale,
+  locale: ResumeLocale
 ): string => {
-  const end = period.end ? formatMonth(period.end, locale) : RESUME_LABELS[locale].present;
+  const end = period.end
+    ? formatMonth(period.end, locale)
+    : RESUME_LABELS[locale].present;
   return `${formatMonth(period.start, locale)} - ${end}`;
 };
 
@@ -45,7 +57,11 @@ const section = (title: string, body: SafeHtml): SafeHtml =>
     ${body}
   </section>`;
 
-const entry = (title: SafeHtml, period: string, body: SafeHtml | string = ""): SafeHtml =>
+const entry = (
+  title: SafeHtml,
+  period: string,
+  body: SafeHtml | string = ""
+): SafeHtml =>
   html`<div class="entry">
     <div class="row">
       <h3>${title}</h3>
@@ -80,7 +96,8 @@ const css = `
 const buildHtml = (locale: ResumeLocale): string => {
   const labels = RESUME_LABELS[locale];
   const t = (value: Record<ResumeLocale, string>): string => value[locale];
-  const label = (name: string): SafeHtml => html`<b>${name}${labels.colon}</b> `;
+  const label = (name: string): SafeHtml =>
+    html`<b>${name}${labels.colon}</b> `;
 
   const header = html`<header>
     <h1>${RESUME.name}</h1>
@@ -88,7 +105,9 @@ const buildHtml = (locale: ResumeLocale): string => {
       <span>${t(RESUME.headline)}</span>
       <span class="muted">${t(RESUME.location)}</span>
     </p>
-    <div class="meta">${RESUME.contact.map((c) => html`<a href="${c.url}">${c.label}</a>`)}</div>
+    <div class="meta">
+      ${RESUME.contact.map((c) => html`<a href="${c.url}">${c.label}</a>`)}
+    </div>
   </header>`;
 
   const summary = section(labels.summary, html`<p>${t(RESUME.summary)}</p>`);
@@ -101,9 +120,9 @@ const buildHtml = (locale: ResumeLocale): string => {
         formatPeriod(job.period, locale),
         html`<ul>
           ${job.highlights.map((h) => html`<li><span>•</span>${t(h)}</li>`)}
-        </ul>`,
-      ),
-    )}`,
+        </ul>`
+      )
+    )}`
   );
 
   const education = section(
@@ -112,16 +131,18 @@ const buildHtml = (locale: ResumeLocale): string => {
       entry(
         html`${school.school}<span>, ${t(school.degree)}</span>`,
         formatPeriod(school.period, locale),
-        "details" in school ? html`<p class="muted">${t(school.details)}</p>` : "",
-      ),
-    )}`,
+        "details" in school
+          ? html`<p class="muted">${t(school.details)}</p>`
+          : ""
+      )
+    )}`
   );
 
   const skills = section(
     labels.skills,
     html`<div class="lines">
       ${RESUME.skills.map((s) => html`<p>${label(t(s.category))}${s.items.join(", ")}</p>`)}
-    </div>`,
+    </div>`
   );
 
   const projects = section(
@@ -129,18 +150,18 @@ const buildHtml = (locale: ResumeLocale): string => {
     html`<p>
       ${RESUME.projects.map(
         (p, i) =>
-          html`${i > 0 ? " · " : ""}<a href="${p.url}"><b>${p.name}</b></a> (${p.stars}
-            ${labels.stars})${labels.colon} ${t(p.description)}`,
+          html`${i > 0 ? " · " : ""}<a href="${p.url}"><b>${p.name}</b></a>
+            (${p.stars} ${labels.stars})${labels.colon} ${t(p.description)}`
       )}
-    </p>`,
+    </p>`
   );
 
   const { leadership } = RESUME;
   const extras = html`<div class="lines">
     <p>
-      ${label(labels.leadership)}${t(leadership.role)}, ${leadership.organization},
-      ${t(leadership.kind)} (${formatPeriod(leadership.period, locale)}).
-      ${t(leadership.description)}
+      ${label(labels.leadership)}${t(leadership.role)},
+      ${leadership.organization}, ${t(leadership.kind)}
+      (${formatPeriod(leadership.period, locale)}). ${t(leadership.description)}
     </p>
     <p>${label(labels.languages)}${RESUME.languages.map(t).join(", ")}</p>
     <p>${label(labels.interests)}${t(RESUME.interests)}</p>
@@ -154,7 +175,9 @@ const buildHtml = (locale: ResumeLocale): string => {
 const PAGE = { width: 794, height: 1123 };
 const MARGIN = 40;
 
-export const renderResume = async (locale: ResumeLocale): Promise<Uint8Array> => {
+export const renderResume = async (
+  locale: ResumeLocale
+): Promise<Uint8Array> => {
   const document = buildHtml(locale);
 
   const { height } = await measure(document, {
@@ -163,7 +186,9 @@ export const renderResume = async (locale: ResumeLocale): Promise<Uint8Array> =>
     lang: locale,
   });
   if (height > PAGE.height - 2 * MARGIN) {
-    throw new Error(`The ${locale} resume overflows one page (${Math.ceil(height)}px of content).`);
+    throw new Error(
+      `The ${locale} resume overflows one page (${Math.ceil(height)}px of content).`
+    );
   }
 
   return render(document, {

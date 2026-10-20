@@ -72,12 +72,14 @@ const articleJsonLd = {
         const save = () => {
             try {
                 localStorage.setItem(key, JSON.stringify(boxes.map((box) => box.checked)));
-            } catch {}
+            } catch {
+                // localStorage unavailable (private mode, blocked storage)
+            }
         };
 
         for (const [index, box] of boxes.entries()) {
             const item = box.parentElement;
-            if (!item) continue;
+            if (!item) {continue;}
 
             const label = document.createElement("label");
             label.append(...item.childNodes);

@@ -1,17 +1,13 @@
-import base from "@zap-studio/oxlint/base";
 import { defineConfig } from "oxlint";
+import astro from "ultracite/oxlint/astro";
+import core from "ultracite/oxlint/core";
 
 export default defineConfig({
-  extends: [base],
-  rules: {
-    "sonarjs/no-implicit-dependencies": "off",
-  },
+  env: core.env,
+  extends: [core, astro],
+  ignorePatterns: core.ignorePatterns,
+  rules: { "sort-keys": "off" },
   overrides: [
-    {
-      files: ["**/*.astro"],
-      rules: {
-        "sonarjs/unused-import": "off",
-      },
-    },
+    { files: ["**/*.astro"], rules: { "unicorn/filename-case": "off" } },
   ],
 });

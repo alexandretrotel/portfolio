@@ -4,7 +4,10 @@ export type ResumeLocale = (typeof RESUME_LOCALES)[number];
 
 type Localized = Record<ResumeLocale, string>;
 
-type Period = { start: string; end: string | null };
+interface Period {
+  start: string;
+  end: string | null;
+}
 
 export const RESUME_LABELS = {
   en: {
@@ -30,22 +33,31 @@ export const RESUME_LABELS = {
     languages: "Langues",
     interests: "Centres d'intérêt",
     present: "Aujourd'hui",
-    colon: "\u00a0:",
+    colon: "\u00A0:",
     stars: "étoiles",
   },
 } as const satisfies Record<ResumeLocale, Record<string, string>>;
 
 export const RESUME = {
   name: "Alexandre Trotel",
-  headline: { en: "Junior Full-Stack Engineer", fr: "Ingénieur Full-Stack Junior" },
+  headline: {
+    en: "Junior Full-Stack Engineer",
+    fr: "Ingénieur Full-Stack Junior",
+  },
   location: {
     en: "Paris, France, open to relocation",
     fr: "Paris, France, mobile",
   },
   contact: [
-    { label: "trotelalexandre@proton.me", url: "mailto:trotelalexandre@proton.me" },
+    {
+      label: "trotelalexandre@proton.me",
+      url: "mailto:trotelalexandre@proton.me",
+    },
     { label: "alexandretrotel.org", url: "https://www.alexandretrotel.org" },
-    { label: "github.com/alexandretrotel", url: "https://github.com/alexandretrotel" },
+    {
+      label: "github.com/alexandretrotel",
+      url: "https://github.com/alexandretrotel",
+    },
     {
       label: "linkedin.com/in/alexandretrotel",
       url: "https://www.linkedin.com/in/alexandretrotel",
@@ -141,7 +153,10 @@ export const RESUME = {
     },
     {
       company: "SiBorg",
-      role: { en: "Full-Stack Engineer Intern", fr: "Stagiaire Ingénieur Full-Stack" },
+      role: {
+        en: "Full-Stack Engineer Intern",
+        fr: "Stagiaire Ingénieur Full-Stack",
+      },
       period: { start: "2024-06", end: "2024-09" },
       highlights: [
         {
@@ -177,7 +192,10 @@ export const RESUME = {
     },
     {
       school: "ENSEEIHT",
-      degree: { en: "MS Computer Science", fr: "Diplôme d'ingénieur en informatique" },
+      degree: {
+        en: "MS Computer Science",
+        fr: "Diplôme d'ingénieur en informatique",
+      },
       period: { start: "2022-09", end: "2025-07" },
       details: {
         en: "Internet and Graph Theory, Local and Telecom Networks, Functional Programming and Compilers, Concurrent and Distributed Applications, IoT Networks, Cloud Infrastructure and Big Data",
@@ -197,11 +215,27 @@ export const RESUME = {
     },
     {
       category: { en: "Backend & data", fr: "Backend & données" },
-      items: ["Axum", "Tokio", "NestJS", "PostgreSQL", "TimescaleDB", "Redpanda", "GraphQL"],
+      items: [
+        "Axum",
+        "Tokio",
+        "NestJS",
+        "PostgreSQL",
+        "TimescaleDB",
+        "Redpanda",
+        "GraphQL",
+      ],
     },
     {
       category: { en: "Frontend", fr: "Frontend" },
-      items: ["React", "Next.js", "TanStack Start", "Vite", "React Native", "Expo", "Tailwind CSS"],
+      items: [
+        "React",
+        "Next.js",
+        "TanStack Start",
+        "Vite",
+        "React Native",
+        "Expo",
+        "Tailwind CSS",
+      ],
     },
     {
       category: { en: "Infra & AI", fr: "Infra & IA" },
@@ -249,7 +283,10 @@ export const RESUME = {
   ],
   leadership: {
     organization: "N7 Consulting",
-    kind: { en: "ENSEEIHT's Junior-Entreprise", fr: "Junior-Entreprise de l'ENSEEIHT" },
+    kind: {
+      en: "ENSEEIHT's Junior-Entreprise",
+      fr: "Junior-Entreprise de l'ENSEEIHT",
+    },
     role: { en: "Vice President", fr: "Vice-président" },
     period: { start: "2023-03", end: "2024-03" },
     description: {
@@ -284,7 +321,12 @@ export const RESUME = {
     details?: Localized;
   }[];
   skills: readonly { category: Localized; items: readonly string[] }[];
-  projects: readonly { name: string; url: string; description: Localized; stars: number }[];
+  projects: readonly {
+    name: string;
+    url: string;
+    description: Localized;
+    stars: number;
+  }[];
   leadership: {
     organization: string;
     kind: Localized;

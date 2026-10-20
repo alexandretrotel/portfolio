@@ -1,4 +1,4 @@
-import zapStudio from "@zap-studio/oxfmt/base";
 import { defineConfig } from "oxfmt";
+import ultracite from "ultracite/oxfmt";
 
-export default defineConfig(zapStudio);
+export default defineConfig(ultracite);

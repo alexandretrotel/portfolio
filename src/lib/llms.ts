@@ -2,9 +2,8 @@ import type { CollectionEntry } from "astro:content";
 
 import { SITE, SKILLS_REPO_URL } from "../data/site";
 
-const entryUrl = (id: string, ext: "html" | "md") => {
-  return `${SITE.url}/essays/${id}${ext === "md" ? ".md" : ""}`;
-};
+const entryUrl = (id: string, ext: "html" | "md") =>
+  `${SITE.url}/essays/${id}${ext === "md" ? ".md" : ""}`;
 
 const listItem = (entry: CollectionEntry<"essays">) => {
   const html = entryUrl(entry.id, "html");
@@ -26,7 +25,10 @@ ${items}
 
 export const rootLlmsTxt = (essays: CollectionEntry<"essays">[]) => {
   const essayItems = essays
-    .map((e) => `- [${e.data.title}](${entryUrl(e.id, "html")}): ${e.data.description}`)
+    .map(
+      (e) =>
+        `- [${e.data.title}](${entryUrl(e.id, "html")}): ${e.data.description}`
+    )
     .join("\n");
 
   return `# ${SITE.name}

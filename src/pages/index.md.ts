@@ -1,16 +1,20 @@
 import type { APIRoute } from "astro";
-
 import { getCollection } from "astro:content";
 
 import { SITE, FOOTER_LINKS, RESUME_LINK } from "../data/site";
 
 export const GET: APIRoute = async () => {
-  const essays = (await getCollection("essays")).sort(
-    (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+  const allEssays = await getCollection("essays");
+  const essays = allEssays.toSorted(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime()
   );
 
-  const essayItems = essays.map((e) => `- [${e.data.title}](/essays/${e.id})`).join("\n");
-  const links = [...FOOTER_LINKS, RESUME_LINK].map((l) => `[${l.name}](${l.url})`).join(" · ");
+  const essayItems = essays
+    .map((e) => `- [${e.data.title}](/essays/${e.id})`)
+    .join("\n");
+  const links = [...FOOTER_LINKS, RESUME_LINK]
+    .map((l) => `[${l.name}](${l.url})`)
+    .join(" · ");
 
   const body = `# ${SITE.name}
 
