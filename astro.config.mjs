@@ -1,6 +1,6 @@
 // @ts-check
 import cloudflare from "@astrojs/cloudflare";
-import { rehypeHeadingIds } from "@astrojs/markdown-remark";
+import { rehypeHeadingIds, unified } from "@astrojs/markdown-remark";
 import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -15,11 +15,13 @@ export default defineConfig({
     "/resume": "/resume/en.pdf",
   },
   markdown: {
-    rehypePlugins: [
-      [rehypeExternalLinks, { rel: ["noreferrer"] }],
-      rehypeHeadingIds,
-      [rehypeAutolinkHeadings, { behavior: "wrap" }],
-    ],
+    processor: unified({
+      rehypePlugins: [
+        [rehypeExternalLinks, { rel: ["noreferrer"] }],
+        rehypeHeadingIds,
+        [rehypeAutolinkHeadings, { behavior: "wrap" }],
+      ],
+    }),
   },
   integrations: [
     sitemap({
