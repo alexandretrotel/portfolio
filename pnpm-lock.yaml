@@ -166,6 +166,16 @@ importers:
 
   .:
     dependencies:
+      astro:
+        specifier: ^7.4.1
+        version: 7.4.1(@astrojs/markdown-remark@7.3.3(supports-color@10.2.2))(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1)
+      takumi-pdf:
+        specifier: ^0.18.0
+        version: 0.18.0
+    devDependencies:
+      '@astrojs/check':
+        specifier: ^0.9.11
+        version: 0.9.11(@emnapi/runtime@1.11.3)(prettier@3.9.10)(typescript@7.0.2)
       '@astrojs/cloudflare':
         specifier: ^14.4.1
         version: 14.4.1(@types/node@24.19.2)(astro@7.4.1(@astrojs/markdown-remark@7.3.3(supports-color@10.2.2))(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1))(esbuild@0.28.2)(wrangler@4.151.2(@types/node@24.19.2))(yaml@2.9.1)
@@ -175,22 +185,6 @@ importers:
       '@astrojs/sitemap':
         specifier: ^3.7.4
         version: 3.7.4
-      astro:
-        specifier: ^7.4.1
-        version: 7.4.1(@astrojs/markdown-remark@7.3.3(supports-color@10.2.2))(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1)
-      rehype-autolink-headings:
-        specifier: ^7.1.0
-        version: 7.1.0
-      rehype-external-links:
-        specifier: ^3.0.0
-        version: 3.0.0
-      takumi-pdf:
-        specifier: ^0.18.0
-        version: 0.18.0
-    devDependencies:
-      '@astrojs/check':
-        specifier: ^0.9.11
-        version: 0.9.11(@emnapi/runtime@1.11.3)(prettier@3.9.10)(typescript@7.0.2)
       fallow:
         specifier: ^3.34.1
         version: 3.34.1
@@ -200,6 +194,12 @@ importers:
       oxlint:
         specifier: ^1.89.0
         version: 1.89.0
+      rehype-autolink-headings:
+        specifier: ^7.1.0
+        version: 7.1.0
+      rehype-external-links:
+        specifier: ^3.0.0
+        version: 3.0.0
       typescript:
         specifier: ^7.0.2
         version: 7.0.2

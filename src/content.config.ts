@@ -15,5 +15,3 @@ const essays = defineCollection({
 });
 
 export const collections = { essays };
-
-export type WritingData = z.infer<typeof writing>;
