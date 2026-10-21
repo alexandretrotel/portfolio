@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "typecheck": "astro sync && tsc --noEmit",
     "check": "ultracite check",
-    "fix": "ultracite fix"
+    "fix": "ultracite fix",
+    "fallow": "fallow --summary"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.4.1",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.11",
+    "fallow": "^3.34.1",
     "oxfmt": "^0.74.0",
     "oxlint": "^1.89.0",
     "typescript": "^7.0.2",
