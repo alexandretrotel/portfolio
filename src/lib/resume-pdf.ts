@@ -32,14 +32,12 @@ const html = (strings: TemplateStringsArray, ...values: unknown[]): SafeHtml =>
     strings.reduce((out, part, i) => out + toHtml(values[i - 1]) + part)
   );
 
-const formatMonth = (value: string, locale: ResumeLocale): string => {
-  const [year, month] = value.split("-").map(Number);
-  return new Date(Date.UTC(year, month - 1)).toLocaleDateString(locale, {
+const formatMonth = (value: string, locale: ResumeLocale): string =>
+  new Date(`${value}-01`).toLocaleDateString(locale, {
     month: "short",
     year: "numeric",
     timeZone: "UTC",
   });
-};
 
 const formatPeriod = (
   period: { start: string; end: string | null },

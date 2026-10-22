@@ -9,7 +9,7 @@
     "deploy": "astro build && wrangler deploy",
     "dev": "astro dev",
     "preview": "astro preview",
-    "typecheck": "astro sync && tsc --noEmit",
+    "typecheck": "astro check && tsc --noEmit",
     "check": "ultracite check",
     "fix": "ultracite fix",
     "fallow": "fallow --summary"
@@ -28,7 +28,7 @@
     "oxlint": "^1.89.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-external-links": "^3.0.0",
-    "typescript": "^7.0.2",
+    "typescript": "^6.0.3",
     "ultracite": "8.0.1",
     "wrangler": "^4.151.3"
   },
