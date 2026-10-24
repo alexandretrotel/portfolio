@@ -1,0 +1,4 @@
+pre-commit:
+  jobs:
+    - run: pnpm exec ultracite fix {staged_files}
+      stage_fixed: true
