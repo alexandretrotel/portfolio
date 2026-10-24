@@ -28,5 +28,26 @@ jobs:
         run: pnpm run typecheck
       - name: Run Ultracite
         run: pnpm run check
-      - name: Run Fallow
-        run: pnpm run fallow
+
+  fallow:
+    name: Fallow
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          cache: true
+          run_install: true
+      - name: Run dead code check
+        run: pnpm exec fallow dead-code
+      - name: Run duplication check
+        run: pnpm exec fallow dupes
+      - name: Run health check
+        run: pnpm exec fallow health
