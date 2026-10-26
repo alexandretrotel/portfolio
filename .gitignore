@@ -1,16 +1,12 @@
-# macOS
 .DS_Store
 
-# env
+.astro
+dist
+
 .env*
 
-# cloudflare
+.fallow/
+
 .wrangler
 
-# node
 node_modules
-
-# astro
-dist
-.astro
-.fallow/

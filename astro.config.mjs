@@ -11,9 +11,6 @@ export default defineConfig({
   output: "static",
   trailingSlash: "never",
   adapter: cloudflare(),
-  redirects: {
-    "/resume": "/resume/en.pdf",
-  },
   markdown: {
     processor: unified({
       rehypePlugins: [
@@ -25,7 +22,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !page.endsWith(".md") && !page.endsWith("/404.html"),
+      filter: (page) => !page.endsWith("/404.html"),
     }),
   ],
 });

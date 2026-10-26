@@ -8,7 +8,6 @@ interface Props {
     path: string;
     type?: "website" | "article";
     noindex?: boolean;
-    markdownTwin?: string;
     jsonLd?: object[];
 }
 
@@ -18,7 +17,6 @@ const {
     path,
     type = "website",
     noindex = false,
-    markdownTwin,
     jsonLd = [],
 } = Astro.props;
 
@@ -49,9 +47,6 @@ const canonical = new URL(path, SITE.url).toString();
         <link rel="canonical" href={canonical} />
         <link rel="icon" type="image/png" href="/logo-96.png" />
         <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
-        {markdownTwin && (
-            <link rel="alternate" type="text/markdown" href={markdownTwin} />
-        )}
 
         {
             !noindex && (

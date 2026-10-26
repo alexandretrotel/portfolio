@@ -1,53 +1,12 @@
-export const RESUME_LOCALES = ["en", "fr"] as const;
-
-export type ResumeLocale = (typeof RESUME_LOCALES)[number];
-
-type Localized = Record<ResumeLocale, string>;
-
 interface Period {
   start: string;
   end: string | null;
 }
 
-export const RESUME_LABELS = {
-  en: {
-    summary: "Summary",
-    experience: "Experience",
-    education: "Education",
-    skills: "Skills",
-    projects: "Projects",
-    leadership: "Leadership",
-    languages: "Languages",
-    interests: "Interests",
-    present: "Present",
-    colon: ":",
-    stars: "stars",
-  },
-  fr: {
-    summary: "Profil",
-    experience: "Expérience",
-    education: "Formation",
-    skills: "Compétences",
-    projects: "Projets",
-    leadership: "Associatif",
-    languages: "Langues",
-    interests: "Centres d'intérêt",
-    present: "Aujourd'hui",
-    colon: "\u00A0:",
-    stars: "étoiles",
-  },
-} as const satisfies Record<ResumeLocale, Record<string, string>>;
-
 export const RESUME = {
   name: "Alexandre Trotel",
-  headline: {
-    en: "Junior Full-Stack Engineer",
-    fr: "Ingénieur Full-Stack Junior",
-  },
-  location: {
-    en: "Paris, France, open to relocation",
-    fr: "Paris, France, mobile",
-  },
+  headline: "Junior Full-Stack Engineer",
+  location: "Paris, France, open to relocation",
   contact: [
     {
       label: "trotelalexandre@proton.me",
@@ -63,143 +22,86 @@ export const RESUME = {
       url: "https://www.linkedin.com/in/alexandretrotel",
     },
   ],
-  summary: {
-    en: "Full-stack engineer with a Rust and TypeScript focus. Built high-throughput data pipelines, low-latency APIs and open-source libraries used by thousands of developers. Two-time CTO, comfortable owning systems end to end.",
-    fr: "Ingénieur full-stack spécialisé en Rust et TypeScript. J'ai conçu des pipelines de données à haut débit, des API à faible latence et des bibliothèques open source utilisées par des milliers de développeurs. Deux fois CTO, habitué à gérer un système de A à Z.",
-  },
+  summary:
+    "Full-stack engineer with a Rust and TypeScript focus. Built high-throughput data pipelines, low-latency APIs and open-source libraries used by thousands of developers. Two-time CTO, comfortable owning systems end to end.",
   experience: [
     {
       company: "Radion",
-      role: { en: "Co-founder & CTO", fr: "Co-fondateur & CTO" },
+      role: "Co-founder & CTO",
       period: { start: "2026-03", end: "2026-08" },
       highlights: [
-        {
-          en: "Built a real-time and historical data platform for Polymarket prediction markets in a Rust monorepo of 9 services, including an Axum API, an MCP server and the ingestion pipelines",
-          fr: "Conception d'une plateforme de données temps réel et historiques pour les marchés prédictifs Polymarket, dans un monorepo Rust de 9 services dont une API Axum, un serveur MCP et les pipelines d'ingestion",
-        },
-        {
-          en: "Designed a reorg-safe historical pipeline from HyperSync through Redpanda into TimescaleDB, processing 1,000+ events/s",
-          fr: "Architecture d'un pipeline historique résistant aux réorganisations de chaîne, de HyperSync vers TimescaleDB via Redpanda, traitant plus de 1 000 événements/s",
-        },
-        {
-          en: "Ingested 8B+ on-chain events in under 2 days and stored 400+ GB compressed",
-          fr: "Ingestion de plus de 8 milliards d'événements on-chain en moins de 2 jours, stockés sur plus de 400 Go compressés",
-        },
-        {
-          en: "Served REST and WebSocket data at 70ms p95, streaming live events and mempool from a self-hosted Polygon node",
-          fr: "Données REST et WebSocket servies à 70 ms au p95, en direct depuis un nœud Polygon auto-hébergé",
-        },
-        {
-          en: "Shipped official SDKs in TypeScript, Rust and Python, plus usage-based billing with Stripe",
-          fr: "Publication des SDK officiels TypeScript, Rust et Python, et facturation à l'usage avec Stripe",
-        },
-        {
-          en: "Managed an intern and ran technical interviews; top 10% of YC applicants, Alliance interview stage",
-          fr: "Encadrement d'un stagiaire et entretiens techniques ; top 10 % des candidats YC, entretien chez Alliance",
-        },
+        "Built a real-time and historical data platform for Polymarket prediction markets in a Rust monorepo of 9 services, including an Axum API, an MCP server and the ingestion pipelines",
+        "Designed a reorg-safe historical pipeline from HyperSync through Redpanda into TimescaleDB, processing 1,000+ events/s",
+        "Ingested 8B+ on-chain events in under 2 days and stored 400+ GB compressed",
+        "Served REST and WebSocket data at 70ms p95, streaming live events and mempool from a self-hosted Polygon node",
+        "Shipped official SDKs in TypeScript, Rust and Python, plus usage-based billing with Stripe",
+        "Managed an intern and ran technical interviews; top 10% of YC applicants, Alliance interview stage",
       ],
     },
     {
       company: "ALLOHOUSTON",
-      role: {
-        en: "Full-Stack Engineer, intern then freelance",
-        fr: "Ingénieur Full-Stack, stage puis freelance",
-      },
+      role: "Full-Stack Engineer, intern then freelance",
       period: { start: "2025-05", end: "2025-12" },
       highlights: [
-        {
-          en: "Wrote a conflict resolution algorithm for incremental CRM sync that preserves local state",
-          fr: "Algorithme de résolution de conflits pour une synchronisation CRM incrémentale qui préserve l'état local",
-        },
-        {
-          en: "Built an end-to-end OCR pipeline with Mistral OCR that extracts document data and scores validity against public and private databases",
-          fr: "Pipeline OCR de bout en bout (Mistral OCR) qui extrait et vérifie les données des documents via des bases publiques et privées",
-        },
-        {
-          en: "Improved type safety across the stack and prepared it for AI-powered code review",
-          fr: "Renforcement du typage sur toute la stack et préparation à la revue de code assistée par IA",
-        },
+        "Wrote a conflict resolution algorithm for incremental CRM sync that preserves local state",
+        "Built an end-to-end OCR pipeline with Mistral OCR that extracts document data and scores validity against public and private databases",
+        "Improved type safety across the stack and prepared it for AI-powered code review",
       ],
     },
     {
       company: "Mindify",
-      role: { en: "Co-founder & CTO", fr: "Co-fondateur & CTO" },
+      role: "Co-founder & CTO",
       period: { start: "2024-07", end: "2024-12" },
       highlights: [
-        {
-          en: "Shipped a Next.js web app and an Expo mobile app on the App Store and Google Play, reaching 1,000+ downloads and 300+ beta users",
-          fr: "Lancement d'apps web Next.js et mobile Expo sur les stores, avec 1 000+ téléchargements et 300+ bêta-testeurs",
-        },
-        {
-          en: "Built the NestJS backend with Supabase and OpenAI-powered features",
-          fr: "Développement du backend NestJS avec Supabase et des fonctionnalités basées sur OpenAI",
-        },
+        "Shipped a Next.js web app and an Expo mobile app on the App Store and Google Play, reaching 1,000+ downloads and 300+ beta users",
+        "Built the NestJS backend with Supabase and OpenAI-powered features",
       ],
     },
     {
       company: "SiBorg",
-      role: {
-        en: "Full-Stack Engineer Intern",
-        fr: "Stagiaire Ingénieur Full-Stack",
-      },
+      role: "Full-Stack Engineer Intern",
       period: { start: "2024-06", end: "2024-09" },
       highlights: [
-        {
-          en: "Led the Next.js and GraphQL frontend of an NFT advertising platform; won The Graph Prize at Coinbase Onchain Summer",
-          fr: "Responsable du frontend Next.js et GraphQL d'une plateforme publicitaire NFT ; prix The Graph au Coinbase Onchain Summer",
-        },
+        "Led the Next.js and GraphQL frontend of an NFT advertising platform; won The Graph Prize at Coinbase Onchain Summer",
       ],
     },
     {
       company: "TrotelCoin",
-      role: { en: "Founder", fr: "Fondateur" },
+      role: "Founder",
       period: { start: "2023-07", end: "2024-07" },
       highlights: [
-        {
-          en: "Deployed 10+ Solidity smart contracts and a web app used by 200+ users",
-          fr: "Déploiement de plus de 10 smart contracts Solidity et d'une app web utilisée par plus de 200 personnes",
-        },
+        "Deployed 10+ Solidity smart contracts and a web app used by 200+ users",
       ],
     },
   ],
   education: [
     {
       school: "Georgia Institute of Technology",
-      degree: {
-        en: "MS Electrical and Computer Engineering (double degree)",
-        fr: "MS Electrical and Computer Engineering (double diplôme)",
-      },
+      degree: "MS Electrical and Computer Engineering (double degree)",
       period: { start: "2025-01", end: "2026-05" },
-      details: {
-        en: "Machine Learning, Advanced Computer Architecture, Online Machine Learning, Machine Learning for Trading, Digital Speech Processing, Solar Cells, Computer Network Security",
-        fr: "Machine learning, architecture avancée des ordinateurs, online machine learning, machine learning pour le trading, traitement numérique de la parole, cellules solaires, sécurité des réseaux",
-      },
+      details:
+        "Machine Learning, Advanced Computer Architecture, Online Machine Learning, Machine Learning for Trading, Digital Speech Processing, Solar Cells, Computer Network Security",
     },
     {
       school: "ENSEEIHT",
-      degree: {
-        en: "MS Computer Science",
-        fr: "Diplôme d'ingénieur en informatique",
-      },
+      degree: "MS Computer Science",
       period: { start: "2022-09", end: "2025-07" },
-      details: {
-        en: "Internet and Graph Theory, Local and Telecom Networks, Functional Programming and Compilers, Concurrent and Distributed Applications, IoT Networks, Cloud Infrastructure and Big Data",
-        fr: "Internet et graphes, réseaux locaux et de télécommunications, programmation fonctionnelle et traduction des langages, applications concurrentes et communicantes, réseaux pour l'IoT, infrastructure cloud et big data",
-      },
+      details:
+        "Internet and Graph Theory, Local and Telecom Networks, Functional Programming and Compilers, Concurrent and Distributed Applications, IoT Networks, Cloud Infrastructure and Big Data",
     },
     {
       school: "Lycée Chateaubriand",
-      degree: { en: "CPGE PCSI, PSI*", fr: "CPGE PCSI, PSI*" },
+      degree: "CPGE PCSI, PSI*",
       period: { start: "2020-09", end: "2022-07" },
     },
   ],
   skills: [
     {
-      category: { en: "Languages", fr: "Langages" },
+      category: "Languages",
       items: ["TypeScript", "Rust", "Python", "SQL", "Solidity"],
     },
     {
-      category: { en: "Backend & data", fr: "Backend & données" },
+      category: "Backend & data",
       items: [
         "Axum",
         "Tokio",
@@ -211,7 +113,7 @@ export const RESUME = {
       ],
     },
     {
-      category: { en: "Frontend", fr: "Frontend" },
+      category: "Frontend",
       items: [
         "React",
         "Next.js",
@@ -223,7 +125,7 @@ export const RESUME = {
       ],
     },
     {
-      category: { en: "Infra & AI", fr: "Infra & IA" },
+      category: "Infra & AI",
       items: [
         "Docker",
         "Vercel",
@@ -241,75 +143,59 @@ export const RESUME = {
     {
       name: "todo-tree",
       url: "https://github.com/alexandretrotel/todo-tree",
-      description: {
-        en: "Finds TODO comments across a codebase and lists them as a tree",
-        fr: "Repère les commentaires TODO d'une codebase et les affiche en arborescence",
-      },
+      description:
+        "Finds TODO comments across a codebase and lists them as a tree",
       stars: 56,
     },
     {
       name: "dotfiles-manager",
       url: "https://github.com/alexandretrotel/dotfiles-manager",
-      description: {
-        en: "Syncs dotfiles across machines with profiles",
-        fr: "Synchronise les dotfiles entre machines, par profil",
-      },
+      description: "Syncs dotfiles across machines with profiles",
       stars: 33,
     },
   ],
   leadership: {
     organization: "N7 Consulting",
-    kind: {
-      en: "ENSEEIHT's Junior-Entreprise",
-      fr: "Junior-Entreprise de l'ENSEEIHT",
-    },
-    role: { en: "Vice President", fr: "Vice-président" },
+    kind: "ENSEEIHT's Junior-Entreprise",
+    role: "Vice President",
     period: { start: "2023-03", end: "2024-03" },
-    description: {
-      en: "Led a team of 26 and generated €100K in revenue",
-      fr: "Direction d'une équipe de 26 personnes, 100 K€ de CA",
-    },
+    description: "Led a team of 26 and generated €100K in revenue",
   },
-  languages: [
-    { en: "French (native)", fr: "Français (langue maternelle)" },
-    { en: "English (fluent, C1)", fr: "Anglais (courant, C1)" },
-  ],
-  interests: {
-    en: "Running (20-30 km/week), piano and EDM production, science content creator (10k+ Instagram followers)",
-    fr: "Course à pied (20-30 km/semaine), piano et production EDM, création de contenu scientifique (10 000+ abonnés Instagram)",
-  },
+  languages: ["French (native)", "English (fluent, C1)"],
+  interests:
+    "Running (20-30 km/week), piano and EDM production, science content creator (10k+ Instagram followers)",
 } as const satisfies {
   name: string;
-  headline: Localized;
-  location: Localized;
+  headline: string;
+  location: string;
   contact: readonly { label: string; url: string }[];
-  summary: Localized;
+  summary: string;
   experience: readonly {
     company: string;
-    role: Localized;
+    role: string;
     period: Period;
-    highlights: readonly Localized[];
+    highlights: readonly string[];
   }[];
   education: readonly {
     school: string;
-    degree: Localized;
+    degree: string;
     period: Period;
-    details?: Localized;
+    details?: string;
   }[];
-  skills: readonly { category: Localized; items: readonly string[] }[];
+  skills: readonly { category: string; items: readonly string[] }[];
   projects: readonly {
     name: string;
     url: string;
-    description: Localized;
+    description: string;
     stars: number;
   }[];
   leadership: {
     organization: string;
-    kind: Localized;
-    role: Localized;
+    kind: string;
+    role: string;
     period: Period;
-    description: Localized;
+    description: string;
   };
-  languages: readonly Localized[];
-  interests: Localized;
+  languages: readonly string[];
+  interests: string;
 };

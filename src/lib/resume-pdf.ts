@@ -1,7 +1,6 @@
 import { measure, render } from "takumi-pdf";
 
-import { RESUME, RESUME_LABELS } from "../data/resume";
-import type { ResumeLocale } from "../data/resume";
+import { RESUME } from "../data/resume";
 
 class SafeHtml {
   readonly value: string;
@@ -32,22 +31,15 @@ const html = (strings: TemplateStringsArray, ...values: unknown[]): SafeHtml =>
     strings.reduce((out, part, i) => out + toHtml(values[i - 1]) + part)
   );
 
-const formatMonth = (value: string, locale: ResumeLocale): string =>
-  new Date(`${value}-01`).toLocaleDateString(locale, {
+const formatMonth = (value: string): string =>
+  new Date(`${value}-01`).toLocaleDateString("en", {
     month: "short",
     year: "numeric",
     timeZone: "UTC",
   });
 
-const formatPeriod = (
-  period: { start: string; end: string | null },
-  locale: ResumeLocale
-): string => {
-  const end = period.end
-    ? formatMonth(period.end, locale)
-    : RESUME_LABELS[locale].present;
-  return `${formatMonth(period.start, locale)} - ${end}`;
-};
+const formatPeriod = (period: { start: string; end: string | null }): string =>
+  `${formatMonth(period.start)} - ${period.end ? formatMonth(period.end) : "Present"}`;
 
 const section = (title: string, body: SafeHtml): SafeHtml =>
   html`<section>
@@ -91,65 +83,60 @@ const css = `
   b { font-weight: 600; }
 `;
 
-const buildHtml = (locale: ResumeLocale): string => {
-  const labels = RESUME_LABELS[locale];
-  const t = (value: Record<ResumeLocale, string>): string => value[locale];
-  const label = (name: string): SafeHtml =>
-    html`<b>${name}${labels.colon}</b> `;
+const label = (name: string): SafeHtml => html`<b>${name}:</b> `;
 
+const buildHtml = (): string => {
   const header = html`<header>
     <h1>${RESUME.name}</h1>
     <p class="headline">
-      <span>${t(RESUME.headline)}</span>
-      <span class="muted">${t(RESUME.location)}</span>
+      <span>${RESUME.headline}</span>
+      <span class="muted">${RESUME.location}</span>
     </p>
     <div class="meta">
       ${RESUME.contact.map((c) => html`<a href="${c.url}">${c.label}</a>`)}
     </div>
   </header>`;
 
-  const summary = section(labels.summary, html`<p>${t(RESUME.summary)}</p>`);
+  const summary = section("Summary", html`<p>${RESUME.summary}</p>`);
 
   const experience = section(
-    labels.experience,
+    "Experience",
     html`${RESUME.experience.map((job) =>
       entry(
-        html`${job.company}<span>, ${t(job.role)}</span>`,
-        formatPeriod(job.period, locale),
+        html`${job.company}<span>, ${job.role}</span>`,
+        formatPeriod(job.period),
         html`<ul>
-          ${job.highlights.map((h) => html`<li><span>•</span>${t(h)}</li>`)}
+          ${job.highlights.map((h) => html`<li><span>•</span>${h}</li>`)}
         </ul>`
       )
     )}`
   );
 
   const education = section(
-    labels.education,
+    "Education",
     html`${RESUME.education.map((school) =>
       entry(
-        html`${school.school}<span>, ${t(school.degree)}</span>`,
-        formatPeriod(school.period, locale),
-        "details" in school
-          ? html`<p class="muted">${t(school.details)}</p>`
-          : ""
+        html`${school.school}<span>, ${school.degree}</span>`,
+        formatPeriod(school.period),
+        "details" in school ? html`<p class="muted">${school.details}</p>` : ""
       )
     )}`
   );
 
   const skills = section(
-    labels.skills,
+    "Skills",
     html`<div class="lines">
-      ${RESUME.skills.map((s) => html`<p>${label(t(s.category))}${s.items.join(", ")}</p>`)}
+      ${RESUME.skills.map((s) => html`<p>${label(s.category)}${s.items.join(", ")}</p>`)}
     </div>`
   );
 
   const projects = section(
-    labels.projects,
+    "Projects",
     html`<p>
       ${RESUME.projects.map(
         (p, i) =>
           html`${i > 0 ? " · " : ""}<a href="${p.url}"><b>${p.name}</b></a>
-            (${p.stars} ${labels.stars})${labels.colon} ${t(p.description)}`
+            (${p.stars} ${"stars"}): ${p.description}`
       )}
     </p>`
   );
@@ -157,12 +144,12 @@ const buildHtml = (locale: ResumeLocale): string => {
   const { leadership } = RESUME;
   const extras = html`<div class="lines">
     <p>
-      ${label(labels.leadership)}${t(leadership.role)},
-      ${leadership.organization}, ${t(leadership.kind)}
-      (${formatPeriod(leadership.period, locale)}). ${t(leadership.description)}
+      ${label("Leadership")}${leadership.role}, ${leadership.organization},
+      ${leadership.kind} (${formatPeriod(leadership.period)}).
+      ${leadership.description}
     </p>
-    <p>${label(labels.languages)}${RESUME.languages.map(t).join(", ")}</p>
-    <p>${label(labels.interests)}${t(RESUME.interests)}</p>
+    <p>${label("Languages")}${RESUME.languages.join(", ")}</p>
+    <p>${label("Interests")}${RESUME.interests}</p>
   </div>`;
 
   return html`<div class="page">
@@ -173,19 +160,17 @@ const buildHtml = (locale: ResumeLocale): string => {
 const PAGE = { width: 794, height: 1123 };
 const MARGIN = 40;
 
-export const renderResume = async (
-  locale: ResumeLocale
-): Promise<Uint8Array> => {
-  const document = buildHtml(locale);
+export const renderResume = async (): Promise<Uint8Array> => {
+  const document = buildHtml();
 
   const { height } = await measure(document, {
     viewport: { width: PAGE.width - 2 * MARGIN },
     css,
-    lang: locale,
+    lang: "en",
   });
   if (height > PAGE.height - 2 * MARGIN) {
     throw new Error(
-      `The ${locale} resume overflows one page (${Math.ceil(height)}px of content).`
+      `The resume overflows one page (${Math.ceil(height)}px of content).`
     );
   }
 
@@ -193,9 +178,9 @@ export const renderResume = async (
     size: "a4",
     margin: MARGIN,
     css,
-    lang: locale,
+    lang: "en",
     metadata: {
-      title: `${RESUME.name}, ${RESUME.headline[locale]}`,
+      title: `${RESUME.name}, ${RESUME.headline}`,
       authors: [RESUME.name],
     },
   });

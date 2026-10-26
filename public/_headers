@@ -1,23 +1,11 @@
 /*
   Cache-Control: public, max-age=0, stale-while-revalidate=86400
-  Link: </sitemap-index.xml>; rel="sitemap", </.well-known/ai-catalog.json>; rel="describedby", </llms.txt>; rel="llms-txt"
+  Link: </sitemap-index.xml>; rel="sitemap"
 
 /logo*.png
   ! Cache-Control
   Cache-Control: public, max-age=3600, stale-while-revalidate=604800
 
-/*.md
-  Content-Type: text/markdown; charset=utf-8
-
-/
-  Link: </index.md>; rel="alternate"; type="text/markdown"
-
-/essays/a-founders-framework
-  Link: </essays/a-founders-framework.md>; rel="alternate"; type="text/markdown"
-
-
-/resume/en.pdf
+/resume
+  Content-Type: application/pdf
   Content-Disposition: inline; filename="alexandre_trotel_resume.pdf"
-
-/resume/fr.pdf
-  Content-Disposition: inline; filename="alexandre_trotel_cv.pdf"
