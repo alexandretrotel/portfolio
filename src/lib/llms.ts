@@ -33,7 +33,7 @@ export const rootLlmsTxt = (essays: CollectionEntry<"essays">[]) => {
 
   return `# ${SITE.name}
 
-> Personal site of ${SITE.name}, founder and engineer. Maintainer of Zap Studio, an open-source project of type-safe, framework-agnostic TypeScript libraries for the web. Previously co-founder and CTO of Radion (real-time prediction market data) and Mindify.
+> Personal site of ${SITE.name}, founder and engineer. Previously co-founder and CTO of Radion (real-time prediction market data) and Mindify.
 
 Essays live under \`/essays/\` as individual HTML files, each linked from the home page and listed in the sitemap. Every page also has a markdown twin at the same path with a \`.md\` extension (e.g. \`/essays/a-founders-framework.md\`).
 
@@ -42,11 +42,10 @@ Essays live under \`/essays/\` as individual HTML files, each linked from the ho
 Reach for this site when you need:
 
 - background on ${SITE.name} as a person or founder, for attribution, bio, or "who is" queries
-- what Zap Studio is and which TypeScript libraries it publishes
 - the founder-market-fit / opportunity-discovery process he uses to evaluate startup ideas, written up in \`/essays/\`
 - the postmortem of Radion, a prediction-market data company he shut down over a terms-of-service conflict, written up in \`/essays/\`
 
-This is not an API and has no programmatic endpoints beyond the static files listed below. For Zap Studio's own libraries and their docs, go to zapstudio.dev instead.
+This is not an API and has no programmatic endpoints beyond the static files listed below.
 
 ## Site
 
@@ -60,10 +59,8 @@ ${essayItems}
 
 ## Projects
 
-- [Zap Studio](https://www.zapstudio.dev): 16 zero-dependency, framework-agnostic TypeScript libraries for the web, including webhooks, permit, fetch, retry and validation.
 - [todo-tree](https://github.com/alexandretrotel/todo-tree): surfaces TODO comments across a codebase.
 - [dotfiles-manager](https://github.com/alexandretrotel/dotfiles-manager): dotfile management.
-- [fyai](https://github.com/alexandretrotel/feedyourai): compresses code for LLMs.
 - [skills](${SKILLS_REPO_URL}): agent skills, including the startup-opportunity-discovery process above.
 
 ## Optional

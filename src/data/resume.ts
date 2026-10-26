@@ -100,21 +100,6 @@ export const RESUME = {
       ],
     },
     {
-      company: "Zap Studio",
-      role: { en: "Founder, open source", fr: "Fondateur, open source" },
-      period: { start: "2025-07", end: null },
-      highlights: [
-        {
-          en: "Built 16 type-safe, framework-agnostic TypeScript packages with zero runtime dependencies",
-          fr: "Développement de 16 packages TypeScript typés et indépendants de tout framework sans aucune dépendance",
-        },
-        {
-          en: "Reached 7,000+ monthly downloads and 170+ GitHub stars, with the whole ecosystem at 164 KB gzipped",
-          fr: "Plus de 7 000 téléchargements mensuels et 170+ étoiles GitHub, pour un écosystème complet de 164 Ko compressé",
-        },
-      ],
-    },
-    {
       company: "ALLOHOUSTON",
       role: {
         en: "Full-Stack Engineer, intern then freelance",
@@ -270,15 +255,6 @@ export const RESUME = {
         fr: "Synchronise les dotfiles entre machines, par profil",
       },
       stars: 33,
-    },
-    {
-      name: "feedyourai",
-      url: "https://github.com/alexandretrotel/feedyourai",
-      description: {
-        en: "Packs a whole codebase into one prompt for LLMs",
-        fr: "Condense une codebase entière en un seul prompt pour les LLM",
-      },
-      stars: 4,
     },
   ],
   leadership: {

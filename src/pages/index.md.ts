@@ -19,9 +19,9 @@ I'm Alexandre, a founder and full-stack engineer.
 
 ## Work
 
-During my free time, I work on [${SITE.openSource.name}](${SITE.openSource.url}), an open-source project where I build type-safe and composable TypeScript libraries that work on any runtime. I made 16 packages with zero dependencies and 7,000+ downloads per month. This mainly comes from my experience fighting with JavaScript and legacy code.
+I'm joining [Tengo](https://tengo.cc) in Paris as a backend engineer.
 
-At the same time, I co-founded [Radion](https://x.com/radion_app) as CTO. We built a real-time and historical data platform for prediction markets to help traders make better decisions. We ingested 8 billion Polymarket events in under two days and served them at 70ms p95 on a Rust multi-threaded API. We shut it down after a terms-of-service conflict.
+Before that, I co-founded [Radion](https://x.com/radion_app) as CTO. We built a real-time and historical data platform for prediction markets to help traders make better decisions. We ingested 8 billion Polymarket events in under two days and served them at 70ms p95 on a Rust multi-threaded API. We shut it down after a terms-of-service conflict.
 
 Before Radion, I was a full-stack engineer intern and freelancer at [ALLOHOUSTON](https://www.allohouston.fr/). There, I wrote a conflict resolution algorithm that kept our database in sync with a client's CRM without losing local state. I also built an end-to-end OCR pipeline to scan and process information from critical documents to score their validity against public and private databases.
 
@@ -39,7 +39,6 @@ I also maintain developer tools, mostly written in Rust:
 
 - [todo-tree](https://github.com/alexandretrotel/todo-tree) finds every TODO comment in a codebase.
 - [dotfiles-manager](https://github.com/alexandretrotel/dotfiles-manager) keeps dotfiles consistent across machines with profiles.
-- [feedyourai](https://github.com/alexandretrotel/feedyourai) packs a codebase into one file for LLM context.
 
 ## Outside work
 
