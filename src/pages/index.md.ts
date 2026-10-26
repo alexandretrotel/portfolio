@@ -42,11 +42,11 @@ I also maintain developer tools, mostly in Rust:
 
 ## Hobbies
 
-I'm interested in ML/AI, web3 and open source. I write essays about software engineering and startups.
+I'm interested in machine learning, LLMs, information retrieval, web3 and open source. I write essays about software engineering and startups.
 
-I read about science, economics, psychology and philosophy. I run 20-30 km per week, play badminton and do street workouts.
+I read non-fiction, manga and manhwa, and watch anime. I run 20-30 km per week and play badminton.
 
-I play the piano, make EDM on FL Studio and play curated video games.
+I play the piano and make EDM on FL Studio.
 
 I share what I learn daily on Instagram, where I have 10k+ followers.
 

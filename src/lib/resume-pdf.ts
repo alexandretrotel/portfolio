@@ -70,15 +70,15 @@ const entry = (
 
 const css = `
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  .page { display: flex; flex-direction: column; gap: 8px; width: 100%; color: #222; font-size: 12px; line-height: 1.35; }
+  .page { display: flex; flex-direction: column; gap: 14px; width: 100%; color: #222; font-size: 12px; line-height: 1.35; }
   a { color: inherit; text-decoration: none; }
-  header { display: flex; flex-direction: column; gap: 3px; }
+  header { display: flex; flex-direction: column; gap: 5px; }
   h1 { font-size: 24px; font-weight: 700; line-height: 1.1; }
   .headline { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 13px; font-weight: 500; }
   .meta { display: flex; flex-wrap: wrap; gap: 4px 12px; color: #555; }
-  section { display: flex; flex-direction: column; gap: 5px; }
-  h2 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding-bottom: 2px; border-bottom: 1px solid #ccc; }
-  .entry { display: flex; flex-direction: column; gap: 2px; }
+  section { display: flex; flex-direction: column; gap: 8px; }
+  h2 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding-bottom: 3px; border-bottom: 1px solid #ccc; }
+  .entry { display: flex; flex-direction: column; gap: 3px; }
   .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
   h3 { font-size: 12px; font-weight: 600; }
   h3 span { font-weight: 400; }
@@ -87,7 +87,7 @@ const css = `
   li { display: flex; gap: 6px; list-style: none; }
   li span { flex-shrink: 0; }
   .muted { color: #555; }
-  .lines { display: flex; flex-direction: column; gap: 2px; }
+  .lines { display: flex; flex-direction: column; gap: 3px; }
   b { font-weight: 600; }
 `;
 

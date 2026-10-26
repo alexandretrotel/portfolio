@@ -47,19 +47,19 @@ const websiteJsonLd = {
 
     <h2>Work</h2>
     <p>
-        I'm joining <a href="https://tengo.cc" rel="noreferrer">Tengo</a> in
+        I'm joining <a href="https://tengo.cc" target="_blank" rel="noopener noreferrer">Tengo</a> in
         Paris as a backend engineer.
     </p>
     <p>
         Before that, I co-founded{" "}
-        <a href="https://x.com/radion_app" rel="noreferrer">Radion</a> as CTO,
+        <a href="https://x.com/radion_app" target="_blank" rel="noopener noreferrer">Radion</a> as CTO,
         a real-time and historical data platform for prediction markets. We
         ingested 8 billion Polymarket events in under two days and served them
         at 70ms p95 from a multi-threaded Rust API.
     </p>
     <p>
         Before Radion, I was a full-stack engineer, intern then freelancer, at{" "}
-        <a href="https://www.allohouston.fr/" rel="noreferrer"
+        <a href="https://www.allohouston.fr/" target="_blank" rel="noopener noreferrer"
             ><i>ALLO</i><b>HOUSTON</b></a
         >. I wrote a conflict resolution algorithm that kept our database in
         sync with a client's CRM without losing local state, and built an OCR
@@ -73,9 +73,9 @@ const websiteJsonLd = {
     </p>
     <p>
         Around the same time, I interned at{" "}
-        <a href="https://www.siborg.io/" rel="noreferrer">SiBorg</a> as a
+        <a href="https://www.siborg.io/" target="_blank" rel="noopener noreferrer">SiBorg</a> as a
         full-stack engineer and won{" "}
-        <a href="https://devfolio.co/projects/siborg-ads-6138" rel="noreferrer"
+        <a href="https://devfolio.co/projects/siborg-ads-6138" target="_blank" rel="noopener noreferrer"
             >The Graph Prize</a
         > at the Coinbase Onchain Summer hackathon.
     </p>
@@ -83,13 +83,13 @@ const websiteJsonLd = {
         It all started with my first startup,{" "}
         <a
             href="https://coinmarketcap.com/currencies/trotelcoin-v2/"
-            rel="noreferrer">TrotelCoin</a
+            target="_blank" rel="noopener noreferrer">TrotelCoin</a
         >, a web3 app teaching students and non-technical users about
         blockchain. I wrote 10+ Solidity smart contracts and reached 200+ users.
     </p>
     <p>
         In parallel, I was vice president of{" "}
-        <a href="https://www.n7consulting.fr/" rel="noreferrer">N7 Consulting</a
+        <a href="https://www.n7consulting.fr/" target="_blank" rel="noopener noreferrer">N7 Consulting</a
         >. I led a team of 26 and generated €100K in revenue, working on
         strategy, operations, sales and management.
     </p>
@@ -98,29 +98,30 @@ const websiteJsonLd = {
     <p>I also maintain developer tools, mostly in Rust:</p>
     <ul>
         <li>
-            <a href="https://github.com/alexandretrotel/todo-tree" rel="noreferrer"
+            <a href="https://github.com/alexandretrotel/todo-tree" target="_blank" rel="noopener noreferrer"
                 >todo-tree</a
             > finds every TODO comment in a codebase.
         </li>
         <li>
             <a
                 href="https://github.com/alexandretrotel/dotfiles-manager"
-                rel="noreferrer">dotfiles-manager</a
+                target="_blank" rel="noopener noreferrer">dotfiles-manager</a
             > syncs dotfiles across machines with profiles.
         </li>
     </ul>
 
     <h2>Hobbies</h2>
     <p>
-        I'm interested in ML/AI, web3 and open source. I write essays about
-        software engineering and startups.
+        I'm interested in machine learning, LLMs, information retrieval, web3
+        and open source. I write essays about software engineering and
+        startups.
     </p>
     <p>
-        I read about science, economics, psychology and philosophy. I run 20-30
-        km per week, play badminton and do street workouts.
+        I read non-fiction, manga and manhwa, and watch anime. I run 20-30 km
+        per week and play badminton.
     </p>
     <p>
-        I play the piano, make EDM on FL Studio and play curated video games.
+        I play the piano and make EDM on FL Studio.
     </p>
     <p>
         I share what I learn daily on Instagram, where I have 10k+ followers.
@@ -142,14 +143,14 @@ const websiteJsonLd = {
             {
                 FOOTER_LINKS.map((link) => (
                     <li>
-                        <a href={link.url} rel="noreferrer">
+                        <a href={link.url} target="_blank" rel="noopener noreferrer">
                             {link.name}
                         </a>
                     </li>
                 ))
             }
             <li>
-                <a href={RESUME_LINK.url} target="_blank">{RESUME_LINK.name}</a>
+                <a href={RESUME_LINK.url} target="_blank" rel="noopener noreferrer">{RESUME_LINK.name}</a>
             </li>
         </ul>
     </footer>
