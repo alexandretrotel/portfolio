@@ -39,7 +39,7 @@ const formatMonth = (value: string): string =>
   });
 
 const formatPeriod = (period: { start: string; end: string | null }): string =>
-  `${formatMonth(period.start)} - ${period.end ? formatMonth(period.end) : "Present"}`;
+  `${formatMonth(period.start)} - ${period.end === null ? "Present" : formatMonth(period.end)}`;
 
 const section = (title: string, body: SafeHtml): SafeHtml =>
   html`<section>
@@ -174,7 +174,7 @@ export const renderResume = async (): Promise<Uint8Array> => {
     );
   }
 
-  return render(document, {
+  return await render(document, {
     size: "a4",
     margin: MARGIN,
     css,

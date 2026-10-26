@@ -10,4 +10,5 @@ export default defineConfig({
   overrides: [
     { files: ["**/*.astro"], rules: { "unicorn/filename-case": "off" } },
   ],
+  options: { typeAware: true, typeCheck: true },
 });
