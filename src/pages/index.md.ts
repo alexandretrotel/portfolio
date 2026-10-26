@@ -15,40 +15,40 @@ export const GET: APIRoute = async () => {
 
   const body = `# ${SITE.name}
 
-I'm Alexandre, a founder and full-stack engineer.
+I'm a founder and full-stack engineer.
 
 ## Work
 
 I'm joining [Tengo](https://tengo.cc) in Paris as a backend engineer.
 
-Before that, I co-founded [Radion](https://x.com/radion_app) as CTO. We built a real-time and historical data platform for prediction markets to help traders make better decisions. We ingested 8 billion Polymarket events in under two days and served them at 70ms p95 on a Rust multi-threaded API. We shut it down after a terms-of-service conflict.
+Before that, I co-founded [Radion](https://x.com/radion_app) as CTO, a real-time and historical data platform for prediction markets. We ingested 8 billion Polymarket events in under two days and served them at 70ms p95 from a multi-threaded Rust API.
 
-Before Radion, I was a full-stack engineer intern and freelancer at [ALLOHOUSTON](https://www.allohouston.fr/). There, I wrote a conflict resolution algorithm that kept our database in sync with a client's CRM without losing local state. I also built an end-to-end OCR pipeline to scan and process information from critical documents to score their validity against public and private databases.
+Before Radion, I was a full-stack engineer, intern then freelancer, at [ALLOHOUSTON](https://www.allohouston.fr/). I wrote a conflict resolution algorithm that kept our database in sync with a client's CRM without losing local state, and built an OCR pipeline that checked critical documents against public and private databases.
 
-Before all of that, during my studies, I co-founded Mindify as CTO. It was a startup focused on empowering individuals by helping them discover new topics and change their day-to-day life. I built and shipped a web and mobile app with 1,000+ downloads.
+During my studies, I co-founded Mindify as CTO, a startup helping people discover new topics and change their daily life. I built and shipped its web and mobile app, with 1,000+ downloads.
 
 Around the same time, I interned at [SiBorg](https://www.siborg.io/) as a full-stack engineer and won [The Graph Prize](https://devfolio.co/projects/siborg-ads-6138) at the Coinbase Onchain Summer hackathon.
 
-It all started with my first startup [TrotelCoin](https://coinmarketcap.com/currencies/trotelcoin-v2/), a web3 project to help students and non-technical users learn about blockchain and cryptocurrencies. I developed more than 10 Solidity smart contracts and reached more than 200 users.
+It all started with my first startup, [TrotelCoin](https://coinmarketcap.com/currencies/trotelcoin-v2/), a web3 app teaching students and non-technical users about blockchain. I wrote 10+ Solidity smart contracts and reached 200+ users.
 
-In parallel, I was vice president of [N7 Consulting](https://www.n7consulting.fr/), where I led a team of 26 and generated €100K in revenue. I was mainly doing strategy, operations, sales, management and optimizing processes.
+In parallel, I was vice president of [N7 Consulting](https://www.n7consulting.fr/). I led a team of 26 and generated €100K in revenue, working on strategy, operations, sales and management.
 
 ## Projects
 
-I also maintain developer tools, mostly written in Rust:
+I also maintain developer tools, mostly in Rust:
 
 - [todo-tree](https://github.com/alexandretrotel/todo-tree) finds every TODO comment in a codebase.
-- [dotfiles-manager](https://github.com/alexandretrotel/dotfiles-manager) keeps dotfiles consistent across machines with profiles.
+- [dotfiles-manager](https://github.com/alexandretrotel/dotfiles-manager) syncs dotfiles across machines with profiles.
 
-## Outside work
+## Hobbies
 
-I'm interested in ML/AI, web3 and open-source software. I also write essays about software engineering and startups.
+I'm interested in ML/AI, web3 and open source. I write essays about software engineering and startups.
 
-In my free time, I like to read books on topics such as science, economy, psychology and philosophy. I also run 20-30 km per week and do street workouts.
+I read about science, economics, psychology and philosophy. I run 20-30 km per week, play badminton and do street workouts.
 
-I play the piano and make EDM music on FL Studio. I also started playing curated video games to avoid wasting time on addictive, poorly designed games.
+I play the piano, make EDM on FL Studio and play curated video games.
 
-I also create social media content to vulgarize what I learn daily. I have more than 10k followers on Instagram.
+I share what I learn daily on Instagram, where I have 10k+ followers.
 
 ## Writing
 
