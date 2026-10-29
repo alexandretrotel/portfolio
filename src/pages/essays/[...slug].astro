@@ -21,14 +21,11 @@ const hasNext = index < total - 1;
 ---
 
 <Article
-    title={essay.title}
+    title={index === 0 ? essay.title : getPartTitle(essay, index)}
     description={essay.description}
     path={`/essays/${getPartSlug(essay, index)}`}
     date={essay.date}
     updated={essay.updated}
-    {...(total > 1 && {
-        chapter: getPartTitle(essay, index),
-    })}
 >
     <Content />
 
