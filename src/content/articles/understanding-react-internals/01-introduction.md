@@ -24,8 +24,4 @@ After reading this, you should understand React well enough to master it. You'll
 
 For me, it changed the way I use React. Especially the mental models between the server and the client, and how React interacts with the browser.
 
-Even better, a little understanding of how a web browser works goes a long way. The event loop, tasks, and web APIs like `MessageChannel` or `setTimeout` are what React's scheduler is built on, so knowing them helps you master React too.
-
-Note that this is the first of a series. I'll write more articles digging into the internals of technologies and libraries most people use. The next one will be about Postgres, another big machine with a lot to understand.
-
 So, let's get started.
