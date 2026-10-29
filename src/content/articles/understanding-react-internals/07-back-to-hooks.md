@@ -199,27 +199,39 @@ The promise must come from outside the render, like a Server Component prop or a
 The form hooks build on the progressive enhancement we saw in [hydration](/articles/understanding-react-internals/hydration). The form works before React loads, and these hooks add the good UX once it's hydrated:
 
 - **`useActionState`:** wraps an action, and gives you its result and a pending flag.
-
-  ```jsx
-  const [state, formAction, isPending] = useActionState(subscribe, null);
-  ```
-
 - **`useFormStatus`:** reads the parent form's status from any component inside it, perfect for a reusable submit button.
-
-  ```jsx
-  const { pending } = useFormStatus();
-  ```
-
 - **`useOptimistic`:** shows the result before the server confirms it, and goes back by itself if it fails.
 
-  ```jsx
-  const [optimisticCount, addOptimistic] = useOptimistic(
-    count,
-    (c, delta) => c + delta
-  );
-  ```
+The first two together, in a newsletter form:
 
-All of them rely on actions running in transitions. That's where the pending states come from, and why `useOptimistic` must be called inside a transition or an action.
+```jsx
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return <button disabled={pending}>Subscribe</button>;
+}
+
+function Newsletter() {
+  const [state, formAction] = useActionState(subscribe, null);
+  return (
+    <form action={formAction}>
+      <input name="email" />
+      <SubmitButton />
+      {state?.error && <p>{state.error}</p>}
+    </form>
+  );
+}
+```
+
+And `useOptimistic`, for a counter that updates before the server answers:
+
+```jsx
+const [optimisticCount, addOptimistic] = useOptimistic(
+  count,
+  (c, delta) => c + delta
+);
+```
+
+All of them rely on actions running in transitions. That's where the pending states come from, and why `addOptimistic` must be called inside a transition or an action.
 
 ## A cheat sheet
 

@@ -141,7 +141,7 @@ The comparison happening in `beginWork` is called reconciliation, and that's whe
 
 Remember, nothing touches the screen here. The DOM nodes prepared in `completeWork` are not inserted yet, and the changes are only written down as `flags`. Applying them is the commit phase's job.
 
-So what do flags look like? Like lanes, they're bits, defined in `ReactFiberFlags.js`:
+So what do flags look like? They're bits: each flag is one position in a binary number, set to 1 when it applies. They're defined in `ReactFiberFlags.js`:
 
 ```js
 export const NoFlags = /*       */ 0b0000000000000000000000000000000;
@@ -174,7 +174,7 @@ So `List.subtreeFlags` contains `Update | Placement`, and so does `App.subtreeFl
 
 Now, priorities. Not every update is equally urgent. A key press must show up now, while filtering a list of 10,000 items can wait a few milliseconds.
 
-React represents priorities with lanes. A lane is a single bit in a 31-bit number:
+React represents priorities with lanes. Like flags, a lane is a single bit in a 31-bit number:
 
 ```js
 export const SyncLane = /*            */ 0b0000000000000000000000000000010;
