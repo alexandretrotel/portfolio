@@ -166,7 +166,7 @@ const websiteJsonLd = {
     <ul>
         {essays.map((essay) => (
             <li>
-                <a href={`/essays/${essay.id}`}>{essay.data.title}</a>
+                <a href={`/essays/${essay.slug}`}>{essay.title}</a>
             </li>
         ))}
     </ul>

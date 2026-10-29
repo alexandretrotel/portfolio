@@ -175,6 +175,21 @@ article h2 {
   margin-top: 2.5rem;
 }
 
+.chapters {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.chapters a {
+  padding-block: 0.5rem;
+}
+
+.chapters a[rel="next"] {
+  margin-left: auto;
+  text-align: right;
+}
+
 article h3 {
   margin-top: 2rem;
 }

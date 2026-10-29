@@ -9,9 +9,10 @@ interface Props {
     path: string;
     date: Date;
     updated?: boolean;
+    chapter?: string;
 }
 
-const { title, description, path, date, updated = false } = Astro.props;
+const { title, description, path, date, updated = false, chapter } = Astro.props;
 
 const dateLabel = formatDate(date, updated);
 const datetime = date.toISOString().slice(0, 10);
@@ -34,7 +35,7 @@ const articleJsonLd = {
 ---
 
 <Base
-    title={title}
+    title={chapter ? `${chapter} · ${title}` : title}
     description={description}
     path={path}
     type="article"
