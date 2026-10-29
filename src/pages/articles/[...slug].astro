@@ -2,7 +2,11 @@
 import { render } from "astro:content";
 import Contents from "../../components/Contents.astro";
 import Article from "../../layouts/Article.astro";
-import { getPartSlug, getPartTitle, getSortedArticles } from "../../lib/articles";
+import {
+    getPartSlug,
+    getPartTitle,
+    getSortedArticles,
+} from "../../lib/articles";
 
 export const getStaticPaths = async () => {
     const articles = await getSortedArticles();
@@ -36,7 +40,11 @@ const hasNext = index < total - 1;
                     <summary>
                         <span>Contents</span>
                     </summary>
-                    <Contents article={article} index={index} sections={sections} />
+                    <Contents
+                        article={article}
+                        index={index}
+                        sections={sections}
+                    />
                 </details>
             </nav>
             <nav class="toc" aria-label="Contents">
@@ -50,12 +58,18 @@ const hasNext = index < total - 1;
     {total > 1 && (
         <nav class="chapters" aria-label="Chapters">
             {hasPrev && (
-                <a href={`/articles/${getPartSlug(article, index - 1)}`} rel="prev">
+                <a
+                    href={`/articles/${getPartSlug(article, index - 1)}`}
+                    rel="prev"
+                >
                     ← {getPartTitle(article, index - 1)}
                 </a>
             )}
             {hasNext && (
-                <a href={`/articles/${getPartSlug(article, index + 1)}`} rel="next">
+                <a
+                    href={`/articles/${getPartSlug(article, index + 1)}`}
+                    rel="next"
+                >
                     {getPartTitle(article, index + 1)} →
                 </a>
             )}
@@ -68,13 +82,16 @@ const hasNext = index < total - 1;
         ":is(.toc, .toc-mobile) a[href^='#']",
     );
     const targets = [...links].flatMap((link) => {
-        const heading = document.querySelector(`#${CSS.escape(decodeURIComponent(link.hash.slice(1)))}`);
+        const heading = document.querySelector(
+            `#${CSS.escape(decodeURIComponent(link.hash.slice(1)))}`,
+        );
         return heading ? [{ link, heading }] : [];
     });
 
-    const details = document.querySelector(".toc-mobile details");
+    const details = document.querySelector<HTMLDetailsElement>(
+        ".toc-mobile details",
+    );
 
-    // jumping to a section closes the dropdown
     details?.addEventListener("click", (event) => {
         if (event.target instanceof HTMLAnchorElement) {
             details.open = false;
@@ -84,9 +101,10 @@ const hasNext = index < total - 1;
     let frame = 0;
     const update = () => {
         frame = 0;
-        // the section is the last heading above the top third of the screen
         const line = innerHeight / 3;
-        const current = targets.findLast(({ heading }) => heading.getBoundingClientRect().top <= line);
+        const current = targets.findLast(
+            ({ heading }) => heading.getBoundingClientRect().top <= line,
+        );
         for (const { link, heading } of targets) {
             if (heading === current?.heading) {
                 link.setAttribute("aria-current", "location");
@@ -96,6 +114,10 @@ const hasNext = index < total - 1;
         }
     };
 
-    addEventListener("scroll", () => (frame ||= requestAnimationFrame(update)), { passive: true });
+    addEventListener(
+        "scroll",
+        () => (frame ||= requestAnimationFrame(update)),
+        { passive: true },
+    );
     update();
 </script>
