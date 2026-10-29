@@ -88,12 +88,44 @@ So the server can produce two things. They're not competing, they have different
 - **HTML** is for the browser. It can paint it right away, with no JavaScript. But it's a dead end: once it's on the screen, React can't merge new HTML into the page without throwing away its state.
 - **The RSC payload** is for React. It's a description of the tree, not pixels. React can reconcile it with what's already on the screen, so inputs keep their value and client components keep their state.
 
-That gives a simple rule:
+In practice, the framework makes that choice for you. The real choice is whether you need Server Components at all.
 
-- **First load:** HTML. The user needs something to see before any JS runs, and crawlers need something to read.
-- **Everything after:** the payload. When you navigate or refresh data, the page is already alive. Next.js, for example, fetches only the payload for the new route (with an `RSC: 1` header) and lets React update the tree in place.
+Fizz alone, static or SSR, is enough when pages are mostly read and a full page load per click is fine:
 
-In practice, the framework makes that choice for you. The real choice is whether you need Server Components at all. A blog or a marketing page with little interactivity is fine with plain HTML, static or SSR. Server Components pay off in apps where you navigate a lot, keep client state, and want heavy server code out of the bundle.
+- a blog or a docs site
+- a marketing or landing page
+
+Flight pays off when the app stays alive between clicks, or when the server code is heavy:
+
+- **Syntax highlighting with [Shiki](https://shiki.style):** grammars, themes and a WASM regex engine stay on the server. The browser only gets colored `<span>`s. With classic SSR, all of that would ship to hydrate the component.
+- **Markdown with remark and rehype:** the parser and its plugins never reach the bundle, only the resulting elements.
+- **Dashboards:** components read the database directly, and filters, tabs, and open panels survive navigation.
+
+## First load vs navigation
+
+Picture an app with a layout (a header, a sidebar) and a page inside it.
+
+On the first load, the browser has nothing. Both renderers run: Flight produces the payload, Fizz turns it into HTML. The browser paints it, then React hydrates with the payload inlined in the page.
+
+Then the user clicks a link. This time, no new HTML document. The router fetches the payload for the new page, so only Flight runs. React reconciles it with the current tree. The layout hasn't changed, so it stays in place: the header, the sidebar, the scroll position, the text typed in a search input. Only the page inside is replaced.
+
+Compare with classic SSR, like [TanStack Start](https://tanstack.com/start) by default. On the first load, only Fizz runs, and the browser has to download the JS of every component before it can hydrate. On navigation, the router keeps the layout too, but the work moves to the browser: the route loader calls the server for data, which comes back serialized, and the browser renders the new page itself, with the page's code.
+
+So both keep the shell alive. The difference is where the new page is rendered, and what has to ship for that.
+
+```
+Classic SSR
+First load:  request → Fizz → HTML → paint → download all JS → hydrate
+Navigation:  click → loader fetches data → render in browser → update
+
+Server Components
+First load:  request → Flight → Fizz → HTML + payload → paint → hydrate
+Navigation:  click → fetch payload → Flight → reconcile → update
+```
+
+Notice the step that's missing on the Server Components side: "download all JS". The browser still loads the code of the client components, but the Server Components never ship. And on navigation, it gets a rendered tree, not data plus the code to render it.
+
+That's the mental model. The shell is built once, as HTML. Then it stays alive, and Flight streams new content into it. It feels like a single-page app, but the content is rendered on the server.
 
 ## Streaming with Suspense
 
