@@ -117,7 +117,7 @@ Here are the packages we'll dig into, and where they show up in this article:
 - **`react`:** elements and the hook entry points. Almost no logic, as we just saw.
 - **`react-server`:** Fizz and Flight, the two server renderers ([chapter II](/articles/understanding-react-internals/react-on-the-server)).
 - **`react-client`:** reads the Flight payload in the browser (chapters II and III).
-- **`react-dom`:** the DOM host config, `hydrateRoot`, and the HTML side of the server (chapters II and III).
+- **`react-dom`:** `hydrateRoot` and the HTML side of the server (chapters II and III).
 - **`react-reconciler`:** fibers, lanes, rendering and committing (chapters IV and V).
 - **`scheduler`:** decides when work runs, and when to give control back to the browser (chapter IV).
 
