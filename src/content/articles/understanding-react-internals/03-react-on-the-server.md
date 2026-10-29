@@ -81,6 +81,20 @@ So in a framework like Next.js, one request goes through both renderers:
 
 This is also why Server Components shrink your bundle. With them, only HTML and the payload reach the browser, so heavy server code is free. With classic SSR, every component's JS still ships, because the browser needs it to hydrate.
 
+## Fizz or Flight?
+
+So the server can produce two things. They're not competing, they have different readers.
+
+- **HTML** is for the browser. It can paint it right away, with no JavaScript. But it's a dead end: once it's on the screen, React can't merge new HTML into the page without throwing away its state.
+- **The RSC payload** is for React. It's a description of the tree, not pixels. React can reconcile it with what's already on the screen, so inputs keep their value and client components keep their state.
+
+That gives a simple rule:
+
+- **First load:** HTML. The user needs something to see before any JS runs, and crawlers need something to read.
+- **Everything after:** the payload. When you navigate or refresh data, the page is already alive. Next.js, for example, fetches only the payload for the new route (with an `RSC: 1` header) and lets React update the tree in place.
+
+In practice, the framework makes that choice for you. The real choice is whether you need Server Components at all. A blog or a marketing page with little interactivity is fine with plain HTML, static or SSR. Server Components pay off in apps where you navigate a lot, keep client state, and want heavy server code out of the bundle.
+
 ## Streaming with Suspense
 
 Now, the part I find the most elegant. Let's follow a page step by step, from the server to the screen.
