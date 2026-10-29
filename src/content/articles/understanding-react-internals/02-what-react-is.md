@@ -62,9 +62,9 @@ Each of these calls returns a plain object, a React element:
 }
 ```
 
-That's it. No DOM node, no rendering, nothing on the screen. A component is a function that returns a description of what the UI should look like.
+That's it. A component is just a function that returns a description of what the UI should look like.
 
-Even the `$$typeof` field has a reason. Remember, a symbol can't be written in JSON, so if someone injects JSON into your app, it can't pretend to be a React element. Keep that in mind, we'll see how the server deals with it in the next chapter.
+Even the `$$typeof` field has a reason. Remember, a symbol can't be written in JSON, so if someone injects JSON into your app, it can't pretend to be a React element.
 
 ## The `react` package is almost empty
 
@@ -81,7 +81,7 @@ It doesn't do anything itself. No state, no memory, nothing. It asks for a "disp
 
 A dispatcher is just an object holding the real code of every hook. Something like `{ useState, useEffect, useMemo, ... }`. The one in use is stored in a shared variable, `ReactSharedInternals.H`.
 
-But `ReactSharedInternals.H` starts empty. Something has to fill it with the real hooks before your component runs. That something is the renderer, the part of React that actually runs your components. In the browser, that's `react-dom`. We'll look at it in the next section.
+But `ReactSharedInternals.H` starts empty. The renderer, the part of React that actually runs your components, fills it with the real hooks before your component runs. In the browser, that's `react-dom`. We'll look at it in the next section.
 
 Right before calling your component, the renderer swaps in the right dispatcher. Right after, it swaps it out. Simplified, it looks like this:
 
