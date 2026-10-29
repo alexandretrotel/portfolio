@@ -3,6 +3,42 @@ interface Period {
   end: string | null;
 }
 
+interface Resume {
+  name: string;
+  headline: string;
+  location: string;
+  contact: readonly { label: string; url: string }[];
+  summary: string;
+  experience: readonly {
+    company: string;
+    role: string;
+    period: Period;
+    highlights: readonly string[];
+  }[];
+  education: readonly {
+    school: string;
+    degree: string;
+    period: Period;
+    details?: string;
+  }[];
+  skills: readonly { category: string; items: readonly string[] }[];
+  projects: readonly {
+    name: string;
+    url: string;
+    description: string;
+    stars: number;
+  }[];
+  leadership: {
+    organization: string;
+    kind: string;
+    role: string;
+    period: Period;
+    description: string;
+  };
+  languages: readonly string[];
+  interests: string;
+}
+
 export const RESUME = {
   name: "Alexandre Trotel",
   headline: "Junior Full-Stack Engineer",
@@ -164,38 +200,4 @@ export const RESUME = {
   languages: ["French (native)", "English (fluent, C1)"],
   interests:
     "Running (20-30 km/week), piano and EDM production, science content creator (10k+ Instagram followers)",
-} as const satisfies {
-  name: string;
-  headline: string;
-  location: string;
-  contact: readonly { label: string; url: string }[];
-  summary: string;
-  experience: readonly {
-    company: string;
-    role: string;
-    period: Period;
-    highlights: readonly string[];
-  }[];
-  education: readonly {
-    school: string;
-    degree: string;
-    period: Period;
-    details?: string;
-  }[];
-  skills: readonly { category: string; items: readonly string[] }[];
-  projects: readonly {
-    name: string;
-    url: string;
-    description: string;
-    stars: number;
-  }[];
-  leadership: {
-    organization: string;
-    kind: string;
-    role: string;
-    period: Period;
-    description: string;
-  };
-  languages: readonly string[];
-  interests: string;
-};
+} as const satisfies Resume;
