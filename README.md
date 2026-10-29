@@ -1,6 +1,6 @@
 # portfolio
 
-A small [Astro](https://astro.build) site. Static output, zero client-side JavaScript, deployed to Cloudflare Workers static assets. The resume PDFs are generated at build time with [takumi-pdf](https://www.npmjs.com/package/takumi-pdf).
+A small [Astro](https://astro.build) site deployed to Cloudflare Workers static assets. The resume PDFs are generated at build time with [takumi-pdf](https://www.npmjs.com/package/takumi-pdf).
 
 ## Commands
 

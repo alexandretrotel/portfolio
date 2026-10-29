@@ -1,35 +1,30 @@
 ---
 import Base from "./Base.astro";
 import { JSON_LD_CONTEXT, SITE } from "../data/site";
-import { formatDate } from "../lib/date";
 
 interface Props {
     title: string;
     description: string;
     path: string;
     date: Date;
-    updated?: boolean;
 }
 
-const { title, description, path, date, updated = false } = Astro.props;
-
-const dateLabel = formatDate(date, updated);
-const datetime = date.toISOString().slice(0, 10);
+const { title, description, path, date } = Astro.props;
+const url = new URL(path, SITE.url).toString();
 
 const articleJsonLd = {
     "@context": JSON_LD_CONTEXT,
     "@type": "Article",
     headline: title,
     description,
-    url: new URL(path, SITE.url).toString(),
-    datePublished: datetime,
-    dateModified: datetime,
+    url,
+    datePublished: date.toISOString().slice(0, 10),
     author: {
         "@type": "Person",
         name: SITE.name,
         url: SITE.url,
     },
-    mainEntityOfPage: new URL(path, SITE.url).toString(),
+    mainEntityOfPage: url,
 };
 ---
 
@@ -43,7 +38,6 @@ const articleJsonLd = {
     <article>
         <header>
             <h1>{title}</h1>
-            <time datetime={datetime}>{dateLabel}</time>
         </header>
 
         <slot />

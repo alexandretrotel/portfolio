@@ -6,7 +6,6 @@ export interface Article {
   title: string;
   description: string;
   date: Date;
-  updated: boolean;
   parts: CollectionEntry<"articles">[];
 }
 
@@ -16,7 +15,7 @@ export const getSortedArticles = async (): Promise<Article[]> => {
   const groups = Map.groupBy(entries, (entry) => entry.id.split("/")[0] ?? "");
 
   const articles = [...groups].map(([slug, parts]) => {
-    const { title, description, date, updated } = parts[0]?.data ?? {};
+    const { title, description, date } = parts[0]?.data ?? {};
     if (
       title === undefined ||
       description === undefined ||
@@ -26,7 +25,7 @@ export const getSortedArticles = async (): Promise<Article[]> => {
         `Article "${slug}" needs title, description and date on its first part`
       );
     }
-    return { slug, title, description, date, updated: updated ?? false, parts };
+    return { slug, title, description, date, parts };
   });
 
   return articles.toSorted((a, b) => b.date.getTime() - a.date.getTime());
