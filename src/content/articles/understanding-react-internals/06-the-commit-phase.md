@@ -12,7 +12,7 @@ Why? Because the render phase works on a draft. Nobody sees it, so React can pau
 
 Imagine React could pause in the middle of a commit. The browser would paint a page where the new item is inserted, but the counter above it still shows the old number. Half an update. This is exactly what React wants to avoid.
 
-So the commit runs in one go, from start to finish, in a single JavaScript task. In [the render phase](/essays/understanding-react-internals/the-render-phase), only some lanes were synchronous. Here, everything is.
+So the commit runs in one go, from start to finish, in a single JavaScript task. In [the render phase](/articles/understanding-react-internals/the-render-phase), only some lanes were synchronous. Here, everything is.
 
 The good news is that it's usually fast. All the expensive work, calling your components and comparing trees, was done during render. The commit only applies a list of small, precise changes.
 
@@ -61,7 +61,7 @@ But when they run depends on what caused the render. We'll come back to this, be
 
 ## The DOM APIs React calls
 
-Remember the host config from [chapter I](/essays/understanding-react-internals/what-react-is)? This is where it's used. The reconciler doesn't touch the DOM itself, it calls functions from `ReactFiberConfigDOM.js`. And those functions are thin wrappers around DOM APIs you can use yourself.
+Remember the host config from [chapter I](/articles/understanding-react-internals/what-react-is)? This is where it's used. The reconciler doesn't touch the DOM itself, it calls functions from `ReactFiberConfigDOM.js`. And those functions are thin wrappers around DOM APIs you can use yourself.
 
 Here's how flags turn into DOM calls:
 

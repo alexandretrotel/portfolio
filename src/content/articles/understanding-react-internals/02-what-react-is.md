@@ -91,7 +91,7 @@ const children = Component(props); // your component calls useState here
 ReactSharedInternals.H = ContextOnlyDispatcher; // hooks that throw
 ```
 
-There's even a different dispatcher depending on the moment. `HooksDispatcherOnMount` is used the first time a component renders, to create its state. `HooksDispatcherOnUpdate` is used on the next renders, to read the state that already exists. The server renderers install their own, as we'll see in [chapter II](/essays/understanding-react-internals/react-on-the-server).
+There's even a different dispatcher depending on the moment. `HooksDispatcherOnMount` is used the first time a component renders, to create its state. `HooksDispatcherOnUpdate` is used on the next renders, to read the state that already exists. The server renderers install their own, as we'll see in [chapter II](/articles/understanding-react-internals/react-on-the-server).
 
 This simple trick explains two things:
 
@@ -112,10 +112,10 @@ Think of the reconciler as the brain, and the host config as the hands. The brai
 
 ## A map of the packages
 
-Here are the packages we'll dig into, and where they show up in this essay:
+Here are the packages we'll dig into, and where they show up in this article:
 
 - **`react`:** elements and the hook entry points. Almost no logic, as we just saw.
-- **`react-server`:** Fizz and Flight, the two server renderers ([chapter II](/essays/understanding-react-internals/react-on-the-server)).
+- **`react-server`:** Fizz and Flight, the two server renderers ([chapter II](/articles/understanding-react-internals/react-on-the-server)).
 - **`react-client`:** reads the Flight payload in the browser (chapters II and III).
 - **`react-dom` and `react-dom-bindings`:** the DOM host config, `hydrateRoot`, and the HTML side of the server (chapters II and III).
 - **`react-reconciler`:** fibers, lanes, rendering and committing (chapters IV and V).
@@ -132,4 +132,4 @@ Last thing before we dive in. Every update in the browser goes through two phase
 
 This is why your components must be pure. React may call them several times before anything is committed, and `StrictMode` even calls them twice on purpose to catch you.
 
-Keep these two phases in mind. The rest of this essay is basically a long explanation of them, starting from the server.
+Keep these two phases in mind. The rest of this article is basically a long explanation of them, starting from the server.

@@ -41,10 +41,10 @@ Either you can define it better, and your definition is worth sharing. Or you do
 
 Here's the list of everything we're going to cover.
 
-1. [A painful problem](/essays/a-founders-framework/a-painful-problem)
-2. [A customer you understand](/essays/a-founders-framework/a-customer-you-understand)
-3. [A big enough market](/essays/a-founders-framework/a-big-enough-market)
-4. [A team built to last](/essays/a-founders-framework/a-team-built-to-last)
-5. [A path to product-market fit](/essays/a-founders-framework/a-path-to-product-market-fit)
+1. [A painful problem](/articles/a-founders-framework/a-painful-problem)
+2. [A customer you understand](/articles/a-founders-framework/a-customer-you-understand)
+3. [A big enough market](/articles/a-founders-framework/a-big-enough-market)
+4. [A team built to last](/articles/a-founders-framework/a-team-built-to-last)
+5. [A path to product-market fit](/articles/a-founders-framework/a-path-to-product-market-fit)
 
-The [checklist](/essays/a-founders-framework/checklist) at the end sums it all up.
+The [checklist](/articles/a-founders-framework/checklist) at the end sums it all up.

@@ -9,9 +9,9 @@ const part = z.object({
   updated: z.boolean().default(false),
 });
 
-const essays = defineCollection({
-  loader: glob({ pattern: "*/*.md", base: "./src/content/essays" }),
+const articles = defineCollection({
+  loader: glob({ pattern: "*/*.md", base: "./src/content/articles" }),
   schema: part,
 });
 
-export const collections = { essays };
+export const collections = { articles };

@@ -10,7 +10,7 @@ But here's the thing, React is not about hooks. Hooks are only the surface, the 
 
 Underneath, React is a scheduler. It decides what to render, when to render it, and what can wait. It talks to the browser, splits work into small pieces, and pauses when something more important comes in.
 
-This essay is a deep dive into that part. We'll go through async React, lanes, how React serializes components over the network between the server and the client, hydration, and all the things that usually stay hidden.
+This article is a deep dive into that part. We'll go through async React, lanes, how React serializes components over the network between the server and the client, hydration, and all the things that usually stay hidden.
 
 I won't lie to you, some of it is hard to understand. So I'll take the time to explain everything as simply as I can.
 
@@ -18,7 +18,7 @@ And it's okay not to understand it all at once. I didn't either. Read it, come b
 
 Basically, this is the summary of what I've learned over these last years, using React every day and reading the source code of the [React repository](https://github.com/react/react).
 
-If at any point you need to look at the source code, I really, REALLY encourage you to do it. It's the only and best way to understand how React works. Everything else, including this essay, is someone's interpretation of it.
+If at any point you need to look at the source code, I really, REALLY encourage you to do it. It's the only and best way to understand how React works. Everything else, including this article, is someone's interpretation of it.
 
 After reading this, you should understand React well enough to master it. You'll know when to use each hook, and more importantly, why. Or, as [@infinterenders](https://x.com/infinterenders) would say, you'll become elite.
 
@@ -26,6 +26,6 @@ For me, it changed the way I use React. Especially the mental models between the
 
 Even better, a little understanding of how a web browser works goes a long way. The event loop, tasks, and web APIs like `MessageChannel` or `setTimeout` are what React's scheduler is built on, so knowing them helps you master React too.
 
-Note that this is the first of a series. I'll write more essays digging into the internals of technologies and libraries most people use. The next one will be about Postgres, another big machine with a lot to understand.
+Note that this is the first of a series. I'll write more articles digging into the internals of technologies and libraries most people use. The next one will be about Postgres, another big machine with a lot to understand.
 
 So, let's get started.

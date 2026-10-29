@@ -1,9 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
 import { JSON_LD_CONTEXT, SITE, FOOTER_LINKS, RESUME_LINK } from "../data/site";
-import { getSortedEssays } from "../lib/essays";
+import { getSortedArticles } from "../lib/articles";
 
-const essays = await getSortedEssays();
+const articles = await getSortedArticles();
 
 const profilePageJsonLd = {
     "@context": JSON_LD_CONTEXT,
@@ -164,9 +164,9 @@ const websiteJsonLd = {
 
     <h2>Writing</h2>
     <ul>
-        {essays.map((essay) => (
+        {articles.map((article) => (
             <li>
-                <a href={`/essays/${essay.slug}`}>{essay.title}</a>
+                <a href={`/articles/${article.slug}`}>{article.title}</a>
             </li>
         ))}
     </ul>

@@ -1,0 +1,30 @@
+---
+import type { MarkdownHeading } from "astro";
+import type { Article } from "../lib/articles";
+import { getPartSlug, getPartTitle } from "../lib/articles";
+
+interface Props {
+    article: Article;
+    index: number;
+    sections: MarkdownHeading[];
+}
+
+const { article, index, sections } = Astro.props;
+---
+
+<ol>
+    {article.parts.map((_, i) => (
+        <li aria-current={i === index ? "page" : undefined}>
+            <a href={`/articles/${getPartSlug(article, i)}`}>{getPartTitle(article, i)}</a>
+            {i === index && sections.length > 0 && (
+                <ol>
+                    {sections.map((section) => (
+                        <li>
+                            <a href={`#${section.slug}`}>{section.text}</a>
+                        </li>
+                    ))}
+                </ol>
+            )}
+        </li>
+    ))}
+</ol>

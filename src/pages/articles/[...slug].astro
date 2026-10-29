@@ -1,0 +1,101 @@
+---
+import { render } from "astro:content";
+import Contents from "../../components/Contents.astro";
+import Article from "../../layouts/Article.astro";
+import { getPartSlug, getPartTitle, getSortedArticles } from "../../lib/articles";
+
+export const getStaticPaths = async () => {
+    const articles = await getSortedArticles();
+    return articles.flatMap((article) =>
+        article.parts.map((entry, index) => ({
+            params: { slug: getPartSlug(article, index) },
+            props: { article, entry, index },
+        })),
+    );
+};
+
+const { article, entry, index } = Astro.props;
+const { Content, headings } = await render(entry);
+const sections = headings.filter((heading) => heading.depth === 2);
+const total = article.parts.length;
+const hasPrev = index > 0;
+const hasNext = index < total - 1;
+---
+
+<Article
+    title={index === 0 ? article.title : getPartTitle(article, index)}
+    description={article.description}
+    path={`/articles/${getPartSlug(article, index)}`}
+    date={article.date}
+    updated={article.updated}
+>
+    {total > 1 && (
+        <>
+            <nav class="toc-mobile" aria-label="Contents">
+                <details>
+                    <summary>
+                        <span>Contents</span>
+                    </summary>
+                    <Contents article={article} index={index} sections={sections} />
+                </details>
+            </nav>
+            <nav class="toc" aria-label="Contents">
+                <Contents article={article} index={index} sections={sections} />
+            </nav>
+        </>
+    )}
+
+    <Content />
+
+    {total > 1 && (
+        <nav class="chapters" aria-label="Chapters">
+            {hasPrev && (
+                <a href={`/articles/${getPartSlug(article, index - 1)}`} rel="prev">
+                    ← {getPartTitle(article, index - 1)}
+                </a>
+            )}
+            {hasNext && (
+                <a href={`/articles/${getPartSlug(article, index + 1)}`} rel="next">
+                    {getPartTitle(article, index + 1)} →
+                </a>
+            )}
+        </nav>
+    )}
+</Article>
+
+<script>
+    const links = document.querySelectorAll<HTMLAnchorElement>(
+        ":is(.toc, .toc-mobile) a[href^='#']",
+    );
+    const targets = [...links].flatMap((link) => {
+        const heading = document.querySelector(`#${CSS.escape(decodeURIComponent(link.hash.slice(1)))}`);
+        return heading ? [{ link, heading }] : [];
+    });
+
+    const details = document.querySelector(".toc-mobile details");
+
+    // jumping to a section closes the dropdown
+    details?.addEventListener("click", (event) => {
+        if (event.target instanceof HTMLAnchorElement) {
+            details.open = false;
+        }
+    });
+
+    let frame = 0;
+    const update = () => {
+        frame = 0;
+        // the section is the last heading above the top third of the screen
+        const line = innerHeight / 3;
+        const current = targets.findLast(({ heading }) => heading.getBoundingClientRect().top <= line);
+        for (const { link, heading } of targets) {
+            if (heading === current?.heading) {
+                link.setAttribute("aria-current", "location");
+            } else {
+                link.removeAttribute("aria-current");
+            }
+        }
+    };
+
+    addEventListener("scroll", () => (frame ||= requestAnimationFrame(update)), { passive: true });
+    update();
+</script>
