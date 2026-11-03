@@ -183,12 +183,6 @@ export const RESUME = {
         "Finds TODO comments across a codebase and lists them as a tree",
       stars: 56,
     },
-    {
-      name: "dotfiles-manager",
-      url: "https://github.com/alexandretrotel/dotfiles-manager",
-      description: "Syncs dotfiles across machines with profiles",
-      stars: 33,
-    },
   ],
   leadership: {
     organization: "N7 Consulting",
