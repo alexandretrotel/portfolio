@@ -6,6 +6,8 @@ import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
 
+import { rehypeFocusableHeadings } from "./src/lib/rehype-focusable-headings.ts";
+
 export default defineConfig({
   site: "https://www.alexandretrotel.org",
   output: "static",
@@ -16,6 +18,7 @@ export default defineConfig({
       rehypePlugins: [
         [rehypeExternalLinks, { rel: ["noreferrer"] }],
         rehypeHeadingIds,
+        rehypeFocusableHeadings,
         [rehypeAutolinkHeadings, { behavior: "wrap" }],
       ],
     }),

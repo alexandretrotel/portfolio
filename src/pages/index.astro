@@ -162,27 +162,29 @@ const websiteJsonLd = {
     </ul>
 
     <footer slot="footer">
-        <ul>
-            {FOOTER_LINKS.map((link) => (
+        <nav aria-label="Links">
+            <ul>
+                {FOOTER_LINKS.map((link) => (
+                    <li>
+                        <a
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {link.name}
+                        </a>
+                    </li>
+                ))}
                 <li>
                     <a
-                        href={link.url}
+                        href={RESUME_LINK.url}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        {link.name}
+                        {RESUME_LINK.name}
                     </a>
                 </li>
-            ))}
-            <li>
-                <a
-                    href={RESUME_LINK.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    {RESUME_LINK.name}
-                </a>
-            </li>
-        </ul>
+            </ul>
+        </nav>
     </footer>
 </Base>

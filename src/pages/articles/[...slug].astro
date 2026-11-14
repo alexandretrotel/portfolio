@@ -77,15 +77,11 @@ const hasNext = index < total - 1;
 </Article>
 
 <script>
-    const links = document.querySelectorAll<HTMLAnchorElement>(
-        ":is(.toc, .toc-mobile) a[href^='#']",
-    );
-    const targets = [...links].flatMap((link) => {
-        const heading = document.querySelector(
-            `#${CSS.escape(decodeURIComponent(link.hash.slice(1)))}`,
-        );
-        return heading ? [{ link, heading }] : [];
-    });
+    const links = [
+        ...document.querySelectorAll<HTMLAnchorElement>(
+            ":is(.toc, .toc-mobile) a[href^='#']",
+        ),
+    ];
 
     const details = document.querySelector<HTMLDetailsElement>(
         ".toc-mobile details",
@@ -97,15 +93,11 @@ const hasNext = index < total - 1;
         }
     });
 
-    let frame = 0;
-    const update = () => {
-        frame = 0;
-        const line = innerHeight / 3;
-        const current = targets.findLast(
-            ({ heading }) => heading.getBoundingClientRect().top <= line,
-        );
-        for (const { link, heading } of targets) {
-            if (heading === current?.heading) {
+    const markCurrent = (isCurrent: (link: HTMLAnchorElement) => boolean) => {
+        for (const link of links) {
+            const current = isCurrent(link);
+            link.classList.toggle("target-current", current);
+            if (current) {
                 link.setAttribute("aria-current", "location");
             } else {
                 link.removeAttribute("aria-current");
@@ -113,10 +105,38 @@ const hasNext = index < total - 1;
         }
     };
 
-    addEventListener(
-        "scroll",
-        () => (frame ||= requestAnimationFrame(update)),
-        { passive: true },
-    );
-    update();
+    if (CSS.supports("scroll-target-group: auto")) {
+        const sync = () => markCurrent((link) => link.matches(":target-current"));
+        sync();
+        addEventListener("scrollend", sync);
+    } else {
+        const targets = links.flatMap((link) => {
+            const heading = document.querySelector(
+                `#${CSS.escape(decodeURIComponent(link.hash.slice(1)))}`,
+            );
+            return heading ? [{ link, heading }] : [];
+        });
+
+        let current: Element | undefined;
+        let frame = 0;
+        const update = () => {
+            frame = 0;
+            const line = innerHeight / 3;
+            const next = targets.findLast(
+                ({ heading }) => heading.getBoundingClientRect().top <= line,
+            )?.heading;
+            if (next === current) {return;}
+            current = next;
+            markCurrent((link) =>
+                targets.some((target) => target.link === link && target.heading === next),
+            );
+        };
+
+        addEventListener(
+            "scroll",
+            () => (frame ||= requestAnimationFrame(update)),
+            { passive: true },
+        );
+        update();
+    }
 </script>

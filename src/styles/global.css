@@ -1,26 +1,20 @@
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
+  accent-color: var(--link);
 
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.22 0 0);
-  --muted: oklch(0.93 0 0);
-  --muted-foreground: oklch(0.55 0 0);
-  --border: oklch(0.88 0 0);
-  --link: oklch(0.52 0.2 257);
+  --background: light-dark(oklch(1 0 0), oklch(0.145 0 0));
+  --foreground: light-dark(oklch(0.22 0 0), oklch(0.93 0 0));
+  --muted: light-dark(oklch(0.93 0 0), oklch(0.22 0 0));
+  --muted-foreground: light-dark(oklch(0.55 0 0), oklch(0.68 0 0));
+  --border: light-dark(oklch(0.88 0 0), oklch(0.28 0 0));
+  --link: light-dark(oklch(0.52 0.2 257), oklch(0.72 0.14 257));
 
   --width: 38rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.93 0 0);
-    --muted: oklch(0.22 0 0);
-    --muted-foreground: oklch(0.68 0 0);
-    --border: oklch(0.28 0 0);
-    --link: oklch(0.72 0.14 257);
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
   }
 }
 
@@ -33,7 +27,7 @@
 html {
   scrollbar-gutter: stable;
   scrollbar-width: thin;
-  scrollbar-color: gray transparent;
+  scrollbar-color: var(--muted-foreground) transparent;
 }
 
 body,
@@ -62,12 +56,13 @@ img {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100dvh;
   padding: 0 1.5rem;
   background: var(--background);
   color: var(--foreground);
   font-family: system-ui, sans-serif;
   font-size: 1rem;
+  line-height: 1.5;
 }
 
 body > header {
@@ -84,8 +79,10 @@ body > header img {
   height: 2rem;
 }
 
-body > header img:hover {
-  opacity: 0.8;
+@media (hover: hover) {
+  body > header img:hover {
+    opacity: 0.8;
+  }
 }
 
 main {
@@ -93,7 +90,7 @@ main {
   width: 100%;
   max-width: var(--width);
   margin: 0 auto;
-  padding-top: 8vh;
+  padding-top: 8svh;
   padding-bottom: 3rem;
 }
 
@@ -112,6 +109,13 @@ h1,
 h2,
 h3 {
   font-weight: 500;
+  text-wrap: balance;
+}
+
+p,
+li,
+blockquote {
+  text-wrap: pretty;
 }
 
 h1 {
@@ -141,8 +145,10 @@ a:active {
   opacity: 0.7;
 }
 
-a:hover {
-  text-decoration-thickness: 2px;
+@media (hover: hover) {
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
 }
 
 main ul {
@@ -197,6 +203,8 @@ body > footer a {
   text-decoration: none;
 }
 
-body > footer a:hover {
-  color: var(--foreground);
+@media (hover: hover) {
+  body > footer a:hover {
+    color: var(--foreground);
+  }
 }

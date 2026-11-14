@@ -45,6 +45,10 @@ const articleJsonLd = {
 </Base>
 
 <style is:global>
+    article {
+      overflow-wrap: break-word;
+    }
+
     article > header {
       margin-bottom: 2rem;
     }
@@ -76,6 +80,7 @@ const articleJsonLd = {
     .toc-mobile {
       color: var(--muted-foreground);
       font-size: 0.875rem;
+      scroll-target-group: auto;
     }
 
     :is(.toc, .toc-mobile) ol {
@@ -87,7 +92,7 @@ const articleJsonLd = {
       margin-top: 0.5rem;
     }
 
-    :is(.toc, .toc-mobile) li[aria-current="page"] > a {
+    :is(.toc, .toc-mobile) a[aria-current="page"] {
       color: var(--foreground);
     }
 
@@ -100,9 +105,14 @@ const articleJsonLd = {
       text-decoration: none;
     }
 
-    :is(.toc, .toc-mobile) a:hover,
-    :is(.toc, .toc-mobile) a[aria-current="location"] {
+    :is(.toc, .toc-mobile) a:is(:target-current, .target-current) {
       color: var(--foreground);
+    }
+
+    @media (hover: hover) {
+      :is(.toc, .toc-mobile) a:hover {
+        color: var(--foreground);
+      }
     }
 
     article > header:has(+ .toc-mobile) {
@@ -127,25 +137,48 @@ const articleJsonLd = {
     }
 
     .toc-mobile summary span {
-      flex: 1;
       min-width: 0;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
 
-    .toc-mobile summary::after {
+    .toc-mobile summary::before {
+      flex-shrink: 0;
       width: 0.375rem;
       height: 0.375rem;
-      margin-right: 0.25rem;
+      margin-inline: 0.125rem;
       border-right: 1px solid currentcolor;
       border-bottom: 1px solid currentcolor;
       content: "";
-      transform: translateY(-25%) rotate(45deg);
+      rotate: -45deg;
     }
 
-    .toc-mobile details[open] summary::after {
-      transform: translateY(25%) rotate(-135deg);
+    .toc-mobile details[open] summary::before {
+      rotate: 45deg;
+    }
+
+    .toc-mobile details::details-content {
+      interpolate-size: allow-keywords;
+      overflow: clip;
+      contain: layout;
+    }
+
+    .toc-mobile details:not([open])::details-content {
+      block-size: 0;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .toc-mobile summary::before {
+        transition: rotate 0.2s;
+      }
+
+      .toc-mobile details::details-content {
+        transition:
+          block-size 0.3s ease-in-out,
+          content-visibility 0.3s ease-in-out allow-discrete,
+          display 0.3s ease-in-out allow-discrete;
+      }
     }
 
     .toc-mobile li {
@@ -157,8 +190,10 @@ const articleJsonLd = {
       padding-block: 0.3125rem;
     }
 
-    .toc-mobile summary:hover {
-      color: var(--foreground);
+    @media (hover: hover) {
+      .toc-mobile summary:hover {
+        color: var(--foreground);
+      }
     }
 
     .toc {
@@ -198,14 +233,21 @@ const articleJsonLd = {
       scroll-margin-top: 1.5rem;
     }
 
+    /* Focusable only so fragment navigation moves focus; not interactive, so no ring */
+    article :is(h2, h3)[tabindex="-1"]:focus {
+      outline: none;
+    }
+
     article :is(h2, h3) > a {
       color: inherit;
       text-decoration: none;
     }
 
-    article :is(h2, h3) > a:hover {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
+    @media (hover: hover) {
+      article :is(h2, h3) > a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+      }
     }
 
     article .contains-task-list {
@@ -228,7 +270,6 @@ const articleJsonLd = {
       width: 1rem;
       height: 1rem;
       margin: 0.2rem 0 0;
-      accent-color: var(--link);
       cursor: pointer;
     }
 
@@ -301,34 +342,44 @@ const articleJsonLd = {
             ),
         ];
 
-        const readChecked = () => {
+        const items = boxes.flatMap((box) => {
+            const item = box.parentElement;
+            if (!item) {return [];}
+
+            const label = document.createElement("label");
+            label.append(...item.childNodes);
+            item.append(label);
+            return [{ box, text: label.textContent?.trim() ?? "" }];
+        });
+
+        const readChecked = (): Set<string> => {
             try {
-                const saved = JSON.parse(localStorage.getItem(key) ?? "[]");
-                return Array.isArray(saved) ? saved : [];
+                const saved: unknown = JSON.parse(localStorage.getItem(key) ?? "[]");
+                if (!Array.isArray(saved)) {return new Set();}
+                if (saved.every((value) => typeof value === "boolean")) {
+                    return new Set(items.filter((_, index) => saved[index] === true).map(({ text }) => text));
+                }
+                return new Set(saved.filter((value): value is string => typeof value === "string"));
             } catch {
-                return [];
+                return new Set();
             }
         };
         const checked = readChecked();
 
         const save = () => {
             try {
-                localStorage.setItem(key, JSON.stringify(boxes.map((box) => box.checked)));
+                localStorage.setItem(
+                    key,
+                    JSON.stringify(items.filter(({ box }) => box.checked).map(({ text }) => text)),
+                );
             } catch {
                 // localStorage unavailable (private mode, blocked storage)
             }
         };
 
-        for (const [index, box] of boxes.entries()) {
-            const item = box.parentElement;
-            if (!item) {continue;}
-
-            const label = document.createElement("label");
-            label.append(...item.childNodes);
-            item.append(label);
-
+        for (const { box, text } of items) {
             box.disabled = false;
-            box.checked = checked[index] === true;
+            box.checked = checked.has(text);
             box.addEventListener("change", save);
         }
     }
