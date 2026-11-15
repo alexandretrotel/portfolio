@@ -1,4 +1,5 @@
 ---
+import logo from "../assets/logo-96.png";
 import { SITE } from "../data/site";
 import "../styles/global.css";
 
@@ -45,7 +46,7 @@ const canonical = new URL(path, SITE.url).toString();
         {noindex && <meta name="robots" content="noindex" />}
 
         <link rel="canonical" href={canonical} />
-        <link rel="icon" type="image/png" href="/logo-96.png" />
+        <link rel="icon" type="image/png" href={logo.src} />
         <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
         <link rel="alternate" type="application/rss+xml" title={SITE.name} href="/rss.xml" />
 
@@ -79,7 +80,7 @@ const canonical = new URL(path, SITE.url).toString();
     <body>
         <header>
             <a href="/" aria-label="Go to homepage">
-                <img src="/logo-96.png" alt="" width="32" height="32" />
+                <img src={logo.src} alt="" width="32" height="32" />
             </a>
         </header>
 
