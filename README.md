@@ -5,7 +5,7 @@ A small [Astro](https://astro.build) site deployed to Cloudflare Workers static 
 ## Commands
 
 ```sh
-corepack enable    # one-time, lets corepack manage pnpm
+mise install       # installs node from mise.toml
 pnpm install       # also installs the lefthook pre-commit hook
 
 pnpm run dev           # local dev server
