@@ -5,7 +5,7 @@ A small [Astro](https://astro.build) site deployed to Cloudflare Workers static 
 ## Commands
 
 ```sh
-mise install       # installs node and hk from mise.toml
+mise install       # installs node, pnpm and hk from mise.toml
 pnpm install
 hk install --mise  # one-time, installs the hk pre-commit hook (hk comes from mise.toml)
 
