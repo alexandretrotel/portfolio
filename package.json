@@ -23,14 +23,14 @@
     "@astrojs/cloudflare": "^14.4.8",
     "@astrojs/markdown-remark": "^7.3.9",
     "@astrojs/sitemap": "^3.7.5",
-    "oxfmt": "^0.78.0",
-    "oxlint": "^1.93.0",
+    "oxfmt": "^0.79.0",
+    "oxlint": "^1.94.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-external-links": "^3.0.0",
     "tsrs": "0.25.0-ts7.1.0-beta",
     "typescript": "^6.0.3",
     "ultracite": "^8.2.1",
-    "wrangler": "^4.162.0"
+    "wrangler": "^4.163.0"
   },
   "engines": {
     "node": ">=26"
