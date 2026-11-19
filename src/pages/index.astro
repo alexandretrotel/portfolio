@@ -1,9 +1,10 @@
 ---
 import Base from "../layouts/Base.astro";
-import { JSON_LD_CONTEXT, SITE, FOOTER_LINKS, RESUME_LINK } from "../data/site";
+import { FOOTER_LINKS, JSON_LD_CONTEXT, RESUME_LINK, SITE } from "../data/site";
 import { getSortedArticles } from "../lib/articles";
 
 const articles = await getSortedArticles();
+const links = [...FOOTER_LINKS, RESUME_LINK];
 
 const profilePageJsonLd = {
     "@context": JSON_LD_CONTEXT,
@@ -18,7 +19,7 @@ const profilePageJsonLd = {
         sameAs: SITE.sameAs,
         speakable: {
             "@type": "SpeakableSpecification",
-            cssSelector: ["main > p:first-of-type"],
+            cssSelector: [".intro p"],
         },
     },
 };
@@ -40,11 +41,14 @@ const websiteJsonLd = {
     description={SITE.description}
     path="/"
     jsonLd={[profilePageJsonLd, websiteJsonLd]}
+    home
 >
-    <h1>{SITE.name}</h1>
-    <p>I'm a founder and full-stack engineer.</p>
+    <header class="intro">
+        <h1>{SITE.name}</h1>
+        <p>I'm a founder and full-stack engineer.</p>
+    </header>
 
-    <h2>Work</h2>
+    <h2 class="label">Work</h2>
     <p>
         I'm joining{" "}
         <a href="https://tengo.cc" target="_blank" rel="noopener noreferrer">
@@ -60,13 +64,13 @@ const websiteJsonLd = {
             rel="noopener noreferrer"
         >
             Radion
-        </a>{" "}
-        as CTO, a real-time and historical data platform for prediction markets.
-        We ingested 8 billion Polymarket events in under two days and served
-        them at 70ms p95 from a multi-threaded Rust API.
+        </a>
+        , a real-time and historical data platform for prediction markets, and
+        was its CTO. We ingested 8 billion Polymarket events in under two days
+        and served them at 70ms p95 from a multi-threaded Rust API.
     </p>
     <p>
-        Before Radion, I was a full-stack engineer, intern then freelancer, at{" "}
+        Before Radion, I worked at{" "}
         <a
             href="https://www.allohouston.fr/"
             target="_blank"
@@ -74,16 +78,17 @@ const websiteJsonLd = {
         >
             <i>ALLO</i>
             <b>HOUSTON</b>
-        </a>
-        . I wrote a conflict resolution algorithm that kept our database in sync
-        with a client's CRM without losing local state, and built an OCR
+        </a>{" "}
+        as a full-stack engineer, first as an intern and then as a freelancer.
+        I wrote a conflict resolution algorithm that kept our database in sync
+        with a client's CRM without losing local state. I also built an OCR
         pipeline that checked critical documents against public and private
         databases.
     </p>
     <p>
-        During my studies, I co-founded Mindify as CTO, a startup helping people
-        discover new topics. I built and shipped its web and mobile app, with
-        1,000+ downloads.
+        During my studies, I co-founded Mindify, a startup that helps people
+        discover new topics, and was its CTO. I built and shipped its web and
+        mobile app, which passed 1,000 downloads.
     </p>
     <p>
         Around the same time, I interned at{" "}
@@ -105,7 +110,7 @@ const websiteJsonLd = {
         at the Coinbase Onchain Summer hackathon.
     </p>
     <p>
-        It all started with my first startup,{" "}
+        My first startup was{" "}
         <a
             href="https://coinmarketcap.com/currencies/trotelcoin-v2/"
             target="_blank"
@@ -113,11 +118,12 @@ const websiteJsonLd = {
         >
             TrotelCoin
         </a>
-        , a web3 app teaching students and non-technical users about blockchain.
-        I wrote 10+ Solidity smart contracts and reached 200+ users.
+        , a web3 app that taught students and non-technical people about
+        blockchain. I wrote more than 10 Solidity smart contracts for it, and
+        it reached over 200 users.
     </p>
     <p>
-        In parallel, I was vice president of{" "}
+        Alongside it, I was vice president of{" "}
         <a
             href="https://www.n7consulting.fr/"
             target="_blank"
@@ -125,11 +131,11 @@ const websiteJsonLd = {
         >
             N7 Consulting
         </a>
-        . I led a team of 26 and generated €100K in revenue, working on
+        . I led a team of 26 and brought in €100K in revenue, working on
         strategy, operations, sales and management.
     </p>
 
-    <h2>Projects</h2>
+    <h2 class="label">Projects</h2>
     <p>I also maintain developer tools, mostly in Rust:</p>
     <ul>
         <li>
@@ -144,16 +150,19 @@ const websiteJsonLd = {
         </li>
     </ul>
 
-    <h2>Hobbies</h2>
+    <h2 class="label">Hobbies</h2>
     <p>
-        I read non-fiction, manga and manhwa, and watch anime. I run 20-30 km
-        per week and play badminton.
+        I read non-fiction, manga and manhwa, and I watch anime. I run 20 to
+        30 km a week and play badminton.
     </p>
-    <p>I play the piano and make EDM on FL Studio.</p>
-    <p>I share what I learn daily on Instagram, where I have 10k+ followers.</p>
+    <p>I play the piano and make EDM in FL Studio.</p>
+    <p>
+        Every day I share what I learn on Instagram, where I have over 10k
+        followers.
+    </p>
 
-    <h2>Writing</h2>
-    <ul>
+    <h2 class="label">Writing</h2>
+    <ul class="posts">
         {articles.map((article) => (
             <li>
                 <a href={`/articles/${article.slug}`}>{article.title}</a>
@@ -164,7 +173,7 @@ const websiteJsonLd = {
     <footer slot="footer">
         <nav aria-label="Links">
             <ul>
-                {FOOTER_LINKS.map((link) => (
+                {links.map((link) => (
                     <li>
                         <a
                             href={link.url}
@@ -175,15 +184,6 @@ const websiteJsonLd = {
                         </a>
                     </li>
                 ))}
-                <li>
-                    <a
-                        href={RESUME_LINK.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        {RESUME_LINK.name}
-                    </a>
-                </li>
             </ul>
         </nav>
     </footer>
