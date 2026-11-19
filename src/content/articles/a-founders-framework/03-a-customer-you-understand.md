@@ -12,7 +12,7 @@ I can think of three levels for a good fit:
 - **Knowledge:** you know the users, workflows, jargon and existing tools. For example, you know which suppliers only take orders by phone.
 - **Access:** you can reach users, experts and distribution channels without cold outreach. For example, you can call ten restaurant owners tomorrow.
 
-Always prefer markets you are part of. This makes you credible from day one, without months of research, allowing you to go even faster.
+Always prefer markets you are part of. You're credible from day one and skip months of research, so you move faster.
 
 For me, the strongest signal is having lived the problem many times and already built your own workaround. That beats anyone saying "I think this would be useful" or people pretending to know everything, which is just Dunning-Kruger doing its job.
 
@@ -28,7 +28,7 @@ Be cautious about markets where reaching users first requires building a communi
 
 So why shouldn't you build an audience at first? Because building the audience becomes the job, and the REAL job, which is understanding and solving a painful problem, [waits](https://en.wikipedia.org/wiki/Lean_software_development#Eliminate_waste).
 
-Even worse, most people it attracts come for the content, the community or the hype. Their feedback looks like validation, but believe me, it really is not.
+And most people it attracts come for the content, the community or the hype. Their feedback looks like validation, but it isn't.
 
 ## Keep access to users
 
@@ -38,7 +38,7 @@ You will want to test your first draft with them, watch them use it, and ask why
 
 Every step of building raises a new question, and only those users can answer it. If you lose access after the first round, you end up guessing, and guessing is how you build something nobody asked for.
 
-So before you commit, ask yourself whether you will still be able to talk to these people in six months and preferably every week if possible.
+So before you commit, ask yourself whether you will still be able to talk to these people in six months, ideally every week.
 
 The ideal market gives an ongoing loop: problem, hypothesis, interview, new hypothesis, experiment, feedback, iteration.
 

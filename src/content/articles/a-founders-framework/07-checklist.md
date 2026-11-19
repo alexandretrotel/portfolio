@@ -34,6 +34,6 @@ Do it with your co-founders before starting. Tick a box only if you all honestly
 - [ ] Are we validating before building, even though we can build fast?
 - [ ] Are we solving problems together instead of hiding behind titles?
 
-If you cannot confidently answer these questions, try to understand the issues and fix them.
+For every box you can't tick, find out why and fix it before you start.
 
-The goal is not to predict that a company will succeed. It's to make sure you avoid the traps that can cost you years of your life and make you fail the goals you set for yourself.
+This checklist can't tell you whether a company will succeed. It helps you avoid the traps that can cost you years of your life and the goals you set for yourself.

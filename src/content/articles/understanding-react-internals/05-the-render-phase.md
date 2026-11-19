@@ -82,7 +82,7 @@ A fiber is a plain JavaScript object. React creates one for each element in your
 }
 ```
 
-Two things are worth noticing.
+Three fields are worth a closer look.
 
 First, `memoizedState`. Your hooks are stored there, as a linked list, in the order you called them. The first `useState` is the first item, the second is the next, and so on. That's why hooks can't be called in a condition or a loop: React finds each hook by its position in the list. Skip one, and every hook after it reads the wrong state.
 
@@ -216,7 +216,7 @@ That trick keeps only the rightmost bit, which is the most urgent lane. Each fib
 
 ## Concurrency and the scheduler
 
-Here's the key point of this chapter. The render phase can be interrupted, but not always. It depends on the lanes.
+The render phase can be interrupted, but not always. It depends on the lanes.
 
 React has two versions of the work loop. The synchronous one:
 
@@ -256,9 +256,9 @@ The "blocking" lanes are `SyncLane`, `InputContinuousLane` and `DefaultLane`. So
 - **A click renders synchronously.** It doesn't yield and it can't be interrupted. The user wants a response now, and pausing would only delay it.
 - **A transition renders concurrently.** It yields every 5ms, and it can be interrupted.
 
-So the urgent updates are not the ones being interrupted. They're the ones doing the interrupting.
+So urgent updates never get interrupted. They do the interrupting.
 
-And what if a transition keeps getting interrupted, forever? It would never show up. To avoid that, every lane has an expiration time: 250ms for sync and input lanes, 5 seconds for transitions. Once a lane expires, `includesExpiredLane` becomes true, and React renders it synchronously, no matter what. This prevents starvation.
+And what if a transition keeps getting interrupted, forever? It would never show up. To avoid that, every lane has an expiration time: 250ms for sync and input lanes, 5 seconds for transitions. Once a lane expires, `includesExpiredLane` becomes true, and React renders it synchronously, no matter what. Work that never gets to run is called starvation, and expiration prevents it.
 
 ## Interruptions
 
@@ -322,4 +322,4 @@ function Reviews({ reviewsPromise }) {
 }
 ```
 
-It's the same idea as Fizz on the server in chapter II. A boundary that isn't ready shows its fallback, and the content takes its place when the data arrives. Same model, different engine.
+It's the same idea as Fizz on the server in chapter II. A boundary that isn't ready shows its fallback, and the content takes its place when the data arrives.

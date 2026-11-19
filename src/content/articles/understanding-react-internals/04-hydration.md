@@ -24,11 +24,11 @@ Once a page is hydrated, you get everything we expect from a modern app:
 - **Client-side navigation:** clicking a link doesn't reload the whole page anymore. The router fetches only what changed and React updates the screen.
 - **Pending states:** a form can show a spinner while it's submitting, with hooks like `useFormStatus`, `useActionState` or `useTransition`.
 
-Note that these come after hydration. They're what hydration makes possible, not what hydration is.
+These come after hydration. Hydration only makes them possible.
 
 And between the moment the HTML shows up and the moment hydration ends, there's a gap. The page looks ready, but it doesn't respond. Some people call it the uncanny valley.
 
-That gap has a cost you should know about. Hydration runs every client component once again, in the browser. So even with super fast HTML, a big client tree means a page that stays frozen for a while. This is one of the main reasons Server Components exist: their code never runs again in the browser.
+The gap comes from how hydration works: it runs every client component again, in the browser. So even with super fast HTML, a big client tree means a page that stays frozen for a while. This is one of the main reasons Server Components exist: their code never runs again in the browser.
 
 ## Progressive enhancement
 
@@ -66,7 +66,7 @@ I simplified the attributes, but you get the idea. Click the button before React
 
 Once hydrated, React takes over the same form. No full reload anymore, and you get the pending states.
 
-And here's a detail I love. What if the action is a client function, not a Server Action? A plain function can't work without JavaScript. So Fizz renders the form with this action:
+One detail I love: what if the action is a client function, not a Server Action? A plain function can't work without JavaScript. So Fizz renders the form with this action:
 
 ```html
 <form
@@ -111,7 +111,7 @@ DOM already on the page        What React does
 
 For each node, React checks that it matches what the component just returned. Same tag, same text. If it does, React keeps the node and links it to its fiber. You can even see that link in your browser's console, every hydrated node has a property like `__reactFiber$x7k2p`.
 
-Now, an important point. React hydrates the whole tree under the root, not only your client components.
+React hydrates the whole tree under the root, not only your client components.
 
 Server Components are part of the walk too. React claims their HTML like any other node, but it never calls them. Let's take an example:
 
@@ -146,15 +146,13 @@ In the browser, React hydrates from that payload. Here's what happens to each pa
 - **`<main>` and `<h1>`:** React reads them from the payload and claims the matching DOM nodes. It doesn't call `ProductPage`, and it can't anyway: its code is not in the bundle. No database query, no `await`, nothing.
 - **`AddToCart`:** the payload only has a reference (`$L1`). So React loads its code and calls `AddToCart({ productId: 42 })` to know what it renders, sets up its state, and claims the `<button>`.
 
-So the server sends the result of Server Components, the finished elements. Only client components run again in the browser.
-
-So in React, the whole page is one tree. Only the client code costs you JavaScript, but React still knows about everything.
+So the server sends the finished elements of Server Components, and only client components run again in the browser. The whole page is still one tree: only the client code costs you JavaScript, but React knows about every node.
 
 ## Islands, a different approach
 
 Not every framework works like this. Some use islands.
 
-The idea is simple. The page is static HTML, a sea, and only a few interactive parts, the islands, get JavaScript. Each island hydrates on its own, and the rest of the page never does.
+The page is static HTML, a sea, and only a few interactive parts, the islands, get JavaScript. Each island hydrates on its own, and the rest of the page never does.
 
 [Astro](https://astro.build) is the best known example. This portfolio is built with it, by the way. Here's what a page looks like:
 
@@ -220,7 +218,7 @@ But what about clicks that happen too early? Imagine the user clicks a button in
 2. It hydrates that boundary right away, before anything else, with `attemptSynchronousHydration`.
 3. It replays the click on the now hydrated button.
 
-The user's intent decides the order. What you touch gets hydrated first.
+What the user touches gets hydrated first.
 
 Continuous events, like `mouseover`, work a bit differently. React queues them with `queueIfContinuousEvent`, and replays them once the boundary is ready.
 
@@ -230,7 +228,7 @@ All of this relies on priorities. A click is more urgent than hydrating a footer
 
 Hydration only works if the client renders exactly what the server rendered. When it doesn't, you get a hydration mismatch.
 
-React's error message is actually a great list of the usual causes. Straight from the source, a mismatch can happen if a client component used:
+React's error message is a good list of the usual causes. Straight from the source, a mismatch can happen if a client component used:
 
 - a server/client branch like `if (typeof window !== 'undefined')`
 - variable input such as `Date.now()` or `Math.random()`

@@ -6,9 +6,7 @@ title: A big enough market
 
 The market sets the ceiling on what great execution can reach. For example, the best fisherman in the world still can't catch more fish than the lake holds.
 
-And also, "big market" doesn't mean a big [TAM](https://en.wikipedia.org/wiki/Total_addressable_market) slide.
-
-The question is deeper:
+A "big market" doesn't mean a big [TAM](https://en.wikipedia.org/wiki/Total_addressable_market) slide. The real test is this:
 
 > If you execute extremely well, can this become a very large company without changing markets completely?
 
@@ -28,7 +26,7 @@ The $1B goes on the pitch deck. The $100M is the real size of your lake.
 
 A small lake can still be worth fishing if it is filling up fast, flows into a much bigger one, or holds more fish than everyone thinks. If you make that bet, write down why you believe it.
 
-Oh, and replace the lake with the market. I'm talking about market growth of course.
+(The lake is the market. "Filling up fast" means the market is growing.)
 
 ## The market must grow
 
@@ -38,7 +36,7 @@ But you should be able to answer this question and justify it:
 
 > Why is this problem going to become more important over the next 5 to 10 years?
 
-Answering this question will help you and make raising funds from investors easier, as they will ask you this.
+Investors will ask it too, so a good answer makes raising money easier.
 
 And remember what path you chose. A stagnant market requires stealing customers. A growing market creates new ones.
 
@@ -46,4 +44,4 @@ And remember what path you chose. A stagnant market requires stealing customers.
 
 If the business depends on a single platform, or the market carries too much regulatory uncertainty, don't go.
 
-Thank me later. For one of my startups, a single clause in a platform's terms of service was enough to kill our company.
+I learned this the hard way: a single clause in a platform's terms of service killed one of my startups.

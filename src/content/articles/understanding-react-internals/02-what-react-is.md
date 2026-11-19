@@ -40,14 +40,12 @@ React uses it so that two copies of React loaded on the same page, by two differ
 
 Symbols have another property that will matter soon: they can't be written in JSON. `JSON.stringify` simply drops them.
 
-There are a few variants of this primitive:
+There are a few variants of this function:
 
 - **`jsx`:** one child or none.
 - **`jsxs`:** several static children, written side by side in the JSX.
 - **`jsxDEV`:** the development version, with extra checks and warnings.
 - **`createElement`:** the old one. Before React 17, every JSX tag became `React.createElement(...)`, which is why you had to import `React` in every file.
-
-Whatever you write, it always ends up as one of these calls.
 
 ## Components return descriptions
 
@@ -62,7 +60,7 @@ Each of these calls returns a plain object, a React element:
 }
 ```
 
-That's it. A component is just a function that returns a description of what the UI should look like.
+So a component is just a function that returns a description of what the UI should look like.
 
 Even the `$$typeof` field has a reason. Remember, a symbol can't be written in JSON, so if someone injects JSON into your app, it can't pretend to be a React element.
 
@@ -77,7 +75,7 @@ export function useState(initialState) {
 }
 ```
 
-It doesn't do anything itself. No state, no memory, nothing. It asks for a "dispatcher" and forwards the call to it.
+It holds no state and does nothing itself. It asks for a "dispatcher" and forwards the call to it.
 
 A dispatcher is just an object holding the real code of every hook. Something like `{ useState, useEffect, useMemo, ... }`. The one in use is stored in a shared variable, `ReactSharedInternals.H`.
 
@@ -125,7 +123,7 @@ If you open the repository, start there. Everything else is tests, tooling, and 
 
 ## Two phases
 
-Last thing before we dive in. Every update in the browser goes through two phases:
+Every update in the browser goes through two phases:
 
 1. **Render:** React calls your components and computes what changed. Nothing touches the screen yet, so this work can be paused, restarted, or thrown away.
 2. **Commit:** React applies the changes to the DOM. This part is synchronous and can't be interrupted.

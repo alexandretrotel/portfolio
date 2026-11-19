@@ -22,7 +22,7 @@ fiber.memoizedState → useState slot → useRef slot → useMemo slot → null
 
 On each render, React walks this list as you call your hooks. There are no names, only positions.
 
-That's the real reason behind the rules of hooks. Call a hook inside an `if`, and when the condition is false, every hook after it reads the wrong slot. Your `useRef` would get the `useMemo` value.
+That's why the rules of hooks exist. Call a hook inside an `if`, and when the condition is false, every hook after it reads the wrong slot. Your `useRef` would get the `useMemo` value.
 
 Every hook below is just a different way to use one of these slots.
 
@@ -115,9 +115,9 @@ And split contexts that change at different speeds. A theme and a cursor positio
 
 Memoizing has a cost too, so use it when the reference matters: a prop for a `memo` component, a dependency of an effect, a context value, or a really expensive calculation. Outside of these, it's noise.
 
-With the [React Compiler](https://react.dev/learn/react-compiler), you'll write most of this less and less. It analyzes your components at build time and adds the memoization for you.
+With the [React Compiler](https://react.dev/learn/react-compiler), you'll write less and less of this by hand. It analyzes your components at build time and adds the memoization for you.
 
-Personally, I don't use the Babel plugin the React docs recommend. I use [`oxc-transform-react`](https://oxc.rs/docs/guide/usage/transformer/react-compiler.html) from [Oxc](https://oxc.rs), with `@vitejs/plugin-react`. It runs a Rust port of the same compiler, and it's [more than 10 times faster](https://oxc.rs/blog/2026-08-18-react-compiler-support) than Babel. It's still marked experimental, but the [VoidZero](https://voidzero.dev) team always makes great tools.
+Personally, I don't use the Babel plugin the React docs recommend. I use [`oxc-transform-react`](https://oxc.rs/docs/guide/usage/transformer/react-compiler.html) from [Oxc](https://oxc.rs), with `@vitejs/plugin-react`. It runs a Rust port of the same compiler, and it's [more than 10 times faster](https://oxc.rs/blog/2026-08-18-react-compiler-support) than Babel. It's still marked experimental, but I trust the [VoidZero](https://voidzero.dev) team's track record.
 
 ## Effects sync with the outside
 

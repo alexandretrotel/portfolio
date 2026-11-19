@@ -1,17 +1,17 @@
 ---
 title: A founder's framework
-description: A complete framework for founders before starting a company. Built from the mistakes I've made working on four ventures, so you don't have to repeat them.
+description: A framework for founders to use before starting a company, built from the mistakes I made across four ventures so you don't have to repeat them.
 date: 2026-09-30
 updated: true
 ---
 
-Most startups don't fail because the product is hard to build or because of competition. Instead, they fail because the problem they try to solve isn't painful enough.
+Most startups don't fail because the product is hard to build or because of competition. They fail because the problem they try to solve isn't painful enough.
 
-None of this should be new. Anyone serious about building a company has already heard that. A startup is about solving a customer's problem, talking to users and validating before building.
+None of this is new. Anyone serious about building a company has heard that a startup is about solving a customer's problem, talking to users and validating before building.
 
-But here's the thing, from my experience, most founders pretend to know all of that. But in practice, very few apply these rules.
+In my experience, most founders claim to know all of that, but very few apply it.
 
-Even worse, for me the problem is deeper. YOU are lying to yourself because you don't really know what you want from your life yet, and that's okay.
+Worse, YOU may be lying to yourself, because you don't know yet what you want from your life. That's okay.
 
 Every criterion listed below comes from a mistake I've made.
 
@@ -25,11 +25,11 @@ Note that this is a living document, updated as I learn. So come back sometimes 
 
 ## Getting the definition right
 
-Everything developed below starts from one definition of what building a startup really is:
+This framework starts from one definition of what building a startup is:
 
 > Solving a painful problem, experienced by people you understand deeply, in a big enough market, where your team has an unusually strong founder-market fit and a credible path to [product-market fit](https://en.wikipedia.org/wiki/Product/market_fit).
 
-Everything else in this framework unpacks it, phrase by phrase.
+Each chapter unpacks one phrase of it.
 
 A cool technology, an interesting product, a trendy market or an idea that sounds impressive is not a startup.
 
@@ -37,9 +37,7 @@ If you don't agree with this definition, then one of two things is true.
 
 Either you can define it better, and your definition is worth sharing. Or you don't really want to build a startup. You want something else, and that's fine.
 
-## Journey to build a startup
-
-Here's the list of everything we're going to cover.
+## What this framework covers
 
 1. [A painful problem](/articles/a-founders-framework/a-painful-problem)
 2. [A customer you understand](/articles/a-founders-framework/a-customer-you-understand)

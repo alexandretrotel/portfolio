@@ -13,11 +13,11 @@ Two releases changed that:
 - **React 18 (2022):** streaming HTML with Suspense, and selective hydration. The server can send the page in pieces, as each one is ready.
 - **React 19 (2024):** Server Components and Server Actions became stable. Some components now run only on the server, and their code never reaches the browser.
 
-So the server is not new. What's new is how much of React now lives there.
+Server rendering isn't new, but much more of React runs there now.
 
-## Two renderers, not one
+## Two server renderers
 
-Here's the first thing most people get wrong. React on the server does not use the same engine as in the browser.
+Many people assume React on the server uses the same engine as in the browser. It doesn't.
 
 In the browser, React uses `react-reconciler`, the engine built around fibers that we'll see later. On the server, the `react-server` package has two renderers of its own:
 
@@ -26,11 +26,11 @@ In the browser, React uses `react-reconciler`, the engine built around fibers th
 
 Neither of them imports the reconciler. Go check, there's no fiber in there.
 
-Why not reuse it? Because the reconciler exists to handle updates over time. State changes, priorities, interruptions. On the server, a request renders once and is done. Nothing ever updates.
+Why not reuse it? Because the reconciler exists to handle updates over time: state changes, priorities, interruptions. On the server, a request renders once and is done, so nothing ever updates.
 
 You can see this in the hooks. In Fizz, `useEffect` and `useLayoutEffect` are a `noop`, and `useState` only returns the initial value. In Flight, `useState` and `useEffect` throw "This Hook is not supported in Server Components."
 
-So, React on the server shares the component model with the browser, not the engine. Same components, different machines.
+So React on the server shares the component model with the browser, but not the engine.
 
 ## Server Components and Flight
 
@@ -63,7 +63,7 @@ Before we dig in, a personal note. I don't really like this directive.
 
 Like Tanner Linsley, the creator of [TanStack](https://tanstack.com), I prefer explicitness. A string at the top of a file hides what the bundler is really doing, and that makes it harder to see what runs where.
 
-Sure, it's sometimes less code. But when I compare Next.js with [TanStack Start](https://tanstack.com/start), I found the second much easier to reason about. You write more code, but every boundary is a function you can read: `createServerFn` for server code, `createIsomorphicFn` for logic that runs on both sides. You see how React behaves, and where the client ends and the server begins.
+Sure, it's sometimes less code. But when I compared Next.js with [TanStack Start](https://tanstack.com/start), I found the second much easier to reason about. You write more code, but every boundary is a function you can read: `createServerFn` for server code, `createIsomorphicFn` for logic that runs on both sides. You see how React behaves, and where the client ends and the server begins.
 
 That said, `'use client'` is what React ships, so let's understand what it really does.
 
@@ -71,7 +71,7 @@ That said, `'use client'` is what React ships, so let's understand what it reall
 
 On the server, the bundler replaces that module's exports with client references, using functions like `registerClientReference`. That's what Flight writes as an `I` row.
 
-And here's the surprise. Client components still render on the server, but with Fizz, not Flight. They become HTML on the first load, then hydrate in the browser.
+Client components still render on the server, but with Fizz, not Flight. They become HTML on the first load, then hydrate in the browser.
 
 So in a framework like Next.js, one request goes through both renderers:
 
@@ -286,7 +286,7 @@ There are a few variants I skipped. For example, when the new content needs a st
 
 ### Before React even loads
 
-Now, notice something important. Everything we just saw happens before React's JavaScript has loaded. `$RC` and `$RV` are a few lines of plain DOM code, inlined in the HTML.
+Everything we just saw happens before React's JavaScript has loaded. `$RC` and `$RV` are a few lines of plain DOM code, inlined in the HTML.
 
 So the user sees the reviews, even if your bundle is still downloading.
 

@@ -10,7 +10,7 @@ The commit phase applies those changes. And unlike rendering, it never stops in 
 
 Why? Because the render phase works on a draft. Nobody sees it, so React can pause it, restart it or throw it away. The commit works on the real DOM. Every change is visible as soon as the browser paints.
 
-Imagine React could pause in the middle of a commit. The browser would paint a page where the new item is inserted, but the counter above it still shows the old number. Half an update. This is exactly what React wants to avoid.
+Imagine React could pause in the middle of a commit. The browser would paint a page where the new item is inserted, but the counter above it still shows the old number. The synchronous commit exists to prevent that half update.
 
 So the commit runs in one go, from start to finish, in a single JavaScript task. In [the render phase](/articles/understanding-react-internals/the-render-phase), only some lanes were synchronous. Here, everything is.
 
@@ -84,13 +84,13 @@ item1TextNode.nodeValue = "Blue shoes (2)"; // commitTextUpdate
 listNode.appendChild(item3Node); // appendChild
 ```
 
-That's it. Two lines. React doesn't rebuild the list or touch the second item. It doesn't even create `item3Node` here: that node was already built in memory by `completeWork` during render, with its children inside. The commit only plugs it into the page.
+React doesn't rebuild the list or touch the second item. It doesn't even create `item3Node` here: that node was already built in memory by `completeWork` during render, with its children inside. The commit only plugs it into the page.
 
 This is what people mean when they talk about the "virtual DOM". It was never about being faster than the DOM. It's about computing the smallest list of DOM calls, then making them all at once.
 
 ## How the browser turns the DOM into pixels
 
-Now, the browser side. Changing the DOM doesn't change the screen. Not right away.
+Now, the browser side. Changing the DOM doesn't change the screen right away.
 
 ### The event loop
 
@@ -113,7 +113,7 @@ When the browser decides to render, it goes through a pipeline:
 4. **Paint:** draw the pixels of each layer, text, colors, borders, images.
 5. **Composite:** stack the layers together and send the result to the screen.
 
-So when React calls `appendChild`, the node is added to the DOM tree in memory. Nothing more. The style, layout and paint happen later, when the browser reaches step 3 of the event loop.
+So when React calls `appendChild`, the node is only added to the DOM tree in memory. The style, layout and paint happen later, when the browser reaches step 3 of the event loop.
 
 That's why a synchronous commit is invisible to the user. React makes all its DOM changes in one task. The browser can't render in between. So every change shows up in the same frame, and the user never sees half an update.
 
@@ -164,7 +164,7 @@ The price: everything in a layout effect delays the paint. Use it only when you 
 
 ### `useEffect` runs before or after paint
 
-Here's the part most people get wrong. They say `useEffect` always runs after the browser paints. The source says otherwise.
+Many people say `useEffect` always runs after the browser paints. The source says otherwise.
 
 In `ReactFiberWorkLoop.js`, there's this comment:
 
@@ -220,4 +220,4 @@ startTransition(() => setFilter("shoes"));
 4. **The task ends, the browser paints.** The user sees the filtered list.
 5. **Passive effects** run later, in a task scheduled by the scheduler.
 
-Same commit, different timing around it. The render was cut into pieces, the commit never is.
+The render was cut into pieces, but the commit never is.
