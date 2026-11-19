@@ -15,22 +15,22 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
-    "astro": "^7.4.12",
+    "astro": "^7.4.13",
     "takumi-pdf": "^0.20.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
-    "@astrojs/cloudflare": "^14.4.8",
-    "@astrojs/markdown-remark": "^7.3.9",
-    "@astrojs/sitemap": "^3.7.5",
+    "@astrojs/cloudflare": "^14.4.9",
+    "@astrojs/markdown-remark": "^7.3.10",
+    "@astrojs/sitemap": "^3.7.6",
     "oxfmt": "^0.79.0",
     "oxlint": "^1.94.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-external-links": "^3.0.0",
     "tsrs": "0.25.0-ts7.1.0-beta",
     "typescript": "^6.0.3",
-    "ultracite": "^8.2.1",
-    "wrangler": "^4.163.0"
+    "ultracite": "^8.3.0",
+    "wrangler": "^4.164.0"
   },
   "engines": {
     "node": ">=26"
