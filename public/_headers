@@ -13,3 +13,7 @@
 /resume
   Content-Type: application/pdf
   Content-Disposition: inline; filename="alexandre_trotel_resume.pdf"
+
+/fonts/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable

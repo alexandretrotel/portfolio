@@ -10,6 +10,7 @@ interface Props {
     type?: "website" | "article";
     noindex?: boolean;
     jsonLd?: object[];
+    home?: boolean;
 }
 
 const {
@@ -19,6 +20,7 @@ const {
     type = "website",
     noindex = false,
     jsonLd = [],
+    home = false,
 } = Astro.props;
 
 const canonical = new URL(path, SITE.url).toString();
@@ -28,16 +30,16 @@ const canonical = new URL(path, SITE.url).toString();
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="color-scheme" content="light dark" />
         <meta
             name="theme-color"
-            content="#ffffff"
+            content="#fdfdfc"
             media="(prefers-color-scheme: light)"
         />
         <meta
             name="theme-color"
-            content="#0a0a0a"
+            content="#111110"
             media="(prefers-color-scheme: dark)"
         />
 
@@ -45,10 +47,31 @@ const canonical = new URL(path, SITE.url).toString();
         <meta name="description" content={description} />
         {noindex && <meta name="robots" content="noindex" />}
 
+        <link
+            rel="preload"
+            href="/fonts/allo-1.0.3.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
         <link rel="canonical" href={canonical} />
         <link rel="icon" type="image/png" href={logo.src} />
         <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
         <link rel="alternate" type="application/rss+xml" title={SITE.name} href="/rss.xml" />
+
+        {home && (
+            <script is:inline>
+                try {
+                    if (sessionStorage.getItem("home-visited")) {
+                        document.documentElement.classList.add("visited");
+                    } else {
+                        sessionStorage.setItem("home-visited", "1");
+                    }
+                } catch {
+                    document.documentElement.classList.add("visited");
+                }
+            </script>
+        )}
 
         {!noindex && (
             <>
@@ -78,16 +101,17 @@ const canonical = new URL(path, SITE.url).toString();
     </head>
 
     <body>
-        <header>
-            <a href="/" aria-label="Go to homepage">
-                <img src={logo.src} alt="" width="32" height="32" />
+        {!home && (
+            <a class="home-link" href="/" aria-label="Go to homepage">
+                <img src={logo.src} alt="" width="40" height="40" />
             </a>
-        </header>
+        )}
 
-        <main>
+        <main class:list={{ stagger: home }}>
             <slot />
         </main>
 
         <slot name="footer" />
     </body>
 </html>
+

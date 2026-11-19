@@ -14,6 +14,10 @@ export default defineConfig({
   trailingSlash: "never",
   adapter: cloudflare(),
   markdown: {
+    shikiConfig: {
+      themes: { light: "github-light", dark: "github-dark" },
+      defaultColor: false,
+    },
     processor: unified({
       rehypePlugins: [
         [rehypeExternalLinks, { rel: ["noreferrer"] }],
