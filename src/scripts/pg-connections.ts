@@ -2,7 +2,7 @@ import {
   caption,
   el,
   injectStyles,
-  chapterPlayer,
+  player,
   pop,
   setup,
   sync,
@@ -10,19 +10,21 @@ import {
 
 import styles from "./pg-connections.css?inline";
 
-type Mode = "direct" | "pooler";
-
-const MAX_CONNECTIONS = 8;
+const MAX_CONNECTIONS = 4;
 const POOL_SIZE = 3;
-const POOL_CLIENTS = 10;
-const QUERY_TICKS = 2;
+const CLIENTS = 5;
 
 interface Client {
   id: number;
-  state: "idle" | "waiting" | "running" | "done" | "refused";
-  backend?: number;
-  left: number;
+  state: "waiting" | "running" | "done" | "refused";
 }
+
+const CAPTIONS = [
+  `max_connections is ${MAX_CONNECTIONS}, and ${MAX_CONNECTIONS} clients already hold a process each.`,
+  `C${CLIENTS} is refused: Postgres has no free slot and doesn't queue it.`,
+  `With PgBouncer, ${CLIENTS} clients share ${POOL_SIZE} processes, and the rest wait their turn.`,
+  "C1's transaction ends, and C4 gets its process.",
+];
 
 const section = (label: string, node: HTMLElement) => {
   const wrap = el("div", "pg-connections-section");
@@ -34,10 +36,9 @@ export default function mount(root: HTMLElement) {
   injectStyles("pg-connections", styles);
   setup(root, "pg-connections");
 
-  let mode: Mode = "direct";
+  let at = 0;
   let clients: Client[] = [];
   let backends: (number | undefined)[] = [];
-  let tick = 0;
 
   const clientRow = el("ol", "pg-connections-row");
   clientRow.setAttribute("aria-label", "Clients");
@@ -46,8 +47,43 @@ export default function mount(root: HTMLElement) {
   backendRow.setAttribute("aria-label", "Backend processes");
   const live = caption("");
 
+  const stateAt = (index: number) => {
+    if (index === 0) {
+      clients = Array.from({ length: MAX_CONNECTIONS }, (_, i) => ({
+        id: i + 1,
+        state: "running",
+      }));
+      backends = clients.map((c) => c.id);
+    } else if (index === 1) {
+      clients.push({ id: CLIENTS, state: "refused" });
+    } else if (index === 2) {
+      clients = Array.from({ length: CLIENTS }, (_, i) => ({
+        id: i + 1,
+        state: i < POOL_SIZE ? "running" : "waiting",
+      }));
+      backends = clients.slice(0, POOL_SIZE).map((c) => c.id);
+    } else {
+      clients = clients.map((c) => {
+        if (c.id === 1) {
+          return { ...c, state: "done" };
+        }
+        if (c.id === 4) {
+          return { ...c, state: "running" };
+        }
+        return c;
+      });
+      backends[0] = 4;
+    }
+  };
+
   const render = () => {
-    middle.textContent = mode === "direct" ? "postmaster" : "PgBouncer";
+    const text = at < 2 ? "postmaster" : "PgBouncer";
+    if (middle.textContent !== text) {
+      middle.textContent = text;
+      if (at > 0) {
+        pop(middle);
+      }
+    }
     sync(
       clientRow,
       clients,
@@ -70,119 +106,40 @@ export default function mount(root: HTMLElement) {
       (node, { owner }) => {
         node.classList.toggle("is-busy", owner !== undefined);
         const label = node.querySelector<HTMLElement>(".pg-connections-owner");
-        const text = owner === undefined ? "free" : `C${owner}`;
-        if (label && label.textContent !== text) {
-          label.textContent = text;
-          if (owner !== undefined) {
+        const name = owner === undefined ? "free" : `C${owner}`;
+        if (label && label.textContent !== name) {
+          label.textContent = name;
+          if (at > 0) {
             pop(label);
           }
         }
       }
     );
+    live.textContent = CAPTIONS[at] ?? "";
   };
 
-  const begin = (chapter: Mode) => {
-    mode = chapter;
-    tick = 0;
-    if (mode === "direct") {
-      clients = [];
-      backends = [];
-      for (let i = 0; i < 3; i += 1) {
-        stepDirect();
-      }
-      live.textContent = `Three clients, three processes: each connection gets its own.`;
-    } else {
-      clients = Array.from({ length: POOL_CLIENTS }, (_, i) => ({
-        id: i + 1,
-        state: "idle",
-        left: 0,
-      }));
-      backends = Array.from<number | undefined>({ length: POOL_SIZE });
-      live.textContent = `${POOL_CLIENTS} clients talk to the pooler, which keeps only ${POOL_SIZE} processes open.`;
-    }
-    render();
-  };
-
-  const stepDirect = () => {
-    const id = clients.length + 1;
-    if (backends.length >= MAX_CONNECTIONS) {
-      clients.push({ id, state: "refused", left: 0 });
+  const { controls } = player({
+    step: () => {
+      at += 1;
+      stateAt(at);
       render();
-      live.textContent = `C${id} is refused: every slot holds a whole process, even an idle one.`;
-      return false;
-    }
-    clients.push({ id, state: "running", backend: backends.length, left: 0 });
-    backends.push(id);
-    render();
-    live.textContent = `C${id} connects, and the postmaster forks a new process for it (${backends.length} of ${MAX_CONNECTIONS}).`;
-    return true;
-  };
-
-  const stepPooler = () => {
-    tick += 1;
-
-    for (const client of clients) {
-      if (client.state === "running") {
-        client.left -= 1;
-        if (client.left === 0 && client.backend !== undefined) {
-          backends[client.backend] = undefined;
-          client.state = "done";
-          delete client.backend;
-        }
-      }
-    }
-
-    for (const client of clients
-      .filter((c) => c.state === "idle")
-      .slice(0, 2)) {
-      client.state = "waiting";
-    }
-
-    for (const client of clients.filter((c) => c.state === "waiting")) {
-      const free = backends.indexOf(undefined);
-      if (free === -1) {
-        break;
-      }
-      backends[free] = client.id;
-      client.state = "running";
-      client.backend = free;
-      client.left = QUERY_TICKS;
-    }
-
-    const waiting = clients.filter((c) => c.state === "waiting").length;
-    const finished = clients.every((c) => c.state === "done");
-    render();
-
-    if (finished) {
-      live.textContent = `All ${POOL_CLIENTS} clients were served by just ${POOL_SIZE} processes.`;
-      return false;
-    }
-    live.textContent =
-      waiting > 0
-        ? `${waiting} waiting: a process only frees up when a transaction ends.`
-        : "Each finished transaction hands its process to the next client.";
-    return true;
-  };
-
-  const step = () => (mode === "direct" ? stepDirect() : stepPooler());
-
-  const { controls, label } = chapterPlayer({
-    chapters: [
-      ["direct", "One process per client"],
-      ["pooler", "With a pooler"],
-    ] as const,
-    begin,
-    step,
-    length: (chapter) =>
-      chapter === "direct" ? MAX_CONNECTIONS - 2 : undefined,
+      return at < CAPTIONS.length - 1;
+    },
+    reset: () => {
+      at = 0;
+      stateAt(0);
+      render();
+    },
+    total: () => CAPTIONS.length - 1,
   });
 
   root.append(
-    label,
     section("clients", clientRow),
     middle,
     section("backends", backendRow),
     controls,
     live
   );
+  stateAt(0);
+  render();
 }
