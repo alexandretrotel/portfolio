@@ -29,8 +29,6 @@ for (let i = 1; i <= 14; i += 1) {
 
 const nameOf = (bit: number) => NAMES[bit] ?? `bit ${bit}`;
 
-const binary = (lanes: number) => (lanes >>> 0).toString(2).padStart(BITS, "0");
-
 export default function mount(root: HTMLElement) {
   injectStyles("react-lanes", styles);
   setup(root, "react-lanes");
@@ -47,8 +45,7 @@ export default function mount(root: HTMLElement) {
     return { bit, cell };
   });
 
-  const value = el("p", "react-lanes-value demo-mono");
-  const pick = el("p", "react-lanes-value demo-mono");
+  const names = el("p", "react-lanes-names demo-mono");
   const live = caption("");
 
   const render = (added?: number) => {
@@ -61,8 +58,14 @@ export default function mount(root: HTMLElement) {
         pop(cell);
       }
     }
-    value.textContent = `pendingLanes          0b${binary(pending)}`;
-    pick.textContent = `pendingLanes & -pendingLanes  0b${binary(highest)}`;
+    const pendingBits = cells
+      .map(({ bit }) => bit)
+      .filter((bit) => (pending & (2 ** bit)) !== 0)
+      .toSorted((a, b) => a - b);
+    names.textContent =
+      pendingBits.length === 0
+        ? "nothing pending"
+        : pendingBits.map((bit) => nameOf(bit)).join(" · ");
   };
 
   const add = (lane: number, why: string) => {
@@ -72,8 +75,8 @@ export default function mount(root: HTMLElement) {
     const bit = Math.log2(lane);
     live.textContent =
       before === pending
-        ? `${why} lands in ${nameOf(bit)}, which already has pending work. Nothing changes: it renders with the others in that lane.`
-        : `${why} → ${nameOf(bit)}. pendingLanes |= lane. Rightmost bit now: ${nameOf(Math.log2(pending & -pending))}.`;
+        ? `${why}: the ${nameOf(bit)} bit is already set, so nothing changes.`
+        : `${why} sets the ${nameOf(bit)} bit.`;
   };
 
   const renderNext = () => {
@@ -89,16 +92,16 @@ export default function mount(root: HTMLElement) {
 
   const ACTIONS: (() => void)[] = [
     () => {
-      add(2 ** 8, "setState inside startTransition");
+      add(2 ** 8, "startTransition");
     },
     () => {
-      add(2 ** 5, "setState after a fetch");
+      add(2 ** 5, "A fetch result");
     },
     () => {
-      add(2 ** 1, "setState in an onClick");
+      add(2 ** 1, "A click");
     },
     () => {
-      add(2 ** 3, "setState in onMouseMove");
+      add(2 ** 3, "A mouse move");
     },
     () => {
       add(2 ** 1, "Another click");
@@ -132,7 +135,7 @@ export default function mount(root: HTMLElement) {
     el("span", undefined, "more urgent · bit 0")
   );
   const scroll = el("div", "demo-scroll");
-  scroll.append(row, legend, value, pick);
+  scroll.append(row, legend, names);
 
   root.append(scroll, controls, live);
   render();

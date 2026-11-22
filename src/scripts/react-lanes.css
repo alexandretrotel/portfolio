@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(31, minmax(0.5rem, 1fr));
   gap: 2px;
-  min-width: 20rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -30,12 +29,11 @@
 .react-lanes-legend {
   display: flex;
   justify-content: space-between;
-  min-width: 20rem;
   margin-top: 0.25rem;
 }
 
-.react-lanes-value {
-  min-width: 20rem;
-  margin-top: 0.5rem;
-  white-space: pre;
+.react-lanes-names {
+  min-height: 1.25rem;
+  margin-top: 0.75rem;
+  text-align: center;
 }

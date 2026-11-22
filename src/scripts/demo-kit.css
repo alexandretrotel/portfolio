@@ -4,6 +4,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+article .demo [hidden] {
+  display: none !important;
+}
+
 article .demo li + li {
   margin-top: 0;
 }

@@ -35,9 +35,6 @@ export default function mount(root: HTMLElement) {
   );
 
   const chart = el("div", "switch-bar-chart");
-  const line = el("div", "switch-bar-line");
-  line.append(el("span", "demo-label", "1×, as good as what they have"));
-  line.style.setProperty("--x", String(1 / MAX));
 
   const bar = (text: string) => {
     const row = el("div", "switch-bar-row");
@@ -54,7 +51,13 @@ export default function mount(root: HTMLElement) {
   const you = bar("what you think");
   const real = bar("what it really is");
   const felt = bar("what the customer feels");
-  chart.append(line);
+  chart.style.setProperty("--tie", String(1 / MAX));
+  const note = el(
+    "p",
+    "demo-label switch-bar-note",
+    "Dashed line: as good as what they already have."
+  );
+  chart.append(note);
 
   const verdict = el("p", "demo-caption");
   verdict.setAttribute("aria-live", "polite");

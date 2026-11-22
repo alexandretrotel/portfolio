@@ -49,7 +49,7 @@ export default function mount(root: HTMLElement) {
     ];
     bytes.replaceChildren(...cells);
 
-    sum.textContent = `${1 + length} bytes on the wire. The length field says ${length}: 4 for itself, ${sql.length} for the SQL, 1 for the zero byte. The type byte isn't counted.`;
+    sum.textContent = `${1 + length} bytes: one type byte, then a length of ${length} that counts itself, the SQL and a zero byte.`;
   };
 
   input.addEventListener("input", render);

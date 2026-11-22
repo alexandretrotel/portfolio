@@ -145,10 +145,8 @@ export default function mount(root: HTMLElement) {
 
     free.textContent = `free space · ${upper() - lower()} B`;
     const annCtid = ctid("ann");
-    index.textContent =
-      annCtid === undefined
-        ? "users_email_idx: ann@mail.com → gone"
-        : `users_email_idx: ann@mail.com → ${annCtid}`;
+    index.textContent = `index: ann@mail.com → ${annCtid ?? ""}`;
+    index.style.visibility = annCtid === undefined ? "hidden" : "visible";
   };
 
   const insert = () => {
@@ -157,7 +155,8 @@ export default function mount(root: HTMLElement) {
     const reuse = slots.findIndex((s) => !s.tuple);
     const needed = len + (reuse === -1 ? LP : 0);
     if (upper() - lower() < needed) {
-      live.textContent = `The pointers and the rows have met: the page is full.`;
+      live.textContent =
+        "The pointers and the rows have met: the page is full.";
       return false;
     }
     inserted += 1;
@@ -166,7 +165,9 @@ export default function mount(root: HTMLElement) {
     slots[at] = { tuple };
     render();
     say(
-      `${email} is written at the end of the free space, at byte ${tuple.offset}. ${reuse === -1 ? `A new line pointer, ${at + 1}, takes 4 bytes at the top.` : `It reuses the free line pointer ${at + 1}.`}`
+      reuse === -1
+        ? `${email} goes at the bottom of the free space, with a new line pointer on top.`
+        : `${email} reuses the free line pointer ${at + 1}.`
     );
     return true;
   };
@@ -183,7 +184,6 @@ export default function mount(root: HTMLElement) {
   };
 
   const vacuum = () => {
-    const dead = slots.filter((s) => s.tuple?.dead === true).length;
     const before = ctid("ann");
     for (const slot of slots) {
       if (slot.tuple?.dead === true) {
@@ -199,7 +199,7 @@ export default function mount(root: HTMLElement) {
       tuple.offset = offset;
     }
     render();
-    live.textContent = `Vacuum removes ${dead} dead row${dead === 1 ? "" : "s"} and slides the others down to close the gaps. Their line pointers keep their numbers${before === undefined ? "" : `, so the index entry for ann still says ${before}`}.`;
+    live.textContent = `Vacuum slides the rows down to close the gap, and ann's ctid stays ${before ?? "the same"}.`;
   };
 
   const reset = () => {

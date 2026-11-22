@@ -1,7 +1,6 @@
 import {
   caption,
   el,
-  enter,
   injectStyles,
   player,
   pop,
@@ -45,7 +44,6 @@ const COMMENT: Record<State, string> = {
 
 interface Frame {
   t: number;
-  chunk?: string;
   set: [number, State][];
   say: string;
 }
@@ -53,13 +51,11 @@ interface Frame {
 const FRAMES: Frame[] = [
   {
     t: 0,
-    chunk: '<main><h1>My shop</h1> ×3: <!--$?--><template id="B:n"> + fallback',
     set: [],
     say: "The shell arrives first, with a fallback in each boundary, and the response stays open.",
   },
   {
     t: 1200,
-    chunk: '<div hidden id="S:0">…</div><script>$RC("B:0","S:0")</script>',
     set: [[0, "queued"]],
     say: "Reviews are ready: $RC queues them and marks the boundary $~.",
   },
@@ -70,13 +66,11 @@ const FRAMES: Frame[] = [
   },
   {
     t: 1250,
-    chunk: '<div hidden id="S:1">…</div><script>$RC("B:1","S:1")</script>',
     set: [[1, "queued"]],
     say: "Related arrives right after, so it waits in the batch instead of making the page jump again.",
   },
   {
     t: 1300,
-    chunk: '<div hidden id="S:2">…</div><script>$RC("B:2","S:2")</script>',
     set: [[2, "queued"]],
     say: "Questions join the same batch.",
   },
@@ -98,20 +92,7 @@ export default function mount(root: HTMLElement) {
   let states: State[] = [];
 
   const clock = el("p", "react-stream-clock demo-mono");
-  const panes = el("div", "react-stream-panes");
-
   const page = el("div", "react-stream-page demo-box");
-  const response = el("ol", "react-stream-response demo-mono");
-  response.setAttribute("aria-label", "Response chunks");
-
-  const pageWrap = el("div");
-  pageWrap.append(el("span", "demo-label", "what the user sees"), page);
-  const responseWrap = el("div");
-  responseWrap.append(
-    el("span", "demo-label", "HTTP response so far"),
-    response
-  );
-  panes.append(pageWrap, responseWrap);
 
   const live = caption("");
 
@@ -165,7 +146,6 @@ export default function mount(root: HTMLElement) {
   const reset = () => {
     index = -1;
     states = BOUNDARIES.map(() => "pending");
-    response.replaceChildren();
     clock.textContent = "t = 0 ms";
     renderPage([]);
     step();
@@ -180,10 +160,6 @@ export default function mount(root: HTMLElement) {
     for (const [i, state] of frame.set) {
       states[i] = state;
     }
-    if (frame.chunk !== undefined) {
-      const item = el("li", undefined, frame.chunk);
-      response.append(enter(item));
-    }
     clock.textContent = `t = ${frame.t} ms`;
     live.textContent = frame.say;
     renderPage(frame.set.map(([i]) => i));
@@ -192,6 +168,6 @@ export default function mount(root: HTMLElement) {
 
   const { controls } = player({ step, reset, total: () => FRAMES.length - 1 });
 
-  root.append(clock, panes, controls, live);
+  root.append(clock, page, controls, live);
   reset();
 }

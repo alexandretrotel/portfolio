@@ -1,11 +1,4 @@
-import {
-  caption,
-  el,
-  enter,
-  injectStyles,
-  chapterPlayer,
-  setup,
-} from "./demo-kit";
+import { caption, el, injectStyles, chapterPlayer, setup } from "./demo-kit";
 
 import styles from "./react-work-loop.css?inline";
 
@@ -52,7 +45,7 @@ const FIBERS: Fiber[] = [
     begin: {
       mount: "React calls List(). It returns two Items.",
       update:
-        "The click updated List's state. React calls List() and compares the new children with the old ones by key: Item 3 is new.",
+        "List's state changed, so React calls List() and finds a new Item 3.",
     },
   },
   {
@@ -76,8 +69,7 @@ const FIBERS: Fiber[] = [
     children: [],
     begin: {
       mount: "React calls the second Item.",
-      update:
-        "List re-rendered, so React calls Item() again. Its output didn't change, so no flag.",
+      update: "React calls Item() again, but nothing changed, so no flag.",
     },
   },
   {
@@ -170,8 +162,6 @@ export default function mount(root: HTMLElement) {
 
   const tree = el("ol", "react-work-loop-tree");
   tree.setAttribute("aria-label", "Fiber tree");
-  const log = el("ol", "react-work-loop-log demo-mono");
-  log.setAttribute("aria-label", "Units of work");
   const live = caption("");
 
   const views = new Map<string, { item: HTMLElement; badge: HTMLElement }>();
@@ -185,14 +175,6 @@ export default function mount(root: HTMLElement) {
   }
 
   const logFrame = (frame: Frame) => {
-    const fiber = byId.get(frame.id);
-    const line = el(
-      "li",
-      undefined,
-      `${frame.phase.padEnd(8)} ${fiber?.name ?? ""}`
-    );
-    line.style.setProperty("--depth", String(fiber?.depth ?? 0));
-    log.append(enter(line));
     live.textContent = frame.say;
   };
 
@@ -205,7 +187,7 @@ export default function mount(root: HTMLElement) {
         continue;
       }
       const hidden = mode === "mount" && f.id === "item3";
-      view.item.hidden = hidden;
+      view.item.classList.toggle("is-placeholder", hidden);
       const begun = seen.some((s) => s.id === f.id && s.phase === "begin");
       const completed = seen.some(
         (s) => s.id === f.id && s.phase === "complete"
@@ -240,12 +222,11 @@ export default function mount(root: HTMLElement) {
     mode = chapter;
     frames = buildFrames(mode);
     index = -1;
-    log.replaceChildren();
     render();
     live.textContent =
       mode === "mount"
-        ? "First render. React walks the tree one fiber at a time, and can stop between any two steps."
-        : "A click adds Item 3 and changes Item 1's text. Same walk, but now React records flags.";
+        ? "React walks the tree one fiber at a time, and can pause between any two."
+        : "A click adds Item 3 and changes Item 1's text: same walk, now with flags.";
   };
 
   const step = () => {
@@ -265,7 +246,7 @@ export default function mount(root: HTMLElement) {
   });
 
   const body = el("div", "react-work-loop-body");
-  body.append(tree, log);
+  body.append(tree);
 
   root.append(label, body, controls, live);
 }

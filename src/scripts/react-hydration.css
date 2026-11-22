@@ -1,6 +1,6 @@
 .react-hydration-page {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
 }
 
@@ -28,8 +28,13 @@
 
 .react-hydration-action {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border: 1px solid var(--border-strong);
-  border-radius: 999px;
-  background: var(--background);
+  color: var(--soft-foreground);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+}
+
+@media (max-width: 30rem) {
+  .react-hydration-page {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

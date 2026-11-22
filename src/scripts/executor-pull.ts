@@ -58,8 +58,8 @@ const buildFrames = (limit: number | undefined): Frame[] => {
   push(
     [top],
     limit === undefined
-      ? "The client is waiting for rows. The executor asks the top node, Hash Join, for one."
-      : "The client is waiting for rows. The executor asks Limit for one, and Limit asks Hash Join."
+      ? "The client wants a row, so the executor asks the top node, Hash Join."
+      : "The client wants a row: the executor asks Limit, which asks Hash Join."
   );
 
   push(
@@ -89,7 +89,7 @@ const buildFrames = (limit: number | undefined): Frame[] => {
     state.out.push(row);
     push(
       [top],
-      `It looks up user ${order.userId} in the hash table, finds ${user?.email ?? "?"}, and passes (${row}) up. It goes out as a DataRow.`,
+      `User ${order.userId} is ${user?.email ?? "?"} in the hash table, so (${row}) goes to the client.`,
       row
     );
     if (limit !== undefined && state.out.length === limit) {
@@ -160,7 +160,7 @@ export default function mount(root: HTMLElement) {
       output,
       frame?.out ?? [],
       (row) => row,
-      (row) => el("li", undefined, `DataRow (${row})`)
+      (row) => el("li", undefined, row)
     );
   };
 
@@ -189,7 +189,7 @@ export default function mount(root: HTMLElement) {
     live.textContent =
       frame?.say ??
       (limit === undefined
-        ? "Press Start to pull the first row."
+        ? "Rows move up this tree one at a time, only when the node above asks."
         : "The same query, with a Limit node on top.");
   };
 

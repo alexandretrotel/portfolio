@@ -190,8 +190,11 @@ export const player = ({ step, reset, total }: PlayerOptions) => {
     }
     nextBtn.textContent = label;
     const of = total?.();
-    progress.textContent =
-      of === undefined ? `step ${count}` : `${count} / ${of}`;
+    let text = of === undefined ? `step ${count}` : `${count} / ${of}`;
+    if (of === undefined && count === 0) {
+      text = "";
+    }
+    progress.textContent = text;
   };
 
   const restart = () => {

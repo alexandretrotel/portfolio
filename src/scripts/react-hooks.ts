@@ -238,8 +238,8 @@ export default function mount(root: HTMLElement) {
     );
 
     const queue = started ? (frame.queue ?? []) : [];
-    queueLabel.hidden = queue.length === 0;
-    queueList.hidden = queue.length === 0;
+    queueLabel.hidden = slotsOnly;
+    queueList.hidden = slotsOnly;
     sync(
       queueList,
       queue.map((item, i) => ({ item, i })),
