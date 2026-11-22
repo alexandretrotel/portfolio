@@ -1,5 +1,5 @@
 article > .clock-sweep {
-  margin-block: 1.5rem;
+  margin-block: 3rem;
 }
 
 .clock-sweep-dial {
@@ -130,11 +130,38 @@ article > .clock-sweep {
   font: inherit;
   font-size: var(--text-xs);
   cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 160ms cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 150ms ease;
 }
 
-@media (hover: hover) {
+.clock-sweep-controls button:active {
+  transform: scale(0.97);
+}
+
+.clock-sweep-controls .clock-sweep-primary {
+  border-color: var(--foreground);
+  background: var(--foreground);
+  color: var(--background);
+}
+
+@media (hover: hover) and (pointer: fine) {
   .clock-sweep-controls button:hover {
     background: var(--muted);
+  }
+
+  .clock-sweep-controls .clock-sweep-primary:hover {
+    background: var(--soft-foreground);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clock-sweep-controls button:active {
+    transform: none;
   }
 }
 

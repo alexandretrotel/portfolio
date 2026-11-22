@@ -58,6 +58,8 @@ The rows themselves are written from the end of the page, going backwards. The l
 
 That's what the `(0,3)` in the index example from the architecture part meant. It's page 0, line pointer 3. An index points to the line pointer, not to the row itself, so Postgres can move a row inside its page, to make room, without updating any index.
 
+<div data-demo="pg-page"></div>
+
 You can see the position of every row with the hidden `ctid` column.
 
 ```sql
@@ -81,6 +83,8 @@ Each row, called a tuple in the source, starts with a header of 23 bytes before 
 `xmin` and `xmax` are how Postgres decides which rows your transaction can see. We'll get to that in the MVCC part.
 
 After the header come the column values, one after the other, aligned so the CPU can read them quickly. That's why the order of your columns can change the size of a row. A `boolean` between two `bigint`s wastes 7 bytes of padding.
+
+<div data-demo="pg-row"></div>
 
 ## TOAST
 

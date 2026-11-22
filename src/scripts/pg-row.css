@@ -1,0 +1,86 @@
+.pg-row-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem 2.5rem;
+}
+
+.pg-row-columns {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pg-row-column {
+  display: grid;
+  grid-template-columns: 0.625rem 6rem 2rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pg-row-name {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+}
+
+.pg-row-swatch {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 0.1875rem;
+}
+
+.pg-row-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1.5rem);
+  gap: 3px;
+}
+
+.pg-row-cell {
+  height: 1.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 300ms ease;
+}
+
+.pg-row-cell.is-c0,
+.pg-row-swatch.is-c0 {
+  background: var(--foreground);
+}
+
+.pg-row-cell.is-c1,
+.pg-row-swatch.is-c1 {
+  background: var(--soft-foreground);
+}
+
+.pg-row-cell.is-c2,
+.pg-row-swatch.is-c2 {
+  background: var(--muted-foreground);
+}
+
+.pg-row-cell.is-c3,
+.pg-row-swatch.is-c3 {
+  background: var(--border-strong);
+}
+
+.pg-row-cell.is-pad {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--muted-foreground) 0 1px,
+    transparent 1px 5px
+  );
+  outline: 1px solid var(--border-strong);
+  outline-offset: -1px;
+}
+
+.pg-row-cell.is-empty {
+  outline: 1px dashed var(--border-strong);
+  outline-offset: -1px;
+}
+
+.pg-row-summary {
+  margin-top: 1.25rem;
+  color: var(--soft-foreground);
+  text-align: center;
+}

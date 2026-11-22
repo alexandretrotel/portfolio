@@ -94,6 +94,8 @@ Hash Join
 
 Each node works on demand. When the top node needs a row, it asks its children, which ask theirs, down to the scans. Rows flow up one at a time, so Postgres can send the first rows to the client before it has read the whole table, and a `LIMIT 10` stops everything after ten rows.
 
+<div data-demo="executor-pull"></div>
+
 Every row that reaches the top is sent to the client as a `DataRow` message, the one from the wire protocol.
 
 For an `INSERT`, `UPDATE`, or `DELETE`, the top node is a `ModifyTable` node. It takes the rows from below and changes the table instead of sending them.

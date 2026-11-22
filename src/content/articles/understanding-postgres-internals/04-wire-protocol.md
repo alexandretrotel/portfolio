@@ -24,6 +24,8 @@ SELECT 1\0   the SQL, ending with a zero byte
 
 The length is what lets the other side know where a message ends and the next one starts, since TCP only gives it a stream of bytes.
 
+<div data-demo="wire-message"></div>
+
 ## Opening a connection
 
 The first message is the only one without a type byte. The client sends a startup message with the protocol version and a few settings, like the user and the database.
@@ -106,6 +108,8 @@ A named statement can be parsed once and then bound and executed many times, whi
 When something fails, the server sends an `ErrorResponse` instead of the rest of the answer. It holds several fields: a severity, a code like `23505` for a unique violation, a message, and sometimes a detail or a hint.
 
 In the extended protocol, the server then skips every message until the next `Sync`, and answers with `ReadyForQuery`. That's how the client and the server get back in step after an error.
+
+<div data-demo="wire-extended"></div>
 
 ## Canceling a query
 

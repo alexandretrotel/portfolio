@@ -47,7 +47,7 @@ Picture the slots on a clock, with a hand pointing to one of them. To find a vic
 - If its usage count is above 0, it lowers it by one and moves on.
 - If its usage count is 0, that's the one.
 
-Watch the hand go around. Now and then a query uses a page and bumps its count, which helps it survive the next turn.
+Move the hand one slot at a time. Between moves, let a query read a page: it bumps that page's count, which helps it survive the next turn.
 
 <div data-clock-sweep></div>
 

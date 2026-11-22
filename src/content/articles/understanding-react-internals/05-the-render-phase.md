@@ -170,6 +170,8 @@ subtreeFlags |= child.flags;
 
 So `List.subtreeFlags` contains `Update | Placement`, and so does `App.subtreeFlags`. The `Header` has none. During the commit, React will check `subtreeFlags` and skip the whole `Header` branch, because there's nothing to do in it.
 
+<div data-demo="react-work-loop"></div>
+
 ## Lanes
 
 Now, priorities. Not every update is equally urgent. A key press must show up now, while filtering a list of 10,000 items can wait a few milliseconds.
@@ -213,6 +215,8 @@ export function getHighestPriorityLane(lanes) {
 ```
 
 That trick keeps only the rightmost bit, which is the most urgent lane. Each fiber has its `lanes`, and its `childLanes` for the work below it. So React can skip a whole branch of the tree with one check, if nothing in it matches the lanes being rendered.
+
+<div data-demo="react-lanes"></div>
 
 ## Concurrency and the scheduler
 

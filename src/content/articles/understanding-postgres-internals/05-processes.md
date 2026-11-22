@@ -14,6 +14,8 @@ The backend speaks the [wire protocol](/articles/understanding-postgres-internal
 
 That's simple and safe. If one backend crashes, it doesn't take the memory of the others with it. But a process is not free. Each one has its own memory, and starting one takes time. That's why Postgres allows only 100 connections by default, and why poolers like PgBouncer exist: they keep a few backends open and share them between many clients.
 
+<div data-demo="pg-connections"></div>
+
 ## Background processes
 
 You can see every process running on your server with this query:

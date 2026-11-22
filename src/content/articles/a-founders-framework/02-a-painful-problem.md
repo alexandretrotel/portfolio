@@ -31,6 +31,8 @@ Harvard professor John Gourville [found](https://hbr.org/2006/06/eager-sellers-a
 
 So a new solution has to be roughly nine times better to make people switch.
 
+<div data-demo="switch-bar"></div>
+
 If solving a painful problem isn't what you want, stop reading here, because that is the founder's job. If you prefer coding or building a product, join a startup that inspires you instead.
 
 ## The pain must be real

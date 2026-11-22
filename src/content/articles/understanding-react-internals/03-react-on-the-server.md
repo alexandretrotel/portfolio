@@ -282,6 +282,8 @@ To sum up, the comments are a small protocol between the server and the browser:
 - **`<!--$-->`:** completed.
 - **`<!--$!-->`:** the server failed to render it, the client will render it instead.
 
+<div data-demo="react-stream"></div>
+
 There are a few variants I skipped. For example, when the new content needs a stylesheet, React uses `$RR` instead of `$RC`, and waits for the CSS to load before revealing it, so the user never sees unstyled content.
 
 ### Before React even loads

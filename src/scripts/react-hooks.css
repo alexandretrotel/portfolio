@@ -1,0 +1,100 @@
+.react-hooks-body {
+  display: grid;
+  gap: 1rem;
+}
+
+.demo .react-hooks-code {
+  display: grid;
+  margin: 0;
+  padding: 0.75rem 0;
+  border-radius: 0.625rem;
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+}
+
+.react-hooks-line {
+  padding-inline: 0.75rem;
+  white-space: pre;
+  transition: background-color 0.2s ease;
+}
+
+.react-hooks-line.is-current {
+  background: var(--selection);
+  box-shadow: inset 2px 0 var(--foreground);
+}
+
+.react-hooks-side {
+  display: grid;
+  gap: 0.375rem;
+}
+
+.react-hooks-slots,
+.react-hooks-queue {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  min-height: 3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.react-hooks-slot {
+  display: grid;
+  gap: 0.125rem;
+  padding: 0.375rem 0.625rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.5rem;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.react-hooks-slot.is-current {
+  border-color: var(--foreground);
+  background: var(--muted);
+}
+
+.react-hooks-slot.is-wrong {
+  border-width: 2px;
+  border-style: dashed;
+}
+
+.react-hooks-slots {
+  align-items: stretch;
+}
+
+.react-hooks-queue {
+  align-items: center;
+  align-content: flex-start;
+  min-height: 2rem;
+}
+
+.react-hooks-queue li {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  box-sizing: border-box;
+  height: 2rem;
+  padding: 0 0.625rem;
+  line-height: 1;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  transition: opacity 0.3s ease;
+}
+
+.react-hooks-queue li.is-current {
+  border-color: var(--foreground);
+  background: var(--muted);
+}
+
+.react-hooks-queue li.is-done {
+  opacity: 0.35;
+}
+
+.react-hooks-error {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--foreground);
+  border-radius: 0.5rem;
+}

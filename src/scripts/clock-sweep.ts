@@ -13,7 +13,6 @@ interface Slot {
 }
 
 const MAX_USAGE = 5;
-const TICK_MS = 1100;
 
 const INITIAL: Slot[] = [
   { page: "users p0", usage: 3, pinned: false },
@@ -55,7 +54,6 @@ const mount = (root: HTMLElement) => {
   let hand = 0;
   let turns = 0;
   let incoming = 0;
-  let timer: number | undefined;
 
   root.classList.add("clock-sweep");
 
@@ -92,9 +90,9 @@ const mount = (root: HTMLElement) => {
   caption.setAttribute("aria-live", "polite");
 
   const controls = el("div", "clock-sweep-controls");
-  const stepBtn = el("button", undefined, "Step");
-  const playBtn = el("button", undefined, "Play");
-  for (const button of [stepBtn, playBtn]) {
+  const stepBtn = el("button", "clock-sweep-primary", "Move the hand");
+  const useBtn = el("button", undefined, "A query reads a page");
+  for (const button of [stepBtn, useBtn]) {
     button.type = "button";
     controls.append(button);
   }
@@ -184,50 +182,10 @@ const mount = (root: HTMLElement) => {
     render();
   };
 
-  const stop = () => {
-    window.clearInterval(timer);
-    timer = undefined;
-    playBtn.textContent = "Play";
-    caption.setAttribute("aria-live", "polite");
-  };
-
-  const play = () => {
-    caption.setAttribute("aria-live", "off");
-    playBtn.textContent = "Pause";
-    timer = window.setInterval(() => {
-      if (Math.random() < 0.3) {
-        use();
-      } else {
-        step();
-      }
-    }, TICK_MS);
-  };
-
-  stepBtn.addEventListener("click", () => {
-    stop();
-    step();
-  });
-  playBtn.addEventListener("click", () => {
-    if (timer === undefined) {
-      play();
-    } else {
-      stop();
-    }
-  });
+  stepBtn.addEventListener("click", step);
+  useBtn.addEventListener("click", use);
 
   render();
-
-  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const observer = new IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting)) {
-        observer.disconnect();
-        if (timer === undefined) {
-          play();
-        }
-      }
-    });
-    observer.observe(root);
-  }
 };
 
 export const mountClockSweeps = () => {

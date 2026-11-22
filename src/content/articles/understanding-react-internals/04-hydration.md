@@ -220,6 +220,8 @@ But what about clicks that happen too early? Imagine the user clicks a button in
 
 What the user touches gets hydrated first.
 
+<div data-demo="react-hydration"></div>
+
 Continuous events, like `mouseover`, work a bit differently. React queues them with `queueIfContinuousEvent`, and replays them once the boundary is ready.
 
 All of this relies on priorities. A click is more urgent than hydrating a footer nobody looks at. In React, these priorities are called lanes, and they're the subject of the next chapter.

@@ -24,6 +24,8 @@ Take the restaurant example:
 
 The $1B goes on the pitch deck. The $100M is the real size of your lake.
 
+<div data-demo="market-size"></div>
+
 A small lake can still be worth fishing if it is filling up fast, flows into a much bigger one, or holds more fish than everyone thinks. If you make that bet, write down why you believe it.
 
 (The lake is the market. "Filling up fast" means the market is growing.)

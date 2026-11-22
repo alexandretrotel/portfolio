@@ -443,6 +443,36 @@ const articleJsonLd = {
     if (document.querySelector("[data-clock-sweep]")) {
         void import("../scripts/clock-sweep").then(({ mountClockSweeps }) => mountClockSweeps());
     }
+
+    {
+        interface Mount { default: (root: HTMLElement) => void }
+        const demos: Record<string, () => Promise<Mount>> = {
+            "wire-message": () => import("../scripts/wire-message"),
+            "wire-extended": () => import("../scripts/wire-extended"),
+            "pg-connections": () => import("../scripts/pg-connections"),
+            "executor-pull": () => import("../scripts/executor-pull"),
+            "pg-page": () => import("../scripts/pg-page"),
+            "pg-row": () => import("../scripts/pg-row"),
+            "react-stream": () => import("../scripts/react-stream"),
+            "react-hydration": () => import("../scripts/react-hydration"),
+            "react-work-loop": () => import("../scripts/react-work-loop"),
+            "react-lanes": () => import("../scripts/react-lanes"),
+            "react-hooks": () => import("../scripts/react-hooks"),
+            "react-hook-slots": () => import("../scripts/react-hooks"),
+            "switch-bar": () => import("../scripts/switch-bar"),
+            "market-size": () => import("../scripts/market-size"),
+        };
+
+        for (const [name, load] of Object.entries(demos)) {
+            const roots = document.querySelectorAll<HTMLElement>(`[data-demo="${name}"]`);
+            if (roots.length > 0) {
+                void (async () => {
+                    const { default: mount } = await load();
+                    for (const root of roots) {mount(root);}
+                })();
+            }
+        }
+    }
 </script>
 
 <script>

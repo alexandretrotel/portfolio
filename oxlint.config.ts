@@ -9,6 +9,7 @@ export default defineConfig({
   rules: { "sort-keys": "off" },
   overrides: [
     { files: ["**/*.astro"], rules: { "unicorn/filename-case": "off" } },
+    { files: ["src/scripts/react-lanes.ts"], rules: { "no-bitwise": "off" } },
   ],
   options: { typeAware: true, typeCheck: true },
 });

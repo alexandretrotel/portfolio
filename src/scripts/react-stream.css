@@ -1,0 +1,76 @@
+.react-stream-clock {
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.react-stream-panes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.react-stream-panes > div {
+  display: grid;
+  align-content: start;
+  gap: 0.375rem;
+  min-width: 0;
+}
+
+.react-stream-page {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  min-height: 10rem;
+  padding: 0.75rem;
+  background: var(--background);
+}
+
+.react-stream-boundary {
+  transition:
+    border-color 200ms ease,
+    background-color 250ms ease;
+  display: grid;
+  gap: 0.125rem;
+  padding: 0.375rem 0.5rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: 0.375rem;
+}
+
+.react-stream-boundary.is-pending > span:last-child {
+  color: var(--muted-foreground);
+}
+
+.react-stream-boundary.is-queued {
+  border-color: var(--foreground);
+}
+
+.react-stream-boundary.is-done {
+  border-style: solid;
+  background: var(--muted);
+}
+
+.react-stream-comment {
+  color: var(--muted-foreground);
+}
+
+.react-stream-response {
+  display: grid;
+  gap: 0.375rem;
+  min-height: 10rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.react-stream-response li {
+  padding: 0.375rem 0.5rem;
+  border-radius: 0.375rem;
+  background: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.react-stream-text,
+.react-stream-comment {
+  display: block;
+  width: fit-content;
+}

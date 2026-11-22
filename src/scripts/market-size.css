@@ -1,0 +1,90 @@
+.market-size-lakes {
+  position: relative;
+  width: min(100%, 16rem);
+  aspect-ratio: 1;
+  margin: 1.5rem auto 0;
+}
+
+.market-size-lake {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  background: var(--muted);
+  transform: scale(var(--size));
+  transform-origin: bottom center;
+  transition: transform 450ms var(--demo-ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .market-size-lake {
+    transition: none;
+  }
+}
+
+.market-size-lake[data-name="SAM"] {
+  border-color: var(--muted-foreground);
+  background: var(--border-strong);
+}
+
+.market-size-lake[data-name="realistic"] {
+  border-color: var(--foreground);
+  background: var(--muted-foreground);
+}
+
+.market-size-legend {
+  display: grid;
+  justify-content: center;
+  gap: 0.375rem;
+  min-height: 4.5rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.market-size-legend li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.market-size-lakes {
+  margin-top: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .demo .market-size-lake.demo-enter {
+    animation: market-size-fill 500ms var(--demo-ease-out);
+  }
+}
+
+@keyframes market-size-fill {
+  from {
+    opacity: 0;
+    transform: scale(calc(var(--size) * 0.85));
+  }
+}
+
+.market-size.is-verdict .market-size-lake[data-name="realistic"] {
+  border-width: 2px;
+  background: var(--foreground);
+}
+
+.market-size-swatch {
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.market-size-legend [data-name="SAM"] .market-size-swatch {
+  border-color: var(--muted-foreground);
+  background: var(--border-strong);
+}
+
+.market-size-legend [data-name="realistic"] .market-size-swatch {
+  border-color: var(--foreground);
+  background: var(--muted-foreground);
+}

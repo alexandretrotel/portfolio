@@ -1,0 +1,78 @@
+.executor-pull-tree {
+  display: grid;
+  gap: 0.375rem;
+}
+
+.executor-pull-node {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin-left: calc(var(--depth) * 1.25rem);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.5rem;
+  background: var(--background);
+  transition:
+    border-color 150ms ease,
+    background-color 200ms ease;
+}
+
+.executor-pull-node.is-active {
+  border-color: var(--foreground);
+  background: var(--muted);
+}
+
+.executor-pull-carry {
+  display: inline-block;
+}
+
+.executor-pull-carry:not(:empty) {
+  padding: 0.0625rem 0.375rem;
+  border-radius: 999px;
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.executor-pull-extra {
+  flex-basis: 100%;
+  color: var(--muted-foreground);
+}
+
+.executor-pull-extra:not(.is-hash):empty {
+  display: none;
+}
+
+.executor-pull-extra.is-hash:empty::before {
+  content: "empty";
+}
+
+.executor-pull-extra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+}
+
+.executor-pull-client {
+  display: grid;
+  gap: 0.375rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-strong);
+}
+
+.executor-pull-out {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  min-height: 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.executor-pull-out li {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  background: var(--muted);
+}

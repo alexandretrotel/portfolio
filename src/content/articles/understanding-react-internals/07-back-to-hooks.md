@@ -24,6 +24,8 @@ On each render, React walks this list as you call your hooks. There are no names
 
 That's why the rules of hooks exist. Call a hook inside an `if`, and when the condition is false, every hook after it reads the wrong slot. Your `useRef` would get the `useMemo` value.
 
+<div data-demo="react-hook-slots"></div>
+
 Every hook below is just a different way to use one of these slots.
 
 ## State is a queue
@@ -55,6 +57,8 @@ setCount((c) => c + 1);
 ```
 
 So when the new state depends on the previous one, pass a function. And if the new state is the same as the current one, compared with `Object.is`, React skips the render.
+
+<div data-demo="react-hooks"></div>
 
 Choosing between the two is only about readability. `useState` for independent values. `useReducer` when several values change together, so the logic lives in one pure function, easy to test.
 
