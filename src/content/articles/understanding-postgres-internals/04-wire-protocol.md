@@ -1,5 +1,5 @@
 ---
-title: The wire protocol
+title: Wire protocol
 ---
 
 libpq, `pg`, `tokio-postgres`, and the Drizzle driver all speak the same language with the server: the Postgres wire protocol, version 3. It has been the same since Postgres 7.4 in 2003, with small additions in 3.2 for Postgres 18.

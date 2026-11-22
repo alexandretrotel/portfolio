@@ -1,5 +1,5 @@
 ---
-title: The architecture
+title: Architecture
 ---
 
 Postgres is big. Before going into any detail, let's look at the whole picture.
@@ -38,7 +38,7 @@ A main process, the postmaster, starts a new process for every client that conne
 
 All these processes share one area of memory. Most of it is a cache of pages, the fixed-size blocks Postgres uses to store your data.
 
-Every change is also written to a log, the WAL. Postgres uses it to recover after a crash and to copy data to other servers.
+Every change is also written to a log, the WAL. Postgres uses it to recover after a crash and to copy data to other servers. More on that in [WAL](/articles/understanding-postgres-internals/wal).
 
 ```mermaid
 flowchart TB
@@ -85,6 +85,8 @@ ann@mail.com  -> (0,3)  page 0, row 3
 bob@mail.com  -> (0,1)  page 0, row 1
 eve@mail.com  -> (1,2)  page 1, row 2
 ```
+
+Real indexes are more complex than a sorted list. We'll see how in [indexes](/articles/understanding-postgres-internals/indexes).
 
 In the relational model, a relation is the table itself. Foreign keys are what link tables together.
 

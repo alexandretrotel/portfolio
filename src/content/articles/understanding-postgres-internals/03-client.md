@@ -1,5 +1,5 @@
 ---
-title: The client
+title: Client
 ---
 
 Every query starts on the client. Before Postgres can do anything, something has to open a connection, prove who you are, and send your SQL in a format the server understands.
