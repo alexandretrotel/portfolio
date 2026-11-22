@@ -1,0 +1,50 @@
+.lock-queue-section {
+  display: grid;
+  justify-items: center;
+  gap: 0.375rem;
+}
+
+.lock-queue-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.375rem;
+  min-height: 2.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lock-queue-chip {
+  display: grid;
+  justify-items: center;
+  gap: 0.0625rem;
+  padding: 0.3125rem 0.75rem;
+  border: 1px solid var(--foreground);
+  border-radius: 0.5rem;
+  background: var(--muted);
+}
+
+.lock-queue-list.is-waiting .lock-queue-chip {
+  border-style: dashed;
+  border-color: var(--border-strong);
+  background: var(--background);
+}
+
+.lock-queue-query {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+}
+
+.lock-queue-chip .demo-label {
+  font-size: 0.625rem;
+}
+
+.lock-queue-table {
+  width: fit-content;
+  margin: 0.75rem auto;
+  padding: 0.375rem 1rem;
+  border-color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+}
