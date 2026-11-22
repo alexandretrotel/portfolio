@@ -420,7 +420,56 @@ const articleJsonLd = {
       border: 0;
       border-top: 1px solid var(--border);
     }
+
+    article > .mermaid {
+      display: flex;
+      justify-content: center;
+      overflow-x: auto;
+      margin-block: 1.25rem;
+    }
+
+    article > .mermaid svg {
+      max-width: 100%;
+      height: auto;
+    }
 </style>
+
+<script>
+    {
+        const blocks = [
+            ...document.querySelectorAll<HTMLElement>("article pre > code.language-mermaid"),
+        ];
+
+        if (blocks.length > 0) {
+            const containers = blocks.map((code) => {
+                const container = document.createElement("div");
+                container.className = "mermaid";
+                container.dataset.source = code.textContent ?? "";
+                code.parentElement?.replaceWith(container);
+                return container;
+            });
+
+            const dark = matchMedia("(prefers-color-scheme: dark)");
+
+            const draw = async () => {
+                const { default: mermaid } = await import("mermaid");
+                mermaid.initialize({
+                    startOnLoad: false,
+                    theme: dark.matches ? "dark" : "neutral",
+                    fontFamily: "inherit",
+                });
+                for (const container of containers) {
+                    delete container.dataset.processed;
+                    container.textContent = container.dataset.source ?? "";
+                }
+                await mermaid.run({ nodes: containers });
+            };
+
+            void draw();
+            dark.addEventListener("change", () => draw());
+        }
+    }
+</script>
 
 <script>
     {
