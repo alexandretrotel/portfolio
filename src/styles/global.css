@@ -113,7 +113,6 @@ body::before {
   z-index: 10;
   inset: 0 0 auto;
   height: calc(var(--edge) + var(--fade));
-  /* Solid behind the status bar, so the fade starts where content is visible. */
   background: linear-gradient(
     var(--background) var(--edge),
     color-mix(in oklab, var(--background) 74%, transparent)
