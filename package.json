@@ -16,6 +16,7 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
     "astro": "^7.4.13",
+    "mermaid": "^12.3.0",
     "takumi-pdf": "^0.21.3"
   },
   "devDependencies": {
