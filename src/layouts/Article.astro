@@ -421,53 +421,27 @@ const articleJsonLd = {
       border-top: 1px solid var(--border);
     }
 
-    article > .mermaid {
-      display: flex;
-      justify-content: center;
-      overflow-x: auto;
-      margin-block: 1.25rem;
+    .visually-hidden:where(:not(:focus-within, :active)) {
+      position: absolute !important;
+      clip-path: inset(50%) !important;
+      overflow: hidden !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: -1px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      white-space: nowrap !important;
     }
 
-    article > .mermaid svg {
-      max-width: 100%;
-      height: auto;
-    }
 </style>
 
 <script>
-    {
-        const blocks = [
-            ...document.querySelectorAll<HTMLElement>("article pre > code.language-mermaid"),
-        ];
+    if (document.querySelector("article pre > code.language-mermaid")) {
+        void import("../scripts/mermaid").then(({ renderMermaid }) => renderMermaid());
+    }
 
-        if (blocks.length > 0) {
-            const containers = blocks.map((code) => {
-                const container = document.createElement("div");
-                container.className = "mermaid";
-                container.dataset.source = code.textContent ?? "";
-                code.parentElement?.replaceWith(container);
-                return container;
-            });
-
-            const dark = matchMedia("(prefers-color-scheme: dark)");
-
-            const draw = async () => {
-                const { default: mermaid } = await import("mermaid");
-                mermaid.initialize({
-                    startOnLoad: false,
-                    theme: dark.matches ? "dark" : "neutral",
-                    fontFamily: "inherit",
-                });
-                for (const container of containers) {
-                    delete container.dataset.processed;
-                    container.textContent = container.dataset.source ?? "";
-                }
-                await mermaid.run({ nodes: containers });
-            };
-
-            void draw();
-            dark.addEventListener("change", () => draw());
-        }
+    if (document.querySelector("[data-clock-sweep]")) {
+        void import("../scripts/clock-sweep").then(({ mountClockSweeps }) => mountClockSweeps());
     }
 </script>
 
