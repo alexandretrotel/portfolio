@@ -16,7 +16,7 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
     "astro": "^7.4.13",
-    "takumi-pdf": "^0.20.0"
+    "takumi-pdf": "^0.21.3"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
@@ -27,10 +27,10 @@
     "oxlint": "^1.94.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-external-links": "^3.0.0",
-    "tsrs": "0.25.0-ts7.1.0-beta",
+    "tsrs": "7.1.0-beta.tsrs4",
     "typescript": "^6.0.3",
-    "ultracite": "^8.3.0",
-    "wrangler": "^4.164.0"
+    "ultracite": "^8.3.1",
+    "wrangler": "^4.166.0"
   },
   "engines": {
     "node": ">=26"
