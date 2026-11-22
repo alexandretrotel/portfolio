@@ -14,6 +14,7 @@ export default defineConfig({
   trailingSlash: "never",
   adapter: cloudflare(),
   markdown: {
+    syntaxHighlight: { type: "shiki", excludeLangs: ["mermaid", "math"] },
     shikiConfig: {
       themes: { light: "github-light", dark: "github-dark" },
       defaultColor: false,
