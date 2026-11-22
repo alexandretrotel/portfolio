@@ -105,35 +105,23 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-body::before {
-  --edge: env(safe-area-inset-top, 0px);
-  --fade: 2.5rem;
-
-  position: fixed;
-  z-index: 10;
-  inset: 0 0 auto;
-  height: calc(var(--edge) + var(--fade));
-  background: linear-gradient(
-    var(--background) var(--edge),
-    color-mix(in oklab, var(--background) 74%, transparent)
-      calc(var(--edge) + var(--fade) * 0.19),
-    color-mix(in oklab, var(--background) 54%, transparent)
-      calc(var(--edge) + var(--fade) * 0.34),
-    color-mix(in oklab, var(--background) 38%, transparent)
-      calc(var(--edge) + var(--fade) * 0.47),
-    color-mix(in oklab, var(--background) 19%, transparent)
-      calc(var(--edge) + var(--fade) * 0.65),
-    color-mix(in oklab, var(--background) 8%, transparent)
-      calc(var(--edge) + var(--fade) * 0.8),
-    transparent
-  );
-  content: "";
-  pointer-events: none;
-}
-
 @media (min-width: 48rem) {
   body::before {
-    --fade: 8rem;
+    position: fixed;
+    z-index: 10;
+    inset: 0 0 auto;
+    height: 8rem;
+    background: linear-gradient(
+      var(--background),
+      color-mix(in oklab, var(--background) 74%, transparent) 19%,
+      color-mix(in oklab, var(--background) 54%, transparent) 34%,
+      color-mix(in oklab, var(--background) 38%, transparent) 47%,
+      color-mix(in oklab, var(--background) 19%, transparent) 65%,
+      color-mix(in oklab, var(--background) 8%, transparent) 80%,
+      transparent
+    );
+    content: "";
+    pointer-events: none;
   }
 }
 
