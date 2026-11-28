@@ -1,3 +1,9 @@
 allowBuilds:
   esbuild: true
   workerd: true
+permissions:
+  ultracite:
+    skills: true
+skills:
+  dirs:
+    - .agents/skills
