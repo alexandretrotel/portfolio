@@ -24,17 +24,17 @@
     "@astrojs/cloudflare": "^14.4.9",
     "@astrojs/markdown-remark": "^7.3.10",
     "@astrojs/sitemap": "^3.7.6",
-    "oxfmt": "^0.79.0",
-    "oxlint": "^1.94.0",
+    "oxfmt": "^0.80.0",
+    "oxlint": "^1.95.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-external-links": "^3.0.0",
-    "tsrs": "7.1.0-beta.tsrs4",
+    "tsrs": "7.1.0-beta.tsrs5",
     "typescript": "^6.0.3",
     "ultracite": "^8.3.1",
-    "wrangler": "^4.166.0"
+    "wrangler": "^4.168.0"
   },
   "engines": {
     "node": ">=26"
   },
-  "packageManager": "pnpm@12.21.0"
+  "packageManager": "pnpm@12.23.0"
 }
